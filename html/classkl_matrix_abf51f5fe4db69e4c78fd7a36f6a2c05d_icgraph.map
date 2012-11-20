@@ -1,0 +1,17 @@
+<map id="klMatrix::getColumns" name="klMatrix::getColumns">
+<area shape="rect" id="node3" href="$classkl_matrix.html#a2a36cb9d573160fe0068cf065876fa0c" title="klMatrix::operator*" alt="" coords="212,5,340,32"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#ac7e89f86bfdea943a6de62634e3f58de" title="klMatrix::operator+=" alt="" coords="207,56,345,83"/>
+<area shape="rect" id="node7" href="$classkl_matrix.html#a5c3c492f64045904478921c68d692ca7" title="klMatrix::operator&#45;=" alt="" coords="209,107,343,133"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#aceb5e0c3df35ca13e646ed4f8f50b628" title="klMatrix::operator*=" alt="" coords="208,157,344,184"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#a43b30fedb9f71c78678fcd3230208b67" title="klMatrix::operator/=" alt="" coords="209,208,343,235"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#ae98f9751763dcc0a141580a5b382ab8d" title="klMatrix::setSubBlock" alt="" coords="201,259,351,285"/>
+<area shape="rect" id="node17" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="237,309,315,336"/>
+<area shape="rect" id="node21" href="$kl__matrix_8h.html#a4326b0a09ffd791a19fa03455c2c9e91" title="mvpBLAS" alt="" coords="237,360,315,387"/>
+<area shape="rect" id="node23" href="$kl__matrix_8h.html#ac3220ed7e02d9b5f171487067ed7e555" title="klApplyFn" alt="" coords="236,411,316,437"/>
+<area shape="rect" id="node25" href="$kl__matrix_8h.html#a2843a27a636213997fcb42fc82f6b1b7" title="operator+" alt="" coords="237,461,315,488"/>
+<area shape="rect" id="node27" href="$kl__matrix_8h.html#a9bf927ece98c6e4dbe7b303f1af1ce76" title="operator&#45;" alt="" coords="239,512,313,539"/>
+<area shape="rect" id="node29" href="$kl__matrix_8h.html#aed00d3e3832d1ad55a0e16555a8c58f2" title="operator/" alt="" coords="239,563,313,589"/>
+<area shape="rect" id="node31" href="$kl__matrix_8h.html#a8df00eafe2d9d718d99844da7d668894" title="operator*" alt="" coords="239,613,313,640"/>
+<area shape="rect" id="node15" href="$kl__matrix_8h.html#ad855c5f5c7d3526d949d256a2100379c" title="testKLMatrix" alt="" coords="416,259,512,285"/>
+<area shape="rect" id="node19" href="$classkl_matrix.html#a0646e4aea7fb21be0831746fe7313b80" title="klMatrix::operator*" alt="" coords="400,309,528,336"/>
+</map>
