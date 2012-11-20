@@ -1,0 +1,15 @@
+C:\temp\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+C:\temp\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+C:\temp\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\temp\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+C:\temp\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
+C:\KL\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+C:\KL\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+C:\KL\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\KL\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+C:\KL\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
+D:\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+D:\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb

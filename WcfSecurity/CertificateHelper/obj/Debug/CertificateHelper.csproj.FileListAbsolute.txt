@@ -1,0 +1,10 @@
+C:\KL\WcfServiceLibrary\CertificateHelper\obj\Debug\ResolveAssemblyReference.cache
+C:\KL\WcfServiceLibrary\CertificateHelper\bin\Debug\CertificateHelper.dll
+C:\KL\WcfServiceLibrary\CertificateHelper\bin\Debug\CertificateHelper.pdb
+C:\KL\WcfServiceLibrary\CertificateHelper\obj\Debug\CertificateHelper.dll
+C:\KL\WcfServiceLibrary\CertificateHelper\obj\Debug\CertificateHelper.pdb
+D:\WcfServiceLibrary\CertificateHelper\bin\Debug\CertificateHelper.dll
+D:\WcfServiceLibrary\CertificateHelper\bin\Debug\CertificateHelper.pdb
+D:\WcfServiceLibrary\CertificateHelper\obj\Debug\ResolveAssemblyReference.cache
+D:\WcfServiceLibrary\CertificateHelper\obj\Debug\CertificateHelper.dll
+D:\WcfServiceLibrary\CertificateHelper\obj\Debug\CertificateHelper.pdb

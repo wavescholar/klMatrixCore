@@ -1,0 +1,8 @@
+D:\WcfServiceLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+D:\WcfServiceLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+D:\WcfServiceLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+D:\WcfServiceLibrary\ConsoleApplication1\bin\Release\WcfServiceLibrary.dll
+D:\WcfServiceLibrary\ConsoleApplication1\bin\Release\WcfServiceLibrary.pdb
+D:\WcfServiceLibrary\ConsoleApplication1\obj\Release\ResolveAssemblyReference.cache
+D:\WcfServiceLibrary\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+D:\WcfServiceLibrary\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb

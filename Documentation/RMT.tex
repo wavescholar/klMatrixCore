@@ -1,0 +1,288 @@
+\chapter{Random Matrix Theory}
+\cite{RMTAchlioptas04randommatrices}, \cite{RMTAlon00bipartitesubgraphs}, \cite{RMTAlon00onthe} ,
+\cite{RMTCooper00onthe}, \cite{RMTSoshnikov02anote}, \cite{RMTTracy98correlationfunctions}
+
+The distribution of eigenvalues of the GOE ensemble follow the
+well know Winger Semi-circle distribution.  The classical
+ensembles of random matrix theory are GOE, GUE, GSE, Wishart, and MANOVA. These correspond to the weight functions of the equilibrium measure of the orthogonal polynomials Hermite, Laguerre,and Jacobi.  The Jacobians of the well known matrix factorizations are used to compute the joint eigenvalue densities of these ensembles. The joint densities up to a constant factor are listed belelo:
+\begin{itemize}
+  \item Hermite  \item Laguerre   \item Jacobi
+\end{itemize}
+We generated histograms in Matlab for samples from the GOE, GUE, GSE, Wishart, and MANOVA ensembles.
+The joint PDF of a generic Gaussian ramdom matrix is given by,
+\begin{equation*}
+P(M)=G_\beta(n,m)=\frac{1}{2 \pi^{\frac{\beta n m}{2} }} \exp^{\frac{-1}{2}\norm{M}_F }
+\end{equation*} where $\beta$ encodes the dimension of the field.  Note this leaves open the possibility to
+generalize to non integer $\beta$.
+
+The table below describes how to generate from the common ensembles starting from a sample $A \in G_\beta(n,n)$
+\begin{eqnarray*}
+    GOE  \{ M | M = \frac{A+A^T}{2}, A \in G_1(n,n)\}\\ %[bbcrevisit is necessaria and sufficient?]\\
+    GUE  \{ M | M = \frac{A+A^\dagger}{2}, A \in G_2(n,n)\}\\ %[bbcrevisit is necessaria and sufficient?]\\
+    GSE  \{ M | M = \frac{A+A^\ddagger}{2}, A \in G_4(n,n)\} %[bbcrevisit is necessaria and sufficient?]
+\end{eqnarray*}
+
+
+The $CS$ decomposition is a matrix factorization equivalent to four $SVD$'s which correspond to rotation problems
+$\left(\begin{array}{cc}
+        X \rightarrow  Y & X^\perp \rightarrow  Y \\
+        X \rightarrow  Y^\perp & X^\perp \rightarrow  Y^\perp \\
+\end{array}\right)$
+Which can be compactly written
+$[X | X^\perp]^T [Y | Y^\perp ]=\left(
+      \begin{array}{cc}
+        Q_{11} & Q_{12} \\
+        Q_{21} & Q_{22} \\
+      \end{array}
+\right)$
+ $\left(
+      \begin{array}{cc}
+        Q_{11} & Q_{12} \\
+        Q_{21} & Q_{22} \\
+      \end{array}
+\right)    = \left(
+      \begin{array}{cc}
+        U_1 & 0 \\
+        0 & U_2
+      \end{array}
+\right) * \left(
+      \begin{array}{cc}
+        C & S \\
+        -S & C
+      \end{array}
+\right) * \left(
+      \begin{array}{cc}
+        V_1 & 0 \\
+        0 & V_2
+      \end{array}
+\right)
+$
+Where U, S are unary.
+
+The Tracy-Widom law of order one is the limiting distribution of the largest eigenvalue of a Wishart matrix with identity covariance when properly scaled.  This has some application to weighted directional graphs.  The largest eigenvalue of the adjacency matrix of a random d-regular directed graph follows the Tracy-Widom law.  The kernels of integrable operators describe the asymptotic eigenvalue distribution of self-adjoint random matrices from the unitary ensembles. Consider the discreet operator $K(n,m):  \l^2(N) \rightarrow \l^2(M)$ where $K(n,m) = \frac{(<J a(m),a(n)>}{m-n}$ the discrete Bessel kernel and kernels arising from the almost Mathieu equation.  The celebrated paper of Tracy and Widom \cite{RMTTracy98correlationfunctions} investigated integral kernels of the form
+\begin{equation*}
+K(x,y)=\frac{f(x)g(y)-f(y)g(x)}{x-y} : x \neq y  f(x), g(x) \in L^2(0,\infty)
+\end{equation*}
+ are solutions to the system of $ODE$'s
+
+\begin{equation*}
+\frac{d}{dx}\left( \begin{array}{c}
+        f(x) \\
+        g(x)
+      \end{array}
+\right) = \left(
+      \begin{array}{cc}
+        \alpha(x) & \beta(x) \\
+        -\gamma(x) & -\alpha(x)
+      \end{array}
+\right) * \left( \begin{array}{c}
+        f(x) \\
+        g(x)
+      \end{array} \right)
+\end{equation*}
+
+Let $\phi_i(x)$ be an orthogonal basis in a Hilbert Space $\mathcal{H}$ where
+\begin{equation*}
+\Gamma_{\phi}
+= \{\phi_(j+k-1)\}_{j,k=1}^{\infty}
+\end{equation*}
+is the induced Hankel Matrix.
+
+\subsubsection{Definitions and results form Operator Theory}
+Let $\mathcal(L) : \mathcal{H} \rightarrow \mathcal{H}$ be compact.  Then $\mathcal(L): f \mapsto \sum\limits_{n=1}^{N} \omega_n <\phi_n, f> \psi_n$ where $\{\phi_i\}_{i=1}^{N}$
+
+\subsection{RSK and Young Tableaux - A combinatorial application of The Tracy Widom Distribution - Panleve}
+The Tracy-Widom distribution is related to to determinantal stochastic processes.  A process following this law is distributed as the largest point of a point process on the real line where the kernel K is the so-called Airy kernel.  In addition to describing the edge spectrum of random matrices, it arises in several place in combinatorial for instance the longest increasing subsequences of random permutations is described by the Tracy Widom law.
+
+ This kind of fluctuations arises (or is believed to arise) in a surprising variety of models: eigenvalues of random matrices, , shape fluctuations in first and last passage percolation, polynuclear growth models, frozen region of a random domino tiling of the aztec diamond, totally asymmetric exclusion process
+
+%
+%it has been shown that the path configuration of the random vicious walkers is related to the Young tableaux , much attention has been paid to the statistical combinatorial problems, which are intimately related with the Young tableaux. Among these are the random permutation , the random word [6], the point process [7, 8], the random growth model (the polynuclear growth model, oriented digital boiling model) [9, 10], the queuing theory
+%[11], and so on. It is interesting that the scaling limits of these models have the universality that the fluctuation is of order N1/3 with the mean being of order N. It is also of interest that the asymptotic distribution of appropriately scaled variables is described by the Tracy� Widom distribution, which was originally identified with the limit distribution for the largest eigenvalue of the Gaussian unitary random matrix [12]; see [13�16] for a review. In this paper, motivated by results in [17] and conjectures in [18], we introduce a physical model of the vicious walkers based on the hook Young tableaux. We study the scaling limit of certain probability, and we clarify a relationship with the Tracy�Widom distribution. For the convention we use later, we define the (M,N)-hook Schur functions, which are sometimes called the supersymmetric Schur functions
+
+%\subsection{Limiting Law of Largest Increasing sub sequences}
+%The limiting law of the length of the longest increasing subsequence, LIn, for sequences (words) of length n arising from iid letters drawn from finite, ordered alphabets is studied using a straightforward Brownian functional approach. Building on the insights gained in both the uniform and non-uniform iid cases, this approach is then applied to iid countable alphabets. Some partial results associated with the extension to independent, growing alphabets are also given. Returning again to the finite setting, and keeping with the same Brownian formalism, a generalization is then made to words arising from irreducible, aperiodic, time-homogeneous Markov chains on a finite, ordered alphabet. At the same time, the probabilistic object, LIn, is simultaneously generalized to the shape of the associated Young tableau given by the well-known RSK-correspondence. Our results on this limiting shape describe, in detail, precisely when the limiting shape of the Young tableau is (up to scaling) that of the iid case, thereby answering a conjecture of Kuperberg. These results are based heavily on an analysis of the covariance structure of an m-dimensional Brownian motion and the precise form of the Brownian functionals. Finally, in both the iid and more general Markovian cases, connections to the limiting laws of the spectrum of certain random matrices associated with the Gaussian Unitary Ensemble (GUE) are explored
+%
+%consider discrete orthogonal polynomial ensembles which are discrete
+%analogues of the orthogonal polynomial ensembles in random matrix theory.
+%These ensembles occur in certain problems in combinatorial probability and can
+%be thought of as probability measures on partitions. The Meixner ensemble is
+%related to a two-dimensional directed growth model, and the Charlier ensemble
+%is related to the lengths of weakly increasing subsequences in random words.
+%The Krawtchouk ensemble occurs in connection with zig-zag paths in random
+%domino tilings of the Aztec diamond, and also in a certain simplified directed
+%first-passage percolation model. We use the Charlier ensemble to investigate
+%the asymptotics of weakly increasing subsequences in random words and to
+%prove a conjecture of Tracy and Widom. As a limit of the Meixner ensemble
+%or the Charlier ensemble we obtain the Plancherel measure on partitions, and
+%using this we prove a conjecture of Baik, Deift and Johansson that under the
+%Plancherel measure, the distribution of the lengths of the first k rows in the
+%partition, appropriately scaled, converges to the asymptotic joint distribution
+%for the k largest eigenvalues of a random matrix from the Gaussian Unitary
+%Ensemble. In this problem a certain discrete kernel, which we call the discrete
+%Bessel kernel, plays an important role.
+
+\section{Generating Random Matrices $A \in U(n), P(n), O(n) \hdots$}
+%Some numerical applications, such as Monte Carlo methods and
+%exploration of high-dimensional data spaces, require generation of
+%uniformly distributed random orthogonal matrices. In this context,
+%"uniform" is defined in terms of Haar measure, which essentially
+%requires that the distribution not change if multiplied by any
+%freely chosen orthogonal matrix. It does not work to fill a matrix
+%with independent uniformly distributed random entries and then
+%orthogonalize it. It does work to fill it with independent
+%normally distributed random entries, then use QR decomposition.
+%Stewart (1980) replaced this with a more efficient idea that
+%Diaconis & Shahshahani (1987) later generalized as the "subgroup
+%algorithm" (in which form it works just as well for permutations
+%and rotations). To generate an (n+1)�(n+1) orthogonal matrix, take
+%an n�n one and a uniformly distributed unit vector of dimension
+%n+1. Construct a Householder reflection from the vector, then
+%apply it to the smaller matrix (embedded in the larger size with a
+%1 in the bottom corner).
+
+
+%"One idea for proving the Riemann hypothesis is to give a spectral
+%interpretation of the zeros. That is, if the zeros can be
+%interpreted as the eigenvalues of 1/2 + iT, where T is a Hermitian
+%operator on some Hilbert space, then since the eigenvalues of a
+%Hermitian operator are real, the Riemann hypothesis follows. This
+%idea was originally put forth by P?lya and Hilbert, and serious
+%support for this idea was found in the resemblance between the
+%"explicit formulae" of prime number theory, which go back to
+%Riemann and von Mangoldt, but which were formalized as a duality
+%principle by Weil, on the one hand, and the Selberg trace formula
+%on the other.
+%
+%The best evidence for the spectral interpretation comes from the
+%theory of the Gaussian Unitary Ensemble (GUE), which show that the
+%local behavior of the zeros mimics that of a random Hamiltonian.
+%The link gives a more extended discussion of this topic."
+%
+%"Gutzwiller gave a trace formula in the setting of quantum chaos
+%which relates the classical and quantum mechanical pictures. Given
+%a chaotic (classical) dynamical system, there will exist a dense
+%set of periodic orbits, and one side of the trace formula will be
+%a sum over the lengths of these orbits. On the other side will be
+%a sum over the eigenvalues of the Hamiltonian in the
+%quantum-mechanical analog of the given classical dynamical system.
+%
+%This setup resembles the explicit formulas of prime number theory.
+%In this analogy, the lengths of the prime periodic orbits play the
+%role of the rational primes, while the eigenvalues of the
+%Hamiltonian play the role of the zeros of the zeta function. Based
+%on this analogy and pearls mined from Odlyzko's numerical
+%evidence, Sir Michael Berry proposes that there exists a classical
+%dynamical system, asymmetric with respect to time reversal, the
+%lengths of whose periodic orbits correspond to the rational
+%primes, and whose quantum-mechanical analog has a Hamiltonian with
+%zeros equal to the imaginary parts of the nontrivial zeros of the
+%zeta function. The search for such a dynamical system is one
+%approach to proving the Riemann hypothesis."   (Daniel Bump)
+
+%When this conjecture was formulated about 80 years ago, it was
+%apparently no more than an inspired guess. Neither Hilbert nor
+%P?lya specified what operator or even what space would be involved
+%in this correspondence. Today, however, that guess is increasingly
+%regarded as wonderfully inspired, and many researchers feel that
+%the most promising approach to proving the Riemann Hypothesis is
+%through proving the Hilbert-P?lya conjecture. Their confidence is
+%bolstered by several developments subsequent to Hilbert's and
+%P?lya's formulation of their conjecture. There are very suggestive
+%analogies with Selberg zeta functions. There is also the extensive
+%research stimulated by Hugh Montgomery's work on the
+%pair-correlation conjecture for zeros of the zeta function.
+%Montgomery's results led to the conjecture that zeta zeros behave
+%asynptotically like eigenvalues of large random matrices from the
+%GUE ensemble that has been studied extensively by mathematical
+%physicists...Although this conjecture is very speculative, the
+%empirical evidence is overwhelmingly in its favor
+%
+%M. Planat, "1/f frequency noise in a communication receiver and
+%the Riemann Hypothesis", from Noise, Oscillators and Algebraic
+%Randomness: From Noise in Communication Systems to Number Theory
+%(conference proceedings - Chapelle des Bois, France, April 5-10,
+%1999), M. Planat, ed. (Springer-Verlag, 2000)
+%
+%M. Planat, "1/f noise, the measurement of time and number theory",
+%Fluctuation and Noise Letters 0 (2001).
+%
+%The following is a brief review paper:
+%
+%M. Planat, "The impact of prime number theory on frequency
+%metrology", to appear in Proceedings of 6th Symposium on Frequency
+%Standards and Metrology, St. Andrews, Scotland, 9-14 September
+%2001 (World Scientific)
+%
+%M. Planat and E. Henry, "The arithmetic of 1/f noise in a phase
+%locked loop", Applied Physics Letters (April 2002)
+%
+%"A phase lock loop [is] characterized...leading to a possible
+%relationship between 1/f noise close to baseband and arithmetical
+%sequences of prime number theory."
+%
+%M. Planat and C. Eckert, "On the frequency and amplitude spectrum
+%and fluctuations at the output of a communications receiver"
+%
+%The following is to be published in the proceedings of the recent
+%conference "The Nature of Time: Geometry, Physics & Perception"
+%(Tatransk? Lomnica, Slovak Republic, May 2002):
+%
+%M. Planat, "Time measurements, 1/f noise of the oscillators and
+%algebraic numbers"
+%
+%"Many complex systems from physics, biology, society...exhibit a
+%1/f power spectrum in their time variability so that it is
+%tempting to regard 1/f noise as a unifying principle in the study
+%of time. The principle may be useful in reconciling two opposite
+%views of time, the cyclic and the linear one, the philosophic view
+%of eternity as opposed to that of time and death. The temporal
+%experience of such complex systems may only be obtained thanks to
+%clocks which are continuously or occasionally slaved. Here time is
+%discrete with a unit equal to the averaging time of each
+%experience. Its structure is reflected into the measured
+%arithmetical sequence. They are resets in the frequencies and
+%couplings of the clocks, like in any human made calendar. The
+%statistics of the resets shows about constant variability whatever
+%the averaging time: this is characteristic of the flicker (1/f)
+%noise. In a number of electronic experiments we related the
+%variability in the oscillators to number theory, and time to prime
+%numbers. In such a context, time (and 1/f noise) has to do with
+%Riemann's hypothesis that all zeros of the Riemann zeta function
+%are located on the critical line, a mathematical conjecture still
+%open after 150 years."
+%
+%The following extends the work in some very interesting
+%directions:
+%
+%M. Planat, H. Rosu and S. Perrine, "Ramanujan sums for signal
+%processing of low frequency noise" (submitted to Physical Review E
+%
+%[Abstract:] "An aperiodic (low frequency) spectrum may originate
+%from the error term in the mean value of an arithmetical function
+%such as M?bius function or Mangoldt function, which are coding
+%sequences for prime numbers. In the discrete Fourier transform the
+%analyzing wave is periodic and not well suited to represent the
+%low frequency regime. In place we introduce a new signal
+%processing tool based on the Ramanujan sum cq(n), well adapted to
+%the analysis of arithmetical sequences with many resonances p/q.
+%The sums are quasi-periodic versus the time n of the resonance and
+%aperiodic versus the order q of the resonance. New results arise
+%from the use of this Ramanujan-Fourier transform (RFT) in the
+%context of arithmetical and experimental signals."
+%
+%The final paragraph:
+%
+%"The other challenge behind Ramanujan sums relates to prime number
+%theory. We just focused our interest to the relation between 1/f
+%noise in communication circuits and the still unproved Riemann
+%hypothesis [13]. The mean value of the modified Mangoldt function
+%b(n), introduced in (29), links Riemann zeros to the 1/f2\alpha
+%noise and to the M?bius function. This should follow from generic
+%properties of the modular group SL(2,Z), the group of 2 by 2
+%matrices of determinant 1 with integer coefficients [15], and to
+%the statistical physics of Farey spin chains [16]. See also the
+%link to the theory of Cantorian fractal spacetime [17]."
+%
+%[13] M. Planat, "Noise, oscillators and algebraic randomness",
+%Lecture Notes in Physics 550 (Springer, Berlin, 2000)
