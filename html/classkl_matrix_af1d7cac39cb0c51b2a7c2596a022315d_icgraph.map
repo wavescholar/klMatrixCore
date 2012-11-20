@@ -1,0 +1,10 @@
+<map id="klMatrix::getMemory" name="klMatrix::getMemory">
+<area shape="rect" id="node3" href="$classkl_matrix.html#a426de331b31907155ec2348a1579c59e" title="klMatrix::inverse" alt="" coords="234,5,350,32"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="221,56,363,83"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix::columnToRowMajor" alt="" coords="197,107,387,133"/>
+<area shape="rect" id="node11" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="446,132,525,159"/>
+<area shape="rect" id="node16" href="$kl__matrix_8h.html#a4326b0a09ffd791a19fa03455c2c9e91" title="mvpBLAS" alt="" coords="253,208,331,235"/>
+<area shape="rect" id="node18" href="$classkl_matrix.html#a1c15849b93e9d01c699effbbab1eb4db" title="klMatrix::getConditionNumber" alt="" coords="195,259,389,285"/>
+<area shape="rect" id="node7" href="$kl__matrix_8h.html#ad855c5f5c7d3526d949d256a2100379c" title="testKLMatrix" alt="" coords="437,56,533,83"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#a0646e4aea7fb21be0831746fe7313b80" title="klMatrix::operator*" alt="" coords="581,132,709,159"/>
+</map>

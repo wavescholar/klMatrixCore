@@ -1,0 +1,12 @@
+<map id="testKLMatrix" name="testKLMatrix">
+<area shape="rect" id="node3" href="$classkl_matrix.html#afd5526bfa748f065fb7b800e9770c461" title="klMatrix::makeNanFriendly" alt="" coords="150,5,327,32"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a3a02a421982e2dac47ad0fbab32f9983" title="klMatrix::getColumn" alt="" coords="169,56,308,83"/>
+<area shape="rect" id="node7" href="$classkl_matrix.html#ab8d9602c45cbaad45df0654497d83c67" title="klMatrix::getSubBlock" alt="" coords="163,107,314,133"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#ae98f9751763dcc0a141580a5b382ab8d" title="klMatrix::setSubBlock" alt="" coords="163,157,314,184"/>
+<area shape="rect" id="node15" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="167,208,310,235"/>
+<area shape="rect" id="node21" href="$classkl_matrix.html#aa58abc662ce3fa519bd7a9b863cd175b" title="klMatrix::det" alt="" coords="191,259,286,285"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#a40bc4fd2142f4b4a44227a868c8a67ae" title="klMatrix::getRows" alt="" coords="386,107,513,133"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#abf51f5fe4db69e4c78fd7a36f6a2c05d" title="klMatrix::getColumns" alt="" coords="377,157,522,184"/>
+<area shape="rect" id="node17" href="$classkl_matrix.html#a71b0dbaf994e29a61d4eb633423b6130" title="klMatrix::setup" alt="" coords="395,208,503,235"/>
+<area shape="rect" id="node19" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="379,259,520,285"/>
+</map>
