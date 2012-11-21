@@ -2,8 +2,8 @@
 #include "ppm_helper.h"
 #include "kl_img_pca.h"
 
-klMutex klThreadMap::lock;
-map<klThreadId, unsigned long> klThreadMap::threadMap;
+//klMutex klThreadMap::lock;
+//map<klThreadId, unsigned long> klThreadMap::threadMap;
 
 void klPadFunctor::operator()(void)
 {

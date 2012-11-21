@@ -216,7 +216,7 @@ struct D : B { };
 struct DD : D { };
 struct X { };
 
-int main()
+int runStudyCode()
 {
 	HardwareProperties s;
 	s.foo();

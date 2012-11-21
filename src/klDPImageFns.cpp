@@ -5,7 +5,6 @@
 #include "kl_multivariate_random_variable.h"
 #include "kl_sample_population.h"
 #include "kl_principal_components.h"
-#include "kl_large_dataset.h"
 #include "kl_regression.h"
 #include "kl_multiclass_svm.h"
 #include "kl_wavelet.h"

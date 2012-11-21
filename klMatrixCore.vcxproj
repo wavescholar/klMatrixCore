@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{72C967BD-E70C-494E-BA6C-997181BF6A46}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>klMatrixCore</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseIntelIPP>true</UseIntelIPP>
+    <UseIntelTBB>true</UseIntelTBB>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseIntelIPP>true</UseIntelIPP>
+    <UseIntelTBB>true</UseIntelTBB>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;D:\Packages\Matlab\extern\include;D:\Packages\MatLib;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;D:\Packages\Matlab\extern\include;D:\Packages\MatLib;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\klLogger.h" />
+    <ClInclude Include="src\klNN_Algorithm.h" />
+    <ClInclude Include="src\klSDPA.h" />
+    <ClInclude Include="src\klSpline.h" />
+    <ClInclude Include="src\kl_arpack.h" />
+    <ClInclude Include="src\kl_bregman_divergence.h" />
+    <ClInclude Include="src\kl_exception.h" />
+    <ClInclude Include="src\kl_hardware.h" />
+    <ClInclude Include="src\kl_hradware.h" />
+    <ClInclude Include="src\kl_image_buffer.h" />
+    <ClInclude Include="src\kl_image_processing_functors.h" />
+    <ClInclude Include="src\kl_img_pca.h" />
+    <ClInclude Include="src\kl_independent_components.h" />
+    <ClInclude Include="src\kl_linear_equation.h" />
+    <ClInclude Include="src\kl_matlab_dependent_unit_tests.h" />
+    <ClInclude Include="src\kl_matlab_iface.h" />
+    <ClInclude Include="src\kl_matrix.h" />
+    <ClInclude Include="src\kl_matrix_facorizations.h" />
+    <ClInclude Include="src\kl_memory.h" />
+    <ClInclude Include="src\kl_ML_helper_fns.h" />
+    <ClInclude Include="src\kl_multiclass_svm.h" />
+    <ClInclude Include="src\kl_multivariate_random_variable.h" />
+    <ClInclude Include="src\kl_principal_components.h" />
+    <ClInclude Include="src\kl_prob.h" />
+    <ClInclude Include="src\kl_random_number_generator.h" />
+    <ClInclude Include="src\kl_regression.h" />
+    <ClInclude Include="src\kl_sample_population.h" />
+    <ClInclude Include="src\kl_SEH.h" />
+    <ClInclude Include="src\kl_stat.h" />
+    <ClInclude Include="src\kl_thread_workflow.h" />
+    <ClInclude Include="src\kl_time_series.h" />
+    <ClInclude Include="src\kl_unit_tests.h" />
+    <ClInclude Include="src\kl_unit_test_wrapper.h" />
+    <ClInclude Include="src\kl_util.h" />
+    <ClInclude Include="src\kl_vector.h" />
+    <ClInclude Include="src\kl_wavelet.h" />
+    <ClInclude Include="src\ppm_helper.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="klMatrixCore.cpp" />
+    <ClCompile Include="src\klArpackCore.cpp" />
+    <ClCompile Include="src\klIPP_Make_SlideImageStatic.cpp" />
+    <ClCompile Include="src\klSDPA.cpp" />
+    <ClCompile Include="src\klSMPMT.cpp" />
+    <ClCompile Include="src\klTestMain.cpp" />
+    <ClCompile Include="src\klUnitTests.cpp" />
+    <ClCompile Include="src\klUtil.cpp" />
+    <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
+    <ClCompile Include="src\kl_hardware.cpp" />
+    <ClCompile Include="src\kl_image_processing_functors.cpp" />
+    <ClCompile Include="src\kl_matrix_exponential.cpp" />
+    <ClCompile Include="src\kl_memory.cpp" />
+    <ClCompile Include="src\kl_ML_helper_fns.cpp" />
+    <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
+    <ClCompile Include="src\kl_random_number_generator.cpp" />
+    <ClCompile Include="src\kl_SEH.cpp" />
+    <ClCompile Include="src\kl_unit_test_wrapper.cpp" />
+    <ClCompile Include="src\ppm_helper.cpp" />
+    <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libemlrt.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libeng.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libfixedpoint.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmat.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmex.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwservices.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwsl_fileio.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwsl_solver_rtw.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmx.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libut.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclcommain.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclmcr.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclmcrrt.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\ne_mli.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\ne_rtl.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\physmod_foundation_util.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\rtwcg.lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="..\x64\Debug\ARPACK2.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\arpack_CPP_v2.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\expokit.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\expokitcpp.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\FGG.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\libsdpa.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\Matlib.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\SUPERLU_SEQUENTIAL.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\UMFPACK.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\ARPACK2.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\arpack_CPP_v2.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\expokitcpp.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\FGG.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\libsdpa.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\Matlib.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\SUPERLU_SEQUENTIAL.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\UMFPACK.lib">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Kernel32.Lib">
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
+      <FileType>Document</FileType>
+    </Library>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

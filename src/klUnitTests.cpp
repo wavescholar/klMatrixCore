@@ -733,7 +733,7 @@ void LatexInsert3DPlot(klMatrix<double>& mat, ofstream &_tex, string dir,string 
 	char* arg = new char[512];
 	char* evalString = new char[512];
 	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-	const char* xAxis=NULL;const char* yAxis=NULL,const char* zAxis=NULL;
+	const char* xAxis=NULL;const char* yAxis=NULL;const char* zAxis=NULL;
 	bool useExtents=true;bool holdOn=false;const char* marker=NULL;
 	klScatterPlot3D(mat,filename.c_str(),title.c_str(), xAxis, yAxis,zAxis, useExtents, holdOn, marker);
 	sprintf(evalString,"print -r1200 -depsc %s;",arg);
