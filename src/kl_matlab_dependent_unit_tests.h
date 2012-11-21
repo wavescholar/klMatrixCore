@@ -569,11 +569,11 @@ template<class TYPE> void klRVUnitTestHarnessLaTexMatlab(klRV<TYPE> ** RV,unsign
 			_tex<<"\\newpage"<<endl;
 		if(s.desc.size()!=0)
 		{
-			sprintf(fileName,"%s%s.eps","D:/klDll/TestDll/",s.desc.c_str());
+			sprintf(fileName,"%s%s.eps","D:/klMatrixCore/",s.desc.c_str());
 		}
 		else
 		{
-			sprintf(fileName,"%sRV-%d.eps","D:/klDll/TestDll/",i);
+			sprintf(fileName,"%sRV-%d.eps","D:/klMatrixCore/",i);
 		}
 		klPlot1D(hist,fileName,title,xAxis,yAxis,true,0,0,false);
 		sprintf(evalString,"print -r1200 -depsc %s;",fileName);

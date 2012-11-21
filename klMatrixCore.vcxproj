@@ -93,6 +93,7 @@
     <ClInclude Include="src\kl_image_processing_functors.h" />
     <ClInclude Include="src\kl_img_pca.h" />
     <ClInclude Include="src\kl_independent_components.h" />
+    <ClInclude Include="src\kl_latex_helper_fns.h" />
     <ClInclude Include="src\kl_linear_equation.h" />
     <ClInclude Include="src\kl_matlab_dependent_unit_tests.h" />
     <ClInclude Include="src\kl_matlab_iface.h" />
@@ -122,15 +123,15 @@
   <ItemGroup>
     <ClCompile Include="klMatrixCore.cpp" />
     <ClCompile Include="src\klArpackCore.cpp" />
-    <ClCompile Include="src\klIPP_Make_SlideImageStatic.cpp" />
+    <ClCompile Include="src\klIPPDemo.cpp" />
     <ClCompile Include="src\klSDPA.cpp" />
     <ClCompile Include="src\klSMPMT.cpp" />
-    <ClCompile Include="src\klTestMain.cpp" />
     <ClCompile Include="src\klUnitTests.cpp" />
     <ClCompile Include="src\klUtil.cpp" />
     <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
     <ClCompile Include="src\kl_hardware.cpp" />
     <ClCompile Include="src\kl_image_processing_functors.cpp" />
+    <ClCompile Include="src\kl_latex_helper_fns.cpp" />
     <ClCompile Include="src\kl_matrix_exponential.cpp" />
     <ClCompile Include="src\kl_memory.cpp" />
     <ClCompile Include="src\kl_ML_helper_fns.cpp" />

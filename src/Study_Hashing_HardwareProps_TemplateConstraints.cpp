@@ -325,6 +325,16 @@ int runStudyCode()
 	size_t sizeOfEmpty = sizeof(e);
 	Derived d;
 	d.fn();
+
+
+	size_t soui = sizeof(unsigned int);
+	unsigned int uninitialized;
+
+	//Should generate runtime debug exception for using uninitialized variable
+	unsigned int lvalunint = uninitialized; 
+
+	lvalunint = UINT_MAX;
+	
 	delete[] bigArray;
 	return 0;
 }

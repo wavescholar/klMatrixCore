@@ -159,12 +159,12 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 		}
 		else
 		{
-			sprintf(evalString,"figure('Visible','off');plot(Tx,T)");
+			sprintf(evalString,"figure('Visible','off');kp=plot(Tx,T)");
 		}
 	}
 	else
 	{
-		sprintf(evalString,"figure('Visible','off');plot(T)");
+		sprintf(evalString,"figure('Visible','off');kp=plot(T)");
 	}
 	engEvalString(matlabEngine, evalString);
 

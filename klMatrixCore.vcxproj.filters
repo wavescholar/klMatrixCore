@@ -144,6 +144,9 @@
     <ClInclude Include="src\ppm_helper.h">
       <Filter>GitFiles</Filter>
     </ClInclude>
+    <ClInclude Include="src\kl_latex_helper_fns.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="klMatrixCore.cpp">
@@ -182,16 +185,10 @@
     <ClCompile Include="src\klArpackCore.cpp">
       <Filter>GitFiles</Filter>
     </ClCompile>
-    <ClCompile Include="src\klIPP_Make_SlideImageStatic.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
     <ClCompile Include="src\klSDPA.cpp">
       <Filter>GitFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klSMPMT.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\klTestMain.cpp">
       <Filter>GitFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klUnitTests.cpp">
@@ -204,6 +201,12 @@
       <Filter>GitFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_latex_helper_fns.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klIPPDemo.cpp">
       <Filter>GitFiles</Filter>
     </ClCompile>
   </ItemGroup>
