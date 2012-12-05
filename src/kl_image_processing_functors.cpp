@@ -1,3 +1,8 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include "kl_image_processing_functors.h"
 #include "ppm_helper.h"
 #include "kl_img_pca.h"

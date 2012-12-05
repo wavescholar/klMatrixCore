@@ -1,3 +1,8 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #ifndef __kl_multivariate_random_number__
 #define __kl_multivariate_random_number__
 

@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #include "kl_multivariate_random_variable.h"
 
 template<  > void klNormalMultiVariate<float>::setupSpec()

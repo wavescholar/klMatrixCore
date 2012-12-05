@@ -1,3 +1,8 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include "D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\examples\matrices\nonsym\dnmatrxa.h"
 #include "ardnsmat.h"
 #include "ardsnsym.h"

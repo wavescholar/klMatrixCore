@@ -1,3 +1,8 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include "kl_ML_helper_fns.h"
 #include "kl_bregman_divergence.h"
 #include "kl_arpack.h"

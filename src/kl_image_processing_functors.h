@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #ifndef KL_IMAGE_FUNCTOR_H
 #define KL_IMAGE_FUNCTOR_H
 

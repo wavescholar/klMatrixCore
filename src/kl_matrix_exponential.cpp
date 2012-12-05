@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #include "kl_matrix.h"
 #include "kl_stat.h"
 #include "kl_random_number_generator.h"

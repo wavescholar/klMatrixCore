@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #ifndef __kl_linear_equation__
 #define __kl_linear_equation__
 

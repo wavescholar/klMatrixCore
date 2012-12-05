@@ -1,4 +1,8 @@
-//////////////////////////Test SDPA Functions
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include "sdpa-lib.hpp"
 #include "sdpa-lib2.hpp"
 void  klTestSDPA(ofstream &_tex,unsigned int  &n)

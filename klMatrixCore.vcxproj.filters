@@ -135,9 +135,6 @@
     <ClInclude Include="src\klNN_Algorithm.h">
       <Filter>GitFiles</Filter>
     </ClInclude>
-    <ClInclude Include="src\klSDPA.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
     <ClInclude Include="src\klSpline.h">
       <Filter>GitFiles</Filter>
     </ClInclude>
@@ -177,9 +174,6 @@
       <Filter>GitFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_SEH.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\kl_unit_test_wrapper.cpp">
       <Filter>GitFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klArpackCore.cpp">

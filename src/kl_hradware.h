@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #ifndef __kl_HARDWARE__
 #define __kl_HARDWARE__
 #include <windows.h>
