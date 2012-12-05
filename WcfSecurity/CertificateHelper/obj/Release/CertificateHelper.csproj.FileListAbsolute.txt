@@ -1,5 +1,0 @@
-D:\WcfServiceLibrary\CertificateHelper\bin\Release\CertificateHelper.dll
-D:\WcfServiceLibrary\CertificateHelper\bin\Release\CertificateHelper.pdb
-D:\WcfServiceLibrary\CertificateHelper\obj\Release\ResolveAssemblyReference.cache
-D:\WcfServiceLibrary\CertificateHelper\obj\Release\CertificateHelper.dll
-D:\WcfServiceLibrary\CertificateHelper\obj\Release\CertificateHelper.pdb

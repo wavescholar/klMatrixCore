@@ -1,8 +1,0 @@
-D:\WcfServiceLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
-D:\WcfServiceLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-D:\WcfServiceLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-D:\WcfServiceLibrary\ConsoleApplication1\bin\Debug\WcfServiceLibrary.dll
-D:\WcfServiceLibrary\ConsoleApplication1\bin\Debug\WcfServiceLibrary.pdb
-D:\WcfServiceLibrary\ConsoleApplication1\obj\Debug\ResolveAssemblyReference.cache
-D:\WcfServiceLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-D:\WcfServiceLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

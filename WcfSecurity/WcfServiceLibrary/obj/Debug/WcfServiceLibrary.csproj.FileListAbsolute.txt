@@ -1,5 +1,0 @@
-D:\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
-D:\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
-D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
-D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
-D:\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
