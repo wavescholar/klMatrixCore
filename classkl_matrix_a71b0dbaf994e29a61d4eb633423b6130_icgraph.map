@@ -1,9 +1,0 @@
-<map id="klMatrix::setup" name="klMatrix::setup">
-<area shape="rect" id="node3" href="$classkl_matrix.html#a5dcad3024501468ad995551bb5fcbdba" title="klMatrix::klMatrix" alt="" coords="173,5,296,32"/>
-<area shape="rect" id="node5" href="$classkl_matrix.html#a2a36cb9d573160fe0068cf065876fa0c" title="klMatrix::operator*" alt="" coords="171,56,299,83"/>
-<area shape="rect" id="node7" href="$classkl_matrix.html#aceb5e0c3df35ca13e646ed4f8f50b628" title="klMatrix::operator*=" alt="" coords="167,107,303,133"/>
-<area shape="rect" id="node9" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="168,157,301,184"/>
-<area shape="rect" id="node13" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="163,208,306,235"/>
-<area shape="rect" id="node11" href="$classkl_matrix.html#a426de331b31907155ec2348a1579c59e" title="klMatrix::inverse" alt="" coords="355,157,471,184"/>
-<area shape="rect" id="node15" href="$kl__matrix_8h.html#ad855c5f5c7d3526d949d256a2100379c" title="testKLMatrix" alt="" coords="365,208,461,235"/>
-</map>
