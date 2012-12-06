@@ -1,0 +1,8 @@
+<map id="OneBBP_GDI_BitmapConversion.SelectObject" name="OneBBP_GDI_BitmapConversion.SelectObject">
+<area shape="rect" id="node3" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a7176e12d626fdfc3bc87b0b782dcc907" title="Copies a bitmap into a 1bpp/8bpp bitmap of the same dimensions, fast " alt="" coords="273,5,490,46"/>
+<area shape="rect" id="node13" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#abf35a7b3db9c272a41ada3824c5d2c73" title="Draws a bitmap onto the screen. Note: this will be overpainted by other windows when they come to dra..." alt="" coords="273,70,490,111"/>
+<area shape="rect" id="node5" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a18ceb196c6a3ec1ab695f97be55b8d95" title="OneBBP_GDI_BitmapConversion.\lMainConv" alt="" coords="539,38,757,79"/>
+<area shape="rect" id="node7" href="$class_windows_application1_1_1_form1.html#a3c743c05ae1ddf4e1a2d6c4b7ffe2966" title="WindowsApplication1.Form1.\lGDI_Bitmap_Click" alt="" coords="806,38,997,79"/>
+<area shape="rect" id="node9" href="$class_windows_application1_1_1_form1.html#a9df86ced9ac2d55071c0cca0f3203444" title="Required method for Designer support &#45; do not modify the contents of this method with the code editor..." alt="" coords="1046,38,1237,79"/>
+<area shape="rect" id="node11" href="$class_windows_application1_1_1_form1.html#a35ddf2b019964d908ad7c5994bd42244" title="WindowsApplication1.Form1.\lForm1" alt="" coords="1286,38,1477,79"/>
+</map>

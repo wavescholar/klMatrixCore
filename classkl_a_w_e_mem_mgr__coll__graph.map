@@ -1,0 +1,5 @@
+<map id="klAWEMemMgr" name="klAWEMemMgr">
+<area shape="rect" id="node2" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="5,465,91,557"/>
+<area shape="rect" id="node12" href="$classkl_a_w_e_mem_block.html" title="{klAWEMemBlock\n|# NumberOfPagesInitial\l# aPFNs\l# lpMemReserved\l# lpNextFreeAddress\l&#45; _reqSize\l&#45; _actualSize\l|+ klAWEMemBlock()\l+ ~klAWEMemBlock()\l+ memory()\l+ sizeRequested()\l+ sizeUsed()\l}" alt="" coords="543,161,701,370"/>
+<area shape="rect" id="node22" title="STL class." alt="" coords="768,227,917,304"/>
+</map>

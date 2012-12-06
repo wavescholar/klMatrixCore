@@ -1,0 +1,4 @@
+<map id="MessageHeader" name="MessageHeader">
+<area shape="rect" id="node3" href="$class_certificate_helper_1_1_custom_security_header.html" title="{CertificateHelper.Custom\lSecurityHeader\n|+ Key\l+ Name\l+ Namespace\l&#45; _key\l|+ CustomSecurityHeader()\l+ ReadHeader()\l# OnWriteHeaderContents()\l}" alt="" coords="5,131,187,296"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_custom_security_header.html" title="{klSecurity.CustomSecurity\lHeader\n|+ get\l+ Name\l+ Namespace\l&#45; _key\l|+ CustomSecurityHeader()\l+ ReadHeader()\l# OnWriteHeaderContents()\l}" alt="" coords="211,131,393,296"/>
+</map>

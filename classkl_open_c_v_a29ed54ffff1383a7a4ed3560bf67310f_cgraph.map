@@ -1,0 +1,18 @@
+<map id="klOpenCV::FaceDetect" name="klOpenCV::FaceDetect">
+<area shape="rect" id="node3" href="$classkl_raster_buffer.html#afffe61d747e0320ce566a0560b3001fc" title="klRasterBuffer::width" alt="" coords="453,5,595,32"/>
+<area shape="rect" id="node5" href="$classkl_raster_buffer.html#a1c42ba2cfbbf33be47f14d8c7189965b" title="klRasterBuffer::height" alt="" coords="451,56,597,83"/>
+<area shape="rect" id="node7" href="$classkl_raster_buffer.html#a6d70e8f7a94b047009881f6cc878f2ec" title="klRasterBuffer::numBands" alt="" coords="437,309,611,336"/>
+<area shape="rect" id="node9" href="$classkl_packed_heap_raster_buffer.html#a1c1a57f455690160e825073e3b297c9c" title="klPackedHeapRasterBuffer\l::width" alt="" coords="211,262,389,303"/>
+<area shape="rect" id="node11" href="$_open_c_v_wrapper_8cpp.html#abf03f5af63764812aef7adbe0d7e067b" title="klRasterBufferPointerToIpl\lImage" alt="" coords="215,145,385,186"/>
+<area shape="rect" id="node34" href="$_open_c_v_wrapper_8cpp.html#afa039260838f3e8127b2b585c4e58b46" title="detect_and_draw" alt="" coords="240,328,360,355"/>
+<area shape="rect" id="node36" href="$_open_c_v_wrapper_8cpp.html#aee19cbd7f1ef9ef5fb7989e224830e36" title="IplImageToklRasterBuffer\lPointer" alt="" coords="217,379,383,421"/>
+<area shape="rect" id="node38" href="$ppm__helper_8cpp.html#abd4e33d1b3a2a25e1a64f8a52a101150" title="write_ppm" alt="" coords="259,445,341,472"/>
+<area shape="rect" id="node16" href="$classkl_raster_buffer.html#ad6fbaff8c6c3818b93a478a1d1bccde5" title="klRasterBuffer::bandStride" alt="" coords="437,157,611,184"/>
+<area shape="rect" id="node22" href="$classkl_raster_buffer.html#a1c7ec882437d56847d32f0bb05c835c8" title="klRasterBuffer::xStride" alt="" coords="448,208,600,235"/>
+<area shape="rect" id="node27" href="$classkl_raster_buffer.html#a1795a9b35866d8c8dd3178dba5174a90" title="klRasterBuffer::yStride" alt="" coords="448,259,600,285"/>
+<area shape="rect" id="node32" href="$classkl_raster_buffer.html#afbfd9c8f7db52298b1d32accb9214c0d" title="klRasterBuffer::buffer" alt="" coords="453,107,595,133"/>
+<area shape="rect" id="node18" href="$classkl_raster_buffer.html#a8bc8d8632f806dad5e0ca05a76f30b06" title="klRasterBuffer::bandStrideBits" alt="" coords="659,132,855,159"/>
+<area shape="rect" id="node20" href="$classkl_raster_buffer.html#a45bff21b22ff0999b520bd110c0354cc" title="klRasterBuffer::bitsPerByte" alt="" coords="668,233,847,260"/>
+<area shape="rect" id="node24" href="$classkl_raster_buffer.html#abce672abff6fd1d954064dd527900d2d" title="klRasterBuffer::xStrideBits" alt="" coords="670,183,845,209"/>
+<area shape="rect" id="node29" href="$classkl_raster_buffer.html#aa89af3d67a35f6abc0b6c55957ff20f3" title="klRasterBuffer::yStrideBits" alt="" coords="670,284,845,311"/>
+</map>

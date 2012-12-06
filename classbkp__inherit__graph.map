@@ -1,0 +1,4 @@
+<map id="bkp" name="bkp">
+<area shape="rect" id="node2" href="$classnetwork.html" title="{network\n|+ training_type\l+ layers\l+ input_dim\l+ training_param\l+ num_vectors\l+ passes\l+ input_file_buf\l+ output_file_buf\l+ weights_file_buf\l+ lower_range\l+ upper_range\l+ layer_p\l|+ network()\l+ ~network()\l+ operator=()\l}" alt="" coords="16,190,141,458"/>
+<area shape="rect" id="node4" href="$classlayer.html" title="{layer\n|+ units\l+ node_type\l+ bias\l|+ layer()\l+ ~layer()\l+ operator=()\l}" alt="" coords="30,5,127,141"/>
+</map>

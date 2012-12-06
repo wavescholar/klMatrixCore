@@ -1,0 +1,5 @@
+<map id="klBasketWorkFlow.klTicSlicerTransform" name="klBasketWorkFlow.klTicSlicerTransform">
+<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_algorithm_transform.html" title="{klAlgorithmTransform\n|+ m_ICP\l+ m_OCP\l|+ klAlgorithmTransform()\l+ getData()\l}" alt="" coords="21,301,184,408"/>
+<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n|&#45; m_Name\l|+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="55,131,149,253"/>
+<area shape="rect" id="node6" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="32,5,173,83"/>
+</map>

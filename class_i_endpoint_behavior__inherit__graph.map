@@ -1,0 +1,6 @@
+<map id="IEndpointBehavior" name="IEndpointBehavior">
+<area shape="rect" id="node3" href="$class_certificate_helper_1_1_protection_endpoint_behavior.html" title="{CertificateHelper.Protection\lEndpointBehavior\n|&#45; ProtectionSetting\l|+ AddBindingParameters()\l+ ApplyClientBehavior()\l+ ApplyDispatchBehavior()\l+ Validate()\l}" alt="" coords="5,131,184,267"/>
+<area shape="rect" id="node5" href="$class_certificate_helper_1_1_streaming_security_behavior.html" title="{CertificateHelper.Streaming\lSecurityBehavior\n||+ AddBindingParameters()\l+ ApplyClientBehavior()\l+ ApplyDispatchBehavior()\l+ Validate()\l}" alt="" coords="209,131,388,267"/>
+<area shape="rect" id="node7" href="$classkl_security_1_1_protection_endpoint_behavior.html" title="{klSecurity.ProtectionEndpoint\lBehavior\n|&#45; ProtectionSetting\l|+ AddBindingParameters()\l+ ApplyClientBehavior()\l+ ApplyDispatchBehavior()\l+ Validate()\l}" alt="" coords="413,131,608,267"/>
+<area shape="rect" id="node9" href="$classkl_security_1_1_streaming_security_behavior.html" title="{klSecurity.StreamingSecurity\lBehavior\n||+ AddBindingParameters()\l+ ApplyClientBehavior()\l+ ApplyDispatchBehavior()\l+ Validate()\l}" alt="" coords="633,131,823,267"/>
+</map>

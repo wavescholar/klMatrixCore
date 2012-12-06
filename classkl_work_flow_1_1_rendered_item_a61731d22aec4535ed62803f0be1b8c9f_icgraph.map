@@ -1,0 +1,13 @@
+<map id="klWorkFlow.RenderedItem.getKey" name="klWorkFlow.RenderedItem.getKey">
+<area shape="rect" id="node3" href="$classkl_work_flow_1_1_o_c_p.html#ade6c970032c1aa0b2f61cd2ff2a563fa" title="klWorkFlow.OCP.getData" alt="" coords="272,161,443,188"/>
+<area shape="rect" id="node5" href="$classkl_work_flow_1_1_i_c_p.html#a4199bea524710b70f895c5b409dcbe49" title="klWorkFlow.ICP.getData" alt="" coords="491,161,655,188"/>
+<area shape="rect" id="node7" href="$classkl_basket_work_flow_1_1kl_quant_lib_options_transform.html#a885e42b41e0bf9b0b6adb34a12a0a69b" title="klBasketWorkFlow.klQuant\lLibOptionsTransform.getData" alt="" coords="742,5,933,46"/>
+<area shape="rect" id="node9" href="$classkl_work_flow_1_1kl_algorithm_data_sink.html#abad0ae4f245d75528812b8eec49c1cba" title="klWorkFlow.klAlgorithmData\lSink.getData" alt="" coords="744,70,931,111"/>
+<area shape="rect" id="node17" href="$classkl_work_flow_1_1kl_algorithm_transform.html#a57d107f8ae1c3a2a0a3c9e2eb1952fcd" title="klWorkFlow.klAlgorithmTransform.getData" alt="" coords="705,136,970,163"/>
+<area shape="rect" id="node19" href="$classkl_work_flow_1_1kl_matlab_algorithm.html#a74b2f1ba65b70ecf9c8e5275934a7151" title="klWorkFlow.klMatlabAlgorithm.getData" alt="" coords="714,187,961,213"/>
+<area shape="rect" id="node21" href="$classkl_work_flow_1_1kl_r_algorithm.html#ae6150a9feac770a1ee4db26eedd6a315" title="klWorkFlow.klRAlgorithm.getData" alt="" coords="729,237,946,264"/>
+<area shape="rect" id="node23" href="$classkl_work_flow_1_1kl_local_transform.html#a2ab5a220a025d85456776d24eaf167bb" title="klWorkFlow.klLocalTransform.getData" alt="" coords="717,288,958,315"/>
+<area shape="rect" id="node11" href="$classkl_work_flow_1_1kl_algorithm_data_sink.html#aab357314967a52fad9bf71f86fde3d6e" title="klWorkFlow.klAlgorithmData\lSink.render" alt="" coords="1019,70,1205,111"/>
+<area shape="rect" id="node13" href="$classkl_basket_work_flow_1_1kl_basket_analysis.html#a7666e4dabdc287fd5be289669e84a1c5" title="klBasketWorkFlow.klBasket\lAnalysis.run" alt="" coords="1277,37,1464,78"/>
+<area shape="rect" id="node15" href="$classtest_workflow_1_1kl_work_flow_factory.html#a1bfa3be2ae1abb854fd3a686cdc3ac4e" title="The main entry point for the application. " alt="" coords="1253,102,1488,143"/>
+</map>

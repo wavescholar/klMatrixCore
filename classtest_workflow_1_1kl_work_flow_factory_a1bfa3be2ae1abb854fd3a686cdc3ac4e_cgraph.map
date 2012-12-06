@@ -1,0 +1,11 @@
+<map id="testWorkflow.klWorkFlowFactory.runTestWorkflow" name="testWorkflow.klWorkFlowFactory.runTestWorkflow">
+<area shape="rect" id="node3" href="$classkl_work_flow_1_1kl_transform.html#a9d9994b9114da571b30f40df82a5ffc3" title="klWorkFlow.klTransform.setName" alt="" coords="289,5,506,32"/>
+<area shape="rect" id="node5" href="$classkl_work_flow_1_1_i_c_p.html#a8159c141bf0e468273e3cc63357e07d4" title="klWorkFlow.ICP.connect" alt="" coords="315,56,480,83"/>
+<area shape="rect" id="node7" href="$classkl_work_flow_1_1kl_algorithm_data_sink.html#aab357314967a52fad9bf71f86fde3d6e" title="klWorkFlow.klAlgorithmData\lSink.render" alt="" coords="304,107,491,149"/>
+<area shape="rect" id="node19" href="$classkl_work_flow_1_1kl_transform.html#ae2a4426268d504f6e6b8881f41e6844c" title="klWorkFlow.klTransform.persist" alt="" coords="295,173,499,200"/>
+<area shape="rect" id="node9" href="$classkl_work_flow_1_1kl_algorithm_data_sink.html#abad0ae4f245d75528812b8eec49c1cba" title="klWorkFlow.klAlgorithmData\lSink.getData" alt="" coords="555,107,741,149"/>
+<area shape="rect" id="node11" href="$classkl_work_flow_1_1_i_c_p.html#a4199bea524710b70f895c5b409dcbe49" title="klWorkFlow.ICP.getData" alt="" coords="790,115,954,141"/>
+<area shape="rect" id="node13" href="$classkl_work_flow_1_1_o_c_p.html#ade6c970032c1aa0b2f61cd2ff2a563fa" title="klWorkFlow.OCP.getData" alt="" coords="1003,115,1173,141"/>
+<area shape="rect" id="node15" href="$classkl_work_flow_1_1kl_transform.html#a91bc16dff37b97ab3939810389fe7942" title="klWorkFlow.klTransform.getData" alt="" coords="1225,89,1436,116"/>
+<area shape="rect" id="node17" href="$classkl_work_flow_1_1_rendered_item.html#a61731d22aec4535ed62803f0be1b8c9f" title="klWorkFlow.RenderedItem.getKey" alt="" coords="1221,140,1440,167"/>
+</map>

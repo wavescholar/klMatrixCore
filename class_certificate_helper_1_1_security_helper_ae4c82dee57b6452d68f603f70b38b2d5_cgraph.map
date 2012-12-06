@@ -1,0 +1,8 @@
+<map id="CertificateHelper.SecurityHelper.InstallWcfSecurityCertificates" name="CertificateHelper.SecurityHelper.InstallWcfSecurityCertificates">
+<area shape="rect" id="node3" href="$class_certificate_helper_1_1_security_helper.html#a0729c6fe34538f51eca6a7806d7f3736" title="CertificateHelper.Security\lHelper.RemoveCertificates" alt="" coords="310,5,485,46"/>
+<area shape="rect" id="node7" href="$class_certificate_helper_1_1_security_helper.html#a2110b97c5ec8cfdc641765a45942e9b3" title="CertificateHelper.Security\lHelper.GrantUserAccessToPrivate\lKeyFile" alt="" coords="288,71,507,127"/>
+<area shape="rect" id="node13" href="$class_certificate_helper_1_1_security_helper.html#a12dac01cc6318652518c896b21765d87" title="CertificateHelper.Security\lHelper.ValidateCert" alt="" coords="313,151,482,193"/>
+<area shape="rect" id="node5" href="$class_certificate_helper_1_1_security_helper.html#a44ed388826f3c157f56b226c9426825b" title="CertificateHelper.Security\lHelper.RemoveCertificate" alt="" coords="587,5,757,46"/>
+<area shape="rect" id="node9" href="$class_certificate_helper_1_1_security_helper_1_1_grant_key_access.html#a51c2400ba256fa26346107bf7115cc64" title="CertificateHelper.Security\lHelper.GrantKeyAccess.AddAccess\lToCertificate" alt="" coords="555,71,789,127"/>
+<area shape="rect" id="node11" href="$class_certificate_helper_1_1_security_helper_1_1_grant_key_access.html#a5c8845b4f169a38360232fe57a3407ff" title="CertificateHelper.Security\lHelper.GrantKeyAccess.FindKeyLocation" alt="" coords="838,78,1101,119"/>
+</map>

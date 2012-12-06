@@ -1,0 +1,36 @@
+<map id="klRasterBuffer::height" name="klRasterBuffer::height">
+<area shape="rect" id="node3" href="$classkl_pad_functor.html#a2e9931cba60f2589766146f2220d1205" title="klPadFunctor::operator()" alt="" coords="215,5,377,32"/>
+<area shape="rect" id="node5" href="$kl__image__processing__functors_8cpp.html#a9d7684733c3ca2f1e3d28a22fdc7deac" title="ImageWork" alt="" coords="252,56,340,83"/>
+<area shape="rect" id="node9" href="$kl__image__processing__functors_8cpp.html#a584e604af9487eb59e887e23f1c6a34e" title="TissueAnalysis" alt="" coords="241,107,351,133"/>
+<area shape="rect" id="node11" href="$classkl_copy_functor.html#a825241614cb5aa063df78c6f5862d892" title="klCopyFunctor::operator()" alt="" coords="211,157,381,184"/>
+<area shape="rect" id="node13" href="$classkl_type_convert_functor.html#ae86ffe290a5f14ea3d0d4d32df8a1f0b" title="klTypeConvertFunctor\l::operator()" alt="" coords="223,209,369,250"/>
+<area shape="rect" id="node15" href="$classkl_threshold_functor.html#a1205d90ec823aaf1d4be7dacd6f7ffa5" title="klThresholdFunctor\l::operator()" alt="" coords="230,274,362,315"/>
+<area shape="rect" id="node17" href="$classkl_logical_functor.html#ada931f4b21235495c6afd7e245710612" title="klLogicalFunctor::operator()" alt="" coords="206,340,386,367"/>
+<area shape="rect" id="node19" href="$classkl_filter_functor.html#a35c45020d74c4dd91c743629d34a8e8b" title="klFilterFunctor::operator()" alt="" coords="212,391,380,417"/>
+<area shape="rect" id="node21" href="$classkl_fill_holes_functor.html#ade5bc2b1908646ce35bd808901a24b7c" title="klFillHolesFunctor\l::operator()" alt="" coords="233,442,359,483"/>
+<area shape="rect" id="node23" href="$classkl_erode_functor.html#ac77967d7ce54ebd8451ff9a99086f5dc" title="klErodeFunctor::operator()" alt="" coords="209,508,383,535"/>
+<area shape="rect" id="node25" href="$classkl_dilate_functor.html#af703e380eab8ba50309c2151b36d132b" title="klDilateFunctor::operator()" alt="" coords="210,559,382,585"/>
+<area shape="rect" id="node27" href="$classkl_open_functor.html#abfe6a412bfeca3b13296653d4e43bf20" title="klOpenFunctor::operator()" alt="" coords="211,609,381,636"/>
+<area shape="rect" id="node29" href="$classkl_resize_functor.html#a15dffa538eda98f83e2c142380e61e12" title="klResizeFunctor::operator()" alt="" coords="207,660,385,687"/>
+<area shape="rect" id="node31" href="$classkl_rotate_functor.html#a363eca8f56465731311f2531499ddee0" title="klRotateFunctor::operator()" alt="" coords="207,711,385,737"/>
+<area shape="rect" id="node33" href="$classkl_copy_r_o_i_functor.html#a495ac8dd39a9252737c62acf41020984" title="klCopyROIFunctor::operator()" alt="" coords="201,761,391,788"/>
+<area shape="rect" id="node35" href="$classkl_color_to_gray_functor.html#a9d4b1c7cb4a6e7fa0c724c34a39c385d" title="klColorToGrayFunctor\l::operator()" alt="" coords="222,813,370,854"/>
+<area shape="rect" id="node37" href="$classkl_copy_split_band_functor.html#afc43b05227b2796f10c05652ddc6e5b9" title="klCopySplitBandFunctor\l::operator()" alt="" coords="215,878,377,919"/>
+<area shape="rect" id="node39" href="$classkl_p_c_a_functor.html#aed4583319b5cae6bff68c10a4d747420" title="klPCAFunctor::operator()" alt="" coords="213,944,379,971"/>
+<area shape="rect" id="node41" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="213,995,379,1037"/>
+<area shape="rect" id="node43" href="$classkl_stain_purity.html#ab02a2b5747f8880c4680e6027e5b6e50" title="klStainPurity::operator()" alt="" coords="217,1061,375,1088"/>
+<area shape="rect" id="node45" href="$classkl_composite_mask.html#a8db950c721202eee2fe91dee4a242c93" title="klCompositeMask::operator()" alt="" coords="201,1112,391,1139"/>
+<area shape="rect" id="node47" href="$kl_i_p_p_demo_8cpp.html#a33ac1bf5a49efcf299af1f8d96796334" title="klIPP_Make_SlideImage\l_WSIRotate_9_0" alt="" coords="215,1163,377,1205"/>
+<area shape="rect" id="node49" href="$kl_i_p_p_demo_8cpp.html#ad80523b36bab85957f2d254288d17a02" title="klIPP_Make_SlideImage\l_MacroThumb_9_0" alt="" coords="215,1229,377,1270"/>
+<area shape="rect" id="node51" href="$kl_i_p_p_demo_8cpp.html#a69d33e305e4874796192d3f361c57b92" title="klIPP_Make_SlideImage\l_Macro_9_0" alt="" coords="215,1294,377,1335"/>
+<area shape="rect" id="node53" href="$kl_i_p_p_demo_8cpp.html#a8d955af7a0553e9a85b2603e7a3a67c0" title="klIPP_Make_SlideImage_9_0" alt="" coords="201,1360,391,1387"/>
+<area shape="rect" id="node55" href="$kl_i_p_p_demo_8cpp.html#aae05ade828bb49410739cddadcc7638d" title="klIPP_Make_SlideImage\l_LT_9_0" alt="" coords="215,1411,377,1453"/>
+<area shape="rect" id="node57" href="$kl_i_p_p_demo_8cpp.html#a5ebf304d13b329dbeea70984f921e7e7" title="klIPP_Calculate_ROI\l_To_Tissue_Ratio" alt="" coords="225,1477,367,1518"/>
+<area shape="rect" id="node59" href="$classkl_managed_imaging_1_1kl_image_op.html#a3c9a795edd159da29f62914ea434f103" title="klManagedImaging::klImage\lOp::OperateTile" alt="" coords="205,1542,387,1583"/>
+<area shape="rect" id="node63" href="$_open_c_v_wrapper_8cpp.html#abf03f5af63764812aef7adbe0d7e067b" title="klRasterBufferPointerToIpl\lImage" alt="" coords="211,1659,381,1701"/>
+<area shape="rect" id="node65" href="$classkl_open_c_v.html#a29ed54ffff1383a7a4ed3560bf67310f" title="klOpenCV::FaceDetect" alt="" coords="454,1641,610,1668"/>
+<area shape="rect" id="node69" href="$classkl_open_c_v.html#a55ab95ebb72398eaadc6c42d4d804ce5" title="klOpenCV::Watershed" alt="" coords="456,1692,608,1719"/>
+<area shape="rect" id="node7" href="$kl__image__processing__functors_8cpp.html#a5cf514a760136e68606681595080ad46" title="klRunImageWorkFlowImage" alt="" coords="441,56,623,83"/>
+<area shape="rect" id="node61" href="$class_image_interop_1_1_test_managed_imageing.html#ad30c59431d05aa4591b282a791a0196c" title="ImageInterop.TestManaged\lImageing.test" alt="" coords="443,1542,621,1583"/>
+<area shape="rect" id="node67" href="$_open_c_v_wrapper_8h.html#a7b2de44c3bd46d736b96adea7ad7d26f" title="klTestOpenCV" alt="" coords="672,1667,779,1693"/>
+</map>

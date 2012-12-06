@@ -1,0 +1,11 @@
+<map id="klSecurity.klCertificateManager.ManageCertificates" name="klSecurity.klCertificateManager.ManageCertificates">
+<area shape="rect" id="node3" href="$classkl_security_1_1kl_certificate_manager.html#adff2843c7ecf9720d8382d0cfba6b8c9" title="klSecurity.klCertificate\lManager.RemoveCertificates" alt="" coords="464,6,651,47"/>
+<area shape="rect" id="node9" href="$classkl_security_1_1_security_helper.html#a82f4d7f839d1827234034ac8e7cb96e7" title="klSecurity.SecurityHelper.\lInstallCertificates" alt="" coords="240,69,413,110"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_security_helper.html#abe42bba7d5a86dc788ab407b025b5f36" title="klSecurity.SecurityHelper.\lRemoveCertificates" alt="" coords="727,6,900,47"/>
+<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper.html#a54e8a8015fae6fb92023daa71e176541" title="klSecurity.SecurityHelper.\lRemoveCertificate" alt="" coords="1019,6,1192,47"/>
+<area shape="rect" id="node11" href="$classkl_security_1_1_security_helper.html#a8b88ff34feaa909da1f45c7ab866a290" title="klSecurity.SecurityHelper.\lInstallWcfSecurityCertificates" alt="" coords="461,71,653,113"/>
+<area shape="rect" id="node14" href="$classkl_security_1_1_security_helper.html#a2b0ba3d41feba3c07e6b8752cf1eeddf" title="klSecurity.SecurityHelper.\lGrantUserAccessToPrivateKeyFile" alt="" coords="702,71,925,113"/>
+<area shape="rect" id="node20" href="$classkl_security_1_1_security_helper.html#a0f4da7df718642b17b87fccf08a75049" title="klSecurity.SecurityHelper.\lValidateCert" alt="" coords="727,137,900,178"/>
+<area shape="rect" id="node16" href="$classkl_security_1_1_security_helper_1_1_grant_key_access.html#a10723153e91431ecd1744aff49626257" title="klSecurity.SecurityHelper.\lGrantKeyAccess.AddAccessToCertificate" alt="" coords="973,71,1237,113"/>
+<area shape="rect" id="node18" href="$classkl_security_1_1_security_helper_1_1_grant_key_access.html#a819ca7c68e8500db2b9d4b9f320b00ab" title="klSecurity.SecurityHelper.\lGrantKeyAccess.FindKeyLocation" alt="" coords="1286,71,1509,113"/>
+</map>

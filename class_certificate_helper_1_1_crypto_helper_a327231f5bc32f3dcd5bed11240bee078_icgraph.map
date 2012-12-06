@@ -1,0 +1,7 @@
+<map id="CertificateHelper.CryptoHelper.FindCertificate" name="CertificateHelper.CryptoHelper.FindCertificate">
+<area shape="rect" id="node3" href="$class_certificate_helper_1_1_security_helper_1_1_license_key_helper.html#aa95343fc2f388512b5edf0691c35c343" title="CertificateHelper.Security\lHelper.LicenseKeyHelper.SignMac\lWithPrivateKey" alt="" coords="245,41,467,97"/>
+<area shape="rect" id="node9" href="$class_certificate_helper_1_1_streaming_security_message_inspector.html#a37e9ffa87b36804e870523e6c5cd6b84" title="CertificateHelper.Streaming\lSecurityMessageInspector.Before\lSendReply" alt="" coords="247,121,465,177"/>
+<area shape="rect" id="node11" href="$class_certificate_helper_1_1_streaming_security_message_inspector.html#ac20d7e76eab59cdb6dcf3534fd4eca13" title="CertificateHelper.Streaming\lSecurityMessageInspector.AfterReceiveReply" alt="" coords="213,202,499,243"/>
+<area shape="rect" id="node5" href="$class_certificate_helper_1_1_security_helper_1_1_license_key_helper.html#af2be73083fd8fe890c672c068aecbab5" title="CertificateHelper.Security\lHelper.LicenseKeyHelper.RunLocal\lLicenseKeyHelper" alt="" coords="555,5,781,61"/>
+<area shape="rect" id="node7" href="$class_certificate_helper_1_1_security_helper_1_1_license_key_helper.html#aa4165e3e2feaf0c4350d71b4a2612786" title="CertificateHelper.Security\lHelper.LicenseKeyHelper.RunKeyGen" alt="" coords="547,86,789,127"/>
+</map>

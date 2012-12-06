@@ -1,0 +1,4 @@
+<map id="klTownsendAnalytics.klTownsendDriver" name="klTownsendAnalytics.klTownsendDriver">
+<area shape="rect" id="node2" href="$classkl_townsend_analytics_1_1kl_t_a_l_application.html" title="{klTownsendAnalytics.klTALApplication\n|&#45; m_TALConnections\l&#45; m_DataProcessors\l|+ FindMyLiveDataProcessor()\l+ FindMyConnection()\l+ klTALApplication()\l+ IsRunning()\l+ LIVEQUOTEFileSourceQuery()\l+ ConnectAndSubscribe()\l+ TQLfromWhatWhereFIDHashes()\l&#45; GetTALConnectionKey()\l&#45; GetDataProcessorKey()\l}" alt="" coords="108,161,353,370"/>
+<area shape="rect" id="node4" href="$class_client_adapter_toolkit_app.html" title="{ClientAdapterToolkitApp\n||}" alt="" coords="5,5,165,83"/>
+</map>

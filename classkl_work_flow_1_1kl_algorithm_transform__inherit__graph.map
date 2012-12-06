@@ -1,0 +1,14 @@
+<map id="klWorkFlow.klAlgorithmTransform" name="klWorkFlow.klAlgorithmTransform">
+<area shape="rect" id="node7" href="$classkl_basket_work_flow_1_1kl_c_r_m_transform.html" title="{klBasketWorkFlow.klCRMTransform\n||}" alt="" coords="5,479,235,556"/>
+<area shape="rect" id="node9" href="$classkl_basket_work_flow_1_1kl_portfolio_transform.html" title="{klBasketWorkFlow.klPortfolio\lTransform\n|+ m_xmlFile\l|+ getData()\l&#45; klPortfolioTransform()\l}" alt="" coords="260,464,452,571"/>
+<area shape="rect" id="node11" href="$classkl_basket_work_flow_1_1kl_quant_lib_options_transform.html" title="{klBasketWorkFlow.klQuant\lLibOptionsTransform\n|+ m_ICP2\l+ m_OCP2\l|+ klQuantLibOptionsTransform()\l+ getData()\l}" alt="" coords="477,457,683,578"/>
+<area shape="rect" id="node13" href="$classkl_basket_work_flow_1_1kl_tic_slicer_transform.html" title="{klBasketWorkFlow.klTicSlicer\lTransform\n||}" alt="" coords="708,471,903,563"/>
+<area shape="rect" id="node15" href="$classkl_work_flow_1_1kl_d_f_t_agg_transform.html" title="{klWorkFlow.klDFTAggTransform\n|+ m_xmlFile\l|+ getData()\l&#45; klDFTAggTransform()\l}" alt="" coords="927,471,1135,563"/>
+<area shape="rect" id="node17" href="$classkl_work_flow_1_1kl_local_transform.html" title="{klWorkFlow.klLocalTransform\n|+ m_ICP2\l+ m_OCP2\l|+ klLocalTransform()\l+ getData()\l}" alt="" coords="1159,464,1351,571"/>
+<area shape="rect" id="node19" href="$classkl_work_flow_1_1kl_matlab_algorithm.html" title="{klWorkFlow.klMatlabAlgorithm\n|+ m_script\l|+ getData()\l&#45; runScript()\l}" alt="" coords="1375,471,1573,563"/>
+<area shape="rect" id="node23" href="$classkl_work_flow_1_1kl_r_algorithm.html" title="{klWorkFlow.klRAlgorithm\n||+ getData()\l}" alt="" coords="1599,479,1767,556"/>
+<area shape="rect" id="node25" href="$classkl_work_flow_1_1kl_unit_test_fn.html" title="{klWorkFlow.klUnitTestFn\n|+ m_xmlFile\l|+ getData()\l&#45; klUnitTestFn()\l}" alt="" coords="1791,471,1957,563"/>
+<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n|&#45; m_Name\l|+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="983,131,1077,253"/>
+<area shape="rect" id="node4" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="960,5,1101,83"/>
+<area shape="rect" id="node21" href="$classkl_work_flow_1_1kl_correlation_movie_transform.html" title="{klWorkFlow.klCorrelation\lMovieTransform\n||}" alt="" coords="1391,627,1557,719"/>
+</map>

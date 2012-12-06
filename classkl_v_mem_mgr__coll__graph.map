@@ -1,0 +1,5 @@
+<map id="klVMemMgr" name="klVMemMgr">
+<area shape="rect" id="node2" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="5,377,91,469"/>
+<area shape="rect" id="node8" href="$classkl_v_mem_block.html" title="{klVMemBlock\n|&#45; _reqSize\l&#45; _actualSize\l|+ klVMemBlock()\l+ ~klVMemBlock()\l+ memory()\l+ sizeRequested()\l+ sizeUsed()\l}" alt="" coords="241,161,372,311"/>
+<area shape="rect" id="node19" title="STL class." alt="" coords="600,197,749,275"/>
+</map>

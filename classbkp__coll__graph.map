@@ -1,0 +1,5 @@
+<map id="bkp" name="bkp">
+<area shape="rect" id="node2" href="$classnetwork.html" title="{network\n|+ layers\l+ input_dim\l+ training_param\l+ num_vectors\l+ passes\l+ input_file_buf\l+ output_file_buf\l+ weights_file_buf\l+ lower_range\l+ upper_range\l|+ network()\l+ ~network()\l+ operator=()\l}" alt="" coords="448,513,573,751"/>
+<area shape="rect" id="node4" href="$classlayer.html" title="{layer\n||+ layer()\l+ ~layer()\l+ operator=()\l}" alt="" coords="431,205,528,312"/>
+<area shape="rect" id="node19" href="$classbp__unit__train.html" title="{bp_unit_train\n|+ weights\l+ linear_output\l+ activation\l+ derivative\l+ delta\l|+ bp_unit_train()\l+ ~bp_unit_train()\l}" alt="" coords="106,337,229,487"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="KL_stat::kurtosis" name="KL_stat::kurtosis">
+<area shape="rect" id="node3" href="$classkl_sample_population.html#a09755537901fd7422135f67a80871fbc" title="klSamplePopulation\l::calcDescriptiveStats" alt="" coords="198,273,346,315"/>
+<area shape="rect" id="node62" href="$classkl_time_series.html#a167b7d11e16b649df07729e92af9c21d" title="klTimeSeries::calcDescriptive\lStats" alt="" coords="176,339,368,380"/>
+<area shape="rect" id="node5" href="$kl__matlab__dependent__unit__tests_8h.html#a8ab8e1997dc6a845e817292bcf92e443" title="klRVUnitTestHarnessLaTex\lMatlab" alt="" coords="635,29,816,71"/>
+<area shape="rect" id="node7" href="$classkl_multiclass_s_v_m_train.html#a0e5d60137b62a27e4ee171164d2fe31a" title="klMulticlassSVMTrain\l::klMulticlassSVMTrain" alt="" coords="417,488,573,529"/>
+<area shape="rect" id="node9" href="$classkl_sample_population.html#ae16c9f2d406fde13649045d52bc8dbb8" title="klSamplePopulation\l::covarianceMatrix" alt="" coords="426,305,563,347"/>
+<area shape="rect" id="node13" href="$kl__unit__tests_8h.html#af18f088e2ccfb37da5747a1d23d80a65" title="testSamplePopulation2" alt="" coords="647,329,803,355"/>
+<area shape="rect" id="node21" href="$classkl_sample_population.html#a9f8f31edb6cb193eb9a673c29e672e73" title="klSamplePopulation\l::correlationMatrix" alt="" coords="426,371,563,412"/>
+<area shape="rect" id="node26" href="$classkl_sample_population.html#abebb47745661e4c9b8de992ed3226425" title="klSamplePopulation\l::mean" alt="" coords="426,44,563,85"/>
+<area shape="rect" id="node35" href="$classkl_sample_population.html#a0011f255ee008089cce17b99593a29c3" title="klSamplePopulation\l::variance" alt="" coords="426,109,563,151"/>
+<area shape="rect" id="node43" href="$classkl_sample_population.html#adc4de42e5a2a4fe95b6226ba0bd37d9a" title="klSamplePopulation\l::stddev" alt="" coords="426,553,563,595"/>
+<area shape="rect" id="node45" href="$classkl_sample_population.html#a92bc1fb886f29e42bbe7cf405d39b0c8" title="klSamplePopulation\l::skewness" alt="" coords="426,175,563,216"/>
+<area shape="rect" id="node53" href="$classkl_sample_population.html#a416af9d74bcc635b325b4baa9ad990f1" title="klSamplePopulation\l::kurtosis" alt="" coords="426,240,563,281"/>
+<area shape="rect" id="node11" href="$kl__matlab__dependent__unit__tests_8h.html#aad61f3c8089d0fe7741bacc402f161da" title="testKLMultiVariateRandom\lNumberGeneratorMatlab" alt="" coords="637,147,814,188"/>
+<area shape="rect" id="node15" href="$kl__unit__tests_8h.html#a6dee9b89b61e6c61699181b589620065" title="klMulticlassSVMHarness2" alt="" coords="638,278,813,305"/>
+<area shape="rect" id="node17" href="$kl__unit__tests_8h.html#a7f8bfdf5b8ac2ebd891254700e22f7cf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="637,212,814,253"/>
+<area shape="rect" id="node19" href="$kl_s_m_p_m_t_8cpp.html#ad3497c522352701809cb7c85dc6d5579" title="kl_SMP_SM_MT_WorkFlow" alt="" coords="633,379,818,406"/>
+<area shape="rect" id="node28" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="622,95,829,122"/>
+</map>

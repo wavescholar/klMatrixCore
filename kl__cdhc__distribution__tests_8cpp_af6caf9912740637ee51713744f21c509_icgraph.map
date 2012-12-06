@@ -1,0 +1,26 @@
+<map id="dcmp" name="dcmp">
+<area shape="rect" id="node3" href="$kl__sample__population_8h.html#ad294911439dfe7f94f97506910dcb705" title="anderson_darling_exp" alt="" coords="115,5,263,32"/>
+<area shape="rect" id="node5" href="$kl__sample__population_8h.html#af1e62fc57bde20b146e0f0e90dd08a39" title="anderson_darling" alt="" coords="129,56,249,83"/>
+<area shape="rect" id="node7" href="$kl__sample__population_8h.html#a5bbc7d0ee501b90196fe61ab8965c1c5" title="cramer_von_mises_exp" alt="" coords="110,107,269,133"/>
+<area shape="rect" id="node9" href="$kl__sample__population_8h.html#ab81fb657b3ed5c0b4c706bdec19f16f9" title="cramer_von_mises" alt="" coords="124,157,255,184"/>
+<area shape="rect" id="node11" href="$kl__sample__population_8h.html#aba91a6e606c555d9d70c4517a2e3d5d3" title="dagostino_d" alt="" coords="143,208,235,235"/>
+<area shape="rect" id="node13" href="$kl__cdhc__distribution__tests_8cpp.html#aed6fcf4f290969b7f749595c60c453e8" title="dmax" alt="" coords="162,259,217,285"/>
+<area shape="rect" id="node31" href="$kl__cdhc__distribution__tests_8cpp.html#a75ef9843e03935f69e133946279819ea" title="dmax_exp" alt="" coords="148,309,231,336"/>
+<area shape="rect" id="node38" href="$kl__sample__population_8h.html#a14256731b51f7d1061e4cc2b95af9653" title="durbins_exact" alt="" coords="350,411,453,437"/>
+<area shape="rect" id="node41" href="$kl__sample__population_8h.html#ae9f11951d59a8fba2bd3c1e8363377d3" title="royston" alt="" coords="157,411,222,437"/>
+<area shape="rect" id="node43" href="$kl__sample__population_8h.html#a11d519b1624e187d3997631e63fbae9e" title="shapiro_wilk" alt="" coords="143,461,236,488"/>
+<area shape="rect" id="node45" href="$kl__sample__population_8h.html#a12aeb59709f3d44b1480d6af2db87eab" title="shapiro_francia" alt="" coords="135,512,244,539"/>
+<area shape="rect" id="node47" href="$kl__sample__population_8h.html#a1e481db92b944bf8fd7b5c5f0f619725" title="watson_u2_exp" alt="" coords="133,563,245,589"/>
+<area shape="rect" id="node49" href="$kl__sample__population_8h.html#abce5e3df90af0b5831544c82f7e48693" title="watson_u2" alt="" coords="147,613,231,640"/>
+<area shape="rect" id="node51" href="$kl__sample__population_8h.html#a5a2e9d753f8aaa4b4aa7bd6bd2c14924" title="weisberg_bingham" alt="" coords="125,664,254,691"/>
+<area shape="rect" id="node15" href="$kl__sample__population_8h.html#a83b4ddb5602fd9d78c6ea541f510511b" title="kolmogorov_smirnov" alt="" coords="332,208,471,235"/>
+<area shape="rect" id="node29" href="$kl__sample__population_8h.html#a1ad305d45b19db37732c9d1f66be2637" title="kuipers_v" alt="" coords="363,259,439,285"/>
+<area shape="rect" id="node17" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="534,302,685,343"/>
+<area shape="rect" id="node19" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="739,178,917,219"/>
+<area shape="rect" id="node21" href="$kl__unit__tests_8h.html#a7f8bfdf5b8ac2ebd891254700e22f7cf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="739,243,917,285"/>
+<area shape="rect" id="node23" href="$kl_unit_tests_8cpp.html#a5e1a30eea97b249e7c855b7a6b026a74" title="testklPrincipalComponents2" alt="" coords="736,309,920,336"/>
+<area shape="rect" id="node25" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="734,360,922,387"/>
+<area shape="rect" id="node27" href="$kl_s_m_p_m_t_8cpp.html#abc81cabc3e77e29ca314ec92f3b9e111" title="work2" alt="" coords="800,411,856,437"/>
+<area shape="rect" id="node33" href="$kl__sample__population_8h.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="318,309,485,336"/>
+<area shape="rect" id="node36" href="$kl__sample__population_8h.html#a6b6b1d4386ce8b890afb9840e34f68f2" title="kuipers_v_exp" alt="" coords="349,360,453,387"/>
+</map>

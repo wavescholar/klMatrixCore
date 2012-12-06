@@ -1,0 +1,7 @@
+<map id="klWorkFlow.klAlgorithmDataSink" name="klWorkFlow.klAlgorithmDataSink">
+<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="295,147,389,269"/>
+<area shape="rect" id="node4" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="43,5,184,83"/>
+<area shape="rect" id="node14" href="$classkl_work_flow_1_1kl_transform.html" title="{klWorkFlow.klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="5,147,165,269"/>
+<area shape="rect" id="node8" href="$classkl_work_flow_1_1_i_c_p.html" title="{klWorkFlow.ICP\n||+ getData()\l+ connect()\l}" alt="" coords="95,521,209,613"/>
+<area shape="rect" id="node10" href="$classkl_work_flow_1_1_o_c_p.html" title="{klWorkFlow.OCP\n||+ setCache()\l+ setTransform()\l+ getData()\l+ OCP()\l}" alt="" coords="88,334,211,455"/>
+</map>

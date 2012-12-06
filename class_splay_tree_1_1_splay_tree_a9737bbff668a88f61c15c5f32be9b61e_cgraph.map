@@ -1,0 +1,14 @@
+<map id="SplayTree.SplayTree.RunTest" name="SplayTree.SplayTree.RunTest">
+<area shape="rect" id="node3" href="$class_splay_tree_1_1_splay_tree.html#adc26a46414537a6cab77e11ecf68b187" title="SplayTree.SplayTree.insert" alt="" coords="263,56,441,83"/>
+<area shape="rect" id="node5" href="$class_splay_tree_1_1_splay_tree.html#aa3720f17b42277a5625d003025569e32" title="SplayTree.SplayTree.Splay" alt="" coords="528,5,707,32"/>
+<area shape="rect" id="node11" href="$class_splay_tree_1_1_splay_tree.html#ad5a4e02fa5f8a42d9c390b5a7f047831" title="SplayTree.SplayTree.CheckTree" alt="" coords="248,107,456,133"/>
+<area shape="rect" id="node13" href="$class_splay_tree_1_1_splay_tree.html#af3a9510ad8c2e7086baa9d7dcd528b9f" title="SplayTree.SplayTree.Print\lTreeASCII" alt="" coords="265,225,439,266"/>
+<area shape="rect" id="node7" href="$class_splay_tree_1_1_splay_tree.html#a2058056a593c5ae8100bf64116cd9391" title="SplayTree.SplayTree.SetParentLeft" alt="" coords="505,56,730,83"/>
+<area shape="rect" id="node9" href="$class_splay_tree_1_1_splay_tree.html#a6591f993e3d7249c651299592fe70fa7" title="SplayTree.SplayTree.SetParent\lRight" alt="" coords="515,107,719,149"/>
+<area shape="rect" id="node15" href="$class_splay_tree_1_1_splay_tree.html#a37facae1062fc923be257063ff3fa4cd" title="SplayTree.SplayTree.BuildTree" alt="" coords="517,173,717,200"/>
+<area shape="rect" id="node19" href="$class_splay_tree_1_1_splay_tree.html#a471e47ce844da48ab1883d9beb6a5d2f" title="SplayTree.SplayTree.Compute\lEdgeLengths" alt="" coords="518,225,717,266"/>
+<area shape="rect" id="node23" href="$class_splay_tree_1_1_splay_tree.html#acd7a53c611b15fab26101e142283b647" title="SplayTree.SplayTree.Compute\lLeftProfile" alt="" coords="779,286,978,327"/>
+<area shape="rect" id="node26" href="$class_splay_tree_1_1_splay_tree.html#ae7707fef5f5c78ef02e4839b1867b8f0" title="SplayTree.SplayTree.print\l_level" alt="" coords="532,342,703,383"/>
+<area shape="rect" id="node17" href="$class_splay_tree_1_1_splay_tree.html#a4cb9f253db1af8e383e4e7d9b330b8e6" title="SplayTree.SplayTree.Build\lTreeRecurse" alt="" coords="791,155,966,197"/>
+<area shape="rect" id="node21" href="$class_splay_tree_1_1_splay_tree.html#ab98848bcc9cd232f11b7161241906c44" title="SplayTree.SplayTree.Compute\lRightProfile" alt="" coords="779,221,978,262"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="WindowsApplication1.Form1.GDI_Bitmap_Click" name="WindowsApplication1.Form1.GDI_Bitmap_Click">
+<area shape="rect" id="node3" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a18ceb196c6a3ec1ab695f97be55b8d95" title="OneBBP_GDI_BitmapConversion.\lMainConv" alt="" coords="246,234,463,275"/>
+<area shape="rect" id="node5" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#abf35a7b3db9c272a41ada3824c5d2c73" title="Draws a bitmap onto the screen. Note: this will be overpainted by other windows when they come to dra..." alt="" coords="513,201,730,242"/>
+<area shape="rect" id="node21" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a7176e12d626fdfc3bc87b0b782dcc907" title="Copies a bitmap into a 1bpp/8bpp bitmap of the same dimensions, fast " alt="" coords="513,266,730,307"/>
+<area shape="rect" id="node7" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#aea9f59ab42ed9b6a67e894ad4a0d8e66" title="OneBBP_GDI_BitmapConversion.\lGetDC" alt="" coords="779,331,997,373"/>
+<area shape="rect" id="node9" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a9b80c3771cfc3e15725999a9a22d863c" title="OneBBP_GDI_BitmapConversion.\lCreateCompatibleDC" alt="" coords="779,397,997,438"/>
+<area shape="rect" id="node11" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#ae5a1c7f41920392c2f3d01d38d5fddf9" title="OneBBP_GDI_BitmapConversion.\lSelectObject" alt="" coords="779,5,997,46"/>
+<area shape="rect" id="node13" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a1fef8fdd43c546e48f0925882edeab4b" title="OneBBP_GDI_BitmapConversion.\lBitBlt" alt="" coords="779,70,997,111"/>
+<area shape="rect" id="node15" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a50d687bf1ed94b82724222bae7562d13" title="OneBBP_GDI_BitmapConversion.\lDeleteDC" alt="" coords="779,135,997,177"/>
+<area shape="rect" id="node17" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a6a176788648207029b3b125b326a5081" title="OneBBP_GDI_BitmapConversion.\lReleaseDC" alt="" coords="779,201,997,242"/>
+<area shape="rect" id="node19" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a6d985e8f4cdce17d7f5eea4cdffab740" title="OneBBP_GDI_BitmapConversion.\lDeleteObject" alt="" coords="779,266,997,307"/>
+<area shape="rect" id="node23" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a8d187adab2c6759294989d41c0ff80fb" title="OneBBP_GDI_BitmapConversion.\lMAKERGB" alt="" coords="779,527,997,569"/>
+<area shape="rect" id="node25" href="$class_one_b_b_p___g_d_i___bitmap_conversion.html#a23d5e886dbd59b33240c8462f9cb75a3" title="OneBBP_GDI_BitmapConversion.\lCreateDIBSection" alt="" coords="779,462,997,503"/>
+</map>

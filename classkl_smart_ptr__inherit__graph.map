@@ -1,0 +1,6 @@
+<map id="klSmartPtr&lt; TYPE &gt;" name="klSmartPtr&lt; TYPE &gt;">
+<area shape="rect" id="node5" href="$classkl_smart_ptr.html" title="{klSmartPtr\&lt; klMatrix\l\&lt; TYPE \&gt; \&gt;\n||+ klSmartPtr()\l+ klSmartPtr()\l+ klSmartPtr()\l+ operator=()\l+ operator=()\l+ operator&#45;\&gt;()\l+ ptr()\l+ operator*()\l}" alt="" coords="5,613,147,808"/>
+<area shape="rect" id="node7" href="$classkl_smart_ptr.html" title="{klSmartPtr\&lt; klReferenceCounted\lRasterBuffer \&gt;\n||+ klSmartPtr()\l+ klSmartPtr()\l+ klSmartPtr()\l+ operator=()\l+ operator=()\l+ operator&#45;\&gt;()\l+ ptr()\l+ operator*()\l}" alt="" coords="171,613,383,808"/>
+<area shape="rect" id="node9" href="$classkl_smart_ptr.html" title="{klSmartPtr\&lt; klVector\l\&lt; TYPE \&gt; \&gt;\n||+ klSmartPtr()\l+ klSmartPtr()\l+ klSmartPtr()\l+ operator=()\l+ operator=()\l+ operator&#45;\&gt;()\l+ ptr()\l+ operator*()\l}" alt="" coords="408,613,552,808"/>
+<area shape="rect" id="node2" href="$classkl_const_smart_ptr.html" title="{klConstSmartPtr\&lt; TYPE \&gt;\n|# thePtr\l|+ klConstSmartPtr()\l+ ~klConstSmartPtr()\l+ klConstSmartPtr()\l+ klConstSmartPtr()\l+ operator=()\l+ operator=()\l+ operator&#45;\&gt;()\l+ ptr()\l+ operator*()\l+ operator==()\l+ operator==()\l+ operator!=()\l+ operator!=()\l+ operator\&lt;()\l+ operator\&lt;()\l+ operator bool()\l}" alt="" coords="189,6,365,303"/>
+</map>

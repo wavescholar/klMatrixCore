@@ -1,0 +1,8 @@
+<map id="klMatrix::operator*" name="klMatrix::operator*">
+<area shape="rect" id="node3" href="$classkl_matrix.html#abf51f5fe4db69e4c78fd7a36f6a2c05d" title="klMatrix::getColumns" alt="" coords="331,5,477,32"/>
+<area shape="rect" id="node5" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="182,95,261,121"/>
+<area shape="rect" id="node8" href="$classkl_matrix.html#a40bc4fd2142f4b4a44227a868c8a67ae" title="klMatrix::getRows" alt="" coords="341,56,467,83"/>
+<area shape="rect" id="node10" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="333,107,475,133"/>
+<area shape="rect" id="node12" href="$kl__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="381,157,427,184"/>
+<area shape="rect" id="node14" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix::columnToRowMajor" alt="" coords="309,208,499,235"/>
+</map>

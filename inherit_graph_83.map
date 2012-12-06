@@ -1,0 +1,16 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classkl_mersenne_twister.html" title="klMersenneTwister" alt="" coords="5,296,136,323"/>
+<area shape="rect" id="node3" href="$classkl_beta_r_v.html" title="klBetaRV\&lt; TYPE \&gt;" alt="" coords="215,507,350,533"/>
+<area shape="rect" id="node5" href="$classkl_cauchy_r_v.html" title="klCauchyRV\&lt; TYPE \&gt;" alt="" coords="207,5,359,32"/>
+<area shape="rect" id="node7" href="$classkl_exponential_r_v.html" title="klExponentialRV\&lt; TYPE \&gt;" alt="" coords="195,56,371,83"/>
+<area shape="rect" id="node9" href="$classkl_gamma_r_v.html" title="klGammaRV\&lt; TYPE \&gt;" alt="" coords="205,107,360,133"/>
+<area shape="rect" id="node11" href="$classkl_generalized_inverse_gaussian_r_v.html" title="klGeneralizedInverseGaussian\lRV\&lt; TYPE \&gt;" alt="" coords="185,158,381,199"/>
+<area shape="rect" id="node13" href="$classkl_normal_box_muller_r_v.html" title="klNormalBoxMullerRV\l\&lt; TYPE \&gt;" alt="" coords="208,223,357,265"/>
+<area shape="rect" id="node15" href="$classkl_normal_inverse_approx_r_v.html" title="klNormalInverseApproxRV\l\&lt; TYPE \&gt;" alt="" coords="197,289,369,330"/>
+<area shape="rect" id="node17" href="$classkl_pareto_r_v.html" title="klParetoRV\&lt; TYPE \&gt;" alt="" coords="209,355,356,381"/>
+<area shape="rect" id="node19" href="$classkl_poisson_r_v.html" title="klPoissonRV\&lt; TYPE \&gt;" alt="" coords="205,405,360,432"/>
+<area shape="rect" id="node21" href="$classkl_uniform_r_v.html" title="klUniformRV\&lt; TYPE \&gt;" alt="" coords="207,456,359,483"/>
+<area shape="rect" id="node23" href="$classkl_uniform_r_v.html" title="klUniformRV\&lt; double \&gt;" alt="" coords="205,557,361,584"/>
+<area shape="rect" id="node24" href="$classkl_r_v.html" title="klRV\&lt; TYPE \&gt;" alt="" coords="17,239,125,265"/>
+<area shape="rect" id="node35" href="$classkl_r_v.html" title="klRV\&lt; double \&gt;" alt="" coords="15,557,127,584"/>
+</map>

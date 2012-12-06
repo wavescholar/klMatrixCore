@@ -1,0 +1,18 @@
+<map id="work2" name="work2">
+<area shape="rect" id="node3" href="$classkl_thread.html#a650f76bc8a35820619ed8ca87a2b34f6" title="klThread::getCurrentThreadId" alt="" coords="110,48,298,75"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="133,99,275,125"/>
+<area shape="rect" id="node7" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="129,150,279,191"/>
+<area shape="rect" id="node9" href="$classkl_vector.html#a729323f87948bf7fae68999018d2ab32" title="klVector::setup" alt="" coords="375,5,486,32"/>
+<area shape="rect" id="node11" href="$kl__cdhc__distribution__tests_8cpp.html#a14256731b51f7d1061e4cc2b95af9653" title="durbins_exact" alt="" coords="569,56,671,83"/>
+<area shape="rect" id="node17" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="359,309,502,336"/>
+<area shape="rect" id="node19" href="$kl__cdhc__distribution__tests_8cpp.html#a83b4ddb5602fd9d78c6ea541f510511b" title="kolmogorov_smirnov" alt="" coords="361,107,500,133"/>
+<area shape="rect" id="node27" href="$kl__cdhc__distribution__tests_8cpp.html#a0d2da9b5c3bca9ca3954d1a4b0612211" title="chi_square" alt="" coords="388,208,473,235"/>
+<area shape="rect" id="node32" href="$kl__cdhc__distribution__tests_8cpp.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="347,157,514,184"/>
+<area shape="rect" id="node38" href="$kl__cdhc__distribution__tests_8cpp.html#a85ddff9080b8b70500824ec3a18e32d6" title="chi_square_exp" alt="" coords="563,309,677,336"/>
+<area shape="rect" id="node13" href="$kl__cdhc__distribution__tests_8cpp.html#a00b5726d2f436c6460a8293c16412415" title="normp" alt="" coords="749,56,808,83"/>
+<area shape="rect" id="node15" href="$kl__cdhc__distribution__tests_8cpp.html#af6caf9912740637ee51713744f21c509" title="dcmp" alt="" coords="751,107,806,133"/>
+<area shape="rect" id="node21" href="$kl__cdhc__distribution__tests_8cpp.html#aed6fcf4f290969b7f749595c60c453e8" title="dmax" alt="" coords="593,107,647,133"/>
+<area shape="rect" id="node23" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="725,183,832,209"/>
+<area shape="rect" id="node30" href="$kl__cdhc__distribution__tests_8cpp.html#aa004aeecfbdc1a35ca38008aaf6dd908" title="xinormal" alt="" coords="585,259,655,285"/>
+<area shape="rect" id="node34" href="$kl__cdhc__distribution__tests_8cpp.html#a75ef9843e03935f69e133946279819ea" title="dmax_exp" alt="" coords="579,157,661,184"/>
+</map>

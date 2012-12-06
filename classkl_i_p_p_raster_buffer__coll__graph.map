@@ -1,0 +1,7 @@
+<map id="klIPPRasterBuffer&lt; TYPE &gt;" name="klIPPRasterBuffer&lt; TYPE &gt;">
+<area shape="rect" id="node2" href="$classkl_reference_counted_raster_buffer.html" title="{klReferenceCountedRaster\lBuffer\n||+ klReferenceCountedRaster\lBuffer()\l}" alt="" coords="5,696,192,803"/>
+<area shape="rect" id="node4" href="$classkl_raster_buffer.html" title="{klRasterBuffer\n||+ buffer()\l+ buffer()\l+ numBands()\l+ width()\l+ height()\l+ sampleBits()\l+ bandStrideBits()\l+ xStrideBits()\l+ yStrideBits()\l+ ~klRasterBuffer()\l+ bandStride()\l+ xStride()\l+ yStride()\l# bitsPerByte()\l}" alt="" coords="17,377,148,645"/>
+<area shape="rect" id="node6" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="172,428,327,593"/>
+<area shape="rect" id="node8" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="95,169,191,290"/>
+<area shape="rect" id="node14" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="354,147,547,312"/>
+</map>

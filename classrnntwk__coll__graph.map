@@ -1,0 +1,5 @@
+<map id="rnntwk" name="rnntwk">
+<area shape="rect" id="node2" href="$classnetwork.html" title="{network\n|+ layers\l+ input_dim\l+ training_param\l+ num_vectors\l+ passes\l+ input_file_buf\l+ output_file_buf\l+ weights_file_buf\l+ lower_range\l+ upper_range\l|+ network()\l+ ~network()\l+ operator=()\l}" alt="" coords="416,454,541,693"/>
+<area shape="rect" id="node4" href="$classlayer.html" title="{layer\n||+ layer()\l+ ~layer()\l+ operator=()\l}" alt="" coords="399,176,496,283"/>
+<area shape="rect" id="node24" href="$classrn__unit__train.html" title="{rn_unit_train\n|+ weights\l+ linear_output\l+ activation\l|+ rn_unit_train()\l+ ~rn_unit_train()\l}" alt="" coords="77,307,197,429"/>
+</map>

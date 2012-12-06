@@ -1,0 +1,7 @@
+<map id="klNormalInverseApproxRV&lt; TYPE &gt;" name="klNormalInverseApproxRV&lt; TYPE &gt;">
+<area shape="rect" id="node2" href="$classkl_mersenne_twister.html" title="{klMersenneTwister\n|&#45; state\l&#45; next\l&#45; remaining\l&#45; seed\l|+ klMersenneTwister()\l+ ~klMersenneTwister()\l+ reset()\l+ nextValue()\l+ nextNormalizedValue()\l&#45; reloadMT()\l}" alt="" coords="428,189,593,384"/>
+<area shape="rect" id="node12" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; double \&gt;\n|# minimum\l# maximum\l# range\l|+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="234,721,389,901"/>
+<area shape="rect" id="node20" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; TYPE \&gt;\n|# minimum\l# maximum\l|+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="216,461,368,627"/>
+<area shape="rect" id="node6" href="$classkl_r_v.html" title="{klRV\&lt; TYPE \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="5,233,112,340"/>
+<area shape="rect" id="node15" href="$classkl_r_v.html" title="{klRV\&lt; double \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="29,491,141,597"/>
+</map>

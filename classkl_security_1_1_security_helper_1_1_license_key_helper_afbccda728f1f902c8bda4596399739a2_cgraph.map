@@ -1,0 +1,10 @@
+<map id="klSecurity.SecurityHelper.LicenseKeyHelper.RunKeyGen" name="klSecurity.SecurityHelper.LicenseKeyHelper.RunKeyGen">
+<area shape="rect" id="node3" href="$classkl_security_1_1_security_helper.html#a0ce626ce545a38cf658dde3277d7289b" title="klSecurity.SecurityHelper.\lInstallPerServerLicensePkCertificates" alt="" coords="273,103,511,145"/>
+<area shape="rect" id="node13" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#ac580e90755c0ad0e5d8095215aa558ab" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.SignMacWithPrivateKey" alt="" coords="257,201,527,242"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_security_helper.html#ae62db11992e946c93cb58fb7e9b76b79" title="klSecurity.SecurityHelper.\lGetSecureStringFromConsole" alt="" coords="576,5,771,46"/>
+<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper.html#abe42bba7d5a86dc788ab407b025b5f36" title="klSecurity.SecurityHelper.\lRemoveCertificates" alt="" coords="587,70,760,111"/>
+<area shape="rect" id="node11" href="$classkl_security_1_1_security_helper.html#a0f4da7df718642b17b87fccf08a75049" title="klSecurity.SecurityHelper.\lValidateCert" alt="" coords="587,135,760,177"/>
+<area shape="rect" id="node9" href="$classkl_security_1_1_security_helper.html#a54e8a8015fae6fb92023daa71e176541" title="klSecurity.SecurityHelper.\lRemoveCertificate" alt="" coords="819,70,992,111"/>
+<area shape="rect" id="node15" href="$classkl_security_1_1_crypto_helper.html#a67c3db2f3f56a4e82fc5bace46f8d3d9" title="klSecurity.CryptoHelper.\lFindCertificate" alt="" coords="592,201,755,242"/>
+<area shape="rect" id="node17" href="$classkl_security_1_1_crypto_helper.html#ac99fd681ab53f372ba3b00c7d30667a8" title="klSecurity.CryptoHelper.Sign" alt="" coords="579,267,768,293"/>
+</map>

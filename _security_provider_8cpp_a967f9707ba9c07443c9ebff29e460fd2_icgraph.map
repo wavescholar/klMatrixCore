@@ -1,0 +1,7 @@
+<map id="GetSystemName" name="GetSystemName">
+<area shape="rect" id="node3" href="$_security_provider_8cpp.html#adad91f42d7fd6018975f753438084498" title="EnumPhyCallback" alt="" coords="177,5,306,32"/>
+<area shape="rect" id="node9" href="$_security_provider_8cpp.html#af4eee88fe79f8021e6fb8ea2107487a6" title="EnumSysCallback" alt="" coords="355,56,485,83"/>
+<area shape="rect" id="node5" href="$_security_provider_8cpp.html#a9f0b3c05a0d687f9667279784173fd5c" title="enumerates_system_certificate\l_store_locations" alt="" coords="709,49,912,90"/>
+<area shape="rect" id="node7" href="$class_security_provider_1_1kl_security_wrapper.html#a5edc5e8f0ae22f52373d72d8b1c30e05" title="SecurityProvider::klSecurity\lWrapper::enumerateCertificateStore\lLocations" alt="" coords="960,41,1189,97"/>
+<area shape="rect" id="node12" href="$_security_provider_8cpp.html#a8c62afc17dcb2bc9c4b81ab501eb9c83" title="EnumLocCallback" alt="" coords="534,107,661,133"/>
+</map>

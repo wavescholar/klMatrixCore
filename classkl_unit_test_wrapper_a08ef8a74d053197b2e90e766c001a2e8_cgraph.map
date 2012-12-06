@@ -1,0 +1,10 @@
+<map id="klUnitTestWrapper::HardwareConfiguration" name="klUnitTestWrapper::HardwareConfiguration">
+<area shape="rect" id="node3" href="$kl__hardware_8cpp.html#ac1aaa1f291c107b978c26bed0d7e77e8" title="klPrintModules" alt="" coords="259,5,367,32"/>
+<area shape="rect" id="node5" href="$kl__hardware_8cpp.html#a2126eb90fedd7d3566145276d875f69d" title="klWinSystemInfo" alt="" coords="253,56,373,83"/>
+<area shape="rect" id="node7" href="$kl__hardware_8cpp.html#a1899f75198974e8e78971b2d37d87438" title="klWinMemoryInfo" alt="" coords="252,107,375,133"/>
+<area shape="rect" id="node9" href="$kl__hardware_8cpp.html#a79ccfd03dc2b28f4590ed32024a01560" title="klGetLogicalProcessorInformation" alt="" coords="205,157,421,184"/>
+<area shape="rect" id="node13" href="$kl__hardware_8cpp.html#a8c73d78b1ae500f1bc5e3fa747337aed" title="klGetMACaddress" alt="" coords="249,208,377,235"/>
+<area shape="rect" id="node15" href="$kl__hardware_8cpp.html#ae0104626bf34f30101e08275ffa0c75f" title="klGetCPUID" alt="" coords="267,259,359,285"/>
+<area shape="rect" id="node17" href="$kl__hardware_8cpp.html#a6d8a3a8f1580da2b417dee9ad628c8e5" title="klWMI" alt="" coords="284,309,343,336"/>
+<area shape="rect" id="node11" href="$kl__hardware_8cpp.html#a0bb4baf0b570bd194e5b9190ef7ddfe1" title="CountSetBits" alt="" coords="469,157,568,184"/>
+</map>

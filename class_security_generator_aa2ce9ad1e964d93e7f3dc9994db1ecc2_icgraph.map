@@ -1,0 +1,7 @@
+<map id="SecurityGenerator::GetSecurityFlag" name="SecurityGenerator::GetSecurityFlag">
+<area shape="rect" id="node3" href="$class_security_provider_1_1kl_security_wrapper.html#a14165b6b92fb52be394970660418f0de" title="SecurityProvider::klSecurity\lWrapper::IsSubsetOfDemo" alt="" coords="190,5,373,46"/>
+<area shape="rect" id="node5" href="$class_security_provider_1_1kl_security_wrapper.html#aef80acf7dc44d560add27be8f76221aa" title="SecurityProvider::klSecurity\lWrapper::UnionDemo" alt="" coords="190,70,373,111"/>
+<area shape="rect" id="node7" href="$class_security_provider_1_1kl_security_wrapper.html#a6bd68c85fea1e3784db496b3b0687f7e" title="SecurityProvider::klSecurity\lWrapper::IntersectDemo" alt="" coords="190,135,373,177"/>
+<area shape="rect" id="node9" href="$class_security_provider_1_1kl_security_wrapper.html#a0566725991a41e6d1a94f8b92c5265ac" title="SecurityProvider::klSecurity\lWrapper::CopyDemo" alt="" coords="190,201,373,242"/>
+<area shape="rect" id="node11" href="$class_security_provider_1_1kl_security_wrapper.html#a6cdb0b20233d2712be4976dc5d130acf" title="SecurityProvider::klSecurity\lWrapper::ToFromXmlDemo" alt="" coords="190,266,373,307"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="operator&lt;&lt;" name="operator&lt;&lt;">
+<area shape="rect" id="node3" href="$classkl_c_p_u_topology.html#adbe8863b331411307f355a7cb0e9d9fb" title="klCPUTopology::_GetOSLogical\lProcessorCount" alt="" coords="150,5,357,46"/>
+<area shape="rect" id="node7" href="$classkl_c_p_u_topology.html#a0ef0bce0f0730a2652997dd5b3c28d97" title="klCPUTopology::_GetSysProcessor\lPackageCount" alt="" coords="139,70,368,111"/>
+<area shape="rect" id="node11" href="$classkl_c_p_u_topology.html#afd5b0ba4f35ec4b4ab11a62c37a5e539" title="klCPUTopology::_GetProcessor\lCoreCount" alt="" coords="150,135,357,177"/>
+<area shape="rect" id="node15" href="$classkl_c_p_u_topology.html#a816d9508852209dc12f1ec64caf9a450" title="klCPUTopology::_GetLogical\lProcessorCount" alt="" coords="159,201,347,242"/>
+<area shape="rect" id="node19" href="$classkl_c_p_u_topology.html#aae10c64079bbe58d6c85b1629eb8489d" title="klCPUTopology::_GetCores\lPerPackageProcessorCount" alt="" coords="160,266,347,307"/>
+<area shape="rect" id="node23" href="$classkl_c_p_u_topology.html#af5a1b0385a03cd40fec90c081734a93a" title="klCPUTopology::_GetProcessor\lPackageCount" alt="" coords="150,331,357,373"/>
+<area shape="rect" id="node27" href="$classkl_c_p_u_topology.html#a5bf1dcee1d49c03f6bf2b0bdb233708e" title="klCPUTopology::_GetLogical\lPerCoreProcessorCount" alt="" coords="159,397,347,438"/>
+<area shape="rect" id="node5" href="$kl__hradware_8h.html#aea2ab61804494f939de8d6602d6e42c4" title="GetOSLogicalProcessorCount" alt="" coords="423,12,619,39"/>
+<area shape="rect" id="node9" href="$kl__hradware_8h.html#afabb1c09464f4fa80518f4aac275b2aa" title="GetSysProcessorPackageCount" alt="" coords="416,77,627,104"/>
+<area shape="rect" id="node13" href="$kl__hradware_8h.html#a05c6cfd28c1d7211feb177b449d3e9e5" title="GetProcessorCoreCount" alt="" coords="440,143,603,169"/>
+<area shape="rect" id="node17" href="$kl__hradware_8h.html#a44650984a052510371a2bdea3dc19eb5" title="GetLogicalProcessorCount" alt="" coords="433,208,610,235"/>
+<area shape="rect" id="node21" href="$kl__hradware_8h.html#a09de689ece6e19639c3e3a16690b5c41" title="GetCoresPerPackageProcessor\lCount" alt="" coords="418,266,625,307"/>
+<area shape="rect" id="node25" href="$kl__hradware_8h.html#a5e7806cbd0f07a3b45abf070625e17dc" title="GetProcessorPackageCount" alt="" coords="428,339,615,365"/>
+<area shape="rect" id="node29" href="$kl__hradware_8h.html#afb360f65515aff2d9e00f30e9e4e8884" title="GetLogicalPerCoreProcessor\lCount" alt="" coords="426,397,617,438"/>
+</map>

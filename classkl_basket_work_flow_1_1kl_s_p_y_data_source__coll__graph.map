@@ -1,0 +1,10 @@
+<map id="klBasketWorkFlow.klSPYDataSource" name="klBasketWorkFlow.klSPYDataSource">
+<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_algorithm_data_source.html" title="{klAlgorithmDataSource\n||+ klAlgorithmDataSource()\l+ getData()\l}" alt="" coords="129,723,303,815"/>
+<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="5,154,99,275"/>
+<area shape="rect" id="node6" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="52,5,193,83"/>
+<area shape="rect" id="node14" href="$classkl_work_flow_1_1kl_transform.html" title="{klWorkFlow.klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="123,154,284,275"/>
+<area shape="rect" id="node18" href="$classkl_basket_work_flow_1_1kl_basket.html" title="{klBasketWorkFlow.klBasket\n|+ m_componentsIndustryCode\l+ m_components\l+ m_weights\l+ m_FactTables\l+ m_DailyFiles\l+ m_TicDataFiles\l+ m_QuoteChainFiles\l+ m_OptionHashFiles\l+ m_15minOptionBarFiles\l+ m_VolatilitySurfaceSnapshots\l|}" alt="" coords="492,449,700,658"/>
+<area shape="rect" id="node20" href="$classkl_work_flow_1_1_rendered_item.html" title="{RenderedItem\n||+ RenderedItem()\l+ getKey()\l}" alt="" coords="771,169,893,261"/>
+<area shape="rect" id="node25" href="$classkl_symbol_calculus_1_1kl_basket_symbol.html" title="{klSymbolCalculus.klBasket\lSymbol\n||+ getBaseSymbol()\l+ getSymbols()\l+ getCodes()\l&#45; getWeightType()\l}" alt="" coords="429,147,611,283"/>
+<area shape="rect" id="node10" href="$classkl_work_flow_1_1_o_c_p.html" title="{klWorkFlow.OCP\n||+ setCache()\l+ setTransform()\l+ getData()\l+ OCP()\l}" alt="" coords="155,493,277,614"/>
+</map>

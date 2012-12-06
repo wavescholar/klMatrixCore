@@ -1,0 +1,9 @@
+<map id="klMainUnitTestDriver" name="klMainUnitTestDriver">
+<area shape="rect" id="node3" href="$kl_main_8cpp.html#a0174c5af8f16e83bed6280a340233d0a" title="klNewHandler" alt="" coords="241,5,343,32"/>
+<area shape="rect" id="node5" href="$kl__hardware_8cpp.html#ac1aaa1f291c107b978c26bed0d7e77e8" title="klPrintModules" alt="" coords="238,56,346,83"/>
+<area shape="rect" id="node7" href="$kl__hardware_8cpp.html#a2126eb90fedd7d3566145276d875f69d" title="klWinSystemInfo" alt="" coords="232,107,352,133"/>
+<area shape="rect" id="node9" href="$kl__hardware_8cpp.html#a1899f75198974e8e78971b2d37d87438" title="klWinMemoryInfo" alt="" coords="231,157,353,184"/>
+<area shape="rect" id="node11" href="$kl__memory_8cpp.html#acfdb802ea7435aafe183fa873b1cd73a" title="klCreateLowMemoryResource\lNotification" alt="" coords="195,209,389,250"/>
+<area shape="rect" id="node13" href="$kl__memory_8cpp.html#a12f8e815380762a8ea0e7d10aefb9b43" title="klQueryLowMemoryResource\lNotification" alt="" coords="196,274,388,315"/>
+<area shape="rect" id="node15" href="$classkl_thread.html#a650f76bc8a35820619ed8ca87a2b34f6" title="klThread::getCurrentThreadId" alt="" coords="198,340,386,367"/>
+</map>

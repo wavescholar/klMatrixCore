@@ -1,0 +1,4 @@
+<map id="IDispatchMessageInspector" name="IDispatchMessageInspector">
+<area shape="rect" id="node3" href="$class_certificate_helper_1_1_streaming_security_message_inspector.html" title="{CertificateHelper.Streaming\lSecurityMessageInspector\n||+ AfterReceiveRequest()\l+ AfterReceiveRequest()\l+ BeforeSendReply()\l+ AfterReceiveReply()\l+ BeforeSendRequest()\l}" alt="" coords="5,131,184,282"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_streaming_security_message_inspector.html" title="{klSecurity.StreamingSecurity\lMessageInspector\n||+ AfterReceiveRequest()\l+ AfterReceiveRequest()\l+ BeforeSendReply()\l+ AfterReceiveReply()\l+ BeforeSendRequest()\l}" alt="" coords="209,131,399,282"/>
+</map>

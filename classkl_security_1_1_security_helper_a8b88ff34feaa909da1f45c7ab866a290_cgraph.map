@@ -1,0 +1,8 @@
+<map id="klSecurity.SecurityHelper.InstallWcfSecurityCertificates" name="klSecurity.SecurityHelper.InstallWcfSecurityCertificates">
+<area shape="rect" id="node3" href="$classkl_security_1_1_security_helper.html#abe42bba7d5a86dc788ab407b025b5f36" title="klSecurity.SecurityHelper.\lRemoveCertificates" alt="" coords="271,5,444,46"/>
+<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper.html#a2b0ba3d41feba3c07e6b8752cf1eeddf" title="klSecurity.SecurityHelper.\lGrantUserAccessToPrivateKeyFile" alt="" coords="246,70,469,111"/>
+<area shape="rect" id="node13" href="$classkl_security_1_1_security_helper.html#a0f4da7df718642b17b87fccf08a75049" title="klSecurity.SecurityHelper.\lValidateCert" alt="" coords="271,135,444,177"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_security_helper.html#a54e8a8015fae6fb92023daa71e176541" title="klSecurity.SecurityHelper.\lRemoveCertificate" alt="" coords="563,5,736,46"/>
+<area shape="rect" id="node9" href="$classkl_security_1_1_security_helper_1_1_grant_key_access.html#a10723153e91431ecd1744aff49626257" title="klSecurity.SecurityHelper.\lGrantKeyAccess.AddAccessToCertificate" alt="" coords="517,70,781,111"/>
+<area shape="rect" id="node11" href="$classkl_security_1_1_security_helper_1_1_grant_key_access.html#a819ca7c68e8500db2b9d4b9f320b00ab" title="klSecurity.SecurityHelper.\lGrantKeyAccess.FindKeyLocation" alt="" coords="830,70,1053,111"/>
+</map>

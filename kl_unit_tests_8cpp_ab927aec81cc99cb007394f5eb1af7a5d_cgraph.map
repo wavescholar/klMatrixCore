@@ -1,0 +1,14 @@
+<map id="testklLinearRegression3x1" name="testklLinearRegression3x1">
+<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="240,5,371,32"/>
+<area shape="rect" id="node5" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="252,56,359,83"/>
+<area shape="rect" id="node7" href="$kl__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="282,107,329,133"/>
+<area shape="rect" id="node9" href="$kl__latex__helper__fns_8h.html#a6c2cf5d6899d39aeaf7dd6b51c1a7a75" title="LatexPrintMatrix" alt="" coords="429,157,547,184"/>
+<area shape="rect" id="node15" href="$classkl_matrix.html#a3049435a446db44f00e08167b2f4060c" title="klMatrix::setRow" alt="" coords="246,259,365,285"/>
+<area shape="rect" id="node17" href="$kl__latex__helper__fns_8cpp.html#a846ee11d822a67e072e86b4b63f12cda" title="LatexInsert3DPlot" alt="" coords="243,208,368,235"/>
+<area shape="rect" id="node28" href="$classkl_matrix.html#ab8d9602c45cbaad45df0654497d83c67" title="klMatrix::getSubBlock" alt="" coords="230,309,381,336"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#a40bc4fd2142f4b4a44227a868c8a67ae" title="klMatrix::getRows" alt="" coords="619,107,746,133"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#abf51f5fe4db69e4c78fd7a36f6a2c05d" title="klMatrix::getColumns" alt="" coords="610,157,755,184"/>
+<area shape="rect" id="node19" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="595,259,770,301"/>
+<area shape="rect" id="node21" href="$kl__matlab__iface_8h.html#a554128d9130cb3887e38930c33b7df41" title="klScatterPlot3D" alt="" coords="431,208,545,235"/>
+<area shape="rect" id="node26" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="616,208,749,235"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="klSecurity.SecurityHelper.RemoveCertificate" name="klSecurity.SecurityHelper.RemoveCertificate">
+<area shape="rect" id="node3" href="$classkl_security_1_1_security_helper.html#abe42bba7d5a86dc788ab407b025b5f36" title="klSecurity.SecurityHelper.\lRemoveCertificates" alt="" coords="227,146,400,187"/>
+<area shape="rect" id="node5" href="$classkl_security_1_1_security_helper.html#a8b88ff34feaa909da1f45c7ab866a290" title="klSecurity.SecurityHelper.\lInstallWcfSecurityCertificates" alt="" coords="481,81,673,122"/>
+<area shape="rect" id="node11" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#ae77e06927a88c457785739b3ddd134fc" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.RunLocalLicense\lKeyHelper" alt="" coords="755,197,986,253"/>
+<area shape="rect" id="node15" href="$classkl_security_1_1_security_helper.html#a0ce626ce545a38cf658dde3277d7289b" title="klSecurity.SecurityHelper.\lInstallPerServerLicensePkCertificates" alt="" coords="458,263,697,305"/>
+<area shape="rect" id="node20" href="$classkl_security_1_1_security_helper.html#adb65fcf6f5d544294f68a83899d1a670" title="klSecurity.SecurityHelper.\lInstallPerServerLicensePublicCertificates" alt="" coords="448,146,707,187"/>
+<area shape="rect" id="node25" href="$classkl_security_1_1kl_certificate_manager.html#adff2843c7ecf9720d8382d0cfba6b8c9" title="klSecurity.klCertificate\lManager.RemoveCertificates" alt="" coords="484,5,671,46"/>
+<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper.html#a82f4d7f839d1827234034ac8e7cb96e7" title="klSecurity.SecurityHelper.\lInstallCertificates" alt="" coords="784,51,957,93"/>
+<area shape="rect" id="node13" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#a8ee27a112d6ddc006fb355d9c95c7352" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.ValidateLicense\lKeyAndInstallWcfSecurity" alt="" coords="759,117,982,173"/>
+<area shape="rect" id="node9" href="$classkl_security_1_1kl_certificate_manager.html#a32c2c99eab513cabc3aeacbaa564dc65" title="klSecurity.klCertificate\lManager.ManageCertificates" alt="" coords="1035,22,1221,63"/>
+<area shape="rect" id="node18" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#afbccda728f1f902c8bda4596399739a2" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.RunKeyGen" alt="" coords="770,278,971,319"/>
+</map>

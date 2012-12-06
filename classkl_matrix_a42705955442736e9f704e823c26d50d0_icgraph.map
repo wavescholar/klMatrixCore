@@ -1,0 +1,27 @@
+<map id="klMatrix::transpose" name="klMatrix::transpose">
+<area shape="rect" id="node3" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="199,107,364,149"/>
+<area shape="rect" id="node5" href="$kl__matlab__dependent__unit__tests_8h.html#a8ab8e1997dc6a845e817292bcf92e443" title="klRVUnitTestHarnessLaTex\lMatlab" alt="" coords="191,173,372,214"/>
+<area shape="rect" id="node7" href="$kl__matlab__iface_8h.html#a554128d9130cb3887e38930c33b7df41" title="klScatterPlot3D" alt="" coords="225,239,338,265"/>
+<area shape="rect" id="node23" href="$kl__matlab__iface_8h.html#ac8ecf6416293e6a05bfdf6c4615cfd2d" title="kl2DPlot" alt="" coords="246,391,317,417"/>
+<area shape="rect" id="node25" href="$kl__matlab__iface_8h.html#a3ef07fdb7b872d5706ea5530d8b9c38f" title="klMatlabExportMatrix" alt="" coords="209,441,354,468"/>
+<area shape="rect" id="node27" href="$classkl_matrix.html#a426de331b31907155ec2348a1579c59e" title="klMatrix\&lt; complex\&lt;\l double \&gt; \&gt;::inverse" alt="" coords="213,493,350,534"/>
+<area shape="rect" id="node29" href="$classkl_l_u.html#a9340905a44278a0ae8028c0c0556cb1b" title="klLU::operator()" alt="" coords="226,559,337,585"/>
+<area shape="rect" id="node31" href="$kl___m_l__helper__fns_8h.html#a45665de542e5ad71c52d7dd17e5ff07f" title="SampleGOE" alt="" coords="234,289,329,316"/>
+<area shape="rect" id="node33" href="$kl___m_l__helper__fns_8h.html#a750bae397e2d03b4300fef04a3ccdbd3" title="SampleWishart" alt="" coords="455,391,566,417"/>
+<area shape="rect" id="node51" href="$classkl_normal_multi_variate.html#a33d51dc1b11364c3dfd604ff3e316ab6" title="klNormalMultiVariate\l::setupSpec" alt="" coords="210,610,353,651"/>
+<area shape="rect" id="node53" href="$classkl_principal_components.html#af0336b266a15c4a9d1ff95933e4a1ab0" title="klPrincipalComponents\l::klPCACore" alt="" coords="204,675,359,717"/>
+<area shape="rect" id="node55" href="$classkl_linear_regression.html#a7b7110fd16efe9c97db5834f18e8181d" title="klLinearRegression\l::klLinearRegressionCore" alt="" coords="198,741,365,782"/>
+<area shape="rect" id="node57" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="187,807,375,833"/>
+<area shape="rect" id="node9" href="$kl__latex__helper__fns_8h.html#a846ee11d822a67e072e86b4b63f12cda" title="LatexInsert3DPlot" alt="" coords="448,129,573,156"/>
+<area shape="rect" id="node11" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="646,5,853,32"/>
+<area shape="rect" id="node13" href="$kl__matlab__dependent__unit__tests_8h.html#aad61f3c8089d0fe7741bacc402f161da" title="testKLMultiVariateRandom\lNumberGeneratorMatlab" alt="" coords="661,57,838,98"/>
+<area shape="rect" id="node15" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="661,122,838,163"/>
+<area shape="rect" id="node17" href="$kl_unit_tests_8cpp.html#ab927aec81cc99cb007394f5eb1af7a5d" title="testklLinearRegression3x1" alt="" coords="662,188,837,215"/>
+<area shape="rect" id="node19" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="901,264,997,291"/>
+<area shape="rect" id="node21" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="1046,264,1106,291"/>
+<area shape="rect" id="node35" href="$kl_s_m_p_m_t_8cpp.html#ad3497c522352701809cb7c85dc6d5579" title="kl_SMP_SM_MT_WorkFlow" alt="" coords="657,340,842,367"/>
+<area shape="rect" id="node40" href="$kl_unit_tests_8cpp.html#a76b187c8b9c08822ebb85073d1baa549" title="testMatrixNorm" alt="" coords="694,289,805,316"/>
+<area shape="rect" id="node44" href="$kl_unit_tests_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="425,289,597,316"/>
+<area shape="rect" id="node46" href="$kl_unit_tests_8cpp.html#a5c2b0434818ad58bb40c76d265f245b5" title="testArpack" alt="" coords="468,188,553,215"/>
+<area shape="rect" id="node37" href="$kl_unit_tests_8cpp.html#a47c828ad069a152ba9d3c3e2f5088e3c" title="generateTraceyWidomSample" alt="" coords="651,391,847,417"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="klBasketWorkFlow.klQuantLibOptionsTransform" name="klBasketWorkFlow.klQuantLibOptionsTransform">
+<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_algorithm_transform.html" title="{klAlgorithmTransform\n||+ klAlgorithmTransform()\l+ getData()\l}" alt="" coords="42,678,205,770"/>
+<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="15,147,109,269"/>
+<area shape="rect" id="node6" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="5,5,147,83"/>
+<area shape="rect" id="node16" href="$classkl_work_flow_1_1kl_transform.html" title="{klWorkFlow.klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="141,147,301,269"/>
+<area shape="rect" id="node10" href="$classkl_work_flow_1_1_i_c_p.html" title="{klWorkFlow.ICP\n||+ getData()\l+ connect()\l}" alt="" coords="199,521,313,613"/>
+<area shape="rect" id="node12" href="$classkl_work_flow_1_1_o_c_p.html" title="{klWorkFlow.OCP\n||+ setCache()\l+ setTransform()\l+ getData()\l+ OCP()\l}" alt="" coords="195,334,317,455"/>
+</map>

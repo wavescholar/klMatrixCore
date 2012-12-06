@@ -1,0 +1,9 @@
+<map id="klMatrix&lt; TYPE &gt;" name="klMatrix&lt; TYPE &gt;">
+<area shape="rect" id="node2" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="139,392,293,557"/>
+<area shape="rect" id="node4" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="28,185,124,306"/>
+<area shape="rect" id="node10" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="287,163,480,328"/>
+<area shape="rect" id="node15" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="351,429,437,521"/>
+<area shape="rect" id="node19" title="STL class." alt="" coords="661,207,741,284"/>
+<area shape="rect" id="node21" title="STL class." alt="" coords="638,6,764,98"/>
+<area shape="rect" id="node32" title="STL class." alt="" coords="505,207,617,284"/>
+</map>
