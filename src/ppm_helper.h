@@ -1,14 +1,7 @@
-// /*
-//  *  Copyright (C) 2009 Omnyx, LLC  All Rights Reserved.
-//  * 
-//  *  This file contains proprietary software licensed from Omnyx, LLC 
-//  *  and is subject to a non-disclosure agreement.      
-//  *  This header must remain in any source code despite modifications       
-//  *  or enhancements by any party.  
-//  * 
-//  *  Original Author:  Bruce Campbell
-//  *  Description: Function declarations for ppm_helper static library
-// */
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 
 #include "kl_image_buffer.h"
 

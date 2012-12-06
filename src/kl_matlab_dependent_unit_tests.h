@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #ifndef __kl_matlab_dependent_unit_tests__
 #define __kl_matlab_dependent_unit_tests__
 #include "kl_multiclass_svm.h"

@@ -1,3 +1,8 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 double angle_cdf ( double x, int n );
 double angle_mean ( int a );
 double angle_pdf ( double x, int a );

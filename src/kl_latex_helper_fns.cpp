@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 #include "kl_latex_helper_fns.h"
 #include "kl_matlab_iface.h"
 

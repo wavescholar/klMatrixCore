@@ -1,9 +1,13 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include <windows.h>
 #include <iostream>
 #include <map>
 #include <limits.h>
 using namespace std;
-
 
 #include <malloc.h>    
 #include <stdio.h>

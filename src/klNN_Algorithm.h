@@ -1,5 +1,8 @@
-//#include<stdio.h>
-//#include<stdlib.h>
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
+
 #include<math.h>
 #include <iostream>
 #include <fstream>

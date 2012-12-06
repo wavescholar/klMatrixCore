@@ -1,3 +1,7 @@
+ /*******************************
+ * WSCMP [2003] - [2012] WSCMP  *  
+ * Bruce B Campbell 11 30 2012  *
+ ********************************/
 
 /* M. Matsumoto and T. Nishimura,
 "Mersenne Twister: A 623-Dimensionally Equidistributed Uniform  
