@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GitFiles">
+      <UniqueIdentifier>{409cbf09-cd3f-40fd-ae01-e56217cb34eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{17147d30-5a2b-48ed-a9e4-c9a247ce1683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\MatlabLibs">
+      <UniqueIdentifier>{8fcb7a34-c367-41f4-a506-390c431b1f15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\DebugklPackages">
+      <UniqueIdentifier>{b06a410b-4d0d-4907-89c7-c31a7262d74c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\ReleaseklPackages">
+      <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_arpack.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_bregman_divergence.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_exception.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_hardware.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_hradware.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_image_buffer.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_image_processing_functors.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_img_pca.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_independent_components.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_linear_equation.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_matlab_dependent_unit_tests.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_matlab_iface.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_matrix.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_matrix_facorizations.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_memory.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_ML_helper_fns.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_multiclass_svm.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_multivariate_random_variable.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_principal_components.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_prob.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_random_number_generator.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_regression.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_sample_population.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_SEH.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_stat.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_thread_workflow.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_time_series.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_unit_test_wrapper.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_unit_tests.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_util.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_vector.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_wavelet.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\klLogger.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\klNN_Algorithm.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\klSDPA.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\klSpline.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ppm_helper.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\kl_latex_helper_fns.h">
+      <Filter>GitFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="klMatrixCore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_cdhc_distribution_tests.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_hardware.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_image_processing_functors.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_matrix_exponential.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_memory.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_ML_helper_fns.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_multivariate_random_variable.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_random_number_generator.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_SEH.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_unit_test_wrapper.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klArpackCore.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klSDPA.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klSMPMT.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klUnitTests.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klUtil.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ppm_helper.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_latex_helper_fns.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klIPPDemo.cpp">
+      <Filter>GitFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libemlrt.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libeng.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libfixedpoint.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmat.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmex.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwservices.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwsl_fileio.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmwsl_solver_rtw.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libmx.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\libut.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclcommain.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclmcr.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\mclmcrrt.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\ne_mli.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\ne_rtl.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\physmod_foundation_util.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\Packages\Matlab\extern\lib\win64\microsoft\rtwcg.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\UMFPACK.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\SUPERLU_SEQUENTIAL.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\Matlib.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\libsdpa.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\FGG.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\expokitcpp.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\expokit.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\arpack_CPP_v2.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\ARPACK2.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\UMFPACK.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\SUPERLU_SEQUENTIAL.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\Matlib.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\libsdpa.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\FGG.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\expokitcpp.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\arpack_CPP_v2.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\ARPACK2.lib">
+      <Filter>Libs\ReleaseklPackages</Filter>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Kernel32.Lib">
+      <Filter>Libs</Filter>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
+      <Filter>Libs</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
