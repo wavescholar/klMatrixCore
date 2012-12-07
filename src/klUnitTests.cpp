@@ -39,6 +39,13 @@ void testklUtil(ofstream &_tex,unsigned int  &n);
 void testklMatrixMult(ofstream &_tex,unsigned int  &n );
 void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n);
 void testExpoKit(ofstream &_tex,unsigned int  &n);
+void testMutithreadedWorkflow(void);
+
+void GetMaAddresscFromAdapter (void);
+bool klIsInsideVMWare();
+bool klIsInsideVPC();
+
+void testCaseForGitIssue7(ofstream &_tex,unsigned int  &n);
 
 const char* basefilename="D:\\klDll\\TestDll\\";  
 klMutex klMatlabEngineThreadMap::lock;
@@ -60,188 +67,6 @@ void __cdecl klNewHandler( )
 	return;
 }
 
-
-//void startLatexDoc(string title,string author,string date,ofstream &_tex,string abs);
-//void makeLatexSection(string sectionTitle,ofstream &_tex);
-//void endLatexDoc(ofstream &_tex);
-//void LatexInsert1DPlot( klVector<double>& vec, ofstream &_tex, string dir,string filename,string title);
-//void LatexInsert3DPlot( klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title);
-//void LatexInsertHistogram( klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title);
-//void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title);
-//template<class TYPE> void LatexPrintMatrix( klMatrix<TYPE>& matrix, string name,ofstream &_tex);
-//template<class TYPE> void LatexPrintVector( klVector<TYPE>& klvector, string name,ofstream &_tex);
-//#include <iomanip>
-//template<class TYPE> void LatexPrintMatrix( klMatrix<TYPE>& matrix, string name,ofstream &_tex)
-//{
-//	unsigned int row = matrix.getRows();
-//	unsigned int col = matrix.getColumns();
-//	_tex<<"$"<<name<<" = "<<"\\left("<<endl;
-//	_tex<<"\\begin{array}{"<<endl;
-//	for(int i=0;i<col;i++)
-//	{
-//		_tex<<"c";
-//	}
-//	_tex<<"}"<<endl;
-//	_tex.precision(3);
-//	_tex.flags( ios::showpos | ios::internal | ios::fixed );
-//	_tex << setw(4);
-//	for(int i=0;i<row;i++)
-//	{
-//		for(int j=0;j<col-1;j++)
-//		{
-//			_tex<<matrix[i][j]<<" & ";
-//		}
-//		_tex<<matrix[i][col-1]<<" \\\\"<<endl;
-//	}
-//	_tex<<"\\end{array}"<<endl;
-//	_tex<<"\\right)$"<<endl<<endl;
-//	_tex.flags();
-//}
-//template<class TYPE> void LatexPrintVector( klVector<TYPE>& klvector, string name,ofstream &_tex)
-//{
-//	unsigned int col = klvector.getColumns();
-//	_tex<<"$"<<name<<" = "<<"\\left("<<endl;
-//	_tex<<"\\begin{array}{"<<endl;
-//	for(int i=0;i<col;i++)
-//	{
-//		_tex<<"c";
-//	}
-//	_tex<<"}"<<endl;
-//	_tex.precision(5);
-//	_tex.flags( ios::showpos | ios::internal | ios::fixed );
-//	_tex << setw(6);
-//
-//	for(int j=0;j<col-1;j++)
-//	{
-//		_tex<<klvector[j]<<" & ";
-//	}
-//	_tex<<klvector[col-1]<<" \\\\"<<endl;
-//
-//	_tex<<"\\end{array}"<<endl;
-//	_tex<<"\\right)$"<<endl<<endl;
-//	_tex.flags();
-//
-//}
-
-//void startLatexDoc(string title,string author,string date,ofstream &_tex,string abs)
-//{
-//	_tex<<"\\documentclass[12pt]{article}"<<endl;
-//	_tex<<"\\usepackage[english]{babel}"<<endl;
-//	_tex<<"\\usepackage{amsmath,amsthm}"<<endl;
-//	_tex<<"\\usepackage{amsfonts}"<<endl;
-//	_tex<<"\\usepackage{graphicx}"<<endl;
-//	_tex<<"\\newtheorem{thm}{Theorem}[section]"<<endl;
-//	_tex<<"\\newtheorem{cor}[thm]{Corollary}"<<endl;
-//	_tex<<"\\newtheorem{lem}[thm]{Lemma}"<<endl;
-//	_tex<<"\\newtheorem{prop}[thm]{Proposition}"<<endl;
-//	_tex<<"\\theoremstyle{definition}"<<endl;
-//	_tex<<"\\newtheorem{defn}[thm]{Definition}"<<endl;
-//	_tex<<"\\theoremstyle{remark}"<<endl;
-//	_tex<<"\\newtheorem{rem}[thm]{Remark}"<<endl;
-//	_tex<<"\\numberwithin{equation}{section}"<<endl;
-//	_tex<<"\\begin{document}"<<endl;
-//	_tex<<"\\title{"<<title<<"}"<<endl;
-//	_tex<<"\\author{"<<author<<"}"<<endl;
-//	_tex<<"\\date{"<<date<<"}"<<endl;
-//	//_tex<<"\\begin{abstract}"<<endl;
-//	//_tex<<abs<<endl;
-//	//_tex<<"\\end{abstract}"<<endl;
-//	_tex<<"\\maketitle"<<endl;
-//
-//}
-//void makeLatexSection(string sectionTitle,ofstream &_tex)
-//{
-//	_tex<<"\\subsubsection{"<<sectionTitle<<"}"<<endl;
-//}
-//void endLatexDoc(ofstream &_tex)
-//{
-//	_tex<<"\\end{document}"<<endl;
-//}
-//void LatexInsert3DPlot(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title)
-//{
-//	klMatlabEngineThreadMap klmtm;
-//	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-//	char* arg = new char[512];
-//	char* evalString = new char[512];
-//	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-//	const char* xAxis=NULL;const char* yAxis=NULL;const char* zAxis=NULL;
-//	bool useExtents=true;bool holdOn=false;const char* marker=NULL;
-//	klScatterPlot3D(mat,filename.c_str(),title.c_str(), xAxis, yAxis,zAxis, useExtents, holdOn, marker);
-//	sprintf(evalString,"print -r1200 -depsc %s;",arg);
-//	engEvalString(matlabEngine, evalString);
-//	engEvalString(matlabEngine, "hold off;close(gcf);");
-//	sprintf(evalString,"epstopdf   %s",arg);
-//	system(evalString);
-//	sprintf(arg,"%s.pdf",filename.c_str());
-//	_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-//	delete arg;
-//	delete evalString;
-//}
-//void LatexInsert1DPlot(klVector<double>& vec, ofstream &_tex, string dir,string filename,string title)
-//{
-//	klMatlabEngineThreadMap klmtm;
-//
-//	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-//
-//	char* arg = new char[512];
-//	char* evalString = new char[512];
-//	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-//	klPlot1D<double>(vec,arg,title.c_str());
-//	sprintf(evalString,"print -r1200 -depsc %s;",arg);
-//	engEvalString(matlabEngine, evalString);
-//	engEvalString(matlabEngine, "hold off;close(gcf);");
-//	sprintf(evalString,"epstopdf   %s",arg);
-//	system(evalString);
-//	sprintf(arg,"%s.pdf",filename.c_str());
-//	_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-//	delete arg;
-//	delete evalString;
-//}
-//void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title)
-//{
-//	klMatlabEngineThreadMap klmtm;
-//
-//	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-//
-//	char* arg = new char[512];
-//	char* evalString = new char[512];
-//	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-//	//klMatrix<TYPE>  c,const char* filename,  const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,bool useExtents=true,bool holdOn=false,const char* marker=NULL
-//	kl2DPlot<double>(mat,arg,title.c_str());
-//	sprintf(evalString,"print -r1200 -depsc %s;",arg);
-//	engEvalString(matlabEngine, evalString);
-//	engEvalString(matlabEngine, "hold off;close(gcf);");
-//	sprintf(evalString,"epstopdf   %s",arg);
-//	system(evalString);
-//	sprintf(arg,"%s.pdf",filename.c_str());
-//	_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-//	delete arg;
-//	delete evalString;
-//}
-//void LatexInsertHistogram(klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title)
-//{
-//	vec.setupRange();
-//	klVector<double> hist=vec.histogram(numBins,vec.y0,vec.y1);
-//	hist.setupRange();
-//	hist.setupDomain(vec.y0,vec.y1);
-//	klMatlabEngineThreadMap klmtm;
-//	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-//	char* arg = new char[512];
-//	char* evalString = new char[512];
-//	sprintf(arg,"%s\\%s.eps",dir.c_str(),filename.c_str());
-//	klPlot1D<double>(hist,arg,title.c_str());
-//	sprintf(evalString,"print -r1200 -depsc %s;",arg);
-//	engEvalString(matlabEngine, evalString);
-//	engEvalString(matlabEngine, "hold off;close(gcf);");
-//	sprintf(evalString,"epstopdf   %s",arg);
-//	system(evalString);
-//	sprintf(arg,"%s.pdf",filename.c_str());
-//	_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-//	delete arg;
-//	delete evalString;
-//}
-
-
 void unitTestMain()
 {
 	int heapstatus = _heapchk();
@@ -257,7 +82,7 @@ void unitTestMain()
 	sprintf(testRunDateTime,"%d_%d_%d_%d.tex",tm_buf->tm_mon,tm_buf->tm_mday,tm_buf->tm_hour,tm_buf->tm_min);
 	
 	sprintf(testFile,"kl_Regression%s",testRunDateTime);
-	//ofstream _tex(testFile);
+	
 	ofstream _tex("kl_Regression.tex");
 
 	ofstream _sytemText("kl_RegressionSysInfo.txt");
@@ -272,12 +97,29 @@ void unitTestMain()
 	//	throw "kl: error redirecting std::cout to a file.";
 	//_tex<<"Redirecting std::cout to this file via freopen."<<endl;
 
+	klUnitTestWrapper klutw(_tex,_sytemText);
+	heapstatus = _heapchk();
+
+	unsigned int n = 512;
+	klutw.setDimension(n);
+
+	GetMaAddresscFromAdapter ();
+
+	#ifdef _M_IX86
+	bool isInsideVMWare= klIsInsideVMWare();
+	bool isInsideVPC =klIsInsideVPC();
+	#endif 
+
+	testMutithreadedWorkflow();
+	
+	n=8;
+	testCaseForGitIssue7(_tex,n);
+
 	_tex.flush();
 
 	heapstatus = _heapchk();
 
-	klUnitTestWrapper klutw(_tex,_sytemText);
-	heapstatus = _heapchk();
+
 	
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
 	klMatlabEngineThreadMap klmtm;
@@ -294,9 +136,10 @@ void unitTestMain()
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 		
-	unsigned int dimension = 512;
-	klutw.setDimension(dimension);
-	
+	makeLatexSection("Matrix",_tex);
+	klutw.runTest(testKLMatrix<double>);
+	klutw.runTest(testKLMatrix<float>);
+		
 	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
 
@@ -345,7 +188,6 @@ void unitTestMain()
 	//klutw.runTest(testKLMemory2);
 	//heapstatus = _heapchk();
 
-	unsigned int n;
 	n=0;
 	testKLMemory2(_sytemText,n);
 	testklUtil(_sytemText,n);
@@ -357,8 +199,6 @@ void unitTestMain()
 	_tex.close();
 
 }
-
-
 
 void VerifyWingerLaw(ofstream &_tex)
 {
@@ -515,7 +355,6 @@ void testArpack(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 }
 
-
 void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
 		
@@ -561,7 +400,6 @@ void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 
 }
-
 
 #include "testmatgenunit.h"
 bool testmatgen(bool silent);
@@ -705,7 +543,6 @@ void testMatrixNorm(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 	
 }
-
 
 void testklUtil(ofstream &_tex,unsigned int  &n )
 {
@@ -926,5 +763,49 @@ void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n)
 	}
 	_tex<<error<<endl<<endl;
 	_tex.flush();
+}
+
+//testCaseForGitIssue7(ofstream &_tex,unsigned int  &n)
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
+void testCaseForGitIssue7(ofstream &_tex,unsigned int  &n)
+{
+	unsigned int numFeatures=n;
+
+	klMatrix<double> Sigma=SampleGOE(numFeatures);
+	klMatrix<double> SigmaW=SampleWishart(numFeatures);
+	unsigned int i;
+	unsigned int j;
+	klVector<double> meanVector(numFeatures);
+	meanVector=0;
+	unsigned int sampleSize=32;
+	klNormalMultiVariate<double> T(meanVector,SigmaW );
+	klSamplePopulation<double> TS(sampleSize,numFeatures);
+	for(j=0;j<sampleSize;j++)
+	{
+		klVector<double> tv=T();
+		TS.setRow(j,tv);
+	}
+	klMatrix<double> SampleCovariance = TS.covarianceMatrix();
+	klMatrix<double> gram_sdot(numFeatures,numFeatures);
+	gram_sdot.makeNanFriendly();//Make gram matrix
+	double* MV=TS.getMeanVector();
+	klVector<double> MVW(MV,numFeatures,false);
+
+	for(i=0;i<sampleSize;i++)
+	{
+		klVector<double> CenteredDataPoint= TS[i]-MVW;
+		double ddot=(CenteredDataPoint).dotBLAS(CenteredDataPoint);
+
+	}
+	{
+		klMatrix<double> diff = SampleCovariance - gram_sdot;cout<<diff;
+	}
 }
 

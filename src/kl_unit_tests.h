@@ -6,6 +6,227 @@
 #define __kl_unit_tests__
 
 #include "kl_matrix.h"
+
+template<class TYPE> void testKLMatrix(ofstream &_tex,unsigned int& n)
+{
+	/*ios_base::openmode wMode = ios_base::app;
+	ofstream _tex(fileName, wMode);	*/
+
+	float* memory=new float[9];
+	int il=0;
+	for(il=0;il<9;il++)
+		*(memory+il)=0;
+	klMatrix<float> b(memory,3,3);
+
+	b.makeNanFriendly();//should fail for float
+
+	//Testing if we have a nan
+	float x=b[2][2];
+	bool check = _isnan(x);
+
+
+	b[0][0]=11;b[0][1]=12;b[0][2]=13;
+	b[1][0]=21;b[1][1]=22;b[1][2]=23;
+	b[2][0]=31;b[2][1]=32;b[2][2]=33;
+
+
+	klVector<float> col2=b.getColumn(2);
+
+	klVector<float> diffr=col2.diff(1);
+	diffr=col2.diff(2);
+	try{    diffr=col2.diff(3);}
+	catch(...)
+	{ cout<<"caught an expected error";} 
+
+
+
+	cout<<klApplyFn<float,double>(std::sin,b)<<endl;
+	cout<<klApplyFn<float,double>(klErrorFunction,b/1000.0f);
+
+	cout<<klApplyFn<float,double>(std::sin,col2)<<endl;
+	cout<<klApplyFn<float,double>(klErrorFunction,col2/100.0f);
+
+
+	///////////Test apply function
+	/*        int     __cdecl abs(int);
+	double  __cdecl acos(double);
+	double  __cdecl asin(double);
+	double  __cdecl atan(double);
+	double  __cdecl atan2(double, double);
+	double  __cdecl cos(double);
+	double  __cdecl cosh(double);
+	double  __cdecl exp(double);
+	double  __cdecl fabs(double);
+	double  __cdecl fmod(double, double);
+	long    __cdecl labs(long);
+	double  __cdecl log(double);
+	double  __cdecl log10(double);
+	double  __cdecl pow(double, double);
+	double  __cdecl sin(double);
+	double  __cdecl sinh(double);
+	double  __cdecl tan(double);
+	double  __cdecl tanh(double);
+	double  __cdecl sqrt(double);
+	*/
+
+
+	klMatrix<double>moo(2,2);
+
+	moo.makeNanFriendly();
+
+	moo[0][0]=1; moo[0][1]=0;
+	moo[1][0]=0;moo[1][1]=1;
+
+
+	klMatrix<float> goo(2,2);
+	goo[0][0]=1; goo[0][1]=0;
+	goo[1][0]=0;goo[1][1]=1;
+
+	klMatrix<float> gsb(2,2);
+	gsb=b.getSubBlock(1,1,2,2);
+	cout<<gsb<<endl;
+	b.setSubBlock(goo,1,1);
+	cout<<b<<endl;
+	b.setSubBlock(gsb,1,1);
+	cout<<b<<endl;
+
+
+
+	klVector<double> mooo(2);mooo[0]=1;mooo[1]=1;
+	cout<<moo*mooo;
+	cout<<moo.getConditionNumber();
+	cout<<moo.getConditionNumber(false);//L\infty cond number
+	klVector<complex<double> > eigen=moo.eigenvalues();
+	cout<<eigen;
+	eigen=b.eigenvalues();cout<<eigen;
+	klMatrix<float> bbb(b);
+	bbb[2][2]=3.14f;
+	cout<<bbb;
+	klMatrix<float> ccc=b * bbb;
+	cout<<ccc;
+	//  b[2][2]=3.1415;
+	klVector<float> mfa=b[2];
+	cout<<b*mfa;
+	cout<<mfa;
+	string _filename="moo.txt";
+	ofstream _fileostream(_filename.c_str() );
+	_fileostream<<b<<endl;
+	_fileostream.close();
+	cout<<b;
+	cout<<b.getColumn(1);
+	klVector<float> sd(3);
+	klMatrix<float> sb(3,3);
+	flushall();
+	fstream _fileistream;
+	_fileistream.open("moo.txt");
+	_fileistream>>sb;
+	cout<<sb;
+	klMatrix<float>  as(memory,3,3);
+
+	as[2][2]=22;
+	float answer=as[2][2];
+	klVector<float> boo(3);
+	boo[2]=2.141f;
+	klVector<float> copy;
+	copy=boo;//copy ctor not invoked
+	float and=copy[2];
+	float dot=copy.dot(boo);
+
+	klVector<double> av(4096);
+	av[2]=1;
+	int ai=av[2];
+	int* pi=new int[256];
+	for(ai=0;ai<256;ai++)*(pi+ai)=ai;
+	klVector<int> am(pi,256);
+	int wam=am[2];
+	int* pi2=new int[256];
+	for(ai=0;ai<256;ai++)*(pi2+ai)=ai;
+	klVector<int> am2(pi2,256);
+
+	//Test some operators on klVecor
+	bool sans=( am2==  am);
+	cout<<sans;
+	sans=( am2==  am2);
+	klVector<bool> ans= ( am2>128 );
+	cout<<ans;
+	ans=( am2>=128 );
+	cout<<ans;
+	ans = (am2>128 );
+	cout<<ans;
+	ans = ( am2<=128 ) ;
+	cout<<ans;
+	ans = ( am2<128 ) ;
+	cout<<ans;
+	am2 = 3.14;//set all the vals to scalar
+	cout<<am2;
+	sans=( am2==  am);
+	cout<<sans;
+
+	{
+		//These are not members
+		klVector<int> ans=am2  +    3;
+		cout<<ans;
+		ans= am2  +   3;
+		cout<<ans;
+		ans= ans+ am2;
+		cout<<ans;
+		ans= am2-3;
+		cout<<ans;
+		ans= 3-am2;
+		cout<<ans;
+		ans= ans - am2;
+		cout<<ans;
+		ans = -ans;
+		cout<<ans;
+		ans= ans*ans;
+		cout<<ans;
+		ans=ans*3;
+		cout<<ans;
+		ans=3*ans;
+		cout<<ans;
+		ans=ans/3;
+		cout<<ans;
+		ans=3/ans;
+		cout<<ans;
+		ans= ans/ans;
+		cout<<ans;
+
+	}
+
+	klMatrix<float> klpb=b;
+	cout<<b+3.1f<<endl;
+	cout<<b<<endl;
+	cout<<3.1f+b<<endl;
+	cout<<"b= "<<b<<endl;
+	cout<<b-b<<endl;
+	cout<<"b= "<<b<<endl;
+	cout<<b+b<<endl;
+	cout<<"b= "<<b<<endl;
+	cout<<b-1.0f<<endl;
+	cout<<"b= "<<b<<endl;
+	cout<<b*b<<endl;//this calls member operator - we did not define an elementwise operator* 
+	cout<<"b= "<<b<<endl;
+	b /= b;//calls member operator
+	cout<<"b= "<<b<<endl;
+	cout<<b/2.0f<<endl;
+	cout<<"b= "<<b<<endl;
+	cout<<b/(b/4.0f)<<endl;
+	cout<<"b= "<<b<<endl;
+
+	klMatrix<float>c = (b-b)+ 1.0f;
+	c*=0;
+	c[0][0]=1;c[1][1]=1;c[2][2]=1;
+	cout<<c.det()<<endl;
+
+	delete memory;
+	delete pi;
+	delete pi2;
+
+
+
+
+}
+
 #include "kl_random_number_generator.h"
 template<class type> void testKLDescriptiveStatistics(ofstream &FS1,unsigned int &n)
 {
@@ -51,7 +272,6 @@ template<class type> void testKLDescriptiveStatistics(ofstream &FS1,unsigned int
 
 
 }
-
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"

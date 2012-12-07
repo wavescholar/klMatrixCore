@@ -30,17 +30,17 @@ void matvecfunc_cplx_Impl(void *data, cplx *in, cplx *out)
 {
 }
 
+//Computes w = exp(t*A)*v - for a General matrix A. 
+//It does not compute the matrix exponential in isolation but 
+//instead, it computes directly the action of the exponential 
+//operator on the operand vector. This way of doing so allows 
+//for addressing large sparse problems.
+//The method used is based on Krylov subspace projection
+//techniques and the matrix under consideration interacts only 
+//via the external routine `matvec' performing the matrix-vector 
+//product (matrix-free method).
 class klExpoKitDGEXPVDriver
 {
-	/* ---  DGEXPV computes w = exp(t*A)*v - for a General matrix A. */
-	/*     It does not compute the matrix exponential in isolation but */
-	/*     instead, it computes directly the action of the exponential */
-	/*     operator on the operand vector. This way of doing so allows */
-	/*     for addressing large sparse problems. */
-	/*     The method used is based on Krylov subspace projection */
-	/*     techniques and the matrix under consideration interacts only */
-	/*     via the external routine `matvec' performing the matrix-vector */
-	/*     product (matrix-free method). */
 
 	/*     n      : (input) order of the principal matrix A. */
 	int n;
@@ -186,7 +186,6 @@ void testExpoKit(ofstream &_tex,unsigned int  &n)
 	//delete gb;
 	//delete g2b;
 
-	
 	try{
 
 		do
@@ -200,23 +199,23 @@ void testExpoKit(ofstream &_tex,unsigned int  &n)
 		drv._deg=6;
 		drv.Run(SPD);
 
-		//cout<<"exp(SPD) = "<<endl<<drv.expH<<endl;
-		//klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		//cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
-		//cout<<"log(eigs)  = "<<endl<<logeigs<<endl;
+		cout<<"exp(SPD) = "<<endl<<drv.expH<<endl;
+		klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
+		cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
+		cout<<"log(eigs)  = "<<endl<<logeigs<<endl;
 
-		//klMatrix<double> Id(n,n);
-		//Id= IdentityMatrix<double>(n);
-		//drv.Run(Id);
-		//cout<<"exp(Id) = "<<endl<<drv.expH<<endl;
+		klMatrix<double> Id(n,n);
+		Id= IdentityMatrix<double>(n);
+		drv.Run(Id);
+		cout<<"exp(Id) = "<<endl<<drv.expH<<endl;
 
-		//logeigs= klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		//cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
-		//cout<<"log(eigs)  = "<<endl<<logeigs<<endl;	
+		logeigs= klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
+		cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
+		cout<<"log(eigs)  = "<<endl<<logeigs<<endl;	
 
 		n+=128;
 		cout<<n<<endl;
-		}while(n<4097);
+		}while(n<1024);
 	}
 	catch(...)
 	{

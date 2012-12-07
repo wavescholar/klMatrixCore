@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="GitFiles">
-      <UniqueIdentifier>{409cbf09-cd3f-40fd-ae01-e56217cb34eb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Libs">
       <UniqueIdentifier>{17147d30-5a2b-48ed-a9e4-c9a247ce1683}</UniqueIdentifier>
     </Filter>
@@ -28,124 +25,109 @@
     <Filter Include="Libs\ReleaseklPackages">
       <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GitSourceFiles">
+      <UniqueIdentifier>{409cbf09-cd3f-40fd-ae01-e56217cb34eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GitDemoFiles">
+      <UniqueIdentifier>{94b289a0-74c8-42dd-bb84-1bec9da65469}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_arpack.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_bregman_divergence.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_exception.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_hardware.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\kl_hradware.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\kl_image_buffer.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\kl_image_processing_functors.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\kl_img_pca.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_independent_components.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_linear_equation.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_matlab_dependent_unit_tests.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_matlab_iface.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_matrix.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_matrix_facorizations.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_memory.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_ML_helper_fns.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_multiclass_svm.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_multivariate_random_variable.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_principal_components.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_prob.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_random_number_generator.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_regression.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_sample_population.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_SEH.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_stat.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_thread_workflow.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_time_series.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_unit_test_wrapper.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_unit_tests.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_util.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_vector.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_wavelet.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\klLogger.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\klNN_Algorithm.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\klSDPA.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\klSpline.h">
-      <Filter>GitFiles</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ppm_helper.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
     <ClInclude Include="src\kl_latex_helper_fns.h">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -153,61 +135,52 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_cdhc_distribution_tests.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_hardware.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\kl_image_processing_functors.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_matrix_exponential.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_memory.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_ML_helper_fns.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_multivariate_random_variable.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_random_number_generator.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_SEH.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\kl_unit_test_wrapper.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klArpackCore.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klSDPA.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\klSMPMT.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klUnitTests.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\klUtil.cpp">
-      <Filter>GitFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ppm_helper.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_latex_helper_fns.cpp">
-      <Filter>GitFiles</Filter>
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
-    <ClCompile Include="src\klIPPDemo.cpp">
-      <Filter>GitFiles</Filter>
+    <ClCompile Include="src\klExpoKitCppMain.cpp">
+      <Filter>GitSourceFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_threaded_workflow_demo.cpp">
+      <Filter>GitSourceFiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

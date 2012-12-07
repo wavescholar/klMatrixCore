@@ -12,8 +12,6 @@ using namespace std;
 
 extern void callAprpack( int n,double* matrix, unsigned int  numEgs, complex<double>* eigenValues, complex<double> ** eigenVectors);
 
-
-
 class klArpackFunctor
 {
 public:

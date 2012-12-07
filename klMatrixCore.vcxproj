@@ -81,17 +81,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\klLogger.h" />
-    <ClInclude Include="src\klNN_Algorithm.h" />
     <ClInclude Include="src\klSDPA.h" />
-    <ClInclude Include="src\klSpline.h" />
     <ClInclude Include="src\kl_arpack.h" />
     <ClInclude Include="src\kl_bregman_divergence.h" />
     <ClInclude Include="src\kl_exception.h" />
     <ClInclude Include="src\kl_hardware.h" />
-    <ClInclude Include="src\kl_hradware.h" />
-    <ClInclude Include="src\kl_image_buffer.h" />
-    <ClInclude Include="src\kl_image_processing_functors.h" />
-    <ClInclude Include="src\kl_img_pca.h" />
     <ClInclude Include="src\kl_independent_components.h" />
     <ClInclude Include="src\kl_latex_helper_fns.h" />
     <ClInclude Include="src\kl_linear_equation.h" />
@@ -117,20 +111,18 @@
     <ClInclude Include="src\kl_util.h" />
     <ClInclude Include="src\kl_vector.h" />
     <ClInclude Include="src\kl_wavelet.h" />
-    <ClInclude Include="src\ppm_helper.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="klMatrixCore.cpp" />
     <ClCompile Include="src\klArpackCore.cpp" />
-    <ClCompile Include="src\klIPPDemo.cpp" />
+    <ClCompile Include="src\klExpoKitCppMain.cpp" />
     <ClCompile Include="src\klSDPA.cpp" />
-    <ClCompile Include="src\klSMPMT.cpp" />
+    <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\klUnitTests.cpp" />
     <ClCompile Include="src\klUtil.cpp" />
     <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
     <ClCompile Include="src\kl_hardware.cpp" />
-    <ClCompile Include="src\kl_image_processing_functors.cpp" />
     <ClCompile Include="src\kl_latex_helper_fns.cpp" />
     <ClCompile Include="src\kl_matrix_exponential.cpp" />
     <ClCompile Include="src\kl_memory.cpp" />
@@ -138,8 +130,6 @@
     <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
     <ClCompile Include="src\kl_random_number_generator.cpp" />
     <ClCompile Include="src\kl_SEH.cpp" />
-    <ClCompile Include="src\kl_unit_test_wrapper.cpp" />
-    <ClCompile Include="src\ppm_helper.cpp" />
     <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp" />
   </ItemGroup>
   <ItemGroup>

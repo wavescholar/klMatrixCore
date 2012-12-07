@@ -83,7 +83,6 @@ bool klIsInsideVPC()
 }
 #endif
 
-
 unsigned int klFlotingPointHelper::status_x86()
 {
 	return _status87();
@@ -148,8 +147,6 @@ int* klFlotingPointHelper::fpError()
 	return __fpecode();
 
 }
-
-
 
 unsigned int klFlotingPointHelper::Clear87( )
 {

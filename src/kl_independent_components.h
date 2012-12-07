@@ -122,8 +122,6 @@ template<> klMatrix<float> klIndependentComponents<float>::klICACore(unsigned in
 	//we should see how much use it++ gets and revisit integrating a kl-it factory
 	//object for cooperative memory management.
 	
-	return klMatrix<float>(0,0);
-
 }
 
 template<> klMatrix<double> klIndependentComponents<double>::klICACore(unsigned int k)
