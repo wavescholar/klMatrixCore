@@ -49,8 +49,7 @@ public:
 		_mean=NULL;
 		_variance=NULL;
 		_skewness=NULL;
-		_kurtosis=NULL;
-	
+		_kurtosis=NULL;	
 	}
 
 	klSamplePopulation<TYPE> (const klSamplePopulation<TYPE>& src) : klMatrix<TYPE>(src)
@@ -60,10 +59,7 @@ public:
 		_variance=NULL;
 		_skewness=NULL;
 		_kurtosis=NULL;
-		;
-
 	}
-
 
 	klSamplePopulation<TYPE> (const klMatrix<TYPE>& src) : klMatrix<TYPE>(src)
 	{
@@ -71,13 +67,9 @@ public:
 		_mean=NULL;
 		_variance=NULL;
 		_skewness=NULL;
-		_kurtosis=NULL;
-		
-
+		_kurtosis=NULL;		
 	}
 
-
-	//bbcrevisit - implement a constructor taking a klMatrix parameter
 	klSamplePopulation(unsigned int row,unsigned int col) : klMatrix<TYPE>(row,col)
 	{
 		_statsCalculated=false;
@@ -136,8 +128,7 @@ public:
 
 		return DistTestNames;
 	}
-
-
+	 
 	//Each row of matrix is the full set of univariate distribution tests for variable in column i of the sample population
 	klMatrix<double> calcDistributionTests()
 	{
@@ -171,9 +162,7 @@ public:
 		}
 		return distTest;
 	}
-
-
-
+	
 	void calcDescriptiveStats()
 	{
 		if(_mean!=NULL)
@@ -299,7 +288,34 @@ public:
 		return klMatrix<TYPE>(0,0);
 	}
 
+	klMatrix<TYPE> centeredData()
+	{		
+		//120712 bbcrevisit meanV does not own this memory. 
+		//Make sure it is not being deleted.
+		klVector<TYPE > meanV= sampleMean();
 
+		klMatrix<TYPE> centered(_row,_col);
+		for(int i =0; i < _row;i++)
+		{
+			//centered[i] returns the row 
+			centered[i] = operator[](i) - meanV;
+		}
+
+		return centered;		
+	}
+
+	//Implemented for float, double, long double
+	TYPE stddev(unsigned int i) 
+	{
+		if(_statsCalculated==true) 
+			return sqrt(*(_variance+i));
+		else
+		{
+			calcDescriptiveStats();
+			_statsCalculated=true;
+			return sqrt(*(_variance+i));
+		}
+	}
 
 	TYPE mean(unsigned int i) 
 	{
@@ -325,20 +341,6 @@ public:
 		}
 	}
 
-	//Implemented for float, double, long double
-	TYPE stddev(unsigned int i) 
-	{
-		if(_statsCalculated==true) 
-			return sqrt(*(_variance+i));
-		else
-		{
-			calcDescriptiveStats();
-			_statsCalculated=true;
-			return sqrt(*(_variance+i));
-		}
-	}
-
-
 	TYPE skewness(unsigned int i) 
 	{
 		if(_statsCalculated==true) 
@@ -351,7 +353,6 @@ public:
 		}
 	}
 
-
 	TYPE kurtosis(unsigned int i) 
 	{
 		if(_statsCalculated==true) 
@@ -363,13 +364,30 @@ public:
 			return *(_kurtosis+i);
 		}
 	}
-
 	
+	klVector<TYPE> sampleMean()
+	{
+		if (_statsCalculated==true)
+		{
+			klVector<TYPE> sampleMean(getMeanVector(),_col,false);
+			return sampleMean;
+		}
+		else
+		{
+			calcDescriptiveStats();
+			_statsCalculated=true;
+			klVector<TYPE> sampleMean(getMeanVector(),_col,false);
+			return sampleMean;
+		}
+
+	}
+
+protected:
+
 	TYPE* getMeanVector()
 	{
 		return _mean;
 	}
-
 	TYPE* getVarianceVector()
 	{
 		return _variance;
@@ -382,18 +400,12 @@ public:
 	{
 		return _kurtosis;
 	}
-
-
-
-protected:
 	TYPE* _mean;
 	TYPE* _variance;
 	TYPE* _skewness;
 	TYPE* _kurtosis;
 	bool _statsCalculated;
-
-
-	
+		
 	unsigned int _numDistTests;
 
 };

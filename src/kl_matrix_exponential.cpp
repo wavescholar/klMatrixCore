@@ -188,8 +188,8 @@ void testExpoKit(ofstream &_tex,unsigned int  &n)
 
 	try{
 
-		do
-		{
+	//	do
+	//	{
 		klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(n);
 		//cout<<"SPD"<<endl<<SPD<<endl;
 		//klVector<complex<double> > eigen =SPD.eigenvalues();
@@ -213,9 +213,9 @@ void testExpoKit(ofstream &_tex,unsigned int  &n)
 		cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
 		cout<<"log(eigs)  = "<<endl<<logeigs<<endl;	
 
-		n+=128;
-		cout<<n<<endl;
-		}while(n<1024);
+	//	n+=128;
+		//cout<<n<<endl;
+	//}while(n<1024);
 	}
 	catch(...)
 	{

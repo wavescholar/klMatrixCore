@@ -2,7 +2,6 @@
  * WSCMP [2003] - [2012] WSCMP  *  
  * Bruce B Campbell 11 30 2012  *
  ********************************/
-
 #include "kl_matrix.h"
 #include "kl_stat.h"
 #include "kl_random_number_generator.h"
@@ -25,28 +24,7 @@
 #include "kl_matlab_iface.h"
 #include "kl_arpack.h"
 #include "kl_fast_gauss_transform.h"
-
 #include "kl_latex_helper_fns.h"
-
-void testKLMatrix(ofstream &_tex,unsigned int  &n);
-void testMatrixNorm(ofstream &_tex,unsigned int  &n);
-void testKLMemory2(ofstream &_tex,unsigned int  &n);
-void klTestSDPA(ofstream &_tex,unsigned int  &n);
-void testklPrincipalComponents2(ofstream &_tex,unsigned int  &n);
-void testArpack(ofstream &_tex,unsigned int  &n);
-void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
-void testklUtil(ofstream &_tex,unsigned int  &n);
-void testklMatrixMult(ofstream &_tex,unsigned int  &n );
-void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n);
-void testExpoKit(ofstream &_tex,unsigned int  &n);
-void testMutithreadedWorkflow(void);
-
-void GetMaAddresscFromAdapter (void);
-bool klIsInsideVMWare();
-bool klIsInsideVPC();
-
-void testCaseForGitIssue7(ofstream &_tex,unsigned int  &n);
-
 const char* basefilename="D:\\klDll\\TestDll\\";  
 klMutex klMatlabEngineThreadMap::lock;
 map<klThreadId, Engine*> klMatlabEngineThreadMap::engineMap;
@@ -66,6 +44,155 @@ void __cdecl klNewHandler( )
 	throw bad_alloc( );
 	return;
 }
+void testKLMatrix(ofstream &_tex,unsigned int  &n);
+void testMatrixNorm(ofstream &_tex,unsigned int  &n);
+void testKLMemory2(ofstream &_tex,unsigned int  &n);
+void klTestSDPA(ofstream &_tex,unsigned int  &n);
+void testklPrincipalComponents2(ofstream &_tex,unsigned int  &n);
+void testArpack(ofstream &_tex,unsigned int  &n);
+void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
+void testklUtil(ofstream &_tex,unsigned int  &n);
+void testklMatrixMult(ofstream &_tex,unsigned int  &n );
+void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n);
+void testExpoKit(ofstream &_tex,unsigned int  &n);
+void testMutithreadedWorkflow(void);
+void GetMaAddresscFromAdapter (void);
+bool klIsInsideVMWare();
+bool klIsInsideVPC();
+
+void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n);
+void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
+{
+	//Notes from On the Nystrom Method for Approximating a Gram Matrix for Improved Kernel-Based Learning by 
+	//Petros Drineas DRINEP@CS.RPI.EDU Department of Computer Science Rensselaer Polytechnic Institute
+
+	//Given a collection X of data points, which are often but not necessarily elements of R^m, techniques
+	//such as PCA, SVM, GP and SVD can be used to identify structure from X by computing linear functions.
+	//PCA calculates the subspace spanned by the first k eigenvectors and is used to give a k dimensional
+	//model of the data with minimal residual.  This type of  spectral analysis has a long theoretical history and forms the basis 
+	//of many modern machine learning techniques. In real world applications however there is typically nonlinear structure in the data.
+	//Some domains sucha as Natural Language processing (NLP) data may not be amenable to the definition of meaningful linear operations.
+	//It is for such situations that kernel learning methods were developed.  Kernel methods map data in to high 
+	//dimensional space and use inner products designed to capture positional information.  Kernel methods use 
+	//the inner product distances for classification and regression.Kernel methods exploit the information encoded in the inner product
+	//between all pairs of data items and are successful because there is often an efficient method to
+	//compute inner products between very complex infinite dimensional vectors. Kernel
+	//algorithms provide a way to deal with nonlinear structure by reducing nonlinear algorithms
+	//to algorithms that are linear in some feature space F.  F is nonlinearly related to the original input
+	//space.  
+	//Let x_i \ in \dblr^m X = [  ...x_i ... ] rowsiwe. Here we test the linear structure of a genreative data set against the
+	//Gream kernel. In kernel-based methods, a set of features is chosen that define a space F , where it is hoped relevant structure will be 
+	//revealed, the data X are then mapped to the feature space F using a mapping F : X  -> F , and then classification, regression, or
+	//clustering is performed in F using traditional methods such as linear SVMs, GPs, or PCA. If F
+	//is chosen to be a dot product space and if one defines the kernel matrix, also known as the Gram
+	//matrix, G \in  \dlbr^{n×n} as G_ij = k(x_i, x_j) = (F(xi),F(xj)), then any algorithm whose operations can be
+	//expressed in the input space in terms of dot products can be generalized to an algorithm which
+	//operates in the feature space by substituting a kernel function for the inner product. In practice, this
+	//means presenting the Gram matrix G in place of the input covariance matrix X^\dag X. Relatedly, using
+	//the kernel k instead of a dot product in the input space corresponds to mapping the data set into a
+	//(usually) high-dimensional dot product space F by a (usually nonlinear) mapping \Phi : \dblr^m -> F , and
+	//taking dot products there, i.e., k(x_i, x_j) = (F(x_i),F(x_j)). Note that for the commonly-used Mercer
+	//kernels, G is a symmetric positive semidefinite (SPSD) matrix.
+	//The generality of this framework should be emphasized. For example, there has been much
+	//work recently on dimensionality reduction for nonlinear manifolds in high-dimensional spaces. 
+	//Ie Isomap, LLE, and graph Laplacian eigenmap, and Hessian eigenmaps.  These methods first induce a local neighborhood 
+	//structure on the data and then use this local structure to find a global embedding of the manifold in a lower dimensional space.
+	
+	unsigned int numFeatures=3;
+	unsigned int sampleSize=4096;
+	//Is this PSD? If not then we will not get a good Cholesky factorization? 
+	//One way to find out is to find eigs, and see is \sigma(W) \in [0,\inflty)
+	klMatrix<double> SigmaW=SampleWishart(numFeatures);
+
+	cout<<"Sample Size = "<<sampleSize<<endl;
+
+	cout<<"Feature dim = "<<numFeatures<<endl<<endl;
+
+	cout<<"Generative W = "<<endl<<SigmaW<<endl;
+
+	klPrincipalComponents<double> pcaWishart=SigmaW;
+	klMatrix<double> V=pcaWishart(2);
+	klVector<double> wishartEigs=pcaWishart.eigenvalues();
+	cout<<"W eigs = "<<endl<<wishartEigs<<endl;
+
+	unsigned int i;
+	unsigned int j;
+	klVector<double> meanVector(numFeatures);
+	meanVector=1;
+	
+	klNormalMultiVariate<double> T(meanVector,SigmaW );
+	klSamplePopulation<double> X(sampleSize,numFeatures);
+	for(j=0;j<sampleSize;j++)
+	{
+		klVector<double> tv=T();
+		X.setRow(j,tv);
+	}
+
+	klMatrix<double> SampleCovariance = X.covarianceMatrix();
+
+	cout<<"Sample Covariance = "<<endl<<SampleCovariance<<endl;
+	cout<<"Sample mean = " <<endl<<X.sampleMean()<<endl;
+
+	//This should be small
+	cout<<"SampleCovariance-SigmaW = " <<endl<<SampleCovariance-SigmaW<<endl;
+
+	klPrincipalComponents<double> pcaCovariance=SampleCovariance;
+	klMatrix<double> VC =pcaCovariance(2);
+	klVector<double> covarianceEigs=pcaCovariance.eigenvalues();
+	cout<<"Sample Covariance eigs ="<<endl<< covarianceEigs<<endl;
+
+	//How close is the sample covariance to a PSD matrix?
+	//First we'll need a measure of matrix closeness and a way to find the 
+	//nearest PSD matrix in that measure. 
+
+	//The Gram matrix G of a set of vectors x_1, ...,x_i,...x_n in an inner product space is the Hermitian matrix of inner products, whose entries are given by G_{ij} = <x_i,x_j>
+	//An important application is to compute linear independence: a set of vectors is linearly independent if and only if the determinant of the Gram matrix is non-zero.
+
+	klMatrix<double> G(sampleSize,sampleSize);
+	G.makeNanFriendly();
+	for(i=0;i<sampleSize;i++)
+	{
+		klVector<double> x_i= X[i];
+		for(j=0;j<sampleSize;j++)
+		{
+			klVector<double> x_j= X[j];
+			G[i][j]=(x_i).dotBLAS(x_j);
+		}
+	}
+
+	klMatrix<double> Gf(numFeatures,numFeatures);
+
+	klMatrix<double> centered = X.centeredData();
+	klSamplePopulation<double> normalizedSample(centered);
+	klVector<double> normedMean = normalizedSample.sampleMean();
+
+	cout<<"Centered Mean = "<<endl<<normalizedSample.sampleMean()<<endl;
+	cout<<"Centered Covariance = "<<endl<<normalizedSample.covarianceMatrix() <<endl;
+
+	for(i=0;i<numFeatures;i++)
+	{
+		klVector<double> x_i= centered.getColumn(i);
+		for(j=0;j<numFeatures;j++)
+		{
+			klVector<double> x_j= centered.getColumn(j);
+			Gf[i][j]=(x_i).dotBLAS(x_j);
+		}
+	}
+	cout<<"Gram Matrix Gf Not scaled by sample size = "<<endl<<  Gf  <<endl;
+
+	cout<<"Gram Matrix Gf  scaled by sample size = "<<endl<<  Gf / (double) sampleSize <<endl;
+
+	klMatrix<double> diff = SampleCovariance / (double) sampleSize;
+
+	cout<<"SampleCovariance - Scaled Gf="<<endl<<diff<<endl;
+
+	cout<<"EigenDecomp of SampleCovariance = "<<endl<<VC<<endl;
+
+	klPrincipalComponents<double> pcaGram=Gf;
+	klMatrix<double> VCGram =pcaGram(2);
+	cout<<"EigenDecomp of Gram Matrix = "<<endl<<VCGram<<endl;
+}
+
 
 void unitTestMain()
 {
@@ -102,25 +229,15 @@ void unitTestMain()
 
 	unsigned int n = 512;
 	klutw.setDimension(n);
-
-	GetMaAddresscFromAdapter ();
-
-	#ifdef _M_IX86
-	bool isInsideVMWare= klIsInsideVMWare();
-	bool isInsideVPC =klIsInsideVPC();
-	#endif 
-
-	testMutithreadedWorkflow();
 	
 	n=8;
-	testCaseForGitIssue7(_tex,n);
+	GenerativeGramConsistencyTest(_tex,n);
 
 	_tex.flush();
 
 	heapstatus = _heapchk();
 
 
-	
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
 	klMatlabEngineThreadMap klmtm;
 
@@ -192,7 +309,18 @@ void unitTestMain()
 	testKLMemory2(_sytemText,n);
 	testklUtil(_sytemText,n);
 	klutw.HardwareConfiguration(_sytemText);
+	
+	//Working 120712
+	testMutithreadedWorkflow();
 
+
+	//Not working 120712
+	//GetMaAddresscFromAdapter();
+
+	#ifdef _M_IX86
+	bool isInsideVMWare= klIsInsideVMWare();
+	bool isInsideVPC =klIsInsideVPC();
+	#endif 
 
 	endLatexDoc(_tex);
 
@@ -764,48 +892,3 @@ void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n)
 	_tex<<error<<endl<<endl;
 	_tex.flush();
 }
-
-//testCaseForGitIssue7(ofstream &_tex,unsigned int  &n)
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-//1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN, 1.#QNAN
-void testCaseForGitIssue7(ofstream &_tex,unsigned int  &n)
-{
-	unsigned int numFeatures=n;
-
-	klMatrix<double> Sigma=SampleGOE(numFeatures);
-	klMatrix<double> SigmaW=SampleWishart(numFeatures);
-	unsigned int i;
-	unsigned int j;
-	klVector<double> meanVector(numFeatures);
-	meanVector=0;
-	unsigned int sampleSize=32;
-	klNormalMultiVariate<double> T(meanVector,SigmaW );
-	klSamplePopulation<double> TS(sampleSize,numFeatures);
-	for(j=0;j<sampleSize;j++)
-	{
-		klVector<double> tv=T();
-		TS.setRow(j,tv);
-	}
-	klMatrix<double> SampleCovariance = TS.covarianceMatrix();
-	klMatrix<double> gram_sdot(numFeatures,numFeatures);
-	gram_sdot.makeNanFriendly();//Make gram matrix
-	double* MV=TS.getMeanVector();
-	klVector<double> MVW(MV,numFeatures,false);
-
-	for(i=0;i<sampleSize;i++)
-	{
-		klVector<double> CenteredDataPoint= TS[i]-MVW;
-		double ddot=(CenteredDataPoint).dotBLAS(CenteredDataPoint);
-
-	}
-	{
-		klMatrix<double> diff = SampleCovariance - gram_sdot;cout<<diff;
-	}
-}
-

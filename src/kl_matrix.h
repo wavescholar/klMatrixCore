@@ -355,8 +355,7 @@ public:
 		}
 		return *this;
 	}
-
-	
+		
 	void setRow(unsigned int j,klVector<TYPE> r)
 	{
 		if(r.getColumns() != _col)
@@ -369,8 +368,7 @@ public:
 			(_vectors+j)->operator[](i)=r[i];
 		}
 	}
-
-
+	
 	klMatrix<TYPE> transpose() const
 	{
 		klMatrix<TYPE> transpose;
@@ -409,9 +407,7 @@ public:
 			}
 		}
 	}
-
-
-	
+		
 	//Calculates the determinant via LU decomp.  Implemented for float and double types
 	//Calculating the determinanat via cofactors is O(n!)
 	//An LU decomp, reduces to O(\frac{2 n^3}{3} )
@@ -504,8 +500,7 @@ public:
 			for(m=j;m<=l;m++)
 				(_vectors+m)->operator[](n)=block[n-i][m-j];
 	}
-
-
+	
 	void setColumn(unsigned int i,klVector<TYPE> v)
 	{
 		if (_row != v.getRowSize())
@@ -561,8 +556,7 @@ public:
 		return temp.transpose();
 
 	}
-
-	
+		
 	/*
 		This method calls the LAPACK driver DGEES whichcomputes for an	N-by-N real nonsymmetric matrix	A, the eigenvalues,
 		the real Schur form T, and, optionally, the matrix of	Schur vectors Z.
@@ -655,8 +649,7 @@ public:
 	{
 		return 0; 
 	}
-
-
+	
 	//Returns the \Ell_p norm of the matrix.  This method is specialized for double & float.
 	//Requires p \in [0,
 	TYPE norm(bool ell_infty=0)
