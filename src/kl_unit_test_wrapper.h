@@ -142,6 +142,10 @@ public:
 
 			checkFloatingPointStatus(system_stream);
 
+			system_stream.flush();
+
+			stream.flush();
+
 		}
 		catch(...)
 		{

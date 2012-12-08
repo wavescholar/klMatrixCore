@@ -28,9 +28,6 @@
     <Filter Include="GitSourceFiles">
       <UniqueIdentifier>{409cbf09-cd3f-40fd-ae01-e56217cb34eb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GitDemoFiles">
-      <UniqueIdentifier>{94b289a0-74c8-42dd-bb84-1bec9da65469}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -232,49 +229,67 @@
     <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
       <Filter>Libs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libemlrt.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libemlrt.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libeng.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libeng.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libfixedpoint.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libfixedpoint.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmat.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmat.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmex.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmex.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblas.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblas.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblascompat32.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblascompat32.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwlapack.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwlapack.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwmathutil.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwmathutil.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwservices.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwservices.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmx.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_fileio.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libut.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_solver_rtw.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclbase.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmx.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcr.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libut.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib">
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclcommain.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcr.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcrrt.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_mli.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_rtl.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\physmod_foundation_util.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\rtwcg.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
   </ItemGroup>

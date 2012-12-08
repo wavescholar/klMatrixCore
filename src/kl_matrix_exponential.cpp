@@ -17,6 +17,7 @@
 #include "kl_util.h"
 #include "kl_unit_tests.h"
 #include "kl_matrix_facorizations.h"
+#include "kl_latex_helper_fns.h"
 #include "expokit.h"
 
 #include <complex> 
@@ -176,46 +177,43 @@ klVector<complex<double> > klApplyLog( const klVector<complex<double> > &c)
 }
 void testExpoKit(ofstream &_tex,unsigned int  &n)
 {
-	//long long MB = 1048576 ;
-	//long long GB =  1073741824 ;
-	//long long GBo = 1073741824*2;
-	//long sz = sizeof(long);
-	//char* g3b = new char[GB*3];
-	//char* gb = new char[GB];
-	//char* g2b = new char [GBo];
-	//delete gb;
-	//delete g2b;
-
 	try{
 
-	//	do
-	//	{
-		klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(n);
-		//cout<<"SPD"<<endl<<SPD<<endl;
-		//klVector<complex<double> > eigen =SPD.eigenvalues();
-		//cout<<"eigs  = "<<endl<<eigen<<endl;
+		unsigned int featureDim = 16;
+
+		klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
+		
+		cout<<"SPD"<<endl<<SPD<<endl;
+		LatexPrintMatrix<double>(SPD ,"SPD Matrix",_tex);
+
+		klVector<complex<double> > eigen =SPD.eigenvalues();
+		LatexPrintVector<complex<double> >(eigen,"SPD Eigs",_tex);
 
 		klExpoKitDGPADMDriver drv;
 		drv._deg=6;
 		drv.Run(SPD);
+		
+		LatexPrintMatrix<double>(drv.expH ,"exp(SPD)",_tex);
+		
+		
+		LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(SPD) eigs",_tex);
 
-		cout<<"exp(SPD) = "<<endl<<drv.expH<<endl;
 		klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
-		cout<<"log(eigs)  = "<<endl<<logeigs<<endl;
+		
+		LatexPrintVector<complex<double> >(logeigs,"log(exp(SPD) eigs) ",_tex);
+		
 
 		klMatrix<double> Id(n,n);
 		Id= IdentityMatrix<double>(n);
 		drv.Run(Id);
-		cout<<"exp(Id) = "<<endl<<drv.expH<<endl;
-
+		LatexPrintMatrix<double>(drv.expH ,"exp(Id)",_tex);
+		
 		logeigs= klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		cout<<"eigs  = "<<endl<<drv.expH.eigenvalues()<<endl;
-		cout<<"log(eigs)  = "<<endl<<logeigs<<endl;	
+		
+		LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(Id) eigs",_tex);
 
-	//	n+=128;
-		//cout<<n<<endl;
-	//}while(n<1024);
+		LatexPrintVector<complex<double> >(logeigs,"log(exp(Id) eigs) ",_tex);
+
 	}
 	catch(...)
 	{

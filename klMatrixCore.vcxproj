@@ -55,7 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;K:\Program Files\MATLAB\R2012b\extern\include;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\MATLAB\R2010a\extern\include;k:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -70,7 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;K:\Program Files\MATLAB\R2012b\extern\include;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\MATLAB\R2010a\extern\include\win64;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,21 +130,6 @@
     <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libemlrt.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libeng.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libfixedpoint.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmat.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmex.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblas.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblascompat32.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwlapack.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwmathutil.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwservices.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmx.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libut.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclbase.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcr.lib" />
-    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib" />
     <Library Include="..\x64\Debug\ARPACK2.lib">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -219,6 +204,27 @@
     <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
       <FileType>Document</FileType>
     </Library>
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libemlrt.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libeng.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libfixedpoint.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmat.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmex.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblas.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblascompat32.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwlapack.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwmathutil.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwservices.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_fileio.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_solver_rtw.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmx.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libut.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclcommain.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcr.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcrrt.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_mli.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_rtl.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\physmod_foundation_util.lib" />
+    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\rtwcg.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

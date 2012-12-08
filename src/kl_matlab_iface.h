@@ -8,6 +8,28 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <fstream>
+
+
+/* 
+	OMFG ! From Microsoft :	Thanks for reporting this issue.
+I looked at the source code for matrix.h <core/matlab/include/matrix.h>
+It has a definition for char16_t "typedef CHAR16_T char16_t;". 
+Also the C++ header "Microsoft Visual Studio 10.0\VC\include\yvals.h" also defines 
+the same identifier(char16_t). Because of these two definition we get the redefinition 
+error when matrix.h and iostream.h(it internally includes yvals.h) are included in some cpp file.
+Declaration of char16_t in the yvals.h is newly introduced in dev10 and was not there in VS2008. 
+Therefore you are getting this redefinition error now on VS 2010(Dev10).
+Inorder to solve this I would recommend that Matlab should guard the declaration in their 
+file with Microsoft version.
+eg:
+#if (MICROSOFT VERSION is less than DEV10)
+typedef CHAR16_T char16_t;
+# endif
+Thanks, -Sunny Gupta   */
+#ifdef _CHAR16T
+#define CHAR16_T
+#endif
+
 #include "mat.h"  //Matlab Iface include file
 #include "engine.h"  //Matlab Iface include file
 #include "kl_matrix.h"

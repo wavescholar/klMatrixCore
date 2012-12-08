@@ -25,7 +25,9 @@
 #include "kl_arpack.h"
 #include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
-const char* basefilename="D:\\klDll\\TestDll\\";  
+
+const char* basefilename="D:\\klMAtrixCore\\output\\"; 
+
 klMutex klMatlabEngineThreadMap::lock;
 map<klThreadId, Engine*> klMatlabEngineThreadMap::engineMap;
 DWORD gdwTlsIndex;
@@ -104,16 +106,16 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 	//One way to find out is to find eigs, and see is \sigma(W) \in [0,\inflty)
 	klMatrix<double> SigmaW=SampleWishart(numFeatures);
 
-	cout<<"Sample Size = "<<sampleSize<<endl;
+	_tex<<"Sample Size = "<<sampleSize<<endl;
 
-	cout<<"Feature dim = "<<numFeatures<<endl<<endl;
+	_tex<<"Feature dim = "<<numFeatures<<endl<<endl;
 
-	cout<<"Generative W = "<<endl<<SigmaW<<endl;
+	LatexPrintMatrix<double>(SigmaW,"W",_tex);
 
 	klPrincipalComponents<double> pcaWishart=SigmaW;
 	klMatrix<double> V=pcaWishart(2);
 	klVector<double> wishartEigs=pcaWishart.eigenvalues();
-	cout<<"W eigs = "<<endl<<wishartEigs<<endl;
+	_tex<<"W eigs = "<<endl<<wishartEigs<<endl;
 
 	unsigned int i;
 	unsigned int j;
@@ -130,16 +132,19 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 
 	klMatrix<double> SampleCovariance = X.covarianceMatrix();
 
-	cout<<"Sample Covariance = "<<endl<<SampleCovariance<<endl;
-	cout<<"Sample mean = " <<endl<<X.sampleMean()<<endl;
+	LatexPrintMatrix<double>(SampleCovariance,"Sample Covariance",_tex);
+	
+	LatexPrintVector<double>(X.sampleMean(),"Sample Mean",_tex);
 
-	//This should be small
-	cout<<"SampleCovariance-SigmaW = " <<endl<<SampleCovariance-SigmaW<<endl;
-
+	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
+	klMatrix<double> D  = SampleCovariance-SigmaW; 
+	LatexPrintMatrix<double>(D,"SampleCovariance-W",_tex);
+	
 	klPrincipalComponents<double> pcaCovariance=SampleCovariance;
 	klMatrix<double> VC =pcaCovariance(2);
 	klVector<double> covarianceEigs=pcaCovariance.eigenvalues();
-	cout<<"Sample Covariance eigs ="<<endl<< covarianceEigs<<endl;
+	
+	LatexPrintVector<double>(covarianceEigs,"Sample Covariance Eigs",_tex);
 
 	//How close is the sample covariance to a PSD matrix?
 	//First we'll need a measure of matrix closeness and a way to find the 
@@ -160,15 +165,16 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 		}
 	}
 
-	klMatrix<double> Gf(numFeatures,numFeatures);
-
 	klMatrix<double> centered = X.centeredData();
 	klSamplePopulation<double> normalizedSample(centered);
 	klVector<double> normedMean = normalizedSample.sampleMean();
 
-	cout<<"Centered Mean = "<<endl<<normalizedSample.sampleMean()<<endl;
-	cout<<"Centered Covariance = "<<endl<<normalizedSample.covarianceMatrix() <<endl;
+	LatexPrintVector<double>(normalizedSample.sampleMean(),"Centered Mean",_tex);
 
+	LatexPrintMatrix<double>(normalizedSample.covarianceMatrix(),"Centered Covariance",_tex);
+
+
+	klMatrix<double> Gf(numFeatures,numFeatures);
 	for(i=0;i<numFeatures;i++)
 	{
 		klVector<double> x_i= centered.getColumn(i);
@@ -178,21 +184,25 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 			Gf[i][j]=(x_i).dotBLAS(x_j);
 		}
 	}
-	cout<<"Gram Matrix Gf Not scaled by sample size = "<<endl<<  Gf  <<endl;
 
-	cout<<"Gram Matrix Gf  scaled by sample size = "<<endl<<  Gf / (double) sampleSize <<endl;
+	LatexPrintMatrix<double>( Gf,"Gram Matrix Gf Not scaled by sample size",_tex);
+
+	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
+	klMatrix<double> scalesGf = Gf / (double) sampleSize;
+	LatexPrintMatrix<double>(scalesGf ,"Gram Matrix Gf  scaled by sample size",_tex);
 
 	klMatrix<double> diff = SampleCovariance / (double) sampleSize;
 
-	cout<<"SampleCovariance - Scaled Gf="<<endl<<diff<<endl;
+	LatexPrintMatrix<double>(diff ,"SampleCovariance - Scaled Gf",_tex);
 
-	cout<<"EigenDecomp of SampleCovariance = "<<endl<<VC<<endl;
-
+	LatexPrintMatrix<double>(VC ,"EigenDecomp of SampleCovariance",_tex);
+	
 	klPrincipalComponents<double> pcaGram=Gf;
 	klMatrix<double> VCGram =pcaGram(2);
-	cout<<"EigenDecomp of Gram Matrix = "<<endl<<VCGram<<endl;
-}
 
+	LatexPrintMatrix<double>(VCGram ,"EigenDecomp of Gram Matrix",_tex);
+
+	}
 
 void unitTestMain()
 {
@@ -204,39 +214,37 @@ void unitTestMain()
 
 	char* testRunDateTime = new char[1024];
 	char* testFile = new char[1024];
+	char* coutFile = new char[1024];
 	heapstatus = _heapchk();
 	
 	sprintf(testRunDateTime,"%d_%d_%d_%d.tex",tm_buf->tm_mon,tm_buf->tm_mday,tm_buf->tm_hour,tm_buf->tm_min);
-	
-	sprintf(testFile,"kl_Regression%s",testRunDateTime);
-	
+	sprintf(testFile,"%skl_Regression%s",basefilename,testRunDateTime);
+	sprintf(coutFile,"%skl_cout%s",basefilename,testRunDateTime);
+
+	FILE *stream ;
+
+	if((stream = freopen(coutFile, "a", stdout)) == NULL)
+		throw "kl: error redirecting std::cout to a file.";
+	cout<<"Redirecting std::cout to"<<coutFile<<"file via freopen."<<endl;
+
 	ofstream _tex("kl_Regression.tex");
 
 	ofstream _sytemText("kl_RegressionSysInfo.txt");
-	
+		
 	startLatexDoc("Regression of KL Software Distribution   ","KL Software Libraries",asctime(tm_buf),_tex, "");
 
 	_tex<<"\\textbf{ KL Libraryt unit test ouput.  This LaTex file and the associated diagrams \
 		are produced by the KL software libraries.}"<<endl;
-
-	//FILE *stream ;
-	//if((stream = freopen(testFile, "a", stdout)) == NULL)
-	//	throw "kl: error redirecting std::cout to a file.";
-	//_tex<<"Redirecting std::cout to this file via freopen."<<endl;
-
+	
 	klUnitTestWrapper klutw(_tex,_sytemText);
 	heapstatus = _heapchk();
 
 	unsigned int n = 512;
 	klutw.setDimension(n);
 	
-	n=8;
-	GenerativeGramConsistencyTest(_tex,n);
-
 	_tex.flush();
-
+	
 	heapstatus = _heapchk();
-
 
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
 	klMatlabEngineThreadMap klmtm;
@@ -252,16 +260,17 @@ void unitTestMain()
 
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-		
-	makeLatexSection("Matrix",_tex);
-	klutw.runTest(testKLMatrix<double>);
-	klutw.runTest(testKLMatrix<float>);
-		
+	
+	makeLatexSection("Matrix Exponential ",_tex);
+	klutw.runTest(testExpoKit);
+	
+	makeLatexSection("Gram Matrix Consistency Check",_tex);
+	klutw.runTest(GenerativeGramConsistencyTest);
+			
 	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
 
-	makeLatexSection("Matrix Exponential ",_tex);
-	klutw.runTest(testExpoKit);
+
 
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
@@ -295,6 +304,10 @@ void unitTestMain()
 
 	makeLatexSection("Time Series ",_tex);
 	klutw.runTest(testKLTimeSeries2<double>);
+
+	makeLatexSection("Matrix",_tex);
+	klutw.runTest(testKLMatrix<double>);
+	klutw.runTest(testKLMatrix<float>);
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	////HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
