@@ -43,7 +43,7 @@ template<class TYPE> void LatexPrintMatrix( klMatrix<TYPE>& matrix, string name,
 		_tex<<matrix[i][col-1]<<" \\\\"<<endl;
 	}
 	_tex<<"\\end{array}"<<endl;
-	_tex<<"\\right)$"<<endl<<endl;
+	_tex<<"\\right)$ \newline "<<endl<<endl;
 	_tex.flags();
 }
 template<class TYPE> void LatexPrintVector( klVector<TYPE>& klvector, string name,ofstream &_tex)
@@ -67,11 +67,9 @@ template<class TYPE> void LatexPrintVector( klVector<TYPE>& klvector, string nam
 	_tex<<klvector[col-1]<<" \\\\"<<endl;
 
 	_tex<<"\\end{array}"<<endl;
-	_tex<<"\\right)$"<<endl<<endl;
+	_tex<<"\\right)$ \newline "<<endl<<endl;
 	_tex.flags();
 
 }
-
-
 
 #endif __kl_latex_helper_fns__

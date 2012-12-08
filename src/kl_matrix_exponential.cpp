@@ -179,41 +179,64 @@ void testExpoKit(ofstream &_tex,unsigned int  &n)
 {
 	try{
 
-		unsigned int featureDim = 16;
+		unsigned int featureDim = 8;
 
-		klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
-		
-		cout<<"SPD"<<endl<<SPD<<endl;
-		LatexPrintMatrix<double>(SPD ,"SPD Matrix",_tex);
+		{
+			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
 
-		klVector<complex<double> > eigen =SPD.eigenvalues();
-		LatexPrintVector<complex<double> >(eigen,"SPD Eigs",_tex);
+			LatexPrintMatrix<double>(SPD ,"SPD Matrix",_tex);
 
-		klExpoKitDGPADMDriver drv;
-		drv._deg=6;
-		drv.Run(SPD);
-		
-		LatexPrintMatrix<double>(drv.expH ,"exp(SPD)",_tex);
-		
-		
-		LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(SPD) eigs",_tex);
+			klVector<complex<double> > eigen =SPD.eigenvalues();
+			LatexPrintVector<complex<double> >(eigen,"SPD Eigs",_tex);
 
-		klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		
-		LatexPrintVector<complex<double> >(logeigs,"log(exp(SPD) eigs) ",_tex);
-		
+			klExpoKitDGPADMDriver drv;
+			drv._deg=6;
+			drv.Run(SPD);
 
-		klMatrix<double> Id(n,n);
-		Id= IdentityMatrix<double>(n);
-		drv.Run(Id);
-		LatexPrintMatrix<double>(drv.expH ,"exp(Id)",_tex);
-		
-		logeigs= klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
-		
-		LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(Id) eigs",_tex);
+			LatexPrintMatrix<double>(drv.expH ,"exp(SPD)",_tex);		
 
-		LatexPrintVector<complex<double> >(logeigs,"log(exp(Id) eigs) ",_tex);
+			LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(SPD) eigs",_tex);
 
+			klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
+
+			LatexPrintVector<complex<double> >(logeigs,"log(exp(SPD) eigs) ",_tex);
+			
+			klMatrix<double> Id(featureDim,featureDim);
+			Id= IdentityMatrix<double>(featureDim);
+			drv.Run(Id);
+			LatexPrintMatrix<double>(drv.expH ,"exp(Id)",_tex);
+
+			logeigs= klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
+
+			LatexPrintVector<complex<double> >(drv.expH.eigenvalues(),"exp(Id) eigs",_tex);
+
+			LatexPrintVector<complex<double> >(logeigs,"log(exp(Id) eigs) ",_tex);
+		}
+		
+		_tex<<"For $n  \\in  \\dblz [16,128)$ we calculate  $|( SPD(n) Eigs - log(exp(SPD(n)) eigs)|_{l^2}$"<<endl<<endl;
+
+		klVector<complex<double> > diffs(128-16);
+
+		for(int i =16;i<64;i++)
+		{
+			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
+
+			klVector<complex<double> > eigen =SPD.eigenvalues();
+			
+			klExpoKitDGPADMDriver drv;
+			drv._deg=6;
+			drv.Run(SPD);
+
+			klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
+
+			klVector<complex<double> > df = eigen - logeigs;
+			std::complex<double> d = sqrt(df.dot(df));
+
+			diffs[i-16] = d;
+		}
+
+		LatexPrintVector<complex<double> >(diffs,"|( SPD(n) Eigs - log(exp(SPD(n)) eigs)|_{l^2}",_tex);
+					
 	}
 	catch(...)
 	{

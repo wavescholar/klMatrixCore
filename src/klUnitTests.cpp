@@ -82,7 +82,7 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 	//algorithms provide a way to deal with nonlinear structure by reducing nonlinear algorithms
 	//to algorithms that are linear in some feature space F.  F is nonlinearly related to the original input
 	//space.  
-	//Let x_i \ in \dblr^m X = [  ...x_i ... ] rowsiwe. Here we test the linear structure of a genreative data set against the
+	//Let x_i \ in \dblr^m X = [  ...x_i ... ] row wise. Here we test the linear structure of a genreative data set against the
 	//Gream kernel. In kernel-based methods, a set of features is chosen that define a space F , where it is hoped relevant structure will be 
 	//revealed, the data X are then mapped to the feature space F using a mapping F : X  -> F , and then classification, regression, or
 	//clustering is performed in F using traditional methods such as linear SVMs, GPs, or PCA. If F
@@ -115,7 +115,7 @@ void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
 	klPrincipalComponents<double> pcaWishart=SigmaW;
 	klMatrix<double> V=pcaWishart(2);
 	klVector<double> wishartEigs=pcaWishart.eigenvalues();
-	_tex<<"W eigs = "<<endl<<wishartEigs<<endl;
+	LatexPrintVector<double>(wishartEigs,"W eigs",_tex);
 
 	unsigned int i;
 	unsigned int j;
@@ -213,28 +213,29 @@ void unitTestMain()
 	tm_buf=localtime(&time_of_day);
 
 	char* testRunDateTime = new char[1024];
-	char* testFile = new char[1024];
+	char* regressionFile = new char[1024];
 	char* coutFile = new char[1024];
+	char* sysInfoFile = new char[1024];
 	heapstatus = _heapchk();
 	
-	sprintf(testRunDateTime,"%d_%d_%d_%d.tex",tm_buf->tm_mon,tm_buf->tm_mday,tm_buf->tm_hour,tm_buf->tm_min);
-	sprintf(testFile,"%skl_Regression%s",basefilename,testRunDateTime);
-	sprintf(coutFile,"%skl_cout%s",basefilename,testRunDateTime);
+	sprintf(testRunDateTime,"%d_%d_%d_%d",tm_buf->tm_mon,tm_buf->tm_mday,tm_buf->tm_hour,tm_buf->tm_min);
+	sprintf(regressionFile,"%skl_Regression%s.tex",basefilename,testRunDateTime);
+	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
+	sprintf(sysInfoFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 
-	FILE *stream ;
+	FILE *stream;
 
 	if((stream = freopen(coutFile, "a", stdout)) == NULL)
 		throw "kl: error redirecting std::cout to a file.";
 	cout<<"Redirecting std::cout to"<<coutFile<<"file via freopen."<<endl;
 
-	ofstream _tex("kl_Regression.tex");
+	ofstream _tex(regressionFile);
 
-	ofstream _sytemText("kl_RegressionSysInfo.txt");
+	ofstream _sytemText(sysInfoFile);
 		
 	startLatexDoc("Regression of KL Software Distribution   ","KL Software Libraries",asctime(tm_buf),_tex, "");
 
-	_tex<<"\\textbf{ KL Libraryt unit test ouput.  This LaTex file and the associated diagrams \
-		are produced by the KL software libraries.}"<<endl;
+	_tex<<"\\textbf{ KL Library test output.  This LaTex file and the associated diagrams are produced by the KL software libraries.}"<<endl;
 	
 	klUnitTestWrapper klutw(_tex,_sytemText);
 	heapstatus = _heapchk();
@@ -269,9 +270,7 @@ void unitTestMain()
 			
 	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
-
-
-
+	
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
@@ -313,23 +312,16 @@ void unitTestMain()
 	////HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
 	//klutw.runTest(testKLWavelet<double>);
 
-	//heapstatus = _heapchk();
-	//_tex<<"Testing Memory Managers"<<endl;
-	//klutw.runTest(testKLMemory2);
-	//heapstatus = _heapchk();
-
+	heapstatus = _heapchk();
+	
 	n=0;
 	testKLMemory2(_sytemText,n);
 	testklUtil(_sytemText,n);
 	klutw.HardwareConfiguration(_sytemText);
-	
-	//Working 120712
+
 	testMutithreadedWorkflow();
 
-
-	//Not working 120712
-	//GetMaAddresscFromAdapter();
-
+	
 	#ifdef _M_IX86
 	bool isInsideVMWare= klIsInsideVMWare();
 	bool isInsideVPC =klIsInsideVPC();
@@ -339,6 +331,12 @@ void unitTestMain()
 
 	_tex.close();
 
+	delete testRunDateTime;
+	delete regressionFile;
+	delete coutFile;
+	delete sysInfoFile;
+
+	heapstatus = _heapchk();
 }
 
 void VerifyWingerLaw(ofstream &_tex)
@@ -453,70 +451,66 @@ void TestMerssenePeriodIssue()
 
 void testArpack(ofstream &_tex,unsigned int  &n)
 {
-	{
-		_tex<<"Running Arnoldi Krylov algorithm on an $n=64$ dimensional $GOE$ matrix."<<endl;
+	n=128;
 
-		//unsigned int n= 16;
-		klMatrix<double> A_GOE = SampleGOE(n);
-		
-		A_GOE /=n;
+	_tex<<"Running Arnoldi Krylov algorithm on $GOE$ matrix and comparing to Intel MKL."<<endl;
 
-		unsigned int numEigenvalues= 16;
+	klMatrix<double> A_GOE = SampleGOE(n);
+	
+	A_GOE /=n;
 
-		klArpackFunctor klaf;
+	unsigned int numEigenvalues= 16;
 
-		LARGE_INTEGER* freq;
-		_LARGE_INTEGER* prefCountStart;
-		_LARGE_INTEGER* prefCountEnd;
-		freq=new _LARGE_INTEGER;
-		prefCountStart=new _LARGE_INTEGER;
-		prefCountEnd=new _LARGE_INTEGER;
-		QueryPerformanceFrequency(freq);
-		QueryPerformanceCounter(prefCountStart);
+	klArpackFunctor klaf;
 
-		klVector<complex<double> > eigsAP = klaf.run( A_GOE,numEigenvalues);
-		
-		QueryPerformanceCounter(prefCountEnd);
-		cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	LARGE_INTEGER* freq;
+	_LARGE_INTEGER* prefCountStart;
+	_LARGE_INTEGER* prefCountEnd;
+	freq=new _LARGE_INTEGER;
+	prefCountStart=new _LARGE_INTEGER;
+	prefCountEnd=new _LARGE_INTEGER;
+	QueryPerformanceFrequency(freq);
+	QueryPerformanceCounter(prefCountStart);
 
-		QueryPerformanceCounter(prefCountStart);
-		
-		klVector<complex<double> > eigs = A_GOE.eigenvalues();
-		
-		QueryPerformanceCounter(prefCountEnd);
-		cout<<"TicToc MKL  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	klVector<complex<double> > eigsAP = klaf.run( A_GOE,numEigenvalues);
 
-		LatexPrintMatrix(A_GOE, "GOE(16)" ,_tex);
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-		LatexPrintVector(eigsAP, "Eigenvalues via Arpack" , _tex);
+	QueryPerformanceCounter(prefCountStart);
 
-		LatexPrintVector(eigs, "Eigenvalues via Intel MKL DGEES" , _tex);
+	klVector<complex<double> > eigs = A_GOE.eigenvalues();
 
-	}
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc MKL  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+	//LatexPrintMatrix(A_GOE, "GOE(16)" ,_tex);
+
+	LatexPrintVector(eigsAP, "Eigenvalues via Arpack" , _tex);
+
+	LatexPrintVector(eigs, "Eigenvalues via Intel MKL DGEES" , _tex);
+
 	_tex.flush();
 }
 
 void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
-		
-	time_t time_of_day;
-	struct tm *tm_buf;
-	time_of_day = time( NULL );
-	tm_buf=localtime(&time_of_day);
+	n=128;
 
 	makeLatexSection("Sample from $W_n m$ times and calculate empirical PDF of the first eig",_tex);
 	_tex<<"This test of the KL libraries will generate histograms of \
 		  $\\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) \
 		  distribution of random matrices"<<endl<<endl;
 	_tex<<"This should approximate the celebrated Tracy Widom distribution."<<endl;
-	//unsigned int n=64;
-	unsigned int m=n*2;
-	unsigned int i;
+	
+	unsigned int m=256;
+	
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	_tex<<"Sample size $m = "<<m<<"$"<<endl<<endl;
 
 	klVector<complex<double> > lambda_1_Hist(m);
-#pragma omp parallel num_threads(4)
+	unsigned int i;
+//#pragma omp parallel num_threads(4)
 	for(i=0;i<m;i++)
 	{
 		klMatrix<double> A(n,n);
@@ -529,6 +523,7 @@ void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 	klVector<double> L_re(m);
 	//Imaginary part of first eig 
 	klVector<double> L_im(m);
+
 	unsigned int j=0;
 	for(j=0;j<m;j++)
 	{
@@ -547,12 +542,7 @@ bool testmatgen(bool silent);
 klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a);
 void testMatrixNorm(ofstream &_tex,unsigned int  &n)
 {	
-	time_t time_of_day;
-	struct tm *tm_buf;
-	time_of_day = time( NULL );
-	tm_buf=localtime(&time_of_day);
-	//startLatexDoc("Testing Operator Norm","KL Software Libraries",asctime(tm_buf),_tex,"");
-	//unsigned int n= 3;
+	n= 12;
 
 	makeLatexSection("Haar Distributed Random Orthogonal Matrix $A \\in O(n)$",_tex);
 	_tex<<" Testing Operator Norm"<<endl<<"Number of Dimensions: "<<n<<endl<<endl; 
@@ -688,18 +678,19 @@ void testMatrixNorm(ofstream &_tex,unsigned int  &n)
 void testklUtil(ofstream &_tex,unsigned int  &n )
 {
 	//This works
-	//try
-	//{
-	//	throw klError("Testing kl Stack Walking and Memory Dump");
-	//}
-	//catch(klError e)
-	//{
-	//	e.
-	//	std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
-	//	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
-	//	std::string err = ANSI_INFO_ss.str();
-
-	//}
+	try
+	{
+		throw klError("Testing kl Stack Walking and Memory Dump");
+	}
+	catch(klError e)
+	{
+		_tex<<"Caught klError with message  : ";
+		_tex<<e.what()<<endl;
+		std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+		ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+		std::string err = ANSI_INFO_ss.str();
+		_tex<<err;
+	}
 	
 	makeLatexSection("Testing kl Floating Point and Memory Utilities",_tex);
 
@@ -746,10 +737,12 @@ void testklUtil(ofstream &_tex,unsigned int  &n )
 void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 {		
 	{
-		//unsigned int n=2;
-		
-		unsigned int m=n+3;
-		unsigned int p=n+6;
+		n=2048;
+		_tex<<"Comparing naive matrix multiply verus Intel MKL dgemm for matrix of size "<<n<<"."<<endl;
+		_tex<<"This is for type double (hence the d in dgemm)."<<endl;
+
+		unsigned int m=n+128;
+		unsigned int p=n+64;
 
 		klMatrix<double> A(n,m);
 
@@ -762,7 +755,6 @@ void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 				A[i][j]=i+j;
 			}
 		}
-		_tex<<A<<endl;
 
 		klMatrix<double> B(m,p);
 		for(i=0;i<m;i++)
@@ -772,25 +764,37 @@ void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 				B[i][j]=i+j;
 			}
 		}
-		_tex<<B<<endl;
 
+		//bbcrevisit make this easier - like tic toc !  Will requier a file scope or global static object.
+		LARGE_INTEGER* freq;
+		_LARGE_INTEGER* prefCountStart;
+		_LARGE_INTEGER* prefCountEnd;
+		freq=new _LARGE_INTEGER;
+		prefCountStart=new _LARGE_INTEGER;
+		prefCountEnd=new _LARGE_INTEGER;
+		QueryPerformanceFrequency(freq);
+
+		QueryPerformanceCounter(prefCountStart);
 		klMatrix<double> C = A*B;
-
-		_tex<<C<<endl;
+		QueryPerformanceCounter(prefCountEnd);
+		_tex<<"Naive type double matrix multiply tic toc  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		klMatrix<double> Cp(n,p);
-		Cp[0]=1;
-		Cp[1]=2;
-		_tex<<Cp<<endl;
-		klMatrix<double> Ap =mmBLAS(1.0, A, B, 1.0,Cp);
-		_tex<<Cp<<endl;
-		_tex<<Ap<<endl;
+
+		QueryPerformanceCounter(prefCountStart);
+		klMatrix<double> Ap =mmBLAS(1.0, A, B, 1.0,Cp);	
+		QueryPerformanceCounter(prefCountEnd);
+		_tex<<"dgemm plus row to column major transpose operation tic toc  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
 	}
 
 	{
-		unsigned int n=2;
-		unsigned int m=3;
-		unsigned int p=6;
+		n=2048;
+		_tex<<"Comparing naive matrix multiply verus Intel MKL sgemm for matrix of size "<<n<<"."<<endl;
+		_tex<<"This is for type float (hence the s in dgemm)."<<endl;
+
+		unsigned int m=n+128;
+		unsigned int p=n+64;
+
 		klMatrix<float> A(n,m);
 
 		unsigned int i=0;
@@ -802,7 +806,6 @@ void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 				A[i][j]=i+j;
 			}
 		}
-		_tex<<A<<endl;
 
 		klMatrix<float> B(m,p);
 		for(i=0;i<m;i++)
@@ -812,18 +815,26 @@ void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 				B[i][j]=i+j;
 			}
 		}
-		_tex<<B<<endl;
 
+		LARGE_INTEGER* freq;
+		_LARGE_INTEGER* prefCountStart;
+		_LARGE_INTEGER* prefCountEnd;
+		freq=new _LARGE_INTEGER;
+		prefCountStart=new _LARGE_INTEGER;
+		prefCountEnd=new _LARGE_INTEGER;
+		QueryPerformanceFrequency(freq);
+
+		QueryPerformanceCounter(prefCountStart);
 		klMatrix<float> C = A*B;
+		QueryPerformanceCounter(prefCountEnd);
+		_tex<<"Naive type float matrix multiply tic toc  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-		_tex<<C<<endl;
-		klMatrix<float> Cp(n,p);
-		Cp[0]=1;
-		Cp[1]=2;
-		_tex<<Cp<<endl;
+		klMatrix<float> Cp(n,p);	
+
+		QueryPerformanceCounter(prefCountStart);
 		klMatrix<float> Ap =mmBLAS(1.0, A, B, 1.0,Cp);
-		_tex<<Cp<<endl;
-		_tex<<Ap<<endl;
+		QueryPerformanceCounter(prefCountEnd);
+		_tex<<"sgemm plus row to column major transpose operation tic toc  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 	}
 	_tex.flush();
 }

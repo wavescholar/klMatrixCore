@@ -8,12 +8,12 @@
 
 void startLatexDoc(string title,string author,string date,ofstream &_tex,string abs)
 {
-	_tex<<"\\documentclass[12pt]{article}"<<endl;
+	_tex<<"\\documentclass[12pt,landscape]{article}"<<endl;
 	_tex<<"\\usepackage[english]{babel}"<<endl;
 	_tex<<"\\usepackage{amsmath,amsthm}"<<endl;
 	_tex<<"\\usepackage{amsfonts}"<<endl;
 	_tex<<"\\usepackage{graphicx}"<<endl;
-	_tex<<"\\newtheorem{thm}{Theorem}[section]"<<endl;
+	/*_tex<<"\\newtheorem{thm}{Theorem}[section]"<<endl;
 	_tex<<"\\newtheorem{cor}[thm]{Corollary}"<<endl;
 	_tex<<"\\newtheorem{lem}[thm]{Lemma}"<<endl;
 	_tex<<"\\newtheorem{prop}[thm]{Proposition}"<<endl;
@@ -21,7 +21,68 @@ void startLatexDoc(string title,string author,string date,ofstream &_tex,string 
 	_tex<<"\\newtheorem{defn}[thm]{Definition}"<<endl;
 	_tex<<"\\theoremstyle{remark}"<<endl;
 	_tex<<"\\newtheorem{rem}[thm]{Remark}"<<endl;
+	_tex<<"\\numberwithin{equation}{section}"<<endl;*/
+
+	//These are from my Manual / Book
+	_tex<<"\\newcommand{\\setlinespacing}[1]{\\setlength{\\baselineskip}{#1 \\defbaselineskip}}"<<endl;
+	_tex<<"\\newcommand{\\doublespacing}{\\setlength{\\baselineskip}{2.0 \\defbaselineskip}}"<<endl;
+	_tex<<"\\newcommand{\\singlespacing}{\\setlength{\\baselineskip}{\\defbaselineskip}}"<<endl;
+	_tex<<"\\newcommand{\\A}{{\\cal A}}"<<endl;
+	_tex<<"\\newcommand{\\h}{{\\cal H}}"<<endl;
+	_tex<<"\\newcommand{\\s}{{\\cal S}}"<<endl;
+	_tex<<"\\newcommand{\\W}{{\\cal W}}"<<endl;
+	_tex<<"\\newcommand{\\BH}{\\mathbf B(\\cal H)}"<<endl;
+	_tex<<"\\newcommand{\\KH}{\\cal  K(\\cal H)}"<<endl;
+	_tex<<"\\newcommand{\\Real}{\\mathbb R}"<<endl;
+	_tex<<"\\newcommand{\\Complex}{\\mathbb C}"<<endl;
+	_tex<<"\\newcommand{\\Field}{\\mathbb F}"<<endl;
+	_tex<<"\\newcommand{\\RPlus}{[0,\\infty)}"<<endl;
+	_tex<<"\\newcommand{\\norm}[1]{\\left\\Vert#1\\right\\Vert}"<<endl;
+	_tex<<"\\newcommand{\\essnorm}[1]{\\norm{#1}_{\\text{\\rm\\normalshape ess}}}"<<endl;
+	_tex<<"\\newcommand{\\abs}[1]{\\left\\vert#1\\right\\vert}"<<endl;
+	_tex<<"\\newcommand{\\set}[1]{\\left\\{#1\\right\\}}"<<endl;
+	_tex<<"\\newcommand{\\seq}[1]{\\left<#1\\right>}"<<endl;
+	_tex<<"\\newcommand{\\eps}{\\varepsilon}"<<endl;
+	_tex<<"\\newcommand{\\To}{\\longrightarrow}"<<endl;
+	_tex<<"\\newcommand{\\RE}{\\operatorname{Re}}"<<endl;
+	_tex<<"\\newcommand{\\IM}{\\operatorname{Im}}"<<endl;
+	_tex<<"\\newcommand{\\Poly}{{\\cal{P}}(E)}"<<endl;
+	_tex<<"\\newcommand{\\EssD}{{\\cal{D}}}"<<endl;
+	_tex<<"\\newcommand{\\field}[1]{\\mathbb{#1}}"<<endl;
+	_tex<<"\\newcommand{\\C}{\\field{C}}"<<endl;
+	_tex<<"\\newcommand{\\R}{\\field{R}}"<<endl;
+	_tex<<"\\newcommand{\\script}[1]{\\mathcal{#1}}"<<endl;
+	_tex<<"\\newcommand{\\fall}{\\; \\forall \\;}"<<endl;
+	_tex<<"\\newcommand{\\exts}{\\; \\exists \\;}"<<endl;
+	_tex<<"\\newcommand{\\mbf}[1]{\\mathbf{#1}}"<<endl;
+	_tex<<"\\newcommand{\\binomial}[2]{\\biggl( \\begin{array}{c}  #1 \\\\ #2  \\\\ \\end{array} \\biggr) }"<<endl;
+	_tex<<"\\newcommand{\\fderiv}[2]{ \\frac{d}{ d #1} \\: #2}"<<endl;
+	_tex<<"\\newcommand{\\sderiv}[2]{ \\frac{d^2}{ d^2 #1} \\: #2}"<<endl;
+	_tex<<"\\newcommand{\\pfderiv}[2]{ \\frac{\\partial}{ \\partial #1} \\: #2}"<<endl;
+	_tex<<"\\newcommand{\\psderiv}[2]{ \\frac{\\partial^2}{ \\partial^2 #1} \\: #2}"<<endl;
+	_tex<<"\\newcommand{\\mat}[1]{\\mathbf{#1}}"<<endl;
+	_tex<<"\\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblz}{\\mathalpha}{AMSb}{\"5A}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblr}{\\mathalpha}{AMSb}{\"52}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblt}{\\mathalpha}{AMSb}{\"54}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblq}{\\mathalpha}{AMSb}{\"51}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dbln}{\\mathalpha}{AMSb}{\"4E}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblf}{\\mathalpha}{AMSb}{\"46}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dblc}{\\mathalpha}{AMSb}{\"43}"<<endl;
+	_tex<<"\\DeclareMathSymbol{\\dbld}{\\mathalpha}{AMSb}{\"44}"<<endl;
+	_tex<<"\\theoremstyle{plain}"<<endl;
+	_tex<<"\\newtheorem{thm}{Theorem}[section]"<<endl;
+	_tex<<"\\newtheorem{cor}[thm]{Corollary}"<<endl;
+	_tex<<"\\newtheorem{lem}[thm]{Lemma}"<<endl;
+	_tex<<"\\newtheorem{prop}[thm]{Proposition}"<<endl;
+	_tex<<"\\theoremstyle{definition}"<<endl;
+	_tex<<"\\newtheorem{defn}{Definition}[section]"<<endl;
+	_tex<<"\\theoremstyle{remark}"<<endl;
+	_tex<<"\\newtheorem{rem}{Remark}[section]"<<endl;
 	_tex<<"\\numberwithin{equation}{section}"<<endl;
+	_tex<<"\\renewcommand{\\theequation}{\\thesection.\\arabic{equation}}"<<endl;
+
+
 	_tex<<"\\begin{document}"<<endl;
 	_tex<<"\\title{"<<title<<"}"<<endl;
 	_tex<<"\\author{"<<author<<"}"<<endl;

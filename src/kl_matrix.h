@@ -929,11 +929,7 @@ inline klMatrix<float> mmBLAS(float alpha, klMatrix<float> a, klMatrix<float> b,
 	//its number of rows, and its number of columns. For a matrix in full storage, the leading dimension
 	//of the array must be at least as large as the number of rows in the matrix.
 	return C.columnToRowMajor();
-
-
 }
-
-
 
 
 //y := alpha*A*x + beta*y

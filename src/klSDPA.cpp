@@ -7,10 +7,9 @@
 #include "sdpa-lib2.hpp"
 void  klTestSDPA(ofstream &_tex,unsigned int  &n)
 {	
-
 	SDPA	Problem1;
 
-	Problem1.Method          = KSH;
+	Problem1.Method = KSH;
 
 	strcpy(Problem1.ParameterFileName, "d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/param.sdpa");
 
@@ -20,9 +19,9 @@ void  klTestSDPA(ofstream &_tex,unsigned int  &n)
 
 	Problem1.InputFile = fopen("d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.dat-s","r");
 
-	strcpy(Problem1.OutputFileName, "d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.result_loc");
+	strcpy(Problem1.OutputFileName, "D:/klMAtrixCore/output/sdpa_example1.result_loc");
 
-	Problem1.OutputFile = fopen("d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.result_loc","w");
+	Problem1.OutputFile = fopen("D:/klMAtrixCore/output/sdpa_example1.result_loc","w");
 
 	Problem1.DisplayInformation = stdout;
 
