@@ -127,7 +127,6 @@
     <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
     <ClCompile Include="src\kl_random_number_generator.cpp" />
     <ClCompile Include="src\kl_SEH.cpp" />
-    <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\x64\Debug\ARPACK2.lib">

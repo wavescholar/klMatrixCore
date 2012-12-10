@@ -30,7 +30,7 @@ template<class TYPE> class klVector: public klRefCount<klMutex>
 {
 public:
 
-	klVector(klMemMgr* mgr,unsigned int size,bool own=false) :
+	  klVector(klMemMgr* mgr,unsigned int size,bool own=false) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
 		  _mgr=mgr;
@@ -41,8 +41,7 @@ public:
 			  _own=0;
 		  _size=size;
 	  }
-
-
+	  
 	  klVector(TYPE* mem,unsigned int size,bool own=false) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -51,6 +50,7 @@ public:
 		  _size=size;
 		  _mgr=0;
 	  }
+	  
 	  klVector(unsigned int size) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -59,6 +59,7 @@ public:
 		  _size=size;
 		  _mgr=0;
 	  }
+	  
 	  klVector() :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -84,9 +85,7 @@ public:
 		  y1=src.y1;
 		  desc=src.desc;
 	  }
-
-
-
+	  
 	  //Computes this.^b.  Template specializations utilizing MKL VSL are implemented for TYPE double and TYPE float 
 	  klVector<TYPE> pow_gen(klVector<TYPE> b)
 	  {
@@ -102,7 +101,6 @@ public:
 		  return klVector<TYPE>(ans,_size,true);
 
 	  }
-
 
 	  klVector<TYPE> pow_alpha(double alpha)
 	  {
@@ -234,6 +232,7 @@ public:
 	  {
 		  return _size;
 	  }
+	  
 	  unsigned int getRows() const
 	  {
 		  return _size;
@@ -259,8 +258,9 @@ public:
 				  _mgr->free(_mMemory);
 		  }
 	  }
-	  ///  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
-      ///  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
+	  
+	  //  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
+      //  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
 	  TYPE dot(klVector<TYPE>& rhs) const
 	  {
 		  if(rhs.getRowSize()!=_size)
@@ -273,8 +273,7 @@ public:
 		  }
 		  return ans;
 	  }
-
-
+	  
 	  TYPE dotBLAS(klVector<TYPE>& rhs) const
 	  {
 		  if(rhs.getRowSize()!=_size)
@@ -288,8 +287,7 @@ public:
 
 		  return ans;
 	  }
-
-
+	  
 	  TYPE& operator[](unsigned int subscript) const 
 	  {
 		  if(subscript<_size)
@@ -321,8 +319,6 @@ public:
 		  return r;
 	  }
 
-
-
 	  klVector<TYPE> absv()
 	  {
 		  unsigned int i;
@@ -344,8 +340,7 @@ public:
 		  }
 		  return rsum;
 	  }
-
-
+	  
 	  size_t precision() const
 	  {
 		  return sizeof(TYPE);
@@ -402,6 +397,7 @@ public:
 			  ans[i]=(_mMemory[i]==c);
 		  return ans;
 	  }
+	  
 	  // Elementwise not-equal to the scalar
 	  klVector<bool> operator!=(const TYPE c) const
 	  {
@@ -412,6 +408,7 @@ public:
 		  return ans;
 
 	  }
+	  
 	  // Elementwise less than the scalar
 	  klVector<bool> operator<(const TYPE c) const
 	  {
@@ -422,6 +419,7 @@ public:
 		  return ans;
 
 	  }
+	  
 	  // Elementwise less than and equal to the scalar
 	  klVector<bool> operator<=(const TYPE c) const
 	  {
@@ -432,6 +430,7 @@ public:
 		  return ans;
 
 	  }
+	  
 	  // Elementwise greater than the scalar
 	  klVector<bool> operator>(const TYPE c) const
 	  {

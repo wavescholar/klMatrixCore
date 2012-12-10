@@ -5,7 +5,7 @@
 
 #include "sdpa-lib.hpp"
 #include "sdpa-lib2.hpp"
-void  klTestSDPA(ofstream &_tex,unsigned int  &n)
+void  SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n)
 {	
 	SDPA	Problem1;
 

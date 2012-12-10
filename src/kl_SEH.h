@@ -12,11 +12,10 @@
 #include <windows.h>
 #include <dbghelp.h>
 
-class StackWalkerInternal; 
+class klStackWalkerInternal; 
 
 
-
-class StackWalker
+class klStackWalker
 {
 public:
   typedef enum StackWalkOptions
@@ -53,15 +52,15 @@ public:
     OptionsAll = 0x3F
   } StackWalkOptions;
 
-  StackWalker(
+  klStackWalker(
     int options = OptionsAll, // 'int' is by design, to combine the enum-flags
     LPCSTR szSymPath = NULL, 
     DWORD dwProcessId = GetCurrentProcessId(), 
     HANDLE hProcess = GetCurrentProcess()
     );
-  StackWalker(DWORD dwProcessId, HANDLE hProcess);
+  klStackWalker(DWORD dwProcessId, HANDLE hProcess);
   
-  virtual ~StackWalker();
+  virtual ~klStackWalker();
 
   typedef BOOL (__stdcall *PReadProcessMemoryRoutine)(
     HANDLE      hProcess,
@@ -116,7 +115,7 @@ protected:
   virtual void OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr);
   virtual void OnOutput(LPCSTR szText);
 
-  StackWalkerInternal *m_sw;
+  klStackWalkerInternal *m_sw;
   HANDLE m_hProcess;
   DWORD m_dwProcessId;
   BOOL m_modulesLoaded;
@@ -126,7 +125,7 @@ protected:
 
   static BOOL __stdcall myReadProcMem(HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead);
 
-  friend StackWalkerInternal;
+  friend klStackWalkerInternal;
 };
 
 
@@ -134,16 +133,16 @@ protected:
 
 
 
-class klStackWalker : public StackWalker
+class klklStackWalker : public klStackWalker
 {
 public:
-  klStackWalker() : StackWalker() 
+  klklStackWalker() : klStackWalker() 
   {
   }
-  klStackWalker(DWORD dwProcessId, HANDLE hProcess) : StackWalker(dwProcessId, hProcess) {}
+  klklStackWalker(DWORD dwProcessId, HANDLE hProcess) : klStackWalker(dwProcessId, hProcess) {}
   virtual void OnOutput(LPCSTR szText) 
   { 
-	  StackWalker::OnOutput(szText); 
+	  klStackWalker::OnOutput(szText); 
 	  msg+=std::string(szText);
 	  msg+="\r\n";
 

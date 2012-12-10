@@ -3,10 +3,7 @@
  * Bruce B Campbell 11 30 2012  *
  ********************************/
 #include "kl_memory.h"
-
 #include <fstream>
-
-
 
 void klPrintModules(ofstream &stream)
 {
@@ -75,7 +72,6 @@ MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)//const char* filename)
 	GlobalMemoryStatusEx (&_memoryInfoEx);
 	if(stream.good())
 	{
-
 		stream<<"Memory information: \n";
 		char* temp =new char[1024];
 
@@ -102,6 +98,8 @@ MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)//const char* filename)
 
 		sprintf(temp,"Available Virtual Memory: %u\n", _memoryInfoEx.ullAvailExtendedVirtual); 
 		stream<<temp;
+
+		delete temp;
 	}
 	
 	stream.flush();
@@ -201,6 +199,8 @@ void klGetLogicalProcessorInformation(ofstream &stream)
 	{
 		sprintf(message,("\nGetLogicalProcessorInformation is not supported.\n"));
 		stream<<message;
+
+		delete message;
 		return;
 	}
 
@@ -296,10 +296,7 @@ void klGetLogicalProcessorInformation(ofstream &stream)
 	
 	free(buffer);
 	delete message;
-
 }
-
-
 
 // Use the __cpuid intrinsic to get information about a CPU
 #include <stdio.h>
@@ -758,15 +755,11 @@ void klGetCPUID(ofstream &stream)
 	delete message;
 }
 
-
-
-
 #define _WIN32_DCOM
 #include <iostream>
 using namespace std;
 #include <comdef.h>
 #include <Wbemidl.h>
-
 #include "tchar.h"
 # pragma comment(lib, "wbemuuid.lib")
 void klWMI(ofstream &stream)

@@ -18,13 +18,46 @@
 #include "kl_unit_tests.h"
 #include "kl_matrix_facorizations.h"
 #include "kl_unit_test_wrapper.h"
-#include "kl_image_processing_functors.h"
-#include "kl_img_pca.h"
 #include "kl_matlab_dependent_unit_tests.h"
 #include "kl_matlab_iface.h"
 #include "kl_arpack.h"
 #include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
+
+static class klTimer
+{		
+	static LARGE_INTEGER* freq;
+	static _LARGE_INTEGER* prefCountStart;
+	static _LARGE_INTEGER* prefCountEnd;
+public:
+	klTimer()
+	{
+		cout<<"timer::timer";
+	}
+
+	~klTimer()
+	{
+		delete freq;
+		delete prefCountStart;
+		delete prefCountEnd;
+		cout<<"timer::~timer";
+	}
+	static void tic()
+	{
+		QueryPerformanceFrequency(freq);
+		QueryPerformanceCounter(prefCountStart);
+	}
+	static double toc()
+	{
+		QueryPerformanceCounter(prefCountEnd);
+		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   
+		
+	}
+};
+
+LARGE_INTEGER*  klTimer::freq=new _LARGE_INTEGER;
+_LARGE_INTEGER* klTimer::prefCountStart=new _LARGE_INTEGER;;
+_LARGE_INTEGER* klTimer::prefCountEnd=new _LARGE_INTEGER;
 
 const char* basefilename="D:\\klMAtrixCore\\output\\"; 
 
@@ -46,24 +79,21 @@ void __cdecl klNewHandler( )
 	throw bad_alloc( );
 	return;
 }
-void testKLMatrix(ofstream &_tex,unsigned int  &n);
-void testMatrixNorm(ofstream &_tex,unsigned int  &n);
-void testKLMemory2(ofstream &_tex,unsigned int  &n);
-void klTestSDPA(ofstream &_tex,unsigned int  &n);
-void testklPrincipalComponents2(ofstream &_tex,unsigned int  &n);
-void testArpack(ofstream &_tex,unsigned int  &n);
-void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
-void testklUtil(ofstream &_tex,unsigned int  &n);
-void testklMatrixMult(ofstream &_tex,unsigned int  &n );
-void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n);
-void testExpoKit(ofstream &_tex,unsigned int  &n);
-void testMutithreadedWorkflow(void);
-void GetMaAddresscFromAdapter (void);
-bool klIsInsideVMWare();
-bool klIsInsideVPC();
-
-void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n);
-void GenerativeGramConsistencyTest(ofstream &_tex,unsigned int  &n)
+void MatrixOpsCeck(ofstream &_tex,unsigned int  &n);
+void MatrixNormDemo(ofstream &_tex,unsigned int  &n);
+void MemoryManagementDemo(ofstream &_tex,unsigned int  &n);
+void SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n);
+void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &n);
+void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n);
+void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
+void UtilityDemo(ofstream &_tex,unsigned int  &n);
+void MatrixMultiplicationCheck(ofstream &_tex,unsigned int  &n );
+void LinearRegressionDemo(ofstream &_tex,unsigned int  &n);
+void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n);
+void MutithreadedWorkflowDemo(void);
+void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
+void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
+void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 {
 	//Notes from On the Nystrom Method for Approximating a Gram Matrix for Improved Kernel-Based Learning by 
 	//Petros Drineas DRINEP@CS.RPI.EDU Department of Computer Science Rensselaer Polytechnic Institute
@@ -262,11 +292,17 @@ void unitTestMain()
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	
+	makeLatexSection("Approximate Winger Distribution",_tex);
+	klutw.runTest(VerifyWingerLaw);
+
+	makeLatexSection("Generate Tracey Widom Sample",_tex);
+	klutw.runTest(GenerateTraceyWidomSample);
+
 	makeLatexSection("Matrix Exponential ",_tex);
-	klutw.runTest(testExpoKit);
+	klutw.runTest(MatrixExponentialDemo);
 	
 	makeLatexSection("Gram Matrix Consistency Check",_tex);
-	klutw.runTest(GenerativeGramConsistencyTest);
+	klutw.runTest(GenerativeGramConsistencyCheck);
 			
 	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
@@ -275,19 +311,16 @@ void unitTestMain()
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
 	makeLatexSection("ARPACK",_tex);
-	klutw.runTest(testArpack);
+	klutw.runTest(IterativeKrylovCheck);
 
 	makeLatexSection("Semidefinite Programming SDPA",_tex);
-	klutw.runTest(klTestSDPA);
+	klutw.runTest(SemidefiniteProgrammingCheck);
 
 	makeLatexSection("Linear Regression 3x1",_tex);
-	klutw.runTest(testklLinearRegression3x1);
+	klutw.runTest(LinearRegressionDemo);
 
 	makeLatexSection("Matrix Norms",_tex);
-	klutw.runTest(testMatrixNorm);
-
-	makeLatexSection("Generate Tracey Widom Sample",_tex);
-	klutw.runTest(generateTraceyWidomSample);
+	klutw.runTest(MatrixNormDemo);
 
 	makeLatexSection("Principal Components Matlab ",_tex);
 	klutw.runTest(testklPrincipalComponentsMatlab<double>);
@@ -296,7 +329,7 @@ void unitTestMain()
 	klutw.runTest(testKLMultiVariateRandomNumberGeneratorMatlab<double>);
 
 	makeLatexSection("Matrix Multiply",_tex);
-	klutw.runTest(testklMatrixMult);
+	klutw.runTest(MatrixMultiplicationCheck);
 
 	makeLatexSection("Descriptive Statistics",_tex);
 	klutw.runTest(testKLDescriptiveStatistics<double>);
@@ -305,8 +338,8 @@ void unitTestMain()
 	klutw.runTest(testKLTimeSeries2<double>);
 
 	makeLatexSection("Matrix",_tex);
-	klutw.runTest(testKLMatrix<double>);
-	klutw.runTest(testKLMatrix<float>);
+	klutw.runTest(MatrixOpsCeck<double>);
+	klutw.runTest(MatrixOpsCeck<float>);
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	////HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
@@ -315,13 +348,12 @@ void unitTestMain()
 	heapstatus = _heapchk();
 	
 	n=0;
-	testKLMemory2(_sytemText,n);
-	testklUtil(_sytemText,n);
+	MemoryManagementDemo(_sytemText,n);
+	UtilityDemo(_sytemText,n);
 	klutw.HardwareConfiguration(_sytemText);
 
-	testMutithreadedWorkflow();
-
-	
+	MutithreadedWorkflowDemo();
+		
 	#ifdef _M_IX86
 	bool isInsideVMWare= klIsInsideVMWare();
 	bool isInsideVPC =klIsInsideVPC();
@@ -339,15 +371,16 @@ void unitTestMain()
 	heapstatus = _heapchk();
 }
 
-void VerifyWingerLaw(ofstream &_tex)
+void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
 {
 	makeLatexSection("Verfy Winger Law.",_tex);
 
-	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n£n matrix with Random entries such "<<endl;
-		  //that $X_{i,j} = X_{j,i}$, and X_{i,j} are iid $\\forall i < j,$ and $Xjj$ are iid $\\forall j \\st  \
-		  //E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ and that All moments exists for each entries. \
-		  //The eigenvector of this random matrix; $ \lamda_1 \\lteq ... \\lteq \lamda_n$ depends continuously on Mn."<<endl.*/
-	unsigned int n=4096;
+	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such \
+		  that $X_{i,j} = X_{j,i}$, and X_{i,j} are iid $\\forall i < j,$ and $Xjj$ are iid $\\forall j \\st  \
+		  E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ and that all moments exists for each of the entries. \
+		  The eigenvector of this random matrix; $ \\lamda_1 \\lteq ... \\lteq \\lamda_n$ depends continuously on $Mn$."<<endl;
+	
+     n=4096;
 
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	
@@ -355,8 +388,8 @@ void VerifyWingerLaw(ofstream &_tex)
 	
 	klVector< complex<double> >  eigs = A.eigenvalues();
 	
-	LatexInsertHistogram(RE(eigs),100,_tex, basefilename,"Re_lambda_n","Histogram of Re(\\lambda_n)");
-	LatexInsertHistogram(IM(eigs),100,_tex, basefilename,"Im_lambda_n","Histogram of Im(\\lambda_n)");
+	LatexInsertHistogram(RE(eigs),100,_tex, basefilename,"Re_lambda_n","Histogram of Re(\\lambda_i) for $X$");
+	LatexInsertHistogram(IM(eigs),100,_tex, basefilename,"Im_lambda_n","Histogram of Im(\\lambda_i) for $X$");
 
 	_tex.flush();
 
@@ -449,7 +482,7 @@ void TestMerssenePeriodIssue()
 	exit(42);
 }
 
-void testArpack(ofstream &_tex,unsigned int  &n)
+void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 {
 	n=128;
 
@@ -493,54 +526,92 @@ void testArpack(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 }
 
-void generateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
+
+void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
-	n=128;
+	//With n = 1024 m= 1024 this test should take about five hours on a 12 core 3Gz 96GB RAM workstation
+
+	n=1024;
 
 	makeLatexSection("Sample from $W_n m$ times and calculate empirical PDF of the first eig",_tex);
-	_tex<<"This test of the KL libraries will generate histograms of \
-		  $\\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) \
-		  distribution of random matrices"<<endl<<endl;
-	_tex<<"This should approximate the celebrated Tracy Widom distribution."<<endl;
+	_tex<<"Here we generate histograms of $\\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) \
+		 distributed of random matrices"<<endl;
+	_tex<<"These should approximate the celebrated Tracy Widom distribution."<<endl;
 	
-	unsigned int m=256;
+	unsigned int m=1024;
 	
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	_tex<<"Sample size $m = "<<m<<"$"<<endl<<endl;
 
-	klVector<complex<double> > lambda_1_Hist(m);
-	unsigned int i;
-//#pragma omp parallel num_threads(4)
-	for(i=0;i<m;i++)
-	{
-		klMatrix<double> A(n,n);
-		A=SampleWishart(n,i);
-		klVector<complex<double> > eigs=A.eigenvalues();
-		lambda_1_Hist[i]=eigs[0];
+	{	
+		klVector<complex<double> > lambda_1_Hist(m);
+		unsigned int i;
+		//#pragma omp parallel num_threads(4)
+		for(i=0;i<m;i++)
+		{
+			klTimer::tic();
+			klMatrix<double> A(n,n);
+			A=SampleWishart(n,i);
+			klVector<complex<double> > eigs=A.eigenvalues();
+			lambda_1_Hist[i]=eigs[0];
+			double dt = klTimer::toc();
+			cerr<<"dt("<<i<<") = "<<dt<<endl;
+		}
+
+		//Real part of first eig
+		klVector<double> L_re(m);
+		//Imaginary part of first eig 
+		klVector<double> L_im(m);
+
+		unsigned int j=0;
+		for(j=0;j<m;j++)
+		{
+			L_re[j]=lambda_1_Hist[j].real();
+			L_im[j]=lambda_1_Hist[j].imag();
+		}
+
+		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_TraceyWidom","Histogram of Re(\\lambda_1) A \\in W(1024)");
+		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_TraceyWidom","Histogram of Im(\\lambda_1) A \\in W(1024) ");
+		_tex.flush();
 	}
 
-	//Real part of first eig
-	klVector<double> L_re(m);
-	//Imaginary part of first eig 
-	klVector<double> L_im(m);
+	{			
+		klVector<complex<double> > lambda_1_Hist(m);
+		unsigned int i;
+		//#pragma omp parallel num_threads(4)
+		for(i=0;i<m;i++)
+		{
+			klMatrix<double> A(n,n);
+			A=SampleGOE(n,i);
+			klVector<complex<double> > eigs=A.eigenvalues();
+			lambda_1_Hist[i]=eigs[0];
+		}
 
-	unsigned int j=0;
-	for(j=0;j<m;j++)
-	{
-		L_re[j]=lambda_1_Hist[j].real();
-		L_im[j]=lambda_1_Hist[j].imag();
+		//Real part of first eig
+		klVector<double> L_re(m);
+		//Imaginary part of first eig 
+		klVector<double> L_im(m);
+
+		unsigned int j=0;
+		for(j=0;j<m;j++)
+		{
+			L_re[j]=lambda_1_Hist[j].real();
+			L_im[j]=lambda_1_Hist[j].imag();
+		}
+
+		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_Winger","Histogram of Re(\\lambda_1) A \\in GOE(1024)");
+		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_Winger","Histogram of Im(\\lambda_1) A \\in GOE(1024) ");
+		_tex.flush();
 	}
 
-	LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_TraceyWidom","Histogram of Re(\\lambda_1)");
-	LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_TraceyWidom","Histogram of Im(\\lambda_1)");
-	_tex.flush();
+
 
 }
 
 #include "testmatgenunit.h"
 bool testmatgen(bool silent);
 klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a);
-void testMatrixNorm(ofstream &_tex,unsigned int  &n)
+void MatrixNormDemo(ofstream &_tex,unsigned int  &n)
 {	
 	n= 12;
 
@@ -675,7 +746,7 @@ void testMatrixNorm(ofstream &_tex,unsigned int  &n)
 	
 }
 
-void testklUtil(ofstream &_tex,unsigned int  &n )
+void UtilityDemo(ofstream &_tex,unsigned int  &n )
 {
 	//This works
 	try
@@ -734,7 +805,7 @@ void testklUtil(ofstream &_tex,unsigned int  &n )
 
 }
 
-void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
+void MatrixMultiplicationCheck(ofstream &_tex,unsigned int  &n  )
 {		
 	{
 		n=2048;
@@ -839,7 +910,7 @@ void testklMatrixMult(ofstream &_tex,unsigned int  &n  )
 	_tex.flush();
 }
 
-void testklLinearRegression3x1(ofstream &_tex,unsigned int  &n)
+void LinearRegressionDemo(ofstream &_tex,unsigned int  &n)
 {
 	time_t time_of_day;
 	struct tm *tm_buf;

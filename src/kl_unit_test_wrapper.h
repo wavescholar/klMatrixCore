@@ -46,25 +46,25 @@ public:
 	{
 		char* evalString=new char[1024];
 
-		mstream<<"------------------klPrintModules------------------"<<endl;
+		mstream<<"------------------klPrintModules---------------------"<<endl;
 		klPrintModules(mstream);
 
-		mstream<<"------------------klWinSystemInfo------------------"<<endl;
+		mstream<<"------------------klWinSystemInfo--------------------"<<endl;
 		klWinSystemInfo( mstream);
 
-		mstream<<"------------------klWinMemoryInfo------------------"<<endl;
+		mstream<<"------------------klWinMemoryInfo--------------------"<<endl;
 		klWinMemoryInfo(mstream);
 
-		mstream<<"------------------klGetLogicalProcessorInformation------------------"<<endl;
+		mstream<<"------------------klGetLogicalProcessorInformation---"<<endl;
 		klGetLogicalProcessorInformation(mstream);
 
-		mstream<<"------------------klGetMACaddress------------------"<<endl;
+		mstream<<"------------------klGetMACaddress--------------------"<<endl;
 		klGetMACaddress(mstream);
 
-		mstream<<"------------------klGetCPUID------------------"<<endl;
+		mstream<<"------------------klGetCPUID--------------------------"<<endl;
 		klGetCPUID(mstream);
 
-		mstream<<"------------------klWMI------------------"<<endl;
+		mstream<<"------------------klWMI-------------------------------"<<endl;
 		klWMI(mstream);
 
 		flushall();
@@ -145,6 +145,10 @@ public:
 			system_stream.flush();
 
 			stream.flush();
+
+			delete freq;
+			delete  prefCountStart;
+			delete prefCountEnd;
 
 		}
 		catch(...)

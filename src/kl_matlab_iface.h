@@ -227,7 +227,6 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	delete evalString;
 }
 
-
 //Meshplot of 3-D Data
 template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>  c,const char* filename,
 										  const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
@@ -374,6 +373,93 @@ template<class TYPE> void kl2DPlot(klMatrix<TYPE>  c,const char* filename,
 
 	delete evalString;
 }
+
+
+
+
+
+template<class TYPE> void klPlotHistogram(klVector<TYPE>  c,const char* filename,
+								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+								   bool holdOn=false,const char* color=NULL)
+{
+	klMatlabEngineThreadMap klmtm;
+
+	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+
+	//How to get the error message from matlab engine
+	char errmsg[1024];
+	errmsg[1023] = '\0';
+	engOutputBuffer(matlabEngine, errmsg, 512);
+
+	mxArray *T = NULL, *a = NULL, *d = NULL;
+	
+	TYPE x0 =c.x0;
+	TYPE x1 =c.x1;
+	
+	char* evalString=new char[256];
+
+	char* colorSpec = new char[256];
+	if( color==NULL)
+	{
+		sprintf(colorSpec,"'b'");
+	}
+	else
+	{
+		sprintf(colorSpec,"%s",color);
+	}
+
+	//Put the variable in Matlab
+	T = mxCreateDoubleMatrix(1, c.getRowSize(), mxREAL);
+	unsigned int i;
+	double* pMx=mxGetPr(T);
+	for(i=0;i<c.getRowSize();i++)
+	{
+		*(pMx+i)=(double)c[i];
+	}
+	engPutVariable(matlabEngine, "T", T);
+
+	unsigned int numBins=std::floor(c.getRows()/10.0);
+	if (numBins > 200 )
+		numBins = 200;
+	if (numBins <10)
+		numBins =10;
+	
+	sprintf(evalString,"figure('Visible','off');hist(T,%d)",numBins);
+	
+	engEvalString(matlabEngine, evalString);
+
+	if(title!=NULL)
+	{
+		//title({'This title','has 2 lines'}) %
+		sprintf(evalString,"title('%s');",title); 
+		engEvalString(matlabEngine, evalString);
+	}	
+
+	if(xAxis!=NULL)
+	{
+		sprintf(evalString,"xlabel('%s');",xAxis);
+		engEvalString(matlabEngine, evalString);
+	}
+	if(yAxis!=NULL)
+	{
+		sprintf(evalString,"ylabel('%s');",yAxis);
+		engEvalString(matlabEngine, evalString);
+	}
+	if(c.y0<c.y1)
+	{
+		sprintf(evalString,"set(gca,'YTick',%f:%f:%f);",c.y0,(c.y1-c.y0)/20,c.y1);
+		sprintf(evalString,"axis([%f %f %f %f])",c.x0-(c.x1-c.x0)*.1 ,c.x1+(c.x1-c.x0)*.1,c.y0-(c.y1-c.y0)*.1,c.y1+(c.y1-c.y0)*.1);
+		engEvalString(matlabEngine, evalString);
+	}
+	if(!holdOn)
+	{
+		sprintf(evalString,"saveas(gcf,'%s');",filename);
+		engEvalString(matlabEngine, evalString);
+	}
+	mxDestroyArray(T);
+	delete evalString;
+}
+
 
 
 

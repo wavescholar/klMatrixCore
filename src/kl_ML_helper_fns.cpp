@@ -77,7 +77,6 @@ klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a)
 
 }
 
-
 klMatrix<double> SampleSymmetricStandardNormalRM( unsigned  int n , unsigned  seed )
 {
 	klMatrix<double> A(n,n);

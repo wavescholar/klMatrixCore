@@ -5,25 +5,15 @@
 #include "kl_latex_helper_fns.h"
 #include "kl_matlab_iface.h"
 
-
 void startLatexDoc(string title,string author,string date,ofstream &_tex,string abs)
 {
-	_tex<<"\\documentclass[12pt,landscape]{article}"<<endl;
+	//_tex<<"\\documentclass[12pt,landscape]{article}"<<endl;
+	_tex<<"\\documentclass[9pt]{article}"<<endl;
 	_tex<<"\\usepackage[english]{babel}"<<endl;
 	_tex<<"\\usepackage{amsmath,amsthm}"<<endl;
 	_tex<<"\\usepackage{amsfonts}"<<endl;
 	_tex<<"\\usepackage{graphicx}"<<endl;
-	/*_tex<<"\\newtheorem{thm}{Theorem}[section]"<<endl;
-	_tex<<"\\newtheorem{cor}[thm]{Corollary}"<<endl;
-	_tex<<"\\newtheorem{lem}[thm]{Lemma}"<<endl;
-	_tex<<"\\newtheorem{prop}[thm]{Proposition}"<<endl;
-	_tex<<"\\theoremstyle{definition}"<<endl;
-	_tex<<"\\newtheorem{defn}[thm]{Definition}"<<endl;
-	_tex<<"\\theoremstyle{remark}"<<endl;
-	_tex<<"\\newtheorem{rem}[thm]{Remark}"<<endl;
-	_tex<<"\\numberwithin{equation}{section}"<<endl;*/
-
-	//These are from my Manual / Book
+	_tex<<"\\usepackage[margin=0.2in]{geometry}"<<endl;
 	_tex<<"\\newcommand{\\setlinespacing}[1]{\\setlength{\\baselineskip}{#1 \\defbaselineskip}}"<<endl;
 	_tex<<"\\newcommand{\\doublespacing}{\\setlength{\\baselineskip}{2.0 \\defbaselineskip}}"<<endl;
 	_tex<<"\\newcommand{\\singlespacing}{\\setlength{\\baselineskip}{\\defbaselineskip}}"<<endl;
@@ -81,15 +71,10 @@ void startLatexDoc(string title,string author,string date,ofstream &_tex,string 
 	_tex<<"\\newtheorem{rem}{Remark}[section]"<<endl;
 	_tex<<"\\numberwithin{equation}{section}"<<endl;
 	_tex<<"\\renewcommand{\\theequation}{\\thesection.\\arabic{equation}}"<<endl;
-
-
 	_tex<<"\\begin{document}"<<endl;
 	_tex<<"\\title{"<<title<<"}"<<endl;
 	_tex<<"\\author{"<<author<<"}"<<endl;
 	_tex<<"\\date{"<<date<<"}"<<endl;
-	//_tex<<"\\begin{abstract}"<<endl;
-	//_tex<<abs<<endl;
-	//_tex<<"\\end{abstract}"<<endl;
 	_tex<<"\\maketitle"<<endl;
 
 }
@@ -164,16 +149,23 @@ void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string
 }
 void LatexInsertHistogram(klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title)
 {
-	vec.setupRange();
+	/*vec.setupRange();
 	klVector<double> hist=vec.histogram(numBins,vec.y0,vec.y1);
 	hist.setupRange();
-	hist.setupDomain(vec.y0,vec.y1);
+	hist.setupDomain(vec.y0,vec.y1);*/
+
 	klMatlabEngineThreadMap klmtm;
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	char* arg = new char[512];
 	char* evalString = new char[512];
 	sprintf(arg,"%s\\%s.eps",dir.c_str(),filename.c_str());
-	klPlot1D<double>(hist,arg,title.c_str());
+	
+	//klPlot1D<double>(hist,arg,title.c_str());
+	
+		//const char* filename, const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+		//bool holdOn=false,const char* color=NULL
+	klPlotHistogram<double>(vec,arg,title.c_str());
+		
 	sprintf(evalString,"print -r1200 -depsc %s;",arg);
 	engEvalString(matlabEngine, evalString);
 	engEvalString(matlabEngine, "hold off;close(gcf);");

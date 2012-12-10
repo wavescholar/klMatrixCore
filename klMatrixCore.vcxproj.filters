@@ -161,9 +161,6 @@
     <ClCompile Include="src\klUtil.cpp">
       <Filter>GitSourceFiles</Filter>
     </ClCompile>
-    <ClCompile Include="src\Study_Hashing_HardwareProps_TemplateConstraints.cpp">
-      <Filter>GitSourceFiles</Filter>
-    </ClCompile>
     <ClCompile Include="src\kl_latex_helper_fns.cpp">
       <Filter>GitSourceFiles</Filter>
     </ClCompile>

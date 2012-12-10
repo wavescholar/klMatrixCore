@@ -7,7 +7,7 @@
 
 #include "kl_matrix.h"
 
-template<class TYPE> void testKLMatrix(ofstream &_tex,unsigned int& n)
+template<class TYPE> void MatrixOpsCeck(ofstream &_tex,unsigned int& n)
 {
 	/*ios_base::openmode wMode = ios_base::app;
 	ofstream _tex(fileName, wMode);	*/
@@ -1086,7 +1086,7 @@ template<class TYPE> void testKLMultiVariateRandomNumberGenerator2(ofstream &_te
 
 #include "kl_principal_components.h"
 #include "kl_multivariate_random_variable.h"
-template<class TYPE> void testklPrincipalComponents2(ofstream &_tex,unsigned int  &n)
+template<class TYPE> void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &n)
 { 
 	char* arg=new char[256];
 
@@ -1309,7 +1309,7 @@ template<class TYPE> void klRVUnitTestHarnessLaTex2(klRV<TYPE> ** RV,unsigned in
 
 
 #include "kl_memory.h"
-inline void  testKLMemory2(ofstream &_tex,unsigned int  &n)
+inline void  MemoryManagementDemo(ofstream &_tex,unsigned int  &n)
 {
 	int reserve = 1024*1024*64;
 
