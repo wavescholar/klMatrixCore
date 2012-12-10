@@ -1,0 +1,430 @@
+﻿Build started 12/7/2012 12:56:00 PM.
+     1>Project "K:\KL\klMatrixCore\klMatrixCore.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Release\klMatrixCore.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\tbb\include" /I"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\ipp\include" /IK:\KL\Packages\MatLib /ID:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa /I"K:\Program Files\MATLAB\R2012b\extern\include" /I"C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include" /ID:\Packages\MatrixExponential\expokit\expokitcpp /ID:\Packages\FastGaussTransform /ID:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx /ID:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include /Id:\klMatrixCore\src /Zi /nologo /W3 /WX- /O2 /Oi /GL /D _IPP_PARALLEL_DYNAMIC /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt src\klUnitTests.cpp /I"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\mkl\include" /I"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\mkl\include\fftw" /I"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\mkl\include\intel64" 
+         klUnitTests.cpp
+     1>k:\kl\klmatrixcore\src\kl_memory.h(186): warning C4267: '+=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(192): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(234): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(238): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(245): warning C4267: '+=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(298): warning C4244: 'initializing' : conversion from 'ULONG_PTR' to 'long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(357): warning C4244: '=' : conversion from 'ULONG_PTR' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(370): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>k:\kl\klmatrixcore\src\kl_memory.h(394): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>k:\kl\klmatrixcore\src\kl_memory.h(409): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>k:\kl\klmatrixcore\src\kl_memory.h(415): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>k:\kl\klmatrixcore\src\kl_memory.h(433): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
+     1>k:\kl\klmatrixcore\src\kl_memory.h(508): warning C4267: '+=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(514): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(552): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(556): warning C4267: '-=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(563): warning C4267: '+=' : conversion from 'size_t' to 'unsigned long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(703): warning C4244: 'return' : conversion from 'SIZE_T' to 'long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(728): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(740): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(812): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(824): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(829): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(830): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(833): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(834): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(972): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(973): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(974): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(975): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(976): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(977): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(978): warning C4244: 'initializing' : conversion from 'DWORDLONG' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(983): warning C4244: 'initializing' : conversion from 'SIZE_T' to 'long', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_memory.h(1049): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(867) : see declaration of 'itoa'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(1081): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(867) : see declaration of 'itoa'
+     1>k:\kl\klmatrixcore\src\kl_memory.h(1084): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdlib.h(867) : see declaration of 'itoa'
+     1>k:\kl\klmatrixcore\src\kl_util.h(219): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_util.h(233): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_util.h(258): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_util.h(285): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_vector.h(580): warning C4244: 'argument' : conversion from 'double' to 'const float', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(1424): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_random_number_generator.h(84): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>k:\kl\klmatrixcore\src\kl_principal_components.h(127): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_principal_components.h(173): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_principal_components.h(202): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_unit_test_wrapper.h(70): warning C4996: 'flushall': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _flushall. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(724) : see declaration of 'flushall'
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(443): warning C4482: nonstandard extension used: enum 'klLogicalFunctor::LogicalFunctorOperationType' used in qualified name
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(461): warning C4482: nonstandard extension used: enum 'klLogicalFunctor::LogicalFunctorOperationType' used in qualified name
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(482): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(484): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(491): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(491): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(493): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(493): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(493): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(500): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(500): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(502): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(502): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(502): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(508): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(510): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_image_processing_functors.h(510): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(33): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(33): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(60): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(61): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(62): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(83): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(84): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(85): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(122): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(122): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(149): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(150): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(151): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(188): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(189): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_img_pca.h(190): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_arpack.h(48): warning C4018: '<' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(35): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\klUnitTests.cpp(203): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>src\klUnitTests.cpp(209): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\klUnitTests.cpp(211): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\klUnitTests.cpp(217): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.h(153) : see declaration of 'asctime'
+     1>src\klUnitTests.cpp(384): warning C4018: '<=' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(492): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>src\klUnitTests.cpp(540): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>src\klUnitTests.cpp(576): warning C4018: '<' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(592): warning C4018: '<' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(604): warning C4018: '<' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(606): warning C4018: '<' : signed/unsigned mismatch
+     1>src\klUnitTests.cpp(649): warning C4129: 'i' : unrecognized character escape sequence
+     1>src\klUnitTests.cpp(823): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+     1>src\klUnitTests.cpp(886): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_vector.h(270): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_vector.h(265) : while compiling class template member function 'double klVector<TYPE>::dot(klVector<TYPE> &) const'
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_vector.h(526) : see reference to class template instantiation 'klVector<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(467): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_matrix.h(416) : while compiling class template member function 'std::complex<double> klMatrix<TYPE>::det(void)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_matrix.h(856) : see reference to class template instantiation 'klMatrix<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(804): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_matrix.h(801) : while compiling class template member function 'klMatrix<TYPE> klMatrix<TYPE>::upper(void)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(806): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(821): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_matrix.h(818) : while compiling class template member function 'klMatrix<TYPE> klMatrix<TYPE>::lower(void)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(823): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_sample_population.h(298): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_sample_population.h(292) : while compiling class template member function 'klMatrix<TYPE> klSamplePopulation<TYPE>::centeredData(void)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_principal_components.h(14) : see reference to class template instantiation 'klSamplePopulation<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_principal_components.h(141) : see reference to class template instantiation 'klPrincipalComponents<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_multivariate_random_variable.h(141): warning C4018: '<=' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_multivariate_random_variable.h(118) : while compiling class template member function 'klVector<TYPE> klNormalMultiVariate<TYPE>::operator ()(void)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 src\klUnitTests.cpp(123) : see reference to class template instantiation 'klNormalMultiVariate<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(119): warning C4996: 'flushall': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _flushall. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(724) : see declaration of 'flushall'
+                 src\klUnitTests.cpp(257) : see reference to function template instantiation 'void testKLMatrix<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(462): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
+                 src\klUnitTests.cpp(261) : see reference to function template instantiation 'void testKLRandomNumberGeneratorMatlab<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(263): warning C4996: 'flushall': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _flushall. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(724) : see declaration of 'flushall'
+                 src\klUnitTests.cpp(267) : see reference to function template instantiation 'void klMulticlassSVMHarnessMatlab<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(270): warning C4996: 'flushall': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _flushall. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(724) : see declaration of 'flushall'
+                 src\klUnitTests.cpp(294) : see reference to function template instantiation 'void testKLDescriptiveStatistics<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(283): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+                 src\klUnitTests.cpp(297) : see reference to function template instantiation 'void testKLTimeSeries2<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(298): warning C4482: nonstandard extension used: enum 'klTimeSeries<TYPE>::klTimeSeriesInterpolation' used in qualified name
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(302): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(304): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(306): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(312): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_unit_tests.h(322): warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(29): warning C4018: '<' : signed/unsigned mismatch
+                 src\klUnitTests.cpp(476) : see reference to function template instantiation 'void LatexPrintMatrix<double>(klMatrix<TYPE> &,std::string,std::ofstream &)' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(37): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(39): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(54): warning C4018: '<' : signed/unsigned mismatch
+                 src\klUnitTests.cpp(478) : see reference to function template instantiation 'void LatexPrintVector<std::complex<double>>(klVector<TYPE> &,std::string,std::ofstream &)' being compiled
+                 with
+                 [
+                     TYPE=std::complex<double>
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(63): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_stat.h(93): warning C4244: '/=' : conversion from 'double' to 'float', possible loss of data
+                 k:\kl\klmatrixcore\src\kl_sample_population.h(199) : see reference to function template instantiation 'TYPE KL_stat::skewness<TYPE>(TYPE *,unsigned int,TYPE,TYPE)' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+                 k:\kl\klmatrixcore\src\kl_sample_population.h(167) : while compiling class template member function 'void klSamplePopulation<TYPE>::calcDescriptiveStats(void)'
+                 with
+                 [
+                     TYPE=float
+                 ]
+                 k:\kl\klmatrixcore\src\kl_principal_components.h(14) : see reference to class template instantiation 'klSamplePopulation<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+                 k:\kl\klmatrixcore\src\kl_principal_components.h(68) : see reference to class template instantiation 'klPrincipalComponents<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_stat.h(107): warning C4244: '/=' : conversion from 'double' to 'float', possible loss of data
+                 k:\kl\klmatrixcore\src\kl_sample_population.h(200) : see reference to function template instantiation 'TYPE KL_stat::kurtosis<TYPE>(TYPE *,unsigned int,TYPE,TYPE)' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_vector.h(270): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_vector.h(265) : while compiling class template member function 'float klVector<TYPE>::dot(klVector<TYPE> &) const'
+                 with
+                 [
+                     TYPE=float
+                 ]
+                 k:\kl\klmatrixcore\src\kl_vector.h(509) : see reference to class template instantiation 'klVector<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(467): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_matrix.h(416) : while compiling class template member function 'std::complex<double> klMatrix<TYPE>::det(void)'
+                 with
+                 [
+                     TYPE=float
+                 ]
+                 k:\kl\klmatrixcore\src\kl_matrix.h(896) : see reference to class template instantiation 'klMatrix<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=float
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matrix.h(738): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+                 k:\kl\klmatrixcore\src\kl_matrix.h(725) : while compiling class template member function 'void klMatrix<TYPE>::makeNanFriendly(void)'
+                 with
+                 [
+                     TYPE=float
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_time_series.h(145): warning C4482: nonstandard extension used: enum 'klTimeSeries<TYPE>::klTimeSeriesInterpolation' used in qualified name
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_time_series.h(135) : while compiling class template member function 'klVector<TYPE> klTimeSeries<TYPE>::EMA(unsigned int,TYPE,klTimeSeries<TYPE>::klTimeSeriesInterpolation,bool,klVector<TYPE>)'
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_unit_tests.h(291) : see reference to class template instantiation 'klTimeSeries<TYPE>' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 src\klUnitTests.cpp(297) : see reference to function template instantiation 'void testKLTimeSeries2<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_time_series.h(150): warning C4482: nonstandard extension used: enum 'klTimeSeries<TYPE>::klTimeSeriesInterpolation' used in qualified name
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_time_series.h(155): warning C4482: nonstandard extension used: enum 'klTimeSeries<TYPE>::klTimeSeriesInterpolation' used in qualified name
+                 with
+                 [
+                     TYPE=double
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(576): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+                 k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(512) : see reference to function template instantiation 'void klRVUnitTestHarnessLaTexMatlab<TYPE>(klRV<TYPE> **,unsigned int,std::vector<_Ty>,std::ofstream &)' being compiled
+                 with
+                 [
+                     TYPE=double,
+                     _Ty=std::string
+                 ]
+                 src\klUnitTests.cpp(261) : see reference to function template instantiation 'void testKLRandomNumberGeneratorMatlab<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(580): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(583): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(586): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(590): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(594): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(54): warning C4018: '<' : signed/unsigned mismatch
+                 k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(51) : see reference to function template instantiation 'void LatexPrintVector<double>(klVector<TYPE> &,std::string,std::ofstream &)' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 src\klUnitTests.cpp(267) : see reference to function template instantiation 'void klMulticlassSVMHarnessMatlab<double>(std::ofstream &,unsigned int &)' being compiled
+     1>k:\kl\klmatrixcore\src\kl_latex_helper_fns.h(63): warning C4018: '<' : signed/unsigned mismatch
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(140): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+                 k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(582) : see reference to function template instantiation 'void klPlot1D<double>(klVector<TYPE>,const char *,const char *,const char *,const char *,bool,unsigned int,unsigned int,bool,const char *)' being compiled
+                 with
+                 [
+                     TYPE=double
+                 ]
+                 k:\kl\klmatrixcore\src\kl_matlab_dependent_unit_tests.h(512) : see reference to function template instantiation 'void klRVUnitTestHarnessLaTexMatlab<TYPE>(klRV<TYPE> **,unsigned int,std::vector<_Ty>,std::ofstream &)' being compiled
+                 with
+                 [
+                     TYPE=double,
+                     _Ty=std::string
+                 ]
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(144): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(162): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(166): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(177): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(183): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(188): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(193): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(196): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>k:\kl\klmatrixcore\src\kl_matlab_iface.h(201): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\x64\Release\klMatrixCore.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\tbb\lib\intel64\vc10" /LIBPATH:"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\mkl\lib\intel64" /LIBPATH:"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\compiler\lib\intel64" /LIBPATH:"C:\Program Files (x86)\Intel\Composer XE 2011 SP1\ipp\lib\intel64" mkl_solver_lp64.lib mkl_intel_lp64_dll.lib mkl_intel_thread_dll.lib mkl_core_dll.lib libiomp5md.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Release\klMatrixCore.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\x64\Release\klMatrixCore.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\x64\Release\klMatrixCore.lib" /MACHINE:X64 x64\Release\klMatrixCore.obj
+         x64\Release\klArpackCore.obj
+         x64\Release\klSDPA.obj
+         x64\Release\kl_threaded_workflow_demo.obj
+         x64\Release\klUnitTests.obj
+         x64\Release\klUtil.obj
+         x64\Release\kl_cdhc_distribution_tests.obj
+         x64\Release\kl_hardware.obj
+         x64\Release\kl_latex_helper_fns.obj
+         x64\Release\kl_matrix_exponential.obj
+         x64\Release\kl_memory.obj
+         x64\Release\kl_ML_helper_fns.obj
+         x64\Release\kl_multivariate_random_variable.obj
+         x64\Release\kl_random_number_generator.obj
+         x64\Release\kl_SEH.obj
+         x64\Release\Study_Hashing_HardwareProps_TemplateConstraints.obj
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libemlrt.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libeng.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libfixedpoint.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmat.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmex.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblas.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblascompat32.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwlapack.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwmathutil.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwservices.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmx.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libut.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclbase.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcr.lib"
+         "..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib"
+         ..\x64\Release\ARPACK2.lib
+         ..\x64\Release\arpack_CPP_v2.lib
+         ..\x64\Release\expokitcpp.lib
+         ..\x64\Release\FGG.lib
+         ..\x64\Release\libsdpa.lib
+         ..\x64\Release\Matlib.lib
+         ..\x64\Release\SUPERLU_SEQUENTIAL.lib
+         ..\x64\Release\UMFPACK.lib
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Kernel32.Lib"
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib"
+         Generating code
+     1>k:\kl\klmatrixcore\src\kl_matrix_facorizations.h(40): warning C4715: 'klSVD<double>::V' : not all control paths return a value
+     1>k:\kl\klmatrixcore\src\kl_matrix_facorizations.h(34): warning C4715: 'klSVD<double>::U' : not all control paths return a value
+     1>k:\kl\klmatrixcore\src\kl_matrix_facorizations.h(161): warning C4715: 'klLU<double>::L' : not all control paths return a value
+         Finished generating code
+         klMatrixCore.vcxproj -> D:\x64\Release\klMatrixCore.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\x64\Release\klMatrixCore.exe;#1" /manifest x64\Release\klMatrixCore.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\klMatrixCore.unsuccessfulbuild".
+         Touching "x64\Release\klMatrixCore.lastbuildstate".
+     1>Done Building Project "K:\KL\klMatrixCore\klMatrixCore.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:11.15
