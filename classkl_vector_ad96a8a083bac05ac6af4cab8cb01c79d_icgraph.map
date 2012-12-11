@@ -1,9 +1,4 @@
 <map id="klVector::setupRange" name="klVector::setupRange">
-<area shape="rect" id="node3" href="$kl__latex__helper__fns_8h.html#abf6cf102aff9608e60dca196fc40d7a3" title="LatexInsertHistogram" alt="" coords="222,31,367,57"/>
-<area shape="rect" id="node13" href="$kl__matlab__dependent__unit__tests_8h.html#a8ab8e1997dc6a845e817292bcf92e443" title="klRVUnitTestHarnessLaTex\lMatlab" alt="" coords="204,82,385,123"/>
-<area shape="rect" id="node15" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="201,148,389,175"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ab772f9a76040c7e06cbce89865178507" title="VerifyWingerLaw" alt="" coords="477,5,595,32"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a47c828ad069a152ba9d3c3e2f5088e3c" title="generateTraceyWidomSample" alt="" coords="438,56,634,83"/>
-<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="683,56,779,83"/>
-<area shape="rect" id="node11" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="827,56,887,83"/>
+<area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html#a8ab8e1997dc6a845e817292bcf92e443" title="klRVUnitTestHarnessLaTex\lMatlab" alt="" coords="204,5,385,46"/>
+<area shape="rect" id="node5" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="201,71,389,97"/>
 </map>

@@ -1,0 +1,17 @@
+<map id="klStackWalker::ShowCallstack" name="klStackWalker::ShowCallstack">
+<area shape="rect" id="node3" href="$classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="269,156,461,183"/>
+<area shape="rect" id="node7" href="$classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="961,76,1159,103"/>
+<area shape="rect" id="node27" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="1235,323,1384,365"/>
+<area shape="rect" id="node38" href="$classkl_stack_walker.html#aa61bdf68896b5db03beb0f095de5004c" title="klStackWalker::myReadProcMem" alt="" coords="256,412,475,439"/>
+<area shape="rect" id="node42" href="$classkl_stack_walker.html#a287a6272ff93c9467575a5a6d57d4cd4" title="klStackWalker::OnCallstack\lEntry" alt="" coords="523,434,709,475"/>
+<area shape="rect" id="node5" href="$classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="760,10,909,51"/>
+<area shape="rect" id="node17" href="$classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="541,178,691,219"/>
+<area shape="rect" id="node11" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="1235,147,1384,189"/>
+<area shape="rect" id="node13" href="$classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="1221,5,1397,32"/>
+<area shape="rect" id="node9" href="$classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="1459,160,1629,187"/>
+<area shape="rect" id="node19" href="$classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="760,243,909,285"/>
+<area shape="rect" id="node32" href="$classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="758,178,911,219"/>
+<area shape="rect" id="node22" href="$classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="985,178,1135,219"/>
+<area shape="rect" id="node24" href="$classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="985,295,1135,337"/>
+<area shape="rect" id="node29" href="$classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5" title="klStackWalker::OnLoadModule" alt="" coords="1208,233,1411,260"/>
+</map>

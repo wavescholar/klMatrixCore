@@ -1,3 +1,3 @@
 <map id="klStackWalker" name="klStackWalker">
-<area shape="rect" id="node2" href="$class_stack_walker.html" title="{StackWalker\n|# m_sw\l# m_hProcess\l# m_dwProcessId\l# m_modulesLoaded\l# m_szSymPath\l# m_options\l# StackWalkerInternal\l|+ StackWalker()\l+ StackWalker()\l+ ~StackWalker()\l+ LoadModules()\l+ ShowCallstack()\l# OnSymInit()\l# OnLoadModule()\l# OnCallstackEntry()\l# OnDbgHelpErr()\l# OnOutput()\l# myReadProcMem()\l}" alt="" coords="5,5,155,317"/>
+<area shape="rect" id="node3" href="$classklkl_stack_walker.html" title="{klklStackWalker\n|+ msg\l|+ klklStackWalker()\l+ klklStackWalker()\l+ OnOutput()\l}" alt="" coords="17,365,153,472"/>
 </map>

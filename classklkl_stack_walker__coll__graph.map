@@ -1,0 +1,6 @@
+<map id="klklStackWalker" name="klklStackWalker">
+<area shape="rect" id="node2" href="$classkl_stack_walker.html" title="{klStackWalker\n||+ klStackWalker()\l+ klStackWalker()\l+ ~klStackWalker()\l+ LoadModules()\l+ ShowCallstack()\l# OnSymInit()\l# OnLoadModule()\l# OnCallstackEntry()\l# OnDbgHelpErr()\l# OnOutput()\l# myReadProcMem()\l}" alt="" coords="350,163,495,387"/>
+<area shape="rect" id="node16" href="$classkl_stack_walker_internal.html" title="{klStackWalkerInternal\n|+ m_hProcess\l+ pSC\l+ pSFTA\l+ pSGLFA\l+ pSGMB\l+ pSGMI\l+ pSGO\l+ pSGSFA\l+ pSI\l+ pSLM\l+ pSSO\l+ pSW\l|+ klStackWalkerInternal()\l+ ~klStackWalkerInternal()\l+ Init()\l+ DWORD()\l+ BOOL()\l+ LoadModules()\l+ GetModuleInfo()\l&#45; GetModuleListTH32()\l&#45; GetModuleListPSAPI()\l&#45; LoadModule()\l}" alt="" coords="509,451,685,821"/>
+<area shape="rect" id="node28" title="STL class." alt="" coords="28,236,108,313"/>
+<area shape="rect" id="node30" title="STL class." alt="" coords="5,6,131,98"/>
+</map>

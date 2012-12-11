@@ -1,7 +1,5 @@
 <map id="klVMemBlock::sizeRequested" name="klVMemBlock::sizeRequested">
-<area shape="rect" id="node3" href="$classkl_v_mem_mgr.html#a4edbd6e8c29025be256987d033e74a67" title="klVMemMgr::free" alt="" coords="251,31,373,57"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#aa18a6750c23c0f484b26ae880c3108ef" title="testKLMemory2" alt="" coords="421,5,536,32"/>
-<area shape="rect" id="node11" href="$kl_main_8cpp.html#ae4a27bb29de692c76520ad81fe16b55a" title="testKLMemory" alt="" coords="425,56,532,83"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="584,5,680,32"/>
-<area shape="rect" id="node9" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="729,5,789,32"/>
+<area shape="rect" id="node3" href="$classkl_v_mem_mgr.html#a4edbd6e8c29025be256987d033e74a67" title="klVMemMgr::free" alt="" coords="251,5,373,32"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a6cdd1e9afc81ac53932095359fe27362" title="MemoryManagementDemo" alt="" coords="421,5,600,32"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="648,5,744,32"/>
 </map>

@@ -1,10 +1,9 @@
 <map id="dmax_exp" name="dmax_exp">
-<area shape="rect" id="node3" href="$kl__sample__population_8h.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="137,136,303,163"/>
-<area shape="rect" id="node17" href="$kl__sample__population_8h.html#a6b6b1d4386ce8b890afb9840e34f68f2" title="kuipers_v_exp" alt="" coords="168,187,272,213"/>
-<area shape="rect" id="node5" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="353,129,503,170"/>
+<area shape="rect" id="node3" href="$kl__sample__population_8h.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="137,107,303,133"/>
+<area shape="rect" id="node15" href="$kl__sample__population_8h.html#a6b6b1d4386ce8b890afb9840e34f68f2" title="kuipers_v_exp" alt="" coords="168,157,272,184"/>
+<area shape="rect" id="node5" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="353,99,503,141"/>
 <area shape="rect" id="node7" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="558,5,735,46"/>
 <area shape="rect" id="node9" href="$kl__unit__tests_8h.html#a7f8bfdf5b8ac2ebd891254700e22f7cf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="558,70,735,111"/>
-<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a5e1a30eea97b249e7c855b7a6b026a74" title="testklPrincipalComponents2" alt="" coords="555,136,739,163"/>
+<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a803a074e395e7f3ca64c45a07ff279f0" title="PrincipalComponentsDemo" alt="" coords="557,136,736,163"/>
 <area shape="rect" id="node13" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="553,187,741,213"/>
-<area shape="rect" id="node15" href="$kl_s_m_p_m_t_8cpp.html#abc81cabc3e77e29ca314ec92f3b9e111" title="work2" alt="" coords="619,237,675,264"/>
 </map>

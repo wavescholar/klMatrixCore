@@ -1,3 +1,24 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classkl_a_w_e_mem_block.html" title="klAWEMemBlock" alt="" coords="5,5,131,32"/>
+<area shape="rect" id="node1" href="$classkl_raster_buffer.html" title="klRasterBuffer" alt="" coords="31,92,134,119"/>
+<area shape="rect" id="node3" href="$classkl_reference_counted_raster_buffer.html" title="klReferenceCountedRaster\lBuffer" alt="" coords="208,85,384,126"/>
+<area shape="rect" id="node5" href="$classkl_i_p_p_raster_buffer.html" title="klIPPRasterBuffer\&lt;\l TYPE \&gt;" alt="" coords="455,5,587,46"/>
+<area shape="rect" id="node7" href="$classkl_packed_heap_raster_buffer.html" title="klPackedHeapRasterBuffer\l\&lt; Sample \&gt;" alt="" coords="433,70,610,111"/>
+<area shape="rect" id="node9" href="$classkl_unmanaged_raster_buffer.html" title="klUnmanagedRasterBuffer" alt="" coords="435,136,607,163"/>
+<area shape="rect" id="node10" href="$classkl_ref_count.html" title="klRefCount\&lt; klMutex \&gt;" alt="" coords="5,373,160,400"/>
+<area shape="rect" id="node12" href="$classkl_matrix.html" title="klMatrix\&lt; TYPE \&gt;" alt="" coords="233,180,359,207"/>
+<area shape="rect" id="node24" href="$classkl_matrix.html" title="klMatrix\&lt; complex\&lt;\l double \&gt; \&gt;" alt="" coords="227,231,365,273"/>
+<area shape="rect" id="node26" href="$classkl_matrix.html" title="klMatrix\&lt; double \&gt;" alt="" coords="231,297,361,324"/>
+<area shape="rect" id="node29" href="$classkl_thread.html" title="klThread\&lt; klMutex \&gt;" alt="" coords="225,348,367,375"/>
+<area shape="rect" id="node33" href="$classkl_vector.html" title="klVector\&lt; TYPE \&gt;" alt="" coords="232,399,360,425"/>
+<area shape="rect" id="node37" href="$classkl_vector.html" title="klVector\&lt; complex\&lt;\l double \&gt; \&gt;" alt="" coords="227,450,365,491"/>
+<area shape="rect" id="node39" href="$classkl_vector.html" title="klVector\&lt; double \&gt;" alt="" coords="230,516,362,543"/>
+<area shape="rect" id="node41" href="$classkl_vector.html" title="klVector\&lt; int \&gt;" alt="" coords="242,567,350,593"/>
+<area shape="rect" id="node43" href="$classkl_vector.html" title="klVector\&lt; unsigned\l int \&gt;" alt="" coords="229,618,363,659"/>
+<area shape="rect" id="node14" href="$classkl_sample_population.html" title="klSamplePopulation\l\&lt; TYPE \&gt;" alt="" coords="453,187,590,229"/>
+<area shape="rect" id="node16" href="$classkl_independent_components.html" title="klIndependentComponents\l\&lt; TYPE \&gt;" alt="" coords="659,89,834,130"/>
+<area shape="rect" id="node18" href="$classkl_multiclass_s_v_m_classify.html" title="klMulticlassSVMClassify\l\&lt; TYPE \&gt;" alt="" coords="663,154,830,195"/>
+<area shape="rect" id="node20" href="$classkl_multiclass_s_v_m_train.html" title="klMulticlassSVMTrain\l\&lt; TYPE \&gt;" alt="" coords="673,219,821,261"/>
+<area shape="rect" id="node22" href="$classkl_principal_components.html" title="klPrincipalComponents\l\&lt; TYPE \&gt;" alt="" coords="669,285,824,326"/>
+<area shape="rect" id="node31" href="$classkl_unit_test_thread.html" title="klUnitTestThread" alt="" coords="462,348,581,375"/>
+<area shape="rect" id="node35" href="$classkl_time_series.html" title="klTimeSeries\&lt; TYPE \&gt;" alt="" coords="444,399,599,425"/>
 </map>

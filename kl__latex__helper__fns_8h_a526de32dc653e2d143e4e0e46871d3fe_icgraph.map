@@ -1,9 +1,8 @@
 <map id="makeLatexSection" name="makeLatexSection">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="429,146,525,172"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#ab772f9a76040c7e06cbce89865178507" title="VerifyWingerLaw" alt="" coords="223,44,342,71"/>
-<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a47c828ad069a152ba9d3c3e2f5088e3c" title="generateTraceyWidomSample" alt="" coords="185,95,381,122"/>
-<area shape="rect" id="node12" href="$kl_unit_tests_8cpp.html#a76b187c8b9c08822ebb85073d1baa549" title="testMatrixNorm" alt="" coords="227,146,338,172"/>
-<area shape="rect" id="node15" href="$kl_unit_tests_8cpp.html#aee50342b25dd224244cba057a829ba8a" title="testklUtil" alt="" coords="246,196,319,223"/>
-<area shape="rect" id="node18" href="$kl_unit_tests_8cpp.html#ab927aec81cc99cb007394f5eb1af7a5d" title="testklLinearRegression3x1" alt="" coords="195,247,370,274"/>
-<area shape="rect" id="node5" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="574,146,634,172"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="432,119,528,145"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a1227e0312c9927fe6706eee7166d28ca" title="VerifyWingerLaw" alt="" coords="225,43,343,69"/>
+<area shape="rect" id="node8" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="185,93,383,120"/>
+<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="223,144,345,171"/>
+<area shape="rect" id="node14" href="$kl_unit_tests_8cpp.html#acb4117e339f7081965f7a0d7a2c91453" title="UtilityDemo" alt="" coords="239,195,329,221"/>
+<area shape="rect" id="node17" href="$kl_unit_tests_8cpp.html#afd5b4c7afa24cd174074c5e00d9667df" title="LinearRegressionDemo" alt="" coords="206,245,362,272"/>
 </map>

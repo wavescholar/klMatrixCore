@@ -1,10 +1,9 @@
 <map id="SampleGOE" name="SampleGOE">
-<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8h.html#a750bae397e2d03b4300fef04a3ccdbd3" title="SampleWishart" alt="" coords="181,56,291,83"/>
-<area shape="rect" id="node5" href="$kl_s_m_p_m_t_8cpp.html#ad3497c522352701809cb7c85dc6d5579" title="kl_SMP_SM_MT_WorkFlow" alt="" coords="377,5,562,32"/>
-<area shape="rect" id="node13" href="$kl_unit_tests_8cpp.html#a76b187c8b9c08822ebb85073d1baa549" title="testMatrixNorm" alt="" coords="414,107,525,133"/>
-<area shape="rect" id="node17" href="$kl_unit_tests_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="150,157,322,184"/>
-<area shape="rect" id="node19" href="$kl_unit_tests_8cpp.html#a5c2b0434818ad58bb40c76d265f245b5" title="testArpack" alt="" coords="193,208,279,235"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a47c828ad069a152ba9d3c3e2f5088e3c" title="generateTraceyWidomSample" alt="" coords="371,56,567,83"/>
-<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="616,107,712,133"/>
-<area shape="rect" id="node11" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="761,107,821,133"/>
+<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8h.html#a750bae397e2d03b4300fef04a3ccdbd3" title="SampleWishart" alt="" coords="181,61,291,88"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="371,5,570,32"/>
+<area shape="rect" id="node12" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="409,123,532,149"/>
+<area shape="rect" id="node15" href="$kl_unit_tests_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="150,163,322,189"/>
+<area shape="rect" id="node17" href="$kl_unit_tests_8cpp.html#ab83280bf7a03f28f093f22cd2864dd86" title="IterativeKrylovCheck" alt="" coords="167,213,305,240"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a4b2e1ed4c64660d9c1c92bb232fd47bf" title="GenerativeGramConsistency\lCheck" alt="" coords="377,57,564,98"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="619,93,715,120"/>
 </map>

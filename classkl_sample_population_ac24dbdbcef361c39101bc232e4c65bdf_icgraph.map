@@ -1,3 +1,6 @@
 <map id="klSamplePopulation::getMeanVector" name="klSamplePopulation::getMeanVector">
-<area shape="rect" id="node3" href="$kl_s_m_p_m_t_8cpp.html#ad3497c522352701809cb7c85dc6d5579" title="kl_SMP_SM_MT_WorkFlow" alt="" coords="193,12,378,39"/>
+<area shape="rect" id="node3" href="$classkl_sample_population.html#ad94fa1383a6b67f0a1ea13f1b3e796a1" title="klSamplePopulation\l::sampleMean" alt="" coords="193,34,330,75"/>
+<area shape="rect" id="node5" href="$classkl_sample_population.html#a2cbe875bed93eecb318f5171a82e3c86" title="klSamplePopulation\l::centeredData" alt="" coords="379,5,517,46"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a4b2e1ed4c64660d9c1c92bb232fd47bf" title="GenerativeGramConsistency\lCheck" alt="" coords="565,34,752,75"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="800,41,896,68"/>
 </map>

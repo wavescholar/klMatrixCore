@@ -1,6 +1,5 @@
 <map id="klMatrix::getSubBlock" name="klMatrix::getSubBlock">
-<area shape="rect" id="node3" href="$kl__matrix_8h.html#ad855c5f5c7d3526d949d256a2100379c" title="testKLMatrix" alt="" coords="245,5,341,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ab927aec81cc99cb007394f5eb1af7a5d" title="testklLinearRegression3x1" alt="" coords="206,56,381,83"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="429,56,525,83"/>
-<area shape="rect" id="node9" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="574,56,634,83"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a141b90ee711e9d3cbd297b589c908e86" title="MatrixOpsCeck" alt="" coords="228,5,340,32"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#afd5b4c7afa24cd174074c5e00d9667df" title="LinearRegressionDemo" alt="" coords="206,56,362,83"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="411,56,507,83"/>
 </map>

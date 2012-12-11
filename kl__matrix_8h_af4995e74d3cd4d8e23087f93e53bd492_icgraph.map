@@ -1,5 +1,4 @@
 <map id="diag" name="diag">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a76b187c8b9c08822ebb85073d1baa549" title="testMatrixNorm" alt="" coords="102,5,213,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="261,5,357,32"/>
-<area shape="rect" id="node7" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="406,5,466,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="101,5,224,32"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="272,5,368,32"/>
 </map>

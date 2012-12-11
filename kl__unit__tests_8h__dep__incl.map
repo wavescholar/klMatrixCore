@@ -1,10 +1,7 @@
 <map id="kl_unit_tests.h" name="kl_unit_tests.h">
-<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="353,80,487,107"/>
-<area shape="rect" id="node5" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="5,155,179,181"/>
-<area shape="rect" id="node9" href="$kl_d_p_image_fns_8cpp.html" title="klDPImageFns.cpp" alt="" coords="503,155,635,181"/>
-<area shape="rect" id="node13" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="660,155,772,181"/>
-<area shape="rect" id="node17" href="$kl_main_8cpp.html" title="klMain.cpp" alt="" coords="643,80,728,107"/>
-<area shape="rect" id="node19" href="$kl_matlab_8cpp.html" title="klMatlab.cpp" alt="" coords="752,80,848,107"/>
-<area shape="rect" id="node7" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="331,155,479,181"/>
-<area shape="rect" id="node11" href="$kl_s_m_p_m_t_8cpp.html" title="klSMPMT.cpp" alt="" coords="203,155,307,181"/>
+<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="265,80,399,107"/>
+<area shape="rect" id="node5" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="5,163,179,189"/>
+<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="545,163,657,189"/>
+<area shape="rect" id="node7" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="203,163,351,189"/>
+<area shape="rect" id="node9" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="375,155,520,197"/>
 </map>

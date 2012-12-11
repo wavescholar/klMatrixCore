@@ -1,0 +1,14 @@
+<map id="klStackWalker::LoadModules" name="klStackWalker::LoadModules">
+<area shape="rect" id="node3" href="$classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="445,282,595,323"/>
+<area shape="rect" id="node5" href="$classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="646,239,845,265"/>
+<area shape="rect" id="node15" href="$classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="245,147,395,189"/>
+<area shape="rect" id="node9" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="920,159,1069,201"/>
+<area shape="rect" id="node11" href="$classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="907,315,1083,341"/>
+<area shape="rect" id="node7" href="$classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="1144,239,1315,265"/>
+<area shape="rect" id="node17" href="$classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="445,73,595,114"/>
+<area shape="rect" id="node30" href="$classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="443,147,597,189"/>
+<area shape="rect" id="node20" href="$classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="671,122,820,163"/>
+<area shape="rect" id="node22" href="$classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="671,5,820,46"/>
+<area shape="rect" id="node25" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="920,5,1069,46"/>
+<area shape="rect" id="node27" href="$classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5" title="klStackWalker::OnLoadModule" alt="" coords="893,83,1096,109"/>
+</map>

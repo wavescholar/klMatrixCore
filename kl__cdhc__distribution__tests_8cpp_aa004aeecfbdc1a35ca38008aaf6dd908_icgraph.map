@@ -1,11 +1,10 @@
 <map id="xinormal" name="xinormal">
-<area shape="rect" id="node3" href="$kl__sample__population_8h.html#a0d2da9b5c3bca9ca3954d1a4b0612211" title="chi_square" alt="" coords="148,136,233,163"/>
-<area shape="rect" id="node17" href="$kl__sample__population_8h.html#a12aeb59709f3d44b1480d6af2db87eab" title="shapiro_francia" alt="" coords="136,187,245,213"/>
-<area shape="rect" id="node19" href="$kl__sample__population_8h.html#a5a2e9d753f8aaa4b4aa7bd6bd2c14924" title="weisberg_bingham" alt="" coords="126,237,255,264"/>
-<area shape="rect" id="node5" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="305,129,455,170"/>
+<area shape="rect" id="node3" href="$kl__sample__population_8h.html#a0d2da9b5c3bca9ca3954d1a4b0612211" title="chi_square" alt="" coords="148,107,233,133"/>
+<area shape="rect" id="node15" href="$kl__sample__population_8h.html#a12aeb59709f3d44b1480d6af2db87eab" title="shapiro_francia" alt="" coords="136,157,245,184"/>
+<area shape="rect" id="node17" href="$kl__sample__population_8h.html#a5a2e9d753f8aaa4b4aa7bd6bd2c14924" title="weisberg_bingham" alt="" coords="126,208,255,235"/>
+<area shape="rect" id="node5" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="305,99,455,141"/>
 <area shape="rect" id="node7" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="510,5,687,46"/>
 <area shape="rect" id="node9" href="$kl__unit__tests_8h.html#a7f8bfdf5b8ac2ebd891254700e22f7cf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="510,70,687,111"/>
-<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a5e1a30eea97b249e7c855b7a6b026a74" title="testklPrincipalComponents2" alt="" coords="507,136,691,163"/>
+<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a803a074e395e7f3ca64c45a07ff279f0" title="PrincipalComponentsDemo" alt="" coords="509,136,688,163"/>
 <area shape="rect" id="node13" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="505,187,693,213"/>
-<area shape="rect" id="node15" href="$kl_s_m_p_m_t_8cpp.html#abc81cabc3e77e29ca314ec92f3b9e111" title="work2" alt="" coords="571,237,627,264"/>
 </map>

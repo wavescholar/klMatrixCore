@@ -1,5 +1,4 @@
 <map id="klThreadWorkflow::insertWorkElement" name="klThreadWorkflow::insertWorkElement">
-<area shape="rect" id="node3" href="$kl__image__processing__functors_8cpp.html#a5cf514a760136e68606681595080ad46" title="klRunImageWorkFlowImage" alt="" coords="221,5,403,32"/>
-<area shape="rect" id="node5" href="$kl_main_8cpp.html#abb7bd551cebf81fbc9f42aa469cb7dc3" title="klRunWorkFlow" alt="" coords="255,56,369,83"/>
-<area shape="rect" id="node7" href="$kl_s_m_p_m_t_8cpp.html#ad3497c522352701809cb7c85dc6d5579" title="kl_SMP_SM_MT_WorkFlow" alt="" coords="219,107,405,133"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a481d4316482f7aa7045c2544c0fe0b1e" title="MutithreadedWorkflowDemo" alt="" coords="219,12,403,39"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="451,12,547,39"/>
 </map>

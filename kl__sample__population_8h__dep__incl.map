@@ -1,20 +1,15 @@
 <map id="kl_sample_population.h" name="kl_sample_population.h">
-<area shape="rect" id="node3" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="943,80,1119,107"/>
-<area shape="rect" id="node9" href="$kl_d_p_image_fns_8cpp.html" title="klDPImageFns.cpp" alt="" coords="658,419,789,445"/>
-<area shape="rect" id="node13" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="361,419,473,445"/>
-<area shape="rect" id="node15" href="$kl__matlab__dependent__unit__tests_8h.html" title="kl_matlab_dependent\l_unit_tests.h" alt="" coords="473,246,617,287"/>
-<area shape="rect" id="node18" href="$kl_matlab_8cpp.html" title="klMatlab.cpp" alt="" coords="663,336,759,363"/>
-<area shape="rect" id="node24" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="1395,419,1568,445"/>
-<area shape="rect" id="node26" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="1046,336,1180,363"/>
-<area shape="rect" id="node32" href="$kl_s_m_p_m_t_8cpp.html" title="klSMPMT.cpp" alt="" coords="1775,419,1879,445"/>
-<area shape="rect" id="node35" href="$kl__unit__tests_8h.html" title="kl_unit_tests.h" alt="" coords="1125,253,1232,280"/>
-<area shape="rect" id="node40" href="$kl_main_8cpp.html" title="klMain.cpp" alt="" coords="1429,336,1515,363"/>
-<area shape="rect" id="node59" href="$kl__independent__components_8h.html" title="kl_independent_components.h" alt="" coords="1915,80,2113,107"/>
-<area shape="rect" id="node61" href="$kl__multiclass__svm_8h.html" title="kl_multiclass_svm.h" alt="" coords="1448,163,1587,189"/>
-<area shape="rect" id="node5" href="$kl__img__pca_8h.html" title="kl_img_pca.h" alt="" coords="197,336,296,363"/>
-<area shape="rect" id="node21" href="$kl__multivariate__random__variable_8h.html" title="kl_multivariate_random\l_variable.h" alt="" coords="896,155,1051,197"/>
-<area shape="rect" id="node7" href="$kl__image__processing__functors_8cpp.html" title="kl_image_processing\l_functors.cpp" alt="" coords="184,411,328,453"/>
-<area shape="rect" id="node11" href="$kl_managed_imaging_8cpp.html" title="klManagedImaging.cpp" alt="" coords="5,419,160,445"/>
-<area shape="rect" id="node44" href="$kl__multivariate__random__variable_8cpp.html" title="kl_multivariate_random\l_variable.cpp" alt="" coords="693,246,848,287"/>
-<area shape="rect" id="node29" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="1039,419,1187,445"/>
+<area shape="rect" id="node3" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="496,80,672,107"/>
+<area shape="rect" id="node7" href="$kl__matlab__dependent__unit__tests_8h.html" title="kl_matlab_dependent\l_unit_tests.h" alt="" coords="145,246,289,287"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="323,419,435,445"/>
+<area shape="rect" id="node14" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="569,419,743,445"/>
+<area shape="rect" id="node16" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="825,336,959,363"/>
+<area shape="rect" id="node21" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="1021,411,1165,453"/>
+<area shape="rect" id="node24" href="$kl__unit__tests_8h.html" title="kl_unit_tests.h" alt="" coords="696,253,803,280"/>
+<area shape="rect" id="node38" href="$kl__independent__components_8h.html" title="kl_independent_components.h" alt="" coords="1121,80,1319,107"/>
+<area shape="rect" id="node40" href="$kl__multiclass__svm_8h.html" title="kl_multiclass_svm.h" alt="" coords="787,163,925,189"/>
+<area shape="rect" id="node5" href="$kl__img__pca_8h.html" title="kl_img_pca.h" alt="" coords="280,163,379,189"/>
+<area shape="rect" id="node11" href="$kl__multivariate__random__variable_8h.html" title="kl_multivariate_random\l_variable.h" alt="" coords="507,155,661,197"/>
+<area shape="rect" id="node29" href="$kl__multivariate__random__variable_8cpp.html" title="kl_multivariate_random\l_variable.cpp" alt="" coords="416,246,571,287"/>
+<area shape="rect" id="node19" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="818,419,965,445"/>
 </map>

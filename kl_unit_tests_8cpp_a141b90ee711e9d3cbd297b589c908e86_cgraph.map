@@ -1,0 +1,11 @@
+<map id="MatrixOpsCeck" name="MatrixOpsCeck">
+<area shape="rect" id="node3" href="$classkl_matrix.html#afd5526bfa748f065fb7b800e9770c461" title="klMatrix::makeNanFriendly" alt="" coords="166,5,343,32"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a3a02a421982e2dac47ad0fbab32f9983" title="klMatrix::getColumn" alt="" coords="185,56,324,83"/>
+<area shape="rect" id="node7" href="$classkl_vector.html#ad364ef560dd409b574a5d7b0ebeae8bc" title="klVector::diff" alt="" coords="207,107,302,133"/>
+<area shape="rect" id="node9" href="$kl__random__number__generator_8cpp.html#a1d6fb1bfa25e9126fad55a1f0aeb8103" title="klErrorFunction" alt="" coords="199,157,310,184"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#ab8d9602c45cbaad45df0654497d83c67" title="klMatrix::getSubBlock" alt="" coords="179,208,330,235"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#ae98f9751763dcc0a141580a5b382ab8d" title="klMatrix::setSubBlock" alt="" coords="179,259,330,285"/>
+<area shape="rect" id="node15" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="183,309,326,336"/>
+<area shape="rect" id="node17" href="$classkl_vector.html#a6b423a428d4dbc122b22852f1db220a8" title="klVector::dot" alt="" coords="207,360,303,387"/>
+<area shape="rect" id="node19" href="$classkl_matrix.html#aa58abc662ce3fa519bd7a9b863cd175b" title="klMatrix::det" alt="" coords="207,411,302,437"/>
+</map>

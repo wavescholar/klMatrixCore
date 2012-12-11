@@ -1,7 +1,7 @@
 <map id="klErrorFunction" name="klErrorFunction">
-<area shape="rect" id="node3" href="$kl__matrix_8h.html#ad855c5f5c7d3526d949d256a2100379c" title="testKLMatrix" alt="" coords="204,5,300,32"/>
-<area shape="rect" id="node5" href="$classkl_normal_inverse_approx_r_v.html#a26b1ca2457edc7aece0ffb0e4a49dc7c" title="klNormalInverseApproxRV\l::NormalCDF" alt="" coords="166,57,338,98"/>
-<area shape="rect" id="node7" href="$classkl_normal_inverse_approx_r_v.html#a3999d8ebf967914a0ac5498996696f25" title="klNormalInverseApproxRV\l::normal" alt="" coords="387,27,559,69"/>
-<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="387,93,559,120"/>
-<area shape="rect" id="node9" href="$classkl_normal_inverse_approx_r_v.html#aff41277b4b409a46e9dae9731f5f5772" title="klNormalInverseApproxRV\l::operator()" alt="" coords="609,27,781,69"/>
+<area shape="rect" id="node3" href="$classkl_normal_inverse_approx_r_v.html#a26b1ca2457edc7aece0ffb0e4a49dc7c" title="klNormalInverseApproxRV\l::NormalCDF" alt="" coords="166,34,338,75"/>
+<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a141b90ee711e9d3cbd297b589c908e86" title="MatrixOpsCeck" alt="" coords="196,100,308,127"/>
+<area shape="rect" id="node5" href="$classkl_normal_inverse_approx_r_v.html#a3999d8ebf967914a0ac5498996696f25" title="klNormalInverseApproxRV\l::normal" alt="" coords="387,5,559,46"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="387,71,559,97"/>
+<area shape="rect" id="node7" href="$classkl_normal_inverse_approx_r_v.html#aff41277b4b409a46e9dae9731f5f5772" title="klNormalInverseApproxRV\l::operator()" alt="" coords="609,5,781,46"/>
 </map>

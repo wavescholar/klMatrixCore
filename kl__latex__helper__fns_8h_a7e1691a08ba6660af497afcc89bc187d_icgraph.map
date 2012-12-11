@@ -1,6 +1,5 @@
 <map id="LatexPrintVector" name="LatexPrintVector">
 <area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="174,5,381,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a5c2b0434818ad58bb40c76d265f245b5" title="testArpack" alt="" coords="235,56,320,83"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ab83280bf7a03f28f093f22cd2864dd86" title="IterativeKrylovCheck" alt="" coords="208,56,347,83"/>
 <area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="429,56,525,83"/>
-<area shape="rect" id="node9" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="574,56,634,83"/>
 </map>

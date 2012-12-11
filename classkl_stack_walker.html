@@ -44,8 +44,13 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">klStackWalker Class Reference</div>  </div>
 </div><!--header-->
@@ -57,107 +62,109 @@ Inheritance diagram for klStackWalker:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkl_stack_walker__inherit__graph.jpg" border="0" usemap="#kl_stack_walker_inherit__map" alt="Inheritance graph"/></div>
 <map name="kl_stack_walker_inherit__map" id="kl_stack_walker_inherit__map">
-<area shape="rect" id="node2" href="class_stack_walker.html" title="{StackWalker\n|# m_sw\l# m_hProcess\l# m_dwProcessId\l# m_modulesLoaded\l# m_szSymPath\l# m_options\l# StackWalkerInternal\l|+ StackWalker()\l+ StackWalker()\l+ ~StackWalker()\l+ LoadModules()\l+ ShowCallstack()\l# OnSymInit()\l# OnLoadModule()\l# OnCallstackEntry()\l# OnDbgHelpErr()\l# OnOutput()\l# myReadProcMem()\l}" alt="" coords="5,5,155,317"/></map>
+<area shape="rect" id="node3" href="classklkl_stack_walker.html" title="{klklStackWalker\n|+ msg\l|+ klklStackWalker()\l+ klklStackWalker()\l+ OnOutput()\l}" alt="" coords="17,365,153,472"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for klStackWalker:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkl_stack_walker__coll__graph.jpg" border="0" usemap="#kl_stack_walker_coll__map" alt="Collaboration graph"/></div>
 <map name="kl_stack_walker_coll__map" id="kl_stack_walker_coll__map">
-<area shape="rect" id="node2" href="class_stack_walker.html" title="{StackWalker\n||+ StackWalker()\l+ StackWalker()\l+ ~StackWalker()\l+ LoadModules()\l+ ShowCallstack()\l# OnSymInit()\l# OnLoadModule()\l# OnCallstackEntry()\l# OnDbgHelpErr()\l# OnOutput()\l# myReadProcMem()\l}" alt="" coords="477,163,621,387"/><area shape="rect" id="node4" href="class_stack_walker_internal.html" title="{StackWalkerInternal\n|+ m_hProcess\l+ pSC\l+ pSFTA\l+ pSGLFA\l+ pSGMB\l+ pSGMI\l+ pSGO\l+ pSGSFA\l+ pSI\l+ pSLM\l+ pSSO\l+ pSW\l|+ StackWalkerInternal()\l+ ~StackWalkerInternal()\l+ Init()\l+ DWORD()\l+ BOOL()\l+ LoadModules()\l+ GetModuleInfo()\l&#45; GetModuleListTH32()\l&#45; GetModuleListPSAPI()\l&#45; LoadModule()\l}" alt="" coords="505,464,671,835"/><area shape="rect" id="node30" title="STL class." alt="" coords="1101,236,1181,313"/><area shape="rect" id="node32" title="STL class." alt="" coords="1078,6,1204,98"/></map>
+<area shape="rect" id="node14" href="classkl_stack_walker_internal.html" title="{klStackWalkerInternal\n|+ m_hProcess\l+ pSC\l+ pSFTA\l+ pSGLFA\l+ pSGMB\l+ pSGMI\l+ pSGO\l+ pSGSFA\l+ pSI\l+ pSLM\l+ pSSO\l+ pSW\l|+ klStackWalkerInternal()\l+ ~klStackWalkerInternal()\l+ Init()\l+ DWORD()\l+ BOOL()\l+ LoadModules()\l+ GetModuleInfo()\l&#45; GetModuleListTH32()\l&#45; GetModuleListPSAPI()\l&#45; LoadModule()\l}" alt="" coords="685,435,861,805"/></map>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">CallstackEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3cff1ada4a4e5c5314082f9603b9f802"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802">StackWalkOptions</a> { <br/>
+&#160;&#160;<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a30c56ce65247ea8e1a5b78d7fb861c94">RetrieveNone</a> = 0, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a14760b4a0a4a53cd1b99a64de3a5111b">RetrieveSymbol</a> = 1, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802ab546edac89b869119b6e03a2f570bab4">RetrieveLine</a> = 2, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802ae61db90bf562012bba9daee46f20ad54">RetrieveModuleInfo</a> = 4, 
+<br/>
+&#160;&#160;<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a612196dbd509c20297395fcedf5e0aee">RetrieveFileVersion</a> = 8, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a54b7a3c0e33f3a0f698b1c9e6b0a264a">RetrieveVerbose</a> = 0xF, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a7c3a131260e8d8bd80c0ba77c1f2f9f7">SymBuildPath</a> = 0x10, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a8321e5453a5cbd29c39ad691073f336d">SymUseSymSrv</a> = 0x20, 
+<br/>
+&#160;&#160;<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802a134f3b6d28d23807f532d6bf18245be2">SymAll</a> = 0x30, 
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802ad4b36efa70e9be35186aef208799e3ea">OptionsAll</a> = 0x3F
+<br/>
+ }</td></tr>
+<tr class="separator:a3cff1ada4a4e5c5314082f9603b9f802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a174ae2949ad26ff80e949ca981990e94"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classkl_stack_walker.html#a174ae2949ad26ff80e949ca981990e94a81d38adce87fc196b1e4691b4d03fc0e">STACKWALK_MAX_NAMELEN</a> = 1024
+ }</td></tr>
+<tr class="separator:a174ae2949ad26ff80e949ca981990e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb1be593fad712db62709a32f61dfd8"><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
+<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802">klStackWalker::StackWalkOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a1eb1be593fad712db62709a32f61dfd8">StackWalkOptions</a></td></tr>
+<tr class="separator:a1eb1be593fad712db62709a32f61dfd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d5e7e7044c854a33c3b8b1909798f11"><td class="memItemLeft" align="right" valign="top">typedef BOOL(__stdcall *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a4d5e7e7044c854a33c3b8b1909798f11">PReadProcessMemoryRoutine</a> )(HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead, LPVOID pUserData)</td></tr>
+<tr class="separator:a4d5e7e7044c854a33c3b8b1909798f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a18ddd47b51bb28d50d1320be6efed770"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a18ddd47b51bb28d50d1320be6efed770">klStackWalker</a> ()</td></tr>
-<tr class="separator:a18ddd47b51bb28d50d1320be6efed770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24bf1616b9d283be361232d9d91f159"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#ad24bf1616b9d283be361232d9d91f159">klStackWalker</a> (int options=<a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802ad4b36efa70e9be35186aef208799e3ea">OptionsAll</a>, LPCSTR szSymPath=NULL, DWORD dwProcessId=GetCurrentProcessId(), HANDLE hProcess=GetCurrentProcess())</td></tr>
+<tr class="separator:ad24bf1616b9d283be361232d9d91f159"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc11eed638741f670c4c01bb051d21ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#acc11eed638741f670c4c01bb051d21ab">klStackWalker</a> (DWORD dwProcessId, HANDLE hProcess)</td></tr>
 <tr class="separator:acc11eed638741f670c4c01bb051d21ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2351c09e855bb3cfe1ef64b62b4cb295"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a2351c09e855bb3cfe1ef64b62b4cb295">OnOutput</a> (LPCSTR szText)</td></tr>
-<tr class="separator:a2351c09e855bb3cfe1ef64b62b4cb295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:a70ca0d3bd1d2b015815fc951ab0442df inherit pub_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a70ca0d3bd1d2b015815fc951ab0442df">StackWalker</a> (int options=<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a2955cdf5dd2683a3951f89d41d8b9c3c">OptionsAll</a>, LPCSTR szSymPath=NULL, DWORD dwProcessId=GetCurrentProcessId(), HANDLE hProcess=GetCurrentProcess())</td></tr>
-<tr class="separator:a70ca0d3bd1d2b015815fc951ab0442df inherit pub_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af36f5f0c916b2f350363c7ec8a8de15a inherit pub_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#af36f5f0c916b2f350363c7ec8a8de15a">StackWalker</a> (DWORD dwProcessId, HANDLE hProcess)</td></tr>
-<tr class="separator:af36f5f0c916b2f350363c7ec8a8de15a inherit pub_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae208af01c973541f335e5391677f2492 inherit pub_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#ae208af01c973541f335e5391677f2492">~StackWalker</a> ()</td></tr>
-<tr class="separator:ae208af01c973541f335e5391677f2492 inherit pub_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e0e7f1329f594d89362309bf8fe2b21 inherit pub_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a3e0e7f1329f594d89362309bf8fe2b21">LoadModules</a> ()</td></tr>
-<tr class="separator:a3e0e7f1329f594d89362309bf8fe2b21 inherit pub_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26bacb66734ee2d1de20d51070b825ba inherit pub_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a26bacb66734ee2d1de20d51070b825ba">ShowCallstack</a> (HANDLE hThread=GetCurrentThread(), const CONTEXT *context=NULL, <a class="el" href="class_stack_walker.html#a61956985807c0d6c582304c78c6dc85c">PReadProcessMemoryRoutine</a> readMemoryFunction=NULL, LPVOID pUserData=NULL)</td></tr>
-<tr class="separator:a26bacb66734ee2d1de20d51070b825ba inherit pub_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d4fd69d8d425f908a44b39eda04fb8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a82d4fd69d8d425f908a44b39eda04fb8">~klStackWalker</a> ()</td></tr>
+<tr class="separator:a82d4fd69d8d425f908a44b39eda04fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfedd855c64aa9dc03a3ef537bfa17e"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e">LoadModules</a> ()</td></tr>
+<tr class="separator:a8cfedd855c64aa9dc03a3ef537bfa17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae115092b167bd472d593396375cf42d6"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6">ShowCallstack</a> (HANDLE hThread=GetCurrentThread(), const CONTEXT *context=NULL, <a class="el" href="classkl_stack_walker.html#a4d5e7e7044c854a33c3b8b1909798f11">PReadProcessMemoryRoutine</a> readMemoryFunction=NULL, LPVOID pUserData=NULL)</td></tr>
+<tr class="separator:ae115092b167bd472d593396375cf42d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a315c863715e7741cdafc9e9ed1fa1f36"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a315c863715e7741cdafc9e9ed1fa1f36">msg</a></td></tr>
-<tr class="separator:a315c863715e7741cdafc9e9ed1fa1f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a635265d7a6b45fc8586af9c24d9b5489"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489">CallstackEntryType</a> { <a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489a6dd4ea402442934495fd373ec6f370f2">firstEntry</a>, 
+<a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489aacef2632d860c1566661c8ead03d839c">nextEntry</a>, 
+<a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489a7b5c8d0bbbfade059202da26dedd157c">lastEntry</a>
+ }</td></tr>
+<tr class="separator:a635265d7a6b45fc8586af9c24d9b5489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a931ef7e77dce3e796c7509bda4b99381"><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">klStackWalker::CallstackEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a931ef7e77dce3e796c7509bda4b99381">CallstackEntry</a></td></tr>
+<tr class="separator:a931ef7e77dce3e796c7509bda4b99381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:aa09267d1a2142548625d11131fd9f6d2 inherit pub_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2">StackWalkOptions</a> { <br/>
-&#160;&#160;<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a217edd06baf71722717097d0dfa1f766">RetrieveNone</a> = 0, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a7e8ceb867b904c580c6f745f5d182802">RetrieveSymbol</a> = 1, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2abb12b49bb039b045e1d8aeb530bc4941">RetrieveLine</a> = 2, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2aa84a7a674a45b13f77ca173e44917cbf">RetrieveModuleInfo</a> = 4, 
-<br/>
-&#160;&#160;<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2aa955b878359106a2494f579faccb2354">RetrieveFileVersion</a> = 8, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a91202654d609646725e168223b0f1551">RetrieveVerbose</a> = 0xF, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a80f3f984925d8c6e322d087770edf6c6">SymBuildPath</a> = 0x10, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a9a1c39fb96215df2b05d12c02d198698">SymUseSymSrv</a> = 0x20, 
-<br/>
-&#160;&#160;<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2aa8ab514748c8fed1fcaf8b50d35123cb">SymAll</a> = 0x30, 
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2a2955cdf5dd2683a3951f89d41d8b9c3c">OptionsAll</a> = 0x3F
-<br/>
- }</td></tr>
-<tr class="separator:aa09267d1a2142548625d11131fd9f6d2 inherit pub_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f121ed21812fc01322b34c4abc6f940 inherit pub_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="class_stack_walker.html#a9f121ed21812fc01322b34c4abc6f940a9be56eae1b6e1edf9fbcd5df5e7dbb91">STACKWALK_MAX_NAMELEN</a> = 1024
- }</td></tr>
-<tr class="separator:a9f121ed21812fc01322b34c4abc6f940 inherit pub_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a547d82a4196c05a09fd365d83ca9cd44 inherit pub_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
-<a class="el" href="class_stack_walker.html#aa09267d1a2142548625d11131fd9f6d2">StackWalker::StackWalkOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a547d82a4196c05a09fd365d83ca9cd44">StackWalkOptions</a></td></tr>
-<tr class="separator:a547d82a4196c05a09fd365d83ca9cd44 inherit pub_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61956985807c0d6c582304c78c6dc85c inherit pub_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">typedef BOOL(__stdcall *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a61956985807c0d6c582304c78c6dc85c">PReadProcessMemoryRoutine</a> )(HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead, LPVOID pUserData)</td></tr>
-<tr class="separator:a61956985807c0d6c582304c78c6dc85c inherit pub_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_types_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pro_types_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:a6de6dcd460d11abee0c498fb55cba96e inherit pro_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a6de6dcd460d11abee0c498fb55cba96e">CallstackEntryType</a> { <a class="el" href="class_stack_walker.html#a6de6dcd460d11abee0c498fb55cba96eaa638808af6959ce776853d2b1c706bba">firstEntry</a>, 
-<a class="el" href="class_stack_walker.html#a6de6dcd460d11abee0c498fb55cba96ea3f79f8f3d18eca44ec7d1c4f403edd37">nextEntry</a>, 
-<a class="el" href="class_stack_walker.html#a6de6dcd460d11abee0c498fb55cba96ea953ece8d7477db020bbe434a96ad7803">lastEntry</a>
- }</td></tr>
-<tr class="separator:a6de6dcd460d11abee0c498fb55cba96e inherit pro_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0ad9c321961aad36f54779a8ca4ec12 inherit pro_types_class_stack_walker"><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
-<a class="el" href="struct_stack_walker_1_1_callstack_entry.html">StackWalker::CallstackEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#ad0ad9c321961aad36f54779a8ca4ec12">CallstackEntry</a></td></tr>
-<tr class="separator:ad0ad9c321961aad36f54779a8ca4ec12 inherit pro_types_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:a7feaf96c40d81dcbd0bfcd34f78eaa30 inherit pro_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a7feaf96c40d81dcbd0bfcd34f78eaa30">OnSymInit</a> (LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUserName)</td></tr>
-<tr class="separator:a7feaf96c40d81dcbd0bfcd34f78eaa30 inherit pro_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c6c648aee9a33e881f449aecd51912 inherit pro_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a64c6c648aee9a33e881f449aecd51912">OnLoadModule</a> (LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD size, DWORD result, LPCSTR symType, LPCSTR pdbName, ULONGLONG fileVersion)</td></tr>
-<tr class="separator:a64c6c648aee9a33e881f449aecd51912 inherit pro_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fbb480cd30e9ff437a4baf9a18c2372 inherit pro_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a0fbb480cd30e9ff437a4baf9a18c2372">OnCallstackEntry</a> (<a class="el" href="class_stack_walker.html#a6de6dcd460d11abee0c498fb55cba96e">CallstackEntryType</a> eType, <a class="el" href="struct_stack_walker_1_1_callstack_entry.html">CallstackEntry</a> &amp;entry)</td></tr>
-<tr class="separator:a0fbb480cd30e9ff437a4baf9a18c2372 inherit pro_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2220ae2084e72d2f0f005784c21e8dc inherit pro_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#ab2220ae2084e72d2f0f005784c21e8dc">OnDbgHelpErr</a> (LPCSTR szFuncName, DWORD gle, DWORD64 addr)</td></tr>
-<tr class="separator:ab2220ae2084e72d2f0f005784c21e8dc inherit pro_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_static_methods_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Static Protected Member Functions inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:a3428311b98b8e8366419e9e5467c294d inherit pro_static_methods_class_stack_walker"><td class="memItemLeft" align="right" valign="top">static BOOL __stdcall&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a3428311b98b8e8366419e9e5467c294d">myReadProcMem</a> (HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead)</td></tr>
-<tr class="separator:a3428311b98b8e8366419e9e5467c294d inherit pro_static_methods_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_stack_walker"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_stack_walker')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_stack_walker.html">StackWalker</a></td></tr>
-<tr class="memitem:a13524e6f4cd89a8b3a3fd378e3cd3f55 inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_stack_walker_internal.html">StackWalkerInternal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a13524e6f4cd89a8b3a3fd378e3cd3f55">m_sw</a></td></tr>
-<tr class="separator:a13524e6f4cd89a8b3a3fd378e3cd3f55 inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7db892daef90d499084f5e9dd5294ab9 inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a7db892daef90d499084f5e9dd5294ab9">m_hProcess</a></td></tr>
-<tr class="separator:a7db892daef90d499084f5e9dd5294ab9 inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8bda5434856605a470d42c3db49b38 inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#adf8bda5434856605a470d42c3db49b38">m_dwProcessId</a></td></tr>
-<tr class="separator:adf8bda5434856605a470d42c3db49b38 inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20279e66ed48886369111d47dee4762f inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a20279e66ed48886369111d47dee4762f">m_modulesLoaded</a></td></tr>
-<tr class="separator:a20279e66ed48886369111d47dee4762f inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1b39f2ea31f24b4a693928cdf5549d inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">LPSTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#aff1b39f2ea31f24b4a693928cdf5549d">m_szSymPath</a></td></tr>
-<tr class="separator:aff1b39f2ea31f24b4a693928cdf5549d inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3534033da2986b16d5f15f0b4feefa54 inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#a3534033da2986b16d5f15f0b4feefa54">m_options</a></td></tr>
-<tr class="separator:a3534033da2986b16d5f15f0b4feefa54 inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0d4fa92227f651635d04da2947b873a inherit pro_attribs_class_stack_walker"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stack_walker.html#ab0d4fa92227f651635d04da2947b873a">StackWalkerInternal</a></td></tr>
-<tr class="separator:ab0d4fa92227f651635d04da2947b873a inherit pro_attribs_class_stack_walker"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a6ca1b0a7757eaccf2f47fe87e3ecc8b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8">OnSymInit</a> (LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUserName)</td></tr>
+<tr class="separator:a6ca1b0a7757eaccf2f47fe87e3ecc8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1ad66d92551b6d6b629f3bb6c85ab5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5">OnLoadModule</a> (LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD size, DWORD result, LPCSTR symType, LPCSTR pdbName, ULONGLONG fileVersion)</td></tr>
+<tr class="separator:aeb1ad66d92551b6d6b629f3bb6c85ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287a6272ff93c9467575a5a6d57d4cd4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a287a6272ff93c9467575a5a6d57d4cd4">OnCallstackEntry</a> (<a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489">CallstackEntryType</a> eType, <a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">CallstackEntry</a> &amp;entry)</td></tr>
+<tr class="separator:a287a6272ff93c9467575a5a6d57d4cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769d7fc7e5daffe72046051bfc0b2318"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318">OnDbgHelpErr</a> (LPCSTR szFuncName, DWORD gle, DWORD64 addr)</td></tr>
+<tr class="separator:a769d7fc7e5daffe72046051bfc0b2318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fff8a92e977c17140f882aab1b5229a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a">OnOutput</a> (LPCSTR szText)</td></tr>
+<tr class="separator:a6fff8a92e977c17140f882aab1b5229a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa61bdf68896b5db03beb0f095de5004c"><td class="memItemLeft" align="right" valign="top">static BOOL __stdcall&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#aa61bdf68896b5db03beb0f095de5004c">myReadProcMem</a> (HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead)</td></tr>
+<tr class="separator:aa61bdf68896b5db03beb0f095de5004c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2aaea5755667b73a381f1420d2ca1eff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkl_stack_walker_internal.html">klStackWalkerInternal</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a2aaea5755667b73a381f1420d2ca1eff">m_sw</a></td></tr>
+<tr class="separator:a2aaea5755667b73a381f1420d2ca1eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c269e91d33a536573cfd992bb5d5d45"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a6c269e91d33a536573cfd992bb5d5d45">m_hProcess</a></td></tr>
+<tr class="separator:a6c269e91d33a536573cfd992bb5d5d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428428c6a7e2dac49444a2a4ade67c8d"><td class="memItemLeft" align="right" valign="top">DWORD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a428428c6a7e2dac49444a2a4ade67c8d">m_dwProcessId</a></td></tr>
+<tr class="separator:a428428c6a7e2dac49444a2a4ade67c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18925afe3bb42e6b172937a49d6808f"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#aa18925afe3bb42e6b172937a49d6808f">m_modulesLoaded</a></td></tr>
+<tr class="separator:aa18925afe3bb42e6b172937a49d6808f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63df296344b438d3017a9b182d674a9"><td class="memItemLeft" align="right" valign="top">LPSTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#aa63df296344b438d3017a9b182d674a9">m_szSymPath</a></td></tr>
+<tr class="separator:aa63df296344b438d3017a9b182d674a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaff6aa66248e60d1b1fb6e523abeb61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#acaff6aa66248e60d1b1fb6e523abeb61">m_options</a></td></tr>
+<tr class="separator:acaff6aa66248e60d1b1fb6e523abeb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e02fdf4528321b9a6d600da09c52cf0"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkl_stack_walker.html#a3e02fdf4528321b9a6d600da09c52cf0">klStackWalkerInternal</a></td></tr>
+<tr class="separator:a3e02fdf4528321b9a6d600da09c52cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a18ddd47b51bb28d50d1320be6efed770"></a>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a931ef7e77dce3e796c7509bda4b99381"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -165,17 +172,162 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">klStackWalker::klStackWalker </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">klStackWalker::CallstackEntry</a>  <a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">klStackWalker::CallstackEntry</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d5e7e7044c854a33c3b8b1909798f11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef BOOL(__stdcall * klStackWalker::PReadProcessMemoryRoutine)(HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead, LPVOID pUserData)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1eb1be593fad712db62709a32f61dfd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802">klStackWalker::StackWalkOptions</a>  <a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802">klStackWalker::StackWalkOptions</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a174ae2949ad26ff80e949ca981990e94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a174ae2949ad26ff80e949ca981990e94a81d38adce87fc196b1e4691b4d03fc0e"></a>STACKWALK_MAX_NAMELEN</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a635265d7a6b45fc8586af9c24d9b5489"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489">klStackWalker::CallstackEntryType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a635265d7a6b45fc8586af9c24d9b5489a6dd4ea402442934495fd373ec6f370f2"></a>firstEntry</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a635265d7a6b45fc8586af9c24d9b5489aacef2632d860c1566661c8ead03d839c"></a>nextEntry</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a635265d7a6b45fc8586af9c24d9b5489a7b5c8d0bbbfade059202da26dedd157c"></a>lastEntry</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802">klStackWalker::StackWalkOptions</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a30c56ce65247ea8e1a5b78d7fb861c94"></a>RetrieveNone</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a14760b4a0a4a53cd1b99a64de3a5111b"></a>RetrieveSymbol</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802ab546edac89b869119b6e03a2f570bab4"></a>RetrieveLine</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802ae61db90bf562012bba9daee46f20ad54"></a>RetrieveModuleInfo</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a612196dbd509c20297395fcedf5e0aee"></a>RetrieveFileVersion</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a54b7a3c0e33f3a0f698b1c9e6b0a264a"></a>RetrieveVerbose</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a7c3a131260e8d8bd80c0ba77c1f2f9f7"></a>SymBuildPath</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a8321e5453a5cbd29c39ad691073f336d"></a>SymUseSymSrv</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802a134f3b6d28d23807f532d6bf18245be2"></a>SymAll</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a3cff1ada4a4e5c5314082f9603b9f802ad4b36efa70e9be35186aef208799e3ea"></a>OptionsAll</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad24bf1616b9d283be361232d9d91f159"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">klStackWalker::klStackWalker </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>options</em> = <code><a class="el" href="classkl_stack_walker.html#a3cff1ada4a4e5c5314082f9603b9f802ad4b36efa70e9be35186aef208799e3ea">OptionsAll</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>szSymPath</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwProcessId</em> = <code>GetCurrentProcessId()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hProcess</em> = <code>GetCurrentProcess()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -183,9 +335,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="acc11eed638741f670c4c01bb051d21ab"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">klStackWalker::klStackWalker </td>
@@ -205,17 +354,11 @@ Additional Inherited Members</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2351c09e855bb3cfe1ef64b62b4cb295"></a>
+<a class="anchor" id="a82d4fd69d8d425f908a44b39eda04fb8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -223,7 +366,323 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void klStackWalker::OnOutput </td>
+          <td class="memname">klStackWalker::~klStackWalker </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8cfedd855c64aa9dc03a3ef537bfa17e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL klStackWalker::LoadModules </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_cgraph.jpg" border="0" usemap="#classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_cgraph" id="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="445,282,595,323"/><area shape="rect" id="node5" href="classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="646,239,845,265"/><area shape="rect" id="node15" href="classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="245,147,395,189"/><area shape="rect" id="node9" href="classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="920,159,1069,201"/><area shape="rect" id="node11" href="classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="907,315,1083,341"/><area shape="rect" id="node7" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="1144,239,1315,265"/><area shape="rect" id="node17" href="classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="445,73,595,114"/><area shape="rect" id="node30" href="classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="443,147,597,189"/><area shape="rect" id="node20" href="classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="671,122,820,163"/><area shape="rect" id="node22" href="classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="671,5,820,46"/><area shape="rect" id="node25" href="classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="920,5,1069,46"/><area shape="rect" id="node27" href="classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5" title="klStackWalker::OnLoadModule" alt="" coords="893,83,1096,109"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_icgraph.jpg" border="0" usemap="#classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_icgraph" id="classkl_stack_walker_a8cfedd855c64aa9dc03a3ef537bfa17e_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="246,5,447,32"/><area shape="rect" id="node5" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="497,5,607,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa61bdf68896b5db03beb0f095de5004c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL __stdcall klStackWalker::myReadProcMem </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hProcess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD64&#160;</td>
+          <td class="paramname"><em>qwBaseAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>lpBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>nSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPDWORD&#160;</td>
+          <td class="paramname"><em>lpNumberOfBytesRead</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_aa61bdf68896b5db03beb0f095de5004c_icgraph.jpg" border="0" usemap="#classkl_stack_walker_aa61bdf68896b5db03beb0f095de5004c_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_aa61bdf68896b5db03beb0f095de5004c_icgraph" id="classkl_stack_walker_aa61bdf68896b5db03beb0f095de5004c_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="273,5,474,32"/><area shape="rect" id="node5" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="523,5,634,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a287a6272ff93c9467575a5a6d57d4cd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klStackWalker::OnCallstackEntry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classkl_stack_walker.html#a635265d7a6b45fc8586af9c24d9b5489">CallstackEntryType</a>&#160;</td>
+          <td class="paramname"><em>eType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structkl_stack_walker_1_1_callstack_entry.html">CallstackEntry</a> &amp;&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_cgraph.jpg" border="0" usemap="#classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_cgraph" id="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="240,12,411,39"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_icgraph.jpg" border="0" usemap="#classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_icgraph" id="classkl_stack_walker_a287a6272ff93c9467575a5a6d57d4cd4_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="241,12,442,39"/><area shape="rect" id="node5" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="491,12,602,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a769d7fc7e5daffe72046051bfc0b2318"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klStackWalker::OnDbgHelpErr </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>szFuncName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>gle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD64&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_cgraph.jpg" border="0" usemap="#classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_cgraph" id="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="253,5,424,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_icgraph.jpg" border="0" usemap="#classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_icgraph" id="classkl_stack_walker_a769d7fc7e5daffe72046051bfc0b2318_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="456,70,605,111"/><area shape="rect" id="node5" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="653,107,845,133"/><area shape="rect" id="node7" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="894,147,1095,173"/><area shape="rect" id="node11" href="classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="254,9,407,50"/><area shape="rect" id="node9" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="1145,147,1255,173"/><area shape="rect" id="node13" href="classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="456,5,605,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb1ad66d92551b6d6b629f3bb6c85ab5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klStackWalker::OnLoadModule </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>mod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD64&#160;</td>
+          <td class="paramname"><em>baseAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>symType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>pdbName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONGLONG&#160;</td>
+          <td class="paramname"><em>fileVersion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_cgraph.jpg" border="0" usemap="#classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_cgraph" id="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="256,5,427,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_icgraph.jpg" border="0" usemap="#classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_icgraph" id="classkl_stack_walker_aeb1ad66d92551b6d6b629f3bb6c85ab5_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="256,38,405,79"/><area shape="rect" id="node5" href="classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="456,5,605,46"/><area shape="rect" id="node15" href="classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="454,70,607,111"/><area shape="rect" id="node7" href="classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="656,38,805,79"/><area shape="rect" id="node9" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="853,45,1045,72"/><area shape="rect" id="node11" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="1094,45,1295,72"/><area shape="rect" id="node13" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="1345,45,1455,72"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6fff8a92e977c17140f882aab1b5229a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klStackWalker::OnOutput </td>
           <td>(</td>
           <td class="paramtype">LPCSTR&#160;</td>
           <td class="paramname"><em>szText</em></td><td>)</td>
@@ -232,44 +691,287 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_stack_walker.html#a20ec3b0a1ba7723e113889135989ea6b">StackWalker</a>.</p>
+<p>Reimplemented in <a class="el" href="classklkl_stack_walker.html#afd6d62ea14fc920ec7a1c0c3ebeee3cf">klklStackWalker</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a6fff8a92e977c17140f882aab1b5229a_icgraph.jpg" border="0" usemap="#classkl_stack_walker_a6fff8a92e977c17140f882aab1b5229a_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_a6fff8a92e977c17140f882aab1b5229a_icgraph" id="classkl_stack_walker_a6fff8a92e977c17140f882aab1b5229a_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5" title="klStackWalker::OnLoadModule" alt="" coords="224,213,427,240"/><area shape="rect" id="node20" href="classkl_stack_walker.html#a287a6272ff93c9467575a5a6d57d4cd4" title="klStackWalker::OnCallstack\lEntry" alt="" coords="925,267,1112,309"/><area shape="rect" id="node23" href="classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="475,121,674,148"/><area shape="rect" id="node31" href="classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="237,77,413,104"/><area shape="rect" id="node34" href="classklkl_stack_walker.html#afd6d62ea14fc920ec7a1c0c3ebeee3cf" title="klklStackWalker::OnOutput" alt="" coords="235,355,416,381"/><area shape="rect" id="node5" href="classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="500,206,649,247"/><area shape="rect" id="node7" href="classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="725,238,875,279"/><area shape="rect" id="node17" href="classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="723,173,877,214"/><area shape="rect" id="node9" href="classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="944,173,1093,214"/><area shape="rect" id="node11" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="1160,71,1352,97"/><area shape="rect" id="node13" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="1401,121,1602,148"/><area shape="rect" id="node15" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="1651,121,1762,148"/><area shape="rect" id="node25" href="classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="725,5,875,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca1b0a7757eaccf2f47fe87e3ecc8b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void klStackWalker::OnSymInit </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>szSearchPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>symOptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>szUserName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classkl_stack_walker_a2351c09e855bb3cfe1ef64b62b4cb295_cgraph.jpg" border="0" usemap="#classkl_stack_walker_a2351c09e855bb3cfe1ef64b62b4cb295_cgraph" alt=""/></div>
-<map name="classkl_stack_walker_a2351c09e855bb3cfe1ef64b62b4cb295_cgraph" id="classkl_stack_walker_a2351c09e855bb3cfe1ef64b62b4cb295_cgraph">
-<area shape="rect" id="node3" href="class_stack_walker.html#a20ec3b0a1ba7723e113889135989ea6b" title="StackWalker::OnOutput" alt="" coords="225,5,386,32"/></map>
+<div class="center"><img src="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_cgraph.jpg" border="0" usemap="#classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_cgraph" id="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="229,5,400,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_icgraph.jpg" border="0" usemap="#classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_icgraph" id="classkl_stack_walker_a6ca1b0a7757eaccf2f47fe87e3ecc8b8_icgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="229,5,379,46"/><area shape="rect" id="node5" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="427,12,619,39"/><area shape="rect" id="node7" href="classkl_stack_walker.html#ae115092b167bd472d593396375cf42d6" title="klStackWalker::ShowCallstack" alt="" coords="667,12,869,39"/><area shape="rect" id="node9" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="918,12,1029,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae115092b167bd472d593396375cf42d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL klStackWalker::ShowCallstack </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hThread</em> = <code>GetCurrentThread()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const CONTEXT *&#160;</td>
+          <td class="paramname"><em>context</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classkl_stack_walker.html#a4d5e7e7044c854a33c3b8b1909798f11">PReadProcessMemoryRoutine</a>&#160;</td>
+          <td class="paramname"><em>readMemoryFunction</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPVOID&#160;</td>
+          <td class="paramname"><em>pUserData</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_cgraph.jpg" border="0" usemap="#classkl_stack_walker_ae115092b167bd472d593396375cf42d6_cgraph" alt=""/></div>
+<map name="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_cgraph" id="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_cgraph">
+<area shape="rect" id="node3" href="classkl_stack_walker.html#a8cfedd855c64aa9dc03a3ef537bfa17e" title="klStackWalker::LoadModules" alt="" coords="269,156,461,183"/><area shape="rect" id="node7" href="classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="961,76,1159,103"/><area shape="rect" id="node27" href="classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="1235,323,1384,365"/><area shape="rect" id="node38" href="classkl_stack_walker.html#aa61bdf68896b5db03beb0f095de5004c" title="klStackWalker::myReadProcMem" alt="" coords="256,412,475,439"/><area shape="rect" id="node42" href="classkl_stack_walker.html#a287a6272ff93c9467575a5a6d57d4cd4" title="klStackWalker::OnCallstack\lEntry" alt="" coords="523,434,709,475"/><area shape="rect" id="node5" href="classkl_stack_walker_internal.html#a63c3faee375d3fe82b0e399f4f2c3ba5" title="klStackWalkerInternal\l::Init" alt="" coords="760,10,909,51"/><area shape="rect" id="node17" href="classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="541,178,691,219"/><area shape="rect" id="node11" href="classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="1235,147,1384,189"/><area shape="rect" id="node13" href="classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="1221,5,1397,32"/><area shape="rect" id="node9" href="classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="1459,160,1629,187"/><area shape="rect" id="node19" href="classkl_stack_walker_internal.html#a3785ef52b547f38f4809c6747f847c91" title="klStackWalkerInternal\l::GetModuleListTH32" alt="" coords="760,243,909,285"/><area shape="rect" id="node32" href="classkl_stack_walker_internal.html#a958de0933cc44fbb4ab4e6293c2f5297" title="klStackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="758,178,911,219"/><area shape="rect" id="node22" href="classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="985,178,1135,219"/><area shape="rect" id="node24" href="classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="985,295,1135,337"/><area shape="rect" id="node29" href="classkl_stack_walker.html#aeb1ad66d92551b6d6b629f3bb6c85ab5" title="klStackWalker::OnLoadModule" alt="" coords="1208,233,1411,260"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_icgraph.jpg" border="0" usemap="#classkl_stack_walker_ae115092b167bd472d593396375cf42d6_icgraph" alt=""/></div>
+<map name="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_icgraph" id="classkl_stack_walker_ae115092b167bd472d593396375cf42d6_icgraph">
+<area shape="rect" id="node3" href="kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="257,5,367,32"/></map>
 </div>
 </p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a315c863715e7741cdafc9e9ed1fa1f36"></a>
+<a class="anchor" id="a3e02fdf4528321b9a6d600da09c52cf0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string klStackWalker::msg</td>
+          <td class="memname">friend klStackWalker::klStackWalkerInternal</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a class="anchor" id="a428428c6a7e2dac49444a2a4ade67c8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DWORD klStackWalker::m_dwProcessId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c269e91d33a536573cfd992bb5d5d45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE klStackWalker::m_hProcess</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa18925afe3bb42e6b172937a49d6808f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL klStackWalker::m_modulesLoaded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acaff6aa66248e60d1b1fb6e523abeb61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int klStackWalker::m_options</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2aaea5755667b73a381f1420d2ca1eff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classkl_stack_walker_internal.html">klStackWalkerInternal</a>* klStackWalker::m_sw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa63df296344b438d3017a9b182d674a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LPSTR klStackWalker::m_szSymPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="kl___s_e_h_8h.html">kl_SEH.h</a></li>
+<li><a class="el" href="kl___s_e_h_8cpp.html">kl_SEH.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Dec 6 2012 15:21:02 for klMatrix by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 10 2012 19:01:52 for klMatrix by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

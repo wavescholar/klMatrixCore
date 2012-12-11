@@ -1,6 +1,4 @@
 <map id="klVMemMgr::allocate" name="klVMemMgr::allocate">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#aa18a6750c23c0f484b26ae880c3108ef" title="testKLMemory2" alt="" coords="200,5,315,32"/>
-<area shape="rect" id="node9" href="$kl_main_8cpp.html#ae4a27bb29de692c76520ad81fe16b55a" title="testKLMemory" alt="" coords="204,56,311,83"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="363,5,459,32"/>
-<area shape="rect" id="node7" href="$kl_test_main_8cpp.html#a5543208434ad0cff1139d5efd62e3960" title="klMain" alt="" coords="507,5,567,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a6cdd1e9afc81ac53932095359fe27362" title="MemoryManagementDemo" alt="" coords="200,5,379,32"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="427,5,523,32"/>
 </map>
