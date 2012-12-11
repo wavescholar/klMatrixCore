@@ -26,9 +26,10 @@ eg:
 typedef CHAR16_T char16_t;
 # endif
 Thanks, -Sunny Gupta   */
-#ifdef _CHAR16T
-#define CHAR16_T
-#endif
+//This problem has been fixed in Matlab 2012 we keep it here for reference.
+//#ifdef _CHAR16T
+//#define CHAR16_T
+//#endif
 
 #include "mat.h"  //Matlab Iface include file
 #include "engine.h"  //Matlab Iface include file
@@ -190,7 +191,8 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	}
 	else
 	{
-		sprintf(evalString,"figure('Visible','off');kp=plot(T)");
+		sprintf(evalString,"figure('Visible','off');plot(T)");
+		
 	}
 	engEvalString(matlabEngine, evalString);
 
@@ -220,7 +222,7 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	}
 	if(!holdOn)
 	{
-		sprintf(evalString,"h=kp; saveas(h,'%s');",filename);
+		sprintf(evalString,"saveas(gcf,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
 	}
 	mxDestroyArray(T);

@@ -22,11 +22,11 @@
     <Filter Include="Libs\DebugklPackages">
       <UniqueIdentifier>{b06a410b-4d0d-4907-89c7-c31a7262d74c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Libs\ReleaseklPackages">
-      <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GitSourceFiles">
       <UniqueIdentifier>{409cbf09-cd3f-40fd-ae01-e56217cb34eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\ReleaselPackages">
+      <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -197,28 +197,28 @@
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\UMFPACK.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\SUPERLU_SEQUENTIAL.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\Matlib.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\libsdpa.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\FGG.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\expokitcpp.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\arpack_CPP_v2.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\ARPACK2.lib">
-      <Filter>Libs\ReleaseklPackages</Filter>
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Kernel32.Lib">
       <Filter>Libs</Filter>
@@ -226,67 +226,49 @@
     <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
       <Filter>Libs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libemlrt.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libemlrt.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libeng.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libeng.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libfixedpoint.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libfixedpoint.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmat.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmat.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmex.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmex.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblas.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblas.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwblascompat32.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblascompat32.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwlapack.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwlapack.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwmathutil.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwmathutil.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwservices.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwservices.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_fileio.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmx.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmwsl_solver_rtw.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libut.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libmx.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclbase.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\libut.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcr.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclcommain.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcr.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\mclmcrrt.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_mli.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\ne_rtl.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\physmod_foundation_util.lib">
-      <Filter>Libs\MatlabLibs</Filter>
-    </Library>
-    <Library Include="C:\Program Files\MATLAB\R2010a\extern\lib\win64\microsoft\rtwcg.lib">
+    <Library Include="..\..\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib">
       <Filter>Libs\MatlabLibs</Filter>
     </Library>
   </ItemGroup>

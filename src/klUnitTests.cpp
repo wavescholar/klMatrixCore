@@ -61,6 +61,8 @@ _LARGE_INTEGER* klTimer::prefCountEnd=new _LARGE_INTEGER;
 
 const char* basefilename="D:\\klMAtrixCore\\output\\"; 
 
+static klTestType klTestSize= klTestType::SMALL;
+
 klMutex klMatlabEngineThreadMap::lock;
 map<klThreadId, Engine*> klMatlabEngineThreadMap::engineMap;
 DWORD gdwTlsIndex;
@@ -93,149 +95,97 @@ void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n);
 void MutithreadedWorkflowDemo(void);
 void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
-void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
+#include "kl_time_series.h"
+#include "kl_random_number_generator.h"
+void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n);
+void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
 {
-	//Notes from On the Nystrom Method for Approximating a Gram Matrix for Improved Kernel-Based Learning by 
-	//Petros Drineas DRINEP@CS.RPI.EDU Department of Computer Science Rensselaer Polytechnic Institute
-
-	//Given a collection X of data points, which are often but not necessarily elements of R^m, techniques
-	//such as PCA, SVM, GP and SVD can be used to identify structure from X by computing linear functions.
-	//PCA calculates the subspace spanned by the first k eigenvectors and is used to give a k dimensional
-	//model of the data with minimal residual.  This type of  spectral analysis has a long theoretical history and forms the basis 
-	//of many modern machine learning techniques. In real world applications however there is typically nonlinear structure in the data.
-	//Some domains sucha as Natural Language processing (NLP) data may not be amenable to the definition of meaningful linear operations.
-	//It is for such situations that kernel learning methods were developed.  Kernel methods map data in to high 
-	//dimensional space and use inner products designed to capture positional information.  Kernel methods use 
-	//the inner product distances for classification and regression.Kernel methods exploit the information encoded in the inner product
-	//between all pairs of data items and are successful because there is often an efficient method to
-	//compute inner products between very complex infinite dimensional vectors. Kernel
-	//algorithms provide a way to deal with nonlinear structure by reducing nonlinear algorithms
-	//to algorithms that are linear in some feature space F.  F is nonlinearly related to the original input
-	//space.  
-	//Let x_i \ in \dblr^m X = [  ...x_i ... ] row wise. Here we test the linear structure of a genreative data set against the
-	//Gream kernel. In kernel-based methods, a set of features is chosen that define a space F , where it is hoped relevant structure will be 
-	//revealed, the data X are then mapped to the feature space F using a mapping F : X  -> F , and then classification, regression, or
-	//clustering is performed in F using traditional methods such as linear SVMs, GPs, or PCA. If F
-	//is chosen to be a dot product space and if one defines the kernel matrix, also known as the Gram
-	//matrix, G \in  \dlbr^{n×n} as G_ij = k(x_i, x_j) = (F(xi),F(xj)), then any algorithm whose operations can be
-	//expressed in the input space in terms of dot products can be generalized to an algorithm which
-	//operates in the feature space by substituting a kernel function for the inner product. In practice, this
-	//means presenting the Gram matrix G in place of the input covariance matrix X^\dag X. Relatedly, using
-	//the kernel k instead of a dot product in the input space corresponds to mapping the data set into a
-	//(usually) high-dimensional dot product space F by a (usually nonlinear) mapping \Phi : \dblr^m -> F , and
-	//taking dot products there, i.e., k(x_i, x_j) = (F(x_i),F(x_j)). Note that for the commonly-used Mercer
-	//kernels, G is a symmetric positive semidefinite (SPSD) matrix.
-	//The generality of this framework should be emphasized. For example, there has been much
-	//work recently on dimensionality reduction for nonlinear manifolds in high-dimensional spaces. 
-	//Ie Isomap, LLE, and graph Laplacian eigenmap, and Hessian eigenmaps.  These methods first induce a local neighborhood 
-	//structure on the data and then use this local structure to find a global embedding of the manifold in a lower dimensional space.
-	
-	unsigned int numFeatures=3;
-	unsigned int sampleSize=4096;
-	//Is this PSD? If not then we will not get a good Cholesky factorization? 
-	//One way to find out is to find eigs, and see is \sigma(W) \in [0,\inflty)
-	klMatrix<double> SigmaW=SampleWishart(numFeatures);
-
-	_tex<<"Sample Size = "<<sampleSize<<endl;
-
-	_tex<<"Feature dim = "<<numFeatures<<endl<<endl;
-
-	LatexPrintMatrix<double>(SigmaW,"W",_tex);
-
-	klPrincipalComponents<double> pcaWishart=SigmaW;
-	klMatrix<double> V=pcaWishart(2);
-	klVector<double> wishartEigs=pcaWishart.eigenvalues();
-	LatexPrintVector<double>(wishartEigs,"W eigs",_tex);
-
-	unsigned int i;
-	unsigned int j;
-	klVector<double> meanVector(numFeatures);
-	meanVector=1;
-	
-	klNormalMultiVariate<double> T(meanVector,SigmaW );
-	klSamplePopulation<double> X(sampleSize,numFeatures);
-	for(j=0;j<sampleSize;j++)
+	char* cmdString = new char[2048];
+	size_t popsize=1024*2;
+	klVector<double> a(popsize);
+	klNormalInverseApproxRV<double> normalinv(0,0.1);
+	unsigned i;
+	for(i=0;i<popsize;i++)
 	{
-		klVector<double> tv=T();
-		X.setRow(j,tv);
+		double pi= 3.141592653589793238462643383279502;
+		a[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
 	}
+	klTimeSeries<double> c(a);
 
-	klMatrix<double> SampleCovariance = X.covarianceMatrix();
+	_tex<<"$\\mu_1 =" <<c.mean()<<"$"<<endl;
+	_tex<<"$\\mu_2 =" <<c.variance()<<"$"<<endl;
+	_tex<<"$\\mu_3 =" <<c.skewness()<<"$"<<endl;
+	_tex<<"$\\mu_4 =" <<c.kurtosis()<<"$"<<endl;
 
-	LatexPrintMatrix<double>(SampleCovariance,"Sample Covariance",_tex);
+	klTimeSeries<double>::klTimeSeriesInterpolation interp=klTimeSeries<double>::klTimeSeriesInterpolation::PREVIOUS;
+
+	double tau=12.0;
+
+	klTimeSeries<double> ema=c.EMA(popsize,tau,interp);
+
+	klTimeSeries<double> iema=c.IEMA(popsize,6,tau,interp);
+
+	klTimeSeries<double> ma=c.MA(popsize,6,tau,interp);
+
+	double gamma=1.22208;
+	double beta=0.65;
+	double alpha=1/(gamma*(8* beta - 3));
+
+	klTimeSeries<double> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
 	
-	LatexPrintVector<double>(X.sampleMean(),"Sample Mean",_tex);
-
-	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
-	klMatrix<double> D  = SampleCovariance-SigmaW; 
-	LatexPrintMatrix<double>(D,"SampleCovariance-W",_tex);
+	//ofstream _fileostream("klIEMA.txt");
+	//for(i=0;i<popsize;i++)
+	//{
+	//	_fileostream<<c[i]<<", "<<ma[i]<<", "<<iema[i]<<" ,"<<ema[i]<<", "<<diff[i]<<endl;
+	//}
+	//_fileostream.close();	
 	
-	klPrincipalComponents<double> pcaCovariance=SampleCovariance;
-	klMatrix<double> VC =pcaCovariance(2);
-	klVector<double> covarianceEigs=pcaCovariance.eigenvalues();
-	
-	LatexPrintVector<double>(covarianceEigs,"Sample Covariance Eigs",_tex);
+	//LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal");
 
-	//How close is the sample covariance to a PSD matrix?
-	//First we'll need a measure of matrix closeness and a way to find the 
-	//nearest PSD matrix in that measure. 
+	//LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA");
 
-	//The Gram matrix G of a set of vectors x_1, ...,x_i,...x_n in an inner product space is the Hermitian matrix of inner products, whose entries are given by G_{ij} = <x_i,x_j>
-	//An important application is to compute linear independence: a set of vectors is linearly independent if and only if the determinant of the Gram matrix is non-zero.
+	//LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average");
 
-	klMatrix<double> G(sampleSize,sampleSize);
-	G.makeNanFriendly();
-	for(i=0;i<sampleSize;i++)
-	{
-		klVector<double> x_i= X[i];
-		for(j=0;j<sampleSize;j++)
-		{
-			klVector<double> x_j= X[j];
-			G[i][j]=(x_i).dotBLAS(x_j);
-		}
-	}
+	//LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average");
 
-	klMatrix<double> centered = X.centeredData();
-	klSamplePopulation<double> normalizedSample(centered);
-	klVector<double> normedMean = normalizedSample.sampleMean();
-
-	LatexPrintVector<double>(normalizedSample.sampleMean(),"Centered Mean",_tex);
-
-	LatexPrintMatrix<double>(normalizedSample.covarianceMatrix(),"Centered Covariance",_tex);
+	//LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator");
 
 
-	klMatrix<double> Gf(numFeatures,numFeatures);
-	for(i=0;i<numFeatures;i++)
-	{
-		klVector<double> x_i= centered.getColumn(i);
-		for(j=0;j<numFeatures;j++)
-		{
-			klVector<double> x_j= centered.getColumn(j);
-			Gf[i][j]=(x_i).dotBLAS(x_j);
-		}
-	}
+	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",true);
 
-	LatexPrintMatrix<double>( Gf,"Gram Matrix Gf Not scaled by sample size",_tex);
+	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",true);
 
-	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
-	klMatrix<double> scalesGf = Gf / (double) sampleSize;
-	LatexPrintMatrix<double>(scalesGf ,"Gram Matrix Gf  scaled by sample size",_tex);
+	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",true);
 
-	klMatrix<double> diff = SampleCovariance / (double) sampleSize;
+	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",true);
 
-	LatexPrintMatrix<double>(diff ,"SampleCovariance - Scaled Gf",_tex);
+	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",false);
 
-	LatexPrintMatrix<double>(VC ,"EigenDecomp of SampleCovariance",_tex);
-	
-	klPrincipalComponents<double> pcaGram=Gf;
-	klMatrix<double> VCGram =pcaGram(2);
 
-	LatexPrintMatrix<double>(VCGram ,"EigenDecomp of Gram Matrix",_tex);
+	//pop new data in c
+	c[popsize-1024]=1237;//big shock
 
-	}
+	//bbcsvc broken 011805 revisit - used to work  - nfg
+	//double advanceEma=c.advanceEMA(popsize-1024,128,ema[popsize-1025],interp);
+	//since PREVIOUS interp is used we don't see shock
+	//advance again and we should start to see the effect
+	//advanceEma=c.advanceEMA(popsize-1023,128,advanceEma,interp);
+
+	//  pair<double,double> advanceIEma=c.advanceIEMA(popsize-1024,4,128,iema[popsize-1025],interp);
+	//  double advanceMA=c.advanceMA(popsize-1024,4,128,interp);//bbcrevisit this call has to be consistent in second parameter as previous MA call
+	//  advanceMA=c.advanceMA(popsize-1023,4,128,interp);
+
+	_tex.flush();
+	//_tex.close();
+	delete cmdString;
+}
 
 void unitTestMain()
 {
+	char* syscmd = new char[2048];
+	sprintf(syscmd,"mkdir %s",basefilename);
+	system(syscmd); 
+
 	int heapstatus = _heapchk();
 	time_t time_of_day;
 	struct tm *tm_buf;
@@ -292,6 +242,9 @@ void unitTestMain()
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	
+	makeLatexSection("Iterated Exponential Filtering ",_tex);
+	klutw.runTest(IteratedExponentialFiltering);
+
 	makeLatexSection("Approximate Winger Distribution",_tex);
 	klutw.runTest(VerifyWingerLaw);
 
@@ -369,6 +322,9 @@ void unitTestMain()
 	delete sysInfoFile;
 
 	heapstatus = _heapchk();
+
+	delete syscmd;
+
 }
 
 void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
@@ -380,7 +336,27 @@ void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
 		  E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ and that all moments exists for each of the entries. \
 		  The eigenvector of this random matrix; $ \\lamda_1 \\lteq ... \\lteq \\lamda_n$ depends continuously on $Mn$."<<endl;
 	
+	if (klTestSize==klTestType::VERYLARGE)
+	{
+     n=16384;
+	}
+	
+	if (klTestSize==klTestType::LARGE)
+	{
      n=4096;
+	}
+
+	if (klTestSize==klTestType::MEDIUM)
+	{
+     n=1024;
+	}
+
+	if (klTestSize==klTestType::SMALL)
+	{
+     n=512;
+	}
+
+
 
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	
@@ -526,19 +502,41 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 }
 
-
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
-	//With n = 1024 m= 1024 this test should take about five hours on a 12 core 3Gz 96GB RAM workstation
+	//n is the size of the matrix that will be sampled
+	unsigned int m; //Number or samples to generate 
+	if (klTestSize==klTestType::VERYLARGE)
+	{
+     	n=1024*2;
+		m=1024*4;
+	}
+	
+	if (klTestSize==klTestType::LARGE)
+	{
+		//With n = 1024 m= 1024 this test should take about five hours on a 12 core 3Gz 96GB RAM workstation
+		n=1024;
+		m=1024;
+	}
 
-	n=1024;
+	if (klTestSize==klTestType::MEDIUM)
+	{
+		n=256;
+		m=64;
+	}
+
+	if (klTestSize==klTestType::SMALL)
+	{
+		n=128;
+		m=32;
+	}
 
 	makeLatexSection("Sample from $W_n m$ times and calculate empirical PDF of the first eig",_tex);
 	_tex<<"Here we generate histograms of $\\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) \
 		 distributed of random matrices"<<endl;
 	_tex<<"These should approximate the celebrated Tracy Widom distribution."<<endl;
 	
-	unsigned int m=1024;
+	
 	
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	_tex<<"Sample size $m = "<<m<<"$"<<endl<<endl;
@@ -987,3 +985,145 @@ void LinearRegressionDemo(ofstream &_tex,unsigned int  &n)
 	_tex<<error<<endl<<endl;
 	_tex.flush();
 }
+
+void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
+{
+	//Notes from On the Nystrom Method for Approximating a Gram Matrix for Improved Kernel-Based Learning by 
+	//Petros Drineas DRINEP@CS.RPI.EDU Department of Computer Science Rensselaer Polytechnic Institute
+
+	//Given a collection X of data points, which are often but not necessarily elements of R^m, techniques
+	//such as PCA, SVM, GP and SVD can be used to identify structure from X by computing linear functions.
+	//PCA calculates the subspace spanned by the first k eigenvectors and is used to give a k dimensional
+	//model of the data with minimal residual.  This type of  spectral analysis has a long theoretical history and forms the basis 
+	//of many modern machine learning techniques. In real world applications however there is typically nonlinear structure in the data.
+	//Some domains sucha as Natural Language processing (NLP) data may not be amenable to the definition of meaningful linear operations.
+	//It is for such situations that kernel learning methods were developed.  Kernel methods map data in to high 
+	//dimensional space and use inner products designed to capture positional information.  Kernel methods use 
+	//the inner product distances for classification and regression.Kernel methods exploit the information encoded in the inner product
+	//between all pairs of data items and are successful because there is often an efficient method to
+	//compute inner products between very complex infinite dimensional vectors. Kernel
+	//algorithms provide a way to deal with nonlinear structure by reducing nonlinear algorithms
+	//to algorithms that are linear in some feature space F.  F is nonlinearly related to the original input
+	//space.  
+	//Let x_i \ in \dblr^m X = [  ...x_i ... ] row wise. Here we test the linear structure of a genreative data set against the
+	//Gream kernel. In kernel-based methods, a set of features is chosen that define a space F , where it is hoped relevant structure will be 
+	//revealed, the data X are then mapped to the feature space F using a mapping F : X  -> F , and then classification, regression, or
+	//clustering is performed in F using traditional methods such as linear SVMs, GPs, or PCA. If F
+	//is chosen to be a dot product space and if one defines the kernel matrix, also known as the Gram
+	//matrix, G \in  \dlbr^{n×n} as G_ij = k(x_i, x_j) = (F(xi),F(xj)), then any algorithm whose operations can be
+	//expressed in the input space in terms of dot products can be generalized to an algorithm which
+	//operates in the feature space by substituting a kernel function for the inner product. In practice, this
+	//means presenting the Gram matrix G in place of the input covariance matrix X^\dag X. Relatedly, using
+	//the kernel k instead of a dot product in the input space corresponds to mapping the data set into a
+	//(usually) high-dimensional dot product space F by a (usually nonlinear) mapping \Phi : \dblr^m -> F , and
+	//taking dot products there, i.e., k(x_i, x_j) = (F(x_i),F(x_j)). Note that for the commonly-used Mercer
+	//kernels, G is a symmetric positive semidefinite (SPSD) matrix.
+	//The generality of this framework should be emphasized. For example, there has been much
+	//work recently on dimensionality reduction for nonlinear manifolds in high-dimensional spaces. 
+	//Ie Isomap, LLE, and graph Laplacian eigenmap, and Hessian eigenmaps.  These methods first induce a local neighborhood 
+	//structure on the data and then use this local structure to find a global embedding of the manifold in a lower dimensional space.
+	
+	unsigned int numFeatures=3;
+	unsigned int sampleSize=4096;
+	//Is this PSD? If not then we will not get a good Cholesky factorization? 
+	//One way to find out is to find eigs, and see is \sigma(W) \in [0,\inflty)
+	klMatrix<double> SigmaW=SampleWishart(numFeatures);
+
+	_tex<<"Sample Size = "<<sampleSize<<endl;
+
+	_tex<<"Feature dim = "<<numFeatures<<endl<<endl;
+
+	LatexPrintMatrix<double>(SigmaW,"W",_tex);
+
+	klPrincipalComponents<double> pcaWishart=SigmaW;
+	klMatrix<double> V=pcaWishart(2);
+	klVector<double> wishartEigs=pcaWishart.eigenvalues();
+	LatexPrintVector<double>(wishartEigs,"W eigs",_tex);
+
+	unsigned int i;
+	unsigned int j;
+	klVector<double> meanVector(numFeatures);
+	meanVector=1;
+	
+	klNormalMultiVariate<double> T(meanVector,SigmaW );
+	klSamplePopulation<double> X(sampleSize,numFeatures);
+	for(j=0;j<sampleSize;j++)
+	{
+		klVector<double> tv=T();
+		X.setRow(j,tv);
+	}
+
+	klMatrix<double> SampleCovariance = X.covarianceMatrix();
+
+	LatexPrintMatrix<double>(SampleCovariance,"Sample Covariance",_tex);
+	
+	LatexPrintVector<double>(X.sampleMean(),"Sample Mean",_tex);
+
+	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
+	klMatrix<double> D  = SampleCovariance-SigmaW; 
+	LatexPrintMatrix<double>(D,"SampleCovariance-W",_tex);
+	
+	klPrincipalComponents<double> pcaCovariance=SampleCovariance;
+	klMatrix<double> VC =pcaCovariance(2);
+	klVector<double> covarianceEigs=pcaCovariance.eigenvalues();
+	
+	LatexPrintVector<double>(covarianceEigs,"Sample Covariance Eigs",_tex);
+
+	//How close is the sample covariance to a PSD matrix?
+	//First we'll need a measure of matrix closeness and a way to find the 
+	//nearest PSD matrix in that measure. 
+
+	//The Gram matrix G of a set of vectors x_1, ...,x_i,...x_n in an inner product space is the Hermitian matrix of inner products, whose entries are given by G_{ij} = <x_i,x_j>
+	//An important application is to compute linear independence: a set of vectors is linearly independent if and only if the determinant of the Gram matrix is non-zero.
+
+	klMatrix<double> G(sampleSize,sampleSize);
+	G.makeNanFriendly();
+	for(i=0;i<sampleSize;i++)
+	{
+		klVector<double> x_i= X[i];
+		for(j=0;j<sampleSize;j++)
+		{
+			klVector<double> x_j= X[j];
+			G[i][j]=(x_i).dotBLAS(x_j);
+		}
+	}
+
+	klMatrix<double> centered = X.centeredData();
+	klSamplePopulation<double> normalizedSample(centered);
+	klVector<double> normedMean = normalizedSample.sampleMean();
+
+	LatexPrintVector<double>(normalizedSample.sampleMean(),"Centered Mean",_tex);
+
+	LatexPrintMatrix<double>(normalizedSample.covarianceMatrix(),"Centered Covariance",_tex);
+
+
+	klMatrix<double> Gf(numFeatures,numFeatures);
+	for(i=0;i<numFeatures;i++)
+	{
+		klVector<double> x_i= centered.getColumn(i);
+		for(j=0;j<numFeatures;j++)
+		{
+			klVector<double> x_j= centered.getColumn(j);
+			Gf[i][j]=(x_i).dotBLAS(x_j);
+		}
+	}
+
+	LatexPrintMatrix<double>( Gf,"Gram Matrix Gf Not scaled by sample size",_tex);
+
+	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
+	klMatrix<double> scalesGf = Gf / (double) sampleSize;
+	LatexPrintMatrix<double>(scalesGf ,"Gram Matrix Gf  scaled by sample size",_tex);
+
+	klMatrix<double> diff = SampleCovariance / (double) sampleSize;
+
+	LatexPrintMatrix<double>(diff ,"SampleCovariance - Scaled Gf",_tex);
+
+	LatexPrintMatrix<double>(VC ,"EigenDecomp of SampleCovariance",_tex);
+	
+	klPrincipalComponents<double> pcaGram=Gf;
+	klMatrix<double> VCGram =pcaGram(2);
+
+	LatexPrintMatrix<double>(VCGram ,"EigenDecomp of Gram Matrix",_tex);
+
+	}
+

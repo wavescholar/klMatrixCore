@@ -1,0 +1,5 @@
+Floating Point Error Status : 
+ X86 = |  inexact (precision) 
+ fp err = 
+ SSE status = 
+ 
