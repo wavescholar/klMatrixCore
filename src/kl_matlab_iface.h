@@ -22,13 +22,13 @@ Therefore you are getting this redefinition error now on VS 2010(Dev10).
 Inorder to solve this I would recommend that Matlab should guard the declaration in their 
 file with Microsoft version.
 eg:
-#if (MICROSOFT VERSION is less than DEV10)
-typedef CHAR16_T char16_t;
-# endif
-Thanks, -Sunny Gupta   */
-#ifdef _CHAR16T
-#define CHAR16_T
-#endif
+//#if (MICROSOFT VERSION is less than DEV10)
+//typedef CHAR16_T char16_t;
+//# endif
+//Thanks, -Sunny Gupta   */
+//#ifdef _CHAR16T
+//#define CHAR16_T
+//#endif
 
 #include "mat.h"  //Matlab Iface include file
 #include "engine.h"  //Matlab Iface include file
