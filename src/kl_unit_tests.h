@@ -276,9 +276,7 @@ template<class type> void testKLDescriptiveStatistics(ofstream &FS1,unsigned int
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
 template<class TYPE> void testKLTimeSeries2(ofstream &_tex,unsigned int &n)
-{	
-
-
+{
 	size_t popsize=1024*2;
 	klVector<TYPE> a(popsize);
 	klNormalInverseApproxRV<TYPE> normalinv(0,0.1);

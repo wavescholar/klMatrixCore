@@ -22,10 +22,18 @@ Therefore you are getting this redefinition error now on VS 2010(Dev10).
 Inorder to solve this I would recommend that Matlab should guard the declaration in their 
 file with Microsoft version.
 eg:
+<<<<<<< HEAD
 //#if (MICROSOFT VERSION is less than DEV10)
 //typedef CHAR16_T char16_t;
 //# endif
 //Thanks, -Sunny Gupta   */
+=======
+#if (MICROSOFT VERSION is less than DEV10)
+typedef CHAR16_T char16_t;
+# endif
+Thanks, -Sunny Gupta   */
+//This problem has been fixed in Matlab 2012 we keep it here for reference.
+>>>>>>> 90cc802a337e9ff0133377faed404f9a3375351f
 //#ifdef _CHAR16T
 //#define CHAR16_T
 //#endif
@@ -190,7 +198,8 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	}
 	else
 	{
-		sprintf(evalString,"figure('Visible','off');kp=plot(T)");
+		sprintf(evalString,"figure('Visible','off');plot(T)");
+		
 	}
 	engEvalString(matlabEngine, evalString);
 
@@ -220,7 +229,7 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	}
 	if(!holdOn)
 	{
-		sprintf(evalString,"h=kp; saveas(h,'%s');",filename);
+		sprintf(evalString,"saveas(gcf,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
 	}
 	mxDestroyArray(T);

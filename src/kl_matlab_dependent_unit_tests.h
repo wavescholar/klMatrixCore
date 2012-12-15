@@ -21,9 +21,42 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 	unsigned int i;
 	unsigned int j;
 
-	unsigned int numTrainingPoints=1024;
-	unsigned int numFeatureDimensions=3;
-	unsigned int numClasses=3;
+	unsigned int numTrainingPoints;
+	unsigned int numFeatureDimensions;
+	unsigned int numClasses;
+	
+	if (klTestSize==klTestType::VERYLARGE)
+	{
+		numTrainingPoints=16384;
+		numFeatureDimensions=20;
+		numClasses=10;
+	}
+	
+	if (klTestSize==klTestType::LARGE)
+	{
+		numTrainingPoints=8192;
+		numFeatureDimensions=10;
+		numClasses=5;	}
+
+	if (klTestSize==klTestType::MEDIUM)
+	{
+		numTrainingPoints=2048;
+		numFeatureDimensions=5;
+		numClasses=5;	
+	}
+
+	if (klTestSize==klTestType::SMALL)
+	{ 
+		numTrainingPoints=1024;
+		numFeatureDimensions=3;
+		numClasses=3;
+	}
+
+	//bbcrevisit - git Task - this is the only config that works right now.
+	//This code needs to be generalized.
+	numTrainingPoints=1024;
+	numFeatureDimensions=3;
+	numClasses=3;
 
 	klVector<TYPE> meanVector1(numFeatureDimensions); 
 	meanVector1[0]=1.9;

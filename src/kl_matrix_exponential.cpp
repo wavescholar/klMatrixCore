@@ -20,6 +20,8 @@
 #include "kl_latex_helper_fns.h"
 #include "expokit.h"
 
+static klTestType klTestSize;
+
 #include <complex> 
 using namespace std;
 
@@ -179,7 +181,29 @@ void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n)
 {
 	try{
 
-		unsigned int featureDim = 8;
+	unsigned int featureDim;
+	//n is the size of the matrix that will be sampled
+	unsigned int m; //Number or samples to generate 
+	if (klTestSize==klTestType::VERYLARGE)
+	{
+		featureDim = 1024;
+	}
+	
+	if (klTestSize==klTestType::LARGE)
+	{
+		featureDim = 512;
+	}
+
+	if (klTestSize==klTestType::MEDIUM)
+	{
+		featureDim =64;
+	}
+
+	if (klTestSize==klTestType::SMALL)
+	{ 
+		featureDim = 8;
+	}
+		
 
 		{
 			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
