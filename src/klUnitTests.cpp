@@ -24,11 +24,19 @@
 #include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
 
+//Moden Intel and AMD CPU's provide high speed counter.
+//The Windows API includes function calls to read the value of this counter and also 
+//the frequency of the counter- ie how many times per second it is counting. 
+//The functions in klTimer use this mechanism to perform high resolution timing.
+//Use the interface like Matlab's tic toc
 static class klTimer
 {		
 	static LARGE_INTEGER* freq;
 	static _LARGE_INTEGER* prefCountStart;
 	static _LARGE_INTEGER* prefCountEnd;
+
+	Ipp64u start;
+	Ipp64u end;
 public:
 	klTimer()
 	{
@@ -50,8 +58,7 @@ public:
 	static double toc()
 	{
 		QueryPerformanceCounter(prefCountEnd);
-		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   
-		
+		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   		
 	}
 };
 
@@ -238,6 +245,22 @@ void unitTestMain()
 #ifdef _DEBUG
 	engSetVisible(matlabEngine,true);
 #endif
+	
+	
+	klTestSize= klTestType::VERYLARGE;
+
+	makeLatexSection("Generate Tracey Widom Sample",_tex);
+	klutw.runTest(GenerateTraceyWidomSample);
+
+	klTestSize= klTestType::LARGE;
+
+	
+	makeLatexSection("Approximate Winger Distribution",_tex);
+	klutw.runTest(VerifyWingerLaw);
+
+	
+
+	klTestSize= klTestType::SMALL;
 
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
@@ -245,11 +268,7 @@ void unitTestMain()
 	makeLatexSection("Iterated Exponential Filtering ",_tex);
 	klutw.runTest(IteratedExponentialFiltering);
 
-	makeLatexSection("Approximate Winger Distribution",_tex);
-	klutw.runTest(VerifyWingerLaw);
 
-	makeLatexSection("Generate Tracey Widom Sample",_tex);
-	klutw.runTest(GenerateTraceyWidomSample);
 
 	makeLatexSection("Matrix Exponential ",_tex);
 	klutw.runTest(MatrixExponentialDemo);

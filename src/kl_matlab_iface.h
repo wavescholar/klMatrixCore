@@ -26,14 +26,14 @@ eg:
 //#if (MICROSOFT VERSION is less than DEV10)
 //typedef CHAR16_T char16_t;
 //# endif
+////Thanks, -Sunny Gupta   */
+////=======
+//#if (MICROSOFT VERSION is less than DEV10)
+//typedef CHAR16_T char16_t;
+//# endif
 //Thanks, -Sunny Gupta   */
-=======
-#if (MICROSOFT VERSION is less than DEV10)
-typedef CHAR16_T char16_t;
-# endif
-Thanks, -Sunny Gupta   */
-//This problem has been fixed in Matlab 2012 we keep it here for reference.
->>>>>>> 90cc802a337e9ff0133377faed404f9a3375351f
+////This problem has been fixed in Matlab 2012 we keep it here for reference.
+//>>>>>>> 90cc802a337e9ff0133377faed404f9a3375351f
 //#ifdef _CHAR16T
 //#define CHAR16_T
 //#endif
