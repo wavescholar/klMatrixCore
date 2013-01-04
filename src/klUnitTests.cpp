@@ -24,48 +24,6 @@
 #include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
 
-//Moden Intel and AMD CPU's provide high speed counter.
-//The Windows API includes function calls to read the value of this counter and also 
-//the frequency of the counter- ie how many times per second it is counting. 
-//The functions in klTimer use this mechanism to perform high resolution timing.
-//Use the interface like Matlab's tic toc
-static class klTimer
-{		
-	static LARGE_INTEGER* freq;
-	static _LARGE_INTEGER* prefCountStart;
-	static _LARGE_INTEGER* prefCountEnd;
-
-	Ipp64u start;
-	Ipp64u end;
-public:
-	klTimer()
-	{
-		cout<<"timer::timer";
-	}
-
-	~klTimer()
-	{
-		delete freq;
-		delete prefCountStart;
-		delete prefCountEnd;
-		cout<<"timer::~timer";
-	}
-	static void tic()
-	{
-		QueryPerformanceFrequency(freq);
-		QueryPerformanceCounter(prefCountStart);
-	}
-	static double toc()
-	{
-		QueryPerformanceCounter(prefCountEnd);
-		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   		
-	}
-};
-
-LARGE_INTEGER*  klTimer::freq=new _LARGE_INTEGER;
-_LARGE_INTEGER* klTimer::prefCountStart=new _LARGE_INTEGER;;
-_LARGE_INTEGER* klTimer::prefCountEnd=new _LARGE_INTEGER;
-
 const char* basefilename="D:\\klMAtrixCore\\output\\"; 
 
 static klTestType klTestSize= klTestType::SMALL;
@@ -559,19 +517,19 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 	
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	_tex<<"Sample size $m = "<<m<<"$"<<endl<<endl;
-
+	klTimer dti;
 	{	
 		klVector<complex<double> > lambda_1_Hist(m);
 		unsigned int i;
 		//#pragma omp parallel num_threads(4)
 		for(i=0;i<m;i++)
 		{
-			klTimer::tic();
+			dti.tic();
 			klMatrix<double> A(n,n);
 			A=SampleWishart(n,i);
 			klVector<complex<double> > eigs=A.eigenvalues();
 			lambda_1_Hist[i]=eigs[0];
-			double dt = klTimer::toc();
+			double dt = dti.toc();
 			cerr<<"dt("<<i<<") = "<<dt<<endl;
 		}
 

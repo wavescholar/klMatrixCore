@@ -677,4 +677,62 @@ public:
 	}
 };
 
+
+
+
+
+
+
+
+
+
+//Moden Intel and AMD CPU's provide high speed counter.
+//The Windows API includes function calls to read the value of this counter and also 
+//the frequency of the counter- ie how many times per second it is counting. 
+//The functions in klTimer use this mechanism to perform high resolution timing.
+//Use the interface like Matlab's tic toc
+class klTimer
+{		
+	LARGE_INTEGER* freq;
+	_LARGE_INTEGER* prefCountStart;
+	_LARGE_INTEGER* prefCountEnd;
+
+	unsigned long long start;
+	unsigned long long end;
+
+
+	//Ipp64u start;
+	//Ipp64u end;
+public:
+	klTimer()
+	{
+		freq=new _LARGE_INTEGER;
+		prefCountStart=new _LARGE_INTEGER;;
+		prefCountEnd=new _LARGE_INTEGER;
+	}
+
+	~klTimer()
+	{
+		delete freq;
+		delete prefCountStart;
+		delete prefCountEnd;
+	}
+	void tic()
+	{
+		QueryPerformanceFrequency(freq);
+		QueryPerformanceCounter(prefCountStart);
+	}
+	double toc()
+	{
+		QueryPerformanceCounter(prefCountEnd);
+		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   		
+	}
+};
+
+
+
+
+
+
+
 #endif  //#ifndef __kl_util__
