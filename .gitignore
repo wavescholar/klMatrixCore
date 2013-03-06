@@ -1,15 +1,7 @@
-klMatrixCore.vcxproj
-klMatrixCore.vcxproj.filters
-klMatrixCore.vcxproj.user
-
-
-
 *.obj
 *.eps
 *.pdf
 *.tex
-
-
 
 #################
 ## Eclipse
