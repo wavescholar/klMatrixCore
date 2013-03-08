@@ -46,7 +46,7 @@ void __cdecl klNewHandler( )
 	throw bad_alloc( );
 	return;
 }
-void MatrixOpsCeck(ofstream &_tex,unsigned int  &n);
+void MatrixOpsQuickCheck(ofstream &_tex,unsigned int  &n);
 void MatrixNormDemo(ofstream &_tex,unsigned int  &n);
 void MemoryManagementDemo(ofstream &_tex,unsigned int  &n);
 void SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n);
@@ -203,31 +203,21 @@ void unitTestMain()
 #ifdef _DEBUG
 	engSetVisible(matlabEngine,true);
 #endif
-	
-	
-	klTestSize= klTestType::VERYLARGE;
+		
+	klTestSize= klTestType::MEDIUM;
 
 	makeLatexSection("Generate Tracey Widom Sample",_tex);
 	klutw.runTest(GenerateTraceyWidomSample);
 
-	klTestSize= klTestType::LARGE;
-
-	
 	makeLatexSection("Approximate Winger Distribution",_tex);
 	klutw.runTest(VerifyWingerLaw);
-
 	
-
-	klTestSize= klTestType::SMALL;
-
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	
 	makeLatexSection("Iterated Exponential Filtering ",_tex);
 	klutw.runTest(IteratedExponentialFiltering);
-
-
-
+	
 	makeLatexSection("Matrix Exponential ",_tex);
 	klutw.runTest(MatrixExponentialDemo);
 	
@@ -268,8 +258,8 @@ void unitTestMain()
 	klutw.runTest(testKLTimeSeries2<double>);
 
 	makeLatexSection("Matrix",_tex);
-	klutw.runTest(MatrixOpsCeck<double>);
-	klutw.runTest(MatrixOpsCeck<float>);
+	klutw.runTest(MatrixOpsQuickCheck<double>);
+	klutw.runTest(MatrixOpsQuickCheck<float>);
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	////HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034

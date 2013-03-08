@@ -3,7 +3,7 @@
  * Bruce B Campbell 11 30 2012  *
  ********************************/
 
-extern void unitTestMain();
+void unitTestMain();
 
 int main(int argc, char* argv[])
 {

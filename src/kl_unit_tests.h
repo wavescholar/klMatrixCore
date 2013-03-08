@@ -7,7 +7,7 @@
 
 #include "kl_matrix.h"
 
-template<class TYPE> void MatrixOpsCeck(ofstream &_tex,unsigned int& n)
+template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,unsigned int& n)
 {
 	/*ios_base::openmode wMode = ios_base::app;
 	ofstream _tex(fileName, wMode);	*/
