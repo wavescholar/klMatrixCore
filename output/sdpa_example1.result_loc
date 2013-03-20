@@ -1,7 +1,8 @@
 "Example 1: mDim = 3, nBLOCK = 1, {2}"
 data      is d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.dat-s
 parameter is d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/param.sdpa
-initial   is 
+initial   is 0) & (+0.01956,+0.00000) & (+0.01900,+0.00000) & (+0.01852,+0.00000) & (+0.01798,+0.00000) & (+0.01659,+0.00000) & (+0.01501,+0.00000) & (+0.01300,+0.00000) & (+0.01238,+0.00000) & (+0.01116,+0.00000) & (+0.00896,+0.00000) & (+0.00818,+0.00000) & (+0.00586,+0.00000) & (+0.00406,+0.00000) & (+0.00332,+0.00000) & (+0.00078,+0.00000) & (+0.00227,+0.00000) & (+0.00653,+0.00000) & (+0.00982,+0.00000) & (+0.00216,+0.00000) \\
+®
 out       is D:/klMAtrixCore/output/sdpa_example1.result_loc
    mu       thetaP   thetaD   objP       objD       alphaP   alphaD   beta 
  0 1.0e+004 1.0e+000 1.0e+000 -0.00e+000 +1.20e+003 1.0e+000 9.1e-001 2.00e-001
@@ -42,40 +43,40 @@ gammaStar    = 9.000e-001
 epsilonDash  = 1.000e-007
 
                          Time(sec)  Ratio(% : MainLoop) 
- Predictor time  =       0.000000,  0.000000
- Corrector time  =       0.000000,  0.000000
- Make bMat time  =       0.000000,  0.000000
- Make bDia time  =       0.000000,  0.000000
- Make bF1  time  =       0.000000,  0.000000
- Make bF2  time  =       0.000000,  0.000000
- Make bF3  time  =       0.000000,  0.000000
- Make bPRE time  =       0.000000,  0.000000
- Make rMat time  =       0.000000,  0.000000
- Make gVec Mul   =       0.000000,  0.000000
- Make gVec time  =       0.000000,  0.000000
- Cholesky bMat   =       0.000000,  0.000000
- Ste Pre time    =       0.000000,  0.000000
- Ste Cor time    =       0.001000,  100.000000
- solve           =       0.000000,  0.000000
- sumDz           =       0.000000,  0.000000
- makedX          =       0.000000,  0.000000
- symmetriseDx    =       0.000000,  0.000000
- makedXdZ        =       0.000000,  0.000000
- xMatTime        =       0.000000,  0.000000
- zMatTime        =       0.000000,  0.000000
- invzMatTime     =       0.000000,  0.000000
- xMatzMatTime    =       0.000000,  0.000000
- EigxMatTime     =       0.001000,  100.000000
- EigzMatTime     =       0.000000,  0.000000
- EigxMatzMatTime =       0.000000,  0.000000
- updateRes       =       0.000000,  0.000000
- EigTime         =       0.001000,  100.000000
- sub_total_bMat  =       0.001000,  100.000000
- Main Loop       =       0.001000,  100.000000
- File Check      =       0.000000,  0.000000
- File Change     =       0.000000,  0.000000
- File Read       =       0.000000,  0.000000
- Total           =       0.000000,  0.000000
+ Predictor time  =       0.000000,  -1.#IND00
+ Corrector time  =       0.000000,  -1.#IND00
+ Make bMat time  =       0.000000,  -1.#IND00
+ Make bDia time  =       0.000000,  -1.#IND00
+ Make bF1  time  =       0.000000,  -1.#IND00
+ Make bF2  time  =       0.000000,  -1.#IND00
+ Make bF3  time  =       0.000000,  -1.#IND00
+ Make bPRE time  =       0.000000,  -1.#IND00
+ Make rMat time  =       0.000000,  -1.#IND00
+ Make gVec Mul   =       0.000000,  -1.#IND00
+ Make gVec time  =       0.000000,  -1.#IND00
+ Cholesky bMat   =       0.000000,  -1.#IND00
+ Ste Pre time    =       0.000000,  -1.#IND00
+ Ste Cor time    =       0.000000,  -1.#IND00
+ solve           =       0.000000,  -1.#IND00
+ sumDz           =       0.000000,  -1.#IND00
+ makedX          =       0.000000,  -1.#IND00
+ symmetriseDx    =       0.000000,  -1.#IND00
+ makedXdZ        =       0.000000,  -1.#IND00
+ xMatTime        =       0.000000,  -1.#IND00
+ zMatTime        =       0.000000,  -1.#IND00
+ invzMatTime     =       0.000000,  -1.#IND00
+ xMatzMatTime    =       0.000000,  -1.#IND00
+ EigxMatTime     =       0.000000,  -1.#IND00
+ EigzMatTime     =       0.000000,  -1.#IND00
+ EigxMatzMatTime =       0.000000,  -1.#IND00
+ updateRes       =       0.000000,  -1.#IND00
+ EigTime         =       0.000000,  -1.#IND00
+ sub_total_bMat  =       0.000000,  -1.#IND00
+ Main Loop       =       0.000000,  -1.#IND00
+ File Check      =       0.000000,  -1.#IND00
+ File Change     =       0.000000,  -1.#IND00
+ File Read       =       0.000000,  -1.#IND00
+ Total           =       0.000000,  -1.#IND00
 
 xVec = 
 {-1.100e+000,-2.738e+000,-5.500e-001}

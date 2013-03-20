@@ -204,7 +204,7 @@ void unitTestMain()
 	engSetVisible(matlabEngine,true);
 #endif
 		
-	klTestSize= klTestType::MEDIUM;
+	klTestSize= klTestType::LARGE;
 
 	makeLatexSection("Generate Tracey Widom Sample",_tex);
 	klutw.runTest(GenerateTraceyWidomSample);
@@ -488,8 +488,8 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 
 	if (klTestSize==klTestType::MEDIUM)
 	{
-		n=256;
-		m=64;
+		n=512;
+		m=512;
 	}
 
 	if (klTestSize==klTestType::SMALL)
@@ -502,9 +502,7 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 	_tex<<"Here we generate histograms of $\\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) \
 		 distributed of random matrices"<<endl;
 	_tex<<"These should approximate the celebrated Tracy Widom distribution."<<endl;
-	
-	
-	
+
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	_tex<<"Sample size $m = "<<m<<"$"<<endl<<endl;
 	klTimer dti;
@@ -534,9 +532,17 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 			L_re[j]=lambda_1_Hist[j].real();
 			L_im[j]=lambda_1_Hist[j].imag();
 		}
+		
+		ofstream fileostreamobj("TraceyWidom_re.txt" );
+		fileostreamobj<<L_re<<endl;
+		fileostreamobj.close();
 
-		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_TraceyWidom","Histogram of Re(\\lambda_1) A \\in W(1024)");
-		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_TraceyWidom","Histogram of Im(\\lambda_1) A \\in W(1024) ");
+		fileostreamobj.open("TraceyWidom_im.txt" );
+		fileostreamobj<<L_im<<endl;
+		fileostreamobj.close();
+		 
+		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_TraceyWidom","Histogram of Re(\\lambda_1) A \\in W");
+		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_TraceyWidom","Histogram of Im(\\lambda_1) A \\in W ");
 		_tex.flush();
 	}
 
@@ -563,6 +569,14 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 			L_re[j]=lambda_1_Hist[j].real();
 			L_im[j]=lambda_1_Hist[j].imag();
 		}
+		
+		ofstream fileostreamobj("Winger_re.txt" );
+		fileostreamobj<<L_re<<endl;
+		fileostreamobj.close();
+
+		fileostreamobj.open("Winger_im.txt" );
+		fileostreamobj<<L_im<<endl;
+		fileostreamobj.close();
 
 		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_Winger","Histogram of Re(\\lambda_1) A \\in GOE(1024)");
 		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_Winger","Histogram of Im(\\lambda_1) A \\in GOE(1024) ");

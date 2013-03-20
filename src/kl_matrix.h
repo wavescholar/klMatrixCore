@@ -1422,10 +1422,6 @@ template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 }
 
 
-
-
-
-
 //klMatrix stream io.  Operator <<  override for klMatrix class
 template <class TYPE> static ostream& operator<<(ostream& str, const klMatrix<TYPE>& v) {
 	int i = v.getRows();
