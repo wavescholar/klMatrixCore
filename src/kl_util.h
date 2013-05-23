@@ -16,7 +16,7 @@
 #define SetBit(var, bit) (var |= (1 << bit)) 
 #define FlipBit(var, bit) (var ^= (1 << bit)) 
 
-typedef enum klTestType{  SMALL=0, MEDIUM=1, LARGE=2,VERYLARGE=3};
+typedef enum klTestType{  SMALL=0, MEDIUM=1, LARGE=2,VERYLARGE=3,GROW=4};
 
 //Compiler intrinsics for atomic increment and decrement of refrence count
 #include <intrin.h>

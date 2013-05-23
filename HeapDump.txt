@@ -6,3 +6,13 @@ Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_C
 Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
 Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
 Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+===========================================================================
+===========================================================================
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+===========================================================================
+===========================================================================
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 
+Not an allocated block.  May have been freed already see about _CrtSetDbgFlag(_CRTDBG_DELAY_FREE_MEM_DF) 

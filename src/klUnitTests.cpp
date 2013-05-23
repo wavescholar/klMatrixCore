@@ -163,7 +163,18 @@ void unitTestMain()
 	char* sysInfoFile = new char[1024];
 	heapstatus = _heapchk();
 	
-	sprintf(testRunDateTime,"%d_%d_%d_%d",tm_buf->tm_mon,tm_buf->tm_mday,tm_buf->tm_hour,tm_buf->tm_min);
+	//   tm_sec;     /* seconds after the minute - [0,59] */
+	//   tm_min;     /* minutes after the hour - [0,59] */
+	//   tm_hour;    /* hours since midnight - [0,23] */
+	//   tm_mday;    /* day of the month - [1,31] */
+	//   tm_mon;     /* months since January - [0,11] */
+	//   tm_year;    /* years since 1900 */
+	//   tm_wday;    /* days since Sunday - [0,6] */
+	//   tm_yday;    /* days since January 1 - [0,365] */
+	//   tm_isdst;   /* daylight savings time flag */
+	//tm fields are zero based.
+	sprintf(testRunDateTime,"%d_%d_%d_%d_%d",tm_buf->tm_mon+1,tm_buf->tm_mday+1,tm_buf->tm_hour+1,tm_buf->tm_min+1,tm_buf->tm_sec+1);
+	
 	sprintf(regressionFile,"%skl_Regression%s.tex",basefilename,testRunDateTime);
 	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 	sprintf(sysInfoFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
@@ -203,7 +214,15 @@ void unitTestMain()
 #ifdef _DEBUG
 	engSetVisible(matlabEngine,true);
 #endif
+
+	klmtm.insert(thisThread, matlabEngine);
 		
+	
+	klTestSize= klTestType::GROW;
+	unsigned int dimension;
+	for(dimension =43264;dimension<131072;dimension=dimension+1024)
+		IterativeKrylovCheck(_tex,dimension);
+
 	klTestSize= klTestType::LARGE;
 
 	makeLatexSection("Generate Tracey Widom Sample",_tex);
@@ -299,7 +318,7 @@ void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
 	makeLatexSection("Verfy Winger Law.",_tex);
 
 	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such \
-		  that $X_{i,j} = X_{j,i}$, and X_{i,j} are iid $\\forall i < j,$ and $Xjj$ are iid $\\forall j \\st  \
+		  that $X_{i,j} = X_{j,i}$, and $X_{i,j}$ are iid $\\forall i < j,$ and $Xjj$ are iid $\\forall j \\st  \
 		  E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ and that all moments exists for each of the entries. \
 		  The eigenvector of this random matrix; $ \\lamda_1 \\lteq ... \\lteq \\lamda_n$ depends continuously on $Mn$."<<endl;
 	
@@ -425,17 +444,16 @@ void TestMerssenePeriodIssue()
 	exit(42);
 }
 
+//BBCTODO The output needs to be put in the Latex output.  Convergence data is in the cout stream redirect file.
 void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 {
-	n=128;
-
+	if (klTestSize!=klTestType::GROW)
+	{
+		n=128;
+	}
+	
 	_tex<<"Running Arnoldi Krylov algorithm on $GOE$ matrix and comparing to Intel MKL."<<endl;
 
-	klMatrix<double> A_GOE = SampleGOE(n);
-	
-	A_GOE /=n;
-
-	unsigned int numEigenvalues= 16;
 
 	klArpackFunctor klaf;
 
@@ -446,6 +464,18 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 	prefCountStart=new _LARGE_INTEGER;
 	prefCountEnd=new _LARGE_INTEGER;
 	QueryPerformanceFrequency(freq);
+
+	QueryPerformanceCounter(prefCountStart);
+	klMatrix<double> A_GOE = SampleGOE(n);
+	QueryPerformanceCounter(prefCountEnd);
+
+	cerr<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	_tex<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	
+	A_GOE /=n;
+
+	unsigned int numEigenvalues= 16;
+	
 	QueryPerformanceCounter(prefCountStart);
 
 	klVector<complex<double> > eigsAP = klaf.run( A_GOE,numEigenvalues);
@@ -453,20 +483,39 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 	QueryPerformanceCounter(prefCountEnd);
 	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-	QueryPerformanceCounter(prefCountStart);
+	cerr<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+	_tex<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+	//QueryPerformanceCounter(prefCountStart);
 
-	klVector<complex<double> > eigs = A_GOE.eigenvalues();
+	//klVector<complex<double> > eigs = A_GOE.eigenvalues();
 
-	QueryPerformanceCounter(prefCountEnd);
-	cout<<"TicToc MKL  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	//QueryPerformanceCounter(prefCountEnd);
+	//cout<<"TicToc MKL  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-	//LatexPrintMatrix(A_GOE, "GOE(16)" ,_tex);
+	////LatexPrintMatrix(A_GOE, "GOE(16)" ,_tex);
 
-	LatexPrintVector(eigsAP, "Eigenvalues via Arpack" , _tex);
+	//if (klTestSize!=klTestType::GROW)
+	//{
 
-	LatexPrintVector(eigs, "Eigenvalues via Intel MKL DGEES" , _tex);
+	//	LatexPrintVector(eigsAP, "Eigenvalues via Arpack" , _tex);
 
-	_tex.flush();
+	//	LatexPrintVector(eigs, "Eigenvalues via Intel MKL DGEES" , _tex);
+
+	//	_tex.flush();
+	//}
+	//klVector<double> eigDiffs(numEigenvalues);
+
+	//unsigned int i =0;
+	//for(i =0;i<numEigenvalues;i++)
+	//{
+	//	complex<double> dt =eigsAP[i]-eigs[i];
+	//	double eps = abs<double>(dt);
+	//	eigDiffs[i]=eps;
+	//}
+
+	//double ell2dist = std::sqrt(eigDiffs.dotBLAS(eigDiffs));
+
+	//cerr<<"Iterative Krylov dim="<<n<<" ell2 eig diff="<<ell2dist<<endl;
 }
 
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)

@@ -1,0 +1,225 @@
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 43264
+Number of 'requested' eigenvalues  : 16
+Number of 'converged' eigenvalues  : 16
+Number of Arnoldi vectors generated: 33
+Number of iterations taken         : 157
+
+Eigenvalues:
+  lambda[1]: 0.00480626 + 0 I
+  lambda[2]: 0.00480314 + 0 I
+  lambda[3]: 0.004799 + 0 I
+  lambda[4]: 0.00479819 + 0 I
+  lambda[5]: 0.0047957 + 0 I
+  lambda[6]: 0.00479342 + 0 I
+  lambda[7]: 0.00479165 + 0 I
+  lambda[8]: 0.00478844 + 0 I
+  lambda[9]: 0.00478656 + 0 I
+  lambda[10]: 0.00478523 + 0 I
+  lambda[11]: 0.00478351 + 0 I
+  lambda[12]: 0.00478178 + 0 I
+  lambda[13]: 0.00469555 + 0 I
+  lambda[14]: 0.00424574 + 0 I
+  lambda[15]: 0.00340744 + 0 I
+  lambda[16]: 0.00137411 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 1.11754e-014
+||A*x(2) - lambda(2)*x(2)||: 1.37813e-014
+||A*x(3) - lambda(3)*x(3)||: 1.37877e-014
+||A*x(4) - lambda(4)*x(4)||: 1.38355e-014
+||A*x(5) - lambda(5)*x(5)||: 1.11465e-014
+||A*x(6) - lambda(6)*x(6)||: 1.43527e-014
+||A*x(7) - lambda(7)*x(7)||: 1.40564e-014
+||A*x(8) - lambda(8)*x(8)||: 1.2802e-014
+||A*x(9) - lambda(9)*x(9)||: 9.51349e-015
+||A*x(10) - lambda(10)*x(10)||: 3.58084e-014
+||A*x(11) - lambda(11)*x(11)||: 3.40749e-011
+||A*x(12) - lambda(12)*x(12)||: 1.37488e-008
+||A*x(13) - lambda(13)*x(13)||: 0.0730867
+||A*x(14) - lambda(14)*x(14)||: 0.198299
+||A*x(15) - lambda(15)*x(15)||: 0.24572
+||A*x(16) - lambda(16)*x(16)||: 0.894001
+
+TicToc ARPACK  =  1069.02
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 44288
+Number of 'requested' eigenvalues  : 16
+Number of 'converged' eigenvalues  : 16
+Number of Arnoldi vectors generated: 33
+Number of iterations taken         : 177
+
+Eigenvalues:
+  lambda[1]: 0.00474951 + 0 I
+  lambda[2]: -0.00474897 + 0 I
+  lambda[3]: -0.00474701 + 0 I
+  lambda[4]: -0.00474095 + 0 I
+  lambda[5]: -0.00473865 + 0 I
+  lambda[6]: -0.00473735 + 0 I
+  lambda[7]: -0.00473529 + 0 I
+  lambda[8]: -0.00473297 + 0 I
+  lambda[9]: -0.00473167 + 0 I
+  lambda[10]: -0.00473104 + 0 I
+  lambda[11]: -0.00472999 + 0 I
+  lambda[12]: -0.00472733 + 0 I
+  lambda[13]: 0.00474383 + 0 I
+  lambda[14]: 0.00474186 + 0 I
+  lambda[15]: 0.00474047 + 0 I
+  lambda[16]: 0.00474011 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 1.15463e-014
+||A*x(2) - lambda(2)*x(2)||: 1.17318e-014
+||A*x(3) - lambda(3)*x(3)||: 1.54529e-014
+||A*x(4) - lambda(4)*x(4)||: 1.62864e-014
+||A*x(5) - lambda(5)*x(5)||: 1.80037e-014
+||A*x(6) - lambda(6)*x(6)||: 1.32366e-014
+||A*x(7) - lambda(7)*x(7)||: 1.82279e-014
+||A*x(8) - lambda(8)*x(8)||: 1.04918e-014
+||A*x(9) - lambda(9)*x(9)||: 1.35075e-014
+||A*x(10) - lambda(10)*x(10)||: 1.27601e-014
+||A*x(11) - lambda(11)*x(11)||: 5.52688e-014
+||A*x(12) - lambda(12)*x(12)||: 7.32417e-011
+||A*x(13) - lambda(13)*x(13)||: 8.62796e-015
+||A*x(14) - lambda(14)*x(14)||: 1.25388e-014
+||A*x(15) - lambda(15)*x(15)||: 1.25635e-014
+||A*x(16) - lambda(16)*x(16)||: 1.42931e-014
+
+TicToc ARPACK  =  1226.33
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 45312
+Number of 'requested' eigenvalues  : 16
+Number of 'converged' eigenvalues  : 16
+Number of Arnoldi vectors generated: 33
+Number of iterations taken         : 190
+
+Eigenvalues:
+  lambda[1]: 0.00469455 + 0 I
+  lambda[2]: 0.00469122 + 0 I
+  lambda[3]: 0.00468933 + 0 I
+  lambda[4]: 0.00468715 + 0 I
+  lambda[5]: 0.00468285 + 0 I
+  lambda[6]: 0.00468088 + 0 I
+  lambda[7]: 0.00468027 + 0 I
+  lambda[8]: 0.00467776 + 0 I
+  lambda[9]: 0.00467601 + 0 I
+  lambda[10]: 0.0046753 + 0 I
+  lambda[11]: 0.00467426 + 0 I
+  lambda[12]: 0.00467365 + 0 I
+  lambda[13]: -0.00469482 + 0 I
+  lambda[14]: -0.00469154 + 0 I
+  lambda[15]: -0.00468601 + 0 I
+  lambda[16]: -0.00468192 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 1.0723e-014
+||A*x(2) - lambda(2)*x(2)||: 1.28644e-014
+||A*x(3) - lambda(3)*x(3)||: 1.25613e-014
+||A*x(4) - lambda(4)*x(4)||: 1.80483e-014
+||A*x(5) - lambda(5)*x(5)||: 2.20947e-014
+||A*x(6) - lambda(6)*x(6)||: 1.11438e-014
+||A*x(7) - lambda(7)*x(7)||: 1.37032e-014
+||A*x(8) - lambda(8)*x(8)||: 1.01047e-014
+||A*x(9) - lambda(9)*x(9)||: 9.00513e-015
+||A*x(10) - lambda(10)*x(10)||: 8.56191e-015
+||A*x(11) - lambda(11)*x(11)||: 2.24324e-014
+||A*x(12) - lambda(12)*x(12)||: 2.01977e-014
+||A*x(13) - lambda(13)*x(13)||: 9.083e-015
+||A*x(14) - lambda(14)*x(14)||: 9.98902e-015
+||A*x(15) - lambda(15)*x(15)||: 9.50407e-015
+||A*x(16) - lambda(16)*x(16)||: 1.10286e-014
+
+TicToc ARPACK  =  1331.6
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 46336
+Number of 'requested' eigenvalues  : 16
+Number of 'converged' eigenvalues  : 16
+Number of Arnoldi vectors generated: 33
+Number of iterations taken         : 189
+
+Eigenvalues:
+  lambda[1]: 0.00464754 + 0 I
+  lambda[2]: 0.00464132 + 0 I
+  lambda[3]: 0.00463789 + 0 I
+  lambda[4]: 0.00463557 + 0 I
+  lambda[5]: 0.00463339 + 0 I
+  lambda[6]: 0.00463214 + 0 I
+  lambda[7]: 0.00463065 + 0 I
+  lambda[8]: 0.00462827 + 0 I
+  lambda[9]: 0.00462684 + 0 I
+  lambda[10]: 0.00462438 + 0 I
+  lambda[11]: 0.00462224 + 0 I
+  lambda[12]: 0.00462066 + 0 I
+  lambda[13]: 0.00461804 + 0 I
+  lambda[14]: 0.00458209 + 0 I
+  lambda[15]: 0.00389403 + 0 I
+  lambda[16]: 0.00158302 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 1.35343e-014
+||A*x(2) - lambda(2)*x(2)||: 9.35121e-015
+||A*x(3) - lambda(3)*x(3)||: 1.33032e-014
+||A*x(4) - lambda(4)*x(4)||: 1.53578e-014
+||A*x(5) - lambda(5)*x(5)||: 1.46163e-014
+||A*x(6) - lambda(6)*x(6)||: 1.24633e-014
+||A*x(7) - lambda(7)*x(7)||: 1.23643e-014
+||A*x(8) - lambda(8)*x(8)||: 1.00529e-014
+||A*x(9) - lambda(9)*x(9)||: 1.10369e-014
+||A*x(10) - lambda(10)*x(10)||: 8.33238e-015
+||A*x(11) - lambda(11)*x(11)||: 5.34149e-013
+||A*x(12) - lambda(12)*x(12)||: 3.65633e-007
+||A*x(13) - lambda(13)*x(13)||: 2.19091e-005
+||A*x(14) - lambda(14)*x(14)||: 0.0409726
+||A*x(15) - lambda(15)*x(15)||: 0.194974
+||A*x(16) - lambda(16)*x(16)||: 0.751509
+
+TicToc ARPACK  =  1376.31
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 47360
+Number of 'requested' eigenvalues  : 16
+Number of 'converged' eigenvalues  : 16
+Number of Arnoldi vectors generated: 33
+Number of iterations taken         : 141
+
+Eigenvalues:
+  lambda[1]: -0.00458966 + 0 I
+  lambda[2]: -0.00458765 + 0 I
+  lambda[3]: -0.00458522 + 0 I
+  lambda[4]: -0.00458102 + 0 I
+  lambda[5]: -0.00458028 + 0 I
+  lambda[6]: -0.0045776 + 0 I
+  lambda[7]: -0.0045767 + 0 I
+  lambda[8]: -0.00457616 + 0 I
+  lambda[9]: -0.00457412 + 0 I
+  lambda[10]: -0.0045732 + 0 I
+  lambda[11]: -0.00457124 + 0 I
+  lambda[12]: -0.00457015 + 0 I
+  lambda[13]: -0.00449259 + 0 I
+  lambda[14]: -0.0041388 + 0 I
+  lambda[15]: -0.00321086 + 0 I
+  lambda[16]: -0.00158173 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 9.05581e-015
+||A*x(2) - lambda(2)*x(2)||: 1.29326e-014
+||A*x(3) - lambda(3)*x(3)||: 1.31578e-014
+||A*x(4) - lambda(4)*x(4)||: 1.02313e-014
+||A*x(5) - lambda(5)*x(5)||: 1.5601e-014
+||A*x(6) - lambda(6)*x(6)||: 9.99385e-015
+||A*x(7) - lambda(7)*x(7)||: 1.24688e-014
+||A*x(8) - lambda(8)*x(8)||: 1.04914e-014
+||A*x(9) - lambda(9)*x(9)||: 1.81785e-014
+||A*x(10) - lambda(10)*x(10)||: 1.8281e-012
+||A*x(11) - lambda(11)*x(11)||: 3.28149e-010
+||A*x(12) - lambda(12)*x(12)||: 3.9635e-009
+||A*x(13) - lambda(13)*x(13)||: 0.0848157
+||A*x(14) - lambda(14)*x(14)||: 0.175188
+||A*x(15) - lambda(15)*x(15)||: 0.251286
+||A*x(16) - lambda(16)*x(16)||: 0.731768
+
+TicToc ARPACK  =  1148.56
