@@ -48,7 +48,7 @@ public:
 	void SetGlobalEngine (Engine* theEngine)
 	{	klGuard<klMutex> lg(lock);//bbcrevisit -we need to justify/ verify nothing bad [ie race deadlock ]can happen
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
-	cout<<"Setting Global Matlabl Engine Frtom TID: "<<thisThread<<endl;
+	cout<<"Setting Global Matlabl Engine From TID: "<<thisThread<<endl;
 	theStaticEngine=theEngine;
 	}
 
