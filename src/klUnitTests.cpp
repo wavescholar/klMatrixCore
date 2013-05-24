@@ -60,6 +60,8 @@ void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n);
 void MutithreadedWorkflowDemo(void);
 void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
+void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n);
+
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
 void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n);
