@@ -87,6 +87,7 @@ extern void callAprpack( int n,double* matrix, unsigned int  numEigs,complex<dou
 
 				double* ev = Prob.RawEigenvector(i);
 				
+				//Put the eigenvectors in output variable.
 				complex<double>* evP = *(eigenVectors+i);
 
 				for(int j=0;j<n;j++)

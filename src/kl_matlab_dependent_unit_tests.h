@@ -1,7 +1,7 @@
- /*******************************
- * WSCMP [2003] - [2012] WSCMP  *  
- * Bruce B Campbell 11 30 2012  *
- ********************************/
+/*******************************
+* WSCMP [2003] - [2012] WSCMP  *  
+* Bruce B Campbell 11 30 2012  *
+********************************/
 #ifndef __kl_matlab_dependent_unit_tests__
 #define __kl_matlab_dependent_unit_tests__
 #include "kl_multiclass_svm.h"
@@ -24,14 +24,14 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 	unsigned int numTrainingPoints;
 	unsigned int numFeatureDimensions;
 	unsigned int numClasses;
-	
+
 	if (klTestSize==klTestType::VERYLARGE)
 	{
 		numTrainingPoints=16384;
 		numFeatureDimensions=20;
 		numClasses=10;
 	}
-	
+
 	if (klTestSize==klTestType::LARGE)
 	{
 		numTrainingPoints=8192;
@@ -96,7 +96,7 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 	LatexPrintMatrix( covarianceMatrix1,"\\rho_1",_tex);
 	LatexPrintMatrix( covarianceMatrix2,"\\rho_2",_tex);
 	LatexPrintMatrix( covarianceMatrix3,"\\rho_3",_tex);
-	
+
 	_tex<<"Verify $L_1$ condition number of covariance. The diagonal entries of the matrix have the form $(0.5 + U(0,1) )*dim(Dom(Cov))$"<<endl; 
 	_tex<<"The lower-diagonal entries take the form $U(0,1) - 0.5$. "<<endl;
 	_tex<<"The $L_1$ condition numbers are :"<<endl;
@@ -111,12 +111,12 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 	covarianceMatrix2/=covarianceMatrix2.getColumns()*2;
 	covarianceMatrix3/=covarianceMatrix3.getColumns()*2;
 
-    LatexInsertHeatMap(covarianceMatrix1,_tex, basefilename,"rv1_corr","Class 1 covariance");
+	LatexInsertHeatMap(covarianceMatrix1,_tex, basefilename,"rv1_corr","Class 1 covariance");
 
 	LatexInsertHeatMap(covarianceMatrix2,_tex, basefilename,"rv2_corr","Class 2 covariance");
 
 	LatexInsertHeatMap(covarianceMatrix3,_tex, basefilename,"rv3_corr","Class 3 covariance");
-	
+
 
 	klVector<unsigned int > seed1(numFeatureDimensions);
 	seed1[0]=12;seed1[1]=2344;seed1[2]=21341;//bbcrevisit - generalize
@@ -255,9 +255,14 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 	klMatrix<double> SVMResult;
 	SVMResult=testPoints();
 
-	ofstream _fileostream("SVMResult_raw_pval.txt" );
-	_fileostream<<SVMResult<<endl;
-	_fileostream.close();
+	{
+		char* fileNameCD= new char[1024];
+		sprintf(fileNameCD,"%sSVMResult_raw_pval.txt",basefilename);
+		ofstream _fileostream(fileNameCD );
+		_fileostream<<SVMResult<<endl;
+		_fileostream.close();
+		delete fileNameCD;
+	}
 
 	int classResult=-1;
 	klVector<double > classDiffs(testClasses.getRows());
@@ -281,16 +286,19 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 			percentDiff+=1;
 
 	}
-	
+
 	LatexInsert1DPlot( classDiffs, _tex, basefilename,"classDiffs","Class Differences for Test Points");
 
 	percentDiff/=classDiffs.getRows();
 	_tex<<"The error rate for this run is "<<percentDiff<<"\\newline"<<endl;
 
 	{
-		ofstream _fileostream("klSVMclassDiffs.txt" );
+		char* fileNameCD= new char[1024];
+		sprintf(fileNameCD,"%slSVMclassDiffs.txt",basefilename);
+		ofstream _fileostream(fileNameCD);
 		_fileostream<<classDiffs<<endl;
 		_fileostream.close();
+		delete fileNameCD;
 	}
 
 	flushall();
@@ -314,8 +322,8 @@ template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream
 		klMatrix<TYPE> cv(3,3);
 
 		cv[0][0]= 1, cv[0][1]=0, cv[0][2]=0,
-		cv[1][0]= 0, cv[1][1]=1, cv[1][2]=0,
-		cv[2][0]= 0, cv[2][1]=0, cv[2][2]=1;
+			cv[1][0]= 0, cv[1][1]=1, cv[1][2]=0,
+			cv[2][0]= 0, cv[2][1]=0, cv[2][2]=1;
 
 		klNormalMultiVariate<TYPE> T(meanVector,cv,false,seed1 );
 		klSamplePopulation<TYPE> TS(65536,3);
@@ -347,12 +355,12 @@ template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream
 		klVector<unsigned int > seed1(3);
 
 		seed1[0]=12;seed1[1]=2344;seed1[2]=21341;
-		
+
 		klMatrix<TYPE> cv(3,3);
 
 		cv[0][0]= 1, cv[0][1]=0, cv[0][2]=0,
-		cv[1][0]= 0, cv[1][1]=1, cv[1][2]=0,
-		cv[2][0]= 0, cv[2][1]=0, cv[2][2]=1;
+			cv[1][0]= 0, cv[1][1]=1, cv[1][2]=0,
+			cv[2][0]= 0, cv[2][1]=0, cv[2][2]=1;
 
 		double spd[3][3]=
 		{ 
@@ -601,7 +609,7 @@ template<class TYPE> void klRVUnitTestHarnessLaTexMatlab(klRV<TYPE> ** RV,unsign
 
 		klMatlabEngineThreadMap klmtm;
 		Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-		
+
 		if(i%3==0)
 			_tex<<"\\newpage"<<endl;
 		if(s.desc.size()!=0)

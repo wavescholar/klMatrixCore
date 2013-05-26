@@ -21,9 +21,9 @@ using namespace std;
 template<class TYPE> class klMatrix: public klRefCount<klMutex>
 {
 public:
-	klMatrix(TYPE* mem,unsigned int row,unsigned int col,bool own=0) 
+	klMatrix(TYPE* mem,__int64 row,__int64 col,bool own=0) 
 	{
-		unsigned int i;
+		__int64 i;
 		_vectors=new klVector<TYPE>[row];
 		for(i=0;i<row;i++)
 			(_vectors+i)->setup(col,0,mem+i*col);
@@ -41,11 +41,11 @@ public:
 
 	}
 
-	klMatrix(klMemMgr* mgr, unsigned int row, unsigned int col) 
+	klMatrix(klMemMgr* mgr, __int64 row, __int64 col) 
 	{                   
 		_memory=(TYPE*)mgr->allocate(row*col*sizeof(TYPE) );
 		_mgr=mgr;
-		unsigned int i;
+		__int64 i;
 		_vectors=new klVector<TYPE>[row];
 		for(i=0;i<row;i++)
 			(_vectors+i)->setup(col,0,_memory+i*col);
@@ -56,10 +56,11 @@ public:
 
 	}
 
-	klMatrix(unsigned int row,unsigned int col) 
+	klMatrix(__int64 row,__int64 col) 
 	{
-		_memory=new TYPE[row*col];
-		unsigned int i;
+		size_t memrequest = row*col;
+		_memory=new TYPE[memrequest];
+		__int64 i;
 		_vectors=new klVector<TYPE>[row];
 		for(i=0;i<row;i++)
 			(_vectors+i)->setup(col,0,_memory+i*col);
@@ -70,6 +71,7 @@ public:
 		_mgr=0;
 
 	}
+
 
 	klMatrix() 
 	{
@@ -92,7 +94,7 @@ public:
 		_contiguous=true;
 		_own=1;
 		setup(_row,_col,_mgr);
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -127,7 +129,7 @@ public:
 		setup(_row,_col,src._mgr);
 		_mgr=src._mgr;//don't step on our mgr until we've had the opportunity to free resources
 
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -138,12 +140,12 @@ public:
 		return *this;
 	}
 
-	klVector<TYPE>& operator[](unsigned int row) const 
+	klVector<TYPE>& operator[](__int64 row) const 
 	{
 		if(row<_row )
 			return _vectors[row]; 
 		else
-			throw " klVector<TYPE>& operator[](unsigned int row) const ERROR: Memory index out of range in klMatrix";
+			throw " klVector<TYPE>& operator[](__int64 row) const ERROR: Memory index out of range in klMatrix";
 	}
 
 	klMatrix<TYPE> operator*(klMatrix<TYPE> a) const
@@ -156,7 +158,7 @@ public:
 		else 
 			product.setup(_row,a.getColumns(),0);
 
-		unsigned int i,j,k;
+		__int64 i,j,k;
 //#pragma omp parallel num_threads(4)
 		for(i=0;i<_row;i++)
 		{
@@ -180,7 +182,7 @@ public:
 			product.setup(_row,_mgr);
 		else 
 			product.setup(_row);
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 		{
 			TYPE temp=0;
@@ -196,8 +198,8 @@ public:
 	//Sets the entries of this klMatrix to c.
 	klMatrix<TYPE>& operator=(TYPE c) 
 	{
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -212,8 +214,8 @@ public:
 
 	klMatrix<TYPE>& operator+=(TYPE c)
 	{     
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -230,8 +232,8 @@ public:
 	{
 		if(_row!=c.getRows() || _col !=c.getColumns())
 			throw "klMatrix<TYPE>& klMatrix<TYPE>::operator+=(const klMatrix<TYPE> &c) ERROR: incompatible dimensions.";
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -247,8 +249,8 @@ public:
 	{
 		if(_row!=c.getRows() || _col !=c.getColumns())
 			throw "klMatrix<TYPE>& klMatrix<TYPE>::operator+=(const klMatrix<TYPE> &c) ERROR: incompatible dimensions.";
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -262,8 +264,8 @@ public:
 
 	klMatrix<TYPE>& operator-=(TYPE c)
 	{
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -286,7 +288,7 @@ public:
 		else 
 			product.setup(_row,a.getColumns(),0);
 
-		unsigned int i,j,k;
+		__int64 i,j,k;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<a.getColumns();j++)
@@ -304,8 +306,8 @@ public:
 	klMatrix<TYPE>& operator*=(TYPE c)
 	{
 
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -321,8 +323,8 @@ public:
 	{
 		if(c==0)
 			throw "klMatrix<TYPE>& klMatrix<TYPE>::operator/=(TYPE c): ERROR: attempting to divide by zero .";
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -341,8 +343,8 @@ public:
 
 		if(_row!=c.getRows() || _col !=c.getColumns())
 			throw "klMatrix<TYPE>& klMatrix<TYPE>::operator+=(const klMatrix<TYPE> &c) ERROR: incompatible dimensions.";
-		unsigned int i;
-		unsigned int j;
+		__int64 i;
+		__int64 j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -356,12 +358,12 @@ public:
 		return *this;
 	}
 		
-	void setRow(unsigned int j,klVector<TYPE> r)
+	void setRow(__int64 j,klVector<TYPE> r)
 	{
 		if(r.getColumns() != _col)
-			throw "klMatrix::setRow(unsigned int j,klVector<TYPE> r) ERROR: invalid dimension in setRow parameter";
+			throw "klMatrix::setRow(__int64 j,klVector<TYPE> r) ERROR: invalid dimension in setRow parameter";
 
-		unsigned int i;
+		__int64 i;
 
 		for(i=0;i<_col;i++)
 		{
@@ -376,7 +378,7 @@ public:
 			transpose.setup(_col,_row,_mgr);
 		else 
 			transpose.setup(_col,_row,0);
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -394,7 +396,7 @@ public:
 	{
 		if(high<low)
 			throw "klMatrix<TYPE> threshold(double low=DBL_MIN, double high=DBL_MAX) called with high<low";
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -418,9 +420,9 @@ public:
 		//	throw "klMatrix<TYPE>::det() ERROR: non square matrix";
 		//klMatrix<TYPE> temp;
 		//temp=this->transpose(); //deep copy 
-		//unsigned int size=0;
-		//unsigned int i,j;
-		//unsigned int index=0;
+		//__int64 size=0;
+		//__int64 i,j;
+		//__int64 index=0;
 		//char uplo='L';
 		//int info=0;
 		//int n=_row;
@@ -473,13 +475,13 @@ public:
 	}
 
 	//Returns the subblock (i,j):(k,l) indicated by the indices.
-	klMatrix<TYPE> getSubBlock(unsigned int i,unsigned int j,unsigned int k,unsigned int l)
+	klMatrix<TYPE> getSubBlock(__int64 i,__int64 j,__int64 k,__int64 l)
 	{
 		//First Verify the indices are in range
 		if(k-i<0 || l-j<0 || k>_row || l>_col)
 			throw "klMatrix<TYPE> klMatrix<TYPE>::getSubBlock ERROR index out of bounds.";
 		klMatrix<TYPE> ret(k-i+1,l-j+1);
-		unsigned int n,m;
+		__int64 n,m;
 		for(n=i;n<=k;n++)
 			for(m=j;m<l;m++)
 				ret[n-i][m-j]=(_vectors+m)->operator[](n);
@@ -488,25 +490,25 @@ public:
 	}
 
 	//Sets the subblock (i,j):(k,l) indicated by the indices.
-	void setSubBlock(klMatrix<TYPE> block,unsigned int i,unsigned int j)
+	void setSubBlock(klMatrix<TYPE> block,__int64 i,__int64 j)
 	{
 		//First Verify the indices are in range
-		unsigned int k=block.getRows()+i-1;
-		unsigned int l=block.getColumns()+j-1;
+		__int64 k=block.getRows()+i-1;
+		__int64 l=block.getColumns()+j-1;
 		if(k-i<=0 || l-j<=0 || k>_row || l>_col)
 			throw "klMatrix<TYPE> klMatrix<TYPE>::getSubBlock ERROR index out of bounds.";
-		unsigned int n,m;
+		__int64 n,m;
 		for(n=i;n<=k;n++)
 			for(m=j;m<=l;m++)
 				(_vectors+m)->operator[](n)=block[n-i][m-j];
 	}
 	
-	void setColumn(unsigned int i,klVector<TYPE> v)
+	void setColumn(__int64 i,klVector<TYPE> v)
 	{
 		if (_row != v.getRowSize())
 			throw "Bad dimensions in klMatrix::setRow";
-		unsigned int n = 0;
-		unsigned int m =i;
+		__int64 n = 0;
+		__int64 m =i;
 			for(n=0;n<=_row;n++)
 				(_vectors+n)->operator[](i)=v[n];
 	}
@@ -518,9 +520,9 @@ public:
 			throw "klMatrix<TYPE>::inverse() ERROR: non square matrix";
 		klMatrix<TYPE> temp;
 		temp=this->transpose(); //deep copy 
-		unsigned int size=0;
-		unsigned int i,j;
-		unsigned int index=0;
+		__int64 size=0;
+		__int64 i,j;
+		__int64 index=0;
 		char uplo='L';
 		int info=0;
 		int n=_row;
@@ -594,7 +596,7 @@ public:
 
 		klMatrix<double> a;
 		a.setup(_row,_col,_mgr);// bbc revisit - this is a problem if TYPE is not double 
-		unsigned int i,j;
+		__int64 i,j;
 		for(i=0;i<_row;i++)
 			for(j=0;j<_col;j++)
 				a[i][j]=(_vectors+j)->operator [](i);
@@ -634,8 +636,8 @@ public:
 	//If the matrix is not square, we return \sum\limits_{i=0}^{min{_row,_col}}   
 	TYPE trace()
 	{
-		unsigned int min=min(_row,_col);
-		unsigned int i;
+		__int64 min=min(_row,_col);
+		__int64 i;
 		TYPE r=0;
 		for(i=0;i<min;i++)
 		{
@@ -658,27 +660,27 @@ public:
 	}
 
 	//Returns the 0-based indexed column
-	klVector<TYPE> getColumn(unsigned int col)
+	klVector<TYPE> getColumn(__int64 col)
 	{
 		klVector<TYPE> column;
 		if(_mgr)
 			column.setup(_row,_mgr);
 		else
 			column.setup(_row);
-		unsigned int i;
+		__int64 i;
 		for(i=0;i<_row;i++)
 			column[i]=(_vectors+i)->operator[](col);
 		return column;
 	}
 
 	
-	unsigned int getRows() const
+	__int64 getRows() const
 	{
 		return _row;
 	}
 
 	
-	unsigned int getColumns()const
+	__int64 getColumns()const
 	{
 		return _col;
 	}
@@ -706,9 +708,9 @@ public:
 		klMatrix<TYPE> ans(_row,_col);
 		TYPE* pM=ans.getMemory();
 		TYPE* pI=getMemory();
-		unsigned int i=0;
-		unsigned int j=0;
-		unsigned int k=0;
+		__int64 i=0;
+		__int64 j=0;
+		__int64 k=0;
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<_col;j++)
@@ -732,7 +734,7 @@ public:
 			{
 				//memset(_memory,0,row+col);
 				//if exponent = 2e - 1 and fraction is not 0, the number being represented is not a number (NaN). 
-				unsigned int i,j;
+				__int64 i,j;
 				for(i=0;i<_row;i++)
 					for(j=0;j<_col;j++)
 						(_vectors+j)->operator [](i)=x;
@@ -747,7 +749,7 @@ public:
 			{
 				//memset(_memory,0,row+col);
 				//if exponent = 2e - 1 and fraction is not 0, the number being represented is not a number (NaN). 
-				unsigned int i,j;
+				__int64 i,j;
 				for(i=0;i<_row;i++)
 					for(j=0;j<_col;j++)
 						(_vectors+j)->operator [](i)=x;
@@ -760,7 +762,7 @@ public:
 		return sizeof(TYPE);
 	}
 
-	void setup(unsigned int row,unsigned int col,klMemMgr* mgr=0)
+	void setup(__int64 row,__int64 col,klMemMgr* mgr=0)
 	{
 		if(_own && _memory)
 		{
@@ -789,7 +791,7 @@ public:
 		_vectors=new klVector<TYPE>[_row];
 		_own=true;
 
-		unsigned int i;
+		__int64 i;
 		for(i=0;i<_row;i++)
 			(_vectors+i)->setup(col,0,_memory+i*_col);
 	}
@@ -843,10 +845,10 @@ public:
 	}
 protected:
 	klVector<TYPE>* _vectors;
-	mutable unsigned int _own;
+	mutable __int64 _own;
 	bool _contiguous;//bbcrevisit - contiguous is always true
-	unsigned int _row;
-	unsigned int _col;
+	__int64  _row;
+	__int64  _col;
 	TYPE* _memory;
 	klMemMgr* _mgr;
 	string _filename;
@@ -931,7 +933,6 @@ inline klMatrix<float> mmBLAS(float alpha, klMatrix<float> a, klMatrix<float> b,
 	return C.columnToRowMajor();
 }
 
-
 //y := alpha*A*x + beta*y
 inline klVector<double> mvpBLAS(double alpha, klMatrix<double> a, klVector<double> x, double beta,klVector<double> yi)
 {
@@ -971,7 +972,6 @@ template< > klMatrix<float> klMatrix<float>::operator*(klMatrix<float> a) const
 	return mmBLAS(1.0f, (klMatrix<float>)*this, a, 0.0f, I);
 }
 
-
 //Specialization for double matrix multiply that uses BLAS Level 3 sgemm
 template< > klMatrix<double> klMatrix<double>::operator*(klMatrix<double> a) const
 {
@@ -1000,7 +1000,7 @@ template< > klMatrix<double> klMatrix<double>::operator*(klMatrix<double> a) con
 template<class TYPE, class TYPE1> klVector<TYPE> klApplyFn(TYPE1 (*f)(TYPE1), const klVector<TYPE> &c)
 {
 	klVector<TYPE> r(c.getColumns() );
-	unsigned int i;
+	__int64 i;
 	for (i=0;i<c.getColumns();i++)
 		r[i]=TYPE(f(TYPE1(c[i])));
 	return r;
@@ -1010,8 +1010,8 @@ template<class TYPE, class TYPE1> klVector<TYPE> klApplyFn(TYPE1 (*f)(TYPE1), co
 template<class TYPE, class TYPE1> klMatrix<TYPE> klApplyFn(TYPE1 (*f)(TYPE1), const klMatrix<TYPE> &c)
 {
 	klMatrix<TYPE> r(c.getRows(),c.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for ( i=0;i<c.getRows();i++)
 		for ( j=0;j<c.getColumns();j++)
 			//out(i,j)=static_cast<T>(f(static_cast<fT>(data(i,j))));
@@ -1020,14 +1020,13 @@ template<class TYPE, class TYPE1> klMatrix<TYPE> klApplyFn(TYPE1 (*f)(TYPE1), co
 	return r;
 }
 
-
 template<class TYPE> inline const klMatrix<TYPE> operator+(const klMatrix<TYPE> &c1, const klMatrix<TYPE> &c2)
 {
 	if(c1.getRows() !=c2.getRows() || c1.getColumns() !=c2.getColumns())
 		throw "const klMatrix<TYPE> operator+(const klMatrix<TYPE> &c1, const klMatrix<TYPE> &c2) ERROR: incompatible dimensions.";
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1039,13 +1038,11 @@ template<class TYPE> inline const klMatrix<TYPE> operator+(const klMatrix<TYPE> 
 	return r;
 }
 
-
-
 template<class TYPE> inline const klMatrix<TYPE> operator+(const klMatrix<TYPE> &c1, TYPE c2)
 {
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1060,8 +1057,8 @@ template<class TYPE> inline const klMatrix<TYPE> operator+(const klMatrix<TYPE> 
 template<class TYPE> inline const klMatrix<TYPE> operator+(TYPE c1, const klMatrix<TYPE> &c2)
 {
 	klMatrix<TYPE> r(c2.getRows(),c2.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c2.getRows();i++)
 	{
 		for(j=0;j<c2.getColumns();j++)
@@ -1078,8 +1075,8 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> 
 	if(c1.getRows() !=c2.getRows() || c1.getColumns() !=c2.getColumns())
 		throw "const klMatrix<TYPE> operator+(const klMatrix<TYPE> &c1, const klMatrix<TYPE> &c2) ERROR: incompatible dimensions.";
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1092,12 +1089,11 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> 
 
 }
 
-
 template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> &c2, TYPE c1)
 {
 	klMatrix<TYPE> r(c2.getRows(),c2.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c2.getRows();i++)
 	{
 		for(j=0;j<c2.getColumns();j++)
@@ -1113,8 +1109,8 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> 
 template<class TYPE> inline	const klMatrix<TYPE> operator-(TYPE c1, const klMatrix<TYPE> &c2)
 {
 	klMatrix<TYPE> r(c2.getRows(),c2.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c2.getRows();i++)
 	{
 		for(j=0;j<c2.getColumns();j++)
@@ -1132,8 +1128,8 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> 
 	if(this._row != c.getRows() ||this._col!=c.getColumns())
 		throw "Bad dimensions in klMatrix<TYPE> operator-(const klMatrix<TYPE> &c)";
 	klMatrix<TYPE> r(c.getRows(),c.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c.getRows();i++)
 	{
 		for(j=0;j<c.getColumns();j++)
@@ -1149,8 +1145,8 @@ template<class TYPE> inline const klMatrix<TYPE> operator/(const klMatrix<TYPE> 
 	if(c2==0)
 		throw "klMatrix<TYPE> operator/(const klMatrix<TYPE> &c1, TYPE c2) : ERROR: attempting to divide by zero .";
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1167,8 +1163,8 @@ template<class TYPE> inline const klMatrix<TYPE> operator/(TYPE c2,const klMatri
 	if(c2==0)
 		throw "klMatrix<TYPE> operator/(const klMatrix<TYPE> &c1, TYPE c2) : ERROR: attempting to divide by zero .";
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1188,8 +1184,8 @@ template<class TYPE> inline const klMatrix<TYPE> operator/(klMatrix<TYPE> &c1,co
 
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
 
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1203,12 +1199,11 @@ template<class TYPE> inline const klMatrix<TYPE> operator/(klMatrix<TYPE> &c1,co
 	return r;
 }
 
-
 template<class TYPE> inline	const klMatrix<TYPE> operator*(const klMatrix<TYPE> &c1, TYPE c2 )
 {
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1224,8 +1219,8 @@ template<class TYPE> inline	const klMatrix<TYPE> operator*(const klMatrix<TYPE> 
 template<class TYPE> inline const klMatrix<TYPE> operator*(TYPE c2, const klMatrix<TYPE> &c1)
 {
 	klMatrix<TYPE> r(c1.getRows(),c1.getColumns());
-	unsigned int i;
-	unsigned int j;
+	__int64 i;
+	__int64 j;
 	for(i=0;i<c1.getRows();i++)
 	{
 		for(j=0;j<c1.getColumns();j++)
@@ -1236,7 +1231,6 @@ template<class TYPE> inline const klMatrix<TYPE> operator*(TYPE c2, const klMatr
 	}
 	return r;
 }
-
 
 /*
 template<class TYPE> inline	const klMatrix<TYPE> elem_mult(const klMatrix<TYPE> &m1, const klMatrix<TYPE> &m2)
@@ -1275,8 +1269,8 @@ template<class TYPE> klMatrix<TYPE> diag(klVector<TYPE> c)
 {
 	klMatrix<TYPE> result(c.getColumns(),c.getColumns());
 	result=0.0;
-	unsigned int i=0;
-	unsigned int j=0;
+	__int64 i=0;
+	__int64 j=0;
 	for(i=0;i<c.getColumns();i++)
 	{
 		for(j=0;j<c.getColumns();j++)
@@ -1322,7 +1316,7 @@ template<> float klMatrix<float>::norm(bool ell_infty )
 template<  > double klMatrix<double>::getConditionNumber(bool ellone)
 {
 	//Compute the Norm
-	unsigned int i,j;
+	__int64 i,j;
 	
 	double anorm =0.0f;
 	if(ellone)
@@ -1373,7 +1367,7 @@ template<  > double klMatrix<double>::getConditionNumber(bool ellone)
 template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 {
 	//Compute the Norm
-	unsigned int i,j;
+	__int64 i,j;
 	
 	float anorm =0;
 	if(ellone)
@@ -1420,7 +1414,6 @@ template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 		return 1.0/rcond; 
 
 }
-
 
 //klMatrix stream io.  Operator <<  override for klMatrix class
 template <class TYPE> static ostream& operator<<(ostream& str, const klMatrix<TYPE>& v) {

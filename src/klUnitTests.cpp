@@ -51,7 +51,7 @@ void MatrixNormDemo(ofstream &_tex,unsigned int  &n);
 void MemoryManagementDemo(ofstream &_tex,unsigned int  &n);
 void SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n);
 void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &n);
-void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n);
+void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName=NULL);
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
 void UtilityDemo(ofstream &_tex,unsigned int  &n);
 void MatrixMultiplicationCheck(ofstream &_tex,unsigned int  &n );
@@ -218,11 +218,18 @@ void unitTestMain()
 #endif
 
 	klmtm.insert(thisThread, matlabEngine);
-		
+
+	unsigned int di=65532;
+	char* locaFname = "D:\\A_65532.txt";
+	IterativeKrylovCheck(_tex,di,locaFname);
+
+	di=65536;
+	locaFname = "D:\\A_65536.txt";
+	IterativeKrylovCheck(_tex,di,locaFname);
 	
 	klTestSize= klTestType::GROW;
 	unsigned int dimension;
-	for(dimension =43264;dimension<131072;dimension=dimension+1024)
+	for(dimension =58624;dimension<131072;dimension=dimension+2048)
 		IterativeKrylovCheck(_tex,dimension);
 
 	klTestSize= klTestType::LARGE;
@@ -254,8 +261,8 @@ void unitTestMain()
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
-	makeLatexSection("ARPACK",_tex);
-	klutw.runTest(IterativeKrylovCheck);
+	//makeLatexSection("ARPACK",_tex);
+	//klutw.runTest(IterativeKrylovCheck);
 
 	makeLatexSection("Semidefinite Programming SDPA",_tex);
 	klutw.runTest(SemidefiniteProgrammingCheck);
@@ -449,11 +456,13 @@ void TestMerssenePeriodIssue()
 	exit(42);
 }
 
-//BBCTODO The output needs to be put in the Latex output.  Convergence data is in the cout stream redirect file.
-void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
+#include "limits.h"
+#include <limits>
+void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName)
 {
-	if (klTestSize!=klTestType::GROW)
+	if (klTestSize!=klTestType::GROW && fileName==NULL)
 	{
+		//Then we're just doing simple test.
 		n=128;
 	}
 	
@@ -470,20 +479,52 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n)
 	prefCountEnd=new _LARGE_INTEGER;
 	QueryPerformanceFrequency(freq);
 
-	QueryPerformanceCounter(prefCountStart);
-	klMatrix<double> A_GOE = SampleGOE(n);
-	QueryPerformanceCounter(prefCountEnd);
+	klMatrix<double> A_GOE;
 
-	cerr<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
-	_tex<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	if(fileName==NULL)
+	{
+		QueryPerformanceCounter(prefCountStart);
+		A_GOE = SampleGOE(n);
+		QueryPerformanceCounter(prefCountEnd);
+
+		cerr<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+		_tex<<"SampleGOE(n)="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+		A_GOE /=n;
+	}
+	else
+	{
+		fstream _fileistream;
+		QueryPerformanceCounter(prefCountStart);
+		_fileistream.open(fileName);
+		A_GOE.setup(n,n);
+		_fileistream>>A_GOE;
+
+		QueryPerformanceCounter(prefCountEnd);
+
+		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+		_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 	
-	A_GOE /=n;
+	}
 
 	unsigned int numEigenvalues= 16;
 	
 	QueryPerformanceCounter(prefCountStart);
 
 	klVector<complex<double> > eigsAP = klaf.run( A_GOE,numEigenvalues);
+	
+	//Write the eigenvectors
+	char* arg = new char[128];
+	for(int j=0;j<numEigenvalues;j++)
+	{
+		sprintf(arg,"%sEigenVector%d.txt",basefilename,j);	
+
+		ofstream _fileostream(arg);
+		_fileostream<<RE(klaf.EigenVectors[j])<<endl;
+		_fileostream.close();
+	}
+	delete arg;
+
 
 	QueryPerformanceCounter(prefCountEnd);
 	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
@@ -587,13 +628,17 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 			L_im[j]=lambda_1_Hist[j].imag();
 		}
 		
-		ofstream fileostreamobj("TraceyWidom_re.txt" );
+		char* fileNameTW= new char[1024];
+		sprintf(fileNameTW,"%sTraceyWidom_re.txt",basefilename);
+		ofstream fileostreamobj(fileNameTW );
 		fileostreamobj<<L_re<<endl;
 		fileostreamobj.close();
 
-		fileostreamobj.open("TraceyWidom_im.txt" );
+		sprintf(fileNameTW,"%sTraceyWidom_im.txt",basefilename);
+		fileostreamobj.open(fileNameTW);
 		fileostreamobj<<L_im<<endl;
 		fileostreamobj.close();
+		delete fileNameTW;
 		 
 		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_TraceyWidom","Histogram of Re(\\lambda_1) A \\in W");
 		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_TraceyWidom","Histogram of Im(\\lambda_1) A \\in W ");
@@ -624,11 +669,14 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 			L_im[j]=lambda_1_Hist[j].imag();
 		}
 		
-		ofstream fileostreamobj("Winger_re.txt" );
+		char* fileNameW= new char[1024];
+		sprintf(fileNameW,"%Winger_re.txt",basefilename);
+		ofstream fileostreamobj(fileNameW );
 		fileostreamobj<<L_re<<endl;
 		fileostreamobj.close();
 
-		fileostreamobj.open("Winger_im.txt" );
+		sprintf(fileNameW,"%Winger_re.txt",basefilename);
+		fileostreamobj.open(fileNameW);
 		fileostreamobj<<L_im<<endl;
 		fileostreamobj.close();
 

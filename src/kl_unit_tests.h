@@ -1354,7 +1354,7 @@ inline void  MemoryManagementDemo(ofstream &_tex,unsigned int  &n)
 	}
 	heapmgr.klHeapCompact();
 	heapmgr.klHeapCheck();
-	heapmgr.klHeapDump("HeapDump.txt");
+	heapmgr.klHeapDump("D:\\klMatrixCore\output\\HeapDump.txt");
 
 	}
 #ifdef _DEBUG
@@ -1374,7 +1374,7 @@ inline void  MemoryManagementDemo(ofstream &_tex,unsigned int  &n)
 		}
 		redheapmgr.klHeapCompact();
 		redheapmgr.klHeapCheck();
-		redheapmgr.klHeapDump("RedZoneHeapDump.txt");
+		redheapmgr.klHeapDump("D:\\klMatrixCore\output\\RedZoneHeapDump.txt");
 	}
 	catch(...)
 	{
