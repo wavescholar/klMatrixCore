@@ -188,8 +188,6 @@ template<> klMatrix<double> klLU<double>::operator()()
 
 }
 
-
-
 template<class TYPE> class klSYEVX
 {
 private :

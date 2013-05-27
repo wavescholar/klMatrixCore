@@ -10,7 +10,7 @@
 using namespace std;
 #include "kl_matrix.h"
 
-extern void callAprpack( int n,double* matrix, unsigned int  numEgs, complex<double>* eigenValues, complex<double> ** eigenVectors);
+extern void callAprpack( int n,double* matrix, unsigned int  numEgs, complex<double>* eigenValues, complex<double> ** eigenVectors,char* whichp = "LM");
 
 class klArpackFunctor
 {
@@ -43,7 +43,7 @@ public:
 
 			complex<double>* eigVals = new complex<double> [numEigenvalues];
 
-			callAprpack(kldmp.getColumns(),kldmp.getMemory(), numEigenvalues,eigVals, Evecs );
+			callAprpack(kldmp.getColumns(),kldmp.getMemory(), numEigenvalues,eigVals, Evecs,"SM" );
 
 			for(int j =0 ; j<numEigenvalues;j++)
 			{

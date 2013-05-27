@@ -8,14 +8,14 @@
 #include "ardsnsym.h"
 #include "D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\examples\matrices\nonsym\lnsymsol.h" 
 
-extern void callAprpack( int n,double* matrix, unsigned int  numEigs,complex<double>* eigenValues , complex<double> ** eigenVectors)
+extern void callAprpack( int n,double* matrix, unsigned int  numEigs,complex<double>* eigenValues , complex<double> ** eigenVectors,char* whichp = "LM")
 {
 	ARdsNonSymMatrix<double> A(n, matrix);
 
 	//ncv has  default value (2nev+1).
 	int ncv = 2* numEigs +1;
 
-	ARluNonSymStdEig<double> Prob(numEigs, A, "LM", ncv);
+	ARluNonSymStdEig<double> Prob(numEigs, A, whichp, ncv);
 
 	Prob.FindEigenvectors();
 

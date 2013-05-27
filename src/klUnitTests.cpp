@@ -1,6 +1,6 @@
  /*******************************
- * WSCMP [2003] - [2012] WSCMP  *  
- * Bruce B Campbell 11 30 2012  *
+ * WSCMP [2003] - [2013] WSCMP  *  
+ * Bruce B Campbell 05 27 2013  *
  ********************************/
 #include "kl_matrix.h"
 #include "kl_stat.h"
@@ -219,14 +219,10 @@ void unitTestMain()
 
 	klmtm.insert(thisThread, matlabEngine);
 
-	unsigned int di=65532;
-	char* locaFname = "D:\\A_65532.txt";
-	IterativeKrylovCheck(_tex,di,locaFname);
-
-	di=65536;
-	locaFname = "D:\\A_65536.txt";
-	IterativeKrylovCheck(_tex,di,locaFname);
-	
+	unsigned int di=128;
+	char* locaFname = "D:\\L_128.txt";
+	IterativeKrylovCheck(_tex,di,locaFname);		
+		
 	klTestSize= klTestType::GROW;
 	unsigned int dimension;
 	for(dimension =58624;dimension<131072;dimension=dimension+2048)
