@@ -62,6 +62,7 @@ void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
 void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n);
 
+
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
 void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n);
@@ -152,40 +153,28 @@ void unitTestMain()
 	char* syscmd = new char[2048];
 	sprintf(syscmd,"mkdir %s",basefilename);
 	system(syscmd); 
-
 	int heapstatus = _heapchk();
 	time_t time_of_day;
 	struct tm *tm_buf;
 	time_of_day = time( NULL );
 	tm_buf=localtime(&time_of_day);
-
 	char* testRunDateTime = new char[1024];
 	char* regressionFile = new char[1024];
 	char* coutFile = new char[1024];
 	char* sysInfoFile = new char[1024];
 	heapstatus = _heapchk();
-	
-	//   tm_sec;     /* seconds after the minute - [0,59] */
-	//   tm_min;     /* minutes after the hour - [0,59] */
-	//   tm_hour;    /* hours since midnight - [0,23] */
-	//   tm_mday;    /* day of the month - [1,31] */
-	//   tm_mon;     /* months since January - [0,11] */
-	//   tm_year;    /* years since 1900 */
-	//   tm_wday;    /* days since Sunday - [0,6] */
-	//   tm_yday;    /* days since January 1 - [0,365] */
-	//   tm_isdst;   /* daylight savings time flag */
-	//tm fields are zero based.
 	sprintf(testRunDateTime,"%d_%d_%d_%d_%d",tm_buf->tm_mon+1,tm_buf->tm_mday+1,tm_buf->tm_hour+1,tm_buf->tm_min+1,tm_buf->tm_sec+1);
-	
 	sprintf(regressionFile,"%skl_Regression%s.tex",basefilename,testRunDateTime);
 	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 	sprintf(sysInfoFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 
 	FILE *stream;
 
+#ifndef _DEBUG
 	if((stream = freopen(coutFile, "a", stdout)) == NULL)
 		throw "kl: error redirecting std::cout to a file.";
 	cout<<"Redirecting std::cout to"<<coutFile<<"file via freopen."<<endl;
+#endif
 
 	ofstream _tex(regressionFile);
 
@@ -219,16 +208,16 @@ void unitTestMain()
 
 	klmtm.insert(thisThread, matlabEngine);
 
-	unsigned int di=128;
-	char* locaFname = "D:\\L_128.txt";
-	IterativeKrylovCheck(_tex,di,locaFname);		
-		
-	klTestSize= klTestType::GROW;
-	unsigned int dimension;
-	for(dimension =58624;dimension<131072;dimension=dimension+2048)
-		IterativeKrylovCheck(_tex,dimension);
+	//unsigned int di=128;
+	//char* locaFname = "D:\\L_128.txt";
+	//IterativeKrylovCheck(_tex,di,locaFname);		
+	//	
+	//klTestSize= klTestType::GROW;
+	//unsigned int dimension;
+	//for(dimension =58624;dimension<131072;dimension=dimension+2048)
+	//	IterativeKrylovCheck(_tex,dimension);
 
-	klTestSize= klTestType::LARGE;
+	klTestSize= klTestType::SMALL;
 
 	makeLatexSection("Solver ",_tex);
 	klutw.runTest(MatrixEigenSolverDemo);
@@ -823,10 +812,9 @@ void MatrixNormDemo(ofstream &_tex,unsigned int  &n)
 	
 }
 
-int klTestDSYEVX();
 void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
 {	
-	n= 12;
+	n= 8;
 
 	makeLatexSection("Haar Distributed Random Orthogonal Matrix $A \\in O(n)$",_tex);
 	_tex<<" Testing Operator Norm"<<endl<<"Number of Dimensions: "<<n<<endl<<endl; 
@@ -835,6 +823,27 @@ void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
 	ap::real_2d_array a;
 	rmatrixrndorthogonal(n, a);
 	klMatrix<double> Op = real_2d_array_to_klMatrix(a);
+	{
+		//Exercise symmetric EV solver
+
+		klMatrix<double> F = Op*Op.transpose();
+		
+		cout<<F;
+		
+		klSYEVX<double> SYEVX(F,3);
+
+		klDoubleVectorPtr ans = SYEVX();
+
+		klVector<double> spectrum = *(ans.ptr());
+
+		cout<<spectrum;
+
+		klDoubleMatrixPtr E = SYEVX.Eigenvectors();
+
+		cout<<*(E.ptr());
+
+	}
+
 	klLU<double> LU(Op);
 	klMatrix<double> u =LU();
 	klMatrix<double> l =LU.L();
@@ -932,24 +941,6 @@ void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
 
 	_tex<<"Calculating first few eigenvectors of $A \\in O(n)$ using LAPACK syevx"<<endl<<endl;
 
-	{
-		int result =klTestDSYEVX();
-		klSYEVX<double> SYEVX(Op,3);
-
-		klDoubleVectorPtr ans = SYEVX();
-
-		//klMatrix<double> S = diag(*Sigma);
-		//klDoubleMatrixPtr U = SVD.U();
-		//klDoubleMatrixPtr V = SVD.V();
-
-		//LatexPrintMatrix(*U,"U",_tex);
-		//LatexPrintMatrix(S,"S",_tex);
-		//LatexPrintMatrix(*V,"V",_tex);
-
-		//LatexPrintMatrix( *(U) * (S) * *(V),"U S V",_tex);
-	}
-
-
 	makeLatexSection("Wishart Matrix $A \\in W(n)$",_tex);
 
 	klMatrix<double> AW=     SampleWishart(n);
@@ -979,7 +970,6 @@ void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
 	_tex.flush();
 	
 }
-
 
 void UtilityDemo(ofstream &_tex,unsigned int  &n )
 {

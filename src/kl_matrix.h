@@ -276,8 +276,7 @@ public:
 		}
 		return *this;
 	}
-
-
+	
 	klMatrix<TYPE>& operator*=(const klMatrix<TYPE> &a)
 	{
 		if(_col!=a.getRows())
@@ -514,6 +513,7 @@ public:
 	}
 
 	//Calculates the matrix inverse for a square matrix.  Implemented for types double and float
+	//Generally we do not want to calculate the inverse of a matrix
 	klMatrix<TYPE> inverse() const
 	{
 		if(_row!=_col  )
