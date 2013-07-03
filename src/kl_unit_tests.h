@@ -108,19 +108,19 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,unsigned int& n)
 	klVector<float> mfa=b[2];
 	cout<<b*mfa;
 	cout<<mfa;
-	string _filename="moo.txt";
-	ofstream _fileostream(_filename.c_str() );
-	_fileostream<<b<<endl;
-	_fileostream.close();
+	//string _filename="moo.txt";
+	//ofstream _fileostream(_filename.c_str() );
+	//_fileostream<<b<<endl;
+	//_fileostream.close();
 	cout<<b;
 	cout<<b.getColumn(1);
 	klVector<float> sd(3);
 	klMatrix<float> sb(3,3);
 	flushall();
-	fstream _fileistream;
+	/*fstream _fileistream;
 	_fileistream.open("moo.txt");
 	_fileistream>>sb;
-	cout<<sb;
+	cout<<sb;*/
 	klMatrix<float>  as(memory,3,3);
 
 	as[2][2]=22;
@@ -309,12 +309,15 @@ template<class TYPE> void testKLTimeSeries2(ofstream &_tex,unsigned int &n)
 
 	klTimeSeries<TYPE> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
 
-	ofstream _fileostream("klIEMA.txt");
+	char* fileName= new char[1024];
+	sprintf(fileName,"%sklIEMA.txt",basefilename);
+	ofstream _fileostream(fileName);
 	for(i=0;i<popsize;i++)
 	{
 		_fileostream<<c[i]<<", "<<ma[i]<<", "<<iema[i]<<" ,"<<ema[i]<<", "<<diff[i]<<endl;
 	}
 	_fileostream.close();
+	delete fileName;
 
 	//pop new data in c
 	c[popsize-1024]=1237;//big shock

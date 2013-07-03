@@ -61,7 +61,7 @@ void MutithreadedWorkflowDemo(void);
 void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
 void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n);
-
+void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName);
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -208,9 +208,13 @@ void unitTestMain()
 
 	klmtm.insert(thisThread, matlabEngine);
 
-	//unsigned int di=128;
-	//char* locaFname = "D:\\L_128.txt";
-	//IterativeKrylovCheck(_tex,di,locaFname);		
+	
+	unsigned int di=512;
+	char* locaFname = "D:\\klSpectralAnalysis\\L_512.txt";
+	//This generates heap modified after free error
+	ARPACK_VS_SYEVX(_tex,di,locaFname);
+
+	IterativeKrylovCheck(_tex,di,locaFname);		
 	//	
 	//klTestSize= klTestType::GROW;
 	//unsigned int dimension;
@@ -314,10 +318,10 @@ void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
 {
 	makeLatexSection("Verfy Winger Law.",_tex);
 
-	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such \
-		  that $X_{i,j} = X_{j,i}$, and $X_{i,j}$ are iid $\\forall i < j,$ and $Xjj$ are iid $\\forall j \\st  \
-		  E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ and that all moments exists for each of the entries. \
-		  The eigenvector of this random matrix; $ \\lamda_1 \\lteq ... \\lteq \\lamda_n$ depends continuously on $Mn$."<<endl;
+	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such that $X_{i,j} = X_{j,i}$, \
+		  and $X_{i,j}$ are iid $\forall i < j,$ and $Xjj$ are iid $\forall j  :  \; E[X^2_{ij} ] = 1, \& E[X_{ij}] = 0$ \
+		  and that all moments exists for each of the entries.  \
+		  The eigenvector of this random matrix; $ \lambda_1 \leq ... \leq \lambda_n$ depends continuously on $Mn$."<<endl;
 	
 	if (klTestSize==klTestType::VERYLARGE)
 	{
@@ -449,11 +453,10 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName)
 	{
 		//Then we're just doing simple test.
 		n=128;
-	}
+	}	
+
+	_tex<<"Running Arnoldi Krylov algorithm on $GOE$ matrix and comparing to Lapack DGEES (via Intel MKL)."<<endl;
 	
-	_tex<<"Running Arnoldi Krylov algorithm on $GOE$ matrix and comparing to Intel MKL."<<endl;
-
-
 	klArpackFunctor klaf;
 
 	LARGE_INTEGER* freq;
@@ -509,13 +512,32 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName)
 		_fileostream.close();
 	}
 	delete arg;
-
-
+	
 	QueryPerformanceCounter(prefCountEnd);
 	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
 	cerr<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
 	_tex<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+
+	QueryPerformanceCounter(prefCountStart);
+	{
+		klSYEVX<double> SYEVX(A_GOE,3);
+
+		klDoubleVectorPtr ans = SYEVX();
+
+		klVector<double> spectrum = *(ans.ptr());
+
+		cout<<spectrum;
+
+		klDoubleMatrixPtr E = SYEVX.Eigenvectors();
+
+		cout<<*(E.ptr());
+	}
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc SYEVX  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+
+
 	//QueryPerformanceCounter(prefCountStart);
 
 	//klVector<complex<double> > eigs = A_GOE.eigenvalues();
@@ -548,6 +570,92 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName)
 
 	//cerr<<"Iterative Krylov dim="<<n<<" ell2 eig diff="<<ell2dist<<endl;
 }
+
+void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName)
+{
+	makeLatexSection("ARPACK versus Lapack SYEVX",_tex);
+	
+	_tex<<"Running Arnoldi Krylov algorithm on affinity matrix and comparing to Lapack SYEVX (via Intel MKL)."<<endl;
+	
+	klArpackFunctor klaf;
+
+	LARGE_INTEGER* freq;
+	_LARGE_INTEGER* prefCountStart;
+	_LARGE_INTEGER* prefCountEnd;
+	freq=new _LARGE_INTEGER;
+	prefCountStart=new _LARGE_INTEGER;
+	prefCountEnd=new _LARGE_INTEGER;
+	QueryPerformanceFrequency(freq);
+
+	klMatrix<double> A_GOE;
+
+	fstream _fileistream;
+	QueryPerformanceCounter(prefCountStart);
+	_fileistream.open(fileName);
+	A_GOE.setup(n,n);
+	_fileistream>>A_GOE;
+
+	QueryPerformanceCounter(prefCountEnd);
+
+	cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	
+	unsigned int numEigenvalues= 16;
+	
+	QueryPerformanceCounter(prefCountStart);
+
+	klVector<complex<double> > eigsAP = klaf.run( A_GOE.transpose(),numEigenvalues);
+	
+	//Write the eigenvectors
+	char* arg = new char[128];
+	for(int j=0;j<numEigenvalues;j++)
+	{
+		sprintf(arg,"%sARPACK_EigenVector%d.txt",basefilename,j);	
+
+		ofstream _fileostream(arg);
+		_fileostream<<RE(klaf.EigenVectors[j])<<endl;
+		_fileostream.close();
+	}
+	delete arg;
+	
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+	cerr<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+	_tex<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+
+	QueryPerformanceCounter(prefCountStart);
+	
+	klSYEVX<double> SYEVX(A_GOE,3);
+
+	klDoubleVectorPtr ans = SYEVX();
+
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc SYEVX  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+	klVector<double> spectrum = *(ans.ptr());
+
+	//klDoubleMatrixPtr E = SYEVX.Eigenvectors();
+
+	klMatrix<double> E = *(SYEVX.Eigenvectors().ptr());
+
+	klMatrix<double> Etr= E.transpose();
+	for(int j=0;j<numEigenvalues;j++)
+	{
+		sprintf(arg,"%sSYEVX_EigenVector%d.txt",basefilename,j);	
+
+		ofstream _fileostream(arg);
+		_fileostream<<Etr[j]<<endl;
+		_fileostream.close();
+	}
+	delete arg;
+
+
+	cout<<spectrum<<endl;
+	cout<<eigsAP<<endl;
+
+}
+
 
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
@@ -654,20 +762,22 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 			L_im[j]=lambda_1_Hist[j].imag();
 		}
 		
-		char* fileNameW= new char[1024];
-		sprintf(fileNameW,"%Winger_re.txt",basefilename);
-		ofstream fileostreamobj(fileNameW );
+		char* fileName= new char[1024];
+		sprintf(fileName,"%Winger_re.txt",basefilename);
+		ofstream fileostreamobj(fileName );
 		fileostreamobj<<L_re<<endl;
 		fileostreamobj.close();
 
-		sprintf(fileNameW,"%Winger_re.txt",basefilename);
-		fileostreamobj.open(fileNameW);
+		sprintf(fileName,"%Winger_im.txt",basefilename);
+		fileostreamobj.open(fileName);
 		fileostreamobj<<L_im<<endl;
 		fileostreamobj.close();
 
 		LatexInsertHistogram(L_re,30,_tex, basefilename,"Re_Winger","Histogram of Re(\\lambda_1) A \\in GOE(1024)");
 		LatexInsertHistogram(L_im,30,_tex, basefilename,"Im_Winger","Histogram of Im(\\lambda_1) A \\in GOE(1024) ");
 		_tex.flush();
+
+		delete fileName;
 	}
 
 
