@@ -11,10 +11,8 @@ struct DPoint
     double y;
 };
 
-typedef std::vector<DPoint> Sdata;
 typedef std::vector<double> Tdata;
 
-// 
 class klLSSpline
 {
 
@@ -31,19 +29,13 @@ public:
     void timeRange( double &start, double &end) const;
 
     // sample various spline properties based on a list of times
-    Sdata *sampleSpline( const Tdata &times ) const;
-    Sdata *sampleFirstDeriv( const Tdata &times ) const;
-    Sdata *sampleSecondDeriv( const Tdata &times) const;
-    Tdata *sampleCurvature( const Tdata &times ) const;
+    std::vector<DPoint> *sampleSpline( const std::vector<double> &times ) const;
+    std::vector<DPoint> *sampleFirstDeriv( const std::vector<double> &times ) const;
+    std::vector<DPoint> *sampleSecondDeriv( const std::vector<double> &times) const;
+    std::vector<double> *sampleCurvature( const std::vector<double> &times ) const;
 
-// TODO change to use our standard Matrix Library.
-// whenever it is decided on.  I think it may require a change
-// in compiler, this is simple enough I'll do it by hand
-// and change once we've officially changed.
+
 private:
-    // these should all be inline.
-    // eventually
-// will be much faster when we integrate the matrix library
 inline void _sample( double ti, DPoint &dp ) const
 {
     int sect = static_cast<int>(floor( (ti-3.0)/3.0 ));
@@ -98,11 +90,96 @@ inline void _sampleCurvature( double ti, double &k ) const
     k = (fd.x*sd.y - fd.y*sd.x)/pow( fd.x*fd.x+fd.y*fd.y, 1.5 );
 }
 
-
-
 private:
     int _numSections;
     int _timeEnd;
     double **_ySections;
     double **_xSections;
 };
+    
+
+int klLSSpline::create( const Boundary *controlPoints, bool isClosed )
+{
+    int blen = controlPoints->x.size();
+    // choose the number of points per spline based roughly on
+    // perimeter
+    _numSections = static_cast<int>(ceil( blen/double(SI_offset) ));
+    _timeEnd = blen+SI_offset;
+    _xSections= new double*[ _numSections];
+    _ySections= new double*[ _numSections];
+    
+    double yforLSQ[SI_numPts];
+    for( int i=0; i<_numSections; ++i )
+    {
+        for( int j=0; j<SI_numPts; ++j )
+        {
+            yforLSQ[j] = controlPoints->x[ (j+i*SI_offset)%blen];
+        }
+        
+        _xSections[i] = CubicFitLeastSquares( yforLSQ );
+
+        for( int j=0; j<SI_numPts; ++j )
+        {
+            yforLSQ[j] = controlPoints->y[ (j+i*SI_offset)%blen];
+        }
+        _ySections[i] = CubicFitLeastSquares( yforLSQ );
+    }
+
+    return 0;
+}
+    
+
+inline void klLSSpline::timeRange( double &start, double &end) const
+{
+    start = SI_offset;
+    end = _timeEnd;
+}
+
+inline std::vector<DPoint>  *klLSSpline::sampleSpline( const std::vector<double> & times ) const
+{
+    int ts = times.size();
+    std::vector<DPoint>  *toRetp = new std::vector<DPoint> ( ts );
+    std::vector<DPoint>  &toRet = *toRetp;
+
+    for( int i=0; i<ts; ++i )
+    {
+        _sample( times[i], toRet[i] );
+    }
+    return toRetp;
+}
+
+inline std::vector<DPoint>  *klLSSpline::sampleFirstDeriv( const std::vector<double> &times ) const
+{
+    int ts = times.size();
+    std::vector<DPoint>  *toRetp = new std::vector<DPoint> ( ts );
+    std::vector<DPoint>  &toRet = *toRetp;
+    for( int i=0; i<ts; ++i )
+    {
+        _sampleFirstDeriv( times[i], toRet[i] );
+    }
+    return toRetp;
+}
+
+inline std::vector<DPoint>  *klLSSpline::sampleSecondDeriv( const Tdata &times) const
+{
+    int ts = times.size();
+    std::vector<DPoint>  *toRetp = new std::vector<DPoint> ( ts );
+    std::vector<DPoint>  &toRet = *toRetp;
+    for( int i=0; i<ts; ++i )
+    {
+        _sampleSecondDeriv( times[i], toRet[i] );
+    }
+    return toRetp;
+}
+
+inline std::vector<double> *klLSSpline::sampleCurvature( const std::vector<double> &times ) const
+{
+    int ts = times.size();
+    std::vector<double> *toRetp = new std::vector<double>( ts );
+    std::vector<double> &toRet = *toRetp;
+    for( int i=0; i<ts; ++i )
+    {
+        _sampleCurvature(times[i], toRet[i] );
+    }
+    return toRetp;
+}
