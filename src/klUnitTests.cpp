@@ -47,21 +47,23 @@ void __cdecl klNewHandler( )
 	return;
 }
 void MatrixOpsQuickCheck(ofstream &_tex,unsigned int  &n);
-void MatrixNormDemo(ofstream &_tex,unsigned int  &n);
-void MemoryManagementDemo(ofstream &_tex,unsigned int  &n);
+void MatrixNorm(ofstream &_tex,unsigned int  &n);
+void MemoryManagement(ofstream &_tex,unsigned int  &n);
 void SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n);
 void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &n);
 void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName=NULL);
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n);
-void UtilityDemo(ofstream &_tex,unsigned int  &n);
+void Utility(ofstream &_tex,unsigned int  &n);
 void MatrixMultiplicationCheck(ofstream &_tex,unsigned int  &n );
-void LinearRegressionDemo(ofstream &_tex,unsigned int  &n);
-void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n);
-void MutithreadedWorkflowDemo(void);
+void LinearRegression(ofstream &_tex,unsigned int  &n);
+void MatrixExponential(ofstream &_tex,unsigned int  &n);
+void MutithreadedWorkflow(void);
 void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
-void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n);
+void MatrixEigenSolver(ofstream &_tex,unsigned int  &n);
 void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName);
+void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName);
+
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -211,8 +213,14 @@ void unitTestMain()
 	
 	unsigned int di=512;
 	char* locaFname = "D:\\klSpectralAnalysis\\L_512.txt";
+	
+	//FEATS is only in MKL 11 and up :(
+	//FEATSEigensolver(_tex,di,locaFname);
+	
 	//This generates heap modified after free error
 	ARPACK_VS_SYEVX(_tex,di,locaFname);
+
+
 
 	IterativeKrylovCheck(_tex,di,locaFname);		
 	//	
@@ -224,7 +232,7 @@ void unitTestMain()
 	klTestSize= klTestType::SMALL;
 
 	makeLatexSection("Solver ",_tex);
-	klutw.runTest(MatrixEigenSolverDemo);
+	klutw.runTest(MatrixEigenSolver);
 
 	makeLatexSection("Generate Tracey Widom Sample",_tex);
 	klutw.runTest(GenerateTraceyWidomSample);
@@ -239,7 +247,7 @@ void unitTestMain()
 	klutw.runTest(IteratedExponentialFiltering);
 	
 	makeLatexSection("Matrix Exponential ",_tex);
-	klutw.runTest(MatrixExponentialDemo);
+	klutw.runTest(MatrixExponential);
 	
 	makeLatexSection("Gram Matrix Consistency Check",_tex);
 	klutw.runTest(GenerativeGramConsistencyCheck);
@@ -257,10 +265,10 @@ void unitTestMain()
 	klutw.runTest(SemidefiniteProgrammingCheck);
 
 	makeLatexSection("Linear Regression 3x1",_tex);
-	klutw.runTest(LinearRegressionDemo);
+	klutw.runTest(LinearRegression);
 
 	makeLatexSection("Matrix Norms",_tex);
-	klutw.runTest(MatrixNormDemo);
+	klutw.runTest(MatrixNorm);
 
 	makeLatexSection("Principal Components Matlab ",_tex);
 	klutw.runTest(testklPrincipalComponentsMatlab<double>);
@@ -288,11 +296,11 @@ void unitTestMain()
 	heapstatus = _heapchk();
 	
 	n=0;
-	MemoryManagementDemo(_sytemText,n);
-	UtilityDemo(_sytemText,n);
+	MemoryManagement(_sytemText,n);
+	Utility(_sytemText,n);
 	klutw.HardwareConfiguration(_sytemText);
 
-	MutithreadedWorkflowDemo();
+	MutithreadedWorkflow();
 		
 	#ifdef _M_IX86
 	bool isInsideVMWare= klIsInsideVMWare();
@@ -656,6 +664,123 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName)
 
 }
 
+void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName)
+{
+	makeLatexSection("FEATS Eigensolver",_tex);
+	
+	_tex<<"Running FEATS Eigensolver algorithm on affinity matrix and comparing to ARPACK and Lapack SYEVX (via Intel MKL)."<<endl;
+	
+	klArpackFunctor klaf;
+
+	LARGE_INTEGER* freq;
+	_LARGE_INTEGER* prefCountStart;
+	_LARGE_INTEGER* prefCountEnd;
+	freq=new _LARGE_INTEGER;
+	prefCountStart=new _LARGE_INTEGER;
+	prefCountEnd=new _LARGE_INTEGER;
+	QueryPerformanceFrequency(freq);
+	//Write the eigenvectors
+	char* arg = new char[128];
+
+	klMatrix<double> A_GOE;
+
+	fstream _fileistream;
+	QueryPerformanceCounter(prefCountStart);
+	_fileistream.open(fileName);
+	A_GOE.setup(n,n);
+	_fileistream>>A_GOE;
+
+	QueryPerformanceCounter(prefCountEnd);
+
+	cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+	
+	unsigned int numEigenvalues= 16;
+	
+	QueryPerformanceCounter(prefCountStart);
+
+	klVector<complex<double> > eigsAP = klaf.run( A_GOE.transpose(),numEigenvalues);
+	
+	for(int j=0;j<numEigenvalues;j++)
+	{
+		sprintf(arg,"%sARPACK_EigenVector%d.txt",basefilename,j);	
+
+		ofstream _fileostream(arg);
+		_fileostream<<RE(klaf.EigenVectors[j])<<endl;
+		_fileostream.close();
+	}
+	
+	
+	QueryPerformanceCounter(prefCountEnd);
+	cout<<"TicToc ARPACK  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+	cerr<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+	_tex<<"Iterative Krylov dim="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;
+
+	{
+		QueryPerformanceCounter(prefCountStart);
+
+		klFEATS<double> FEATS(A_GOE,3);
+
+		klDoubleVectorPtr ans = FEATS();
+
+		QueryPerformanceCounter(prefCountEnd);
+		cout<<"TicToc FEATS  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+		klVector<double> spectrum = *(ans.ptr());
+
+		klMatrix<double> E = *(FEATS.Eigenvectors().ptr());
+
+		klMatrix<double> Etr= E.transpose();
+		for(int j=0;j<numEigenvalues;j++)
+		{
+			sprintf(arg,"%sFEATS_EigenVector%d.txt",basefilename,j);	
+
+			ofstream _fileostream(arg);
+			_fileostream<<Etr[j]<<endl;
+			_fileostream.close();
+		}
+		
+		cout<<spectrum<<endl;
+		cout<<eigsAP<<endl;
+	}
+
+	{
+		QueryPerformanceCounter(prefCountStart);
+
+		klSYEVX<double> SYEVX(A_GOE,3);
+
+		klDoubleVectorPtr ans = SYEVX();
+
+		QueryPerformanceCounter(prefCountEnd);
+		cout<<"TicToc SYEVX  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+		klVector<double> spectrum = *(ans.ptr());
+
+		klMatrix<double> E = *(SYEVX.Eigenvectors().ptr());
+
+		klMatrix<double> Etr= E.transpose();
+		for(int j=0;j<numEigenvalues;j++)
+		{
+			sprintf(arg,"%sSYEVX_EigenVector%d.txt",basefilename,j);	
+
+			ofstream _fileostream(arg);
+			_fileostream<<Etr[j]<<endl;
+			_fileostream.close();
+		}
+		
+
+		cout<<spectrum<<endl;
+		cout<<eigsAP<<endl;
+		
+		delete arg;
+	}
+
+
+
+
+}
+
 
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
@@ -787,7 +912,7 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 #include "testmatgenunit.h"
 bool testmatgen(bool silent);
 klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a);
-void MatrixNormDemo(ofstream &_tex,unsigned int  &n)
+void MatrixNorm(ofstream &_tex,unsigned int  &n)
 {	
 	n= 12;
 
@@ -922,7 +1047,7 @@ void MatrixNormDemo(ofstream &_tex,unsigned int  &n)
 	
 }
 
-void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
+void MatrixEigenSolver(ofstream &_tex,unsigned int  &n)
 {	
 	n= 8;
 
@@ -1081,7 +1206,7 @@ void MatrixEigenSolverDemo(ofstream &_tex,unsigned int  &n)
 	
 }
 
-void UtilityDemo(ofstream &_tex,unsigned int  &n )
+void Utility(ofstream &_tex,unsigned int  &n )
 {
 	//This works
 	try
@@ -1245,7 +1370,7 @@ void MatrixMultiplicationCheck(ofstream &_tex,unsigned int  &n  )
 	_tex.flush();
 }
 
-void LinearRegressionDemo(ofstream &_tex,unsigned int  &n)
+void LinearRegression(ofstream &_tex,unsigned int  &n)
 {
 	time_t time_of_day;
 	struct tm *tm_buf;

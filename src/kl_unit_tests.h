@@ -1310,7 +1310,7 @@ template<class TYPE> void klRVUnitTestHarnessLaTex2(klRV<TYPE> ** RV,unsigned in
 
 
 #include "kl_memory.h"
-inline void  MemoryManagementDemo(ofstream &_tex,unsigned int  &n)
+inline void  MemoryManagement(ofstream &_tex,unsigned int  &n)
 {
 	int reserve = 1024*1024*64;
 

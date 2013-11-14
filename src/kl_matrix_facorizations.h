@@ -257,4 +257,88 @@ template<> klSmartPtr<klVector<double> > klSYEVX<double>::operator()()
 	return _Sigma;
 }
 
+//This computes all eigenvalues and, optionally, eigenvectors of an n-by-n real symmetric matrix A
+template<class TYPE> class klFEATS
+{
+private :
+
+	bool _resultsCalculated;
+	klSmartPtr<klMatrix<TYPE> > _A;
+	unsigned int _numEigen;
+	klSmartPtr<klMatrix<TYPE> > _B;
+	klSmartPtr<klVector<TYPE> > _Sigma;
+
+public:	
+	klFEATS(klMatrix<TYPE>& A,unsigned int numEigen) : _resultsCalculated(false)
+	{
+		if( A.getRows() != A.getColumns())
+		{
+			throw klError("klFEATS(klMatrix<TYPE>& A,unsigned int numEigen) bad dimension.  Matrix must be square");
+		}
+		_A = new klMatrix<TYPE>(A);
+	}
+
+	klSmartPtr<klMatrix<TYPE> > Eigenvectors()
+	{
+		if (_resultsCalculated)
+		{
+			return _B;
+		}
+		else 
+		{
+			 operator()();
+			 return _B;
+		}
+	}
+
+	klSmartPtr<klVector<TYPE> > operator()()
+	{
+		return new klVector<TYPE>(0,0);
+	}
+};
+
+#include "mkl_lapacke.h"
+template<> klSmartPtr<klVector<double> > klFEATS<double>::operator()()
+{
+	int n=_A->getColumns();
+
+    //Make a deep copy of _A.  The call will replace the matrix with the basis of eigenvectors
+	_B= new klMatrix<double>(*(_A.ptr() )) ;
+
+	double* a = _A->getMemory();
+
+	int lda= _A->getRows();
+
+	//Must be 'U' or 'L' or 'F' .If uplo = 'U', a stores the upper triangular parts of A. If uplo = 'L', a stores the lower triangular parts of A. If uplo= 'F' , a stores the full matrix A.
+	const char uplo = 'F';
+
+	int* fpm = new int[128];
+	//fpm INTEGER Array, dimension of 128. This array is used to pass various parameters to Extended Eigensolver routines. See Extended Eigensolver Input Parameters for a complete description of the parameters and their default values.
+	
+	double epsout; 
+	int loop;
+
+	double emin = -1.7976931348623157e+307;
+
+	double emax = +1.7976931348623157e+307;
+
+	int m0 =n;//On entry, specifies the initial guess for subspace dimension to be used. m0 ? m where m is the total number of eigenvalues located in the interval [emin, emax]. If the initial guess is wrong, Extended Eigensolver routines return info=3
+	
+	double * e= new double[n];
+
+	double * x = new double[n*n];
+
+	int m ; //The total number of eigenvalues found in the interval [emin, emax]: 0 ? m ? m0.
+
+	double* res = new double[m0];//DOUBLE PRECISION for dfeast_syev and zfeast_heev Array of length m0. On exit, the first m components contain the relative residual vector
+
+	int info;
+	//const char * uplo, const MKL_INT * n, const double * a, const MKL_INT * lda, MKL_INT * fpm, double * epsout, MKL_INT * loop, const double * emin, const double * emax, MKL_INT * m0, double * e, double * x, MKL_INT * m, double * res, MKL_INT * info
+	//dfeast_syev ( &uplo, &n, a, &lda, fpm, & epsout, &loop,&emin, & emax, & m0,  e,  x,  &m, res, &info);
+	
+	_resultsCalculated = true;
+		
+	return _Sigma;
+}
+
 #endif

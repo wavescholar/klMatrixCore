@@ -126,7 +126,7 @@ void work2(void)
 	//LocalFree((HLOCAL) lpvBuffer);
 }
 
-void MutithreadedWorkflowDemo(void)
+void MutithreadedWorkflow(void)
 { 
 	//Run multiple of the same work elelement
 	{

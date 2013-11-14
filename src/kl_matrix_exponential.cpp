@@ -177,7 +177,7 @@ klVector<complex<double> > klApplyLog( const klVector<complex<double> > &c)
 		r[i]=complex<double> (std::log(complex<double> (c[i])));
 	return r;
 }
-void MatrixExponentialDemo(ofstream &_tex,unsigned int  &n)
+void MatrixExponential(ofstream &_tex,unsigned int  &n)
 {
 	try{
 

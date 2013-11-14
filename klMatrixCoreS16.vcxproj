@@ -74,6 +74,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,10 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\x64\Debug\ARPACK2.lib">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Library>
-    <Library Include="..\x64\Debug\arpack_CPP_v2.lib">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
@@ -127,10 +124,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
     <Library Include="..\x64\Release\ARPACK2.lib">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </Library>
-    <Library Include="..\x64\Release\arpack_CPP_v2.lib">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
