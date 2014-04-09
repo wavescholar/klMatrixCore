@@ -37,9 +37,7 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,unsigned int& n)
 	try{    diffr=col2.diff(3);}
 	catch(...)
 	{ cout<<"caught an expected error";} 
-
-
-
+	
 	cout<<klApplyFn<float,double>(std::sin,b)<<endl;
 	cout<<klApplyFn<float,double>(klErrorFunction,b/1000.0f);
 

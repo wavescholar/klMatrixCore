@@ -20,7 +20,6 @@ public:
 public: 
 	klVector<complex<double> > run(klMatrix<double>& kldmp,unsigned int numEigenvalues,bool calculateEigenvectors=true)
 	{
-		//Arpack does not do SVD, we can only feed it nxn matrices
 		if(kldmp.getColumns()!=kldmp.getRows())
 			throw "klArpack does not do SVD, we can only feed it nxn matrices";
 

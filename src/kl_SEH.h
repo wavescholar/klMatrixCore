@@ -12,10 +12,15 @@
 #include <windows.h>
 #include <dbghelp.h>
 
+
+//The stak walker was originally designed to work with structured exception handling. 
+//The intent was to generate a full state report inside of termination handlers.
+//Misrosoft reccomends using standard C++ exceptions, and we've stopped compiling 
+//with SEH enabled. The stalk walker is still useful for collecing state info when handling exceptions. 
+
 class klStackWalkerInternal; 
 
-
-class klStackWalker
+class klStackWalkBase
 {
 public:
   typedef enum StackWalkOptions
@@ -52,15 +57,15 @@ public:
     OptionsAll = 0x3F
   } StackWalkOptions;
 
-  klStackWalker(
+  klStackWalkBase(
     int options = OptionsAll, // 'int' is by design, to combine the enum-flags
     LPCSTR szSymPath = NULL, 
     DWORD dwProcessId = GetCurrentProcessId(), 
     HANDLE hProcess = GetCurrentProcess()
     );
-  klStackWalker(DWORD dwProcessId, HANDLE hProcess);
+  klStackWalkBase(DWORD dwProcessId, HANDLE hProcess);
   
-  virtual ~klStackWalker();
+  virtual ~klStackWalkBase();
 
   typedef BOOL (__stdcall *PReadProcessMemoryRoutine)(
     HANDLE      hProcess,
@@ -128,21 +133,16 @@ protected:
   friend klStackWalkerInternal;
 };
 
-
-
-
-
-
-class klklStackWalker : public klStackWalker
+class klStackWalker : public klStackWalkBase
 {
 public:
-  klklStackWalker() : klStackWalker() 
+  klStackWalker() : klStackWalkBase() 
   {
   }
-  klklStackWalker(DWORD dwProcessId, HANDLE hProcess) : klStackWalker(dwProcessId, hProcess) {}
+  klStackWalker(DWORD dwProcessId, HANDLE hProcess) : klStackWalkBase(dwProcessId, hProcess) {}
   virtual void OnOutput(LPCSTR szText) 
   { 
-	  klStackWalker::OnOutput(szText); 
+	  klStackWalkBase::OnOutput(szText); 
 	  msg+=std::string(szText);
 	  msg+="\r\n";
 
@@ -152,7 +152,6 @@ public:
 };
 
 std::string klStackWalkFn(void);
-
 
 #if defined(_M_IX86)
 #ifdef CURRENT_THREAD_VIA_EXCEPTION
@@ -194,12 +193,36 @@ std::string klStackWalkFn(void);
 } while(0);
 #endif
 
-//
-//
-//struct klSEHException 
-//{
-//	klSEHException(const EXCEPTION_RECORD & record) : record(record) {}
-//	EXCEPTION_RECORD record;
-//};
+
+/*
+With SEH, you can ensure that resources such as memory blocks and files are correctly if execution unexpectedly terminates. 
+You can also handle specific problems—for example, insufficient memory—by using concise structured code that does not rely o
+n goto statements or elaborate testing of return codes.
+The try-except and try-finally statements referred to in this article are Microsoft extensions to the C language. 
+They support SEH by enabling applications to gain control of a program after events that would otherwise terminate execution. 
+Although SEH works with C++ source files, it's not specifically designed for C++. If you use SEH in a C++ program that you 
+compile by using the /EH option—together with certain modifiers—destructors for local objects are called but other execution 
+behavior might not be what you expect. (For an illustration, see the example later in this article.) In most cases, instead of 
+SEH we recommend that you use ISO-standard C++ exception handling, which Visual C++ also supports. By using C++ exception handling, 
+you can ensure that your code is more portable, and you can handle exceptions of any type.
+If you have C modules that use SEH, you can mix them with C++ modules that use C++ exception handling. For information, see Exception Handling Differences.
+There are two SEH mechanisms:
+Exception handlers, which can respond to or dismiss the exception.
+Termination handlers, which are called when an exception causes termination in a block of code.
+try-finally-statement:
+__try  compound-statement
+__finally  compound-statement
+The try-finally statement is a Microsoft extension to the C and C++ languages that enables target applications to guarantee execution of cleanup code when execution of a block of code is interrupted. Cleanup consists of such tasks as deallocating memory, closing files, and releasing file handles. The try-finally statement is especially useful for routines that have several places where a check is made for an error that could cause premature return from the routine.
+For related information and a code sample, see try-except Statement. For more information on structured exception handling in general, see Structured Exception Handling. For more information on handling exceptions in managed applications, see Exception Handling under /clr.
+Note Note
+Structured exception handling works with Win32 for both C and C++ source files. However, it is not specifically designed for C++. You can ensure that your code is more portable by using C++ exception handling. Also, C++ exception handling is more flexible, in that it can handle exceptions of any type. For C++ programs, it is recommended that you use the C++ exception-handling mechanism (try, catch, and throw statements).
+*/
+
+
+struct klSEHException 
+{
+	klSEHException(const EXCEPTION_RECORD & record) : record(record) {}
+	EXCEPTION_RECORD record;
+};
 
 #endif __kl_SEH__

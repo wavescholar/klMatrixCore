@@ -17,7 +17,7 @@
 class klStackWalkerInternal
 {
 public:
-  klStackWalkerInternal(klStackWalker *parent, HANDLE hProcess)
+  klStackWalkerInternal(klStackWalkBase *parent, HANDLE hProcess)
   {
     m_parent = parent;
     m_hDbhHelp = NULL;
@@ -127,10 +127,10 @@ public:
     // SymSetOptions
     symOptions = this->pSSO(symOptions);
 
-    char buf[klStackWalker::STACKWALK_MAX_NAMELEN] = {0};
+    char buf[klStackWalkBase::STACKWALK_MAX_NAMELEN] = {0};
     if (this->pSGSP != NULL)
     {
-      if (this->pSGSP(m_hProcess, buf, klStackWalker::STACKWALK_MAX_NAMELEN) == FALSE)
+      if (this->pSGSP(m_hProcess, buf, klStackWalkBase::STACKWALK_MAX_NAMELEN) == FALSE)
         this->m_parent->OnDbgHelpErr("SymGetSearchPath", GetLastError(), 0);
     }
     char szUserName[1024] = {0};
@@ -141,7 +141,7 @@ public:
     return TRUE;
   }
 
-  klStackWalker *m_parent;
+  klStackWalkBase *m_parent;
 
   HMODULE m_hDbhHelp;
   HANDLE m_hProcess;
@@ -410,7 +410,7 @@ private:
     if ( (m_parent != NULL) && (szImg != NULL) )
     {
       // try to retrive the file-version:
-      if ( (this->m_parent->m_options & klStackWalker::RetrieveFileVersion) != 0)
+      if ( (this->m_parent->m_options & klStackWalkBase::RetrieveFileVersion) != 0)
       {
         VS_FIXEDFILEINFO *fInfo = NULL;
         DWORD dwHandle;
@@ -524,10 +524,7 @@ public:
   }
 };
 
-
-
-
-klStackWalker::klStackWalker(DWORD dwProcessId, HANDLE hProcess)
+klStackWalkBase::klStackWalkBase(DWORD dwProcessId, HANDLE hProcess)
 {
   this->m_options = OptionsAll;
   this->m_modulesLoaded = FALSE;
@@ -536,7 +533,7 @@ klStackWalker::klStackWalker(DWORD dwProcessId, HANDLE hProcess)
   this->m_dwProcessId = dwProcessId;
   this->m_szSymPath = NULL;
 }
-klStackWalker::klStackWalker(int options, LPCSTR szSymPath, DWORD dwProcessId, HANDLE hProcess)
+klStackWalkBase::klStackWalkBase(int options, LPCSTR szSymPath, DWORD dwProcessId, HANDLE hProcess)
 {
   this->m_options = options;
   this->m_modulesLoaded = FALSE;
@@ -556,7 +553,7 @@ klStackWalker::klStackWalker(int options, LPCSTR szSymPath, DWORD dwProcessId, H
     this->m_szSymPath = NULL;
 }
 
-klStackWalker::~klStackWalker()
+klStackWalkBase::~klStackWalkBase()
 {
   if (m_szSymPath != NULL)
     free(m_szSymPath);
@@ -566,7 +563,7 @@ klStackWalker::~klStackWalker()
   this->m_sw = NULL;
 }
 
-BOOL klStackWalker::LoadModules()
+BOOL klStackWalkBase::LoadModules()
 {
   if (this->m_sw == NULL)
   {
@@ -689,10 +686,10 @@ BOOL klStackWalker::LoadModules()
 // This has to be done due to a problem with the "hProcess"-parameter in x64...
 // Because this class is in no case multi-threading-enabled (because of the limitations 
 // of dbghelp.dll) it is "safe" to use a static-variable
-static klStackWalker::PReadProcessMemoryRoutine s_readMemoryFunction = NULL;
+static klStackWalkBase::PReadProcessMemoryRoutine s_readMemoryFunction = NULL;
 static LPVOID s_readMemoryFunction_UserData = NULL;
 
-BOOL klStackWalker::ShowCallstack(HANDLE hThread, const CONTEXT *context, PReadProcessMemoryRoutine readMemoryFunction, LPVOID pUserData)
+BOOL klStackWalkBase::ShowCallstack(HANDLE hThread, const CONTEXT *context, PReadProcessMemoryRoutine readMemoryFunction, LPVOID pUserData)
 {
   CONTEXT c;;
   CallstackEntry csEntry;
@@ -890,7 +887,7 @@ BOOL klStackWalker::ShowCallstack(HANDLE hThread, const CONTEXT *context, PReadP
   return TRUE;
 }
 
-BOOL __stdcall klStackWalker::myReadProcMem(
+BOOL __stdcall klStackWalkBase::myReadProcMem(
     HANDLE      hProcess,
     DWORD64     qwBaseAddress,
     PVOID       lpBuffer,
@@ -912,7 +909,7 @@ BOOL __stdcall klStackWalker::myReadProcMem(
   }
 }
 
-void klStackWalker::OnLoadModule(LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD size, DWORD result, LPCSTR symType, LPCSTR pdbName, ULONGLONG fileVersion)
+void klStackWalkBase::OnLoadModule(LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD size, DWORD result, LPCSTR symType, LPCSTR pdbName, ULONGLONG fileVersion)
 {
   CHAR buffer[STACKWALK_MAX_NAMELEN];
   if (fileVersion == 0)
@@ -928,7 +925,7 @@ void klStackWalker::OnLoadModule(LPCSTR img, LPCSTR mod, DWORD64 baseAddr, DWORD
   OnOutput(buffer);
 }
 
-void klStackWalker::OnCallstackEntry(CallstackEntryType eType, CallstackEntry &entry)
+void klStackWalkBase::OnCallstackEntry(CallstackEntryType eType, CallstackEntry &entry)
 {
   CHAR buffer[STACKWALK_MAX_NAMELEN];
   if ( (eType != lastEntry) && (entry.offset != 0) )
@@ -952,14 +949,14 @@ void klStackWalker::OnCallstackEntry(CallstackEntryType eType, CallstackEntry &e
   }
 }
 
-void klStackWalker::OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr)
+void klStackWalkBase::OnDbgHelpErr(LPCSTR szFuncName, DWORD gle, DWORD64 addr)
 {
   CHAR buffer[STACKWALK_MAX_NAMELEN];
   _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "ERROR: %s, GetLastError: %d (Address: %p)\n", szFuncName, gle, (LPVOID) addr);
   OnOutput(buffer);
 }
 
-void klStackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUserName)
+void klStackWalkBase::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUserName)
 {
   CHAR buffer[STACKWALK_MAX_NAMELEN];
   _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "SymInit: Symbol-SearchPath: '%s', symOptions: %d, UserName: '%s'\n", szSearchPath, symOptions, szUserName);
@@ -977,18 +974,16 @@ void klStackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUs
   }
 }
 
-void klStackWalker::OnOutput(LPCSTR buffer)
+void klStackWalkBase::OnOutput(LPCSTR buffer)
 {
   OutputDebugStringA(buffer);
 }
 
 
 
-
-
 std::string klStackWalkFn(void)
 {
-	klklStackWalker msw;
+	klStackWalker msw;
 	msw.ShowCallstack();
 	return msw.msg;
 };
