@@ -1,6 +1,6 @@
  /*******************************
- * WSCMP [2003] - [2012] WSCMP  *  
- * Bruce B Campbell 11 30 2012  *
+ * WSCMP [2003] - [2014] WSCMP  *  
+ * Bruce B Campbell 03 26 2014  *
  ********************************/
 #ifndef __kl_latex_helper_fns__
 #define __kl_latex_helper_fns__

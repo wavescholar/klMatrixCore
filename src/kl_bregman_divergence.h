@@ -1,6 +1,6 @@
  /*******************************
- * WSCMP [2003] - [2012] WSCMP  *  
- * Bruce B Campbell 11 30 2012  *
+ * WSCMP [2003] - [2014] WSCMP  *  
+ * Bruce B Campbell 03 26 2014  *
  ********************************/
 #ifndef __kl_bregman_divergence__
 #define __kl_bregman_divergence__
@@ -52,4 +52,7 @@ template<class TYPE> TYPE klKullbackLiebelerDivergence(klVector<TYPE> x,klVector
 
 
 }
+
+ 
+
 #endif //__kl_bregman_divergence__

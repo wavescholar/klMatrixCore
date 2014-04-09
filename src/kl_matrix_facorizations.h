@@ -1,6 +1,6 @@
  /*******************************
- * WSCMP [2003] - [2012] WSCMP  *  
- * Bruce B Campbell 11 30 2012  *
+ * WSCMP [2003] - [2014] WSCMP  *  
+ * Bruce B Campbell 03 26 2014  *
  ********************************/
 #ifndef __kl_linear_equation__
 #define __kl_linear_equation__
@@ -258,6 +258,12 @@ template<> klSmartPtr<klVector<double> > klSYEVX<double>::operator()()
 }
 
 //This computes all eigenvalues and, optionally, eigenvectors of an n-by-n real symmetric matrix A
+//Intel® MKL 11.0 Update 2 introduced a new component called Extended Eigensolver routines. 
+//These routines solve standard and generalized Eigenvalue problems for symmetric/Hermitian and symmetric/Hermitian positive definite sparse matrices. Specifically, these routines computes all the Eigenvalues and the corresponding Eigenvectors within a given search interval [?min, ?max]:
+//$$Ax = ?x$$ and
+//$$Ax = ?Bx$$
+//where A is a real symmetric or complex Hermitian matrix and B is a real symmetric positive definite or complex Hermitian positive definite matrix. Eigenvalue problems for dense and band matrices are also supported, although solvers for these matrices have long existed in LAPACK. The Extended Eigensolver is intended to complement the Eigenvalue solvers in LAPACK, which lacks support for sparse matrices. 
+//The Extended Eigensolver is an implementation of the FEAST Eigenvalue Solver. The interfaces are compatible with FEAST Eigenvalue Solver v2.0. The FEAST algorithm is fundamentally different than the traditional Krylov subspace iteration based algorithms. It uses a numerically efficient contour integration technique to obtain Eigenpairs within the search interval. It has advantages such as the ability to capture all multiplicities, fast convergence, being insensitive to spectrum structures, and so on.
 template<class TYPE> class klFEATS
 {
 private :

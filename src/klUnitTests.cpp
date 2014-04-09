@@ -150,8 +150,15 @@ void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
 	delete cmdString;
 }
 
+#include <errno.h> 
 void unitTestMain()
 {
+	//Set the path to the Matlab binaries. 
+	char* envV= getenv("PATH");
+	//Returns an errno if there is a problem.
+	int setOK = _putenv( "PATH=%PATH%;C:\\Program Files\\MATLAB\\R2012b\\bin\\win64");
+	envV= getenv("PATH");
+
 	char* syscmd = new char[2048];
 	sprintf(syscmd,"mkdir %s",basefilename);
 	system(syscmd); 

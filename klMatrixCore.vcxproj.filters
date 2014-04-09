@@ -58,9 +58,6 @@
     <Library Include="..\x64\Debug\expokit.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
-    <Library Include="..\x64\Debug\arpack_CPP_v2.lib">
-      <Filter>Libs\DebugklPackages</Filter>
-    </Library>
     <Library Include="..\x64\Debug\ARPACK2.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
@@ -80,9 +77,6 @@
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\expokitcpp.lib">
-      <Filter>Libs\ReleaselPackages</Filter>
-    </Library>
-    <Library Include="..\x64\Release\arpack_CPP_v2.lib">
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\ARPACK2.lib">

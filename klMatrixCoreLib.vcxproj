@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{37CBA57A-C448-488A-9447-55B7F72F1A3D}</ProjectGuid>
+    <ProjectGuid>{DDD44601-359E-441C-9650-4FAB056661C8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>klMatrixCore</RootNamespace>
   </PropertyGroup>
@@ -55,7 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;d:\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -70,7 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;K:\KL\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;D:\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\allEx;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\include;d:\klMatrixCore\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,7 +115,6 @@
   <ItemGroup>
     <ClCompile Include="src\klArpackCore.cpp" />
     <ClCompile Include="src\klSDPA.cpp" />
-    <ClCompile Include="src\klTestDSYEVX.cpp" />
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\klUnitTests.cpp" />
     <ClCompile Include="src\klUtil.cpp" />
