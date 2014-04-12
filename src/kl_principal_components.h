@@ -9,7 +9,7 @@
 
 
 //Calculates the best linear approximation of a data set provided by the 
-//klsamplePopulation base class.  The data matrix X  \in is modeled 
+//klsamplePopulation base class.  The data matrix X  \in is modeled
 template<class TYPE> class klPrincipalComponents :public klSamplePopulation<TYPE>
 {
 public:
@@ -31,9 +31,7 @@ public:
 	{
 	}
 
-
 	//Calculates the eigenvalues and eigenvectors of the covariance matrix for the sample population.
-	//bbcrevisit - this method needs to be factored and or specialized
 	klMatrix<TYPE> operator()(unsigned int k)
 	{
 		return klPCACore(k);
@@ -52,11 +50,8 @@ public:
 		return _eigenvalues;
 	}
 
-
 	unsigned int getk() { return _k;}
-
-
-
+	
 private:
 	bool _pcaCalculated;
 
@@ -146,8 +141,6 @@ template<> klMatrix<double> klPrincipalComponents<double>::klPCACore(unsigned in
 	/*                     mkl svd documentation
 	call sgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, info)
 	call dgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, info)
-	call cgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, rwork, info)
-	call zgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, rwork, info)
 
 	This routine computes the singular value decomposition (SVD) of a
 	real/complex m-by-n matrix A, optionally computing the left and/or right

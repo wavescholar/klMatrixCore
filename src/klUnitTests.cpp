@@ -150,15 +150,24 @@ void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
 	delete cmdString;
 }
 
+
 #include <errno.h> 
 void unitTestMain()
 {
-	//Set the path to the Matlab binaries. 
-	char* envV= getenv("PATH");
-	//Returns an errno if there is a problem.
-	int setOK = _putenv( "PATH=%PATH%;C:\\Program Files\\MATLAB\\R2012b\\bin\\win64");
-	envV= getenv("PATH");
 
+	//Try to set the path to the Matlab binaries.  The below does not work.  The runtime 
+	//tries to load the dependencies before this can be executed.  Investigate delay loadding of dll.
+	//The code is kept here for reference. 
+	//I have previously experienced an issue where the environment variable can not be used.  There is a maximun path
+	//length of 2048 for the system environment variable. Exceeding this will cause
+	//myriad problems with a Windows 7 system.  If you find you icon image cache is corrupt - check the 
+	//length of your path variable. 
+	//char* envV= getenv("PATH");
+	////Returns an errno if there is a problem.
+	////int setOK = _putenv( "PATH=C:\\Program Files\\MATLAB\\R2012b\\bin\\win64;%PATH%");
+	//system("set PATH=C:\\Program Files\\MATLAB\\R2012b\\bin\\win64;%PATH%");
+	//envV= getenv("PATH");
+	
 	char* syscmd = new char[2048];
 	sprintf(syscmd,"mkdir %s",basefilename);
 	system(syscmd); 
@@ -225,11 +234,10 @@ void unitTestMain()
 	//FEATSEigensolver(_tex,di,locaFname);
 	
 	//This generates heap modified after free error
-	ARPACK_VS_SYEVX(_tex,di,locaFname);
+	//ARPACK_VS_SYEVX(_tex,di,locaFname);
+	
 
-
-
-	IterativeKrylovCheck(_tex,di,locaFname);		
+	//IterativeKrylovCheck(_tex,di,locaFname);		
 	//	
 	//klTestSize= klTestType::GROW;
 	//unsigned int dimension;
@@ -238,12 +246,15 @@ void unitTestMain()
 
 	klTestSize= klTestType::SMALL;
 
+	makeLatexSection("Gram Matrix Consistency Check",_tex);
+	klutw.runTest(GenerativeGramConsistencyCheck);
+
 	makeLatexSection("Solver ",_tex);
 	klutw.runTest(MatrixEigenSolver);
 
 	makeLatexSection("Generate Tracey Widom Sample",_tex);
 	klutw.runTest(GenerateTraceyWidomSample);
-
+	
 	makeLatexSection("Approximate Winger Distribution",_tex);
 	klutw.runTest(VerifyWingerLaw);
 	
@@ -255,10 +266,7 @@ void unitTestMain()
 	
 	makeLatexSection("Matrix Exponential ",_tex);
 	klutw.runTest(MatrixExponential);
-	
-	makeLatexSection("Gram Matrix Consistency Check",_tex);
-	klutw.runTest(GenerativeGramConsistencyCheck);
-			
+				
 	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
 	
@@ -1502,12 +1510,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 
 	_tex<<"Feature dim = "<<numFeatures<<endl<<endl;
 
-	LatexPrintMatrix<double>(SigmaW,"W",_tex);
-
-	klPrincipalComponents<double> pcaWishart=SigmaW;
-	klMatrix<double> V=pcaWishart(2);
-	klVector<double> wishartEigs=pcaWishart.eigenvalues();
-	LatexPrintVector<double>(wishartEigs,"W eigs",_tex);
+	LatexPrintMatrix<double>(SigmaW,"$\Sigma$",_tex);
 
 	unsigned int i;
 	unsigned int j;
@@ -1528,15 +1531,22 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 	
 	LatexPrintVector<double>(X.sampleMean(),"Sample Mean",_tex);
 
-	//bbcreivist Git ISSUE #10 ( Makes extra Copy ?)
-	klMatrix<double> D  = SampleCovariance-SigmaW; 
-	LatexPrintMatrix<double>(D,"SampleCovariance-W",_tex);
+	//Git ISSUE #10 ( Makes extra Copy ?)
+	klMatrix<double> D  = SampleCovariance-SigmaW;                           
+	LatexPrintMatrix<double>(D,"Sample Covariance-$\Omega$",_tex);
 	
-	klPrincipalComponents<double> pcaCovariance=SampleCovariance;
-	klMatrix<double> VC =pcaCovariance(2);
-	klVector<double> covarianceEigs=pcaCovariance.eigenvalues();
-	
-	LatexPrintVector<double>(covarianceEigs,"Sample Covariance Eigs",_tex);
+	klPrincipalComponents<double> pca=X;
+	klMatrix<double> VC =pca(2);
+	klVector<complex<double> > covarianceEigs=SampleCovariance.eigenvalues();
+	klVector<double > pcaEigs = pca.eigenvalues();
+	LatexPrintVector<complex<double>  >(covarianceEigs,"Sample Covariance Eigs",_tex);
+		
+	klout(SigmaW);
+	klout(SampleCovariance);
+	klout(D);
+	klout(VC);
+	klout(covarianceEigs);
+	klout(pcaEigs);
 
 	//How close is the sample covariance to a PSD matrix?
 	//First we'll need a measure of matrix closeness and a way to find the 

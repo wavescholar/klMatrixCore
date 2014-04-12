@@ -80,7 +80,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\klSpline.h" />
     <ClInclude Include="src\kl_arpack.h" />
     <ClInclude Include="src\kl_bregman_divergence.h" />
     <ClInclude Include="src\kl_exception.h" />

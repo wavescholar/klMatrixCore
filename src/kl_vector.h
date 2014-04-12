@@ -18,6 +18,24 @@
 #include <complex>
 using namespace std;
 
+
+//This allows for debug output of matrices to the console window in
+//debug configuration. 
+#ifndef _DEBUG
+#define klout(A)  ; 
+#endif
+
+#ifdef _DEBUG
+#define klout(A) cout<<"------------------------"<<endl<<A<<endl ; 
+#endif
+
+//Checking the klout mechanism works -klout is for development.  It is intended for display of intermediate results.
+//klMatrix<double> A(2,2);
+//A=2.0;
+//klout(A);
+
+
+
 inline int mkl_eigs_select(double* x,double* y)
 {
 	return (*x<=*y) ? true: false;
