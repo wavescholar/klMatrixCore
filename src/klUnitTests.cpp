@@ -1536,7 +1536,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 	LatexPrintMatrix<double>(D,"Sample Covariance-$\Omega$",_tex);
 	
 	klPrincipalComponents<double> pca=X;
-	klMatrix<double> VC =pca(2);
+	klMatrix<double> VC =pca();
 	klVector<complex<double> > covarianceEigs=SampleCovariance.eigenvalues();
 	klVector<double > pcaEigs = pca.eigenvalues();
 	LatexPrintVector<complex<double>  >(covarianceEigs,"Sample Covariance Eigs",_tex);
@@ -1600,7 +1600,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 	LatexPrintMatrix<double>(VC ,"EigenDecomp of SampleCovariance",_tex);
 	
 	klPrincipalComponents<double> pcaGram=Gf;
-	klMatrix<double> VCGram =pcaGram(2);
+	klMatrix<double> VCGram =pcaGram();
 
 	LatexPrintMatrix<double>(VCGram ,"EigenDecomp of Gram Matrix",_tex);
 

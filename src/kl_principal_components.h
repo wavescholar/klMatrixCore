@@ -14,7 +14,7 @@ template<class TYPE> class klPrincipalComponents :public klSamplePopulation<TYPE
 {
 public:
 
-	klPrincipalComponents() : _pcaCalculated(false), k(0)
+	klPrincipalComponents() : _pcaCalculated(false)
 	{
 
 	}
@@ -27,25 +27,22 @@ public:
 
 	//Specializations exist for float and double.
 	//This class should not be instantiated for any other type.
-	klMatrix<TYPE> klPCACore(unsigned int k)
+	klMatrix<TYPE> klPCACore()
 	{
 	}
 
 	//Calculates the eigenvalues and eigenvectors of the covariance matrix for the sample population.
-	klMatrix<TYPE> operator()(unsigned int k)
+	klMatrix<TYPE> operator()()
 	{
-		return klPCACore(k);
+		return klPCACore();
 
 	}
 	//returns the eigenvalues of the covariance matrix
 	klVector<TYPE> eigenvalues()
 	{ 
 		if(! _pcaCalculated)
-		{
-			if(_k==0 || _k>getColumns() )
-				throw "klPrincipalComponents ERROR:  too many components for this data matrix";
-
-			operator()(_k);
+		{	
+			operator()();
 		}
 		return _eigenvalues;
 	}
@@ -55,23 +52,16 @@ public:
 private:
 	bool _pcaCalculated;
 
-	unsigned int _k;
-
 	klVector<TYPE> _eigenvalues;
 
 };
-template<> klMatrix<float> klPrincipalComponents<float>::klPCACore(unsigned int k)
-{
-
-	_k=k;//bbcrevisit we are not using k yet
-	klMatrix<float> _A=covarianceMatrix();
+template<> klMatrix<float> klPrincipalComponents<float>::klPCACore()
+{klMatrix<float> _A=covarianceMatrix();
 
 	/*                     mkl svd documentation
 	call sgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, info)
 	call dgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, info)
-	call cgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, rwork, info)
-	call zgesvd ( jobu, jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, lwork, rwork, info)
-
+	
 	This routine computes the singular value decomposition (SVD) of a
 	real/complex m-by-n matrix A, optionally computing the left and/or right
 	singular vectors. The SVD is written A = U S VH
@@ -104,8 +94,8 @@ template<> klMatrix<float> klPrincipalComponents<float>::klPCACore(unsigned int 
 	char jobu='A';//  A=all are returned in u   S = min (m,n)  goto u     O=min(m,n) goto a    N=no signular values are computed
 	char jobv='A';// A= all rows of V^t are computed and returned in vt
 
-	klMatrix<float> S(n,m);//S(m,n,FORTAN); 
-	klMatrix<float> U(m,m);//
+	klVector<float> S(n);
+	klMatrix<float> U(m,m);
 	klMatrix<float> V(n,n);
 
 	int ldu=U.getColumns();
@@ -126,16 +116,13 @@ template<> klMatrix<float> klPrincipalComponents<float>::klPCACore(unsigned int 
 	V=V.transpose();
 	delete work;
 	_pcaCalculated=true;
-
-	//Apply the transform to the sample poplulation and return 
-
+	
 	return V;
 
 }
 
-template<> klMatrix<double> klPrincipalComponents<double>::klPCACore(unsigned int k)
+template<> klMatrix<double> klPrincipalComponents<double>::klPCACore()
 {
-	_k=k;
 	klMatrix<double> _A=covarianceMatrix();
 
 	/*                     mkl svd documentation
@@ -173,8 +160,9 @@ template<> klMatrix<double> klPrincipalComponents<double>::klPCACore(unsigned in
 	//options for computing U		
 	char jobu='A';//  A=all are returned in u   S = min (m,n)  goto u     O=min(m,n) goto a    N=no signular values are computed
 	char jobv='A';// A= all rows of V^t are computed and returned in vt
+		
+	klVector<double> S(n);//S(m,n,FORTAN); 
 
-	klMatrix<double> S(n,m);//S(m,n,FORTAN); 
 	klMatrix<double> U(m,m);//
 	klMatrix<double> V(n,n);
 
@@ -183,9 +171,6 @@ template<> klMatrix<double> klPrincipalComponents<double>::klPCACore(unsigned in
 	dgesvd ( &jobu, &jobv, &m, &n, trA.getMemory(), &lda, S.getMemory(), U.getMemory(),&ldu , V.getMemory(),&ldv ,work, &lwork, &info);
 	//dgesvd ( &jobu, &jobvt, m, n, a, lda, s, u, ldu, vt, ldvt,work, &lwork, &info);
 
-	//unnecessary since s is diag
-	//klMatrix<float> trS=S.transpose();
-
 	//Store the eigenvalues of the covariance matrix in the member variable 
 
 	//First allocate the _eigenvlaues member variable
@@ -193,9 +178,8 @@ template<> klMatrix<double> klPrincipalComponents<double>::klPCACore(unsigned in
 
 	unsigned int i;
 	for(i=0;i<n;i++)
-		_eigenvalues[i]=S[i][i];
+		_eigenvalues[i]=S[i];
 
-	//U=U.transpose();//bbcrevisit see what this means in term of the copy constructors
 	V=V.transpose();
 	delete work;
 	_pcaCalculated=true;

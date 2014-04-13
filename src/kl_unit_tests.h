@@ -982,7 +982,7 @@ template<class TYPE> void testKLMultiVariateRandomNumberGenerator2(ofstream &_te
 
 			klPrincipalComponents<TYPE> pca=sample;
 
-			klMatrix<TYPE> V=pca(2);
+			klMatrix<TYPE> V=pca();
 			cout<<V<<endl;
 
 			klVector<TYPE> e=pca.eigenvalues();
@@ -1119,8 +1119,7 @@ template<class TYPE> void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &
 
 	klPrincipalComponents<TYPE> pca=sample;
 
-	unsigned int numComponents=2;
-	klMatrix<TYPE> V=pca(numComponents);
+	klMatrix<TYPE> V=pca();
 
 	{
 		sprintf(arg,"%spca_first_2.txt",basefilename);
@@ -1129,7 +1128,7 @@ template<class TYPE> void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &
 		fileostreamobj.close();
 	}
 
-	_tex<<"The "<<numComponents<<" eigenvectors:"<<endl;
+	_tex<<"The eigenvectors:"<<endl;
 	_tex<<V<<endl;
 
 	klVector<complex<double> > e=covarianceMatrix.eigenvalues();

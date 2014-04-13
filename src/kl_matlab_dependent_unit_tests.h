@@ -479,10 +479,9 @@ template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,unsigne
 
 	klPrincipalComponents<TYPE> pca=sample;
 
-	unsigned int numComponents=2;
-	klMatrix<TYPE> V=pca(numComponents);
+	klMatrix<TYPE> V=pca();
 
-	_tex<<"The "<<numComponents<<" eigenvectors:"<<endl;
+	_tex<<"The eigenvectors:"<<endl;
 	_tex<<V<<endl;
 
 	klVector<complex<double> > e=covarianceMatrix.eigenvalues();
