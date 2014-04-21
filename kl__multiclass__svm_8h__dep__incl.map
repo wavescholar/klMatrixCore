@@ -1,9 +1,9 @@
 <map id="kl_multiclass_svm.h" name="kl_multiclass_svm.h">
-<area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html" title="kl_matlab_dependent\l_unit_tests.h" alt="" coords="5,155,149,197"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="81,253,193,280"/>
-<area shape="rect" id="node7" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="217,253,391,280"/>
-<area shape="rect" id="node9" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="407,163,541,189"/>
-<area shape="rect" id="node14" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="587,246,732,287"/>
-<area shape="rect" id="node17" href="$kl__unit__tests_8h.html" title="kl_unit_tests.h" alt="" coords="225,80,332,107"/>
-<area shape="rect" id="node12" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="415,253,563,280"/>
+<area shape="rect" id="node2" href="$kl__matlab__dependent__unit__tests_8h.html" title="kl_matlab_dependent\l_unit_tests.h" alt="" coords="5,155,151,196"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="82,251,194,278"/>
+<area shape="rect" id="node4" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="218,251,391,278"/>
+<area shape="rect" id="node5" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="408,162,543,189"/>
+<area shape="rect" id="node7" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="588,244,733,285"/>
+<area shape="rect" id="node8" href="$kl__unit__tests_8h.html" title="kl_unit_tests.h" alt="" coords="226,80,333,107"/>
+<area shape="rect" id="node6" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="416,251,564,278"/>
 </map>

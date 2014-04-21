@@ -1,14 +1,14 @@
 <map id="klNormalInverseApproxRV::klNormalInverseApproxRV" name="klNormalInverseApproxRV::klNormalInverseApproxRV">
-<area shape="rect" id="node3" href="$namespace_k_l__stat.html#a12761818bd8e8e7484c49e02c9fee58c" title="KL_stat::variance" alt="" coords="473,27,596,54"/>
-<area shape="rect" id="node5" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="677,27,784,54"/>
-<area shape="rect" id="node7" href="$classkl_normal_inverse_approx_r_v.html#aac4553b38e127adafefd817024f94149" title="klNormalInverseApproxRV\l::NormalRVReset" alt="" coords="235,100,407,141"/>
-<area shape="rect" id="node11" href="$kl__random__number__generator_8h.html#adab980d24d5675e1b29ca9ce35f57c9a" title="fastSeed" alt="" coords="498,234,571,261"/>
-<area shape="rect" id="node17" href="$classkl_mersenne_twister.html#ac48544f02035c805c906453272e812a6" title="klMersenneTwister::\lreset" alt="" coords="1035,172,1173,213"/>
-<area shape="rect" id="node28" href="$classkl_uniform_r_v.html#a109e401eafeeeef869533701507e7a9c" title="klUniformRV::setRange" alt="" coords="456,129,613,155"/>
-<area shape="rect" id="node13" href="$classkl_mersenne_twister.html#ab100a0633c89fcf815465781812d7fd6" title="klMersenneTwister::\lnextValue" alt="" coords="661,231,800,272"/>
-<area shape="rect" id="node15" href="$classkl_mersenne_twister.html#adf5bc297bfea8d38797df58d6df4db7e" title="klMersenneTwister::\lreloadMT" alt="" coords="848,231,987,272"/>
-<area shape="rect" id="node19" href="$kl__random__number__generator_8cpp.html#a0bf447f52af2f1d2c8a46746f2eeca29" title="mixBits" alt="" coords="1071,289,1137,315"/>
-<area shape="rect" id="node25" href="$kl__random__number__generator_8cpp.html#ae648fc211675097073f4b8ac4d5657be" title="loBit" alt="" coords="1080,238,1128,265"/>
-<area shape="rect" id="node21" href="$kl__random__number__generator_8cpp.html#a10dd0231ebb6be751a87dc9f97d36aff" title="hiBit" alt="" coords="1225,263,1273,290"/>
-<area shape="rect" id="node23" href="$kl__random__number__generator_8cpp.html#ac08bc1bcc8b91899730d1684c11175b6" title="loBits" alt="" coords="1222,314,1277,341"/>
+<area shape="rect" id="node2" href="$namespace_k_l__stat.html#a12761818bd8e8e7484c49e02c9fee58c" title="KL_stat::variance" alt="" coords="471,27,593,54"/>
+<area shape="rect" id="node3" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="675,27,781,54"/>
+<area shape="rect" id="node4" href="$classkl_normal_inverse_approx_r_v.html#aac4553b38e127adafefd817024f94149" title="klNormalInverseApproxRV\l::NormalRVReset" alt="" coords="233,100,405,141"/>
+<area shape="rect" id="node5" href="$kl__random__number__generator_8h.html#adab980d24d5675e1b29ca9ce35f57c9a" title="fastSeed" alt="" coords="495,234,569,260"/>
+<area shape="rect" id="node8" href="$classkl_mersenne_twister.html#ac48544f02035c805c906453272e812a6" title="klMersenneTwister::\lreset" alt="" coords="1032,172,1171,213"/>
+<area shape="rect" id="node13" href="$classkl_uniform_r_v.html#a109e401eafeeeef869533701507e7a9c" title="klUniformRV::setRange" alt="" coords="453,128,611,155"/>
+<area shape="rect" id="node6" href="$classkl_mersenne_twister.html#ab100a0633c89fcf815465781812d7fd6" title="klMersenneTwister::\lnextValue" alt="" coords="659,230,797,272"/>
+<area shape="rect" id="node7" href="$classkl_mersenne_twister.html#adf5bc297bfea8d38797df58d6df4db7e" title="klMersenneTwister::\lreloadMT" alt="" coords="845,230,984,272"/>
+<area shape="rect" id="node9" href="$kl__random__number__generator_8cpp.html#a0bf447f52af2f1d2c8a46746f2eeca29" title="mixBits" alt="" coords="1068,288,1135,315"/>
+<area shape="rect" id="node12" href="$kl__random__number__generator_8cpp.html#ae648fc211675097073f4b8ac4d5657be" title="loBit" alt="" coords="1077,238,1125,264"/>
+<area shape="rect" id="node10" href="$kl__random__number__generator_8cpp.html#a10dd0231ebb6be751a87dc9f97d36aff" title="hiBit" alt="" coords="1222,263,1270,290"/>
+<area shape="rect" id="node11" href="$kl__random__number__generator_8cpp.html#ac08bc1bcc8b91899730d1684c11175b6" title="loBits" alt="" coords="1219,314,1273,340"/>
 </map>

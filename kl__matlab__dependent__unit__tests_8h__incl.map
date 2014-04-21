@@ -1,15 +1,15 @@
 <map id="kl_matlab_dependent_unit_tests.h" name="kl_matlab_dependent_unit_tests.h">
-<area shape="rect" id="node3" href="$kl__multiclass__svm_8h.html" title="kl_multiclass_svm.h" alt="" coords="983,187,1121,213"/>
-<area shape="rect" id="node81" href="$kl__sample__population_8h.html" title="kl_sample_population.h" alt="" coords="1050,261,1208,288"/>
-<area shape="rect" id="node91" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="732,187,908,213"/>
-<area shape="rect" id="node95" href="$kl__multivariate__random__variable_8h.html" title="kl_multivariate_random\l_variable.h" alt="" coords="592,97,747,138"/>
-<area shape="rect" id="node114" href="$kl__time__series_8h.html" title="kl_time_series.h" alt="" coords="857,261,975,288"/>
-<area shape="rect" id="node5" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="601,336,687,363"/>
-<area shape="rect" id="node9" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="817,560,913,587"/>
-<area shape="rect" id="node31" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="399,485,465,512"/>
-<area shape="rect" id="node60" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="489,411,572,437"/>
-<area shape="rect" id="node40" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="227,560,333,587"/>
-<area shape="rect" id="node42" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="316,635,393,661"/>
-<area shape="rect" id="node85" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="1044,336,1116,363"/>
-<area shape="rect" id="node97" href="$kl__random__number__generator_8h.html" title="kl_random_number_generator.h" alt="" coords="382,261,585,288"/>
+<area shape="rect" id="node2" href="$kl__multiclass__svm_8h.html" title="kl_multiclass_svm.h" alt="" coords="983,184,1121,211"/>
+<area shape="rect" id="node30" href="$kl__sample__population_8h.html" title="kl_sample_population.h" alt="" coords="1050,259,1209,285"/>
+<area shape="rect" id="node33" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="732,184,908,211"/>
+<area shape="rect" id="node34" href="$kl__multivariate__random__variable_8h.html" title="kl_multivariate_random\l_variable.h" alt="" coords="592,95,747,136"/>
+<area shape="rect" id="node39" href="$kl__time__series_8h.html" title="kl_time_series.h" alt="" coords="857,259,975,285"/>
+<area shape="rect" id="node3" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="601,333,687,360"/>
+<area shape="rect" id="node5" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="817,557,914,584"/>
+<area shape="rect" id="node16" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="399,483,465,509"/>
+<area shape="rect" id="node26" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="489,408,573,435"/>
+<area shape="rect" id="node19" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="227,557,333,584"/>
+<area shape="rect" id="node20" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="316,632,393,659"/>
+<area shape="rect" id="node31" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="1044,333,1116,360"/>
+<area shape="rect" id="node35" href="$kl__random__number__generator_8h.html" title="kl_random_number_generator.h" alt="" coords="382,259,586,285"/>
 </map>

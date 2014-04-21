@@ -1,4 +1,5 @@
 <map id="klVector::dotBLAS" name="klVector::dotBLAS">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="184,5,307,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="355,5,451,32"/>
+<area shape="rect" id="node2" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="203,5,292,32"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="184,56,311,83"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="359,31,455,57"/>
 </map>

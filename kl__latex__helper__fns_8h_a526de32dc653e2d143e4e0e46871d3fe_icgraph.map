@@ -1,8 +1,11 @@
 <map id="makeLatexSection" name="makeLatexSection">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="432,119,528,145"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a1227e0312c9927fe6706eee7166d28ca" title="VerifyWingerLaw" alt="" coords="225,43,343,69"/>
-<area shape="rect" id="node8" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="185,93,383,120"/>
-<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="223,144,345,171"/>
-<area shape="rect" id="node14" href="$kl_unit_tests_8cpp.html#acb4117e339f7081965f7a0d7a2c91453" title="UtilityDemo" alt="" coords="239,195,329,221"/>
-<area shape="rect" id="node17" href="$kl_unit_tests_8cpp.html#afd5b4c7afa24cd174074c5e00d9667df" title="LinearRegressionDemo" alt="" coords="206,245,362,272"/>
+<area shape="rect" id="node2" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="431,255,527,281"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a1227e0312c9927fe6706eee7166d28ca" title="VerifyWingerLaw" alt="" coords="224,52,343,79"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a7a4e925208393a135254bde308f6d803" title="ARPACK_VS_SYEVX" alt="" coords="208,103,359,129"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a56842e196c4f36f10bd62acf27362976" title="FEATSEigensolver" alt="" coords="218,153,349,180"/>
+<area shape="rect" id="node6" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="184,204,383,231"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="239,255,328,281"/>
+<area shape="rect" id="node8" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="220,305,347,332"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#aa2203099ac8d5f9d4034c65c63b7b938" title="Utility" alt="" coords="256,356,311,383"/>
+<area shape="rect" id="node10" href="$kl_unit_tests_8cpp.html#ab4d57cf1e239cadf73ad4dd0018232ce" title="LinearRegression" alt="" coords="222,407,345,433"/>
 </map>

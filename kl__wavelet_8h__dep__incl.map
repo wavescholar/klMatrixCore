@@ -1,7 +1,7 @@
 <map id="kl_wavelet.h" name="kl_wavelet.h">
-<area shape="rect" id="node3" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="5,163,179,189"/>
-<area shape="rect" id="node5" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="275,80,409,107"/>
-<area shape="rect" id="node10" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="375,155,520,197"/>
-<area shape="rect" id="node12" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="545,163,657,189"/>
-<area shape="rect" id="node8" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="203,163,351,189"/>
+<area shape="rect" id="node2" href="$kl__matrix__exponential_8cpp.html" title="kl_matrix_exponential.cpp" alt="" coords="5,162,179,189"/>
+<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8h.html" title="kl_ML_helper_fns.h" alt="" coords="275,80,410,107"/>
+<area shape="rect" id="node5" href="$kl__threaded__workflow__demo_8cpp.html" title="kl_threaded_workflow\l_demo.cpp" alt="" coords="375,155,521,196"/>
+<area shape="rect" id="node6" href="$kl_unit_tests_8cpp.html" title="klUnitTests.cpp" alt="" coords="545,162,657,189"/>
+<area shape="rect" id="node4" href="$kl___m_l__helper__fns_8cpp.html" title="kl_ML_helper_fns.cpp" alt="" coords="203,162,351,189"/>
 </map>

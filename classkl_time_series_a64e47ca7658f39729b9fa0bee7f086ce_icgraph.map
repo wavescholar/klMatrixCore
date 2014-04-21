@@ -1,3 +1,5 @@
 <map id="klTimeSeries::IEMA" name="klTimeSeries::IEMA">
-<area shape="rect" id="node3" href="$kl__unit__tests_8h.html#a2eb8ca535f6e18e347d0afc7dd28f44a" title="testKLTimeSeries2" alt="" coords="193,5,325,32"/>
+<area shape="rect" id="node2" href="$kl__unit__tests_8h.html#a2eb8ca535f6e18e347d0afc7dd28f44a" title="testKLTimeSeries2" alt="" coords="214,5,346,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#ab6062c746efeb859e24d3e79119006f5" title="IteratedExponentialFiltering" alt="" coords="191,56,369,83"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="417,56,513,83"/>
 </map>

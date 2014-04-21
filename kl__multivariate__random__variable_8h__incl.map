@@ -1,12 +1,12 @@
 <map id="kl_multivariate_random_variable.h" name="kl_multivariate_random_variable.h">
-<area shape="rect" id="node3" href="$kl__random__number__generator_8h.html" title="kl_random_number_generator.h" alt="" coords="353,171,556,197"/>
-<area shape="rect" id="node17" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="683,245,769,272"/>
-<area shape="rect" id="node92" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="1013,96,1189,123"/>
-<area shape="rect" id="node21" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="342,469,439,496"/>
-<area shape="rect" id="node43" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="827,395,893,421"/>
-<area shape="rect" id="node71" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="685,320,768,347"/>
-<area shape="rect" id="node51" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="917,469,1024,496"/>
-<area shape="rect" id="node53" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="920,544,997,571"/>
-<area shape="rect" id="node94" href="$kl__sample__population_8h.html" title="kl_sample_population.h" alt="" coords="999,171,1157,197"/>
-<area shape="rect" id="node98" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="1039,245,1111,272"/>
+<area shape="rect" id="node2" href="$kl__random__number__generator_8h.html" title="kl_random_number_generator.h" alt="" coords="353,169,557,196"/>
+<area shape="rect" id="node9" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="683,244,770,271"/>
+<area shape="rect" id="node34" href="$kl__principal__components_8h.html" title="kl_principal_components.h" alt="" coords="1013,95,1189,121"/>
+<area shape="rect" id="node11" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="342,468,439,495"/>
+<area shape="rect" id="node22" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="827,393,893,420"/>
+<area shape="rect" id="node31" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="685,319,769,345"/>
+<area shape="rect" id="node24" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="917,468,1024,495"/>
+<area shape="rect" id="node25" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="920,543,997,569"/>
+<area shape="rect" id="node35" href="$kl__sample__population_8h.html" title="kl_sample_population.h" alt="" coords="999,169,1158,196"/>
+<area shape="rect" id="node36" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="1039,244,1111,271"/>
 </map>

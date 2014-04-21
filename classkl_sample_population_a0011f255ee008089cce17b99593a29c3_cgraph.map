@@ -1,9 +1,9 @@
 <map id="klSamplePopulation::variance" name="klSamplePopulation::variance">
-<area shape="rect" id="node3" href="$classkl_sample_population.html#a09755537901fd7422135f67a80871fbc" title="klSamplePopulation\l::calcDescriptiveStats" alt="" coords="193,125,341,166"/>
-<area shape="rect" id="node5" href="$classkl_vector.html#a729323f87948bf7fae68999018d2ab32" title="klVector::setup" alt="" coords="406,5,517,32"/>
-<area shape="rect" id="node7" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="390,56,533,83"/>
-<area shape="rect" id="node9" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="581,132,688,159"/>
-<area shape="rect" id="node11" href="$namespace_k_l__stat.html#a12761818bd8e8e7484c49e02c9fee58c" title="KL_stat::variance" alt="" coords="400,157,523,184"/>
-<area shape="rect" id="node14" href="$namespace_k_l__stat.html#abb9a1ebe37ff5572fb87a7d5c138541c" title="KL_stat::skewness" alt="" coords="395,208,528,235"/>
-<area shape="rect" id="node16" href="$namespace_k_l__stat.html#a8ce3fa54f5ad3981634b11c8158bf93b" title="KL_stat::kurtosis" alt="" coords="401,259,522,285"/>
+<area shape="rect" id="node2" href="$classkl_sample_population.html#a09755537901fd7422135f67a80871fbc" title="klSamplePopulation\l::calcDescriptiveStats" alt="" coords="191,125,339,166"/>
+<area shape="rect" id="node3" href="$classkl_vector.html#ac40868e727fdf403cc3e92cc5278826b" title="klVector::setup" alt="" coords="403,5,513,32"/>
+<area shape="rect" id="node4" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="387,56,529,83"/>
+<area shape="rect" id="node5" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="577,132,684,159"/>
+<area shape="rect" id="node6" href="$namespace_k_l__stat.html#a12761818bd8e8e7484c49e02c9fee58c" title="KL_stat::variance" alt="" coords="397,157,519,184"/>
+<area shape="rect" id="node7" href="$namespace_k_l__stat.html#abb9a1ebe37ff5572fb87a7d5c138541c" title="KL_stat::skewness" alt="" coords="391,208,525,235"/>
+<area shape="rect" id="node8" href="$namespace_k_l__stat.html#a8ce3fa54f5ad3981634b11c8158bf93b" title="KL_stat::kurtosis" alt="" coords="397,259,519,285"/>
 </map>

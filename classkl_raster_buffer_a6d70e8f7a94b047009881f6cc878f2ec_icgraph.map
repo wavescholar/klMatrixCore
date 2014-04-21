@@ -1,6 +1,6 @@
 <map id="klRasterBuffer::numBands" name="klRasterBuffer::numBands">
-<area shape="rect" id="node3" href="$classkl_p_c_a_functor.html#aed4583319b5cae6bff68c10a4d747420" title="klPCAFunctor::operator()" alt="" coords="238,5,405,32"/>
-<area shape="rect" id="node5" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="239,57,404,98"/>
-<area shape="rect" id="node7" href="$classkl_stain_purity.html#ab02a2b5747f8880c4680e6027e5b6e50" title="klStainPurity::operator()" alt="" coords="242,123,401,149"/>
-<area shape="rect" id="node9" href="$classkl_composite_mask.html#a8db950c721202eee2fe91dee4a242c93" title="klCompositeMask::operator()" alt="" coords="227,173,416,200"/>
+<area shape="rect" id="node2" href="$classkl_p_c_a_functor.html#aed4583319b5cae6bff68c10a4d747420" title="klPCAFunctor::operator()" alt="" coords="238,5,405,32"/>
+<area shape="rect" id="node3" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="239,57,404,98"/>
+<area shape="rect" id="node4" href="$classkl_stain_purity.html#ab02a2b5747f8880c4680e6027e5b6e50" title="klStainPurity::operator()" alt="" coords="242,123,401,149"/>
+<area shape="rect" id="node5" href="$classkl_composite_mask.html#a8db950c721202eee2fe91dee4a242c93" title="klCompositeMask::operator()" alt="" coords="227,173,416,200"/>
 </map>

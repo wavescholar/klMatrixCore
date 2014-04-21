@@ -1,5 +1,5 @@
 <map id="klHeapAlloc" name="klHeapAlloc">
-<area shape="rect" id="node3" href="$classkl_heap_mgr.html#a581485c931c961eeb91216d837561739" title="klHeapMgr::allocate" alt="" coords="145,5,282,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a6cdd1e9afc81ac53932095359fe27362" title="MemoryManagementDemo" alt="" coords="331,5,509,32"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="557,5,653,32"/>
+<area shape="rect" id="node2" href="$classkl_heap_mgr.html#a581485c931c961eeb91216d837561739" title="klHeapMgr::allocate" alt="" coords="144,5,281,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a45633a43c80bf179dbd19c721c0f48da" title="MemoryManagement" alt="" coords="329,5,473,32"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="521,5,617,32"/>
 </map>

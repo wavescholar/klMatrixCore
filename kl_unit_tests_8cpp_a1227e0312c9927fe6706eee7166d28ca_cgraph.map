@@ -1,11 +1,11 @@
 <map id="VerifyWingerLaw" name="VerifyWingerLaw">
-<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="229,5,360,32"/>
-<area shape="rect" id="node5" href="$kl___m_l__helper__fns_8cpp.html#ac94edeaed2373436a8a99a4906660400" title="SampleSymmetricStandardNormalRM" alt="" coords="173,56,416,83"/>
-<area shape="rect" id="node9" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="223,107,366,133"/>
-<area shape="rect" id="node11" href="$kl__latex__helper__fns_8cpp.html#abf6cf102aff9608e60dca196fc40d7a3" title="LatexInsertHistogram" alt="" coords="222,157,367,184"/>
-<area shape="rect" id="node15" href="$kl__vector_8h.html#a54a9e4f24646244287ac6d005d7955fd" title="RE" alt="" coords="275,208,315,235"/>
-<area shape="rect" id="node19" href="$kl__vector_8h.html#aca15e3d3066385660340d99633d0efd7" title="IM" alt="" coords="275,259,314,285"/>
-<area shape="rect" id="node7" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="481,56,623,83"/>
-<area shape="rect" id="node13" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="465,150,639,191"/>
-<area shape="rect" id="node17" href="$classkl_vector.html#a1f914c50d7ceebb13d3ddc43f7ab18e1" title="klVector::getColumns" alt="" coords="479,237,625,264"/>
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="228,5,359,32"/>
+<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8cpp.html#ac94edeaed2373436a8a99a4906660400" title="SampleSymmetricStandardNormalRM" alt="" coords="172,56,415,83"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="222,107,365,133"/>
+<area shape="rect" id="node6" href="$kl__latex__helper__fns_8cpp.html#abf6cf102aff9608e60dca196fc40d7a3" title="LatexInsertHistogram" alt="" coords="221,157,366,184"/>
+<area shape="rect" id="node8" href="$kl__vector_8h.html#a54a9e4f24646244287ac6d005d7955fd" title="RE" alt="" coords="273,208,313,235"/>
+<area shape="rect" id="node10" href="$kl__vector_8h.html#aca15e3d3066385660340d99633d0efd7" title="IM" alt="" coords="274,259,313,285"/>
+<area shape="rect" id="node4" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="479,56,621,83"/>
+<area shape="rect" id="node7" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="463,150,637,191"/>
+<area shape="rect" id="node9" href="$classkl_vector.html#a682d327b45d480a092175aea24051b88" title="klVector::getColumns" alt="" coords="477,237,623,264"/>
 </map>

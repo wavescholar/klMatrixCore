@@ -1,0 +1,7 @@
+<map id="MutithreadedWorkflow" name="MutithreadedWorkflow">
+<area shape="rect" id="node2" href="$kl__threaded__workflow__demo_8cpp.html#af1aa03297d1f348757e8582c030d72fb" title="work0" alt="" coords="265,5,321,32"/>
+<area shape="rect" id="node4" href="$kl__threaded__workflow__demo_8cpp.html#a2b6e9c2b0f1435d1f244b9d3b741e4d6" title="work1" alt="" coords="265,56,321,83"/>
+<area shape="rect" id="node5" href="$classkl_thread_workflow.html#abbbf4c74098cbf6c3afc095a07f427aa" title="klThreadWorkflow::insert\lWorkElement" alt="" coords="211,107,375,149"/>
+<area shape="rect" id="node6" href="$classkl_thread_workflow.html#a923249b703f0770e9504b4a5d3db3467" title="klThreadWorkflow::doWork" alt="" coords="204,173,381,200"/>
+<area shape="rect" id="node3" href="$classkl_thread.html#a650f76bc8a35820619ed8ca87a2b34f6" title="klThread::getCurrentThreadId" alt="" coords="429,31,617,57"/>
+</map>

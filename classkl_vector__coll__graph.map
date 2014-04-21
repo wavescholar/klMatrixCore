@@ -1,8 +1,8 @@
 <map id="klVector&lt; TYPE &gt;" name="klVector&lt; TYPE &gt;">
-<area shape="rect" id="node2" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="105,376,260,541"/>
-<area shape="rect" id="node4" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="28,169,124,290"/>
-<area shape="rect" id="node10" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="287,147,480,312"/>
-<area shape="rect" id="node15" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="285,413,371,505"/>
-<area shape="rect" id="node21" title="STL class." alt="" coords="543,420,623,497"/>
-<area shape="rect" id="node23" title="STL class." alt="" coords="519,183,645,275"/>
+<area shape="rect" id="node2" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="109,373,264,539"/>
+<area shape="rect" id="node3" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="28,167,124,289"/>
+<area shape="rect" id="node6" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="295,145,489,311"/>
+<area shape="rect" id="node8" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="289,410,375,502"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="572,417,652,495"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="549,182,675,274"/>
 </map>

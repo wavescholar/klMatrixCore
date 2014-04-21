@@ -1,6 +1,7 @@
 <map id="klMatrix::getConditionNumber" name="klMatrix::getConditionNumber">
-<area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="249,5,455,32"/>
-<area shape="rect" id="node5" href="$kl__unit__tests_8h.html#a6dee9b89b61e6c61699181b589620065" title="klMulticlassSVMHarness2" alt="" coords="265,56,439,83"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="291,107,413,133"/>
-<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="504,107,600,133"/>
+<area shape="rect" id="node2" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="247,5,453,32"/>
+<area shape="rect" id="node3" href="$kl__unit__tests_8h.html#a6dee9b89b61e6c61699181b589620065" title="klMulticlassSVMHarness2" alt="" coords="263,56,437,83"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="305,107,395,133"/>
+<area shape="rect" id="node6" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="287,157,413,184"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="501,132,597,159"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="klRedZoneHeapAlloc" name="klRedZoneHeapAlloc">
-<area shape="rect" id="node3" href="$classkl_red_zone_heap_mgr.html#a2f9d6b128ef5b8fe31447fd7a73049dd" title="klRedZoneHeapMgr::allocate" alt="" coords="198,5,386,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a6cdd1e9afc81ac53932095359fe27362" title="MemoryManagementDemo" alt="" coords="435,5,613,32"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="661,5,757,32"/>
+<area shape="rect" id="node2" href="$classkl_red_zone_heap_mgr.html#a2f9d6b128ef5b8fe31447fd7a73049dd" title="klRedZoneHeapMgr::allocate" alt="" coords="196,5,384,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a45633a43c80bf179dbd19c721c0f48da" title="MemoryManagement" alt="" coords="432,5,576,32"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="624,5,720,32"/>
 </map>

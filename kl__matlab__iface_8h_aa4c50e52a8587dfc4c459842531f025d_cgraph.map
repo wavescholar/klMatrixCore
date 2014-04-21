@@ -1,5 +1,5 @@
 <map id="klPlotHistogram" name="klPlotHistogram">
-<area shape="rect" id="node3" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="169,5,343,46"/>
-<area shape="rect" id="node5" href="$classkl_vector.html#aabe42dd3c41281a9017fac624df81ff7" title="klVector::getRowSize" alt="" coords="183,71,329,97"/>
-<area shape="rect" id="node7" href="$classkl_vector.html#a53e5222249ba7073ae9d65ae09f670eb" title="klVector::getRows" alt="" coords="192,121,320,148"/>
+<area shape="rect" id="node2" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="168,5,343,47"/>
+<area shape="rect" id="node3" href="$classkl_vector.html#a34ff5c256faf132acd8df8bc50be6afa" title="klVector::getRowSize" alt="" coords="182,71,329,98"/>
+<area shape="rect" id="node4" href="$classkl_vector.html#a24a190d6f58256793ebdb48e1526b38c" title="klVector::getRows" alt="" coords="191,122,319,149"/>
 </map>

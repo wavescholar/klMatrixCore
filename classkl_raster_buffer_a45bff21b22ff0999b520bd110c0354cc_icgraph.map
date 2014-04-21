@@ -1,17 +1,17 @@
 <map id="klRasterBuffer::bitsPerByte" name="klRasterBuffer::bitsPerByte">
-<area shape="rect" id="node3" href="$classkl_raster_buffer.html#ad6fbaff8c6c3818b93a478a1d1bccde5" title="klRasterBuffer::bandStride" alt="" coords="235,43,408,69"/>
-<area shape="rect" id="node13" href="$classkl_raster_buffer.html#a1c7ec882437d56847d32f0bb05c835c8" title="klRasterBuffer::xStride" alt="" coords="245,93,397,120"/>
-<area shape="rect" id="node19" href="$classkl_raster_buffer.html#a1795a9b35866d8c8dd3178dba5174a90" title="klRasterBuffer::yStride" alt="" coords="245,144,397,171"/>
-<area shape="rect" id="node25" href="$classkl_packed_heap_raster_buffer.html#a893ba95e7bf0f4000bfe1ff2008cc327" title="klPackedHeapRasterBuffer\l::yStrideBits" alt="" coords="233,195,410,237"/>
-<area shape="rect" id="node27" href="$classkl_packed_heap_raster_buffer.html#ab081f77e2218d6dc424cee2b02fe53c5" title="klPackedHeapRasterBuffer\l::sampleBits" alt="" coords="233,261,410,302"/>
-<area shape="rect" id="node33" href="$classkl_i_p_p_raster_buffer.html#ab553f1ee6aace07ed4063993e8526615" title="klIPPRasterBuffer::\lyStrideBits" alt="" coords="255,326,387,367"/>
-<area shape="rect" id="node35" href="$classkl_i_p_p_raster_buffer.html#a17db6e46120fa09bc7ed01223c9fa7d1" title="klIPPRasterBuffer::\lsampleBits" alt="" coords="255,391,387,433"/>
-<area shape="rect" id="node5" href="$classkl_p_c_a_functor.html#aed4583319b5cae6bff68c10a4d747420" title="klPCAFunctor::operator()" alt="" coords="470,5,637,32"/>
-<area shape="rect" id="node7" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="471,57,636,98"/>
-<area shape="rect" id="node9" href="$classkl_stain_purity.html#ab02a2b5747f8880c4680e6027e5b6e50" title="klStainPurity::operator()" alt="" coords="474,123,633,149"/>
-<area shape="rect" id="node11" href="$classkl_composite_mask.html#a8db950c721202eee2fe91dee4a242c93" title="klCompositeMask::operator()" alt="" coords="459,173,648,200"/>
-<area shape="rect" id="node29" href="$classkl_packed_heap_raster_buffer.html#a32dd0bdeb55c148012e1bb8f04681fa3" title="klPackedHeapRasterBuffer\l::bandStrideBits" alt="" coords="465,261,642,302"/>
-<area shape="rect" id="node31" href="$classkl_packed_heap_raster_buffer.html#adb5dff7bb6032a69e2ce152d103a42bc" title="klPackedHeapRasterBuffer\l::xStrideBits" alt="" coords="697,261,874,302"/>
-<area shape="rect" id="node37" href="$classkl_i_p_p_raster_buffer.html#a9ceca6bd5a077db4605119b41f7efda5" title="klIPPRasterBuffer::\lbandStrideBits" alt="" coords="487,391,619,433"/>
-<area shape="rect" id="node39" href="$classkl_i_p_p_raster_buffer.html#a45c7fb37d76d054467e1b8a8faa796dc" title="klIPPRasterBuffer::\lxStrideBits" alt="" coords="719,391,851,433"/>
+<area shape="rect" id="node2" href="$classkl_raster_buffer.html#ad6fbaff8c6c3818b93a478a1d1bccde5" title="klRasterBuffer::bandStride" alt="" coords="234,43,407,69"/>
+<area shape="rect" id="node7" href="$classkl_raster_buffer.html#a1c7ec882437d56847d32f0bb05c835c8" title="klRasterBuffer::xStride" alt="" coords="245,93,397,120"/>
+<area shape="rect" id="node8" href="$classkl_raster_buffer.html#a1795a9b35866d8c8dd3178dba5174a90" title="klRasterBuffer::yStride" alt="" coords="245,144,397,171"/>
+<area shape="rect" id="node9" href="$classkl_packed_heap_raster_buffer.html#a893ba95e7bf0f4000bfe1ff2008cc327" title="klPackedHeapRasterBuffer\l::yStrideBits" alt="" coords="232,195,409,237"/>
+<area shape="rect" id="node10" href="$classkl_packed_heap_raster_buffer.html#ab081f77e2218d6dc424cee2b02fe53c5" title="klPackedHeapRasterBuffer\l::sampleBits" alt="" coords="232,261,409,302"/>
+<area shape="rect" id="node13" href="$classkl_i_p_p_raster_buffer.html#ab553f1ee6aace07ed4063993e8526615" title="klIPPRasterBuffer::\lyStrideBits" alt="" coords="255,326,387,367"/>
+<area shape="rect" id="node14" href="$classkl_i_p_p_raster_buffer.html#a17db6e46120fa09bc7ed01223c9fa7d1" title="klIPPRasterBuffer::\lsampleBits" alt="" coords="255,391,387,433"/>
+<area shape="rect" id="node3" href="$classkl_p_c_a_functor.html#aed4583319b5cae6bff68c10a4d747420" title="klPCAFunctor::operator()" alt="" coords="469,5,635,32"/>
+<area shape="rect" id="node4" href="$classkl_apply_stain_space_basis.html#ae3136ca275d0b037b6da8f4bdcf5bc4e" title="klApplyStainSpaceBasis\l::operator()" alt="" coords="469,57,635,98"/>
+<area shape="rect" id="node5" href="$classkl_stain_purity.html#ab02a2b5747f8880c4680e6027e5b6e50" title="klStainPurity::operator()" alt="" coords="473,123,631,149"/>
+<area shape="rect" id="node6" href="$classkl_composite_mask.html#a8db950c721202eee2fe91dee4a242c93" title="klCompositeMask::operator()" alt="" coords="457,173,647,200"/>
+<area shape="rect" id="node11" href="$classkl_packed_heap_raster_buffer.html#a32dd0bdeb55c148012e1bb8f04681fa3" title="klPackedHeapRasterBuffer\l::bandStrideBits" alt="" coords="463,261,641,302"/>
+<area shape="rect" id="node12" href="$classkl_packed_heap_raster_buffer.html#adb5dff7bb6032a69e2ce152d103a42bc" title="klPackedHeapRasterBuffer\l::xStrideBits" alt="" coords="695,261,872,302"/>
+<area shape="rect" id="node15" href="$classkl_i_p_p_raster_buffer.html#a9ceca6bd5a077db4605119b41f7efda5" title="klIPPRasterBuffer::\lbandStrideBits" alt="" coords="486,391,618,433"/>
+<area shape="rect" id="node16" href="$classkl_i_p_p_raster_buffer.html#a45c7fb37d76d054467e1b8a8faa796dc" title="klIPPRasterBuffer::\lxStrideBits" alt="" coords="717,391,849,433"/>
 </map>

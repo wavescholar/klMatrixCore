@@ -1,8 +1,8 @@
 <map id="kl_bregman_divergence.h" name="kl_bregman_divergence.h">
-<area shape="rect" id="node5" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="450,80,536,107"/>
-<area shape="rect" id="node8" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="762,304,858,331"/>
-<area shape="rect" id="node30" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="384,229,450,256"/>
-<area shape="rect" id="node59" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="451,155,534,181"/>
-<area shape="rect" id="node39" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="158,304,265,331"/>
-<area shape="rect" id="node41" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="220,379,297,405"/>
+<area shape="rect" id="node3" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="450,80,536,107"/>
+<area shape="rect" id="node4" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="762,304,859,331"/>
+<area shape="rect" id="node15" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="384,229,450,256"/>
+<area shape="rect" id="node25" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="451,155,535,181"/>
+<area shape="rect" id="node18" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="158,304,265,331"/>
+<area shape="rect" id="node19" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="220,379,297,405"/>
 </map>

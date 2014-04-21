@@ -1,9 +1,9 @@
 <map id="kl_wavelet.h" name="kl_wavelet.h">
-<area shape="rect" id="node5" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="621,80,693,107"/>
-<area shape="rect" id="node10" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="939,80,1025,107"/>
-<area shape="rect" id="node13" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="363,304,459,331"/>
-<area shape="rect" id="node35" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="874,229,941,256"/>
-<area shape="rect" id="node64" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="940,155,1023,181"/>
-<area shape="rect" id="node44" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="854,304,961,331"/>
-<area shape="rect" id="node46" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="818,379,895,405"/>
+<area shape="rect" id="node3" href="$kl__stat_8h.html" title="kl_stat.h" alt="" coords="621,80,693,107"/>
+<area shape="rect" id="node5" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="939,80,1025,107"/>
+<area shape="rect" id="node6" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="363,304,460,331"/>
+<area shape="rect" id="node17" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="874,229,941,256"/>
+<area shape="rect" id="node27" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="940,155,1024,181"/>
+<area shape="rect" id="node20" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="854,304,961,331"/>
+<area shape="rect" id="node21" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="818,379,895,405"/>
 </map>

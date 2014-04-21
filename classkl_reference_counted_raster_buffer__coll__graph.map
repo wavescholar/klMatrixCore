@@ -1,6 +1,6 @@
 <map id="klReferenceCountedRasterBuffer" name="klReferenceCountedRasterBuffer">
-<area shape="rect" id="node2" href="$classkl_raster_buffer.html" title="{klRasterBuffer\n||+ buffer()\l+ buffer()\l+ numBands()\l+ width()\l+ height()\l+ sampleBits()\l+ bandStrideBits()\l+ xStrideBits()\l+ yStrideBits()\l+ ~klRasterBuffer()\l+ bandStride()\l+ xStride()\l+ yStride()\l# bitsPerByte()\l}" alt="" coords="5,377,136,645"/>
-<area shape="rect" id="node4" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="160,428,315,593"/>
-<area shape="rect" id="node6" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="83,169,179,290"/>
-<area shape="rect" id="node12" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="342,147,535,312"/>
+<area shape="rect" id="node2" href="$classkl_raster_buffer.html" title="{klRasterBuffer\n||+ buffer()\l+ buffer()\l+ numBands()\l+ width()\l+ height()\l+ sampleBits()\l+ bandStrideBits()\l+ xStrideBits()\l+ yStrideBits()\l+ ~klRasterBuffer()\l+ bandStride()\l+ xStride()\l+ yStride()\l# bitsPerByte()\l}" alt="" coords="5,373,136,641"/>
+<area shape="rect" id="node3" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="160,425,315,590"/>
+<area shape="rect" id="node4" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="79,167,175,289"/>
+<area shape="rect" id="node7" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="346,145,539,311"/>
 </map>

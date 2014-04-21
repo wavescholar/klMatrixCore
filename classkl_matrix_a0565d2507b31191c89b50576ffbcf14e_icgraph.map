@@ -1,11 +1,11 @@
 <map id="klMatrix::eigenvalues" name="klMatrix::eigenvalues">
-<area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="209,5,386,46"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a65fee0f8239bfcf85047142e28eb5ea6" title="MatrixExponentialDemo" alt="" coords="217,71,377,97"/>
-<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a141b90ee711e9d3cbd297b589c908e86" title="MatrixOpsCeck" alt="" coords="241,121,353,148"/>
-<area shape="rect" id="node11" href="$kl_unit_tests_8cpp.html#a803a074e395e7f3ca64c45a07ff279f0" title="PrincipalComponentsDemo" alt="" coords="208,172,387,199"/>
-<area shape="rect" id="node13" href="$kl_unit_tests_8cpp.html#a1227e0312c9927fe6706eee7166d28ca" title="VerifyWingerLaw" alt="" coords="238,223,357,249"/>
-<area shape="rect" id="node16" href="$kl_unit_tests_8cpp.html#ab83280bf7a03f28f093f22cd2864dd86" title="IterativeKrylovCheck" alt="" coords="228,273,367,300"/>
-<area shape="rect" id="node19" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="198,324,397,351"/>
-<area shape="rect" id="node22" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="236,375,359,401"/>
-<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="445,273,541,300"/>
+<area shape="rect" id="node2" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="207,5,384,47"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a797fc2b93fe734348f4a20d8cd5b3c52" title="MatrixExponential" alt="" coords="232,71,359,98"/>
+<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ac9b94fa841b8a051e630a35d70c9a28e" title="MatrixOpsQuickCheck" alt="" coords="219,122,372,149"/>
+<area shape="rect" id="node6" href="$kl_unit_tests_8cpp.html#a803a074e395e7f3ca64c45a07ff279f0" title="PrincipalComponentsDemo" alt="" coords="206,173,385,199"/>
+<area shape="rect" id="node7" href="$kl_unit_tests_8cpp.html#a1227e0312c9927fe6706eee7166d28ca" title="VerifyWingerLaw" alt="" coords="236,223,355,250"/>
+<area shape="rect" id="node8" href="$kl_unit_tests_8cpp.html#a60c992a37d4c7e19ea092f26b53bf552" title="GenerateTraceyWidomSample" alt="" coords="196,274,395,301"/>
+<area shape="rect" id="node9" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="251,325,340,351"/>
+<area shape="rect" id="node10" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="232,375,359,402"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="443,274,539,301"/>
 </map>

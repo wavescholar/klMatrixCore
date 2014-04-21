@@ -1,4 +1,4 @@
 <map id="klVMemMgr::free" name="klVMemMgr::free">
-<area shape="rect" id="node3" href="$classkl_v_mem_block.html#a8c5f47051a6f05016bf5100627f84c1a" title="klVMemBlock::sizeUsed" alt="" coords="192,5,357,32"/>
-<area shape="rect" id="node5" href="$classkl_v_mem_block.html#add3e79aa80bab798f52cd8158fbec5ee" title="klVMemBlock::sizeRequested" alt="" coords="176,56,373,83"/>
+<area shape="rect" id="node2" href="$classkl_v_mem_block.html#a8c5f47051a6f05016bf5100627f84c1a" title="klVMemBlock::sizeUsed" alt="" coords="191,5,356,32"/>
+<area shape="rect" id="node3" href="$classkl_v_mem_block.html#add3e79aa80bab798f52cd8158fbec5ee" title="klVMemBlock::sizeRequested" alt="" coords="175,56,372,83"/>
 </map>

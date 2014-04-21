@@ -1,8 +1,8 @@
 <map id="kl_regression.h" name="kl_regression.h">
-<area shape="rect" id="node3" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="661,80,747,107"/>
-<area shape="rect" id="node7" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="749,304,845,331"/>
-<area shape="rect" id="node29" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="360,229,427,256"/>
-<area shape="rect" id="node58" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="662,155,745,181"/>
-<area shape="rect" id="node38" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="73,304,180,331"/>
-<area shape="rect" id="node40" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="136,379,213,405"/>
+<area shape="rect" id="node2" href="$kl__matrix_8h.html" title="kl_matrix.h" alt="" coords="661,80,747,107"/>
+<area shape="rect" id="node4" href="$kl__memory_8h.html" title="kl_memory.h" alt="" coords="749,304,846,331"/>
+<area shape="rect" id="node15" href="$kl__util_8h.html" title="kl_util.h" alt="" coords="360,229,427,256"/>
+<area shape="rect" id="node25" href="$kl__vector_8h.html" title="kl_vector.h" alt="" coords="662,155,746,181"/>
+<area shape="rect" id="node18" href="$kl__exception_8h.html" title="kl_exception.h" alt="" coords="73,304,180,331"/>
+<area shape="rect" id="node19" href="$kl___s_e_h_8h.html" title="kl_SEH.h" alt="" coords="136,379,213,405"/>
 </map>

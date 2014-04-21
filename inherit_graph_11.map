@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classkl_d_f_t.html" title="klDFT\&lt; TYPE \&gt;" alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node1" title="STL class. " alt="" coords="5,31,109,57"/>
+<area shape="rect" id="node2" href="$classkl_error.html" title="klError" alt="" coords="172,5,232,32"/>
+<area shape="rect" id="node3" href="$classkl_mem_error.html" title="klMemError" alt="" coords="157,56,247,83"/>
 </map>

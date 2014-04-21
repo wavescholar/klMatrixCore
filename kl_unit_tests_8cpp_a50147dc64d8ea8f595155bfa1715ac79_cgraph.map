@@ -1,0 +1,30 @@
+<map id="MatrixNorm" name="MatrixNorm">
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="174,5,305,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#acebb551bfe0fcd799f86e67223f8fafb" title="testmatgen" alt="" coords="196,56,283,83"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a10126c2eec115a93f6f60b3f0de9ab96" title="real_2d_array_to_klMatrix" alt="" coords="154,107,325,133"/>
+<area shape="rect" id="node5" href="$classkl_l_u.html#ae9100cc1137f74bc930a879b7d2ddefd" title="klLU::L" alt="" coords="208,157,271,184"/>
+<area shape="rect" id="node6" href="$kl__latex__helper__fns_8h.html#a6c2cf5d6899d39aeaf7dd6b51c1a7a75" title="LatexPrintMatrix" alt="" coords="399,183,516,209"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#aa58abc662ce3fa519bd7a9b863cd175b" title="klMatrix::det" alt="" coords="192,411,287,437"/>
+<area shape="rect" id="node10" href="$classkl_matrix.html#a98c5dc49c938620ea36488160b43117f" title="klMatrix::norm" alt="" coords="187,461,292,488"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#a426de331b31907155ec2348a1579c59e" title="klMatrix::inverse" alt="" coords="181,512,297,539"/>
+<area shape="rect" id="node12" href="$classkl_matrix.html#a50c08279910e08ed959c62e9752a9353" title="klMatrix::getConditionNumber" alt="" coords="143,563,336,589"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="168,613,311,640"/>
+<area shape="rect" id="node14" href="$classkl_matrix.html#ad99740768c2b635dfdaa50797dd36c28" title="klMatrix::getColumn" alt="" coords="170,664,309,691"/>
+<area shape="rect" id="node15" href="$classkl_vector.html#abf1a12664d21edc1657ecab1dac62265" title="klVector::dotBLAS" alt="" coords="174,715,305,741"/>
+<area shape="rect" id="node16" href="$kl__matrix_8h.html#a4326b0a09ffd791a19fa03455c2c9e91" title="mvpBLAS" alt="" coords="418,233,497,260"/>
+<area shape="rect" id="node20" href="$kl__matrix_8h.html#af4995e74d3cd4d8e23087f93e53bd492" title="diag" alt="" coords="216,765,263,792"/>
+<area shape="rect" id="node22" href="$classkl_s_v_d.html#a3cf7bdfe37cbb6799ad9d7d1c520fdf5" title="klSVD::U" alt="" coords="201,816,277,843"/>
+<area shape="rect" id="node23" href="$classkl_s_v_d.html#a30857aa0d074cb3354b4eb15b60f10f2" title="klSVD::V" alt="" coords="201,867,277,893"/>
+<area shape="rect" id="node24" href="$kl___m_l__helper__fns_8cpp.html#a8ee620cfcd88df41e90c484cf8fd11d0" title="SampleWishart" alt="" coords="184,309,295,336"/>
+<area shape="rect" id="node25" href="$kl___m_l__helper__fns_8cpp.html#aeec436e439d3ddead1b87c553cecdfbf" title="SampleGOE" alt="" coords="410,385,505,412"/>
+<area shape="rect" id="node29" href="$classkl_matrix.html#a338b08496e2ad7a1f32e580767dcb343" title="klMatrix::threshold" alt="" coords="175,917,304,944"/>
+<area shape="rect" id="node7" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="610,132,737,159"/>
+<area shape="rect" id="node8" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="601,183,746,209"/>
+<area shape="rect" id="node17" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="603,335,744,361"/>
+<area shape="rect" id="node18" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="602,233,745,260"/>
+<area shape="rect" id="node19" href="$kl__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="650,284,697,311"/>
+<area shape="rect" id="node21" href="$classkl_vector.html#a682d327b45d480a092175aea24051b88" title="klVector::getColumns" alt="" coords="384,765,531,792"/>
+<area shape="rect" id="node26" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="607,436,740,463"/>
+<area shape="rect" id="node27" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="418,284,497,311"/>
+<area shape="rect" id="node28" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix::columnToRowMajor" alt="" coords="579,385,768,412"/>
+</map>

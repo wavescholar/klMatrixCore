@@ -1,4 +1,5 @@
 <map id="klMatrix::inverse" name="klMatrix::inverse">
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a326e89ae2fe551d8064f7eaadfffedd3" title="MatrixNormDemo" alt="" coords="171,5,293,32"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="341,5,437,32"/>
+<area shape="rect" id="node2" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="188,5,277,32"/>
+<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="169,56,296,83"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="344,31,440,57"/>
 </map>

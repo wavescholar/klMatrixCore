@@ -1,7 +1,7 @@
 <map id="klParetoRV&lt; TYPE &gt;" name="klParetoRV&lt; TYPE &gt;">
-<area shape="rect" id="node2" href="$classkl_mersenne_twister.html" title="{klMersenneTwister\n|&#45; state\l&#45; next\l&#45; remaining\l&#45; seed\l|+ klMersenneTwister()\l+ ~klMersenneTwister()\l+ reset()\l+ nextValue()\l+ nextNormalizedValue()\l&#45; reloadMT()\l}" alt="" coords="220,189,385,384"/>
-<area shape="rect" id="node11" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; double \&gt;\n|# minimum\l# maximum\l# range\l|+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="325,721,480,901"/>
-<area shape="rect" id="node18" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; TYPE \&gt;\n|# minimum\l# maximum\l|+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="383,461,535,627"/>
-<area shape="rect" id="node6" href="$classkl_r_v.html" title="{klRV\&lt; TYPE \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="87,233,195,340"/>
-<area shape="rect" id="node14" href="$classkl_r_v.html" title="{klRV\&lt; double \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="145,491,257,597"/>
+<area shape="rect" id="node2" href="$classkl_mersenne_twister.html" title="{klMersenneTwister\n||+ klMersenneTwister()\l+ ~klMersenneTwister()\l+ reset()\l+ nextValue()\l+ nextNormalizedValue()\l&#45; reloadMT()\l}" alt="" coords="216,189,381,340"/>
+<area shape="rect" id="node6" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; double \&gt;\n||+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="331,660,487,811"/>
+<area shape="rect" id="node8" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; TYPE \&gt;\n||+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="389,417,541,568"/>
+<area shape="rect" id="node4" href="$classkl_r_v.html" title="{klRV\&lt; TYPE \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="83,211,191,318"/>
+<area shape="rect" id="node7" href="$classkl_r_v.html" title="{klRV\&lt; double \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="149,439,261,546"/>
 </map>

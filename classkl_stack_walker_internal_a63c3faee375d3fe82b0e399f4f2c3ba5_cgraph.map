@@ -1,6 +1,6 @@
 <map id="klStackWalkerInternal::Init" name="klStackWalkerInternal::Init">
-<area shape="rect" id="node3" href="$classkl_stack_walker.html#a769d7fc7e5daffe72046051bfc0b2318" title="klStackWalker::OnDbgHelpErr" alt="" coords="203,5,402,32"/>
-<area shape="rect" id="node7" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="228,57,377,98"/>
-<area shape="rect" id="node9" href="$classkl_stack_walker.html#a6ca1b0a7757eaccf2f47fe87e3ecc8b8" title="klStackWalker::OnSymInit" alt="" coords="215,123,391,149"/>
-<area shape="rect" id="node5" href="$classkl_stack_walker.html#a6fff8a92e977c17140f882aab1b5229a" title="klStackWalker::OnOutput" alt="" coords="451,64,621,91"/>
+<area shape="rect" id="node2" href="$classkl_stack_walk_base.html#a7b7ccbef5329a2ea3b127ac840ca6f1e" title="klStackWalkBase::OnDbgHelpErr" alt="" coords="203,5,420,32"/>
+<area shape="rect" id="node4" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="237,57,386,98"/>
+<area shape="rect" id="node5" href="$classkl_stack_walk_base.html#a3046eda3bdd3f76e1abd4026aa9bcd7d" title="klStackWalkBase::OnSymInit" alt="" coords="214,123,409,149"/>
+<area shape="rect" id="node3" href="$classkl_stack_walk_base.html#abed776564b640f12ba68d6b4c6a8e5d9" title="klStackWalkBase::OnOutput" alt="" coords="468,64,659,91"/>
 </map>
