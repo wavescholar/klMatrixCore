@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.4.21)  21 APR 2014 10:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2014.4.21)  21 APR 2014 21:15
 entering extended mode
 **_formulas.tex
-(D:\klMatrixCore\Documentation\html\html\_formulas.tex
+(D:\klMatrixCore\Documentation\html\_formulas.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -79,10 +79,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 5.
 [1
 
-] [2] [3] (D:\klMatrixCore\Documentation\html\html\_formulas.aux) ) 
+] [2] [3] (D:\klMatrixCore\Documentation\html\_formulas.aux) ) 
 Here is how much of TeX's memory you used:
  541 strings out of 493922
- 6749 string characters out of 3144884
+ 6724 string characters out of 3144884
  54257 words of memory out of 3000000
  3901 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
