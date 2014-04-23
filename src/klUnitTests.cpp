@@ -1,5 +1,5 @@
  /*******************************
- * WSCMP [2003] - [2013] WSCMP  *  
+ * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *    *  
  * Bruce B Campbell 05 27 2013  *
  ********************************/
 #include "kl_matrix.h"
@@ -24,7 +24,7 @@
 #include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
 
-const char* basefilename="D:\\klMAtrixCore\\output\\"; 
+const char* basefilename="D:\\klMatrixCore\\output\\"; 
 
 static klTestType klTestSize= klTestType::SMALL;
 
@@ -61,7 +61,7 @@ void MutithreadedWorkflow(void);
 void VerifyWingerLaw(ofstream &_tex, unsigned int& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n);
 void MatrixEigenSolver(ofstream &_tex,unsigned int  &n);
-void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName);
+void Arpack_MKLsyevxSmokeTest(ofstream &_tex,unsigned int  &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName);
 
 
@@ -152,22 +152,8 @@ void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
 
 
 #include <errno.h> 
-void unitTestMain()
-{
-
-	//Try to set the path to the Matlab binaries.  The below does not work.  The runtime 
-	//tries to load the dependencies before this can be executed.  Investigate delay loadding of dll.
-	//The code is kept here for reference. 
-	//I have previously experienced an issue where the environment variable can not be used.  There is a maximun path
-	//length of 2048 for the system environment variable. Exceeding this will cause
-	//myriad problems with a Windows 7 system.  If you find you icon image cache is corrupt - check the 
-	//length of your path variable. 
-	//char* envV= getenv("PATH");
-	////Returns an errno if there is a problem.
-	////int setOK = _putenv( "PATH=C:\\Program Files\\MATLAB\\R2012b\\bin\\win64;%PATH%");
-	//system("set PATH=C:\\Program Files\\MATLAB\\R2012b\\bin\\win64;%PATH%");
-	//envV= getenv("PATH");
-	
+void klTestMain()
+{	
 	char* syscmd = new char[2048];
 	sprintf(syscmd,"mkdir %s",basefilename);
 	system(syscmd); 
@@ -181,6 +167,7 @@ void unitTestMain()
 	char* coutFile = new char[1024];
 	char* sysInfoFile = new char[1024];
 	heapstatus = _heapchk();
+
 	sprintf(testRunDateTime,"%d_%d_%d_%d_%d",tm_buf->tm_mon+1,tm_buf->tm_mday+1,tm_buf->tm_hour+1,tm_buf->tm_min+1,tm_buf->tm_sec+1);
 	sprintf(regressionFile,"%skl_Regression%s.tex",basefilename,testRunDateTime);
 	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
@@ -225,20 +212,15 @@ void unitTestMain()
 #endif
 
 	klmtm.insert(thisThread, matlabEngine);
-
-	
-	unsigned int di=512;
-	char* locaFname = "D:\\klSpectralAnalysis\\L_512.txt";
-	
+		
+	//unsigned int di=512;
+	//char* locaFname = "D:\\klSpectralAnalysis\\L_512.txt";
 	//FEATS is only in MKL 11 and up :(
 	//FEATSEigensolver(_tex,di,locaFname);
-	
 	//This generates heap modified after free error
-	//ARPACK_VS_SYEVX(_tex,di,locaFname);
+	//Arpack_MKLsyevxSmokeTest(_tex,di,locaFname);
 	
-
 	//IterativeKrylovCheck(_tex,di,locaFname);		
-	//	
 	//klTestSize= klTestType::GROW;
 	//unsigned int dimension;
 	//for(dimension =58624;dimension<131072;dimension=dimension+2048)
@@ -273,9 +255,6 @@ void unitTestMain()
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
-	//makeLatexSection("ARPACK",_tex);
-	//klutw.runTest(IterativeKrylovCheck);
-
 	makeLatexSection("Semidefinite Programming SDPA",_tex);
 	klutw.runTest(SemidefiniteProgrammingCheck);
 
@@ -305,7 +284,7 @@ void unitTestMain()
 	klutw.runTest(MatrixOpsQuickCheck<float>);
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
-	////HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
+	// HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
 	//klutw.runTest(testKLWavelet<double>);
 
 	heapstatus = _heapchk();
@@ -594,7 +573,7 @@ void IterativeKrylovCheck(ofstream &_tex,unsigned int  &n,const char* fileName)
 	//cerr<<"Iterative Krylov dim="<<n<<" ell2 eig diff="<<ell2dist<<endl;
 }
 
-void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n,const char* fileName)
+void Arpack_MKLsyevxSmokeTest(ofstream &_tex,unsigned int  &n,const char* fileName)
 {
 	makeLatexSection("ARPACK versus Lapack SYEVX",_tex);
 	

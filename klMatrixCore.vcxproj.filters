@@ -32,11 +32,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="klMatrixCore.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Library Include="..\x64\Debug\UMFPACK.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
@@ -139,5 +134,10 @@
     <Library Include="..\x64\Debug\klMatrixCoreLib.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\klMatrixCoreTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
