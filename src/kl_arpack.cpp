@@ -3,10 +3,10 @@
  * Bruce B Campbell 03 26 2014  *
  ********************************/
 
-#include "D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\examples\matrices\nonsym\dnmatrxa.h"
+#include "D:\Packages\arpack++\examples\matrices\nonsym\dnmatrxa.h"
 #include "ardnsmat.h"
 #include "ardsnsym.h"
-#include "D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\arpack++\examples\matrices\nonsym\lnsymsol.h" 
+#include "D:\Packages\arpack++\examples\matrices\nonsym\lnsymsol.h" 
 
 extern void callAprpack( int n,double* matrix, unsigned int  numEigs,complex<double>* eigenValues , complex<double> ** eigenVectors,char* whichp = "LM")
 {

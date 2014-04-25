@@ -1,5 +1,7 @@
 #output/*
 
+ipch/*
+
 *.obj
 *.eps
 
