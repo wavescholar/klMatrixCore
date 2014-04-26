@@ -35,9 +35,6 @@
     <Library Include="..\x64\Debug\UMFPACK.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
-    <Library Include="..\x64\Debug\SUPERLU_SEQUENTIAL.lib">
-      <Filter>Libs\DebugklPackages</Filter>
-    </Library>
     <Library Include="..\x64\Debug\Matlib.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
@@ -57,9 +54,6 @@
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\UMFPACK.lib">
-      <Filter>Libs\ReleaselPackages</Filter>
-    </Library>
-    <Library Include="..\x64\Release\SUPERLU_SEQUENTIAL.lib">
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\Matlib.lib">
@@ -133,6 +127,12 @@
     </Library>
     <Library Include="..\x64\Debug\klMatrixCoreLib.lib">
       <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\SuperLU_MT_VC.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\SuperLU_MT_VC.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>
