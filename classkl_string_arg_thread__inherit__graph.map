@@ -1,6 +1,0 @@
-<map id="klStringArgThread" name="klStringArgThread">
-<area shape="rect" id="node2" href="$classkl_thread.html" title="{klThread\&lt; klMutex \&gt;\n|# state\l# threadId\l|+ klThread()\l+ ~klThread()\l+ getState()\l+ getThreadId()\l+ setPriority()\l+ launch()\l+ run()\l+ getCurrentThreadId()\l+ waitForThread()\l# main()\l}" alt="" coords="65,539,215,763"/>
-<area shape="rect" id="node4" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n|&#45; theUseCount\l&#45; theMutexLock\l|+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="5,273,160,453"/>
-<area shape="rect" id="node6" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n|&#45; theUseCount\l&#45; theMutexLock\l|+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="93,6,285,186"/>
-<area shape="rect" id="node8" href="$classkl_thread.html" title="{klThread\&lt; TYPE_MUTEX \&gt;\n|# state\l# threadId\l|+ klThread()\l+ ~klThread()\l+ getState()\l+ getThreadId()\l+ setPriority()\l+ launch()\l+ run()\l+ getCurrentThreadId()\l+ waitForThread()\l# main()\l}" alt="" coords="184,251,363,475"/>
-</map>

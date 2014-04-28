@@ -1,7 +1,5 @@
 <map id="LatexInsert3DPlot" name="LatexInsert3DPlot">
-<area shape="rect" id="node2" href="$kl__matlab__dependent__unit__tests_8h.html#adfcc36d2d0e2d66b03d7ad8485401666" title="klMulticlassSVMHarnessMatlab" alt="" coords="179,5,385,32"/>
-<area shape="rect" id="node3" href="$kl__matlab__dependent__unit__tests_8h.html#aad61f3c8089d0fe7741bacc402f161da" title="testKLMultiVariateRandom\lNumberGeneratorMatlab" alt="" coords="193,57,371,98"/>
-<area shape="rect" id="node4" href="$kl__matlab__dependent__unit__tests_8h.html#a5cbb639a0b79863e1e996e85a02958fc" title="testklPrincipalComponents\lMatlab" alt="" coords="193,122,371,163"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ab4d57cf1e239cadf73ad4dd0018232ce" title="LinearRegression" alt="" coords="221,188,343,215"/>
-<area shape="rect" id="node6" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="433,188,529,215"/>
+<area shape="rect" id="node2" href="$kl_unit_tests_8cpp.html#ab4d57cf1e239cadf73ad4dd0018232ce" title="LinearRegression" alt="" coords="179,5,301,32"/>
+<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#aefc0954ada28c743597e6e3549a7f6a3" title="klTestMain" alt="" coords="349,5,435,32"/>
+<area shape="rect" id="node4" href="$kl_matrix_core_test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="483,5,533,32"/>
 </map>

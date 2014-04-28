@@ -1,6 +1,0 @@
-<map id="klWorkFlow.klMatlabAlgorithm" name="klWorkFlow.klMatlabAlgorithm">
-<area shape="rect" id="node9" href="$classkl_work_flow_1_1kl_correlation_movie_transform.html" title="{klWorkFlow.klCorrelation\lMovieTransform\n||}" alt="" coords="21,598,187,690"/>
-<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_algorithm_transform.html" title="{klAlgorithmTransform\n|+ m_ICP\l+ m_OCP\l|+ klAlgorithmTransform()\l+ getData()\l}" alt="" coords="22,301,185,408"/>
-<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n|&#45; m_Name\l|+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="57,131,151,253"/>
-<area shape="rect" id="node6" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="33,5,175,83"/>
-</map>

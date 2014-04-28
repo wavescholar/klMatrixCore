@@ -1,6 +1,0 @@
-<map id="klMatrix::det" name="klMatrix::det">
-<area shape="rect" id="node2" href="$kl_unit_tests_8cpp.html#ac9b94fa841b8a051e630a35d70c9a28e" title="MatrixOpsQuickCheck" alt="" coords="148,5,301,32"/>
-<area shape="rect" id="node3" href="$kl_unit_tests_8cpp.html#a50147dc64d8ea8f595155bfa1715ac79" title="MatrixNorm" alt="" coords="180,56,269,83"/>
-<area shape="rect" id="node5" href="$kl_unit_tests_8cpp.html#ae0079d83a8c5d31a078988a8b50b5254" title="MatrixEigenSolver" alt="" coords="161,107,288,133"/>
-<area shape="rect" id="node4" href="$kl_unit_tests_8cpp.html#a8b47d13751b14f5a2781492868db0594" title="unitTestMain" alt="" coords="349,81,445,108"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classkl_mem_mgr.html" title="klMemMgr" alt="" coords="5,56,88,83"/>
-<area shape="rect" id="node2" href="$classkl_a_w_e_mem_mgr.html" title="klAWEMemMgr" alt="" coords="136,5,251,32"/>
-<area shape="rect" id="node3" href="$classkl_heap_mgr.html" title="klHeapMgr" alt="" coords="151,56,235,83"/>
-<area shape="rect" id="node5" href="$classkl_v_mem_mgr.html" title="klVMemMgr" alt="" coords="147,107,239,133"/>
-<area shape="rect" id="node4" href="$classkl_red_zone_heap_mgr.html" title="klRedZoneHeapMgr" alt="" coords="299,56,433,83"/>
-</map>

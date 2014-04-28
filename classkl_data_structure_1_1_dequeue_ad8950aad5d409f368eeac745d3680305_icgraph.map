@@ -1,8 +1,0 @@
-<map id="klDataStructure.Dequeue.SetSize" name="klDataStructure.Dequeue.SetSize">
-<area shape="rect" id="node3" href="$classkl_data_structure_1_1_dequeue.html#a4c10cb69cc3a2e3414354cb33d11419a" title="Add the given object to the collections head " alt="" coords="224,5,395,46"/>
-<area shape="rect" id="node5" href="$classkl_data_structure_1_1_dequeue.html#a554902ff4c5347bb51c71252c7f3496f" title="Add the given collection to the dequeues head. To preserve the order in the collection, the entries are added in revers order. " alt="" coords="443,47,613,89"/>
-<area shape="rect" id="node7" href="$classkl_data_structure_1_1_dequeue.html#a6f3bbe4b065d52f3d87dba2c776ab0dd" title="Add the given object to the collections tail " alt="" coords="224,122,395,163"/>
-<area shape="rect" id="node9" href="$classkl_data_structure_1_1_dequeue.html#a06aa9aa77667e91eed3586e3bb3ccef5" title="Add the given collection to the dequeues tail " alt="" coords="443,138,613,179"/>
-<area shape="rect" id="node15" href="$classkl_data_structure_1_1_dequeue.html#a6f700fa701ccc1fe49a8fce571988873" title="Sets the capacity to Count. " alt="" coords="224,239,395,281"/>
-<area shape="rect" id="node11" href="$classkl_data_structure_1_1_dequeue.html#a4eebb246811b4c494416e5797708eff5" title="Create a new Dequeu as a copy of the given collection and the given capacity " alt="" coords="661,138,832,179"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="klNormalBoxMullerRV&lt; TYPE &gt;" name="klNormalBoxMullerRV&lt; TYPE &gt;">
-<area shape="rect" id="node2" href="$classkl_mersenne_twister.html" title="{klMersenneTwister\n|&#45; state\l&#45; next\l&#45; remaining\l&#45; seed\l|+ klMersenneTwister()\l+ ~klMersenneTwister()\l+ reset()\l+ nextValue()\l+ nextNormalizedValue()\l&#45; reloadMT()\l}" alt="" coords="5,5,171,200"/>
-<area shape="rect" id="node3" href="$classkl_r_v.html" title="{klRV\&lt; TYPE \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="195,49,303,156"/>
-</map>

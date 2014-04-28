@@ -1,6 +1,0 @@
-<map id="klWorkFlow.klFileListSource" name="klWorkFlow.klFileListSource">
-<area shape="rect" id="node9" href="$classkl_basket_work_flow_1_1kl_process_n_a_s_s_source.html" title="{klBasketWorkFlow.klProcess\lNASSSource\n|&#45; m_basket\l&#45; m_baseFileName\l&#45; m_beginDate\l&#45; m_endDate\l|+ getData()\l+ ProcessNAS()\l&#45; klProcessNASSSource()\l}" alt="" coords="5,584,197,749"/>
-<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_algorithm_data_source.html" title="{klAlgorithmDataSource\n|+ m_OCP\l|+ klAlgorithmDataSource()\l+ getData()\l}" alt="" coords="14,302,188,394"/>
-<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n|&#45; m_Name\l|+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="54,131,148,253"/>
-<area shape="rect" id="node6" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="31,5,172,83"/>
-</map>

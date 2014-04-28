@@ -1,7 +1,0 @@
-<map id="kl2DPlot" name="kl2DPlot">
-<area shape="rect" id="node2" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="124,5,299,47"/>
-<area shape="rect" id="node3" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="148,71,275,98"/>
-<area shape="rect" id="node4" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="139,122,284,149"/>
-<area shape="rect" id="node5" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="145,173,278,199"/>
-<area shape="rect" id="node6" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="141,223,282,250"/>
-</map>

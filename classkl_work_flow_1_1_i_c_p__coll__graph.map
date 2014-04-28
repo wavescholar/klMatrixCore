@@ -1,5 +1,0 @@
-<map id="klWorkFlow.ICP" name="klWorkFlow.ICP">
-<area shape="rect" id="node2" href="$classkl_work_flow_1_1_o_c_p.html" title="{klWorkFlow.OCP\n||+ setCache()\l+ setTransform()\l+ getData()\l+ OCP()\l}" alt="" coords="43,334,165,455"/>
-<area shape="rect" id="node6" href="$classkl_work_flow_1_1kl_transform.html" title="{klWorkFlow.klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="110,147,271,269"/>
-<area shape="rect" id="node8" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="59,5,200,83"/>
-</map>

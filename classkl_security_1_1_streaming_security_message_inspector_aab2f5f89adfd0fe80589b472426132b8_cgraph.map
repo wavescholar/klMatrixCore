@@ -1,6 +1,0 @@
-<map id="klSecurity.StreamingSecurityMessageInspector.AfterReceiveReply" name="klSecurity.StreamingSecurityMessageInspector.AfterReceiveReply">
-<area shape="rect" id="node3" href="$classkl_security_1_1_crypto_helper.html#a67c3db2f3f56a4e82fc5bace46f8d3d9" title="klSecurity.CryptoHelper.\lFindCertificate" alt="" coords="299,5,461,46"/>
-<area shape="rect" id="node5" href="$classkl_security_1_1_custom_security_header.html#ab883fd10619e07ab3ae754a56fac0147" title="klSecurity.CustomSecurity\lHeader.ReadHeader" alt="" coords="291,70,469,111"/>
-<area shape="rect" id="node9" href="$classkl_security_1_1_crypto_helper.html#a023eecb7e6aed32658dc766f19013443" title="klSecurity.CryptoHelper.\lVerifyAndRemoveSignature" alt="" coords="291,135,469,177"/>
-<area shape="rect" id="node7" href="$classkl_security_1_1_custom_security_header.html#af02278e806407e4247b23c20b010bc49" title="klSecurity.CustomSecurity\lHeader.CustomSecurityHeader" alt="" coords="518,70,719,111"/>
-</map>

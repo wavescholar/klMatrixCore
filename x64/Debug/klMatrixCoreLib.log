@@ -1,0 +1,17 @@
+﻿Build started 4/26/2014 4:09:31 PM.
+     1>Project "D:\klMatrixCore\klMatrixCoreLib.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Debug\klMatrixCoreLib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         klMatrixCoreLib.vcxproj -> D:\x64\Debug\klMatrixCoreLib.lib
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\klMatrixCoreLib.unsuccessfulbuild".
+         Touching "x64\Debug\klMatrixCoreLib.lastbuildstate".
+     1>Done Building Project "D:\klMatrixCore\klMatrixCoreLib.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.09

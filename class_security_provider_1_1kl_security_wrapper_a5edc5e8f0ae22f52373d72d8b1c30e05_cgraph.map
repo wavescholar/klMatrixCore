@@ -1,8 +1,0 @@
-<map id="SecurityProvider::klSecurityWrapper::enumerateCertificateStoreLocations" name="SecurityProvider::klSecurityWrapper::enumerateCertificateStoreLocations">
-<area shape="rect" id="node3" href="$_security_permission_8cpp.html#a9f0b3c05a0d687f9667279784173fd5c" title="enumerates_system_certificate\l_store_locations" alt="" coords="283,74,485,115"/>
-<area shape="rect" id="node5" href="$_security_provider_8cpp.html#a8c62afc17dcb2bc9c4b81ab501eb9c83" title="EnumLocCallback" alt="" coords="534,5,661,32"/>
-<area shape="rect" id="node7" href="$_security_provider_8cpp.html#af4eee88fe79f8021e6fb8ea2107487a6" title="EnumSysCallback" alt="" coords="710,56,839,83"/>
-<area shape="rect" id="node11" href="$_security_provider_8cpp.html#ab679e5c094e57496eb2797967934d929" title="MyHandleError" alt="" coords="1238,81,1346,108"/>
-<area shape="rect" id="node14" href="$_security_provider_8cpp.html#adad91f42d7fd6018975f753438084498" title="EnumPhyCallback" alt="" coords="889,107,1018,133"/>
-<area shape="rect" id="node9" href="$_security_provider_8cpp.html#a967f9707ba9c07443c9ebff29e460fd2" title="GetSystemName" alt="" coords="1067,56,1189,83"/>
-</map>

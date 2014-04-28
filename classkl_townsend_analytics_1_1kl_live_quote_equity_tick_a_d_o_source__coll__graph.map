@@ -1,8 +1,0 @@
-<map id="klTownsendAnalytics.klLiveQuoteEquityTickADOSource" name="klTownsendAnalytics.klLiveQuoteEquityTickADOSource">
-<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_a_d_o_source.html" title="{klADOSource\n|+ m_DataSet\l+ m_DataAdapter\l+ m_sqlConnection\l|+ getData()\l}" alt="" coords="214,707,348,813"/>
-<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_algorithm_data_source.html" title="{klAlgorithmDataSource\n||+ klAlgorithmDataSource()\l+ getData()\l}" alt="" coords="194,521,368,613"/>
-<area shape="rect" id="node6" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="118,147,212,269"/>
-<area shape="rect" id="node8" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="104,5,245,83"/>
-<area shape="rect" id="node16" href="$classkl_work_flow_1_1kl_transform.html" title="{klWorkFlow.klTransform\n||+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="237,147,397,269"/>
-<area shape="rect" id="node12" href="$classkl_work_flow_1_1_o_c_p.html" title="{klWorkFlow.OCP\n||+ setCache()\l+ setTransform()\l+ getData()\l+ OCP()\l}" alt="" coords="220,334,343,455"/>
-</map>

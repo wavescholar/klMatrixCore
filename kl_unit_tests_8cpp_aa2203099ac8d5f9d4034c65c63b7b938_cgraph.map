@@ -1,10 +1,3 @@
 <map id="Utility" name="Utility">
-<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="149,5,280,32"/>
-<area shape="rect" id="node3" href="$classkl_floting_point_helper.html#a921d22c4211e519f1eeeb458bfeccbf6" title="klFlotingPointHelper\l::fpError" alt="" coords="145,57,284,98"/>
-<area shape="rect" id="node4" href="$classkl_floting_point_helper.html#a53dc2bfd07167e57fcad0722e11530cb" title="klFlotingPointHelper\l::status_x86" alt="" coords="145,122,284,163"/>
-<area shape="rect" id="node5" href="$classkl_floting_point_helper.html#a44b0c187ba6b08373f3f5de27f4ea32b" title="klFlotingPointHelper\l::status_SSE" alt="" coords="145,187,284,229"/>
-<area shape="rect" id="node6" href="$classkl_floting_point_helper.html#ae656c1c169f94fd6ed94b6191b9468dc" title="klFlotingPointHelper\l::get_x86_ErrorStringFromStatus" alt="" coords="108,253,321,294"/>
-<area shape="rect" id="node7" href="$classkl_floting_point_helper.html#a5939166822cd5976482a6a99813da9e2" title="klFlotingPointHelper\l::get_fp_ErrorStringFromStatus" alt="" coords="113,318,316,359"/>
-<area shape="rect" id="node8" href="$classkl_floting_point_helper.html#a937c7155b56cfa9a8ff100c433606e07" title="klFlotingPointHelper\l::Clear87" alt="" coords="145,383,284,425"/>
-<area shape="rect" id="node9" href="$classkl_floting_point_helper.html#a562b8800a27581154c0bba6a63542691" title="klFlotingPointHelper\l::Clear" alt="" coords="145,449,284,490"/>
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="108,5,239,32"/>
 </map>

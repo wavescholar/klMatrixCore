@@ -1,6 +1,4 @@
 <map id="MatrixExponential" name="MatrixExponential">
 <area shape="rect" id="node2" href="$kl__matrix__exponential_8cpp.html#adc27badef09d632155b552fc998e5c2e" title="klApplyLog" alt="" coords="236,5,323,32"/>
-<area shape="rect" id="node4" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="208,56,351,83"/>
-<area shape="rect" id="node5" href="$classkl_expo_kit_d_g_p_a_d_m_driver.html#aa00be4287774471edcbcad72dced9676" title="klExpoKitDGPADMDriver::Run" alt="" coords="180,107,379,133"/>
-<area shape="rect" id="node3" href="$classkl_vector.html#a682d327b45d480a092175aea24051b88" title="klVector::getColumns" alt="" coords="427,5,573,32"/>
+<area shape="rect" id="node3" href="$classkl_expo_kit_d_g_p_a_d_m_driver.html#aa00be4287774471edcbcad72dced9676" title="klExpoKitDGPADMDriver::Run" alt="" coords="180,56,379,83"/>
 </map>

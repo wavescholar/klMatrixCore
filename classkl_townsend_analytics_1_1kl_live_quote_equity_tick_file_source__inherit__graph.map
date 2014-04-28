@@ -1,6 +1,0 @@
-<map id="klTownsendAnalytics.klLiveQuoteEquityTickFileSource" name="klTownsendAnalytics.klLiveQuoteEquityTickFileSource">
-<area shape="rect" id="node2" href="$classkl_work_flow_1_1kl_file_source.html" title="{klFileSource\n|# m_FileName\l|+ klFileSource()\l+ setFileName()\l+ klFileSource()\l+ getData()\l}" alt="" coords="39,443,153,565"/>
-<area shape="rect" id="node4" href="$classkl_work_flow_1_1kl_algorithm_data_source.html" title="{klAlgorithmDataSource\n|+ m_OCP\l|+ klAlgorithmDataSource()\l+ getData()\l}" alt="" coords="9,302,183,394"/>
-<area shape="rect" id="node6" href="$classkl_work_flow_1_1kl_transform.html" title="{klTransform\n|&#45; m_Name\l|+ getData()\l+ persist()\l+ getName()\l+ setName()\l}" alt="" coords="49,131,143,253"/>
-<area shape="rect" id="node8" href="$class_marshal_by_ref_object.html" title="{MarshalByRefObject\n||}" alt="" coords="25,5,167,83"/>
-</map>

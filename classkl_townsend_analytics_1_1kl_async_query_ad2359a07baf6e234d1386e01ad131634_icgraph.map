@@ -1,7 +1,0 @@
-<map id="klTownsendAnalytics.klAsyncQuery.myWhatFID" name="klTownsendAnalytics.klAsyncQuery.myWhatFID">
-<area shape="rect" id="node3" href="$classkl_townsend_analytics_1_1kl_live_chart_equity_a_d_o_source.html#abd4c7ed2aeb1d1cea326a56e49e3ad9d" title="klTownsendAnalytics.klLive\lChartEquityADOSource.LIVECHART\l_PrimeDBCallback" alt="" coords="259,5,493,61"/>
-<area shape="rect" id="node5" href="$classkl_townsend_analytics_1_1kl_live_chart_equity_daily_intraday_file_source.html#a1071ad28b8fdddf7384e8199eb77985b" title="klTownsendAnalytics.klLive\lChartEquityDailyIntradayFileSource.\lLIVECHART_PrimeDBTicCallback" alt="" coords="261,85,491,141"/>
-<area shape="rect" id="node7" href="$classkl_townsend_analytics_1_1kl_live_chart_equity_file_source.html#a2addd97f1e3a88e54e8aa5d6906ba1e5" title="klTownsendAnalytics.klLive\lChartEquityFileSource.LIVECHART\l_PrimeDBTicCallback" alt="" coords="263,165,489,221"/>
-<area shape="rect" id="node9" href="$classkl_townsend_analytics_1_1kl_live_chart_tic_to_nas.html#a344a9ad59103dc877cf5e63615e40f8d" title="klTownsendAnalytics.klLive\lChartTicToNas.LIVECHART\l_TicToNASCallback" alt="" coords="285,245,467,301"/>
-<area shape="rect" id="node11" href="$classkl_townsend_analytics_1_1kl_live_chart_options_bar_file_source.html#a54aae55b184962d25b132a17a799d00e" title="klTownsendAnalytics.klLive\lChartOptionsBarFileSource.LIVECHART\l_PrimeDBTicCallback" alt="" coords="249,325,503,381"/>
-</map>

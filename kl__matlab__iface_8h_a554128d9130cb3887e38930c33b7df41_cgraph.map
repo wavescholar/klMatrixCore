@@ -1,6 +1,0 @@
-<map id="klScatterPlot3D" name="klScatterPlot3D">
-<area shape="rect" id="node2" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="167,5,341,47"/>
-<area shape="rect" id="node3" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="181,71,327,98"/>
-<area shape="rect" id="node4" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="191,122,317,149"/>
-<area shape="rect" id="node5" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="187,173,321,199"/>
-</map>

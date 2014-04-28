@@ -1,4 +1,0 @@
-<map id="klHeapMgr" name="klHeapMgr">
-<area shape="rect" id="node3" href="$classkl_red_zone_heap_mgr.html" title="{klRedZoneHeapMgr\n||+ klRedZoneHeapMgr()\l+ ~klRedZoneHeapMgr()\l+ klHeapCheckBlock()\l+ allocate()\l+ allocate()\l+ free()\l+ free()\l+ klHeapDump()\l}" alt="" coords="5,432,168,612"/>
-<area shape="rect" id="node2" href="$classkl_mem_mgr.html" title="{klMemMgr\n||+ allocate()\l+ free()\l}" alt="" coords="43,5,130,97"/>
-</map>

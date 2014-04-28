@@ -1,9 +1,0 @@
-<map id="klWorkFlow.RenderedItem" name="klWorkFlow.RenderedItem">
-<area shape="rect" id="node3" href="$classkl_basket_work_flow_1_1kl_basket.html" title="{klBasketWorkFlow.klBasket\n|+ m_basketSymbol\l+ m_componentsIndustryCode\l+ m_components\l+ m_weightType\l+ m_weights\l+ m_FactTables\l+ m_DailyFiles\l+ m_TicDataFiles\l+ m_QuoteChainFiles\l+ m_OptionHashFiles\l+ m_15minOptionBarFiles\l+ m_VolatilitySurfaceSnapshots\l|}" alt="" coords="5,162,213,401"/>
-<area shape="rect" id="node5" href="$classkl_basket_work_flow_1_1kl_basket_tic_agg_r_i.html" title="{klBasketWorkFlow.klBasket\lTicAggRI\n|+ TIC_FILES\l+ PRICE_FILES\l+ VOL_FILES\l+ RETURN_FILES\l|+ klBasketTicAggRI()\l}" alt="" coords="237,213,424,349"/>
-<area shape="rect" id="node7" href="$classkl_basket_work_flow_1_1kl_option_instance.html" title="{klBasketWorkFlow.klOption\lInstance\n|+ m_symbol\l+ m_underlying\l+ m_instrumentType\l+ m_openInterest\l+ m_now\l+ m_expiry\l+ m_strike\l+ m_price\l+ m_bid\l+ m_ask\l+ m_underlyingPrice\l+ m_riskFreeRate\l+ m_dividendYield\l|+ klOptionInstance()\l}" alt="" coords="449,147,631,415"/>
-<area shape="rect" id="node9" href="$classkl_basket_work_flow_1_1kl_volatility_r_i.html" title="{klBasketWorkFlow.klVolatilityRI\n|+ m_symbolHash\l+ m_fileName\l|}" alt="" coords="655,235,861,327"/>
-<area shape="rect" id="node11" href="$classkl_work_flow_1_1kl_d_l_l_x_m_l_r_i.html" title="{klWorkFlow.klDLLXMLRI\n|+ m_xmlResults\l|}" alt="" coords="886,243,1049,320"/>
-<area shape="rect" id="node13" href="$classkl_work_flow_1_1kl_equity_instance.html" title="{klWorkFlow.klEquityInstance\n||}" alt="" coords="1074,243,1264,320"/>
-<area shape="rect" id="node15" href="$classkl_work_flow_1_1kl_file_list_r_i.html" title="{klWorkFlow.klFileListRI\n|+ m_baseFileName\l+ m_files\l|}" alt="" coords="1289,235,1447,327"/>
-</map>

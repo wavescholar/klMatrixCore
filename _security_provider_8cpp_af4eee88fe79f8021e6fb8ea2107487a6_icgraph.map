@@ -1,5 +1,0 @@
-<map id="EnumSysCallback" name="EnumSysCallback">
-<area shape="rect" id="node3" href="$_security_provider_8cpp.html#a9f0b3c05a0d687f9667279784173fd5c" title="enumerates_system_certificate\l_store_locations" alt="" coords="360,13,563,54"/>
-<area shape="rect" id="node7" href="$_security_provider_8cpp.html#a8c62afc17dcb2bc9c4b81ab501eb9c83" title="EnumLocCallback" alt="" coords="185,45,311,72"/>
-<area shape="rect" id="node5" href="$class_security_provider_1_1kl_security_wrapper.html#a5edc5e8f0ae22f52373d72d8b1c30e05" title="SecurityProvider::klSecurity\lWrapper::enumerateCertificateStore\lLocations" alt="" coords="611,5,840,61"/>
-</map>

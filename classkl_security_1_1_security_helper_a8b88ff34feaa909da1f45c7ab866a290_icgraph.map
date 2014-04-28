@@ -1,6 +1,0 @@
-<map id="klSecurity.SecurityHelper.InstallWcfSecurityCertificates" name="klSecurity.SecurityHelper.InstallWcfSecurityCertificates">
-<area shape="rect" id="node3" href="$classkl_security_1_1_security_helper.html#a82f4d7f839d1827234034ac8e7cb96e7" title="klSecurity.SecurityHelper.\lInstallCertificates" alt="" coords="275,5,448,46"/>
-<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#ae77e06927a88c457785739b3ddd134fc" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.RunLocalLicense\lKeyHelper" alt="" coords="246,71,477,127"/>
-<area shape="rect" id="node9" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#a8ee27a112d6ddc006fb355d9c95c7352" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.ValidateLicense\lKeyAndInstallWcfSecurity" alt="" coords="250,151,473,207"/>
-<area shape="rect" id="node5" href="$classkl_security_1_1kl_certificate_manager.html#a32c2c99eab513cabc3aeacbaa564dc65" title="klSecurity.klCertificate\lManager.ManageCertificates" alt="" coords="525,5,712,46"/>
-</map>

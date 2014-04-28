@@ -1,27 +1,4 @@
 <map id="GenerativeGramConsistencyCheck" name="GenerativeGramConsistencyCheck">
-<area shape="rect" id="node2" href="$kl___m_l__helper__fns_8cpp.html#a8ee620cfcd88df41e90c484cf8fd11d0" title="SampleWishart" alt="" coords="273,112,384,139"/>
-<area shape="rect" id="node11" href="$classkl_matrix.html#a0dd7ac63b105e889b97a68cbdf670434" title="klMatrix::setRow" alt="" coords="269,189,388,216"/>
-<area shape="rect" id="node12" href="$classkl_sample_population.html#ae16c9f2d406fde13649045d52bc8dbb8" title="klSamplePopulation\l::covarianceMatrix" alt="" coords="260,241,397,282"/>
-<area shape="rect" id="node21" href="$classkl_sample_population.html#ad94fa1383a6b67f0a1ea13f1b3e796a1" title="klSamplePopulation\l::sampleMean" alt="" coords="465,350,603,391"/>
-<area shape="rect" id="node23" href="$classkl_matrix.html#afd5526bfa748f065fb7b800e9770c461" title="klMatrix::makeNanFriendly" alt="" coords="240,357,417,384"/>
-<area shape="rect" id="node24" href="$classkl_sample_population.html#a2cbe875bed93eecb318f5171a82e3c86" title="klSamplePopulation\l::centeredData" alt="" coords="260,409,397,450"/>
-<area shape="rect" id="node26" href="$classkl_matrix.html#ad99740768c2b635dfdaa50797dd36c28" title="klMatrix::getColumn" alt="" coords="259,475,398,501"/>
-<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8cpp.html#aeec436e439d3ddead1b87c553cecdfbf" title="SampleGOE" alt="" coords="487,12,581,39"/>
-<area shape="rect" id="node4" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="679,5,812,32"/>
-<area shape="rect" id="node5" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="495,151,573,177"/>
-<area shape="rect" id="node6" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="673,56,818,83"/>
-<area shape="rect" id="node7" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="682,107,809,133"/>
-<area shape="rect" id="node8" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="675,157,816,184"/>
-<area shape="rect" id="node9" href="$kl__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="722,208,769,235"/>
-<area shape="rect" id="node10" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix::columnToRowMajor" alt="" coords="651,259,840,285"/>
-<area shape="rect" id="node13" href="$classkl_sample_population.html#a09755537901fd7422135f67a80871fbc" title="klSamplePopulation\l::calcDescriptiveStats" alt="" coords="671,310,819,351"/>
-<area shape="rect" id="node20" href="$classkl_matrix.html#af56438ba184abb3ff2b6ce9a61a439bb" title="klMatrix::setup" alt="" coords="480,299,588,325"/>
-<area shape="rect" id="node14" href="$classkl_vector.html#ac40868e727fdf403cc3e92cc5278826b" title="klVector::setup" alt="" coords="904,191,1015,217"/>
-<area shape="rect" id="node15" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="888,241,1031,268"/>
-<area shape="rect" id="node16" href="$namespace_k_l__stat.html#afbd3bf05e385ed51f46ea624554b6458" title="KL_stat::mean" alt="" coords="1079,317,1185,344"/>
-<area shape="rect" id="node17" href="$namespace_k_l__stat.html#a12761818bd8e8e7484c49e02c9fee58c" title="KL_stat::variance" alt="" coords="898,343,1021,369"/>
-<area shape="rect" id="node18" href="$namespace_k_l__stat.html#abb9a1ebe37ff5572fb87a7d5c138541c" title="KL_stat::skewness" alt="" coords="893,393,1026,420"/>
-<area shape="rect" id="node19" href="$namespace_k_l__stat.html#a8ce3fa54f5ad3981634b11c8158bf93b" title="KL_stat::kurtosis" alt="" coords="899,444,1020,471"/>
-<area shape="rect" id="node22" href="$classkl_sample_population.html#ac24dbdbcef361c39101bc232e4c65bdf" title="klSamplePopulation\l::getMeanVector" alt="" coords="677,375,814,417"/>
-<area shape="rect" id="node25" href="$classkl_matrix.html#ab337203db6136615335b77137e649db5" title="klMatrix::operator[]" alt="" coords="469,416,599,443"/>
+<area shape="rect" id="node2" href="$kl___m_l__helper__fns_8cpp.html#a8ee620cfcd88df41e90c484cf8fd11d0" title="SampleWishart" alt="" coords="240,13,351,39"/>
+<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8cpp.html#aeec436e439d3ddead1b87c553cecdfbf" title="SampleGOE" alt="" coords="399,13,493,39"/>
 </map>

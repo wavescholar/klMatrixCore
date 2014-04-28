@@ -1,6 +1,0 @@
-<map id="klSecurity.CryptoHelper.Sign" name="klSecurity.CryptoHelper.Sign">
-<area shape="rect" id="node3" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#ac580e90755c0ad0e5d8095215aa558ab" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.SignMacWithPrivateKey" alt="" coords="243,50,514,91"/>
-<area shape="rect" id="node9" href="$classkl_security_1_1_streaming_security_message_inspector.html#a1871a04948b3b550beef91af7f3e0d9b" title="klSecurity.StreamingSecurity\lMessageInspector.BeforeSendReply" alt="" coords="263,115,495,157"/>
-<area shape="rect" id="node5" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#ae77e06927a88c457785739b3ddd134fc" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.RunLocalLicense\lKeyHelper" alt="" coords="563,5,794,61"/>
-<area shape="rect" id="node7" href="$classkl_security_1_1_security_helper_1_1_license_key_helper.html#afbccda728f1f902c8bda4596399739a2" title="klSecurity.SecurityHelper.\lLicenseKeyHelper.RunKeyGen" alt="" coords="578,86,779,127"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="StackWalker::OnDbgHelpErr" name="StackWalker::OnDbgHelpErr">
-<area shape="rect" id="node3" href="$class_stack_walker_internal.html#ae43741fbed8bb3490ec68c0052cbb411" title="StackWalkerInternal\l::Init" alt="" coords="445,70,584,111"/>
-<area shape="rect" id="node5" href="$class_stack_walker.html#a3e0e7f1329f594d89362309bf8fe2b21" title="StackWalker::LoadModules" alt="" coords="633,107,815,133"/>
-<area shape="rect" id="node7" href="$class_stack_walker.html#a26bacb66734ee2d1de20d51070b825ba" title="StackWalker::ShowCallstack" alt="" coords="865,147,1055,173"/>
-<area shape="rect" id="node11" href="$class_stack_walker_internal.html#ae9bf49a5df57dbbae9d2166947d1d094" title="StackWalkerInternal\l::GetModuleListPSAPI" alt="" coords="243,9,397,50"/>
-<area shape="rect" id="node9" href="$kl___s_e_h_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="1105,147,1215,173"/>
-<area shape="rect" id="node13" href="$class_stack_walker_internal.html#a9b5578bc226c3a9b3c284e72b86c17de" title="StackWalkerInternal\l::LoadModules" alt="" coords="445,5,584,46"/>
-</map>

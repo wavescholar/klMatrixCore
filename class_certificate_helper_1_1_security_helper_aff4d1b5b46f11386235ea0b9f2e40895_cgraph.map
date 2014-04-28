@@ -1,6 +1,0 @@
-<map id="CertificateHelper.SecurityHelper.InstallPerServerLicensePkCertificates" name="CertificateHelper.SecurityHelper.InstallPerServerLicensePkCertificates">
-<area shape="rect" id="node3" href="$class_certificate_helper_1_1_security_helper.html#a37a65d7b470e170eb04002277e8e3a41" title="CertificateHelper.Security\lHelper.GetSecureStringFromConsole" alt="" coords="254,5,490,46"/>
-<area shape="rect" id="node5" href="$class_certificate_helper_1_1_security_helper.html#a0729c6fe34538f51eca6a7806d7f3736" title="CertificateHelper.Security\lHelper.RemoveCertificates" alt="" coords="285,70,459,111"/>
-<area shape="rect" id="node9" href="$class_certificate_helper_1_1_security_helper.html#a12dac01cc6318652518c896b21765d87" title="CertificateHelper.Security\lHelper.ValidateCert" alt="" coords="287,135,457,177"/>
-<area shape="rect" id="node7" href="$class_certificate_helper_1_1_security_helper.html#a44ed388826f3c157f56b226c9426825b" title="CertificateHelper.Security\lHelper.RemoveCertificate" alt="" coords="539,70,709,111"/>
-</map>
