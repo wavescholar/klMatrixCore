@@ -36,9 +36,6 @@ public:
 		_memory=mem;
 		_contiguous=true;
 		_mgr=0;
-
-
-
 	}
 
 	klMatrix(klMemMgr* mgr, __int64 row, __int64 col) 
@@ -72,7 +69,6 @@ public:
 
 	}
 
-
 	klMatrix() 
 	{
 		_memory=NULL;
@@ -83,7 +79,6 @@ public:
 		_own=0;
 		_vectors=0;
 	}
-
 
 	klMatrix(const klMatrix<TYPE>& src)
 	{
@@ -159,7 +154,7 @@ public:
 			product.setup(_row,a.getColumns(),0);
 
 		__int64 i,j,k;
-//#pragma omp parallel num_threads(4)
+		//#pragma omp parallel num_threads(omp_get_num_procs( ) )
 		for(i=0;i<_row;i++)
 		{
 			for(j=0;j<a.getColumns();j++)
@@ -415,49 +410,6 @@ public:
 	//If the matrix is SPD we can do a Choleski (LL) decomp. which is O(\frac{n^3}{3}) 
 	complex<double> det() //const
 	{
-		//if(_row!=_col  )
-		//	throw "klMatrix<TYPE>::det() ERROR: non square matrix";
-		//klMatrix<TYPE> temp;
-		//temp=this->transpose(); //deep copy 
-		//__int64 size=0;
-		//__int64 i,j;
-		//__int64 index=0;
-		//char uplo='L';
-		//int info=0;
-		//int n=_row;
-		//int m=_col;
-		//size_t ipivSz=max(1,min(_row,_col));
-		//int* ipiv=new int[ipivSz];
-
-		////Calculating the determinanat via cofactors is O(n!)
-		////An LU decomp, reduces to O(\frac{2 n^3}{3} )
-		////If the matrix is SPD we can do a Choleski (LL) decomp. which is O(\frac{n^3}{3}) 
-		//if(typeid(TYPE) ==typeid(float) ) 
-		//	sgetrf(&m, &n, (float*)temp.getMemory(), &m, ipiv, &info);
-
-		//if(typeid(TYPE) == typeid(double) )
-		//	dgetrf(&m, &n, (double*)temp.getMemory(), &m, ipiv, &info);
-
-		//if(info<0)
-		//	throw "klMatrix::det ERROR: parameter error in MKL call to dgetrf.";
-		//if(info>0)
-		//	throw "klMatrix::det ERROR: error in MKL call to dgetrf.";
-		//temp.transpose();
-		//TYPE det=1;
-
-		////Only the lower triangular part of _factor is written to by MKL, 
-		////so we have to write 0's in the lower part.
-		//for(i=0;i<_row;i++)
-		//{
-		//	det*=temp[i][i];
-		//	for(j=0;j<_row;j++)
-		//	{
-		//		if(i<j)
-		//			continue;
-		//		else if(i!=j)
-		//			temp[j][i]=0;
-		//	}
-		//}
 		//The LU factorization of A allows the linear system A*x = b to be solved quickly with x = U\(L\b)
 		//Determinants and inverses are computed from the LU factorization using det(A) = det(L)*det(U)
 		//and inv(A) = inv(U)*inv(L).
@@ -469,7 +421,7 @@ public:
 		{
 			detProd *= eigen[i];
 		}
-		//delete ipiv;
+		
 		return detProd;
 	}
 
@@ -560,8 +512,8 @@ public:
 	}
 		
 	/*
-		This method calls the LAPACK driver DGEES whichcomputes for an	N-by-N real nonsymmetric matrix	A, the eigenvalues,
-		the real Schur form T, and, optionally, the matrix of	Schur vectors Z.
+		This method calls the LAPACK driver DGEES which computes for an	N-by-N real nonsymmetric matrix	A, the eigenvalues,
+		the real Schur form T, and, optionally, the matrix of Schur vectors Z.
 		This gives the Schur factorization A = Z*T*(Z**T).
 
 		Optionally, it also orders the eigenvalues on	the diagonal of	the real
@@ -846,7 +798,9 @@ public:
 protected:
 	klVector<TYPE>* _vectors;
 	mutable __int64 _own;
-	bool _contiguous;//bbcrevisit - contiguous is always true
+	
+	//It is possible to set up matrices with non contiguous memory layout.	
+	bool _contiguous;
 	__int64  _row;
 	__int64  _col;
 	TYPE* _memory;
@@ -1458,10 +1412,5 @@ typedef klSmartPtr<klMatrix<double> >  klDoubleMatrixPtr;
 typedef klSmartPtr<klMatrix<complex<double> > >  klComplexDoubleMatrixPtr;
 typedef klSmartPtr<klMatrix<complex<float> > >  klComplexFloatMatrixPtr;
 typedef klSmartPtr<klMatrix<float> >  klFloatMatrixPtr;
-
-typedef klSmartPtr<klVector<double> >  klDoubleVectorPtr;
-typedef klSmartPtr<klVector<complex<double> > >  klComplexDoubleVectorPtr;
-typedef klSmartPtr<klVector<complex<float> > >  klComplexFloatVectorPtr;
-typedef klSmartPtr<klVector<float> >  klFloatVectorPtr;
 
 #endif __kl_matrix__

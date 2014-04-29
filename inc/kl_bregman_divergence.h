@@ -8,7 +8,6 @@
 #include "mkl.h"
 #include "kl_matrix.h"
 
-
 template<class TYPE> TYPE klMahalanobisDivergence(klMatrix<TYPE> A, klVector<TYPE> x,klVector<TYPE> y)
 {
 		if(A.getColumns()!=A.getRows())
@@ -52,6 +51,8 @@ template<class TYPE> TYPE klKullbackLiebelerDivergence(klVector<TYPE> x,klVector
 
 
 }
+
+
 
  
 

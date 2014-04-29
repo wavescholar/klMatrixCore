@@ -3,11 +3,15 @@
  * Bruce B Campbell 03 26 2014  *
  ********************************/
 
-void klTestMain();
+void klIntegrationTest();
+
+void run_matrix_tests(void);
 
 int main(int argc, char* argv[])
 {
-	klTestMain();
+	run_matrix_tests();
+
+	klIntegrationTest();
 
 	return 0;
 }

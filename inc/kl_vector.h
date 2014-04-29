@@ -6,18 +6,27 @@
 #ifndef __kl_vector__
 #define __kl_vector__
 
+//Very important to do this before including the mkl header
+//Otherwise there will be compile errors.
+//Intel MKL provides complex types MKL_Complex8 and MKL_Complex16, which are
+//structures equivalent to the Fortran complex types COMPLEX(4) and COMPLEX(8),
+//respectively. These types are defined in the mkl_types.h header file. You can use these
+//types to define complex data. You can also redefine the types with your own types before
+//including the mkl_types.h header file. The only requirement is that the types must be
+//compatible with the Fortran complex layout, that is, the complex type must be a pair of
+//real numbers for the values of real and imaginary parts.
+#include <complex>
+#define MKL_Complex8 std::complex<float>
+#define MKL_Complex16 std::complex<double>
 #include "mkl.h"
 #include "kl_memory.h"
 #include "kl_util.h"
-#include "kl_matrix.h"
 #include <limits.h>
 #include <float.h>
 #include <string>
 #include <vector>
-#include <list>
-#include <complex>
-using namespace std;
 
+using namespace std;
 
 //This allows for debug output of matrices to the console window in
 //debug configuration. 
@@ -28,13 +37,10 @@ using namespace std;
 #ifdef _DEBUG
 #define klout(A) cout<<"------------------------"<<endl<<A<<endl ; 
 #endif
-
-//Checking the klout mechanism works -klout is for development.  It is intended for display of intermediate results.
+//klout is for development.  It is intended for display of intermediate results.
 //klMatrix<double> A(2,2);
 //A=2.0;
 //klout(A);
-
-
 
 inline int mkl_eigs_select(double* x,double* y)
 {
@@ -42,8 +48,6 @@ inline int mkl_eigs_select(double* x,double* y)
 
 }
 
-	  ///  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
-      ///  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
 template<class TYPE> class klVector: public klRefCount<klMutex>
 {
 public:
@@ -599,7 +603,6 @@ template<  > klVector<float> klVector<float>::pow_alpha(double alpha)
 
 }
 
-
 //Use floating point types
 template<class TYPE  > klVector<TYPE> logReturns(klVector<TYPE> b)
 {
@@ -611,7 +614,6 @@ template<class TYPE  > klVector<TYPE> logReturns(klVector<TYPE> b)
 	}
 	return t;
 }
-
 
 //klVector stream io.  Operator << >> overrides for klVector class
 template <class TYPE> static ostream& operator<<(ostream& str, const klVector<TYPE>& v) {
@@ -628,7 +630,6 @@ template <class TYPE> static ostream& operator<<(ostream& str, const klVector<TY
 	return str<<"\n";
 }
 
-
 template <class TYPE> static inline istream& operator>>(istream& c, klVector<TYPE> & v) {
 	char ch;
 	int i=0;
@@ -642,10 +643,6 @@ template <class TYPE> static inline istream& operator>>(istream& c, klVector<TYP
 	} while (i<v.getRowSize());
 	return c;
 }
-
-
-
-
 
 // Addition of two klVectors
 template<class TYPE>  klVector<TYPE> operator+(const klVector<TYPE> &v1, const klVector<TYPE> &v2)
@@ -689,7 +686,6 @@ template<class TYPE>  klVector<TYPE> operator+(const TYPE t, const klVector<TYPE
 	}
 	return c;
 }
-
 
 // Subtraction of a klVector from a klVector
 template<class TYPE>  klVector<TYPE> operator-(const klVector<TYPE> &v1, const klVector<TYPE> &v2)
@@ -786,7 +782,6 @@ template<class TYPE>  klVector<TYPE> operator*(const TYPE t, const klVector<TYPE
 	return c;
 }
 
-
 // Subtraction of a klVector from a klVector
 template<class TYPE>  klVector<TYPE> operator*(const klVector<TYPE> &v1, const klVector<TYPE> &v2)
 {
@@ -820,8 +815,6 @@ template<class TYPE>  klVector<TYPE> operator/(const klVector<TYPE> &v1, const k
 	}
 	return c;
 }
-
-
 
 // Elementwise multiplication of the two klVectors
 //  template<class TYPE> const klVector<TYPE> elem_mult(const klVector<TYPE> &v1, const klVector<TYPE> &v2);
@@ -881,7 +874,6 @@ template<class TYPE>  klVector<TYPE> operator/(const TYPE t, const klVector<TYPE
 // Concat klVectors \c v1, \c v2 \c v3, \c v4 and \c v5
 //template<class TYPE> const klVector<TYPE> concat(const klVector<TYPE> &v1, const klVector<TYPE> &v2, const klVector<TYPE> &v3, const klVector<TYPE> &v4, const klVector<TYPE> &v5);
 
-
 template <class TYPE> inline klVector<TYPE> RE(klVector<complex<TYPE > >  vec)
 {
 	//Real part of first eig
@@ -894,7 +886,6 @@ template <class TYPE> inline klVector<TYPE> RE(klVector<complex<TYPE > >  vec)
 	}
 	return L_re;
 }
-
 
 template <class TYPE> inline klVector<TYPE> IM(klVector<complex<TYPE > >  vec)
 {
@@ -909,6 +900,18 @@ template <class TYPE> inline klVector<TYPE> IM(klVector<complex<TYPE > >  vec)
 	return L_im;
 }
 
+inline klVector<complex<double> >  klApplyLog( const klVector<complex<double> > &c)
+{
+	klVector<complex<double> > r(c.getColumns() );
+	unsigned int i;
+	for (i=0;i<c.getColumns();i++)
+		r[i]=complex<double> (std::log(complex<double> (c[i])));
+	return r;
+}
 
+typedef klSmartPtr<klVector<double> >  klDoubleVectorPtr;
+typedef klSmartPtr<klVector<complex<double> > >  klComplexDoubleVectorPtr;
+typedef klSmartPtr<klVector<complex<float> > >  klComplexFloatVectorPtr;
+typedef klSmartPtr<klVector<float> >  klFloatVectorPtr;
 
 #endif __kl_vector__

@@ -17,7 +17,6 @@ PVOID klAWEMemBlock::lpMemReserved=0;            // AWE window
 PVOID klAWEMemBlock::lpNextFreeAddress=0;            
 
 
-
 #include "winbase.h"
 HANDLE klLowMemoryResourceNotificationObject;
 void klCreateLowMemoryResourceNotification(void)

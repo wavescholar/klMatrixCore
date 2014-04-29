@@ -108,7 +108,7 @@ MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)//const char* filename)
 	return _memoryInfoEx;
 } 
 
-SYSTEM_INFO klWinSystemInfo(ofstream &stream)//const char* filename)
+SYSTEM_INFO klWinSystemInfo(ofstream &stream)
 {
 	//ios_base::openmode wMode = ios_base::app;
 	//ofstream stream(filename, wMode);

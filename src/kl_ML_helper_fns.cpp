@@ -16,7 +16,7 @@ klMatrix<double> SampleGOE( unsigned  int n , unsigned  seed )
 	unsigned int j;
 	klNormalInverseApproxRV<double> N_0_1(0,1,false,seed);
 	klNormalInverseApproxRV<double> N_0_frac_1_2(0,0.5,false,seed);
-//#pragma omp parallel num_threads(4)
+	//#pragma omp parallel num_threads(4)
 	for(i=0;i<n;i++)
 	{
 		for(j=0;j<n;j++)
@@ -43,7 +43,7 @@ klMatrix<double> SampleGOE( unsigned  int n , unsigned  seed )
 }
 
 //\beta = 1 flavor - This function samples from the space of covariance matrices for
-//the multivariate normal distributuion
+//the multivariate normal distribution
 klMatrix<double> SampleWishart( unsigned  int n , unsigned  seed )
 {
 	klMatrix<double> A=SampleGOE(n,seed);
@@ -91,17 +91,7 @@ klMatrix<double> SampleSymmetricStandardNormalRM( unsigned  int n , unsigned  se
 		for(j=0;j<n;j++)
 		{
 			if(i<j)
-				continue;
-			//if(i!=j)
-			//{
-			//	//N(0,1/1)
-			//	A[i][j]=N_0_1();
-			//	A[j][i] = A[i][j];
-			//}
-			//else if (i==j)
-			//{
-			//	A[i][j]=N_0_1();
-			//}
+				continue;			
 
 			if(i!=j)
 			{
@@ -113,7 +103,6 @@ klMatrix<double> SampleSymmetricStandardNormalRM( unsigned  int n , unsigned  se
 			{
 				*(mem+ i*n +i)=N_0_1();
 			}
-
 		}
 	}
 

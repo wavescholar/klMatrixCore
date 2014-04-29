@@ -9,11 +9,7 @@ Pseudo-Random Number Generator",
 ACM Transactions on Modeling and Computer Simulation,
 Vol. 8, No. 1, January 1998, pp 3--30.
 */
-
-
 #include "kl_random_number_generator.h"
-
-//gsl_rng * gsl_RandObj;  /* global generator */
 
 klMersenneTwister globalSeedGenerator(9);
 
@@ -43,34 +39,6 @@ inline unsigned int mixBits( unsigned int u, unsigned int v )
 {
 	return (hiBit(u) | loBits(v));
 }
-
-///////////////////////////Original Mersenne C Code////////////////////////////////////
-//BC todo - move into the klMersenneTwister class
-
-/*
-Examples of usage
-// 4294967295= 2^32-1  
-
-// generates a random number on [0,1]-real-interval 
-double a =genrand_int32()*(1.0/4294967295.0); 
-
-//generates a random number on [0,1)-real-interval 
-double a= genrand_int32()*(1.0/4294967296.0); 
-
-// generates a random number on (0,1)-real-interval 
-double a=(((double)genrand_int32()) + 0.5)*(1.0/4294967296.0); 
-
-// generates a random number on [0,1) with 53-bit resolution
-double a;
-unsigned long c=genrand_int32()>>5, b=genrand_int32()>>6; 
-a=(c*67108864.0+b)*(1.0/9007199254740992.0); 
-
-
-//Initialize and get a random int 32.
-unsigned long init[4]={0x123, 0x234, 0x345, 0x456}, length=4;
-init_by_array(init, length);
-int a=genrand_int32();
-*/
 
 /* Period parameters */  
 #define N 624 //This number defines the dimensionality N of R^N such that the numbers will NOT
@@ -219,8 +187,6 @@ void klMersenneTwister::reset(unsigned int s)
 	//
 	// from Line 15 of Table 1, p. 106, Sec. 3.3.4 of Knuth's
 	// _The Art of Computer Programming_, Volume 2, 3rd ed.
-	//
-
 
 	if( s == 0 )
 	{
@@ -238,13 +204,6 @@ void klMersenneTwister::reset(unsigned int s)
 		*(++tempState) = (x*=69069U) & 0xFFFFFFFFU);
 }
 
-
-
-
-
-
-
-
 // The next normalized value - returns a number between
 // 0 and 1.
 double klMersenneTwister::nextNormalizedValue()
@@ -252,122 +211,102 @@ double klMersenneTwister::nextNormalizedValue()
 	return (double)nextValue()/maxValue;
 }
 
-
-
-
-//errf 
-//for normal random variates via the relation F(x)=1/2(errf(x/sqrt(2))+1);
+//Error function for normal random variates via the relation F(x)=1/2(errf(x/sqrt(2))+1)
+//bbcrevisit -  This should be replaced by a call to the MKL
+//https://software.intel.com/sites/products/documentation/hpc/mkl/mklman/GUID-662606CB-E909-4F17-8118-32A1A3758EA8.htm
+//This is part of the Fortran 2008 Standard library
 double klErrorFunction(double x)
 {
-
-	// Based on code from the gnu C library, originally written by Sun.
-	// Modified to remove reliance on features of gcc and 64-bit width
-	// of doubles. No doubt this results in some slight deterioration
-	// of efficiency, but this is not really noticeable in testing.
-	//
-
-	//
-	// ====================================================
-	// Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
-	//
-	// Developed at SunPro, a Sun Microsystems, Inc. business.
-	// Permission to use, copy, modify, and distribute this
-	// software is freely granted, provided that this notice
-	// is preserved.
-	// ====================================================
-	//
-
-	//			       x
-	//		        2      |\
-	//     erf(x)  =  ---------  | exp(-t*t)dt
-	//	 	     sqrt(pi) \|
-	//			       0
-	//
-	//     erfc(x) =  1-erf(x)
-	//  Note that
-	//		erf(-x) = -erf(x)
-	//		erfc(-x) = 2 - erfc(x)
-	//
-	// Method:
-	//	1. For |x| in [0, 0.84375]
-	//	    erf(x)  = x + x*R(x^2)
-	//          erfc(x) = 1 - erf(x)           if x in [-.84375,0.25]
-	//                  = 0.5 + ((0.5-x)-x*R)  if x in [0.25,0.84375]
-	//	   where R = P/Q where P is an odd poly of degree 8 and
-	//	   Q is an odd poly of degree 10.
-	//						 -57.90
-	//			| R - (erf(x)-x)/x | <= 2
-	//
-	//
-	//	   Remark. The formula is derived by noting
-	//          erf(x) = (2/sqrt(pi))*(x - x^3/3 + x^5/10 - x^7/42 + ....)
-	//	   and that
-	//          2/sqrt(pi) = 1.128379167095512573896158903121545171688
-	//	   is close to one. The interval is chosen because the fix
-	//	   point of erf(x) is near 0.6174 (i.e., erf(x)=x when x is
-	//	   near 0.6174), and by some experiment, 0.84375 is chosen to
-	// 	   guarantee the error is less than one ulp for erf.
-	//
-	//      2. For |x| in [0.84375,1.25], let s = |x| - 1, and
-	//         c = 0.84506291151 rounded to single (24 bits)
-	//         	erf(x)  = sign(x) * (c  + P1(s)/Q1(s))
-	//         	erfc(x) = (1-c)  - P1(s)/Q1(s) if x > 0
-	//			  1+(c+P1(s)/Q1(s))    if x < 0
-	//         	|P1/Q1 - (erf(|x|)-c)| <= 2**-59.06
-	//	   Remark: here we use the taylor series expansion at x=1.
-	//		erf(1+s) = erf(1) + s*Poly(s)
-	//			 = 0.845.. + P1(s)/Q1(s)
-	//	   That is, we use rational approximation to approximate
-	//			erf(1+s) - (c = (single)0.84506291151)
-	//	   Note that |P1/Q1|< 0.078 for x in [0.84375,1.25]
-	//	   where
-	//		P1(s) = degree 6 poly in s
-	//		Q1(s) = degree 6 poly in s
-	//
-	//      3. For x in [1.25,1/0.35(~2.857143)],
-	//         	erfc(x) = (1/x)*exp(-x*x-0.5625+R1/S1)
-	//         	erf(x)  = 1 - erfc(x)
-	//	   where
-	//		R1(z) = degree 7 poly in z, (z=1/x^2)
-	//		S1(z) = degree 8 poly in z
-	//
-	//      4. For x in [1/0.35,28]
-	//         	erfc(x) = (1/x)*exp(-x*x-0.5625+R2/S2) if x > 0
-	//			= 2.0 - (1/x)*exp(-x*x-0.5625+R2/S2) if -6<x<0
-	//			= 2.0 - tiny		(if x <= -6)
-	//         	erf(x)  = sign(x)*(1.0 - erfc(x)) if x < 6, else
-	//         	erf(x)  = sign(x)*(1.0 - tiny)
-	//	   where
-	//		R2(z) = degree 6 poly in z, (z=1/x^2)
-	//		S2(z) = degree 7 poly in z
-	//
-	//      Note1:
-	//	   To compute exp(-x*x-0.5625+R/S), let s be a single
-	//	   precision number and s := x; then
-	//		-x*x = -s*s + (s-x)*(s+x)
-	//	        exp(-x*x-0.5626+R/S) =
-	//			exp(-s*s-0.5625)*exp((s-x)*(s+x)+R/S);
-	//      Note2:
-	//	   Here 4 and 5 make use of the asymptotic series
-	//			  exp(-x*x)
-	//		erfc(x) ~ ---------- * ( 1 + Poly(1/x^2) )
-	//			  x*sqrt(pi)
-	//	   We use rational approximation to approximate
-	//      	g(s)=f(1/x^2) = log(erfc(x)*x) - x*x + 0.5625
-	//	   Here is the error bound for R1/S1 and R2/S2
-	//      	|R1/S1 - f(x)|  < 2**(-62.57)
-	//      	|R2/S2 - f(x)|  < 2**(-61.52)
-	//
-	//      5. For inf > x >= 28
-	//         	erf(x)  = sign(x) *(1 - tiny)  (raise inexact)
-	//         	erfc(x) = tiny*tiny (raise underflow) if x > 0
-	//			= 2 - tiny if x<0
-	//
-	//      7. Special case:
-	//         	erf(0)  = 0, erf(inf)  = 1, erf(-inf) = -1,
-	//         	erfc(0) = 1, erfc(inf) = 0, erfc(-inf) = 2,
-	//	   	erfc/erf(NaN) is NaN
-	//
+//			                   x
+//		              2      |\
+//     erf(x)  =  ---------  |   exp(-t*t) dt
+//	 	           sqrt(pi) \|
+//			                  0
+//
+//      erfc(x) =  1-erf(x)
+//		erf(-x) = -erf(x)
+//		erfc(-x) = 2 - erfc(x)
+//
+// Method:
+//	1. For |x| in [0, 0.84375]
+//	    erf(x)  = x + x*R(x^2)
+//      erfc(x) = 1 - erf(x)           if x in [-.84375,0.25]
+//                  = 0.5 + ((0.5-x)-x*R)  if x in [0.25,0.84375]
+//	   where R = P/Q where P is an odd poly of degree 8 and
+//	   Q is an odd poly of degree 10.
+//						 -57.90
+//			| R - (erf(x)-x)/x | <= 2
+//
+//
+//	   Remark. The formula is derived by noting
+//          erf(x) = (2/sqrt(pi))*(x - x^3/3 + x^5/10 - x^7/42 + ....)
+//	   and that
+//          2/sqrt(pi) = 1.128379167095512573896158903121545171688
+//	   is close to one. The interval is chosen because the fix
+//	   point of erf(x) is near 0.6174 (i.e., erf(x)=x when x is
+//	   near 0.6174), and by some experiment, 0.84375 is chosen to
+// 	   guarantee the error is less than one ulp for erf.
+//
+//      2. For |x| in [0.84375,1.25], let s = |x| - 1, and
+//         c = 0.84506291151 rounded to single (24 bits)
+//         	erf(x)  = sign(x) * (c  + P1(s)/Q1(s))
+//         	erfc(x) = (1-c)  - P1(s)/Q1(s) if x > 0
+//			  1+(c+P1(s)/Q1(s))    if x < 0
+//         	|P1/Q1 - (erf(|x|)-c)| <= 2**-59.06
+//	   Remark: here we use the taylor series expansion at x=1.
+//		erf(1+s) = erf(1) + s*Poly(s)
+//			 = 0.845.. + P1(s)/Q1(s)
+//	   That is, we use rational approximation to approximate
+//			erf(1+s) - (c = (single)0.84506291151)
+//	   Note that |P1/Q1|< 0.078 for x in [0.84375,1.25]
+//	   where
+//		P1(s) = degree 6 poly in s
+//		Q1(s) = degree 6 poly in s
+//
+//      3. For x in [1.25,1/0.35(~2.857143)],
+//         	erfc(x) = (1/x)*exp(-x*x-0.5625+R1/S1)
+//         	erf(x)  = 1 - erfc(x)
+//	   where
+//		R1(z) = degree 7 poly in z, (z=1/x^2)
+//		S1(z) = degree 8 poly in z
+//
+//      4. For x in [1/0.35,28]
+//         	erfc(x) = (1/x)*exp(-x*x-0.5625+R2/S2) if x > 0
+//			= 2.0 - (1/x)*exp(-x*x-0.5625+R2/S2) if -6<x<0
+//			= 2.0 - tiny		(if x <= -6)
+//         	erf(x)  = sign(x)*(1.0 - erfc(x)) if x < 6, else
+//         	erf(x)  = sign(x)*(1.0 - tiny)
+//	   where
+//		R2(z) = degree 6 poly in z, (z=1/x^2)
+//		S2(z) = degree 7 poly in z
+//
+//      Note1:
+//	   To compute exp(-x*x-0.5625+R/S), let s be a single
+//	   precision number and s := x; then
+//		-x*x = -s*s + (s-x)*(s+x)
+//	        exp(-x*x-0.5626+R/S) =
+//			exp(-s*s-0.5625)*exp((s-x)*(s+x)+R/S);
+//      Note2:
+//	   Here 4 and 5 make use of the asymptotic series
+//			  exp(-x*x)
+//		erfc(x) ~ ---------- * ( 1 + Poly(1/x^2) )
+//			  x*sqrt(pi)
+//	   We use rational approximation to approximate
+//      	g(s)=f(1/x^2) = log(erfc(x)*x) - x*x + 0.5625
+//	   Here is the error bound for R1/S1 and R2/S2
+//      	|R1/S1 - f(x)|  < 2**(-62.57)
+//      	|R2/S2 - f(x)|  < 2**(-61.52)
+//
+//      5. For inf > x >= 28
+//         	erf(x)  = sign(x) *(1 - tiny)  (raise inexact)
+//         	erfc(x) = tiny*tiny (raise underflow) if x > 0
+//			= 2 - tiny if x<0
+//
+//      7. Special case:
+//         	erf(0)  = 0, erf(inf)  = 1, erf(-inf) = -1,
+//         	erfc(0) = 1, erfc(inf) = 0, erfc(-inf) = 2,
+//	   	erfc/erf(NaN) is NaN
+//
 
 	static const double
 		tiny	    = 1e-300,

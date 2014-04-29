@@ -2,6 +2,9 @@
  * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
  * Bruce B Campbell 03 26 2014  *
  ********************************/
+//Distribution tests.
+//GRASS GIS distributes this code as well, I have a note somewhere with the true origin.    
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
@@ -33,11 +36,6 @@ int dcmp (const void* i,const void*  j)
  
     return 0;
 }
-
-
-
-
-
 
 double *anderson_darling_exp (double* x,int  n)
   {
@@ -1244,8 +1242,6 @@ int dblcomp (double* i,double* j)
     return 0;
 }
 
-
-
 double *dmax (double *x,int n)
 
 {
@@ -1290,7 +1286,6 @@ double *dmax (double *x,int n)
   return y;
 }
 
-
 double *dmax_exp (double *x, int n)
 {
   static double y[2];
@@ -1322,9 +1317,6 @@ double *dmax_exp (double *x, int n)
   free(xcopy);
   return y;
 }
-
-
-/* could probably use some cleanup/optimization */
 
 double *durbins_exact ( double *x,  int n)
 {
@@ -1472,7 +1464,6 @@ double *extreme (  double * x,   int n)
   return y;
 }
 
-
 double *geary_test (double *x,  int  n)
 
 {
@@ -1562,7 +1553,6 @@ double *kolmogorov_smirnov_exp (double* x,int  n)
 #endif				/* NOISY */
   return y;
 }
-
 
 double *kolmogorov_smirnov (double *x,int n)
 
@@ -2598,7 +2588,6 @@ double *shapiro_wilk (double * x,  int  n)
   return y;
 }
 
-
 /* this is actually the Weisberg-Bingham stat. I need to
 OCR the constants and implment this correctly */
 
@@ -2701,7 +2690,6 @@ double *watson_u2_exp (double *x,   int n)
   return y;
 }
 
-
 double *watson_u2 (double * x,int  n)
 
 {
@@ -2748,7 +2736,6 @@ double *watson_u2 (double * x,int  n)
   free(xcopy);
   return y;
 }
-
 
 double *weisberg_bingham (double * x,int n)
 

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{17147d30-5a2b-48ed-a9e4-c9a247ce1683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\MatlabLibs">
+      <UniqueIdentifier>{8fcb7a34-c367-41f4-a506-390c431b1f15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\DebugklPackages">
+      <UniqueIdentifier>{b06a410b-4d0d-4907-89c7-c31a7262d74c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs\ReleaselPackages">
+      <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\x64\Debug\UMFPACK.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\Matlib.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\libsdpa.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\FGG.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\expokitcpp.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\expokit.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\ARPACK2.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\UMFPACK.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\Matlib.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\libsdpa.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\FGG.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\expokitcpp.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\ARPACK2.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Kernel32.Lib">
+      <Filter>Libs</Filter>
+    </Library>
+    <Library Include="C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib\x64\Psapi.Lib">
+      <Filter>Libs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libemlrt.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libeng.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libfixedpoint.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmat.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmex.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblas.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwblascompat32.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwlapack.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwmathutil.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmwservices.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libmx.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\libut.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclbase.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcr.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib">
+      <Filter>Libs\MatlabLibs</Filter>
+    </Library>
+    <Library Include="..\x64\Release\klMatrixCoreLib.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\klMatrixCoreLib.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\SuperLU_MT_VC.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\SuperLU_MT_VC.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test\kl_matrix_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

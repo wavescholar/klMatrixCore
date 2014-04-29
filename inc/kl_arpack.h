@@ -15,7 +15,7 @@ extern void callAprpack( int n,double* matrix, unsigned int  numEgs, complex<dou
 class klArpackFunctor
 {
 public:
-	klMatrix<complex<double> >  EigenVectors;//BBC Make sure thi memory is not leaked!  Use smart pointer.
+	klMatrix<complex<double> >  EigenVectors;//bbcrevisit sure this memory is not leaked!  Use smart pointer.
 
 public: 
 	klVector<complex<double> > run(klMatrix<double>& kldmp,unsigned int numEigenvalues,bool calculateEigenvectors=true)

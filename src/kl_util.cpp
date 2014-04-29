@@ -7,7 +7,7 @@
 #include "kl_util.h"
 
 #ifdef _M_IX86
-//////////////////////////Fn's to detect VM environment
+//////////////////////////Detect VM environment
 bool klIsInsideVMWare()
 {
 	bool rc = true;

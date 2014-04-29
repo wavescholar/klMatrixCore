@@ -169,14 +169,6 @@ public:
 	}
 };
 
-klVector<complex<double> > klApplyLog( const klVector<complex<double> > &c)
-{
-	klVector<complex<double> > r(c.getColumns() );
-	unsigned int i;
-	for (i=0;i<c.getColumns();i++)
-		r[i]=complex<double> (std::log(complex<double> (c[i])));
-	return r;
-}
 void MatrixExponential(ofstream &_tex,unsigned int  &n)
 {
 	try{
@@ -202,8 +194,7 @@ void MatrixExponential(ofstream &_tex,unsigned int  &n)
 	if (klTestSize==klTestType::SMALL)
 	{ 
 		featureDim = 8;
-	}
-		
+	}		
 
 		{
 			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);

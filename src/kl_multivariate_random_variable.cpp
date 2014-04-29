@@ -24,8 +24,8 @@ template<  > void klNormalMultiVariate<float>::setupSpec()
     int n=row;
 
     //Normally we'd transpose before passing in factor memory to get layout into column major
-    //format used by FORTRAN routine, but _covarianceMatrix should be symmetric - so this step is unncessary.
-    // decl from mkl_lapack32.h 
+    //format used by FORTRAN routine, but _covarianceMatrix should be symmetric - so this step is unnecessary.
+    //decl from mkl_lapack32.h 
     spotrf(&uplo,&n, temp.getMemory(),&n,&info);
     if(info<0)
         throw "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.";
@@ -49,7 +49,6 @@ template<  > void klNormalMultiVariate<float>::setupSpec()
 
 }
 
-
 template<  > void klNormalMultiVariate<double>::setupSpec()
 {	//The covariance matrix has to be factored; ie find a s.t. Sigma=transpose(A) * A.  
     //For Positive definite matrices, a Cholesky factorization can be done.
@@ -72,9 +71,9 @@ template<  > void klNormalMultiVariate<double>::setupSpec()
     MKL_INT n=row;
 
     //Normally we'd transpose before passing in factor memory to get layout into column major
-    //format used by FORTRAN routine, but _covarianceMatrix should be symmetric - so this step is unncessary.
-    // decl from mkl_lapack32.h 
-//	void dpotrf( char* uplo, MKL_INT* n, double* a, MKL_INT* lda, MKL_INT* info );
+    //format used by FORTRAN routine, but _covarianceMatrix should be symmetric - so this step is unnecessary.
+    //decl from mkl_lapack32.h 
+    //void dpotrf( char* uplo, MKL_INT* n, double* a, MKL_INT* lda, MKL_INT* info );
     dpotrf(&uplo,&n, temp.getMemory(),&n,&info);
     if(info<0)
         throw "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.";

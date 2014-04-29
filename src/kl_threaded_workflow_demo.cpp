@@ -45,8 +45,6 @@ void work0(void)
 
 	lpvBuffer = TlsGetValue(gdwTlsIndex);
 	LocalFree((HLOCAL) lpvBuffer);
-
-
 }
 void work1(void)
 {
@@ -128,7 +126,7 @@ void work2(void)
 
 void MutithreadedWorkflow(void)
 { 
-	//Run multiple of the same work elelement
+	//Run multiple of the same work element
 	{
 		klThreadWorkflow<int,klUnitTestThreadPtr> workflow;
 		void (*pf1)() =work0;

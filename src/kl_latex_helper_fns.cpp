@@ -198,9 +198,7 @@ void LatexInsertHistogram(klVector<double>& vec, unsigned int numBins,ofstream &
 	sprintf(arg,"%s\\%s.eps",dir.c_str(),filename.c_str());
 	
 	//klPlot1D<double>(hist,arg,title.c_str());
-	
-		//const char* filename, const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
-		//bool holdOn=false,const char* color=NULL
+
 	klPlotHistogram<double>(vec,arg,title.c_str());
 		
 	sprintf(evalString,"print -r1200 -depsc %s;",arg);
