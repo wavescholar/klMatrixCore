@@ -37,7 +37,7 @@ class klUnitTestWrapper
 
 public:
 
-	klUnitTestWrapper(ofstream &mstream, ofstream &sysstream) : stream(mstream),system_stream(sysstream)
+	klUnitTestWrapper(ofstream &mstream, ofstream &sysstream) : stream(mstream),system_stream(sysstream), _lastRunTime(0.0f)
 	{
 		
 	}
@@ -76,8 +76,7 @@ public:
 	{
 		_n = n;
 	}
-
-
+	
 public:
 	void MemoryPreCheck()
 	{
@@ -99,13 +98,22 @@ public:
 		}
 		_CrtDumpMemoryLeaks();
 	}
+
+	double GetLastRuntime(){ return _lastRunTime;}
 private:	
 	_CrtMemState s1, s2, s3;
-
 
 	ofstream& system_stream;
 	ofstream& stream;
 	unsigned int _n;  //Dimension (or some measure of it) for the test problem
+
+	double _lastRunTime;
+
+	void SetLastRuntime(double runtime)
+	{
+		_lastRunTime = runtime;
+	}
+	
 
 	klFlotingPointHelper mFPH;
 public:
@@ -136,7 +144,11 @@ public:
 			pf(stream, _n);
 			QueryPerformanceCounter(prefCountEnd);
 
-			stream<<"QueryPerformanceCounter  =  "<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+			double runtime =double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);
+
+			SetLastRuntime(runtime);
+
+			stream<<"QueryPerformanceCounter  =  "<<runtime<<endl;   
 
 			MemoryPostCheck();
 

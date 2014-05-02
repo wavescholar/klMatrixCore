@@ -173,8 +173,8 @@
     <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="klPerformanceTest.cpp" />
     <ClCompile Include="src\klMatrixCoreTest.cpp" />
-    <ClCompile Include="test\kl_matrix_test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

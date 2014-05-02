@@ -4,13 +4,12 @@
  ********************************/
 
 void klIntegrationTest();
+void klVSLPerformaceTest();
 
-void run_matrix_tests(void);
 
 int main(int argc, char* argv[])
 {
-	run_matrix_tests();
-
+	klVSLPerformaceTest();
 	klIntegrationTest();
 
 	return 0;

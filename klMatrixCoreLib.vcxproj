@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\klIntegrationTest.cpp" />
+    <ClCompile Include="src\klMatrixCoreTest.cpp" />
+    <ClCompile Include="src\kl_arpack.cpp" />
+    <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
+    <ClCompile Include="src\kl_hardware.cpp" />
+    <ClCompile Include="src\kl_latex_helper_fns.cpp" />
+    <ClCompile Include="src\kl_matrix_exponential.cpp" />
+    <ClCompile Include="src\kl_memory.cpp" />
+    <ClCompile Include="src\kl_ML_helper_fns.cpp" />
+    <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
+    <ClCompile Include="src\kl_random_number_generator.cpp" />
+    <ClCompile Include="src\kl_sdpa.cpp" />
+    <ClCompile Include="src\kl_SEH.cpp" />
+    <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
+    <ClCompile Include="src\kl_util.cpp" />
+    <ClCompile Include="src\kl_vsl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\kl_arpack.h" />
+    <ClInclude Include="inc\kl_bregman_divergence.h" />
+    <ClInclude Include="inc\kl_exception.h" />
+    <ClInclude Include="inc\kl_hardware.h" />
+    <ClInclude Include="inc\kl_image_buffer.h" />
+    <ClInclude Include="inc\kl_independent_components.h" />
+    <ClInclude Include="inc\kl_latex_helper_fns.h" />
+    <ClInclude Include="inc\kl_linear_equation.h" />
+    <ClInclude Include="inc\kl_matlab_dependent_unit_tests.h" />
+    <ClInclude Include="inc\kl_matlab_iface.h" />
+    <ClInclude Include="inc\kl_matrix.h" />
+    <ClInclude Include="inc\kl_matrix_facorizations.h" />
+    <ClInclude Include="inc\kl_memory.h" />
+    <ClInclude Include="inc\kl_ML_helper_fns.h" />
+    <ClInclude Include="inc\kl_multiclass_svm.h" />
+    <ClInclude Include="inc\kl_multivariate_random_variable.h" />
+    <ClInclude Include="inc\kl_principal_components.h" />
+    <ClInclude Include="inc\kl_prob.h" />
+    <ClInclude Include="inc\kl_random_number_generator.h" />
+    <ClInclude Include="inc\kl_regression.h" />
+    <ClInclude Include="inc\kl_sample_population.h" />
+    <ClInclude Include="inc\kl_SEH.h" />
+    <ClInclude Include="inc\kl_stat.h" />
+    <ClInclude Include="inc\kl_thread_workflow.h" />
+    <ClInclude Include="inc\kl_time_series.h" />
+    <ClInclude Include="inc\kl_unit_tests.h" />
+    <ClInclude Include="inc\kl_unit_test_wrapper.h" />
+    <ClInclude Include="inc\kl_util.h" />
+    <ClInclude Include="inc\kl_vector.h" />
+    <ClInclude Include="inc\kl_vsl.h" />
+    <ClInclude Include="inc\kl_wavelet.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DDD44601-359E-441C-9650-4FAB056661C8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>klMatrixCore</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseIntelIPP>true</UseIntelIPP>
+    <UseIntelTBB>true</UseIntelTBB>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseIntelIPP>true</UseIntelIPP>
+    <UseIntelTBB>true</UseIntelTBB>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;d:\Packages\MatLib;D:\Packages\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\arpack++\allEx;D:\Packages\arpack++\include;d:\klMatrixCore\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;D:\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\arpack++\allEx;D:\Packages\arpack++\include;d:\klMatrixCore\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

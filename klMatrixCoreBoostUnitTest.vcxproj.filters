@@ -136,7 +136,7 @@
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test\kl_matrix_test.cpp">
+    <ClCompile Include="test\kl_boost_test_complex_vsl_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

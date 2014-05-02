@@ -139,7 +139,7 @@
     <ClCompile Include="src\klMatrixCoreTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test\kl_matrix_test.cpp">
+    <ClCompile Include="klPerformanceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

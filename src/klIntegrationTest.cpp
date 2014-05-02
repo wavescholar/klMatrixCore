@@ -183,13 +183,13 @@ void klIntegrationTest()
 
 	ofstream _tex(regressionFile);
 
-	ofstream _sytemText(sysInfoFile);
+	ofstream _systemText(sysInfoFile);
 		
 	startLatexDoc("Regression of KL Software Distribution   ","KL Software Libraries",asctime(tm_buf),_tex, "");
 
 	_tex<<"\\textbf{ KL Library test output.  This LaTex file and the associated diagrams are produced by the KL software libraries.}"<<endl;
 	
-	klUnitTestWrapper klutw(_tex,_sytemText);
+	klUnitTestWrapper klutw(_tex,_systemText);
 	heapstatus = _heapchk();
 
 	unsigned int n = 512;
@@ -290,9 +290,9 @@ void klIntegrationTest()
 	heapstatus = _heapchk();
 	
 	n=0;
-	MemoryManagement(_sytemText,n);
-	Utility(_sytemText,n);
-	klutw.HardwareConfiguration(_sytemText);
+	MemoryManagement(_systemText,n);
+	Utility(_systemText,n);
+	klutw.HardwareConfiguration(_systemText);
 
 	MutithreadedWorkflow();
 		
@@ -774,7 +774,6 @@ void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName)
 
 
 }
-
 
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {

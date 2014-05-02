@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="inc">
+      <UniqueIdentifier>{6bf7887e-c86b-45d9-8a15-492f10b9960b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{3517bd91-808d-48bb-a204-7d57f41f82af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\kl_arpack.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_cdhc_distribution_tests.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_hardware.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_latex_helper_fns.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_matrix_exponential.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_memory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_ML_helper_fns.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_multivariate_random_variable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_random_number_generator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_sdpa.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_SEH.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_threaded_workflow_demo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_util.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_vsl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klIntegrationTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\klMatrixCoreTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\kl_arpack.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_bregman_divergence.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_exception.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_hardware.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_image_buffer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_independent_components.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_latex_helper_fns.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_linear_equation.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_matlab_dependent_unit_tests.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_matlab_iface.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_matrix.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_matrix_facorizations.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_memory.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_ML_helper_fns.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_multiclass_svm.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_multivariate_random_variable.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_principal_components.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_prob.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_random_number_generator.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_regression.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_sample_population.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_SEH.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_stat.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_thread_workflow.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_time_series.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_unit_test_wrapper.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_unit_tests.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_util.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_vector.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_vsl.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_wavelet.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
