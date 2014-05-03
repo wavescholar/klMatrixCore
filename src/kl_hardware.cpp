@@ -58,11 +58,8 @@ void klPrintModules(ofstream &stream)
 	delete msg;
 }
 
-MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)//const char* filename)
+MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)
 {
-	//ios_base::openmode wMode = ios_base::app;
-	//ofstream stream(filename, wMode);
-
 	MEMORYSTATUS _memoryInfo;
 
 	GlobalMemoryStatus (&_memoryInfo);
@@ -106,6 +103,22 @@ MEMORYSTATUSEX klWinMemoryInfo(ofstream &stream)//const char* filename)
 	//stream.close();
 
 	return _memoryInfoEx;
+} 
+
+bool klCheckFreeMemory(size_t size)
+{
+	MEMORYSTATUS _memoryInfo;
+
+	GlobalMemoryStatus (&_memoryInfo);
+
+	MEMORYSTATUSEX _memoryInfoEx;
+	_memoryInfoEx.dwLength=sizeof(_MEMORYSTATUSEX);
+	GlobalMemoryStatusEx (&_memoryInfoEx);
+
+	if  (_memoryInfoEx.ullAvailPhys < size)
+		return false;
+	else
+		return true;
 } 
 
 SYSTEM_INFO klWinSystemInfo(ofstream &stream)

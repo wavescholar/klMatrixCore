@@ -11,7 +11,7 @@
 
 
 /* 
-	OMFG ! From Microsoft :	Thanks for reporting this issue.
+From Microsoft : Thanks for reporting this issue.
 I looked at the source code for matrix.h <core/matlab/include/matrix.h>
 It has a definition for char16_t "typedef CHAR16_T char16_t;". 
 Also the C++ header "Microsoft Visual Studio 10.0\VC\include\yvals.h" also defines 
@@ -111,7 +111,7 @@ public :
 //start and finish are 0-based indices to the elements of c - bbc in case we need to index a subset?  Could do better.  Remove or improve this.
 //hold on indicates multiple plots will be made to one gcf and the user will save the file.
 //use the color attribute to specify a matlab color; r,g,b,c,m,y,k or [r,g,b] - use a ' before and after the spec
-template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
+template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
 								   bool useExtents=true, unsigned int start=0,unsigned int finish=0,bool holdOn=false,const char* color=NULL)
 
@@ -236,8 +236,97 @@ template<class TYPE> void klPlot1D(klVector<TYPE>  c,const char* filename,
 	delete evalString;
 }
 
+//New scatterplot 050314 - I find this interface hard to interpret.  Agreed with the code comments above that
+//this could be improved.  The start and finish parameters are misleading - and I am not sure if they work.
+//bbcrevisit - make a git task to document and improve this. For the scatter plot we don't need the range  
+template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,const char* filename,
+								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+								   bool useExtents=true, bool holdOn=false,const char* color=NULL)
+
+{
+	klMatlabEngineThreadMap klmtm;
+
+	if(x.getRowSize() !=y.getRowSize())
+		throw "x.getRowSize() !=y.getRowSize() in template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,const char* filename...";
+
+	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+
+	//How to get the error message from matlab engine
+	char errmsg[1024];
+	errmsg[1023] = '\0';
+	engOutputBuffer(matlabEngine, errmsg, 512);
+
+	mxArray *Tx = NULL, *Ty=NULL ,*a = NULL, *d = NULL;
+
+	Tx = mxCreateDoubleMatrix(1, x.getRowSize(), mxREAL);
+	
+	Ty = mxCreateDoubleMatrix(1, y.getRowSize(), mxREAL);
+	
+	unsigned int i;
+	double* pMx=mxGetPr(Tx);
+
+	double* pMy=mxGetPr(Ty);
+
+	for(i=0;i<x.getRowSize();i++)
+	{
+		*(pMx+i)=(double)x[i];
+		*(pMy+i)=(double)y[i];
+		//cout<<x[i]<<"  " <<y[i]<<endl;
+	}
+	engPutVariable(matlabEngine, "Tx", Tx);
+	
+	engPutVariable(matlabEngine, "Ty", Ty);
+	
+	char* evalString=new char[256];
+
+	char* colorSpec = new char[256];
+	if( color==NULL)
+	{
+		sprintf(colorSpec,"'b'");
+	}
+	else
+	{
+		sprintf(colorSpec,"%s",color);
+	}
+
+	sprintf(evalString,"figure('Visible','off');scatter(Tx,Ty,'.')");
+	
+	engEvalString(matlabEngine, evalString);
+
+	engOutputBuffer(matlabEngine, errmsg, 512);
+	
+	cerr<<errmsg;
+
+	if(title!=NULL)
+	{
+		sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
+		engEvalString(matlabEngine, evalString);
+	}	
+
+	if(xAxis!=NULL)
+	{
+		sprintf(evalString,"xlabel('%s');",xAxis);
+		engEvalString(matlabEngine, evalString);
+	}
+	if(yAxis!=NULL)
+	{
+		sprintf(evalString,"ylabel('%s');",yAxis);
+		engEvalString(matlabEngine, evalString);
+	}
+
+	if(!holdOn)
+	{
+		sprintf(evalString,"saveas(gcf,'%s');",filename);
+		engEvalString(matlabEngine, evalString);
+	}
+	mxDestroyArray(Tx);
+	mxDestroyArray(Ty);
+	delete evalString;
+}
+
+
 //Meshplot of 3-D Data
-template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>  c,const char* filename,
+template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>&  c,const char* filename,
 										  const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
 										  bool useExtents=true,bool holdOn=false,const char* marker=NULL)
 {
@@ -316,7 +405,7 @@ template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>  c,const char* filename
 }
 
 
-template<class TYPE> void kl2DPlot(klMatrix<TYPE>  c,const char* filename,
+template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
 								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
 								   bool useExtents=true,bool holdOn=false,const char* marker=NULL)
 {
@@ -385,9 +474,7 @@ template<class TYPE> void kl2DPlot(klMatrix<TYPE>  c,const char* filename,
 
 
 
-
-
-template<class TYPE> void klPlotHistogram(klVector<TYPE>  c,const char* filename,
+template<class TYPE> void klPlotHistogram(klVector<TYPE>&  c,const char* filename,
 								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
 								   bool holdOn=false,const char* color=NULL)
 {
@@ -468,8 +555,6 @@ template<class TYPE> void klPlotHistogram(klVector<TYPE>  c,const char* filename
 	mxDestroyArray(T);
 	delete evalString;
 }
-
-
 
 
 template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* filen,TYPE dummy);
@@ -579,8 +664,8 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 	return data;
 }
 
-template<class TYPE>void klMatlabExportVector(klVector<TYPE> vector, char* filename_prefix,TYPE dummy);
-template<class TYPE> void klMatlabExportVector(klVector<TYPE> vector, char* filename_prefix,TYPE dummy)
+template<class TYPE>void klMatlabExportVector(klVector<TYPE>& vector, char* filename_prefix,TYPE dummy);
+template<class TYPE> void klMatlabExportVector(klVector<TYPE>& vector, char* filename_prefix,TYPE dummy)
 {
 	char* filename=new char[256];
 	sprintf(filename,"%s.mat",filename_prefix);
@@ -614,8 +699,8 @@ template<class TYPE> void klMatlabExportVector(klVector<TYPE> vector, char* file
 	mxDestroyArray(pa1);
 	if (matClose(pmat) != 0) {printf("Error closing file %s\n",filename);}
 }
-template<class TYPE>void klMatlabExportMatrix(klMatrix<TYPE> matrix, char* filename_prefix,TYPE dummy);
-template<class TYPE> void klMatlabExportMatrix(klMatrix<TYPE> matrix, char* filename_prefix,TYPE dummy)
+template<class TYPE>void klMatlabExportMatrix(klMatrix<TYPE>& matrix, char* filename_prefix,TYPE dummy);
+template<class TYPE> void klMatlabExportMatrix(klMatrix<TYPE>& matrix, char* filename_prefix,TYPE dummy)
 {
 	char* filename=new char[256];
 	sprintf(filename,"%s.mat",filename_prefix);

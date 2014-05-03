@@ -496,6 +496,7 @@ template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,unsigne
 
 template<class TYPE>  void __cdecl testKLRandomNumberGeneratorMatlab(ofstream &_tex,unsigned int &n)
 {
+
 	time_t time_of_day;
 	struct tm *tm_buf;
 	time_of_day = time( NULL );

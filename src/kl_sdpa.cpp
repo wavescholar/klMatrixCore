@@ -11,13 +11,13 @@ void  SemidefiniteProgrammingCheck(ofstream &_tex,unsigned int  &n)
 
 	Problem1.Method = KSH;
 
-	strcpy(Problem1.ParameterFileName, "d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/param.sdpa");
+	strcpy(Problem1.ParameterFileName, "d:/Packages/sdpa/param.sdpa");
 
-	Problem1.ParameterFile = fopen("d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.dat-s", "r");
+	Problem1.ParameterFile = fopen("d:/Packages/sdpa/example1.dat-s", "r");
 
-	strcpy(Problem1.InputFileName, "d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.dat-s");
+	strcpy(Problem1.InputFileName, "d:/Packages/sdpa/example1.dat-s");
 
-	Problem1.InputFile = fopen("d:/Packages/ConvexOptimization/SDPA_INTEL_BLAS/sdpa/example1.dat-s","r");
+	Problem1.InputFile = fopen("d:/Packages/sdpa/example1.dat-s","r");
 
 	strcpy(Problem1.OutputFileName, "D:/klMAtrixCore/output/sdpa_example1.result_loc");
 

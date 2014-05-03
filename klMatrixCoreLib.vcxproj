@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\klIntegrationTest.cpp" />
-    <ClCompile Include="src\klMatrixCoreTest.cpp" />
+    <ClCompile Include="src\klPerformanceTest.cpp" />
     <ClCompile Include="src\kl_arpack.cpp" />
     <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
     <ClCompile Include="src\kl_hardware.cpp" />
@@ -26,7 +26,7 @@
     <ClCompile Include="src\kl_SEH.cpp" />
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\kl_util.cpp" />
-    <ClCompile Include="src\kl_vsl.cpp" />
+    <ClCompile Include="src\kl_vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\kl_arpack.h" />
@@ -121,7 +121,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;D:\Packages\MatLib;D:\Packages\ConvexOptimization\SDPA_INTEL_BLAS\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\arpack++\allEx;D:\Packages\arpack++\include;d:\klMatrixCore\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>c:\Program Files\MATLAB\R2012b\extern\include;D:\Packages\MatLib;D:\Packages\sdpa;C:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;D:\Packages\MatrixExponential\expokit\expokitcpp;D:\Packages\FastGaussTransform;D:\Packages\arpack++\allEx;D:\Packages\arpack++\include;d:\klMatrixCore\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

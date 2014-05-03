@@ -25,7 +25,7 @@
 #include <float.h>
 #include <string>
 #include <vector>
-
+#include<sstream>
 using namespace std;
 
 //This allows for debug output of matrices to the console window in
@@ -48,10 +48,18 @@ inline int mkl_eigs_select(double* x,double* y)
 
 }
 
-template<class TYPE> class klVector: public klRefCount<klMutex>
+class klGlobalMemoryManager
+{
+protected:
+	static klMemMgr* _globalMemoryManager;
+public: 
+	static void setklVectorGlobalMemoryManager(klMemMgr* mgr);
+};
+
+template<class TYPE> class klVector: public klRefCount<klMutex>, klGlobalMemoryManager
 {
 public:
-
+	
 	  klVector(klMemMgr* mgr,__int64 size,bool own=false) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -76,7 +84,50 @@ public:
 	  klVector(__int64 size) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
+		  if(_globalMemoryManager==NULL)
+		  {
+			  _mMemory=new TYPE[size];
+			  _own=1;
+			  _size=size;
+			  _mgr=0;
+		  }
+		  else
+		  {
+			  size_t allocationAmount = sizeof(TYPE)*size;
+		
+			  _mMemory =(TYPE*) _globalMemoryManager->allocate(allocationAmount);
+			  _own=1;
+			  _size=size;
+			  _mgr=_globalMemoryManager;
+		  }
+	  }
+
+	  klVector(double xStart, double dx,double xEnd) :
+	  x0(xStart),x1(xEnd), y0(0),y1(0),desc("")
+	  {
+		  if(xEnd<=xStart)
+			  throw "Range error constructing klVector :klVector(double xStart, double dx,double xEnd) xEnd<=xStrat";
+		  __int64 size = ceil( (xEnd-xStart) / dx);
+
+		  bool okToAllocate = klCheckFreeMemory(size);
+		
+		  if(!okToAllocate)
+		  {
+			  std::stringstream ss;
+			  ss<<"Max allocation exceeded in constructing klVector("<<xStart<<" "<<dx<<" "<<xEnd<<") consider using smalller dx"<<endl;
+			  
+			  std::exception ex(ss.str().c_str()); 
+			  throw ex;
+		  }
+
 		  _mMemory=new TYPE[size];
+
+		  for(unsigned int i=0;i<size;i++)
+		  {
+			  //We may be loosing precision here
+			  *(_mMemory+i)=(TYPE)(xStart + i*dx);
+		  }
+
 		  _own=1;
 		  _size=size;
 		  _mgr=0;
@@ -107,7 +158,7 @@ public:
 		  y1=src.y1;
 		  desc=src.desc;
 	  }
-	  
+	
 	  //Computes this.^b.  Template specializations utilizing MKL VSL are implemented for TYPE double and TYPE float 
 	  klVector<TYPE> pow_gen(klVector<TYPE> b)
 	  {
@@ -507,10 +558,7 @@ public:
 	  }
 
 public:
-	//Used by data display for x range, y range of data.
-	//bbcrevisit - make a struct for dimension and add get/set accessors 
-	//to vector matrix and cube classes.
-
+	
 	//Domain of data
 	double x0,x1;
 
@@ -518,7 +566,6 @@ public:
 	double y0,y1;
 
 	string desc;
-
 
 private:
 	TYPE* _mMemory;

@@ -163,6 +163,47 @@ void LatexInsert1DPlot(klVector<double>& vec, ofstream &_tex, string dir,string 
 	delete arg;
 	delete evalString;
 }
+
+void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon= false)
+{
+	klMatlabEngineThreadMap klmtm;
+
+	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+
+	char* arg = new char[512];
+	char* evalString = new char[512];
+	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
+	if(holdon)
+	{
+		engEvalString(matlabEngine, "hold on;");
+	}
+	const char* xAxis=NULL;
+	const char* yAxis=NULL;
+	bool useExtents=true;
+	unsigned int start=0;
+	unsigned int finish=0;
+		
+	klScatterPlot2D<double>(vecX,vecY,arg,title.c_str(),xAxis,yAxis,useExtents,holdon);
+	
+		if(!holdon)
+	{	
+		sprintf(evalString,"print -r1200 -depsc %s;",arg);
+		engEvalString(matlabEngine, evalString);
+		engEvalString(matlabEngine, "hold off;close(gcf);");
+		sprintf(evalString,"epstopdf   %s",arg);
+		system(evalString);
+		sprintf(arg,"%s.pdf",filename.c_str());
+		_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
+	}
+	if(holdon)
+	{
+		engEvalString(matlabEngine, "hold on;");
+	}
+
+	delete arg;
+	delete evalString;
+}
+
 void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title)
 {
 	klMatlabEngineThreadMap klmtm;
@@ -173,7 +214,7 @@ void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string
 	char* evalString = new char[512];
 	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
 	//klMatrix<TYPE>  c,const char* filename,  const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,bool useExtents=true,bool holdOn=false,const char* marker=NULL
-	kl2DPlot<double>(mat,arg,title.c_str());
+	klHeatMapPlot<double>(mat,arg,title.c_str());
 	sprintf(evalString,"print -r1200 -depsc %s;",arg);
 	engEvalString(matlabEngine, evalString);
 	engEvalString(matlabEngine, "hold off;close(gcf);");

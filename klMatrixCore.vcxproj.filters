@@ -139,8 +139,5 @@
     <ClCompile Include="src\klMatrixCoreTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="klPerformanceTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

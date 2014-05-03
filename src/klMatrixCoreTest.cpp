@@ -4,14 +4,13 @@
  ********************************/
 
 void klIntegrationTest();
-void klVSLPerformaceTest();
-
+void klPerformanceTesting();
 
 int main(int argc, char* argv[])
 {
-	klVSLPerformaceTest();
+	klPerformanceTesting();
 	klIntegrationTest();
-
+	
 	return 0;
 }
 

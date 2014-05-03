@@ -48,13 +48,13 @@
     <ClCompile Include="src\kl_util.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\kl_vsl.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\klIntegrationTest.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\klMatrixCoreTest.cpp">
+    <ClCompile Include="src\klPerformanceTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_vector.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

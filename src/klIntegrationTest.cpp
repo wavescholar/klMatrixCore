@@ -64,92 +64,12 @@ void MatrixEigenSolver(ofstream &_tex,unsigned int  &n);
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,unsigned int  &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName);
 
-
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
 void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n);
-void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
-{
-	char* cmdString = new char[2048];
-	size_t popsize=1024*2;
-	klVector<double> a(popsize);
-	klNormalInverseApproxRV<double> normalinv(0,0.1);
-	unsigned i;
-	for(i=0;i<popsize;i++)
-	{
-		double pi= 3.141592653589793238462643383279502;
-		a[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
-	}
-	klTimeSeries<double> c(a);
 
-	_tex<<"$\\mu_1 =" <<c.mean()<<"$"<<endl;
-	_tex<<"$\\mu_2 =" <<c.variance()<<"$"<<endl;
-	_tex<<"$\\mu_3 =" <<c.skewness()<<"$"<<endl;
-	_tex<<"$\\mu_4 =" <<c.kurtosis()<<"$"<<endl;
-
-	klTimeSeries<double>::klTimeSeriesInterpolation interp=klTimeSeries<double>::klTimeSeriesInterpolation::PREVIOUS;
-
-	double tau=12.0;
-
-	klTimeSeries<double> ema=c.EMA(popsize,tau,interp);
-
-	klTimeSeries<double> iema=c.IEMA(popsize,6,tau,interp);
-
-	klTimeSeries<double> ma=c.MA(popsize,6,tau,interp);
-
-	double gamma=1.22208;
-	double beta=0.65;
-	double alpha=1/(gamma*(8* beta - 3));
-
-	klTimeSeries<double> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
-	
-	//ofstream _fileostream("klIEMA.txt");
-	//for(i=0;i<popsize;i++)
-	//{
-	//	_fileostream<<c[i]<<", "<<ma[i]<<", "<<iema[i]<<" ,"<<ema[i]<<", "<<diff[i]<<endl;
-	//}
-	//_fileostream.close();	
-	
-	//LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal");
-
-	//LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA");
-
-	//LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average");
-
-	//LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average");
-
-	//LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator");
-
-
-	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",true);
-
-	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",true);
-
-	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",true);
-
-	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",true);
-
-	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",false);
-
-
-	//pop new data in c
-	c[popsize-1024]=1237;//big shock
-
-	//bbcsvc broken 011805 revisit - used to work  - nfg
-	//double advanceEma=c.advanceEMA(popsize-1024,128,ema[popsize-1025],interp);
-	//since PREVIOUS interp is used we don't see shock
-	//advance again and we should start to see the effect
-	//advanceEma=c.advanceEMA(popsize-1023,128,advanceEma,interp);
-
-	//  pair<double,double> advanceIEma=c.advanceIEMA(popsize-1024,4,128,iema[popsize-1025],interp);
-	//  double advanceMA=c.advanceMA(popsize-1024,4,128,interp);//bbcrevisit this call has to be consistent in second parameter as previous MA call
-	//  advanceMA=c.advanceMA(popsize-1023,4,128,interp);
-
-	_tex.flush();
-	//_tex.close();
-	delete cmdString;
-}
-
+#include "kl_vsl.h"
+void VSLFunctions(ofstream &_tex,unsigned int &n);
 
 #include <errno.h> 
 void klIntegrationTest()
@@ -213,43 +133,27 @@ void klIntegrationTest()
 
 	klmtm.insert(thisThread, matlabEngine);
 		
-	//unsigned int di=512;
-	//char* locaFname = "D:\\klSpectralAnalysis\\L_512.txt";
-	//FEATS is only in MKL 11 and up :(
-	//FEATSEigensolver(_tex,di,locaFname);
-	//This generates heap modified after free error
-	//Arpack_MKLsyevxSmokeTest(_tex,di,locaFname);
-	
-	//IterativeKrylovCheck(_tex,di,locaFname);		
-	//klTestSize= klTestType::GROW;
-	//unsigned int dimension;
-	//for(dimension =58624;dimension<131072;dimension=dimension+2048)
-	//	IterativeKrylovCheck(_tex,dimension);
-
 	klTestSize= klTestType::SMALL;
 
-	makeLatexSection("Gram Matrix Consistency Check",_tex);
+		
+	klutw.runTest(VSLFunctions);
+
 	klutw.runTest(GenerativeGramConsistencyCheck);
-
-	makeLatexSection("Solver ",_tex);
+	
 	klutw.runTest(MatrixEigenSolver);
-
-	makeLatexSection("Generate Tracey Widom Sample",_tex);
+		
 	klutw.runTest(GenerateTraceyWidomSample);
 	
-	makeLatexSection("Approximate Winger Distribution",_tex);
 	klutw.runTest(VerifyWingerLaw);
 	
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	
-	makeLatexSection("Iterated Exponential Filtering ",_tex);
 	klutw.runTest(IteratedExponentialFiltering);
 	
 	makeLatexSection("Matrix Exponential ",_tex);
 	klutw.runTest(MatrixExponential);
 				
-	makeLatexSection("Random Number Generator ",_tex);
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
 	
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
@@ -318,6 +222,8 @@ void klIntegrationTest()
 
 void VerifyWingerLaw(ofstream &_tex, unsigned int &n)
 {
+	makeLatexSection("Approximate Winger Distribution",_tex);
+	
 	makeLatexSection("Verfy Winger Law.",_tex);
 
 	_tex<<"Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such that $X_{i,j} = X_{j,i}$, \
@@ -777,6 +683,8 @@ void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName)
 
 void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 {
+	makeLatexSection("Generate Tracey Widom Sample",_tex);
+
 	//n is the size of the matrix that will be sampled
 	unsigned int m; //Number or samples to generate 
 	if (klTestSize==klTestType::VERYLARGE)
@@ -881,12 +789,12 @@ void GenerateTraceyWidomSample(ofstream &_tex,unsigned int  &n)
 		}
 		
 		char* fileName= new char[1024];
-		sprintf(fileName,"%Winger_re.txt",basefilename);
+		sprintf(fileName,"%sWinger_re.txt",basefilename);
 		ofstream fileostreamobj(fileName );
 		fileostreamobj<<L_re<<endl;
 		fileostreamobj.close();
 
-		sprintf(fileName,"%Winger_im.txt",basefilename);
+		sprintf(fileName,"%sWinger_im.txt",basefilename);
 		fileostreamobj.open(fileName);
 		fileostreamobj<<L_im<<endl;
 		fileostreamobj.close();
@@ -1042,6 +950,8 @@ void MatrixNorm(ofstream &_tex,unsigned int  &n)
 
 void MatrixEigenSolver(ofstream &_tex,unsigned int  &n)
 {	
+	makeLatexSection("Eigen Solver Checks",_tex);
+	
 	n= 8;
 
 	makeLatexSection("Haar Distributed Random Orthogonal Matrix $A \\in O(n)$",_tex);
@@ -1443,6 +1353,8 @@ void LinearRegression(ofstream &_tex,unsigned int  &n)
 
 void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 {
+	makeLatexSection("Gram Matrix Consistency Check",_tex);
+	
 	//Notes from On the Nystrom Method for Approximating a Gram Matrix for Improved Kernel-Based Learning by 
 	//Petros Drineas DRINEP@CS.RPI.EDU Department of Computer Science Rensselaer Polytechnic Institute
 
@@ -1584,3 +1496,203 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,unsigned int  &n)
 
 	}
 
+void IteratedExponentialFiltering(ofstream &_tex,unsigned int &n)
+{
+	makeLatexSection("Iterated Exponential Filtering ",_tex);
+	
+	size_t popsize=1024*2;
+	klVector<double> a(popsize);
+	klNormalInverseApproxRV<double> normalinv(0,0.1);
+	unsigned i;
+	for(i=0;i<popsize;i++)
+	{
+		double pi= 3.141592653589793238462643383279502;
+		a[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
+	}
+	klTimeSeries<double> c(a);
+
+	_tex<<"$\\mu_1 =" <<c.mean()<<"$"<<endl;
+	_tex<<"$\\mu_2 =" <<c.variance()<<"$"<<endl;
+	_tex<<"$\\mu_3 =" <<c.skewness()<<"$"<<endl;
+	_tex<<"$\\mu_4 =" <<c.kurtosis()<<"$"<<endl;
+
+	klTimeSeries<double>::klTimeSeriesInterpolation interp=klTimeSeries<double>::klTimeSeriesInterpolation::PREVIOUS;
+
+	double tau=12.0;
+
+	klTimeSeries<double> ema=c.EMA(popsize,tau,interp);
+
+	klTimeSeries<double> iema=c.IEMA(popsize,6,tau,interp);
+
+	klTimeSeries<double> ma=c.MA(popsize,6,tau,interp);
+
+	double gamma=1.22208;
+	double beta=0.65;
+	double alpha=1/(gamma*(8* beta - 3));
+
+	klTimeSeries<double> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
+	
+	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",true);
+
+	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",true);
+
+	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",true);
+
+	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",true);
+
+	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",false);
+
+	c[popsize-1024]=1237;//big shock
+
+	_tex.flush();
+
+}
+
+void VSLFunctions(ofstream &_tex,unsigned int &n)
+{
+	makeLatexSection("Intel VSL Function Check",_tex);
+	
+	//vdInv		Inversion of vector elements
+//void klVSLInv(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLInv(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLInv","Inversion of vector elements",false);
+	}
+	
+////vdSqrt Computation of the square root of vector elements
+//void klVSLSqrt(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLSqrt(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSqrt","sqrt of vector elements",false);
+	}
+////vdExp	Computation of the exponential of vector elements
+//void klVSLExp(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLExp(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExp","exponentail of vector elements",false);
+	}
+////vdExpm1		Computation of the exponential of vector elements decreased by 1
+//void klVSLExpm1(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLExpm1(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExpm1","exponential of vector elements decreased by 1",false);
+	}
+////vdLn	Computation of the natural logarithm of vector elements
+//void klVSLLn(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLLn(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLn","natural logarithm of vector elements",false);
+	}
+////vdLog10		Computation of the denary logarithm of vector elements
+//void klVSLLog10(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLLog10(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLog10","denary lograrithm of vector elements",false);
+	}
+////vdCos		Computation of the cosine of vector elements
+//void klVSLCos(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLCos(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCos","cosine of vector elements",false);
+	}
+////vdSin		Computation of the sine of vector elements
+//void klVSLSin(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLSin(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSin","sine of vector elements",false);
+	}
+////vdTan		Computation of the tangent of vector elements
+//void klVSLTan(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLTan(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTan","tangent of vector elements",false);
+	}
+////vdAcos		Computation of the inverse cosine of vector elements
+//void klVSLAcos(klVector<double>&  v,klVector<double>& ans);
+	//{
+	//klVector<double> a(0.01,0.01,1);
+	//klVSLAcos(a,a);
+	//LatexInsert1DPlot(a,_tex,basefilename,"klVSLAcos","inverse cosine of vector elements decreased by 1",false);
+	//}
+////vdAsin		Computation of the inverse sine of vector elements
+//void klVSLAsin(klVector<double>&  v,klVector<double>& ans);
+//
+////vdAtan		Computation of the inverse tangent of vector elements
+//void klVSLAtan(klVector<double>&  v,klVector<double>& ans);
+//
+////vdCosh		Computation of the hyperbolic cosine of vector elements
+//void klVSLCosh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdSinh		Computation of the hyperbolic sine of vector elements
+//void klVSLSinh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdTanh		Computation of the hyperbolic tangent of vector elements
+//void klVSLTanh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdAcosh		Computation of the inverse hyperbolic cosine of vector elements
+//void klVSLAcosh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdAsinh		Computation of the inverse hyperbolic sine of vector elements
+//void klVSLAsinh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdAtanh		Computation of the inverse hyperbolic tangent of vector elements
+//void klVSLAtanh(klVector<double>&  v,klVector<double>& ans);
+//
+////vdErf		Computation of the error function value of vector elements
+//void klVSLErf(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLErf(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErf","error function of vector elements",false);
+	}
+////vdErfc		Computation of the complementary error function value of vector elements
+//void klVSLErfc(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLErfc(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfc","complementary error function of vector elements",false);
+	}
+////vdCdfNorm		Computation of the cumulative normal distribution function value of vector elements
+//void klVSLCdfNorm(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLCdfNorm(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCdfNorm","cumulative normal distribution function of vector elements",false);
+	}
+////vdErfInv		Computation of the inverse error function value of vector elements
+//void klVSLErfInv(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLErfInv(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfInv","inverse error function of vector elements",false);
+	}
+////vdErfcInv		Computation of the inverse complementary error function value of vector elements
+//void klVSLErfcInv(klVector<double>&  v,klVector<double>& ans);
+//
+////vdCdfNormInv		Computation of the inverse cumulative normal distribution function value of vector elements
+//void klVSLCdfNormInv(klVector<double>&  v,klVector<double>& ans);
+//
+////vdLGamma		Computation of the natural logarithm for the absolute value of the gamma function of vector elements
+//void klVSLLGamma(klVector<double>&  v,klVector<double>& ans);
+	{
+	klVector<double> a(0.01,0.01,1);
+	klVSLLGamma(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLGamma","logarithm for the absolute value of the gamma function of vector elements",false);
+	}
+////vdTGamma		Computation of the gamma function of vector elements 
+//void klVSLTGamma(klVector<double>&  v,klVector<double>& ans);
+		{
+	klVector<double> a(0.01,0.01,1);
+	klVSLTGamma(a,a);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTGamma","gamma function of vector elements",false);
+	}
+}

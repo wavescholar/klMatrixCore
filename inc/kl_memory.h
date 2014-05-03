@@ -15,6 +15,9 @@ This module provides facilities for the following memory resource management fun
   An interface for implementing Adress Windowing Extensions (AWE) memory management.
   Memory Mapped File facilities.
   Memory use and debugging facilities through the Win32 imaghelp dll and or psapi.
+  
+  050414 - Added an Intel MKL memory manager.  This provides aligned buffers.
+
 */
 
 
@@ -54,6 +57,8 @@ using namespace std;
 SYSTEM_INFO klWinSystemInfo(ofstream &_tex);
 
 MEMORYSTATUSEX klWinMemoryInfo(ofstream &_tex);
+
+bool klCheckFreeMemory(size_t size);
 
 void klPrintModules(ofstream &_tex );
 
@@ -209,7 +214,6 @@ public:
 
 	_allocatedBlocks++; // 1 more buffer allocated
 	return (vptr->memory());
-
 	}
 
 
@@ -267,13 +271,7 @@ private:
 	unsigned long _reserved;
 	unsigned long _maxAllocate;
 	unsigned long _allocatedBlocks;	
-
-
 };
-
-
-
-
 
 
 class klAWEMemBlock{
@@ -312,9 +310,6 @@ public:
 		
 	}
 	
-	
-	
-	
 	void* memory(){return _memory;}
 	size_t sizeRequested(){return _reqSize;}
 	size_t sizeUsed(){return _actualSize;}
@@ -331,14 +326,9 @@ protected:
 
 };
 
-
-
-
-//This manager is in it's infancy, it works, but the windowing
-//needs to be implemented.
+//This manager was in development prior to porting to x64, it works, but the windowing needs to be implemented.
 class klAWEMemMgr: public klMemMgr{
-
-
+	
 public:
 
 	klAWEMemMgr(unsigned long maxAllocate)
@@ -592,10 +582,7 @@ private:
 	PVOID lpMemReserved;            // AWE window
 	SYSTEM_INFO sSysInfo;           // useful system information
 	int PFNArraySize;               // memory to request for PFN array
-
-
 };
-
 
 
 #include <windows.h>
@@ -1123,9 +1110,6 @@ inline bool klHeapFree(void* inPtr,void* theHeap)
 }
 
 
-
-
-
 ///////////////////////////////////////////////////Low Memory Warning Handler//////////////
 //The CreateMemoryResourceNotification function creates a memory resource notification object.
 
@@ -1163,5 +1147,69 @@ To compile an application that uses this function, define the _WIN32_WINNT macro
 void klCreateLowMemoryResourceNotification(void);
 
 bool klQueryLowMemoryResourceNotification(int* answer);
+
+#include "mkl.h"
+
+/*
+Best Buffer Aligment Per Intel 
+	128-bit register is in SSE2= require 16-byte alignment
+	256-bit register is in AVX, AVX2= require 32-byte alignment
+	512-bit register for MIC, = require 64-byte alignment
+*/
+
+class klMKLMemMgr{
+public:
+	virtual void* allocate(size_t size)
+	{
+		//void* mkl_malloc (size_t alloc_size, int alignment);
+		void* ptr=NULL;
+		ptr = mkl_malloc(size,64);
+		return ptr;
+	};
+	virtual bool free(void* ptr)
+	{
+		mkl_free(ptr);
+		return true;
+	};
+	
+	//Frees unused memory allocated by the Intel MKL Memory Allocator.
+	void freeAllBuffers()
+	{
+			mkl_free_buffers();
+	}
+
+	 //Frees unused memory allocated by the Intel MKL Memory Allocator in the current thread.
+	void freeCurrentThreadBuffers()
+	{
+		mkl_thread_free_buffers();
+	}
+
+	//mkl_disable_fast_mm //Turns off the Intel MKL Memory Allocator for Intel MKL functions to directly use the system malloc/free functions.
+	
+	 //Reports the status of the Intel MKL Memory Allocator.
+	__int64 allocatorStatus()
+	{
+		int allocatedBytes=0;//bbcrevisit
+		__int64 buffers =mkl_mem_stat(&allocatedBytes);
+		return buffers;
+	}	
+
+	//This may be new
+	//Reports the peak memory allocated by the Intel MKL Memory Allocator.
+	//__int64 getPeakMemoryUse()
+	//{
+	//	//MKL_PEAK_MEM_ENABLE - start gathering the peak memory data
+	//	//MKL_PEAK_MEM_DISABLE - stop gathering the peak memory data
+	//	//MKL_PEAK_MEM - return the peak memory
+	//	//MKL_PEAK_MEM_RESET
+	//	int mode =MKL_PEAK_MEM;
+	//	__int64 peakMem=0;
+	//	peakMem=mkl_peak_mem_usage(mode);
+	//	return peakMem;
+	//}
+//mkl_calloc //Allocates and initializes an aligned memory buffer.
+//mkl_realloc //Changes the size of memory buffer allocated by mkl_malloc/mkl_calloc.
+
+};
 
 #endif //__kl_memory__        

@@ -168,33 +168,35 @@ public:
 		delete wsp;
 	}
 };
-
 void MatrixExponential(ofstream &_tex,unsigned int  &n)
 {
-	try{
+	//makeLatexSection("Matrix Exponential ",_tex);
 
-	unsigned int featureDim;
-	//n is the size of the matrix that will be sampled
-	unsigned int m; //Number or samples to generate 
-	if (klTestSize==klTestType::VERYLARGE)
+	try
 	{
-		featureDim = 1024;
-	}
-	
-	if (klTestSize==klTestType::LARGE)
-	{
-		featureDim = 512;
-	}
 
-	if (klTestSize==klTestType::MEDIUM)
-	{
-		featureDim =64;
-	}
+		unsigned int featureDim;
+		//n is the size of the matrix that will be sampled
+		unsigned int m; //Number or samples to generate 
+		if (klTestSize==klTestType::VERYLARGE)
+		{
+			featureDim = 1024;
+		}
 
-	if (klTestSize==klTestType::SMALL)
-	{ 
-		featureDim = 8;
-	}		
+		if (klTestSize==klTestType::LARGE)
+		{
+			featureDim = 512;
+		}
+
+		if (klTestSize==klTestType::MEDIUM)
+		{
+			featureDim =64;
+		}
+
+		if (klTestSize==klTestType::SMALL)
+		{ 
+			featureDim = 8;
+		}		
 
 		{
 			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
@@ -215,7 +217,7 @@ void MatrixExponential(ofstream &_tex,unsigned int  &n)
 			klVector<std::complex<double> > logeigs=klApplyLog( drv.expH.eigenvalues() );//klApplyFn<complex<double> ,complex<double> >(std::log, drv.expH.eigenvalues() );
 
 			LatexPrintVector<complex<double> >(logeigs,"log(exp(SPD) eigs) ",_tex);
-			
+
 			klMatrix<double> Id(featureDim,featureDim);
 			Id= IdentityMatrix<double>(featureDim);
 			drv.Run(Id);
@@ -227,7 +229,7 @@ void MatrixExponential(ofstream &_tex,unsigned int  &n)
 
 			LatexPrintVector<complex<double> >(logeigs,"log(exp(Id) eigs) ",_tex);
 		}
-		
+
 		_tex<<"For $n  \\in  \\dblz [16,128)$ we calculate  $|( SPD(n) Eigs - log(exp(SPD(n)) eigs)|_{l^2}$"<<endl<<endl;
 
 		klVector<complex<double> > diffs(128-16);
@@ -237,7 +239,7 @@ void MatrixExponential(ofstream &_tex,unsigned int  &n)
 			klMatrix<double> SPD =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(featureDim);
 
 			klVector<complex<double> > eigen =SPD.eigenvalues();
-			
+
 			klExpoKitDGPADMDriver drv;
 			drv._deg=6;
 			drv.Run(SPD);
@@ -251,13 +253,11 @@ void MatrixExponential(ofstream &_tex,unsigned int  &n)
 		}
 
 		LatexPrintVector<complex<double> >(diffs,"|( SPD(n) Eigs - log(exp(SPD(n)) eigs)|_{l^2}",_tex);
-					
+
 	}
 	catch(...)
 	{
 		int a = n;
 	}
-
-	
 }
 
