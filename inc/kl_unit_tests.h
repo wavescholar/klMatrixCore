@@ -7,7 +7,7 @@
 
 #include "kl_matrix.h"
 
-template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,unsigned int& n)
+template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 {
 	/*ios_base::openmode wMode = ios_base::app;
 	ofstream _tex(fileName, wMode);	*/
@@ -226,7 +226,7 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,unsigned int& n)
 }
 
 #include "kl_random_number_generator.h"
-template<class type> void testKLDescriptiveStatistics(ofstream &FS1,unsigned int &n)
+template<class type> void testKLDescriptiveStatistics(ofstream &FS1,__int64 &n)
 {
 	char* arg=new char[1024];
 
@@ -273,7 +273,7 @@ template<class type> void testKLDescriptiveStatistics(ofstream &FS1,unsigned int
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
-template<class TYPE> void testKLTimeSeries2(ofstream &_tex,unsigned int &n)
+template<class TYPE> void testKLTimeSeries2(ofstream &_tex,__int64 &n)
 {
 	size_t popsize=1024*2;
 	klVector<TYPE> a(popsize);
@@ -1085,7 +1085,7 @@ template<class TYPE> void testKLMultiVariateRandomNumberGenerator2(ofstream &_te
 
 #include "kl_principal_components.h"
 #include "kl_multivariate_random_variable.h"
-template<class TYPE> void PrincipalComponentsDemo(ofstream &_tex,unsigned int  &n)
+template<class TYPE> void PrincipalComponentsDemo(ofstream &_tex,__int64  &n)
 { 
 	char* arg=new char[256];
 
@@ -1307,7 +1307,7 @@ template<class TYPE> void klRVUnitTestHarnessLaTex2(klRV<TYPE> ** RV,unsigned in
 
 
 #include "kl_memory.h"
-inline void  MemoryManagement(ofstream &_tex,unsigned int  &n)
+inline void  MemoryManagement(ofstream &_tex,__int64  &n)
 {
 	int reserve = 1024*1024*64;
 

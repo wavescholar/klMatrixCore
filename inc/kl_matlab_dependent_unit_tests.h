@@ -7,7 +7,7 @@
 #include "kl_multiclass_svm.h"
 #include "kl_principal_components.h"
 
-template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned int &n)
+template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n)
 {
 	char* evalString=new char[256];
 	char* arg=new char[256];
@@ -310,7 +310,7 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,unsigned i
 
 #include "kl_multivariate_random_variable.h"
 #include "kl_sample_population.h"
-template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream &_tex,unsigned int &n)
+template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream &_tex,__int64 &n)
 {
 	{
 		_tex<<"Sample from $N(\\mu,\\Sigma)$"<<endl;
@@ -446,7 +446,7 @@ template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream
 
 #include "kl_principal_components.h"
 #include "kl_multivariate_random_variable.h"
-template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,unsigned int &n)
+template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,__int64 &n)
 {
 
 	klMatlabEngineThreadMap klmtm;
@@ -494,7 +494,7 @@ template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,unsigne
 }
 
 
-template<class TYPE>  void __cdecl testKLRandomNumberGeneratorMatlab(ofstream &_tex,unsigned int &n)
+template<class TYPE>  void __cdecl testKLRandomNumberGeneratorMatlab(ofstream &_tex,__int64 &n)
 {
 
 	time_t time_of_day;

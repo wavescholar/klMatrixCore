@@ -136,7 +136,13 @@
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\klMatrixCoreTest.cpp">
+    <ClCompile Include="test\klIntegrationTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\klMatrixCoreTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test\klPerformanceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

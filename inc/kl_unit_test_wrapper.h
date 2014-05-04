@@ -72,7 +72,7 @@ public:
 		delete evalString;
 	}
 
-	void setDimension(unsigned int n)
+	void setDimension(__int64 n)
 	{
 		_n = n;
 	}
@@ -105,7 +105,7 @@ private:
 
 	ofstream& system_stream;
 	ofstream& stream;
-	unsigned int _n;  //Dimension (or some measure of it) for the test problem
+	__int64 _n;  //Dimension (or some measure of it) for the test problem
 
 	double _lastRunTime;
 
@@ -125,7 +125,7 @@ public:
 		delete FP_errStatus;
 	}
 
-	void runTest(void (*pf)(ofstream &, unsigned int &))
+	void runTest(void (*pf)(ofstream &, __int64 &))
 	{
 		try
 		{
@@ -161,6 +161,58 @@ public:
 			delete freq;
 			delete  prefCountStart;
 			delete prefCountEnd;
+
+		}
+		catch(...)
+		{
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err = ANSI_INFO_ss.str();		
+			throw klError(err);
+		}
+
+	}
+
+	double  runBenchMark(double (*pf)(__int64 &))
+	{
+		try
+		{
+			MemoryPreCheck();
+
+			LARGE_INTEGER* freq;
+			_LARGE_INTEGER* prefCountStart;
+			_LARGE_INTEGER* prefCountEnd;
+			freq=new _LARGE_INTEGER;
+			prefCountStart=new _LARGE_INTEGER;
+			prefCountEnd=new _LARGE_INTEGER;
+			
+			QueryPerformanceFrequency(freq);
+			
+			QueryPerformanceCounter(prefCountStart);
+
+			double benchmark  =pf(_n);
+
+			QueryPerformanceCounter(prefCountEnd);
+
+			double runtime =double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);
+
+			SetLastRuntime(runtime);
+
+			stream<<"QueryPerformanceCounter  =  "<<runtime<<endl;   
+
+			MemoryPostCheck();
+
+			checkFloatingPointStatus(system_stream);
+
+			system_stream.flush();
+
+			stream.flush();
+
+			delete freq;
+			delete  prefCountStart;
+			delete prefCountEnd;
+
+			return benchmark;
 
 		}
 		catch(...)

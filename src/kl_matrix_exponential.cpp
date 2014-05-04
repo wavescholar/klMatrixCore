@@ -168,7 +168,7 @@ public:
 		delete wsp;
 	}
 };
-void MatrixExponential(ofstream &_tex,unsigned int  &n)
+void MatrixExponential(ofstream &_tex,__int64 &n)
 {
 	//makeLatexSection("Matrix Exponential ",_tex);
 
