@@ -35,7 +35,7 @@ void klPerformanceTesting()
 	sprintf(testRunDateTime,"%d_%d_%d_%d_%d",tm_buf->tm_mon+1,tm_buf->tm_mday+1,tm_buf->tm_hour+1,tm_buf->tm_min+1,tm_buf->tm_sec+1);
 	sprintf(regressionFile,"%klVSLPerformaceTest%s.tex",basefilename,testRunDateTime);
 	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
-	sprintf(sysInfoFile,"%slVSLPerformanceTest_SysInfo%s.txt",basefilename,testRunDateTime);
+	sprintf(sysInfoFile,"%sklVSLPerformanceTest_SysInfo%s.txt",basefilename,testRunDateTime);
 
 
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
@@ -293,7 +293,7 @@ void testFreeMemoryChecker()//(ofstream &_tex,unsigned int &n)
 {
 	//_tex<<"Testing the free memory checker."<<endl;
 	__int64 maxAllocation=0;
-	bool bigtest =klCheckFreeMemory(195290615808*195290615808);
+	bool bigtest =klCheckFreeMemory(195290615808LL*195290615808LL);
 	for(__int64 n=4294967296;n<195290615808*512;n+=4294967296)
 	{
 		cout<<n<<endl;

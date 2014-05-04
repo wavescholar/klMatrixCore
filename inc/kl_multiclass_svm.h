@@ -104,12 +104,7 @@ public:
             }
 
         }
-
-
-
-
     }
-
 
     void operator()()
     {

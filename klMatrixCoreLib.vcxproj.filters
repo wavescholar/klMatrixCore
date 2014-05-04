@@ -146,5 +146,8 @@
     <ClInclude Include="inc\kl_wavelet.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\kl_point_cloud_generator.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

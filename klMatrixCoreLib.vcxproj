@@ -43,6 +43,7 @@
     <ClInclude Include="inc\kl_ML_helper_fns.h" />
     <ClInclude Include="inc\kl_multiclass_svm.h" />
     <ClInclude Include="inc\kl_multivariate_random_variable.h" />
+    <ClInclude Include="inc\kl_point_cloud_generator.h" />
     <ClInclude Include="inc\kl_principal_components.h" />
     <ClInclude Include="inc\kl_prob.h" />
     <ClInclude Include="inc\kl_random_number_generator.h" />
