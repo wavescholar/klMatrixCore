@@ -44,7 +44,7 @@ public:
 
 	void HardwareConfiguration(ofstream &mstream)
 	{
-		char* evalString=new char[1024];
+		char* evalString=new char[2048];
 
 		mstream<<"------------------klPrintModules---------------------"<<endl;
 		klPrintModules(mstream);
@@ -163,6 +163,22 @@ public:
 			delete prefCountEnd;
 
 		}
+
+		catch(klError er)
+		{
+			cerr<<"Caught klError in test harness."<<endl;
+			cerr<<er.what()<<endl;
+
+			cout<<"Caught klError in test harness."<<endl;
+			cout<<er.what()<<endl;
+
+			stream<<"Caught klError in test harness."<<endl;
+			stream<<er.what()<<endl;
+
+			system_stream<<"Caught klError in test harness."<<endl;
+			system_stream<<er.what()<<endl;
+		}
+
 		catch(...)
 		{
 			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );

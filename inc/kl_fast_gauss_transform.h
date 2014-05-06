@@ -1,3 +1,5 @@
+#ifndef __kl_fast_gauss_transform__
+#define __kl_fast_gauss_transform__
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
@@ -6,8 +8,8 @@
 #include "GaussTransform.h"
 #include "ImprovedFastGaussTransformChooseTruncationNumber.h"
 #include "ImprovedFastGaussTransformChooseParameters.h"
-#include "ImprovedFastGaussTransform2.h"
-
+#include "DataAdaptiveImprovedFastGaussTransform.h"
+#include "ImprovedFastGaussTransform.h"
 #include "kl_matrix.h"
 
 #include <crtdbg.h>
@@ -81,5 +83,13 @@ public:
 
 		return results;
 	}
+
+private:
+	void shiftAndScale()
+	{
+		//klVector<double> min 
+	}
+
 };
 
+#endif

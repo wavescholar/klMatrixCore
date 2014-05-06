@@ -162,7 +162,7 @@ template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 	}
 	engPutVariable(matlabEngine, "T", T);
 
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
 	if( color==NULL)
@@ -277,7 +277,7 @@ template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,
 	
 	engPutVariable(matlabEngine, "Ty", Ty);
 	
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
 	if( color==NULL)
@@ -348,7 +348,7 @@ template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>&  c,const char* filenam
 	memcpy((char *) mxGetPr(T), (char *) ctr.getMemory(), ctr.getColumns()*ctr.getRows()*sizeof(TYPE));
 	engPutVariable(matlabEngine, "T", T);
 
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 	d = engGetVariable(matlabEngine, "T");
 	//How to get the error message from matlab engine
 	char errmsg[1024];
@@ -423,7 +423,7 @@ template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
 	memcpy((char *) mxGetPr(T), (char *) c.getMemory(), ctr.getColumns()*ctr.getRows()*sizeof(TYPE));
 	engPutVariable(matlabEngine, "T", T);
 
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 	d = engGetVariable(matlabEngine, "T");
 	//How to get the error message from matlab engine
 	char errmsg[1024];
@@ -492,7 +492,7 @@ template<class TYPE> void klPlotHistogram(klVector<TYPE>&  c,const char* filenam
 	TYPE x0 =c.x0;
 	TYPE x1 =c.x1;
 	
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
 	if( color==NULL)

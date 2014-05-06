@@ -64,10 +64,14 @@
 \begin{document}
 \title{Regression of KL Software Distribution   }
 \author{KL Software Libraries}
-\date{Sat May 03 07:55:48 2014
+\date{Mon May 05 13:43:44 2014
 }
 \maketitle
 \textbf{ KL Library test output.  This LaTex file and the associated diagrams are produced by the KL software libraries.}
+\subsubsection{Matrix Quick Check <double>}
+QueryPerformanceCounter  =  2.18473
+\subsubsection{Matrix Quick Check <float>}
+QueryPerformanceCounter  =  1.9012
 \subsubsection{Intel VSL Function Check}
 \includegraphics[width=10.0cm,height=10.0cm]{klVSLInv.pdf}
 
@@ -99,7 +103,7 @@
 
 \includegraphics[width=10.0cm,height=10.0cm]{klVSLTGamma.pdf}
 
-QueryPerformanceCounter  =  13.9422
+QueryPerformanceCounter  =  16.4784
 \subsubsection{Gram Matrix Consistency Check}
 Sample Size = 4096
 Feature dim = 3
@@ -116,66 +120,66 @@ ccc}
 $Sample Covariance = \left(
 \begin{array}{
 ccc}
-+1.153 & +1.619 & +0.607 \\
-+1.619 & +10.516 & +1.708 \\
-+0.607 & +1.708 & +0.455 \\
++1.135 & +1.669 & +0.596 \\
++1.669 & +10.366 & +1.713 \\
++0.596 & +1.713 & +0.447 \\
 \end{array}
 \right)$ \newline 
 
 $Sample Mean = \left(
 \begin{array}{
 ccc}
-+0.99442 & +1.07541 & +1.00488 \\
++1.02333 & +0.98821 & +1.01178 \\
 \end{array}
 \right)$ \newline 
 
 $Sample Covariance-$Omega$ = \left(
 \begin{array}{
 ccc}
-+0.014 & +0.084 & +0.026 \\
-+0.084 & +0.528 & +0.102 \\
-+0.026 & +0.102 & +0.027 \\
+-0.005 & +0.134 & +0.014 \\
++0.134 & +0.377 & +0.108 \\
++0.014 & +0.108 & +0.019 \\
 \end{array}
 \right)$ \newline 
 
 $Sample Covariance Eigs = \left(
 \begin{array}{
 ccc}
-(+11.08780,+0.00000) & (+0.99653,+0.00000) & (+0.04015,+0.00000) \\
+(+10.96303,+0.00000) & (+0.94441,+0.00000) & (+0.03927,+0.00000) \\
 \end{array}
 \right)$ \newline 
 
 $Centered Mean = \left(
 \begin{array}{
 ccc}
-+0.00000 & +0.00000 & +0.00000 \\
++0.00000 & -0.00000 & -0.00000 \\
 \end{array}
 \right)$ \newline 
 
 $Centered Covariance = \left(
 \begin{array}{
 ccc}
-+1.153 & +1.619 & +0.607 \\
-+1.619 & +10.516 & +1.708 \\
-+0.607 & +1.708 & +0.455 \\
++1.135 & +1.669 & +0.596 \\
++1.669 & +10.366 & +1.713 \\
++0.596 & +1.713 & +0.447 \\
 \end{array}
 \right)$ \newline 
 
 $Gram Matrix Gf Not scaled by sample size = \left(
 \begin{array}{
 ccc}
-+4724.399 & +6629.058 & +2486.561 \\
-+6629.058 & +43073.421 & +6992.929 \\
-+2486.561 & +6992.929 & +1864.060 \\
++4647.021 & +6833.458 & +2439.104 \\
++6833.458 & +42457.430 & +7015.939 \\
++2439.104 & +7015.939 & +1829.288 \\
 \end{array}
 \right)$ \newline 
 
 $Gram Matrix Gf  scaled by sample size = \left(
 \begin{array}{
 ccc}
-+1.153 & +1.618 & +0.607 \\
-+1.618 & +10.516 & +1.707 \\
-+0.607 & +1.707 & +0.455 \\
++1.135 & +1.668 & +0.595 \\
++1.668 & +10.366 & +1.713 \\
++0.595 & +1.713 & +0.447 \\
 \end{array}
 \right)$ \newline 
 
@@ -191,26 +195,26 @@ ccc}
 $EigenDecomp of SampleCovariance = \left(
 \begin{array}{
 ccc}
--0.168 & -0.972 & -0.166 \\
-+0.914 & -0.217 & +0.342 \\
--0.368 & -0.094 & +0.925 \\
+-0.175 & -0.970 & -0.168 \\
++0.917 & -0.223 & +0.331 \\
+-0.359 & -0.096 & +0.929 \\
 \end{array}
 \right)$ \newline 
 
 $EigenDecomp of Gram Matrix = \left(
 \begin{array}{
 ccc}
--0.119 & -0.975 & -0.189 \\
--0.329 & +0.219 & -0.919 \\
-+0.937 & -0.047 & -0.347 \\
+-0.132 & -0.972 & -0.195 \\
+-0.373 & +0.231 & -0.899 \\
++0.918 & -0.046 & -0.393 \\
 \end{array}
 \right)$ \newline 
 
-QueryPerformanceCounter  =  +9.881
+QueryPerformanceCounter  =  +56.220
 \subsubsection{Eigen Solver Checks}
 \subsubsection{Haar Distributed Random Orthogonal Matrix $A \in O(n)$}
  Testing Operator Norm
-Number of Dimensions: 8
+Number of Dimensions: +8
 
 $A = \left(
 \begin{array}{
@@ -430,12 +434,12 @@ $L_\infty$ condition number of GOE Matrix +66.900
 \subsubsection{The Identity Matrix $I \in M(n)$}
 $L_1$ condition number of $I$ = +1.000
 $L_\infty$ condition number of $I$ = +1.000
-QueryPerformanceCounter  =  +0.521
+QueryPerformanceCounter  =  +1.905
 \subsubsection{Generate Tracey Widom Sample}
 \subsubsection{Sample from $W_n m$ times and calculate empirical PDF of the first eig}
 Here we generate histograms of $\lambda_1$ for GOE (Gaussian Orthogonal Ensemble), and W (Wishart) 		 distributed of random matrices
 These should approximate the celebrated Tracy Widom distribution.
-Dimension $n = 128$
+Dimension $n = +128$
 
 Sample size $m = 32$
 
@@ -447,17 +451,17 @@ Sample size $m = 32$
 
 \includegraphics[width=10.0cm,height=10.0cm]{Im_Winger.pdf}
 
-QueryPerformanceCounter  =  +5.496
+QueryPerformanceCounter  =  +10.191
 \subsubsection{Approximate Winger Distribution}
 \subsubsection{Verfy Winger Law.}
 Let $M_n = [X_{ij} ]$ a symmetric n x n matrix with Random entries such that $X_{i,j} = X_{j,i}$, 		  and $X_{i,j}$ are iid $orall i < j,$ and $Xjj$ are iid $orall j  :  ; E[X^2_{ij} ] = 1, & E[X_{ij}] = 0$ 		  and that all moments exists for each of the entries.  		  The eigenvector of this random matrix; $ lambda_1 leq ... leq lambda_n$ depends continuously on $Mn$.
-Dimension $n = 512$
+Dimension $n = +512$
 
 \includegraphics[width=10.0cm,height=10.0cm]{Re_lambda_n.pdf}
 
 \includegraphics[width=10.0cm,height=10.0cm]{Im_lambda_n.pdf}
 
-QueryPerformanceCounter  =  +2.511
+QueryPerformanceCounter  =  +3.037
 \subsubsection{Iterated Exponential Filtering }
 $\mu_1 =+0.093$
 $\mu_2 =+0.726$
@@ -465,7 +469,7 @@ $\mu_3 =+0.011$
 $\mu_4 =+2.178$
 \includegraphics[width=10.0cm,height=10.0cm]{DIFF.pdf}
 
-QueryPerformanceCounter  =  +1.418
+QueryPerformanceCounter  =  +1.695
 \subsubsection{Matrix Exponential }
 $SPD Matrix = \left(
 \begin{array}{
@@ -553,7 +557,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 \end{array}
 \right)$ \newline 
 
-QueryPerformanceCounter  =  +0.04568
+QueryPerformanceCounter  =  +0.04298
 The sample size generated for this run is 100000.
 
 \newpage
@@ -577,19 +581,19 @@ $\mu_1 = +1.99647$ & $\mu_2 = +3.99339$ & $\mu_3 = +2.03097$ & $\mu_4 =+9.30842$
 
 \newpage
 gamma \begin{tabular}{|c|c|c|c|}  mean & variance & skewness & kurtosis \\  \hline
-$\mu_1 = +1.89783$ & $\mu_2 = +1.89697$ & $\mu_3 = +1.45896$ & $\mu_4 =+6.20359$ \\
+$\mu_1 = +1.90083$ & $\mu_2 = +1.90652$ & $\mu_3 = +1.45998$ & $\mu_4 =+6.29027$ \\
 \end{tabular}
 
 \includegraphics[width=5cm,height=5cm]{gamma.pdf}
 
 GIG \begin{tabular}{|c|c|c|c|}  mean & variance & skewness & kurtosis \\  \hline
-$\mu_1 = +0.80855$ & $\mu_2 = +12.02475$ & $\mu_3 = +15.33205$ & $\mu_4 =+307.91143$ \\
+$\mu_1 = +0.81787$ & $\mu_2 = +11.98753$ & $\mu_3 = +15.57702$ & $\mu_4 =+332.72344$ \\
 \end{tabular}
 
 \includegraphics[width=5cm,height=5cm]{GIG.pdf}
 
 normal-box-muller \begin{tabular}{|c|c|c|c|}  mean & variance & skewness & kurtosis \\  \hline
-$\mu_1 = -0.00044$ & $\mu_2 = +0.99447$ & $\mu_3 = -0.00901$ & $\mu_4 =+3.02815$ \\
+$\mu_1 = +0.00160$ & $\mu_2 = +0.99430$ & $\mu_3 = +0.01622$ & $\mu_4 =+2.98446$ \\
 \end{tabular}
 
 \includegraphics[width=5cm,height=5cm]{normal-box-muller.pdf}
@@ -608,19 +612,19 @@ $\mu_1 = +3184578.26493$ & $\mu_2 = +888468246174112900.00000$ & $\mu_3 = +315.3
 \includegraphics[width=5cm,height=5cm]{pareto.pdf}
 
 poisson \begin{tabular}{|c|c|c|c|}  mean & variance & skewness & kurtosis \\  \hline
-$\mu_1 = +1.10452$ & $\mu_2 = +0.12912$ & $\mu_3 = +3.93305$ & $\mu_4 =+21.08170$ \\
+$\mu_1 = +1.10598$ & $\mu_2 = +0.13145$ & $\mu_3 = +3.91285$ & $\mu_4 =+20.87225$ \\
 \end{tabular}
 
 \includegraphics[width=5cm,height=5cm]{poisson.pdf}
 
 \newpage
 beta \begin{tabular}{|c|c|c|c|}  mean & variance & skewness & kurtosis \\  \hline
-$\mu_1 = +0.33324$ & $\mu_2 = +0.12698$ & $\mu_3 = +0.68162$ & $\mu_4 =+1.91052$ \\
+$\mu_1 = +0.33324$ & $\mu_2 = +0.12703$ & $\mu_3 = +0.68031$ & $\mu_4 =+1.90831$ \\
 \end{tabular}
 
 \includegraphics[width=5cm,height=5cm]{beta.pdf}
 
-QueryPerformanceCounter  =  +11.16018
+QueryPerformanceCounter  =  +25.14657
 \subsubsection{Multiclass Support Vector Machine }
 \begin{itemize}
 \item Number or training points = 1024
@@ -655,27 +659,27 @@ A random SPD covairance matrix is generated for each of the classes.\newline
 $\rho_1 = \left(
 \begin{array}{
 ccc}
-+2.389 & +0.077 & -0.492 \\
-+0.077 & +4.437 & -0.249 \\
--0.492 & -0.249 & +2.537 \\
++3.938 & -0.223 & -0.224 \\
+-0.223 & +3.480 & +0.465 \\
+-0.224 & +0.465 & +3.432 \\
 \end{array}
 \right)$ \newline 
 
 $\rho_2 = \left(
 \begin{array}{
 ccc}
-+2.930 & +0.318 & +0.239 \\
-+0.318 & +4.308 & +0.108 \\
-+0.239 & +0.108 & +2.407 \\
++3.092 & -0.341 & -0.398 \\
+-0.341 & +4.369 & -0.239 \\
+-0.398 & -0.239 & +2.583 \\
 \end{array}
 \right)$ \newline 
 
 $\rho_3 = \left(
 \begin{array}{
 ccc}
-+4.072 & -0.125 & +0.095 \\
--0.125 & +2.548 & +0.385 \\
-+0.095 & +0.385 & +2.038 \\
++3.706 & +0.302 & -0.269 \\
++0.302 & +4.070 & -0.423 \\
+-0.269 & -0.423 & +3.670 \\
 \end{array}
 \right)$ \newline 
 
@@ -683,9 +687,9 @@ Verify $L_1$ condition number of covariance. The diagonal entries of the matrix 
 The lower-diagonal entries take the form $U(0,1) - 0.5$. 
 The $L_1$ condition numbers are :
 \begin{itemize}
-\item +2.471
-\item +2.180
-\item +2.564
+\item +1.398
+\item +2.366
+\item +1.545
 \end{itemize}
 \includegraphics[width=10.0cm,height=10.0cm]{rv1_corr.pdf}
 
@@ -706,30 +710,30 @@ These are the SVM parameters - the RBF kernel is used\begin{itemize}
 The marginal sample moments (mean var skew kurtosis) for training points.\newline
 \begin{tabular}{ c |  c  c  c  c}
 Feature & $\mu_1$ & $\mu_2$ & $\mu_3$ & $\mu_4$ \\
-0 & +0.668 & +1.392 & +0.060& +2.286 \\
+0 & +0.670 & +1.471 & +0.249& +2.465 \\
 \hline
-1 & +0.708 & +1.418 & +0.408& +2.598 \\
+1 & +0.710 & +1.452 & +0.334& +2.526 \\
 \hline
-2 & +0.700 & +1.179 & +0.295& +2.298 \\
+2 & +0.703 & +1.353 & +0.402& +2.601 \\
 \hline
 \end{tabular}
 \newline
 The marginal sample moments (mean var skew kurtosis) for test points.\newline
 \begin{tabular}{ c | c  c  c  c}
 Feature & $\mu_1$ & $\mu_2$ & $\mu_3$ & $\mu_4$ \\
-0 & +0.677 & +1.285 & +0.190& +2.354\\
+0 & +0.678 & +1.365 & +0.401& +2.618\\
 \hline
-1 & +0.667 & +1.414 & +0.431& +2.603\\
+1 & +0.670 & +1.446 & +0.390& +2.553\\
 \hline
-2 & +0.721 & +1.125 & +0.258& +2.186\\
+2 & +0.720 & +1.282 & +0.400& +2.509\\
 \hline
 \end{tabular}\newline
 \includegraphics[width=10.0cm,height=10.0cm]{classDiffs.pdf}
 
-The error rate for this run is +0.184\newline
-QueryPerformanceCounter  =  +6.464
+The error rate for this run is +0.326\newline
+QueryPerformanceCounter  =  +9.705
 \subsubsection{Semidefinite Programming SDPA}
-QueryPerformanceCounter  =  +0.019
+QueryPerformanceCounter  =  +0.058
 \subsubsection{Linear Regression 3x1}
 \subsubsection{3 x 1 Linear Regression}
 Sample size = 64
@@ -751,83 +755,83 @@ Beta
 +0.817, +0.999, +0.510
 
 Response
-+0.773
-+2.590
-+1.847
-+1.072
--4.874
-+0.796
-+0.218
-+3.302
-+3.250
-+3.228
--0.331
-+2.229
-+3.289
--0.159
-+0.744
-+1.269
--2.519
-+2.286
-+3.254
-+1.830
-+0.037
-+2.458
-+0.639
-+3.508
--2.560
-+4.109
--1.389
--0.122
-+1.301
-+2.642
--1.583
-+3.433
--2.496
--2.852
--0.635
--1.612
--1.053
-+2.484
--0.516
-+0.416
--4.105
--0.953
-+2.237
-+2.234
--1.097
-+1.353
++2.399
++0.780
++0.697
++2.187
+-3.021
++1.404
+-2.818
++0.556
++1.134
++5.860
+-2.126
++2.452
+-0.732
++1.169
+-1.578
++3.899
+-2.039
++0.963
++1.251
++2.619
++0.799
++3.663
++0.625
+-1.195
++2.513
++2.452
+-2.113
+-0.168
++0.436
++3.656
++4.371
++1.360
+-4.193
++3.170
++1.912
 -0.696
--2.481
--0.552
--2.932
--2.662
--2.605
--4.143
-+0.260
--1.249
--0.551
--2.400
-+1.172
-+0.716
-+0.557
--0.334
-+1.368
-+2.236
--1.548
++6.019
++3.839
+-1.895
++1.741
++1.574
+-3.936
++1.311
+-0.520
++1.822
++4.027
++0.295
++0.607
++0.546
++2.397
++0.122
++0.675
+-2.634
+-2.299
+-0.821
+-1.794
++0.293
++1.399
++3.011
++1.130
+-2.492
+-0.275
++1.016
+-0.126
 Estimate for Beta
--0.000
--0.000
--0.000
+-6277438562204192200000000000000000000000000000000000000000000000000.000
+-6277438562204192200000000000000000000000000000000000000000000000000.000
+-6277438562204192200000000000000000000000000000000000000000000000000.000
 Error:
-+0.000, +0.000, -0.000
+-0.000, -0.000, +0.000
 
 
-QueryPerformanceCounter  =  +1.103
+QueryPerformanceCounter  =  +1.314
 \subsubsection{Matrix Norms}
 \subsubsection{Haar Distributed Random Orthogonal Matrix $A \in O(n)$}
  Testing Operator Norm
-Number of Dimensions: 12
+Number of Dimensions: +12
 
 $A = \left(
 \begin{array}{
@@ -1093,19 +1097,19 @@ $L_\infty$ condition number of GOE Matrix +470.231
 \subsubsection{The Identity Matrix $I \in M(n)$}
 $L_1$ condition number of $I$ = +1.000
 $L_\infty$ condition number of $I$ = +1.000
-QueryPerformanceCounter  =  +0.332
+QueryPerformanceCounter  =  +1.951
 \subsubsection{Principal Components Matlab }
 \includegraphics[width=10.0cm,height=10.0cm]{PCAPoints.pdf}
 
 The eigenvectors:
-+0.087, +0.234, +0.968
-+0.107, +0.964, -0.243
--0.990, +0.125, +0.058
++0.066, +0.192, +0.979
++0.246, +0.948, -0.203
+-0.967, +0.254, +0.015
 
 All of the eigenvalues of the covariance matrix:
 (+0.958,+0.000), (+2.025,+0.000), (+3.017,+0.000)
 
-QueryPerformanceCounter  =  +1.149
+QueryPerformanceCounter  =  +1.480
 \subsubsection{Multi Variate Random Number Generator }
 Sample from $N(\mu,\Sigma)$
 mean= -0.002, variance=+1.004, skewness=+0.006, kurtosis=+3.003
@@ -1121,17 +1125,17 @@ Covariance Matrix
 Generate a sample from a unifom mixture of three Gaussians in $R^3$
 \includegraphics[width=10.0cm,height=10.0cm]{R_3_Normal_Mixture.pdf}
 
-QueryPerformanceCounter  =  +13.136
+QueryPerformanceCounter  =  +23.770
 \subsubsection{Matrix Multiply}
-Comparing naive matrix multiply verus Intel MKL dgemm for matrix of size 2048.
+Comparing naive matrix multiply verus Intel MKL dgemm for matrix of size +2048.
 This is for type double (hence the d in dgemm).
-Naive type double matrix multiply tic toc  =  +0.366
-dgemm plus row to column major transpose operation tic toc  =  +0.318
-Comparing naive matrix multiply verus Intel MKL sgemm for matrix of size 2048.
+Naive type double matrix multiply tic toc  =  +3.939
+dgemm plus row to column major transpose operation tic toc  =  +3.109
+Comparing naive matrix multiply verus Intel MKL sgemm for matrix of size +2048.
 This is for type float (hence the s in dgemm).
-Naive type float matrix multiply tic toc  =  +0.205
-sgemm plus row to column major transpose operation tic toc  =  +0.181
-QueryPerformanceCounter  =  +1.168
+Naive type float matrix multiply tic toc  =  +3.067
+sgemm plus row to column major transpose operation tic toc  =  +2.417
+QueryPerformanceCounter  =  +14.887
 \subsubsection{Descriptive Statistics}
 Mean N(0,1): +0.003
 Variance N(0,1): +1.006
@@ -1139,14 +1143,11 @@ Mean N(0,1) [recurrence relation method] :+0.003
 Variance [recurrence relation method] :+1.006
 Skewness : +0.007
 Kurtosis : +2.997
-QueryPerformanceCounter  =  +0.021
+QueryPerformanceCounter  =  +0.062
 \subsubsection{Time Series }
 +0.093
 +0.726
 +0.011
 +2.178
-QueryPerformanceCounter  =  +0.071
-\subsubsection{Matrix}
-QueryPerformanceCounter  =  +0.011
-QueryPerformanceCounter  =  +0.010
+QueryPerformanceCounter  =  +0.334
 \end{document}

@@ -1369,6 +1369,101 @@ template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 
 }
 
+//blas min
+inline void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMins=1)
+{	
+	if(rowMins==1)
+	{
+		if( minVals.getColumns() != X.getRows())
+		{			
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<" minVals.getColumns() != X.getRows() in void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMins=1) ";
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err = ANSI_INFO_ss.str();		
+			throw klError(err);
+		}
+		const int N=X.getColumns();
+		for(int i=0;i<X.getRows();i++)
+		{
+			void* pMem =X.getMemory()+i*X.getColumns();
+			const int incX = 1;
+			__int64 index = cblas_idamin (N, (double*)pMem,incX);
+			cerr<<index<<endl;
+			cerr<<X[i][index]<<endl;
+			minVals[i]=X[i][index];
+		}
+	}
+	else
+	{
+		if( minVals.getColumns() != X.getColumns())
+		{			
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<" mminVals.getColumns() != X.getColumns() in void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMins=1) ";
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err = ANSI_INFO_ss.str();		
+			throw klError(err);
+		}
+		const int N=X.getRows();
+		for(int i=0;i<X.getColumns();i++)
+		{
+			void* pMem =X.getMemory()+i;
+			const int incX = X.getColumns();
+			__int64 index = cblas_idamin (N, (double*)pMem,incX);
+			cerr<<index<<endl;
+			cerr<<X[index][i]<<endl;
+			minVals[i]=X[index][i];
+		}
+	}
+}
+
+//blas max
+inline void maxV(const klMatrix<double>& X,klVector<double>& maxVals ,bool rowMins=1)
+{	
+	if(rowMins==1)
+	{
+		if( maxVals.getColumns() != X.getRows())
+		{			
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<" minVals.getColumns() != X.getRows() in void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMins=1) ";
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err = ANSI_INFO_ss.str();		
+			throw klError(err);
+		}
+		const int N=X.getColumns();
+		for(int i=0;i<X.getRows();i++)
+		{
+			void* pMem =X.getMemory()+i*X.getColumns();
+			const int incX = 1;
+			__int64 index = cblas_idamax (N, (double*)pMem,incX);
+			//cerr<<index<<endl;
+			//cerr<<X[i][index]<<endl;
+			maxVals[i]=X[i][index];
+		}
+	}
+	else
+	{
+		if( maxVals.getColumns() != X.getColumns())
+		{			
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<" mminVals.getColumns() != X.getColumns() in void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMins=1) ";
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err = ANSI_INFO_ss.str();		
+			throw klError(err);
+		}
+		const int N=X.getRows();
+		for(int i=0;i<X.getColumns();i++)
+		{
+			void* pMem =X.getMemory()+i;
+			const int incX = X.getColumns();
+			__int64 index = cblas_idamax (N, (double*)pMem,incX);
+			//cerr<<index<<endl;
+			//cerr<<X[index][i]<<endl;
+			maxVals[i]=X[index][i];
+		}
+	}
+}
+
+
 //klMatrix stream io.  Operator <<  override for klMatrix class
 template <class TYPE> static ostream& operator<<(ostream& str, const klMatrix<TYPE>& v) {
 	int i = v.getRows();

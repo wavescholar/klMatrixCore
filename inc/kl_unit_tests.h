@@ -8,10 +8,58 @@
 #include "kl_matrix.h"
 
 template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
-{
-	/*ios_base::openmode wMode = ios_base::app;
+{/*ios_base::openmode wMode = ios_base::app;
 	ofstream _tex(fileName, wMode);	*/
 
+	//Testing Level 1 BLAS Min and Max 
+
+	//blas min
+	klMatrix<double> X(4,3);
+	klVector<double> valsRowWise(4);
+	klVector<double> valsColumnWise(3);
+	X[0] =0;
+	X[1] =1;
+	X[2] =2;
+	X[3] =3;
+	minV(X, valsRowWise ,1);
+	cerr<<X<<endl;
+	cerr<<valsRowWise<<endl;
+
+	minV(X, valsColumnWise ,0);
+	cerr<<X<<endl;
+	cerr<<valsColumnWise<<endl;
+
+	maxV(X, valsRowWise ,1);
+	cerr<<X<<endl;
+	cerr<<valsRowWise<<endl;
+
+	maxV(X, valsColumnWise ,0);
+	cerr<<X<<endl;
+	cerr<<valsColumnWise<<endl;
+
+
+	double * pX=X.getMemory();
+	for(int i=0;i<12;i++)
+		*(pX +i) =i;
+
+	minV(X, valsRowWise ,1);
+	cerr<<X<<endl;
+	cerr<<valsRowWise<<endl;
+
+	minV(X, valsColumnWise ,0);
+	cerr<<X<<endl;
+	cerr<<valsColumnWise<<endl;
+
+	maxV(X, valsRowWise ,1);
+	cerr<<X<<endl;
+	cerr<<valsRowWise<<endl;
+
+	maxV(X, valsColumnWise ,0);
+	cerr<<X<<endl;
+	cerr<<valsColumnWise<<endl;
+
+
+	
 	float* memory=new float[9];
 	int il=0;
 	for(il=0;il<9;il++)

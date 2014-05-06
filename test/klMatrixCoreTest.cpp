@@ -9,9 +9,9 @@ void klFGGTest();
 #include <iostream>
 int main(int argc, char* argv[])
 {
-	klFGGTest();
+	//klFGGTest();
 
-	klPerformanceTesting();
+	//klPerformanceTesting();
 	
 	klIntegrationTest(false);
 	int i;

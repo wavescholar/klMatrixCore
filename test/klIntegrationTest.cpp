@@ -73,7 +73,7 @@ void VSLFunctions(ofstream &_tex,__int64 &n);
 
 #include <errno.h> 
 void klIntegrationTest(bool useIntelMemMgr)
-{	
+{	MutithreadedWorkflow();
 	klTimer klt;
 	klt.tic();
 
@@ -145,6 +145,12 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
+	makeLatexSection("Matrix Quick Check <double>",_tex);
+	klutw.runTest(MatrixOpsQuickCheck<double>);
+
+	makeLatexSection("Matrix Quick Check <float>",_tex);
+	klutw.runTest(MatrixOpsQuickCheck<float>);
+
 	klmtm.insert(thisThread, matlabEngine);
 		
 	klTestSize= klTestType::SMALL;
@@ -195,10 +201,6 @@ void klIntegrationTest(bool useIntelMemMgr)
 
 	makeLatexSection("Time Series ",_tex);
 	klutw.runTest(testKLTimeSeries2<double>);
-
-	makeLatexSection("Matrix",_tex);
-	klutw.runTest(MatrixOpsQuickCheck<double>);
-	klutw.runTest(MatrixOpsQuickCheck<float>);
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	// HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034

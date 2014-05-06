@@ -16,9 +16,9 @@ klVector<double> klFastGaussTransformTest();
 
 double klFGGSmallTest()
 {
-	klMatrix<double> x(3,3);
+	klMatrix<double> x(2,10000);
 	x=1;
-	klMatrix<double> y(3,3);
+	klMatrix<double> y(2,10000);
 	y=2;
 
 	klGaussianMixture X(64, 2,2 ,1);

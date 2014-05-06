@@ -9,7 +9,7 @@
 
 template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n)
 {
-	char* evalString=new char[256];
+	char* evalString=new char[2048];
 	char* arg=new char[256];
 	char errmsg[1024];
 	errmsg[1023] = '\0';
@@ -452,8 +452,8 @@ template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,__int64
 	klMatlabEngineThreadMap klmtm;
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 
-	char* evalString=new char[256];
-	char* arg=new char[256];
+	char* evalString=new char[2048];
+	char* arg=new char[2048];
 
 	klMatrix<TYPE> covarianceMatrix(3,3);
 
@@ -561,9 +561,9 @@ template<class TYPE>  void __cdecl testKLRandomNumberGeneratorMatlab(ofstream &_
 //testing them, generating output, and summarizing the results in an html file.
 template<class TYPE> void klRVUnitTestHarnessLaTexMatlab(klRV<TYPE> ** RV,unsigned int size,vector<string > names,ofstream &_tex)
 {
-	char* fileName=new char[512];
-	char* linkName=new char[512];
-	char* evalString=new char[1024];
+	char* fileName=new char[2048];
+	char* linkName=new char[2048];
+	char* evalString=new char[2048];
 
 	unsigned int sampleSize=  100000;
 
