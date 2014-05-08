@@ -1,6 +1,8 @@
 #ifndef __kl_fast_gauss_transform__
 #define __kl_fast_gauss_transform__
 #include <math.h>
+//Visual Studio does not support C99 - this should be in math.h
+inline double round(double x) { return (x-floor(x))>0.5 ? ceil(x) : floor(x); }
 #include <time.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -38,7 +40,7 @@ public:
 
 		double q = N;
 		double epsilon = 1.0e-3f; //Error bound
-		double KLimit = ceil(0.2f * sqrt((double)dim)* 100/h);
+		double KLimit = round(0.2f * sqrt((double)dim)* 100/h);
 
 		ImprovedFastGaussTransformChooseParameters IFGTP(dim,h,epsilon,KLimit);
 		_CrtCheckMemory( );

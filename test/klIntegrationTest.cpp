@@ -63,6 +63,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64  &n);
 void MatrixEigenSolver(ofstream &_tex,__int64  &n);
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
+void klFGTTest(ofstream &_tex, __int64& n);
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -73,7 +74,7 @@ void VSLFunctions(ofstream &_tex,__int64 &n);
 
 #include <errno.h> 
 void klIntegrationTest(bool useIntelMemMgr)
-{	MutithreadedWorkflow();
+{	
 	klTimer klt;
 	klt.tic();
 
@@ -122,6 +123,7 @@ void klIntegrationTest(bool useIntelMemMgr)
 	
 	heapstatus = _heapchk();
 
+	
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
 	klMatlabEngineThreadMap klmtm;
 
@@ -134,6 +136,9 @@ void klIntegrationTest(bool useIntelMemMgr)
 	engSetVisible(matlabEngine,true);
 #endif
 
+	klmtm.insert(thisThread, matlabEngine);
+		
+
 	if(useIntelMemMgr)
 	{
 		klMKLMemMgr*  mgr = new klMKLMemMgr();
@@ -145,14 +150,15 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
+	makeLatexSection("Fast Gauss Transform",_tex);
+	klutw.runTest(klFGTTest);
+
 	makeLatexSection("Matrix Quick Check <double>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<double>);
 
 	makeLatexSection("Matrix Quick Check <float>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<float>);
 
-	klmtm.insert(thisThread, matlabEngine);
-		
 	klTestSize= klTestType::SMALL;
 			
 	klutw.runTest(VSLFunctions);

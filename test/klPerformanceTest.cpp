@@ -249,7 +249,7 @@ void klPerformanceTesting()
 	title.str("");
 	title.clear();
 	title<<"VSL Speedups using MemoryAligned Buffers for size < 8kn";
-	LatexInsert2DScatterPlot(vslSizeKBScale,vslFnspeedupsKBScale,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),false);
+	LatexInsert2DScatterPlot(vslSizeKBScale,vslFnspeedupsKBScale,_tex,basefilename,fileName.str().c_str(),title.str().c_str());
 
 
 	numIters =4096;

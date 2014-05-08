@@ -5,12 +5,9 @@
 
 void klIntegrationTest(bool useIntelMemMgr);
 void klPerformanceTesting();
-void klFGGTest();
 #include <iostream>
 int main(int argc, char* argv[])
 {
-	//klFGGTest();
-
 	//klPerformanceTesting();
 	
 	klIntegrationTest(false);

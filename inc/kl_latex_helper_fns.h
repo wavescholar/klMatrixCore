@@ -14,7 +14,7 @@ void startLatexDoc(string title,string author,string date,ofstream &_tex,string 
 void makeLatexSection(string sectionTitle,ofstream &_tex);
 void endLatexDoc(ofstream &_tex);
 void LatexInsert1DPlot( klVector<double>& vec, ofstream &_tex, string dir,string filename,string title,bool holdon= false);
-void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon);
+void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon= false,const char* color=NULL);
 void LatexInsert3DPlot( klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,bool holdon= false);
 void LatexInsertHistogram( klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title);
 void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title);

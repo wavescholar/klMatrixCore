@@ -98,8 +98,7 @@
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
-    <Library Include="..\x64\Debug\FGG.lib">
-      <FileType>Document</FileType>
+    <Library Include="..\x64\Debug\FGT.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
     <Library Include="..\x64\Debug\klMatrixCoreLib.lib">
@@ -128,8 +127,7 @@
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
-    <Library Include="..\x64\Release\FGG.lib">
-      <FileType>Document</FileType>
+    <Library Include="..\x64\Release\FGT.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
     <Library Include="..\x64\Release\klMatrixCoreLib.lib">

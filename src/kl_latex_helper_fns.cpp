@@ -164,7 +164,7 @@ void LatexInsert1DPlot(klVector<double>& vec, ofstream &_tex, string dir,string 
 	delete evalString;
 }
 
-void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon= false)
+void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon,const char* color)
 {
 	klMatlabEngineThreadMap klmtm;
 
@@ -183,7 +183,7 @@ void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,of
 	unsigned int start=0;
 	unsigned int finish=0;
 		
-	klScatterPlot2D<double>(vecX,vecY,arg,title.c_str(),xAxis,yAxis,useExtents,holdon);
+	klScatterPlot2D<double>(vecX,vecY,arg,title.c_str(),xAxis,yAxis,useExtents,holdon,color);
 	
 		if(!holdon)
 	{	

@@ -41,9 +41,6 @@
     <Library Include="..\x64\Debug\libsdpa.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
-    <Library Include="..\x64\Debug\FGG.lib">
-      <Filter>Libs\DebugklPackages</Filter>
-    </Library>
     <Library Include="..\x64\Debug\expokitcpp.lib">
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
@@ -60,9 +57,6 @@
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\libsdpa.lib">
-      <Filter>Libs\ReleaselPackages</Filter>
-    </Library>
-    <Library Include="..\x64\Release\FGG.lib">
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\expokitcpp.lib">
@@ -132,6 +126,12 @@
       <Filter>Libs\DebugklPackages</Filter>
     </Library>
     <Library Include="..\x64\Release\SuperLU_MT_VC.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\FGT.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\FGT.lib">
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
   </ItemGroup>
