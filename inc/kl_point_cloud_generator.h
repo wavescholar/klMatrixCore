@@ -82,7 +82,13 @@ public:
 	  _numPoints(numPoints), _dimension(dimension), _data(numPoints,dimension)
 
 	  {
+		  size_t sourv=sizeof(klUniformRV<double>);
+
 		  _uniformRGVect = new klUniformRV<double>[dimension];
+
+		  void* pEnd = &_uniformRGVect + dimension*sourv;
+
+
 		  for(int i=0;i<dimension;i++)
 		  {
 			  _uniformRGVect[i].reset(fastSeed()+i);
@@ -93,12 +99,11 @@ public:
 			  for(int j=0;j<dimension;j++)
 				  _data[i][j] = _uniformRGVect[j]();
 		  }
-
 	  }
 
 	  ~klUniformHyperCube()
 	  {
-		  delete _uniformRGVect;
+		  delete[] _uniformRGVect;
 	  }
 
 

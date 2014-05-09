@@ -163,12 +163,10 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
 		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
 
-
-		
 		stringstream fileName;stringstream title;
 		fileName.str("");fileName.clear();
 		title.str(""); title.clear();
-		fileName<<"3GaussianMixture_"<<numCenters<<"_Centers";
+		fileName<<"GaussianMixture_Dim_3"<<"_Centers"<<numCenters;
 		title<<"3 Gaussian Mixtures"<<numCenters<<"_Centers";
 		char* color="'r.'";
 		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
@@ -179,6 +177,33 @@ void klIntegrationTest(bool useIntelMemMgr)
 	}
 	//---------------------------------
 
+
+	//---------------------------------
+	{	
+		unsigned int numPoints = 800;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 2;
+		int dimension =1;
+
+		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
+		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+
+				
+		stringstream fileName;stringstream title;
+		fileName.str("");fileName.clear();
+		title.str(""); title.clear();
+		fileName<<"GaussianMixture_Dim_1"<<"_Centers"<<numCenters;
+		title<<"Gaussian Mixtures"<<numCenters<<"_Centers";
+		char* color="'r.'";
+		LatexInsert1DPlot(X.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		color ="'g.'";
+		LatexInsert1DPlot(Y.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
+		color= "'b.'";
+		LatexInsert1DPlot(Z.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	}
+	//---------------------------------
 
 
 	makeLatexSection("Fast Gauss Transform",_tex);
