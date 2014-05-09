@@ -57,7 +57,7 @@ private:
 		
 		for(__int64 i =0;i<_numPointsPerCenter;i++)
 		{
-			_clusterMembership[c*_numPointsPerCenter +i] =c;
+			_clusterMembership[c*_numPointsPerCenter +i] =(int)c;
 			_data[c*_numPointsPerCenter +i ]=X();
 		}
 	}

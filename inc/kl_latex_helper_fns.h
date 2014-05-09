@@ -7,15 +7,17 @@
 
 #include "kl_matrix.h"
 #include "kl_util.h"
+#include "kl_matlab_iface.h"
 #include <string>
 using namespace std;
+
 
 void startLatexDoc(string title,string author,string date,ofstream &_tex,string abs);
 void makeLatexSection(string sectionTitle,ofstream &_tex);
 void endLatexDoc(ofstream &_tex);
-void LatexInsert1DPlot( klVector<double>& vec, ofstream &_tex, string dir,string filename,string title,bool holdon= false);
-void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon= false,const char* color=NULL);
-void LatexInsert3DPlot( klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,bool holdon= false);
+void LatexInsert1DPlot( klVector<double>& vec, ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon= klHoldOnStatus::NoHold,const char* markerType=NULL);
+void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon= klHoldOnStatus::NoHold,const char* markerType=NULL);
+void LatexInsert3DPlot( klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon= klHoldOnStatus::NoHold,const char* markerType=NULL);
 void LatexInsertHistogram( klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title);
 void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title);
 template<class TYPE> void LatexPrintMatrix( klMatrix<TYPE>& matrix, string name,ofstream &_tex);

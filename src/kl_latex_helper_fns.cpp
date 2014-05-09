@@ -86,106 +86,58 @@ void endLatexDoc(ofstream &_tex)
 {
 	_tex<<"\\end{document}"<<endl;
 }
-void LatexInsert3DPlot(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,bool holdon)
+
+void LatexInsert3DPlot(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon,const char* markerType)
 {
 	klMatlabEngineThreadMap klmtm;
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 	char* arg = new char[512];
 	char* evalString = new char[512];
 	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-	
+
 	const char* xAxis=NULL;
 	const char* yAxis=NULL;
 	const char* zAxis=NULL;
 	bool useExtents=true;
-	bool holdOn=holdon;
-	const char* marker=NULL;
-
-	klScatterPlot3D(mat,filename.c_str(),title.c_str(), xAxis, yAxis,zAxis, useExtents, holdOn, marker);
-	if(!holdon)
-	{
-	sprintf(evalString,"print -r1200 -depsc %s;",arg);
-	engEvalString(matlabEngine, evalString);
-
-	engEvalString(matlabEngine, "hold off;close(gcf);");
-
-	sprintf(evalString,"epstopdf   %s",arg);
-
-	system(evalString);
-	sprintf(arg,"%s.pdf",filename.c_str());
-	_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-	}
-
-	if(holdon)
-	{
-		engEvalString(matlabEngine, "hold on;");
-	}
-
-	delete arg;
-	delete evalString;
-}
-void LatexInsert1DPlot(klVector<double>& vec, ofstream &_tex, string dir,string filename,string title,bool holdon)
-{
-	klMatlabEngineThreadMap klmtm;
-
-	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-
-	char* arg = new char[512];
-	char* evalString = new char[512];
-	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-	if(holdon)
-	{
-		engEvalString(matlabEngine, "hold on;");
-	}
-	const char* xAxis=NULL;
-	const char* yAxis=NULL;
-	bool useExtents=true;
-	unsigned int start=0;
-	unsigned int finish=0;
-		
-	klPlot1D<double>(vec,arg,title.c_str(),xAxis,yAxis,useExtents,start,finish,holdon);
-
-	if(!holdon)
-	{	
-		sprintf(evalString,"print -r1200 -depsc %s;",arg);
-		engEvalString(matlabEngine, evalString);
-		engEvalString(matlabEngine, "hold off;close(gcf);");
-		sprintf(evalString,"epstopdf   %s",arg);
-		system(evalString);
-		sprintf(arg,"%s.pdf",filename.c_str());
-		_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
-	}
-	if(holdon)
-	{
-		engEvalString(matlabEngine, "hold on;");
-	}
-
-	delete arg;
-	delete evalString;
-}
-
-void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,bool holdon,const char* color)
-{
-	klMatlabEngineThreadMap klmtm;
-
-	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-
-	char* arg = new char[512];
-	char* evalString = new char[512];
-	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
-	if(holdon)
-	{
-		engEvalString(matlabEngine, "hold on;");
-	}
-	const char* xAxis=NULL;
-	const char* yAxis=NULL;
-	bool useExtents=true;
-	unsigned int start=0;
-	unsigned int finish=0;
-		
-	klScatterPlot2D<double>(vecX,vecY,arg,title.c_str(),xAxis,yAxis,useExtents,holdon,color);
 	
-		if(!holdon)
+	klScatterPlot3D(mat,filename.c_str(),title.c_str(), xAxis, yAxis,zAxis, useExtents, holdon, markerType);
+
+	if(holdon==klHoldOnStatus::LastPlot  || holdon==klHoldOnStatus::NoHold )
+	{
+		sprintf(evalString,"print -r1200 -depsc %s;",arg);
+		engEvalString(matlabEngine, evalString);
+
+		engEvalString(matlabEngine, "hold off;close(gcf);");
+
+		sprintf(evalString,"epstopdf   %s",arg);
+
+		system(evalString);
+		sprintf(arg,"%s.pdf",filename.c_str());
+		_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
+	}
+	delete arg;
+	delete evalString;
+}
+
+void LatexInsert1DPlot(klVector<double>& vec, ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon,const char* markerType)
+{
+	klMatlabEngineThreadMap klmtm;
+
+	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+
+	char* arg = new char[512];
+	char* evalString = new char[512];
+	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
+	
+	const char* xAxis=NULL;
+	const char* yAxis=NULL;
+	bool useExtents=true;
+	unsigned int start=0;
+	unsigned int finish=0;
+		
+	klPlot1D<double>(vec,arg,title.c_str(),xAxis,yAxis,useExtents,start,finish,holdon,markerType);
+
+	if(holdon==klHoldOnStatus::LastPlot  || holdon==klHoldOnStatus::NoHold )
 	{	
 		sprintf(evalString,"print -r1200 -depsc %s;",arg);
 		engEvalString(matlabEngine, evalString);
@@ -195,11 +147,43 @@ void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,of
 		sprintf(arg,"%s.pdf",filename.c_str());
 		_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
 	}
-	if(holdon)
-	{
-		engEvalString(matlabEngine, "hold on;");
-	}
 
+	delete arg;
+	delete evalString;
+}
+
+void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon,const char* markerType)
+{
+	klMatlabEngineThreadMap klmtm;
+
+	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+
+	char* arg = new char[512];
+	char* evalString = new char[512];
+
+	const char* xAxis=vecX.desc.c_str();
+	const char* yAxis=vecY.desc.c_str();
+
+	sprintf(arg,"%s//%s.eps",dir.c_str(),filename.c_str());
+	
+
+	bool useExtents=true;
+	unsigned int start=0;
+	unsigned int finish=0;
+		
+	klScatterPlot2D<double>(vecX,vecY,arg,title.c_str(),xAxis,yAxis,useExtents,holdon,markerType);
+	
+	if(holdon==klHoldOnStatus::LastPlot  || holdon==klHoldOnStatus::NoHold )
+	{	
+		sprintf(evalString,"print -r1200 -depsc %s;",arg);
+		engEvalString(matlabEngine, evalString);
+		engEvalString(matlabEngine, "hold off;close(gcf);");
+		sprintf(evalString,"epstopdf   %s",arg);
+		system(evalString);
+		sprintf(arg,"%s.pdf",filename.c_str());
+		_tex<<"\\includegraphics[width=10.0cm,height=10.0cm]{"<<arg<<"}"<<endl<<endl;
+	}
+	
 	delete arg;
 	delete evalString;
 }

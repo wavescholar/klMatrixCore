@@ -1,7 +1,7 @@
- /*******************************
- * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
- * Bruce B Campbell 03 26 2014  *
- ********************************/
+/*******************************
+* Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
+* Bruce B Campbell 03 26 2014  *
+********************************/
 #ifndef __kl_matlab_iface__
 #define __kl_matlab_iface__
 #include <string>
@@ -9,38 +9,12 @@
 #include <malloc.h>
 #include <fstream>
 
-
-/* 
-From Microsoft : Thanks for reporting this issue.
-I looked at the source code for matrix.h <core/matlab/include/matrix.h>
-It has a definition for char16_t "typedef CHAR16_T char16_t;". 
-Also the C++ header "Microsoft Visual Studio 10.0\VC\include\yvals.h" also defines 
-the same identifier(char16_t). Because of these two definition we get the redefinition 
-error when matrix.h and iostream.h(it internally includes yvals.h) are included in some cpp file.
-Declaration of char16_t in the yvals.h is newly introduced in dev10 and was not there in VS2008. 
-Therefore you are getting this redefinition error now on VS 2010(Dev10).
-Inorder to solve this I would recommend that Matlab should guard the declaration in their 
-file with Microsoft version.
-eg:
-<<<<<<< HEAD
-//#if (MICROSOFT VERSION is less than DEV10)
-//typedef CHAR16_T char16_t;
-//# endif
-////Thanks, -Sunny Gupta   */
-////=======
-//#if (MICROSOFT VERSION is less than DEV10)
-//typedef CHAR16_T char16_t;
-//# endif
-//Thanks, -Sunny Gupta   */
-////This problem has been fixed in Matlab 2012 we keep it here for reference.
-//>>>>>>> 90cc802a337e9ff0133377faed404f9a3375351f
-//#ifdef _CHAR16T
-//#define CHAR16_T
-//#endif
-
 #include "mat.h"  //Matlab Iface include file
 #include "engine.h"  //Matlab Iface include file
 #include "kl_matrix.h"
+
+typedef enum klHoldOnStatus{  NoHold=0, FirstPlot=1, HoldOn=2, LastPlot=3};
+
 class klMatlabEngineThreadMap 
 {
 public:
@@ -51,7 +25,6 @@ public:
 	cout<<"Setting Global Matlabl Engine From TID: "<<thisThread<<endl;
 	theStaticEngine=theEngine;
 	}
-
 
 	void EvalMatlabString(const char* evalString)
 	{
@@ -112,8 +85,8 @@ public :
 //hold on indicates multiple plots will be made to one gcf and the user will save the file.
 //use the color attribute to specify a matlab color; r,g,b,c,m,y,k or [r,g,b] - use a ' before and after the spec
 template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
-								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
-								   bool useExtents=true, unsigned int start=0,unsigned int finish=0,bool holdOn=false,const char* color=NULL)
+	const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+	bool useExtents=true, unsigned int start=0,unsigned int finish=0,klHoldOnStatus holdOn= klHoldOnStatus::NoHold,const char* markerType=NULL)
 
 {
 	klMatlabEngineThreadMap klmtm;
@@ -165,13 +138,13 @@ template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
-	if( color==NULL)
+	if( markerType==NULL)
 	{
 		sprintf(colorSpec,"'b'");
 	}
 	else
 	{
-		sprintf(colorSpec,"%s",color);
+		sprintf(colorSpec,"%s",markerType);
 	}
 
 	if(c.x1>c.x0)
@@ -186,49 +159,68 @@ template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 		}
 		engPutVariable(matlabEngine, "Tx", Tx);
 
-		if(holdOn==true)
+		if(holdOn == klHoldOnStatus::NoHold)
 		{
-			//sprintf(evalString,"figure('Visible','off');plot(%f:%f:%f,T)",c.x0+((c.x1-c.x0)/c.getRowSize()),(c.x1-c.x0)/c.getRowSize(),c.x1);
-			sprintf(evalString,"plot(Tx,T)");
+			sprintf(evalString,"figure('Visible','off');plot(Tx,T,%s);",colorSpec);
+
 		}
-		else
+		if(holdOn==klHoldOnStatus::FirstPlot )
 		{
-			sprintf(evalString,"figure('Visible','off');kp=plot(Tx,T)");
+			sprintf(evalString,"figure('Visible','off');plot(Tx,T,%s);hold on;",colorSpec);
+
+		}
+		if(holdOn==klHoldOnStatus::HoldOn || holdOn == klHoldOnStatus::LastPlot)
+		{
+			sprintf(evalString,"plot(Tx,T,%s)",colorSpec);
 		}
 	}
 	else
 	{
-		sprintf(evalString,"figure('Visible','off');plot(T)");
+		if(holdOn == klHoldOnStatus::NoHold)
+		{
+			sprintf(evalString,"figure('Visible','off');plot(T,%s);",colorSpec);
+
+		}
+		if(holdOn==klHoldOnStatus::FirstPlot )
+		{
+			sprintf(evalString,"figure('Visible','off');plot(T,%s);hold on;",colorSpec);
+
+		}
+		if(holdOn==klHoldOnStatus::HoldOn || holdOn == klHoldOnStatus::LastPlot)
+		{
+			sprintf(evalString,"plot(T,%s)",colorSpec);
+		}
 		
+
 	}
 	engEvalString(matlabEngine, evalString);
 
-	if(title!=NULL)
+	if(holdOn ==klHoldOnStatus::LastPlot || holdOn==klHoldOnStatus::NoHold)
 	{
-		sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
-		engEvalString(matlabEngine, evalString);
-	}	
+		if(title!=NULL)
+		{
+			sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
+			engEvalString(matlabEngine, evalString);
+		}	
 
-	if(xAxis!=NULL)
-	{
-		sprintf(evalString,"xlabel('%s');",xAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(yAxis!=NULL)
-	{
-		sprintf(evalString,"ylabel('%s');",yAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(c.y0<c.y1)
-	{
-		sprintf(evalString,"set(gca,'YTick',%f:%f:%f);",c.y0,(c.y1-c.y0)/20,c.y1);
-		//axis([xmin,xmax,ymin,ymax])
-		//add 10% to the top and bottom
-		sprintf(evalString,"axis([%f %f %f %f])",c.x0-(c.x1-c.x0)*.1 ,c.x1+(c.x1-c.x0)*.1,c.y0-(c.y1-c.y0)*.1,c.y1+(c.y1-c.y0)*.1);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(!holdOn)
-	{
+		if(xAxis!=NULL)
+		{
+			sprintf(evalString,"xlabel('%s');",xAxis);
+			engEvalString(matlabEngine, evalString);
+		}
+		if(yAxis!=NULL)
+		{
+			sprintf(evalString,"ylabel('%s');",yAxis);
+			engEvalString(matlabEngine, evalString);
+		}
+		if(c.y0<c.y1)
+		{
+			sprintf(evalString,"set(gca,'YTick',%f:%f:%f);",c.y0,(c.y1-c.y0)/20,c.y1);
+			//axis([xmin,xmax,ymin,ymax])
+			//add 10% to the top and bottom
+			sprintf(evalString,"axis([%f %f %f %f])",c.x0-(c.x1-c.x0)*.1 ,c.x1+(c.x1-c.x0)*.1,c.y0-(c.y1-c.y0)*.1,c.y1+(c.y1-c.y0)*.1);
+			engEvalString(matlabEngine, evalString);
+		}
 		sprintf(evalString,"saveas(gcf,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
 	}
@@ -240,9 +232,8 @@ template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 //this could be improved.  The start and finish parameters are misleading - and I am not sure if they work.
 //bbcrevisit - make a git task to document and improve this. For the scatter plot we don't need the range  
 template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,const char* filename,
-								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
-								   bool useExtents=true, bool holdOn=false,const char* color=NULL)
-
+	const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+	bool useExtents=true, klHoldOnStatus holdOn= klHoldOnStatus::NoHold,const char* markerType=NULL)
 {
 	klMatlabEngineThreadMap klmtm;
 
@@ -259,9 +250,9 @@ template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,
 	mxArray *Tx = NULL, *Ty=NULL ,*a = NULL, *d = NULL;
 
 	Tx = mxCreateDoubleMatrix(1, x.getRowSize(), mxREAL);
-	
+
 	Ty = mxCreateDoubleMatrix(1, y.getRowSize(), mxREAL);
-	
+
 	unsigned int i;
 	double* pMx=mxGetPr(Tx);
 
@@ -270,72 +261,80 @@ template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,
 	for(i=0;i<x.getRowSize();i++)
 	{
 		*(pMx+i)=(double)x[i];
-		*(pMy+i)=(double)y[i];
-		//cout<<x[i]<<"  " <<y[i]<<endl;
+		*(pMy+i)=(double)y[i];		
 	}
 	engPutVariable(matlabEngine, "Tx", Tx);
-	
+
 	engPutVariable(matlabEngine, "Ty", Ty);
-	
+
 	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
-	if( color==NULL)
+	if( markerType==NULL)
 	{
-		sprintf(colorSpec,"'b'");
+		sprintf(colorSpec,"'b.'");
 	}
 	else
 	{
-		sprintf(colorSpec,"%s",color);
+		sprintf(colorSpec,"%s",markerType);
+	}
+	if(holdOn == klHoldOnStatus::NoHold)
+	{
+		sprintf(evalString,"figure('Visible','off');scatter(Tx,Ty,%s);",colorSpec);
+
+	}
+	if(holdOn==klHoldOnStatus::FirstPlot )
+	{
+		sprintf(evalString,"figure('Visible','off');scatter(Tx,Ty,%s);hold on;",colorSpec);
+
+	}
+	if(holdOn==klHoldOnStatus::HoldOn || holdOn == klHoldOnStatus::LastPlot)
+	{
+		sprintf(evalString,"scatter(Tx,Ty,%s)",colorSpec);
 	}
 
-	sprintf(evalString,"figure('Visible','off');scatter(Tx,Ty,'.')");
-	
 	engEvalString(matlabEngine, evalString);
 
 	engOutputBuffer(matlabEngine, errmsg, 512);
-	
+
 	cerr<<errmsg;
 
-	if(title!=NULL)
+	if(holdOn ==klHoldOnStatus::LastPlot || holdOn==klHoldOnStatus::NoHold)
 	{
-		sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
-		engEvalString(matlabEngine, evalString);
-	}	
+		if(title!=NULL)
+		{
+			sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
+			engEvalString(matlabEngine, evalString);
+		}	
 
-	if(xAxis!=NULL)
-	{
-		sprintf(evalString,"xlabel('%s');",xAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(yAxis!=NULL)
-	{
-		sprintf(evalString,"ylabel('%s');",yAxis);
-		engEvalString(matlabEngine, evalString);
-	}
+		if(xAxis!=NULL)
+		{
+			sprintf(evalString,"xlabel('%s');",xAxis);
+			engEvalString(matlabEngine, evalString);
+		}
+		if(yAxis!=NULL)
+		{
+			sprintf(evalString,"ylabel('%s');",yAxis);
+			engEvalString(matlabEngine, evalString);
+		}
 
-	if(!holdOn)
-	{
 		sprintf(evalString,"saveas(gcf,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
 	}
 	mxDestroyArray(Tx);
 	mxDestroyArray(Ty);
 	delete evalString;
+	delete colorSpec;
 }
-
 
 //Meshplot of 3-D Data
 template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>&  c,const char* filename,
-										  const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
-										  bool useExtents=true,bool holdOn=false,const char* marker=NULL)
+	const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
+	bool useExtents=true,klHoldOnStatus holdOn= klHoldOnStatus::NoHold,const char* markerType=NULL)
 {
-
-	//	klGuard<klMutex> lg(matlablock);
 	klMatlabEngineThreadMap klmtm;
 
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-
 
 	mxArray *T = NULL, *a = NULL, *d = NULL;
 
@@ -355,62 +354,72 @@ template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>&  c,const char* filenam
 	errmsg[1023] = '\0';
 	engOutputBuffer(matlabEngine, errmsg, 512);
 
-	//Set the marker if one is passed in.
-	if(marker==NULL)
+	char* colorSpec = new char[256];
+	if( markerType==NULL)
 	{
-		//sprintf(evalString,"figure('Visible','off');kp=scatter3(T(:,1),T(:,2),T(:,3))");
-		sprintf(evalString,"figure('Visible','off');kp=scatter3(T(:,1),T(:,2),T(:,3))");
-		engEvalString(matlabEngine, evalString);
+		sprintf(colorSpec,"'b.'");
 	}
 	else
 	{
-//		sprintf(evalString,"figure('Visible','off');kp=scatter3(T(:,1),T(:,2),T(:,3),'%s')",marker);
-		sprintf(evalString,"figure('Visible','off');kp=scatter3(T(:,1),T(:,2),T(:,3),'%s')",marker);
-		engEvalString(matlabEngine, evalString);
+		sprintf(colorSpec,"%s",markerType);
+	}
+	if(holdOn == klHoldOnStatus::NoHold)
+	{
+		sprintf(evalString,"figure('Visible','off');scatter3(T(:,1),T(:,2),T(:,3),%s);",colorSpec);
+
+	}
+	if(holdOn==klHoldOnStatus::FirstPlot )
+	{
+		sprintf(evalString,"figure('Visible','off');scatter3(T(:,1),T(:,2),T(:,3),%s);hold on;",colorSpec);
+
+	}
+	if(holdOn==klHoldOnStatus::HoldOn || holdOn == klHoldOnStatus::LastPlot)
+	{
+		sprintf(evalString,"scatter3(T(:,1),T(:,2),T(:,3),%s)",colorSpec);
 	}
 
-	if(title!=NULL)
-	{
-		sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
-		engEvalString(matlabEngine, evalString);
-	}	
+	engEvalString(matlabEngine, evalString);
 
-	if(xAxis!=NULL)
+	if(holdOn ==klHoldOnStatus::LastPlot || holdOn==klHoldOnStatus::NoHold)
 	{
-		sprintf(evalString,"xlabel('%s');",xAxis);
-		engEvalString(matlabEngine, evalString);
-	}
+		if(title!=NULL)
+		{
+			sprintf(evalString,"title('%s');",title);//title({'This title','has 2 lines'}) % 
+			engEvalString(matlabEngine, evalString);
+		}	
+
+		if(xAxis!=NULL)
+		{
+			sprintf(evalString,"xlabel('%s');",xAxis);
+			engEvalString(matlabEngine, evalString);
+		}
 
 
-	if(yAxis!=NULL)
-	{
-		sprintf(evalString,"ylabel('%s');",yAxis);
-		engEvalString(matlabEngine, evalString);
-	}
+		if(yAxis!=NULL)
+		{
+			sprintf(evalString,"ylabel('%s');",yAxis);
+			engEvalString(matlabEngine, evalString);
+		}
 
-	if(zAxis!=NULL)
-	{
-		sprintf(evalString,"zlabel('%s');",zAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-
-	if(holdOn==false)
-	{
+		if(zAxis!=NULL)
+		{
+			sprintf(evalString,"zlabel('%s');",zAxis);
+			engEvalString(matlabEngine, evalString);
+		}
 		sprintf(evalString,"h=kp; saveas(h,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
-		
+
 	}
 	mxDestroyArray(T);
 	delete evalString;
+	delete colorSpec;
 }
 
 
 template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
-								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
-								   bool useExtents=true,bool holdOn=false,const char* marker=NULL)
+	const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,const char* zAxis=NULL,
+	bool useExtents=true)
 {
-
-	//	klGuard<klMutex> lg(matlablock);
 	klMatlabEngineThreadMap klmtm;
 
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
@@ -430,10 +439,7 @@ template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
 	errmsg[1023] = '\0';
 	engOutputBuffer(matlabEngine, errmsg, 512);
 
-	if(holdOn==false)
-		sprintf(evalString,"figure('Visible','off');kp=imagesc(T);");
-	else
-		sprintf(evalString,"figure('Visible','off');kp=imagesc(T);");
+	sprintf(evalString,"figure('Visible','off');kp=imagesc(T);");
 
 	engEvalString(matlabEngine, evalString);
 
@@ -449,7 +455,6 @@ template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
 		engEvalString(matlabEngine, evalString);
 	}
 
-
 	if(yAxis!=NULL)
 	{
 		sprintf(evalString,"ylabel('%s');",yAxis);
@@ -462,21 +467,17 @@ template<class TYPE> void klHeatMapPlot(klMatrix<TYPE>&  c,const char* filename,
 		engEvalString(matlabEngine, evalString);
 	}
 
-	if(!holdOn)
-	{
-		sprintf(evalString,"h=kp; saveas(h,'%s');",filename);
-		engEvalString(matlabEngine, evalString);
-	}
+	sprintf(evalString,"h=kp; saveas(h,'%s');",filename);
+	engEvalString(matlabEngine, evalString);
+
 	mxDestroyArray(T);
 
 	delete evalString;
 }
 
-
-
 template<class TYPE> void klPlotHistogram(klVector<TYPE>&  c,const char* filename,
-								   const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
-								   bool holdOn=false,const char* color=NULL)
+	const char* title=NULL,const char* xAxis=NULL,const char* yAxis=NULL,
+	klHoldOnStatus holdOn= klHoldOnStatus::NoHold,const char* markerType=NULL)
 {
 	klMatlabEngineThreadMap klmtm;
 
@@ -488,20 +489,20 @@ template<class TYPE> void klPlotHistogram(klVector<TYPE>&  c,const char* filenam
 	engOutputBuffer(matlabEngine, errmsg, 512);
 
 	mxArray *T = NULL, *a = NULL, *d = NULL;
-	
+
 	TYPE x0 =c.x0;
 	TYPE x1 =c.x1;
-	
+
 	char* evalString=new char[2048];
 
 	char* colorSpec = new char[256];
-	if( color==NULL)
+	if( markerType==NULL)
 	{
 		sprintf(colorSpec,"'b'");
 	}
 	else
 	{
-		sprintf(colorSpec,"%s",color);
+		sprintf(colorSpec,"%s",markerType);
 	}
 
 	//Put the variable in Matlab
@@ -519,36 +520,36 @@ template<class TYPE> void klPlotHistogram(klVector<TYPE>&  c,const char* filenam
 		numBins = 200;
 	if (numBins <10)
 		numBins =10;
-	
+
 	sprintf(evalString,"figure('Visible','off');hist(T,%d)",numBins);
-	
+
 	engEvalString(matlabEngine, evalString);
 
-	if(title!=NULL)
-	{
-		//title({'This title','has 2 lines'}) %
-		sprintf(evalString,"title('%s');",title); 
-		engEvalString(matlabEngine, evalString);
-	}	
+	if(holdOn !=klHoldOnStatus::HoldOn)
+	{	
+		if(title!=NULL)
+		{
+			//title({'This title','has 2 lines'}) %
+			sprintf(evalString,"title('%s');",title); 
+			engEvalString(matlabEngine, evalString);
+		}	
 
-	if(xAxis!=NULL)
-	{
-		sprintf(evalString,"xlabel('%s');",xAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(yAxis!=NULL)
-	{
-		sprintf(evalString,"ylabel('%s');",yAxis);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(c.y0<c.y1)
-	{
-		sprintf(evalString,"set(gca,'YTick',%f:%f:%f);",c.y0,(c.y1-c.y0)/20,c.y1);
-		sprintf(evalString,"axis([%f %f %f %f])",c.x0-(c.x1-c.x0)*.1 ,c.x1+(c.x1-c.x0)*.1,c.y0-(c.y1-c.y0)*.1,c.y1+(c.y1-c.y0)*.1);
-		engEvalString(matlabEngine, evalString);
-	}
-	if(!holdOn)
-	{
+		if(xAxis!=NULL)
+		{
+			sprintf(evalString,"xlabel('%s');",xAxis);
+			engEvalString(matlabEngine, evalString);
+		}
+		if(yAxis!=NULL)
+		{
+			sprintf(evalString,"ylabel('%s');",yAxis);
+			engEvalString(matlabEngine, evalString);
+		}
+		if(c.y0<c.y1)
+		{
+			sprintf(evalString,"set(gca,'YTick',%f:%f:%f);",c.y0,(c.y1-c.y0)/20,c.y1);
+			sprintf(evalString,"axis([%f %f %f %f])",c.x0-(c.x1-c.x0)*.1 ,c.x1+(c.x1-c.x0)*.1,c.y0-(c.y1-c.y0)*.1,c.y1+(c.y1-c.y0)*.1);
+			engEvalString(matlabEngine, evalString);
+		}
 		sprintf(evalString,"saveas(gcf,'%s');",filename);
 		engEvalString(matlabEngine, evalString);
 	}

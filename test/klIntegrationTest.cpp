@@ -63,6 +63,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64  &n);
 void MatrixEigenSolver(ofstream &_tex,__int64  &n);
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
+#include "kl_point_cloud_generator.h"
 void klFGTTest(ofstream &_tex, __int64& n);
 
 #include "kl_time_series.h"
@@ -150,7 +151,38 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
+	//---------------------------------
+	{	
+		unsigned int numPoints = 800;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 2;
+		int dimension =3;
+
+		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
+		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+
+
+		
+		stringstream fileName;stringstream title;
+		fileName.str("");fileName.clear();
+		title.str(""); title.clear();
+		fileName<<"3GaussianMixture_"<<numCenters<<"_Centers";
+		title<<"3 Gaussian Mixtures"<<numCenters<<"_Centers";
+		char* color="'r.'";
+		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		color ="'g.'";
+		LatexInsert3DPlot(Y.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
+		color= "'b.'";
+		LatexInsert3DPlot(Z.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	}
+	//---------------------------------
+
+
+
 	makeLatexSection("Fast Gauss Transform",_tex);
+	klutw.setDimension(2);
 	klutw.runTest(klFGTTest);
 
 	makeLatexSection("Matrix Quick Check <double>",_tex);
@@ -1555,15 +1587,15 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n)
 
 	klTimeSeries<double> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
 	
-	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",true);
+	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",klHoldOnStatus::HoldOn);
 
-	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",true);
+	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",klHoldOnStatus::HoldOn);
 
-	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",true);
+	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",klHoldOnStatus::HoldOn);
 
-	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",true);
+	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::HoldOn);
 
-	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",false);
+	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",klHoldOnStatus::NoHold);
 
 	c[popsize-1024]=1237;//big shock
 
@@ -1580,7 +1612,7 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLInv(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLInv","Inversion of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLInv","Inversion of vector elements",klHoldOnStatus::NoHold);
 	}
 	
 ////vdSqrt Computation of the square root of vector elements
@@ -1588,56 +1620,56 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLSqrt(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSqrt","sqrt of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSqrt","sqrt of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdExp	Computation of the exponential of vector elements
 //void klVSLExp(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLExp(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExp","exponentail of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExp","exponentail of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdExpm1		Computation of the exponential of vector elements decreased by 1
 //void klVSLExpm1(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLExpm1(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExpm1","exponential of vector elements decreased by 1",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLExpm1","exponential of vector elements decreased by 1",klHoldOnStatus::NoHold);
 	}
 ////vdLn	Computation of the natural logarithm of vector elements
 //void klVSLLn(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLLn(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLn","natural logarithm of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLn","natural logarithm of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdLog10		Computation of the denary logarithm of vector elements
 //void klVSLLog10(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLLog10(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLog10","denary lograrithm of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLog10","denary lograrithm of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdCos		Computation of the cosine of vector elements
 //void klVSLCos(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLCos(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCos","cosine of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCos","cosine of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdSin		Computation of the sine of vector elements
 //void klVSLSin(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLSin(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSin","sine of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLSin","sine of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdTan		Computation of the tangent of vector elements
 //void klVSLTan(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLTan(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTan","tangent of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTan","tangent of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdAcos		Computation of the inverse cosine of vector elements
 //void klVSLAcos(klVector<double>&  v,klVector<double>& ans);
@@ -1675,28 +1707,28 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLErf(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErf","error function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErf","error function of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdErfc		Computation of the complementary error function value of vector elements
 //void klVSLErfc(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLErfc(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfc","complementary error function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfc","complementary error function of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdCdfNorm		Computation of the cumulative normal distribution function value of vector elements
 //void klVSLCdfNorm(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLCdfNorm(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCdfNorm","cumulative normal distribution function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLCdfNorm","cumulative normal distribution function of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdErfInv		Computation of the inverse error function value of vector elements
 //void klVSLErfInv(klVector<double>&  v,klVector<double>& ans);
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLErfInv(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfInv","inverse error function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLErfInv","inverse error function of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdErfcInv		Computation of the inverse complementary error function value of vector elements
 //void klVSLErfcInv(klVector<double>&  v,klVector<double>& ans);
@@ -1709,13 +1741,13 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	{
 	klVector<double> a(0.01,0.01,1);
 	klVSLLGamma(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLGamma","logarithm for the absolute value of the gamma function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLLGamma","logarithm for the absolute value of the gamma function of vector elements",klHoldOnStatus::NoHold);
 	}
 ////vdTGamma		Computation of the gamma function of vector elements 
 //void klVSLTGamma(klVector<double>&  v,klVector<double>& ans);
 		{
 	klVector<double> a(0.01,0.01,1);
 	klVSLTGamma(a,a);
-	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTGamma","gamma function of vector elements",false);
+	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTGamma","gamma function of vector elements",klHoldOnStatus::NoHold);
 	}
 }

@@ -620,7 +620,7 @@ template<class TYPE> void klRVUnitTestHarnessLaTexMatlab(klRV<TYPE> ** RV,unsign
 		{
 			sprintf(fileName,"%sRV-%d.eps",basefilename,i);
 		}
-		klPlot1D(hist,fileName,title,xAxis,yAxis,true,0,0,false);
+		klPlot1D(hist,fileName,title,xAxis,yAxis,true,0,0,klHoldOnStatus::NoHold);
 		sprintf(evalString,"print -r1200 -depsc %s;",fileName);
 		engEvalString(matlabEngine, evalString);
 		engEvalString(matlabEngine, "close gcf;delete gcf");

@@ -17,24 +17,26 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	unsigned int numPoints = 10000;
 	unsigned int numSources=numPoints;
 	unsigned int numCenters = 25;
-	int dimension =2;
+	int dimension =n;
  
 	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
 	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /1250.0f);
 
 	stringstream fileName;stringstream title;
-
-	fileName<<"GaussianMixture_ClusterCenters"<<numCenters<<"_Centers";
-	title<<"Gaussian Mixture Cluster Centers";
-	char* color="r";
-	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),true, color);
-
+	
 	fileName.str("");fileName.clear();
 	title.str(""); title.clear();
 	fileName<<"GaussianMixture_"<<numCenters<<"_Centers";
 	title<<"Gaussian Mixture";
-	color="b";
-	LatexInsert2DScatterPlot(X.getData().getColumn(0),X.getData().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),false, color);
+	char* color="'c.'";
+	LatexInsert2DScatterPlot(X.getData().getColumn(0),X.getData().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+	
+	fileName.str("");fileName.clear();
+	title.str(""); title.clear();
+	fileName<<"GaussianMixture_ClusterCenters"<<numCenters<<"_Centers";
+	title<<"Gaussian Mixture Cluster Centers";
+	 color="'k*'";
+	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
 
 	//Source Weights
 	klVector<double> q(numPoints);
@@ -80,14 +82,29 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	klUniformHyperCube Y(numPoints, dimension );
 
 	//KCenterClustering(int Dim,int NSources,  double *pSources,int *pClusterIndex,int NumClusters);
+
+	klVector<int> kCenterClusterLabels(numPoints);
+
 	KCenterClustering KCC(dimension,numPoints,  X_shifted_scaled.getMemory(),X.getClusterMembership().getMemory(),numCenters);
+	//KCenterClustering KCC(dimension,numPoints,  X_shifted_scaled.getMemory(),kCenterClusterLabels.getMemory(),numCenters);
 	KCC.Cluster();
 		
 	klVector<double> clusterRadii(numCenters);
 
 	klMatrix<double> clusterCenters(numCenters,dimension);
 
-	KCC.ComputeClusterCenters(numCenters,clusterCenters.getMemory(),X.getClusterMembership().getMemory(),clusterRadii.getMemory() ) ;
+	KCC.ComputeClusterCenters(numCenters,clusterCenters.getMemory(),kCenterClusterLabels.getMemory(),clusterRadii.getMemory() ) ;
+	
+	{		
+		fileName.str("");fileName.clear();
+		title.str(""); title.clear();
+		fileName<<"KCenterClusterMemberships_"<<numCenters<<"_Centers";
+		title<<"KCenter Cluster Memberships";
+		char* color="'k*'";
+		LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		color="'b+'";
+		LatexInsert2DScatterPlot(clusterCenters.getColumn(0),clusterCenters.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	}
 	
 	double MaxClusterRadius =KCC.MaxClusterRadius;
 	

@@ -292,7 +292,7 @@ void klPerformanceTesting()
 	title.clear();
 	title<<"VSL Speedups using MemoryAligned Buffers at MB scale";
 
-	LatexInsert2DScatterPlot(vslSizeMBScale,vslFnspeedupsMBScale,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),false);
+	LatexInsert2DScatterPlot(vslSizeMBScale,vslFnspeedupsMBScale,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold);
 
 	//----------------------------------------------------------------------------------------------------------------
 
