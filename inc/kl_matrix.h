@@ -1502,6 +1502,216 @@ template <class TYPE> static inline istream& operator>>(istream& c, klMatrix<TYP
 	return c;
 }
 
+class klBinaryIO
+{
+public:
+
+	static inline void WriteWinx64( klMatrix<double>& out, string fileName)
+	{
+		FILE* fd=NULL;
+		if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd") 
+		{
+			try
+			{
+				fd = fopen( fileName.c_str(), "wb+" );
+				if(fd==NULL)
+					throw "Bad file handle in klBinaryIO::WriteWinx64( klMatrix<double>& out, string fileName)"; 
+				__int64 ebuf[2]={0,0};
+				ebuf[0]=out.getRows();
+				ebuf[1]=out.getColumns();
+				fwrite(ebuf, sizeof(__int64),2,fd);
+				void* writeP = out.getMemory();
+				fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
+				fclose(fd);
+			}
+			catch(...)
+			{
+				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+				if(fd)
+				{
+					try
+					{
+						fclose(fd);
+					}
+					catch(...)
+					{
+					}
+				}
+				throw err;
+			}
+		} 
+		else 
+		{
+			klError err(" void  klFastWriteWinx64( klMatrix<double> out, string fileName) called with bad file extension");
+			throw err;
+		}
+	}
+
+	static inline void WriteWinx64(klVector<double>& out, string fileName)
+	{
+		FILE* fd=NULL;
+		if(fileName.substr(fileName.find_last_of(".") + 1) == "klvd") 
+		{
+			try
+			{
+				fd = fopen( fileName.c_str(), "wb+" );
+				if (fd ==NULL)
+					throw "Bad file handle in klBinaryIO::WriteWinx64(klVector<double>& out, string fileName)";
+				__int64 ebuf[1]={0};
+				ebuf[0]=out.getColumns();
+				fwrite(ebuf, sizeof(__int64),1,fd);
+				void* writeP = out.getMemory();
+				fwrite(writeP,sizeof(double),ebuf[0],fd);
+				fclose(fd);
+			}
+			catch(...)
+			{
+				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+				if(fd)
+				{
+					try
+					{
+						fclose(fd);
+					}
+					catch(...)
+					{
+					}
+				}
+				throw err;
+			}
+		} 
+		else 
+		{
+			klError err(" void  klFastWriteWinx64( klMatrix<double> out, string fileName) called with bad file extension");
+			throw err;
+		}
+	}
+
+	static inline void MatReadWinx64(string fileName, klMatrix<double>& klmd )
+	{
+		if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd") 
+		{
+			FILE* fd=NULL;
+			try
+			{
+				fd = fopen( fileName.c_str(), "rb" );
+				if (fd==NULL)
+					throw "Bad file handle in klBinaryIO::MatReadWinx64(string fileName, klMatrix<double>& klmd )";
+				__int64 ebuf[2]={0,0};
+
+				fread(ebuf, sizeof(__int64),2,fd);
+
+				if(ebuf[0]>0 && ebuf[1]>0)
+				{
+					if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
+						throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
+					void* readP = klmd.getMemory();
+					fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+				}
+				fclose(fd);
+			}
+			catch(...)
+			{
+				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error reading or allocating");
+				if(fd)
+				{
+					try
+					{
+						fclose(fd);
+					}
+					catch(...)
+					{
+					}
+				}
+				throw err;
+			}
+		} 
+		else 
+		{
+			klError err(" klMatrix<double> MatReadWinx64(string fileName) called with bad file extension");
+			throw err;
+		}
+	}
+
+	static inline void QueryWinx64(string fileName, __int64& rows, __int64&  cols)
+	{ 
+		FILE* fd=NULL;
+		try
+		{
+			fd = fopen( fileName.c_str(), "rb" );
+			if (fd==NULL)
+				throw "Bad file handle in klBinaryIO::QueryWinx64(string fileName, __int64& rows, __int64&  cols)";
+			if(fileName.substr(fileName.find_last_of(".") + 1) == "klvd")
+			{
+				__int64 ebuf[1]={0};
+				fread(ebuf, sizeof(__int64),1,fd);
+				rows =0;
+				cols = ebuf[0];
+			}
+			if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd")
+			{
+				__int64 ebuf[2]={0,0};
+				fread(ebuf, sizeof(__int64),2,fd);
+				rows=ebuf[0];
+				cols=ebuf[1];
+			}
+		}
+		catch(...)
+		{
+		}
+	}
+
+	static inline void VecReadWinx64(string fileName,klVector<double>& klvd)
+	{
+		if(fileName.substr(fileName.find_last_of(".") + 1) == "klvd") 
+		{
+			FILE* fd=NULL;
+			try
+			{
+				fd = fopen( fileName.c_str(), "rb" );
+				if(fd==NULL)
+					throw "Bad file handle in klBinaryIO::VecReadWinx64(string fileName,klVector<double>& klvd)";
+				__int64 ebuf[1]={0};
+
+				fread(ebuf, sizeof(__int64),1,fd);
+
+				if(ebuf[0]>0)
+				{
+					if( klvd.getColumns() !=ebuf[0])
+						throw "In static inline void VecReadWinx64(string fileName,klVector<double>& klvd) (klvd.getColumns() !=ebuf[0]) is false"; 
+				
+					void* readP = klvd.getMemory();
+					fread(readP,sizeof(double),ebuf[0],fd);
+				}
+				fclose(fd);
+			}
+			catch(...)
+			{
+				klError err(" klVector<double> VecReadWinx64(string fileName) error reading or allocating");
+				if(fd)
+				{
+					try
+					{
+						fclose(fd);
+					}
+					catch(...)
+					{
+					}
+				}
+
+				throw err;
+			}
+		} 
+		else 
+		{
+			klError err(" klMatrix<double> klFastReadWinx64(string fileName) called with bad file extension");
+			throw err;
+		}
+	}
+
+};
+
+
 //Smart Pointer Defs
 typedef klSmartPtr<klMatrix<double> >  klDoubleMatrixPtr;
 typedef klSmartPtr<klMatrix<complex<double> > >  klComplexDoubleMatrixPtr;

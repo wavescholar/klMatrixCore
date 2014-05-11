@@ -11,13 +11,7 @@
 #include "kl_stat.h"
 #include "kl_random_number_generator.h"
 #include "kl_multivariate_random_variable.h"
-#include "kl_sample_population.h"
-#include "kl_principal_components.h"
-#include "kl_regression.h"
-#include "kl_multiclass_svm.h"
-#include "kl_wavelet.h"
-#include "kl_util.h"
-#include "kl_unit_tests.h"
+
 
 //Let A \in G_1(n,n) =X : X_{ii} =_d N(0,1) X_{ij} =_d N(0,frac{1}{2}
 //frac{A+A^dag} {2} \in GOE 

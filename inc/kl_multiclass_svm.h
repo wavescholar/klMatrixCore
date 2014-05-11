@@ -100,9 +100,7 @@ public:
                     throw "klMulticlassSVMTrain ERROR throwing exception to avoid divide by zero.  klSamplePopulation had a zero variance for some dimension";
 
                 (_vectors+i)->operator[](j) /=  sqrt( *(_variance+j) );
-
             }
-
         }
     }
 

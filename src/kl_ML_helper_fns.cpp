@@ -4,7 +4,7 @@
  ********************************/
 
 #include "kl_ML_helper_fns.h"
-#include "kl_bregman_divergence.h"
+#include "kl_divergence_functions.h"
 #include "kl_arpack.h"
 
 //Let A \in G_1(n,n) =X : X_{ii} =_d N(0,1) X_{ij} =_d N(0,frac{1}{2}

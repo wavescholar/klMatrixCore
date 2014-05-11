@@ -5,7 +5,7 @@
 #ifndef __kl_exception__
 #define __kl_exception__
 
-#include "kl_SEH.h"
+#include "kl_stack_walker.h"
 #include <iostream>
 #include <string>
 #include <vector>

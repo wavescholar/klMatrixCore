@@ -13,7 +13,7 @@
 #include "kl_multiclass_svm.h"
 #include "kl_wavelet.h"
 #include "kl_ML_helper_fns.h"
-#include "kl_bregman_divergence.h"
+#include "kl_divergence_functions.h"
 #include "kl_util.h"
 #include "kl_unit_tests.h"
 #include "kl_matrix_facorizations.h"
@@ -63,6 +63,9 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64  &n);
 void MatrixEigenSolver(ofstream &_tex,__int64  &n);
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
+void testKlBinaryOI(ofstream &_tex,__int64 &n);
+void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
+
 #include "kl_point_cloud_generator.h"
 void klFGTTest(ofstream &_tex, __int64& n);
 
@@ -74,8 +77,10 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n);
 void VSLFunctions(ofstream &_tex,__int64 &n);
 
 #include <errno.h> 
+
 void klIntegrationTest(bool useIntelMemMgr)
-{	
+{
+	
 	klTimer klt;
 	klt.tic();
 
@@ -123,8 +128,7 @@ void klIntegrationTest(bool useIntelMemMgr)
 	_tex.flush();
 	
 	heapstatus = _heapchk();
-
-	
+		
 	klThreadId thisThread=klThread<klMutex>::getCurrentThreadId();
 	klMatlabEngineThreadMap klmtm;
 
@@ -151,64 +155,13 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
-	//---------------------------------
-	{	
-		unsigned int numPoints = 800;
-		unsigned int numSources=numPoints;
-		unsigned int numCenters = 2;
-		int dimension =3;
-
-		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
-		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-
-		stringstream fileName;stringstream title;
-		fileName.str("");fileName.clear();
-		title.str(""); title.clear();
-		fileName<<"GaussianMixture_Dim_3"<<"_Centers"<<numCenters;
-		title<<"3 Gaussian Mixtures"<<numCenters<<"_Centers";
-		char* color="'r.'";
-		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-		color ="'g.'";
-		LatexInsert3DPlot(Y.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
-		color= "'b.'";
-		LatexInsert3DPlot(Z.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	}
-	//---------------------------------
-
-
-	//---------------------------------
-	{	
-		unsigned int numPoints = 800;
-		unsigned int numSources=numPoints;
-		unsigned int numCenters = 2;
-		int dimension =1;
-
-		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
-		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
-
-				
-		stringstream fileName;stringstream title;
-		fileName.str("");fileName.clear();
-		title.str(""); title.clear();
-		fileName<<"GaussianMixture_Dim_1"<<"_Centers"<<numCenters;
-		title<<"Gaussian Mixtures"<<numCenters<<"_Centers";
-		char* color="'r.'";
-		LatexInsert1DPlot(X.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-		color ="'g.'";
-		LatexInsert1DPlot(Y.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
-		color= "'b.'";
-		LatexInsert1DPlot(Z.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	}
-	//---------------------------------
-
-
+	klutw.runTest( testKlBinaryOI);
+	
 	makeLatexSection("Fast Gauss Transform",_tex);
 	klutw.setDimension(2);
 	klutw.runTest(klFGTTest);
+
+	klutw.runTest( testPointCloudAndLatexPlots);
 
 	makeLatexSection("Matrix Quick Check <double>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<double>);
@@ -1612,15 +1565,34 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n)
 
 	klTimeSeries<double> diff=c.DIFF(popsize,gamma,beta,alpha,64,interp);
 	
-	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",klHoldOnStatus::HoldOn);
+	LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",klHoldOnStatus::NoHold);
 
-	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",klHoldOnStatus::HoldOn);
+	LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",klHoldOnStatus::NoHold);
 
-	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",klHoldOnStatus::HoldOn);
+	LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",klHoldOnStatus::NoHold);
 
-	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::HoldOn);
+	LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::NoHold);
 
 	LatexInsert1DPlot(diff,_tex,basefilename,"DIFF","Diff operator",klHoldOnStatus::NoHold);
+
+	//Put everything in onle plot
+	{
+		char* markerSpec = "'r'";
+		LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",klHoldOnStatus::FirstPlot,markerSpec);
+
+		markerSpec = "'g'";
+		LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",klHoldOnStatus::HoldOn,markerSpec);
+
+		markerSpec = "'b'";
+		LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",klHoldOnStatus::HoldOn,markerSpec);
+
+		markerSpec = "'c'";
+		LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::HoldOn,markerSpec);
+
+		markerSpec = "'m'";
+		LatexInsert1DPlot(diff,_tex,basefilename,"IteratedExponentailOperators","Diff operator",klHoldOnStatus::LastPlot,markerSpec);
+
+	}
 
 	c[popsize-1024]=1237;//big shock
 
@@ -1774,5 +1746,157 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	klVector<double> a(0.01,0.01,1);
 	klVSLTGamma(a,a);
 	LatexInsert1DPlot(a,_tex,basefilename,"klVSLTGamma","gamma function of vector elements",klHoldOnStatus::NoHold);
+	}
+}
+
+void testKlBinaryOI(ofstream &_tex,__int64 &n)
+{
+	makeLatexSection("Testing binary writer",_tex);
+	double pi= 3.141592653589793238462643383279502;
+	klTimer klt;
+	{
+		__int64 GBWorthOfDoubles = __int64(1073741824LL/sizeof(double));
+		__int64 rzG = __int64 (std::sqrt ((double)GBWorthOfDoubles)) ;
+
+		//klMatrix<double> klmd (rzG,rzG);
+		klMatrix<double> klmd (362,362);
+		klmd =pi;
+		stringstream ss;
+		klt.tic();
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestMatrix.klmd";
+		klBinaryIO::WriteWinx64( klmd, ss.str() );
+		double bwtoc=klt.toc();
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestMatrix.txt";
+		ofstream fileostreamobj(ss.str() );
+		klt.tic();
+        fileostreamobj<<klmd<<endl;
+        fileostreamobj.close();
+		double swtoc = klt.toc();
+
+		_tex<<"Binary writer Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+
+		__int64 rows,cols;
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestMatrix.klmd";	
+		klBinaryIO::QueryWinx64(ss.str(),rows,cols);
+
+		klMatrix<double> klmdMat(rows,cols);
+		klt.tic();
+		klBinaryIO::MatReadWinx64(ss.str(),klmdMat);
+		bwtoc =klt.toc();
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestMatrix.txt";
+		ifstream fileistreamobj(ss.str() );
+		klt.tic();
+        fileistreamobj>>klmdMat;
+        fileistreamobj.close();
+		swtoc = klt.toc();
+		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+
+		
+	}
+
+	{
+		__int64 GBWorthOfDoubles = __int64(1073741824LL/sizeof(double));
+
+		//klVector<double> klvd (GBWorthOfDoubles);
+		klVector<double> klvd (131072);
+		klvd =pi;
+
+		stringstream ss;
+		klt.tic();
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestVector.klvd";
+		klBinaryIO::WriteWinx64( klvd, ss.str() );
+		double bwtoc=klt.toc();
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestVector.txt";
+		ofstream fileostreamobj(ss.str() );
+		klt.tic();
+        fileostreamobj<<klvd<<endl;
+        fileostreamobj.close();
+		double swtoc = klt.toc();
+
+		_tex<<"Binary writer Speedup 1GB Double vector "<< swtoc/bwtoc<<endl;
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestVector.klvd";
+		__int64 rows,cols;
+		klBinaryIO::QueryWinx64(ss.str(),rows,cols);
+
+		if (rows!=0)
+			throw "klBinaryIO::QueryWinx64(fileName ,rows,cols) returned non zero rows for vector"; 
+		klVector<double> readklvd(cols);
+		klt.tic();
+		klBinaryIO::VecReadWinx64(ss.str(),readklvd);
+		bwtoc =klt.toc();
+
+		ss.str("");ss.clear();
+		ss<<basefilename<<"//WriterTestVector.txt";
+		ifstream fileistreamobj(ss.str() );
+		klt.tic();
+        fileistreamobj>>readklvd;
+        fileistreamobj.close();
+		swtoc = klt.toc();
+		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+	}
+}
+
+void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n)
+{
+	makeLatexSection("Testing Gaussian Mixture Point Cloud and Latex Plotting Capabilities.",_tex);
+
+	{	
+		unsigned int numPoints = 800;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 2;
+		int dimension =3;
+
+		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
+		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+
+		stringstream fileName;stringstream title;
+		fileName.str("");fileName.clear();
+		title.str(""); title.clear();
+		fileName<<"GaussianMixture_Dim_3"<<"_Centers"<<numCenters;
+		title<<"3 Gaussian Mixtures"<<numCenters<<"_Centers";
+		char* color="'r.'";
+		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		color ="'g.'";
+		LatexInsert3DPlot(Y.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
+		color= "'b.'";
+		LatexInsert3DPlot(Z.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	}
+	
+	{	
+		unsigned int numPoints = 800;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 2;
+		int dimension =1;
+
+		//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
+		klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Y(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+		klGaussianMixture Z(numPoints/numCenters,numCenters,dimension,1.0f /950.0f);
+						
+		stringstream fileName;stringstream title;
+		fileName.str("");fileName.clear();
+		title.str(""); title.clear();
+		fileName<<"GaussianMixture_Dim_1"<<"_Centers"<<numCenters;
+		title<<"Gaussian Mixtures"<<numCenters<<"_Centers";
+		char* color="'r.'";
+		LatexInsert1DPlot(X.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		color ="'g.'";
+		LatexInsert1DPlot(Y.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::HoldOn, color);
+		color= "'b.'";
+		LatexInsert1DPlot(Z.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
 	}
 }

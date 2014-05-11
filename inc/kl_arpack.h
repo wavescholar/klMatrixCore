@@ -66,14 +66,8 @@ public:
 			EigenVectors = T;
 
 		}
-
-
-
 		return eigenvalues;		
 	}
-
-	
-
 };
 
 #endif //#define __kl_arpack__

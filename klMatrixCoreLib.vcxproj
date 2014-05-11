@@ -21,14 +21,15 @@
     <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
     <ClCompile Include="src\kl_random_number_generator.cpp" />
     <ClCompile Include="src\kl_sdpa.cpp" />
-    <ClCompile Include="src\kl_SEH.cpp" />
+    <ClCompile Include="src\kl_stack_walker.cpp" />
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\kl_util.cpp" />
     <ClCompile Include="src\kl_vector.cpp" />
+    <ClCompile Include="src\stub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\kl_arpack.h" />
-    <ClInclude Include="inc\kl_bregman_divergence.h" />
+    <ClInclude Include="inc\kl_divergence_functions.h" />
     <ClInclude Include="inc\kl_exception.h" />
     <ClInclude Include="inc\kl_hardware.h" />
     <ClInclude Include="inc\kl_image_buffer.h" />
@@ -49,7 +50,7 @@
     <ClInclude Include="inc\kl_random_number_generator.h" />
     <ClInclude Include="inc\kl_regression.h" />
     <ClInclude Include="inc\kl_sample_population.h" />
-    <ClInclude Include="inc\kl_SEH.h" />
+    <ClInclude Include="inc\kl_stack_walker.h" />
     <ClInclude Include="inc\kl_stat.h" />
     <ClInclude Include="inc\kl_thread_workflow.h" />
     <ClInclude Include="inc\kl_time_series.h" />

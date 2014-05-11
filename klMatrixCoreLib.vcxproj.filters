@@ -39,9 +39,6 @@
     <ClCompile Include="src\kl_sdpa.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\kl_SEH.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -51,12 +48,15 @@
     <ClCompile Include="src\kl_vector.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\kl_stack_walker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stub.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\kl_arpack.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\kl_bregman_divergence.h">
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="inc\kl_exception.h">
@@ -116,9 +116,6 @@
     <ClInclude Include="inc\kl_sample_population.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="inc\kl_SEH.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="inc\kl_stat.h">
       <Filter>inc</Filter>
     </ClInclude>
@@ -147,6 +144,12 @@
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="inc\kl_point_cloud_generator.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_divergence_functions.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_stack_walker.h">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>
