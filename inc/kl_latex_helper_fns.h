@@ -20,6 +20,8 @@ void LatexInsert2DScatterPlot( klVector<double>& vecX,klVector<double>& vecY ,of
 void LatexInsert3DPlot( klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title,klHoldOnStatus holdon= klHoldOnStatus::NoHold,const char* markerType=NULL);
 void LatexInsertHistogram( klVector<double>& vec, unsigned int numBins,ofstream &_tex, string dir,string filename,string title);
 void LatexInsertHeatMap(klMatrix<double>& mat, ofstream &_tex, string dir,string filename,string title);
+void LatexInsertLegend(string legend);
+void WritePlot(ofstream &_tex, string dir,string filename,char* title=NULL,char* xAxix=NULL,char* yAxis=NULL);
 template<class TYPE> void LatexPrintMatrix( klMatrix<TYPE>& matrix, string name,ofstream &_tex);
 template<class TYPE> void LatexPrintVector( klVector<TYPE>& klvector, string name,ofstream &_tex);
 #include <iomanip>

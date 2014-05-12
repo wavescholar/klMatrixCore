@@ -54,7 +54,7 @@ template<> klMatrix<float> klLinearRegression<float>::klLinearRegressionCore()
 	klMatrix<float> trB=_B.transpose();
 	int lda=_A.getRows();
 	int ldb=_B.getRows();
-	float rcond=_A.getConditionNumber();
+	float rcond=_A.ConditionNumber();
 	int min=(m<n? m :n);
 	int max=(m>n? m :n);
 	int max2=2*min>max ? 2*min : max;
@@ -95,8 +95,8 @@ template<> klMatrix<double> klLinearRegression<double>::klLinearRegressionCore()
 	//rcond is used to determine the effective rank of A. Singular
 	//values s(i) ? rcond *s(1) are treated as zero.
 	//If rcond <0, machine precision is used instead.
-	double rcond= -1;//_A.getConditionNumber();
-	//rcond = trA.getConditionNumber();
+	double rcond= -1;//_A.ConditionNumber();
+	//rcond = trA.ConditionNumber();
 	int min=(m<n? m :n);
 	int max=(m>n? m :n);
 	int max2=2*min>max ? 2*min : max;

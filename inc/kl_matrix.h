@@ -99,6 +99,23 @@ public:
 		}
 	}
 
+	klMatrix(klMatrix<TYPE>&& src) :
+	_vectors(src._vectors) , _own(src._own),_contiguous(src._contiguous),
+		_row(src._row),	_col(src._col),	_memory(src._memory),
+		_mgr(src._mgr),	_filename(src._filename)
+	{
+
+		cerr<<"klMatrix(klMatrix<TYPE>&& src)  called"<<endl; 
+		src._vectors=NULL;
+		src._own=0;
+		src._contiguous=true;
+		src._row=0;
+		src._col=0;
+		src._memory=NULL;
+		src._mgr=NULL;
+		src._filename="";
+	}
+
 	~klMatrix()
 	{
 
@@ -599,7 +616,7 @@ public:
 
 	//See float and double specializations.
 	//Defaults to the L1 norm, ellone=false computes the L\infty norm
-	TYPE getConditionNumber(bool ellone=0)
+	TYPE ConditionNumber(bool ellone=0)
 	{
 		return 0; 
 	}
@@ -1247,6 +1264,24 @@ template<> double klMatrix<double>::norm(bool ell_infty)
 	int lda=m;
 	double* work = new double[m*3];
 	double val = dlange(&norm, &m, &n, this->transpose().getMemory(), &lda,work);
+
+	//bbcrevisit 
+	norm='G';double val2 = dlange(&norm, &m, &n, this->transpose().getMemory(), &lda,work);
+	norm='I';double val3 = dlange(&norm, &m, &n, this->transpose().getMemory(), &lda,work);
+	norm='1';double val4 = dlange(&norm, &m, &n, this->transpose().getMemory(), &lda,work);
+	norm='F';double val5 = dlange(&norm, &m, &n, this->transpose().getMemory(), &lda,work);
+
+	/*
+	= 'M' or 'm': val = max(abs(Aij)), largest absolute value of the matrix A.
+	= '1' or 'O' or 'o': val = norm1(A), 1-norm of the matrix A (maximum column sum),
+	= 'I' or 'i': val = normI(A), infinity norm of the matrix A (maximum row sum),
+	= 'F', 'f', 'E' or 'e': val = normF(A), Frobenius norm of the matrix A (square root of sum of squares).
+	*/
+	norm='G';double val6 = dlange(&norm, &n, &m, this->getMemory(), &n,work);
+	norm='I';double val7 = dlange(&norm, &n, &m, this->getMemory(), &n,work);
+	norm='1';double val8 = dlange(&norm, &n, &m, this->getMemory(), &n,work);
+	norm='F';double val9 = dlange(&norm, &n, &m, this->getMemory(), &n,work);
+	
 	delete work;
 	return val;
 }
@@ -1267,7 +1302,7 @@ template<> float klMatrix<float>::norm(bool ell_infty )
 	return val;	
 }
 
-template<  > double klMatrix<double>::getConditionNumber(bool ellone)
+template<  > double klMatrix<double>::ConditionNumber(bool ellone)
 {
 	//Compute the Norm
 	__int64 i,j;
@@ -1279,7 +1314,7 @@ template<  > double klMatrix<double>::getConditionNumber(bool ellone)
 		anorm = norm(true);
 	//Compute the LU factorization
 	if(!_contiguous)
-		throw "template<  > double klMatrix<double>::getConditionNumber(bool ellone) ERROR: this routine is only supported for matrices with contiguous memory layout ";
+		throw "template<  > double klMatrix<double>::ConditionNumber(bool ellone) ERROR: this routine is only supported for matrices with contiguous memory layout ";
 
 	//transpose to get into FORTRAN column major storage format
 	klMatrix<double> tr=transpose();
@@ -1304,7 +1339,7 @@ template<  > double klMatrix<double>::getConditionNumber(bool ellone)
 	dgecon(&Norm,&m,tr.getMemory(),&n,&anorm,&rcond,work,iwork,&info);
 
 	if(info<0)
-		throw "template<  > double klMatrix<double>::getConditionNumber(bool ellone) ERROR: parameter error in MKL call to dgecon.";
+		throw "template<  > double klMatrix<double>::ConditionNumber(bool ellone) ERROR: parameter error in MKL call to dgecon.";
 
 	delete ipiv;
 	delete iwork;
@@ -1318,7 +1353,7 @@ template<  > double klMatrix<double>::getConditionNumber(bool ellone)
 		return 1/rcond; 
 }
 
-template<  > float klMatrix<float>::getConditionNumber(bool ellone)
+template<  > float klMatrix<float>::ConditionNumber(bool ellone)
 {
 	//Compute the Norm
 	__int64 i,j;
@@ -1331,7 +1366,7 @@ template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 
 	//Compute the LU factorization
 	if(!_contiguous)
-		throw "template<  > float klMatrix<float>::getConditionNumber(bool ellone) ERROR: this routine is only supported for matrices with contiguous memory layout ";
+		throw "template<  > float klMatrix<float>::ConditionNumber(bool ellone) ERROR: this routine is only supported for matrices with contiguous memory layout ";
 
 	//transpose to get into FORTRAN column major storage format
 	klMatrix<float> tr=transpose();
@@ -1355,7 +1390,7 @@ template<  > float klMatrix<float>::getConditionNumber(bool ellone)
 	sgecon(&Norm,&m,tr.getMemory(),&n,&anorm,&rcond,work,iwork,&info);
 
 	if(info<0)
-		throw "template<  > float klMatrix<float>::getConditionNumber(bool ellone) ERROR: parameter error in MKL call to dgecon.";
+		throw "template<  > float klMatrix<float>::ConditionNumber(bool ellone) ERROR: parameter error in MKL call to dgecon.";
 	delete ipiv;
 	delete iwork;
 	delete work;

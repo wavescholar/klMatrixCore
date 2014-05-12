@@ -101,9 +101,9 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n
 	_tex<<"The lower-diagonal entries take the form $U(0,1) - 0.5$. "<<endl;
 	_tex<<"The $L_1$ condition numbers are :"<<endl;
 	_tex<<"\\begin{itemize}"<<endl; 
-	_tex<<"\\item "<<covarianceMatrix1.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix2.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix3.getConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix1.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix2.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix3.ConditionNumber(true)<<endl;
 	_tex<<"\\end{itemize}"<<endl;
 
 	//scale all of the elements of the covariance 

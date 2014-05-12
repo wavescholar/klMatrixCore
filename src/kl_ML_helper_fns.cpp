@@ -9,7 +9,7 @@
 
 //Let A \in G_1(n,n) =X : X_{ii} =_d N(0,1) X_{ij} =_d N(0,frac{1}{2}
 //frac{A+A^dag} {2} \in GOE 
-klMatrix<double> SampleGOE( unsigned  int n , unsigned  seed )
+klMatrix<double> SampleGOE( __int64 n , unsigned  seed )
 {
 	klMatrix<double> A(n,n);
 	unsigned int i;
@@ -44,7 +44,7 @@ klMatrix<double> SampleGOE( unsigned  int n , unsigned  seed )
 
 //\beta = 1 flavor - This function samples from the space of covariance matrices for
 //the multivariate normal distribution
-klMatrix<double> SampleWishart( unsigned  int n , unsigned  seed )
+klMatrix<double> SampleWishart( __int64 n , unsigned  seed )
 {
 	klMatrix<double> A=SampleGOE(n,seed);
 
@@ -77,7 +77,7 @@ klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a)
 
 }
 
-klMatrix<double> SampleSymmetricStandardNormalRM( unsigned  int n , unsigned  seed )
+klMatrix<double> SampleSymmetricStandardNormalRM( __int64 n , unsigned  seed )
 {
 	klMatrix<double> A(n,n);
 	unsigned int i;

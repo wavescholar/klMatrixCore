@@ -65,7 +65,7 @@ void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
 void testKlBinaryOI(ofstream &_tex,__int64 &n);
 void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
-
+void testMatrixNorms(ofstream &_tex,__int64 &n);
 #include "kl_point_cloud_generator.h"
 void klFGTTest(ofstream &_tex, __int64& n);
 
@@ -155,6 +155,10 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
+	klutw.runTest(testMatrixNorms);
+
+	klutw.runTest(IteratedExponentialFiltering);
+
 	klutw.runTest( testKlBinaryOI);
 	
 	makeLatexSection("Fast Gauss Transform",_tex);
@@ -183,8 +187,6 @@ void klIntegrationTest(bool useIntelMemMgr)
 	
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-	
-	klutw.runTest(IteratedExponentialFiltering);
 	
 	makeLatexSection("Matrix Exponential ",_tex);
 	klutw.runTest(MatrixExponential);
@@ -889,9 +891,9 @@ void MatrixNorm(ofstream &_tex,__int64  &n)
 	A_f = sqrt(A_f);
 	_tex<<"Frobenious Norm  $||A||_{\\textit{F}}$ via $\\sum\\limits_{i,j =0}^{n} \\|A_{i,j}|$   of  $A \\in O(n)$  "<<A_f<<endl<<endl;
 
-	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.getConditionNumber(1)<<endl<<endl;
+	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber(1)<<endl<<endl;
 	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.getConditionNumber()<<endl<<endl;
+	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber()<<endl<<endl;
 
 	klVector<complex<double> > eigen =Op.eigenvalues();
 	_tex<<"Eigenvalues of $A \\in O(n)$"<<endl<<endl;
@@ -954,8 +956,8 @@ void MatrixNorm(ofstream &_tex,__int64  &n)
 	makeLatexSection("Wishart Matrix $A \\in W(n)$",_tex);
 
 	klMatrix<double> AW=     SampleWishart(n);
-	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.getConditionNumber(true)<<endl;
-	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.getConditionNumber()<<endl;
+	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.ConditionNumber(true)<<endl;
+	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.ConditionNumber()<<endl;
 
 	makeLatexSection("Gaussian Orthogonal Ensemble $A \\in GOE(n)$",_tex);
 
@@ -967,15 +969,15 @@ void MatrixNorm(ofstream &_tex,__int64  &n)
 	klVector<double> x=Id_goe[0]; 
 	klVector<double> y=Id_goe[2];
 
-	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.getConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.getConditionNumber(true)<<endl;
+	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
+	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
 
 	makeLatexSection("The Identity Matrix $I \\in M(n)$",_tex);
 
 	klMatrix<double> Id(n,n);
 	Id= IdentityMatrix<double>(n);
-	_tex<<"$L_1$ condition number of $I$ = "<<Id.getConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.getConditionNumber()<<endl;
+	_tex<<"$L_1$ condition number of $I$ = "<<Id.ConditionNumber(true)<<endl;
+	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.ConditionNumber()<<endl;
 
 	_tex.flush();
 	
@@ -1047,9 +1049,9 @@ void MatrixEigenSolver(ofstream &_tex,__int64  &n)
 	A_f = sqrt(A_f);
 	_tex<<"Frobenious Norm  $||A||_{\\textit{F}}$ via $\\sum\\limits_{i,j =0}^{n} \\|A_{i,j}|$   of  $A \\in O(n)$  "<<A_f<<endl<<endl;
 
-	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.getConditionNumber(1)<<endl<<endl;
+	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber(1)<<endl<<endl;
 	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.getConditionNumber()<<endl<<endl;
+	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber()<<endl<<endl;
 
 	klVector<complex<double> > eigen =Op.eigenvalues();
 	_tex<<"Eigenvalues of $A \\in O(n)$"<<endl<<endl;
@@ -1115,8 +1117,8 @@ void MatrixEigenSolver(ofstream &_tex,__int64  &n)
 	makeLatexSection("Wishart Matrix $A \\in W(n)$",_tex);
 
 	klMatrix<double> AW=     SampleWishart(n);
-	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.getConditionNumber(true)<<endl;
-	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.getConditionNumber()<<endl;
+	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.ConditionNumber(true)<<endl;
+	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.ConditionNumber()<<endl;
 
 	makeLatexSection("Gaussian Orthogonal Ensemble $A \\in GOE(n)$",_tex);
 
@@ -1128,15 +1130,15 @@ void MatrixEigenSolver(ofstream &_tex,__int64  &n)
 	klVector<double> x=Id_goe[0]; 
 	klVector<double> y=Id_goe[2];
 
-	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.getConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.getConditionNumber(true)<<endl;
+	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
+	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
 
 	makeLatexSection("The Identity Matrix $I \\in M(n)$",_tex);
 
 	klMatrix<double> Id(n,n);
 	Id= IdentityMatrix<double>(n);
-	_tex<<"$L_1$ condition number of $I$ = "<<Id.getConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.getConditionNumber()<<endl;
+	_tex<<"$L_1$ condition number of $I$ = "<<Id.ConditionNumber(true)<<endl;
+	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.ConditionNumber()<<endl;
 
 	_tex.flush();
 	
@@ -1588,10 +1590,34 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n)
 
 		markerSpec = "'c'";
 		LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::HoldOn,markerSpec);
-
+		
 		markerSpec = "'m'";
-		LatexInsert1DPlot(diff,_tex,basefilename,"IteratedExponentailOperators","Diff operator",klHoldOnStatus::LastPlot,markerSpec);
+		LatexInsert1DPlot(diff,_tex,basefilename,"IteratedExponentailOperators","Iterated Exponentail Operators",klHoldOnStatus::LastPlot,markerSpec);
+					
+	}
 
+
+	//Put everything in onle plot
+	{
+		char* markerSpec = "'r'";
+		LatexInsert1DPlot(c,_tex,basefilename,"EMA_signal","EMA Signal",klHoldOnStatus::FirstPlot,markerSpec);
+
+		markerSpec = "'g'";
+		LatexInsert1DPlot(ma,_tex,basefilename,"MA","MA",klHoldOnStatus::HoldOn,markerSpec);
+
+		markerSpec = "'b'";
+		LatexInsert1DPlot(iema,_tex,basefilename,"IEMA","Iterated Exponential Moving Average",klHoldOnStatus::HoldOn,markerSpec);
+
+		markerSpec = "'c'";
+		LatexInsert1DPlot(ema,_tex,basefilename,"EMA","Exponential Moving Average",klHoldOnStatus::HoldOn,markerSpec);
+		
+		markerSpec = "'m'";
+		LatexInsert1DPlot(diff,_tex,basefilename,"IteratedExponentailOperators","Iterated Exponentail Operators",klHoldOnStatus::HoldOn,markerSpec);
+
+		LatexInsertLegend("'Signal','MA','IEMA','EMA','Diff'");
+
+		WritePlot(_tex, basefilename,"IteratedExponentailOperators","Iterated Exponentail Operators");
+		
 	}
 
 	c[popsize-1024]=1237;//big shock
@@ -1776,7 +1802,7 @@ void testKlBinaryOI(ofstream &_tex,__int64 &n)
         fileostreamobj.close();
 		double swtoc = klt.toc();
 
-		_tex<<"Binary writer Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+		_tex<<"Binary writer Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
 
 		__int64 rows,cols;
 
@@ -1796,7 +1822,7 @@ void testKlBinaryOI(ofstream &_tex,__int64 &n)
         fileistreamobj>>klmdMat;
         fileistreamobj.close();
 		swtoc = klt.toc();
-		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
 
 		
 	}
@@ -1823,7 +1849,7 @@ void testKlBinaryOI(ofstream &_tex,__int64 &n)
         fileostreamobj.close();
 		double swtoc = klt.toc();
 
-		_tex<<"Binary writer Speedup 1GB Double vector "<< swtoc/bwtoc<<endl;
+		_tex<<"Binary writer Speedup 1GB Double vector "<< swtoc/bwtoc<<endl<<endl;
 
 		ss.str("");ss.clear();
 		ss<<basefilename<<"//WriterTestVector.klvd";
@@ -1844,7 +1870,7 @@ void testKlBinaryOI(ofstream &_tex,__int64 &n)
         fileistreamobj>>readklvd;
         fileistreamobj.close();
 		swtoc = klt.toc();
-		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl;
+		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
 	}
 }
 
@@ -1899,4 +1925,53 @@ void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n)
 		color= "'b.'";
 		LatexInsert1DPlot(Z.getData().getColumn(0),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
 	}
+}
+
+void testMatrixNorms(ofstream &_tex,__int64 &n)
+{
+	
+	{
+		klMatrix<double> G(4,3);
+
+	G[0][0]= 1, G[0][1]=2, G[0][2]=3,
+	G[1][0]= 4, G[1][1]=5, G[1][2]=6,
+	G[2][0]= 7, G[2][1]=8, G[2][2]=9,
+	G[3][0]= 10, G[3][1]=11, G[3][2]=12;
+
+	double n1=G.norm(false);
+
+	double n2=G.norm(true);
+
+	double c1 = G.ConditionNumber(false);
+
+	double c2 = G.ConditionNumber(true);
+	}
+
+	
+	
+	{
+		klMatrix<double> G =SampleGOE(n);
+	
+	double n1=G.norm(false);
+
+	double n2=G.norm(true);
+
+	double c1 = G.ConditionNumber(false);
+
+	double c2 = G.ConditionNumber(true);
+	}
+
+		{
+		klMatrix<double> G =HilbertMatrix(n);
+		
+	double n1=G.norm(false);
+
+	double n2=G.norm(true);
+
+	double c1 = G.ConditionNumber(false);
+
+	double c2 = G.ConditionNumber(true);
+	}
+
+
 }

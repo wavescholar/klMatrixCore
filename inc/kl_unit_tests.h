@@ -140,8 +140,8 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 
 	klVector<double> mooo(2);mooo[0]=1;mooo[1]=1;
 	cout<<moo*mooo;
-	cout<<moo.getConditionNumber();
-	cout<<moo.getConditionNumber(false);//L\infty cond number
+	cout<<moo.ConditionNumber();
+	cout<<moo.ConditionNumber(false);//L\infty cond number
 	klVector<complex<double> > eigen=moo.eigenvalues();
 	cout<<eigen;
 	eigen=b.eigenvalues();cout<<eigen;
@@ -500,9 +500,9 @@ template<class TYPE> void klMulticlassSVMHarness2(ofstream &_tex)//const char* f
 	_tex<<"The lower-diagonal entries take the form $U(0,1) — 0.5$. "<<endl;
 	_tex<<"The $L_1$ condition numbers are :"<<endl;
 	_tex<<"\\begin{itemize}"<<endl; 
-	_tex<<"\\item "<<covarianceMatrix1.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix2.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix3.getConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix1.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix2.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix3.ConditionNumber(true)<<endl;
 	_tex<<"\\end{itemize}"<<endl;
 
 	//Here we scale all of the elements of the covariance 
@@ -512,9 +512,9 @@ template<class TYPE> void klMulticlassSVMHarness2(ofstream &_tex)//const char* f
 
 	_tex<<"We scale the covariance matrices by 2*dimension and  re-verify $L_1$ condition number."<<endl;
 	_tex<<"\\begin{itemize}"<<endl; 
-	_tex<<"\\item "<<covarianceMatrix1.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix2.getConditionNumber(true)<<endl;
-	_tex<<"\\item "<<covarianceMatrix3.getConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix1.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix2.ConditionNumber(true)<<endl;
+	_tex<<"\\item "<<covarianceMatrix3.ConditionNumber(true)<<endl;
 	_tex<<"\\end{itemize}"<<endl;
 
 	//Give the distributions a nice big variance so our classifier has 

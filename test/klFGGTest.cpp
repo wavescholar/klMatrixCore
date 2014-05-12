@@ -142,7 +142,7 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	title<<"Fast Gauss Transform";
 	color="'k*'";
 	color= "'b.'";
-	LatexInsert1DPlot(gaussTransform,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	LatexInsert1DPlot(gaussTransform,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
 
 	{
 		int heapstatus = _heapchk();

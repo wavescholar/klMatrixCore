@@ -83,7 +83,7 @@ template<> klMatrix<float> klPrincipalComponents<float>::klPCACore()
 	int n=getColumns();
 	klMatrix<float> trA=transpose();
 	int lda=getRows();
-	float rcond=getConditionNumber();
+	float rcond=ConditionNumber();
 	int min=(m<n? m :n);
 	int max=(m>n? m :n);
 	int max2=2*min>max ? 2*min : max;
@@ -150,7 +150,7 @@ template<> klMatrix<double> klPrincipalComponents<double>::klPCACore()
 	int m=trA.getRows();
 	int n=trA.getColumns();
 	int lda=trA.getRows();
-	float rcond=getConditionNumber();
+	float rcond=ConditionNumber();
 	int min=(m<n? m :n);
 	int max=(m>n? m :n);
 	int max2=2*min>max ? 2*min : max;
