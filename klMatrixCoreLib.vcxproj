@@ -32,7 +32,6 @@
     <ClInclude Include="inc\kl_divergence_functions.h" />
     <ClInclude Include="inc\kl_exception.h" />
     <ClInclude Include="inc\kl_hardware.h" />
-    <ClInclude Include="inc\kl_image_buffer.h" />
     <ClInclude Include="inc\kl_independent_components.h" />
     <ClInclude Include="inc\kl_latex_helper_fns.h" />
     <ClInclude Include="inc\kl_linear_equation.h" />

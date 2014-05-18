@@ -297,8 +297,6 @@ template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,
 
 	engOutputBuffer(matlabEngine, errmsg, 512);
 
-	cerr<<errmsg;
-
 	if(holdOn ==klHoldOnStatus::LastPlot || holdOn==klHoldOnStatus::NoHold)
 	{
 		if(title!=NULL)

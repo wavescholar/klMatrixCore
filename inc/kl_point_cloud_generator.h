@@ -19,6 +19,7 @@ public:
 			klVector<double> center(_dimension);
 			for(__int64 i =0;i<_dimension;i++)
 				center[i]=_uniformRG();
+			
 			_clusterCenters[c]=center;
 
 			addCluster(center,c);
@@ -46,7 +47,6 @@ private:
 	{
 		klMatrix<double> covarianceMatrix =klGenerateRandomSymmetricPositiveDefiniteMatrix<double>(_dimension,fastSeed() );
 	
-
 		klout(covarianceMatrix);
 
 		covarianceMatrix =covarianceMatrix * _scale;

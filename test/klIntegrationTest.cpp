@@ -1446,8 +1446,7 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64 &n)
 	klSamplePopulation<double> X(sampleSize,numFeatures);
 	for(j=0;j<sampleSize;j++)
 	{
-		klVector<double> tv=T();
-		X.setRow(j,tv);
+		X.setRow(j,T());
 	}
 
 	klMatrix<double> SampleCovariance = X.covarianceMatrix();
@@ -1484,11 +1483,9 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64 &n)
 	G.makeNanFriendly();
 	for(i=0;i<sampleSize;i++)
 	{
-		klVector<double> x_i= X[i];
 		for(j=0;j<sampleSize;j++)
 		{
-			klVector<double> x_j= X[j];
-			G[i][j]=(x_i).dotBLAS(x_j);
+			G[i][j]=( X[i]).dotBLAS(X[j]);
 		}
 	}
 
@@ -1499,16 +1496,13 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64 &n)
 	LatexPrintVector<double>(normalizedSample.sampleMean(),"Centered Mean",_tex);
 
 	LatexPrintMatrix<double>(normalizedSample.covarianceMatrix(),"Centered Covariance",_tex);
-
-
+	
 	klMatrix<double> Gf(numFeatures,numFeatures);
 	for(i=0;i<numFeatures;i++)
 	{
-		klVector<double> x_i= centered.getColumn(i);
 		for(j=0;j<numFeatures;j++)
 		{
-			klVector<double> x_j= centered.getColumn(j);
-			Gf[i][j]=(x_i).dotBLAS(x_j);
+			Gf[i][j]=(centered.getColumn(i)).dotBLAS(centered.getColumn(j));
 		}
 	}
 
@@ -1536,15 +1530,15 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n)
 	makeLatexSection("Iterated Exponential Filtering ",_tex);
 	
 	size_t popsize=1024*2;
-	klVector<double> a(popsize);
+	klTimeSeries<double> c(popsize);
 	klNormalInverseApproxRV<double> normalinv(0,0.1);
 	unsigned i;
 	for(i=0;i<popsize;i++)
 	{
 		double pi= 3.141592653589793238462643383279502;
-		a[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
+		c[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
 	}
-	klTimeSeries<double> c(a);
+	
 
 	_tex<<"$\\mu_1 =" <<c.mean()<<"$"<<endl;
 	_tex<<"$\\mu_2 =" <<c.variance()<<"$"<<endl;

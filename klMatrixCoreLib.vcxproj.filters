@@ -65,9 +65,6 @@
     <ClInclude Include="inc\kl_hardware.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="inc\kl_image_buffer.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="inc\kl_independent_components.h">
       <Filter>inc</Filter>
     </ClInclude>

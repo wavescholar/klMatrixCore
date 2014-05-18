@@ -9,6 +9,19 @@
 //class klHeapMgr theKLOperatorNewHeap;
 //class klHeapMgr aPrivateHeap;
 
+
+#ifdef _DEBUG
+extern __int64 globalKlVectorCopyConstructorCallCount=0;
+extern __int64 globalKlMatrixCopyConstructorCallCount=0;
+extern __int64 globalKlVectorMoveConstructorCallCount=0;
+extern __int64 globalKlMatrixMoveConstructorCallCount=0;
+
+extern __int64 globalKlVectorCopyConstructorBytesCount=0;
+extern __int64 globalKlMatrixCopyConstructorBytesCount=0;
+extern __int64 globalKlVectorMoveConstructorBytesCount=0;
+extern __int64 globalKlMatrixMoveConstructorBytesCount=0;
+#endif
+
 int klVMemBlock::_systemPageSize=0;
 int klAWEMemBlock::_systemPageSize=0;
 ULONG_PTR klAWEMemBlock::NumberOfPagesInitial=0; // initial number of pages requested

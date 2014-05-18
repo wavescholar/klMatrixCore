@@ -42,6 +42,16 @@ using namespace std;
 //A=2.0;
 //klout(A);
 
+
+
+#ifdef _DEBUG
+extern __int64 globalKlVectorCopyConstructorCallCount;
+extern __int64 globalKlVectorMoveConstructorCallCount;
+
+extern __int64 globalKlVectorCopyConstructorBytesCount;
+extern __int64 globalKlVectorMoveConstructorBytesCount;
+#endif
+
 inline int mkl_eigs_select(double* x,double* y)
 {
 	return (*x<=*y) ? true: false;
@@ -144,6 +154,7 @@ public:
 
 	  klVector(const klVector<TYPE>& src)
 	  {
+
 		  _mMemory=NULL;
 		  _own=0;
 		  _size=0;
@@ -157,8 +168,34 @@ public:
 		  y0=src.y0;
 		  y1=src.y1;
 		  desc=src.desc;
+#ifdef _DEBUG
+		  __int64 byteCount = _size * sizeof(TYPE);
+		  globalKlVectorCopyConstructorBytesCount +=byteCount;
+		  cerr<<"klVector(klVector<TYPE>& src) call count = "<<globalKlVectorCopyConstructorCallCount++<<" Bytes Count "<<globalKlVectorCopyConstructorBytesCount<<endl; 
+#endif
 	  }
-	
+
+
+	  klVector(klVector<TYPE>&& src)
+		 : _mMemory(src._mMemory), _own(src._own), _size(src._size),  _mgr(src._mgr),  x0(src.x0),
+		  x1(src.x1),  y0(src.y0), y1(src.y1), desc(src.desc)
+	  {
+#ifdef _DEBUG
+		  __int64 byteCount = _size * sizeof(TYPE);
+		  globalKlVectorMoveConstructorBytesCount +=byteCount;
+		  cerr<<"klVector(klVector<TYPE>&& src) call count = "<<globalKlVectorMoveConstructorCallCount++<<" Bytes Count "<<globalKlVectorCopyConstructorBytesCount<<endl; 
+#endif
+		  src._mMemory=NULL;
+		  src._own=0;
+		  src._size=0;
+		  src. _mgr=0;
+		  src.x0=0;
+		  src.x1=0;
+		  src.y0=0;
+		  src.y1=0;
+		  src.desc="";
+	  }
+
 	  //Computes this.^b.  Template specializations utilizing MKL VSL are implemented for TYPE double and TYPE float 
 	  klVector<TYPE> pow_gen(klVector<TYPE> b)
 	  {

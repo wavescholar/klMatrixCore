@@ -80,12 +80,9 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	//Target Points
 	klUniformHyperCube Y(numPoints, dimension );
 
-	//KCenterClustering(int Dim,int NSources,  double *pSources,int *pClusterIndex,int NumClusters);
-
 	klVector<int> kCenterClusterLabels(numPoints);
 
 	KCenterClustering KCC(dimension,numPoints,  X_shifted_scaled.getMemory(),X.getClusterMembership().getMemory(),numCenters);
-	//KCenterClustering KCC(dimension,numPoints,  X_shifted_scaled.getMemory(),kCenterClusterLabels.getMemory(),numCenters);
 	KCC.Cluster();
 		
 	klVector<double> clusterRadii(numCenters);
@@ -131,11 +128,6 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	
 	IFGT.Evaluate();
 
-	{
-		int heapstatus = _heapchk();
-		if (heapstatus ==_HEAPBADPTR)
-			std::cerr<<"Bad Heap"<<std::endl;
-	}
 	fileName.str("");fileName.clear();
 	title.str(""); title.clear();
 	fileName<<"FGT"<<numCenters<<"_Centers";
@@ -144,9 +136,4 @@ void klFGTTest(ofstream &_tex, __int64& n)
 	color= "'b.'";
 	LatexInsert1DPlot(gaussTransform,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
 
-	{
-		int heapstatus = _heapchk();
-		if (heapstatus ==_HEAPBADPTR)
-			std::cerr<<"Bad Heap"<<std::endl;
-	}
 }

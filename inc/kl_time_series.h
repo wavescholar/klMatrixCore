@@ -52,9 +52,7 @@ public:
         }
 
     }
-
-
-
+	
     ~klTimeSeries()
     {
         if(_viema)
@@ -127,11 +125,10 @@ public:
 
     //}
 
-    //bbc revisit - preparing for inhomogeneous time series
     enum klTimeSeriesInterpolation{PREVIOUS,LINEAR,NEXT};
 
     //Computes the Exponential Moving average up to time k 
-    virtual klVector<TYPE> EMA(unsigned int k,  TYPE tau, klTimeSeriesInterpolation interp=PREVIOUS,bool doiema=false, klVector<TYPE> iema=0)
+    virtual klVector<TYPE>& EMA(unsigned int k,  TYPE tau, klTimeSeriesInterpolation interp=PREVIOUS,bool doiema=false, klVector<TYPE> iema=0)
     {
 
         _ema.setup(getRowSize());
@@ -244,7 +241,6 @@ public:
 
     }
 
-
     //Moving average using average of iterated exponential moving averages
 
 	//L^p moving norm
@@ -327,7 +323,6 @@ public:
         _ema[k]=temp;//store results
         return temp;
     }
-
 
 
     //This method uses the recursion
@@ -429,8 +424,4 @@ protected:
     bool _statsCalculated;
 
 };
-
-
-
-
 #endif //__kl_time_series__

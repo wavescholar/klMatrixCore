@@ -18,6 +18,15 @@
 #include <complex>
 using namespace std;
 
+#ifdef _DEBUG
+extern __int64 globalKlMatrixCopyConstructorCallCount;
+extern __int64 globalKlMatrixMoveConstructorCallCount;
+
+extern __int64 globalKlMatrixCopyConstructorBytesCount;
+extern __int64 globalKlMatrixMoveConstructorBytesCount;
+#endif
+
+
 template<class TYPE> class klMatrix: public klRefCount<klMutex>
 {
 public:
@@ -82,6 +91,7 @@ public:
 
 	klMatrix(const klMatrix<TYPE>& src)
 	{
+
 		_memory=NULL;
 		_mgr=src._mgr;
 		_row=src._row;
@@ -97,6 +107,11 @@ public:
 				(_vectors+i)->operator[](j)=src[i][j];
 			}
 		}
+#ifdef _DEBUG
+		  __int64 byteCount = _row*_col * sizeof(TYPE);
+		  globalKlMatrixCopyConstructorBytesCount +=byteCount;
+		  cerr<<"klMAtrix(klMatrix<TYPE>& src) call count = "<<globalKlMatrixCopyConstructorCallCount++<<" Bytes Count "<<globalKlMatrixCopyConstructorBytesCount<<endl; 
+#endif
 	}
 
 	klMatrix(klMatrix<TYPE>&& src) :
@@ -105,7 +120,12 @@ public:
 		_mgr(src._mgr),	_filename(src._filename)
 	{
 
-		cerr<<"klMatrix(klMatrix<TYPE>&& src)  called"<<endl; 
+#ifdef _DEBUG
+		  __int64 byteCount = _row*_col * sizeof(TYPE);
+		  globalKlMatrixMoveConstructorBytesCount +=byteCount;
+		  cerr<<"klMAtrix(klMatrix<TYPE>&& src) call count = "<<globalKlMatrixMoveConstructorCallCount++<<" Bytes Count "<<globalKlMatrixMoveConstructorBytesCount<<endl; 
+#endif
+
 		src._vectors=NULL;
 		src._own=0;
 		src._contiguous=true;
@@ -1423,8 +1443,6 @@ inline void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMi
 			void* pMem =X.getMemory()+i*X.getColumns();
 			const int incX = 1;
 			__int64 index = cblas_idamin (N, (double*)pMem,incX);
-			cerr<<index<<endl;
-			cerr<<X[i][index]<<endl;
 			minVals[i]=X[i][index];
 		}
 	}
@@ -1444,8 +1462,6 @@ inline void minV(const klMatrix<double>& X,klVector<double>& minVals ,bool rowMi
 			void* pMem =X.getMemory()+i;
 			const int incX = X.getColumns();
 			__int64 index = cblas_idamin (N, (double*)pMem,incX);
-			cerr<<index<<endl;
-			cerr<<X[index][i]<<endl;
 			minVals[i]=X[index][i];
 		}
 	}
@@ -1470,8 +1486,6 @@ inline void maxV(const klMatrix<double>& X,klVector<double>& maxVals ,bool rowMi
 			void* pMem =X.getMemory()+i*X.getColumns();
 			const int incX = 1;
 			__int64 index = cblas_idamax (N, (double*)pMem,incX);
-			//cerr<<index<<endl;
-			//cerr<<X[i][index]<<endl;
 			maxVals[i]=X[i][index];
 		}
 	}
@@ -1491,8 +1505,6 @@ inline void maxV(const klMatrix<double>& X,klVector<double>& maxVals ,bool rowMi
 			void* pMem =X.getMemory()+i;
 			const int incX = X.getColumns();
 			__int64 index = cblas_idamax (N, (double*)pMem,incX);
-			//cerr<<index<<endl;
-			//cerr<<X[index][i]<<endl;
 			maxVals[i]=X[index][i];
 		}
 	}
