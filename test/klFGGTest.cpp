@@ -10,14 +10,46 @@
 //inline double round(double x) { return (x-floor(x))>0.5 ? ceil(x) : floor(x); }
 #include <ostream>
 #include <sstream>
+#include "kl_algorithm_paramters.h"
 extern const char* basefilename;
 
-void klFGTTest(ofstream &_tex, __int64& n)
+class klFastGaussAlgorithmParameters : klAlgorithmParameterContainer
 {
+public:
+	klFastGaussAlgorithmParameters()
+	{
+		unsigned int numPoints =10000;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 25;
+		int dimension =2;
+
+		klAlgorithmParameter numPointsP("NumberOfPoints",numPoints);
+		klAlgorithmParameter numSourcesP("NumberOfSources",numPoints);
+		klAlgorithmParameter numCentersP("numberOfCenters",25);
+    	klAlgorithmParameter dimensionP("Dimension",2);
+
+
+
+	}
+
+public:  //For now.
+
+	unsigned int numPoints;
+	unsigned int numSources;
+	unsigned int numCenters ;
+	int dimension ;
+
+};
+
+
+void klFGTTest(ofstream &_tex,const klAlgorithmParameterContainer& klapc )
+{
+
 	unsigned int numPoints = 10000;
 	unsigned int numSources=numPoints;
 	unsigned int numCenters = 25;
-	int dimension =n;
+	int dimension =2;
+
  
 	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
 	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /1250.0f);

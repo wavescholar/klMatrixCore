@@ -993,17 +993,41 @@ inline klVector<complex<double> >  klApplyLog( const klVector<complex<double> > 
 	return r;
 }
 
+//Some simple ref counted classes used in algorithm parameter design pattern
+
+class klRCInt :public klRefCount<klMutex>
+{
+public:
+
+	__int64 intV;	
+};
+typedef klSmartPtr<klRCInt >  klIntPtr;
+
+class klRCDouble:public klRefCount<klMutex>
+{
+public:
+	double doubleV;
+};
+typedef klSmartPtr<klRCDouble >  klDoublePtr;
+
+
+class klRCString:public klRefCount<klMutex>
+{
+public:
+	std::string stringV;
+};
+typedef klSmartPtr<klRCString >  klStringPtr;
+
+
+
 //For convenience we have short name versions of the smart pointers
+
 typedef klSmartPtr<klVector<double> >  klDoubleVectorPtr;
-typedef klSmartPtr<klVector<double> >  klDVP;
 
 typedef klSmartPtr<klVector<complex<double> > >  klComplexDoubleVectorPtr;
-typedef klSmartPtr<klVector<complex<double> > >  klCDVP;
 
 typedef klSmartPtr<klVector<complex<float> > >  klComplexFloatVectorPtr;
-typedef klSmartPtr<klVector<complex<float> > >  klCFVP;
 
 typedef klSmartPtr<klVector<float> >  klFloatVectorPtr;
-typedef klSmartPtr<klVector<float> >  klFVP;
 
 #endif __kl_vector__

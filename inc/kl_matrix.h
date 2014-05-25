@@ -1765,4 +1765,6 @@ typedef klSmartPtr<klMatrix<complex<double> > >  klComplexDoubleMatrixPtr;
 typedef klSmartPtr<klMatrix<complex<float> > >  klComplexFloatMatrixPtr;
 typedef klSmartPtr<klMatrix<float> >  klFloatMatrixPtr;
 
+
+
 #endif __kl_matrix__

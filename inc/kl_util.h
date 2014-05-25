@@ -503,7 +503,7 @@ protected:
 };
 
 
-//klSmartPtr  should never be used to point at a stack based
+//klSmartPtr should never be used to point at a stack based
 // object (otherwise a double delete will happen).  Similarly, it
 // should never be used to point at a static object, for it will
 // attempt to call "delete" on that object.
@@ -546,7 +546,6 @@ public:
 			thePtr->addRef();
 	}
 
-
 	klConstSmartPtr<TYPE> &operator=(const klConstSmartPtr<TYPE> &smartPtr)
 	{
 		if (thePtr != smartPtr.thePtr)   
@@ -585,7 +584,6 @@ public:
 	{
 		return thePtr;
 	}
-
 
 	const TYPE& operator*(void) const
 	{
@@ -626,7 +624,6 @@ public:
 protected:
 	TYPE* thePtr;   
 };
-
 
 template <class TYPE> inline bool operator==(const TYPE* optr, const klConstSmartPtr<TYPE>& sp)
 {
@@ -678,14 +675,6 @@ public:
 };
 
 
-
-
-
-
-
-
-
-
 //Moden Intel and AMD CPU's provide high speed counter.
 //The Windows API includes function calls to read the value of this counter and also 
 //the frequency of the counter- ie how many times per second it is counting. 
@@ -700,9 +689,6 @@ class klTimer
 	unsigned long long start;
 	unsigned long long end;
 
-
-	//Ipp64u start;
-	//Ipp64u end;
 public:
 	klTimer()
 	{
@@ -728,11 +714,5 @@ public:
 		return double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);   		
 	}
 };
-
-
-
-
-
-
 
 #endif  //#ifndef __kl_util__

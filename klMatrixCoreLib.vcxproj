@@ -28,6 +28,7 @@
     <ClCompile Include="src\stub.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inc\kl_algorithm_paramters.h" />
     <ClInclude Include="inc\kl_arpack.h" />
     <ClInclude Include="inc\kl_divergence_functions.h" />
     <ClInclude Include="inc\kl_exception.h" />

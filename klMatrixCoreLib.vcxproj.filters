@@ -149,5 +149,8 @@
     <ClInclude Include="inc\kl_stack_walker.h">
       <Filter>inc</Filter>
     </ClInclude>
+    <ClInclude Include="inc\kl_algorithm_paramters.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

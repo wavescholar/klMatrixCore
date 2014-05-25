@@ -677,7 +677,7 @@ void klVSLRound(klVector<double>& v,klVector<double>& ans)
 }
 
 ////vzAdd	Addition of vector elements.  Smart Pointer Version. This design needs to be solidified.  
-//klCDVP klVSLAdd(klCDVP v,klCDVP b, bool inplace=false)
+//klComplexDoubleVectorPtr klVSLAdd(klComplexDoubleVectorPtr v,klComplexDoubleVectorPtr b, bool inplace=false)
 //{
 //	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 //	if(v->getColumns() != b->getColumns() )
@@ -686,7 +686,7 @@ void klVSLRound(klVector<double>& v,klVector<double>& ans)
 //	
 //	if(!inplace)
 //	{
-//		klCDVP ans= new klVector<complex<double>  >  (v->getColumns() );		
+//		klComplexDoubleVectorPtr ans= new klVector<complex<double>  >  (v->getColumns() );		
 //
 //		vzAdd( n,  v->getMemory(),b->getMemory(),ans->getMemory());
 //		return ans;
