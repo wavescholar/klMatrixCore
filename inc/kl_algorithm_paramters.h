@@ -7,6 +7,7 @@
 
 #include <string>
 #include <map>
+#include <ostream>
 #include "kl_matrix.h"
 using namespace std;
 
@@ -68,6 +69,11 @@ public:
 	{
 		return _name;
 	}
+	
+	string getDescription()
+	{
+		return _description;
+	}
 
 private:
 	
@@ -78,6 +84,8 @@ private:
 	klRefCount<klMutex> _parameterValue;
 };
 	
+typedef std::map<std::string, std::map<std::string, klAlgorithmParameter>>::iterator algorithmParameter_itertator;
+
 //This class is derived from if necessary
 class klAlgorithmParameterContainer
 {
@@ -91,9 +99,56 @@ class klAlgorithmParameterContainer
 
 		parameterMap[name]=algorithmParameter;
 
-
 	}
-private:
+
+	void describeAlgorithmParameters(ostream& str)
+	{
+		//parameterMap.begin()
+		//for(algorithmParameter_itertator iterator = parameterMap.begin(); iterator != parameterMap.end(); iterator++) 
+		for(auto iterator = parameterMap.begin(); iterator != parameterMap.end(); iterator++)
+		{
+			string key;
+			klAlgorithmParameter value;
+
+			key = iterator->first;
+			value = iterator->second;
+			str<<key<<"  : TYPE = "<<value.getType()<<" Description = "<<value.getDescription()<<endl;
+
+			klRefCount<klMutex> vauleT = value.getValue();
+
+			switch(value.getType())
+			{
+			case klAlgorithmParameterType::klDoubleMatrixType :
+				{
+					break;
+				}
+			case klAlgorithmParameterType::klDoubleType :
+				{
+					break;
+				}
+			case klAlgorithmParameterType::klDoubleVectorType :
+				{
+					break;
+				}
+			case klAlgorithmParameterType::klIntType :
+				{
+					klRCInt* klrcintp = dynamic_cast(&valueT); 
+					str<<"\t\t Parameter Vaule = "<<klrcintp->intV<<endl;
+					break;
+				}
+			case klAlgorithmParameterType::klStringType :
+				{
+					break;
+				}
+			}
+
+
+
+			
+		}
+	}
+
+protected:
 	map<string,klAlgorithmParameter> parameterMap;
 
 };

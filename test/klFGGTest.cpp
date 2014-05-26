@@ -24,12 +24,27 @@ public:
 		int dimension =2;
 
 		klAlgorithmParameter numPointsP("NumberOfPoints",numPoints);
+		parameterMap["NumberOfPoints"] = numPointsP;
+
 		klAlgorithmParameter numSourcesP("NumberOfSources",numPoints);
-		klAlgorithmParameter numCentersP("numberOfCenters",25);
-    	klAlgorithmParameter dimensionP("Dimension",2);
+		parameterMap["NumberOfSources"]=numSourcesP;
 
+		klAlgorithmParameter numCentersP("NumberOfCenters",25);
+		parameterMap["NumberOfCenters"]=numCentersP;
+			
+    	klAlgorithmParameter dimensionP("Dimension",2);		
+		parameterMap["Dimension"]=dimensionP;
 
+		
 
+	}
+
+	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension)
+	{
+		klAlgorithmParameter numPointsP("NumberOfPoints",numPoints);
+		klAlgorithmParameter numSourcesP("NumberOfSources",numPoints);
+		klAlgorithmParameter numCentersP("numberOfCenters",numCenters);
+    	klAlgorithmParameter dimensionP("Dimension",dimension);		
 	}
 
 public:  //For now.
