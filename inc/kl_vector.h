@@ -1019,7 +1019,6 @@ public:
 typedef klSmartPtr<klRCString >  klStringPtr;
 
 
-
 //For convenience we have short name versions of the smart pointers
 
 typedef klSmartPtr<klVector<double> >  klDoubleVectorPtr;

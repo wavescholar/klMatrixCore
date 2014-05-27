@@ -45,10 +45,30 @@ public:
 	{
 		klRCInt klrci;
 		klrci.intV=intValue;
-		_parameterValue = klrci; //bbcrevisit - make sure this is corret use!
+		_parameterValue = klrci; 
 		_parameterType= klAlgorithmParameterType::klIntType;
 	}
 
+	klAlgorithmParameter(string name, double dValue) : _name(name)
+	{
+		klRCDouble klrcd;
+		klrcd.doubleV = dValue;
+		_parameterValue = klrcd; 
+		_parameterType= klAlgorithmParameterType::klDoubleType;
+	}
+
+	klAlgorithmParameter(string name, klVector<double> kldv) : _name(name)
+	{
+		_parameterValue = kldv; 
+		_parameterType= klAlgorithmParameterType::klDoubleVectorType;
+	}
+
+	klAlgorithmParameter(string name, klMatrix<double> kldm) : _name(name)
+	{
+		_parameterValue = kldm; 
+		_parameterType= klAlgorithmParameterType::klDoubleMatrixType;
+	}
+	
 	void setDescription(string descrption)
 	{
 		_description= descrption;
@@ -89,6 +109,13 @@ typedef std::map<std::string, std::map<std::string, klAlgorithmParameter>>::iter
 //This class is derived from if necessary
 class klAlgorithmParameterContainer
 {
+public:
+
+	klAlgorithmParameterContainer()
+	{
+
+	}
+
 	void add(klAlgorithmParameter algorithmParameter)
 	{
 
@@ -114,42 +141,91 @@ class klAlgorithmParameterContainer
 			value = iterator->second;
 			str<<key<<"  : TYPE = "<<value.getType()<<" Description = "<<value.getDescription()<<endl;
 
-			klRefCount<klMutex> vauleT = value.getValue();
+			klRefCount<klMutex> valueT = value.getValue();
+			void* valuePV= &valueT;
 
 			switch(value.getType())
 			{
 			case klAlgorithmParameterType::klDoubleMatrixType :
 				{
+					klMatrix<double>* kldm = static_cast<klMatrix<double>* >(valuePV); 
+					str<<"   Parameter Vaule = "<<kldm<<endl;
 					break;
 				}
 			case klAlgorithmParameterType::klDoubleType :
-				{
+				{					
+					klRCDouble* klrcdouble = static_cast<klRCDouble*>(valuePV); 
+					str<<"   Parameter Vaule = "<<klrcdouble->doubleV<<endl;
 					break;
 				}
 			case klAlgorithmParameterType::klDoubleVectorType :
 				{
+					klVector<double>* kldv = static_cast<klVector<double>*>(valuePV); 
+					str<<"   Parameter Vaule = "<<kldv<<endl;
 					break;
 				}
 			case klAlgorithmParameterType::klIntType :
 				{
-					klRCInt* klrcintp = dynamic_cast(&valueT); 
-					str<<"\t\t Parameter Vaule = "<<klrcintp->intV<<endl;
+					klRCInt* klrcintp = static_cast<klRCInt*>(valuePV); 
+					str<<"   Parameter Vaule = "<<klrcintp->intV<<endl;
 					break;
 				}
 			case klAlgorithmParameterType::klStringType :
 				{
+					klRCString* klrcstring = static_cast<klRCString*>(valuePV); 
+					str<<"   Parameter Vaule = "<<klrcstring->stringV<<endl;
 					break;
 				}
-			}
-
-
-
-			
+			}			
 		}
 	}
 
 protected:
 	map<string,klAlgorithmParameter> parameterMap;
+
+};
+
+
+class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
+{
+public:
+	klFastGaussAlgorithmParameters()
+	{
+		unsigned int numPoints =10000;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 25;
+		int dimension =2;
+
+		klAlgorithmParameter numPointsP("NumberOfPoints",(__int64)numPoints);
+		parameterMap["NumberOfPoints"] = numPointsP;
+
+		klAlgorithmParameter numSourcesP("NumberOfSources",(__int64)numPoints);
+		parameterMap["NumberOfSources"]=numSourcesP;
+
+		klAlgorithmParameter numCentersP("NumberOfCenters",(__int64)25);
+		parameterMap["NumberOfCenters"]=numCentersP;
+			
+    	klAlgorithmParameter dimensionP("Dimension",(__int64)2);		
+		parameterMap["Dimension"]=dimensionP;
+		
+		describeAlgorithmParameters(std::cout);
+
+	}
+
+	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension)
+	{
+		klAlgorithmParameter numPointsP("NumberOfPoints",(__int64)numPoints);
+		klAlgorithmParameter numSourcesP("NumberOfSources",(__int64)numPoints);
+		klAlgorithmParameter numCentersP("numberOfCenters",(__int64)numCenters);
+    	klAlgorithmParameter dimensionP("Dimension",(__int64)dimension);		
+	}
+
+public:  //For now.
+
+	unsigned int numPoints;
+	unsigned int numSources;
+	unsigned int numCenters ;
+	int dimension ;
 
 };
 

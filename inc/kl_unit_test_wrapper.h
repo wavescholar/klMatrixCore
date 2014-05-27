@@ -77,6 +77,11 @@ public:
 	{
 		_n = n;
 	}
+
+	void setAlgorithmParameters(klAlgorithmParameterContainer algorithmParamters)
+	{
+		_algorithmParamters=algorithmParamters;
+	}
 	
 public:
 	void MemoryPreCheck()
@@ -108,7 +113,7 @@ private:
 	ofstream& stream;
 	__int64 _n;  //Dimension (or some measure of it) for the test problem
 
-	klAlgorithmParameterContainer algorithmParamters; 
+	klAlgorithmParameterContainer _algorithmParamters; 
 
 	double _lastRunTime;
 
@@ -244,7 +249,7 @@ public:
 
 	}
 
-	void runTest(void (*pf)(ofstream &,const klAlgorithmParameterContainer&))
+	void runTest(void (*pf)(ofstream &, klAlgorithmParameterContainer&))
 	{
 		try
 		{
@@ -260,7 +265,7 @@ public:
 			QueryPerformanceFrequency(freq);
 			
 			QueryPerformanceCounter(prefCountStart);
-			pf(stream, algorithmParamters);
+			pf(stream, _algorithmParamters);
 			QueryPerformanceCounter(prefCountEnd);
 
 			double runtime =double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);
@@ -307,7 +312,6 @@ public:
 		}
 
 	}
-
 };
 
 

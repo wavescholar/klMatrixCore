@@ -13,52 +13,10 @@
 #include "kl_algorithm_paramters.h"
 extern const char* basefilename;
 
-class klFastGaussAlgorithmParameters : klAlgorithmParameterContainer
+void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 {
-public:
-	klFastGaussAlgorithmParameters()
-	{
-		unsigned int numPoints =10000;
-		unsigned int numSources=numPoints;
-		unsigned int numCenters = 25;
-		int dimension =2;
 
-		klAlgorithmParameter numPointsP("NumberOfPoints",numPoints);
-		parameterMap["NumberOfPoints"] = numPointsP;
-
-		klAlgorithmParameter numSourcesP("NumberOfSources",numPoints);
-		parameterMap["NumberOfSources"]=numSourcesP;
-
-		klAlgorithmParameter numCentersP("NumberOfCenters",25);
-		parameterMap["NumberOfCenters"]=numCentersP;
-			
-    	klAlgorithmParameter dimensionP("Dimension",2);		
-		parameterMap["Dimension"]=dimensionP;
-
-		
-
-	}
-
-	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension)
-	{
-		klAlgorithmParameter numPointsP("NumberOfPoints",numPoints);
-		klAlgorithmParameter numSourcesP("NumberOfSources",numPoints);
-		klAlgorithmParameter numCentersP("numberOfCenters",numCenters);
-    	klAlgorithmParameter dimensionP("Dimension",dimension);		
-	}
-
-public:  //For now.
-
-	unsigned int numPoints;
-	unsigned int numSources;
-	unsigned int numCenters ;
-	int dimension ;
-
-};
-
-
-void klFGTTest(ofstream &_tex,const klAlgorithmParameterContainer& klapc )
-{
+	klFastGaussAlgorithmParameters* klfgp=static_cast<klFastGaussAlgorithmParameters*>(&klapc);
 
 	unsigned int numPoints = 10000;
 	unsigned int numSources=numPoints;

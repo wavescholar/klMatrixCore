@@ -68,7 +68,8 @@ void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
 void testMatrixNorms(ofstream &_tex,__int64 &n);
 #include "kl_point_cloud_generator.h"
 
-void klFGTTest(ofstream &_tex,const klAlgorithmParameterContainer& klapc );
+class klFastGaussAlgorithmParameters;
+void klFGTTest(ofstream &_tex, klAlgorithmParameterContainer& klapc );
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -164,6 +165,8 @@ void klIntegrationTest(bool useIntelMemMgr)
 	
 	makeLatexSection("Fast Gauss Transform",_tex);
 	klutw.setDimension(2);
+	klFastGaussAlgorithmParameters klfg;
+	klutw.setAlgorithmParameters(klfg);
 	klutw.runTest(klFGTTest);
 
 	klutw.runTest( testPointCloudAndLatexPlots);
