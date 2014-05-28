@@ -18,6 +18,10 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 
 	klFastGaussAlgorithmParameters* klfgp=static_cast<klFastGaussAlgorithmParameters*>(&klapc);
 
+	klfgp->describeAlgorithmParameters(std::cout);
+	
+
+
 	unsigned int numPoints = 10000;
 	unsigned int numSources=numPoints;
 	unsigned int numCenters = 25;

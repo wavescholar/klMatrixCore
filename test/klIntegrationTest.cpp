@@ -289,8 +289,7 @@ void VerifyWingerLaw(ofstream &_tex,__int64 &n)
 	{
      n=512;
 	}
-
-
+	
 
 	_tex<<"Dimension $n = "<<n<<"$"<<endl<<endl;
 	

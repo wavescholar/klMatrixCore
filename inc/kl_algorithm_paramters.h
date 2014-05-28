@@ -15,19 +15,19 @@ using namespace std;
 
 typedef enum klAlgorithmParameterType { klIntType=1, klDoubleType=2, klStringType=3, klDoubleVectorType=4, klDoubleMatrixType=5};
 
-//This needs work - I'd like to avoid typecast
-//This may be a place to use ref counted types.
-
-class klAlgorithmParameterValue
-{
-public:
-
-	klMatrix<double> klmd;
-	klVector<double> klvd;
-	__int64 iv;
-	double dv;
-	string sv;
-};
+////This needs work - I'd like to avoid typecast
+////This may be a place to use ref counted types.
+//
+//class klAlgorithmParameterValue
+//{
+//public:
+//
+//	klMatrix<double> klmd;
+//	klVector<double> klvd;
+//	__int64 iv;
+//	double dv;
+//	string sv;
+//};
 
 class klAlgorithmParameter
 {
@@ -57,6 +57,14 @@ public:
 		_parameterType= klAlgorithmParameterType::klDoubleType;
 	}
 
+	klAlgorithmParameter(string name, string sValue) : _name(name)
+	{
+		klRCString klrcs;
+		klrcs.stringV = sValue;
+		_parameterValue = klrcs; 
+		_parameterType= klAlgorithmParameterType::klDoubleType;
+	}
+
 	klAlgorithmParameter(string name, klVector<double> kldv) : _name(name)
 	{
 		_parameterValue = kldv; 
@@ -80,6 +88,51 @@ public:
 		return _parameterValue;
 	}
 
+	string getStringValue(string name)
+	{
+		if( _parameterType != klAlgorithmParameterType::klStringType)
+			throw klError(name + "is not a klAlgorithmParameterType::klStringType");
+		klRCString* klrcs = static_cast<klRCString*>(&_parameterValue);
+		string value =klrcs->stringV;
+		return value;
+	}
+
+	double getDoubleValue(string name)
+	{
+		if( _parameterType != klAlgorithmParameterType::klDoubleType)
+			throw klError(name + "is not a klAlgorithmParameterType::klDoubleType");
+		klRCDouble* klrcd = static_cast<klRCDouble*>(&_parameterValue);
+		double value =klrcd->doubleV;
+		return value;
+	}
+
+	__int64 getIntValue(string name)
+	{
+		if( _parameterType != klAlgorithmParameterType::klIntType)
+			throw klError(name + "is not a klAlgorithmParameterType::klIntType");
+		klRCInt* klrci = static_cast<klRCInt*>(&_parameterValue);
+		double value =klrci->intV;
+		return value;
+	}
+
+	klVector<double> getDoubleVectortValue(string name)
+	{
+		if( _parameterType != klAlgorithmParameterType::klDoubleVectorType)
+			throw klError(name + "is not a klAlgorithmParameterType::klDoubleVectorType");
+		klVector<double>* kldv = static_cast<klVector<double> *>(&_parameterValue);
+		klVector<double> value =*kldv;
+		return value;
+	}
+
+	klMatrix<double> getDoubleMatrixValue(string name)
+	{
+		if( _parameterType != klAlgorithmParameterType::klDoubleMatrixType)
+			throw klError(name + "is not a klAlgorithmParameterType::klDoubleMatrixType");
+		klMatrix<double>* kldm = static_cast<klMatrix<double> *>(&_parameterValue);
+		klMatrix<double> value =*kldm;
+		return value;
+	}
+
 	klAlgorithmParameterType getType()
 	{
 		return _parameterType;
@@ -100,7 +153,6 @@ private:
 	string _name;
 	string _description;
 	klAlgorithmParameterType _parameterType;
-	//klAlgorithmParameterValue parameterVaule;
 	klRefCount<klMutex> _parameterValue;
 };
 	
@@ -128,6 +180,7 @@ public:
 
 	}
 
+		
 	void describeAlgorithmParameters(ostream& str)
 	{
 		//parameterMap.begin()
@@ -180,11 +233,12 @@ public:
 		}
 	}
 
+
+
 protected:
 	map<string,klAlgorithmParameter> parameterMap;
 
 };
-
 
 class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
 {
