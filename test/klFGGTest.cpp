@@ -20,12 +20,15 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 
 	klfgp->describeAlgorithmParameters(std::cout);
 	
+	klAlgorithmParameter numPointsP=klfgp->getParameter("NumberOfPoints");
+	klAlgorithmParameter numSourcesP=klfgp->getParameter("NumberOfSources");
+	klAlgorithmParameter numCentersP=klfgp->getParameter("NumberOfCenters");
+	klAlgorithmParameter dimensionP=klfgp->getParameter("Dimension");
 
-
-	unsigned int numPoints = 10000;
-	unsigned int numSources=numPoints;
-	unsigned int numCenters = 25;
-	int dimension =2;
+	unsigned int numPoints = numPointsP.getIntValue();
+	unsigned int numSources= numSourcesP.getIntValue();
+	unsigned int numCenters =numCentersP.getIntValue();
+	int dimension =dimensionP.getIntValue();
 
  
 	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale

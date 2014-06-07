@@ -157,21 +157,27 @@ void klIntegrationTest(bool useIntelMemMgr)
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
+	makeLatexSection("Fast Gauss Transform",_tex);
+	klFastGaussAlgorithmParameters klfgp;
+	klutw.setAlgorithmParameters(klfgp);
+	klutw.runTest(klFGTTest);
+	
+	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 20000)) ;
+	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 10000)) ;;
+	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 25*25)) ;;
+	klfgp.setParameter(klAlgorithmParameter("Dimension",(__int64) 3)) ;
+
+	klutw.runTest(klFGTTest);
+
 	klutw.runTest(testMatrixNorms);
 
 	klutw.runTest(IteratedExponentialFiltering);
 
 	klutw.runTest( testKlBinaryOI);
 	
-	makeLatexSection("Fast Gauss Transform",_tex);
-	klutw.setDimension(2);
-	klFastGaussAlgorithmParameters klfg;
-	klutw.setAlgorithmParameters(klfg);
-	klutw.runTest(klFGTTest);
-
 	klutw.runTest( testPointCloudAndLatexPlots);
 
-	makeLatexSection("Matrix Quick Check <double>",_tex);
+	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
 
 	makeLatexSection("Matrix Quick Check <float>",_tex);

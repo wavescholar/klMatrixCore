@@ -37,14 +37,11 @@ public:
 	{
 	}
 
-	klAlgorithmParameter(string name) : _name(name)
-	{
-	}
-
 	klAlgorithmParameter(string name, __int64 intValue) : _name(name)
 	{
 		klRCInt klrci;
 		klrci.intV=intValue;
+		klrci.addRef();
 		_parameterValue = klrci; 
 		_parameterType= klAlgorithmParameterType::klIntType;
 	}
@@ -88,46 +85,46 @@ public:
 		return _parameterValue;
 	}
 
-	string getStringValue(string name)
+	string getStringValue()
 	{
 		if( _parameterType != klAlgorithmParameterType::klStringType)
-			throw klError(name + "is not a klAlgorithmParameterType::klStringType");
+			throw klError(_name + "is not a klAlgorithmParameterType::klStringType");
 		klRCString* klrcs = static_cast<klRCString*>(&_parameterValue);
 		string value =klrcs->stringV;
 		return value;
 	}
 
-	double getDoubleValue(string name)
+	double getDoubleValue()
 	{
 		if( _parameterType != klAlgorithmParameterType::klDoubleType)
-			throw klError(name + "is not a klAlgorithmParameterType::klDoubleType");
+			throw klError(_name + "is not a klAlgorithmParameterType::klDoubleType");
 		klRCDouble* klrcd = static_cast<klRCDouble*>(&_parameterValue);
 		double value =klrcd->doubleV;
 		return value;
 	}
 
-	__int64 getIntValue(string name)
+	__int64 getIntValue()
 	{
 		if( _parameterType != klAlgorithmParameterType::klIntType)
-			throw klError(name + "is not a klAlgorithmParameterType::klIntType");
+			throw klError(_name + "is not a klAlgorithmParameterType::klIntType");
 		klRCInt* klrci = static_cast<klRCInt*>(&_parameterValue);
 		double value =klrci->intV;
 		return value;
 	}
 
-	klVector<double> getDoubleVectortValue(string name)
+	klVector<double> getDoubleVectortValue()
 	{
 		if( _parameterType != klAlgorithmParameterType::klDoubleVectorType)
-			throw klError(name + "is not a klAlgorithmParameterType::klDoubleVectorType");
+			throw klError(_name + "is not a klAlgorithmParameterType::klDoubleVectorType");
 		klVector<double>* kldv = static_cast<klVector<double> *>(&_parameterValue);
 		klVector<double> value =*kldv;
 		return value;
 	}
 
-	klMatrix<double> getDoubleMatrixValue(string name)
+	klMatrix<double> getDoubleMatrixValue()
 	{
 		if( _parameterType != klAlgorithmParameterType::klDoubleMatrixType)
-			throw klError(name + "is not a klAlgorithmParameterType::klDoubleMatrixType");
+			throw klError(_name + "is not a klAlgorithmParameterType::klDoubleMatrixType");
 		klMatrix<double>* kldm = static_cast<klMatrix<double> *>(&_parameterValue);
 		klMatrix<double> value =*kldm;
 		return value;
@@ -179,8 +176,7 @@ public:
 		parameterMap[name]=algorithmParameter;
 
 	}
-
-		
+			
 	void describeAlgorithmParameters(ostream& str)
 	{
 		//parameterMap.begin()
@@ -232,7 +228,16 @@ public:
 			}			
 		}
 	}
+	
+	klAlgorithmParameter getParameter(string parameter)
+	{
+		return parameterMap[parameter];
+	}
 
+	void setParameter(klAlgorithmParameter parameterValue)
+	{
+		parameterMap[parameterValue.getName()]= parameterValue;
+	}
 
 
 protected:
@@ -268,13 +273,18 @@ public:
 
 	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension)
 	{
-		klAlgorithmParameter numPointsP("NumberOfPoints",(__int64)numPoints);
+		klAlgorithmParameter numPointsP("NumberOfPoints",(__int64)numPoints);		
 		klAlgorithmParameter numSourcesP("NumberOfSources",(__int64)numPoints);
 		klAlgorithmParameter numCentersP("numberOfCenters",(__int64)numCenters);
-    	klAlgorithmParameter dimensionP("Dimension",(__int64)dimension);		
+    	klAlgorithmParameter dimensionP("Dimension",(__int64)dimension);
+
+		parameterMap["NumberOfPoints"] = numPointsP;
+		parameterMap["NumberOfSources"]=numSourcesP;
+		parameterMap["NumberOfCenters"]=numCentersP;
+		parameterMap["Dimension"]=dimensionP;
 	}
 
-public:  //For now.
+private:  //For now.
 
 	unsigned int numPoints;
 	unsigned int numSources;
