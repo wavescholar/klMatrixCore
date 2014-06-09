@@ -998,6 +998,17 @@ inline klVector<complex<double> >  klApplyLog( const klVector<complex<double> > 
 class klRCInt :public klRefCount<klMutex>
 {
 public:
+	klRCInt(__int64 value) : intV(value)
+	{
+
+	}
+
+	__int64 getValue()
+	{
+		return intV;
+	}
+	
+private:
 
 	__int64 intV;	
 };
@@ -1005,7 +1016,16 @@ typedef klSmartPtr<klRCInt >  klIntPtr;
 
 class klRCDouble:public klRefCount<klMutex>
 {
-public:
+public: 
+
+	klRCDouble(double value) : doubleV(value)
+	{
+	}
+	double getValue()
+	{
+		return doubleV;
+	}
+private:
 	double doubleV;
 };
 typedef klSmartPtr<klRCDouble >  klDoublePtr;
@@ -1013,7 +1033,19 @@ typedef klSmartPtr<klRCDouble >  klDoublePtr;
 
 class klRCString:public klRefCount<klMutex>
 {
-public:
+public: 
+	klRCString(string value) : stringV(value)
+	{
+	}
+
+	std::string getValue()
+	{
+		return stringV;
+	}
+
+
+
+private:
 	std::string stringV;
 };
 typedef klSmartPtr<klRCString >  klStringPtr;

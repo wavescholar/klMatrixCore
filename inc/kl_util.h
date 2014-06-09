@@ -55,6 +55,7 @@ private:
 };
 
 
+//Base class for reference counted objects.  Used with klSmartPtr
 template <class TYPE_MUTEX>
 class klRefCount
 {
@@ -509,7 +510,7 @@ protected:
 // attempt to call "delete" on that object.
 //
 // Note that klConstSmartPtr is a base class for klSmartPtr
-// this is so that proper constness symantics can be followed.  Just
+// this is so that proper const semantics can be followed.  Just
 // like a char * can be converted to a const char * a klSmartPtr<foo>
 // can be converted to a klConstSmartPtr<foo> (the constness refers to
 // the object being pointed at not the klSmartPtr object).

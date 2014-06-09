@@ -154,19 +154,25 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	klVector<float> mfa=b[2];
 	cout<<b*mfa;
 	cout<<mfa;
-	//string _filename="moo.txt";
-	//ofstream _fileostream(_filename.c_str() );
-	//_fileostream<<b<<endl;
-	//_fileostream.close();
+	//-----------------------------
+	string _filename="moo.txt";
+	ofstream _fileostream(_filename.c_str() );
+	_fileostream<<b<<endl;
+	_fileostream.close();
+	//-----------------------------
+	
 	cout<<b;
 	cout<<b.getColumn(1);
 	klVector<float> sd(3);
 	klMatrix<float> sb(3,3);
 	flushall();
-	/*fstream _fileistream;
+	//-----------------------------
+	fstream _fileistream;
 	_fileistream.open("moo.txt");
 	_fileistream>>sb;
-	cout<<sb;*/
+	cout<<sb;
+	//-----------------------------
+	
 	klMatrix<float>  as(memory,3,3);
 
 	as[2][2]=22;
@@ -267,18 +273,13 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	delete memory;
 	delete pi;
 	delete pi2;
-
-
-
-
 }
 
 #include "kl_random_number_generator.h"
 template<class type> void testKLDescriptiveStatistics(ofstream &FS1,__int64 &n)
 {
 	char* arg=new char[1024];
-
-
+	
 #define __D1 65536
 
 	type* v1=new type[__D1];
@@ -314,9 +315,6 @@ template<class type> void testKLDescriptiveStatistics(ofstream &FS1,__int64 &n)
 	delete arg;
 
 	flushall();
-
-
-
 }
 
 #include "kl_time_series.h"

@@ -15,7 +15,6 @@ extern const char* basefilename;
 
 void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 {
-
 	klFastGaussAlgorithmParameters* klfgp=static_cast<klFastGaussAlgorithmParameters*>(&klapc);
 
 	klfgp->describeAlgorithmParameters(std::cout);
@@ -49,7 +48,9 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	title<<"Gaussian Mixture Cluster Centers";
 	 color="'k*'";
 	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	
 
+	//Add these to the algorithm parameters.
 	//Source Weights
 	klVector<double> q(numPoints);
 	klUniformRV<double> uniform(0,1);

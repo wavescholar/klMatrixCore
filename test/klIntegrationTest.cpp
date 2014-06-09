@@ -21,7 +21,6 @@
 #include "kl_matlab_dependent_unit_tests.h"
 #include "kl_matlab_iface.h"
 #include "kl_arpack.h"
-//#include "kl_fast_gauss_transform.h"
 #include "kl_latex_helper_fns.h"
 
 const char* basefilename="D:\\klMatrixCore\\output\\"; 
@@ -155,17 +154,22 @@ void klIntegrationTest(bool useIntelMemMgr)
 	{
 		klMemMgr*  mgr = NULL;
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
-	}
+	}	
+	
+	makeLatexSection("Matrix Quick Check <double>",_tex),
+	klutw.runTest(MatrixOpsQuickCheck<double>);
 
 	makeLatexSection("Fast Gauss Transform",_tex);
 	klFastGaussAlgorithmParameters klfgp;
 	klutw.setAlgorithmParameters(klfgp);
 	klutw.runTest(klFGTTest);
 	
-	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 20000)) ;
+	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 10000)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 10000)) ;;
-	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 25*25)) ;;
+	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 20)) ;;
 	klfgp.setParameter(klAlgorithmParameter("Dimension",(__int64) 3)) ;
+
+	klutw.setAlgorithmParameters(klfgp);
 
 	klutw.runTest(klFGTTest);
 
@@ -177,8 +181,7 @@ void klIntegrationTest(bool useIntelMemMgr)
 	
 	klutw.runTest( testPointCloudAndLatexPlots);
 
-	makeLatexSection("Matrix Quick Check <double>",_tex),
-	klutw.runTest(MatrixOpsQuickCheck<double>);
+
 
 	makeLatexSection("Matrix Quick Check <float>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<float>);

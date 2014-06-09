@@ -110,7 +110,7 @@ public:
 #ifdef _DEBUG
 		  __int64 byteCount = _row*_col * sizeof(TYPE);
 		  globalKlMatrixCopyConstructorBytesCount +=byteCount;
-		  cerr<<"klMAtrix(klMatrix<TYPE>& src) call count = "<<globalKlMatrixCopyConstructorCallCount++<<" Bytes Count "<<globalKlMatrixCopyConstructorBytesCount<<endl; 
+		  cerr<<"klMatrix(klMatrix<TYPE>& src) call count = "<<globalKlMatrixCopyConstructorCallCount++<<" Bytes Count "<<globalKlMatrixCopyConstructorBytesCount<<endl; 
 #endif
 	}
 
@@ -123,7 +123,7 @@ public:
 #ifdef _DEBUG
 		  __int64 byteCount = _row*_col * sizeof(TYPE);
 		  globalKlMatrixMoveConstructorBytesCount +=byteCount;
-		  cerr<<"klMAtrix(klMatrix<TYPE>&& src) call count = "<<globalKlMatrixMoveConstructorCallCount++<<" Bytes Count "<<globalKlMatrixMoveConstructorBytesCount<<endl; 
+		  cerr<<"klMatrix(klMatrix<TYPE>&& src) call count = "<<globalKlMatrixMoveConstructorCallCount++<<" Bytes Count "<<globalKlMatrixMoveConstructorBytesCount<<endl; 
 #endif
 
 		src._vectors=NULL;
@@ -466,12 +466,12 @@ public:
 	klMatrix<TYPE> getSubBlock(__int64 i,__int64 j,__int64 k,__int64 l)
 	{
 		//First Verify the indices are in range
-		if(k-i<0 || l-j<0 || k>_row || l>_col)
+		if(i<0|| j<0|| k-i<=0 || l-j<=0 || k>_row || l>_col)
 			throw "klMatrix<TYPE> klMatrix<TYPE>::getSubBlock ERROR index out of bounds.";
 		klMatrix<TYPE> ret(k-i+1,l-j+1);
 		__int64 n,m;
 		for(n=i;n<=k;n++)
-			for(m=j;m<l;m++)
+			for(m=j;m<=l;m++)
 				ret[n-i][m-j]=(_vectors+m)->operator[](n);
 
 		return ret;
@@ -972,7 +972,7 @@ template< > klMatrix<double> klMatrix<double>::operator*(klMatrix<double> a) con
 }
 
 //Apply a univariate function to a klVector
-//These are some commone ones available from math.h
+//Some commone ones available from math.h;
 //double  __cdecl acos(double);
 //double  __cdecl asin(double);
 //double  __cdecl atan(double);
@@ -1531,12 +1531,15 @@ template <class TYPE> static ostream& operator<<(ostream& str, const klMatrix<TY
 }
 
 //klMatrix stream io.  Operator >> override for klMatrix class
-template <class TYPE> static inline istream& operator>>(istream& c, klMatrix<TYPE> & v) {
+template <class TYPE> static inline istream& operator>>(istream& c, klMatrix<TYPE> & v) 
+{
 	char ch;
 	int j=0;
-	do{
+	do
+	{
 		int i=0;
-		do {
+		do
+		{
 			TYPE d;
 			c >> d;
 			v[j][i]=d;
@@ -1755,6 +1758,144 @@ public:
 			throw err;
 		}
 	}
+	
+	//Same methods but they write to an open file handle.
+	static inline void WriteWinx64( klMatrix<double>& out, FILE* fd)
+	{
+		try
+		{
+			if(fd==NULL)
+				throw "Bad file handle in klBinaryIO::WriteWinx64( klMatrix<double>& out, string fileName)"; 
+			__int64 ebuf[2]={0,0};
+			ebuf[0]=out.getRows();
+			ebuf[1]=out.getColumns();
+			fwrite(ebuf, sizeof(__int64),2,fd);
+			void* writeP = out.getMemory();
+			fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
+			fclose(fd);
+		}
+		catch(...)
+		{
+			klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+			if(fd)
+			{
+				try
+				{
+					fclose(fd);
+				}
+				catch(...)
+				{
+				}
+			}
+			throw err;
+		}	
+	}
+
+	static inline void WriteWinx64(klVector<double>& out, FILE* fd)
+	{
+		try
+		{
+			if (fd ==NULL)
+				throw "Bad file handle in klBinaryIO::WriteWinx64(klVector<double>& out, string fileName)";
+			__int64 ebuf[1]={0};
+			ebuf[0]=out.getColumns();
+			fwrite(ebuf, sizeof(__int64),1,fd);
+			void* writeP = out.getMemory();
+			fwrite(writeP,sizeof(double),ebuf[0],fd);
+			fclose(fd);
+		}
+		catch(...)
+		{
+			klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+			if(fd)
+			{
+				try
+				{
+					fclose(fd);
+				}
+				catch(...)
+				{
+				}
+			}
+			throw err;
+		}	}
+
+	static inline void MatReadWinx64(FILE* fd, klMatrix<double>& klmd )
+	{
+		try
+		{
+			if (fd==NULL)
+				throw "Bad file handle in klBinaryIO::MatReadWinx64(string fileName, klMatrix<double>& klmd )";
+			__int64 ebuf[2]={0,0};
+
+			fread(ebuf, sizeof(__int64),2,fd);
+
+			if(ebuf[0]>0 && ebuf[1]>0)
+			{
+				if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
+					throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
+				void* readP = klmd.getMemory();
+				fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+			}
+			fclose(fd);
+		}
+		catch(...)
+		{
+			klError err(" klMatrix<double> klFastReadWinx64(string fileName) error reading or allocating");
+			if(fd)
+			{
+				try
+				{
+					fclose(fd);
+				}
+				catch(...)
+				{
+				}
+			}
+			throw err;
+		}
+
+	}
+
+	static inline void VecReadWinx64(FILE* fd,klVector<double>& klvd)
+	{
+
+		try
+		{
+			if(fd==NULL)
+				throw "Bad file handle in klBinaryIO::VecReadWinx64(string fileName,klVector<double>& klvd)";
+			__int64 ebuf[1]={0};
+
+			fread(ebuf, sizeof(__int64),1,fd);
+
+			if(ebuf[0]>0)
+			{
+				if( klvd.getColumns() !=ebuf[0])
+					throw "In static inline void VecReadWinx64(string fileName,klVector<double>& klvd) (klvd.getColumns() !=ebuf[0]) is false"; 
+
+				void* readP = klvd.getMemory();
+				fread(readP,sizeof(double),ebuf[0],fd);
+			}
+			fclose(fd);
+		}
+		catch(...)
+		{
+			klError err(" klVector<double> VecReadWinx64(string fileName) error reading or allocating");
+			if(fd)
+			{
+				try
+				{
+					fclose(fd);
+				}
+				catch(...)
+				{
+				}
+			}
+
+			throw err;
+		}
+	}
+
 
 };
 
