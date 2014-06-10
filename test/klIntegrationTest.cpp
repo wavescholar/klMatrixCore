@@ -104,6 +104,8 @@ void klIntegrationTest(bool useIntelMemMgr)
 	sprintf(coutFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 	sprintf(sysInfoFile,"%skl_cout%s.txt",basefilename,testRunDateTime);
 
+	string baseFileNameString(basefilename);
+
 	FILE *stream;
 
 #ifndef _DEBUG
@@ -161,6 +163,7 @@ void klIntegrationTest(bool useIntelMemMgr)
 
 	makeLatexSection("Fast Gauss Transform",_tex);
 	klFastGaussAlgorithmParameters klfgp;
+	klfgp.serialize(baseFileNameString +"klFastGaussAlgorithmParameters_2D.klap");
 	klutw.setAlgorithmParameters(klfgp);
 	klutw.runTest(klFGTTest);
 	
@@ -168,6 +171,8 @@ void klIntegrationTest(bool useIntelMemMgr)
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 10000)) ;;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 20)) ;;
 	klfgp.setParameter(klAlgorithmParameter("Dimension",(__int64) 3)) ;
+
+	klfgp.serialize(baseFileNameString +"klFastGaussAlgorithmParameters_3D.klap");
 
 	klutw.setAlgorithmParameters(klfgp);
 

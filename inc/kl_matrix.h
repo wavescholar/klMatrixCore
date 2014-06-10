@@ -1512,7 +1512,7 @@ inline void maxV(const klMatrix<double>& X,klVector<double>& maxVals ,bool rowMi
 
 
 //klMatrix stream io.  Operator <<  override for klMatrix class
-template <class TYPE> static ostream& operator<<(ostream& str, const klMatrix<TYPE>& v) {
+template <class TYPE> static ostream& operator<<(ostream& str , const klMatrix<TYPE>& v) {
 	int i = v.getRows();
 	int k = v.getColumns();
 	for (int l=0;l<i;l++)

@@ -15,6 +15,8 @@ extern const char* basefilename;
 
 void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 {
+	//This test will produce plots with either 2 or three dimensional data
+
 	klFastGaussAlgorithmParameters* klfgp=static_cast<klFastGaussAlgorithmParameters*>(&klapc);
 
 	klfgp->describeAlgorithmParameters(std::cout);
@@ -28,8 +30,7 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	unsigned int numSources= numSourcesP.getIntValue();
 	unsigned int numCenters =numCentersP.getIntValue();
 	int dimension =dimensionP.getIntValue();
-
- 
+	 
 	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
 	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /1250.0f);
 
@@ -40,15 +41,19 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	fileName<<"GaussianMixture_"<<numCenters<<"_Centers";
 	title<<"Gaussian Mixture";
 	char* color="'c.'";
-	LatexInsert2DScatterPlot(X.getData().getColumn(0),X.getData().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-	
+	if(dimension==2)
+		LatexInsert2DScatterPlot(X.getData().getColumn(0),X.getData().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+	if(dimension==3)
+		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
 	fileName.str("");fileName.clear();
 	title.str(""); title.clear();
 	fileName<<"GaussianMixture_ClusterCenters"<<numCenters<<"_Centers";
 	title<<"Gaussian Mixture Cluster Centers";
-	 color="'k*'";
-	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	
+	color="'k*'";
+	if(dimension==2)	
+		LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	if(dimension==3)
+		LatexInsert3DPlot(X.getClusterCenters(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
 
 	//Add these to the algorithm parameters.
 	//Source Weights
@@ -103,16 +108,24 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	klMatrix<double> clusterCenters(numCenters,dimension);
 
 	KCC.ComputeClusterCenters(numCenters,clusterCenters.getMemory(),kCenterClusterLabels.getMemory(),clusterRadii.getMemory() ) ;
-	
-	{		
-		fileName.str("");fileName.clear();
-		title.str(""); title.clear();
-		fileName<<"KCenterClusterMemberships_"<<numCenters<<"_Centers";
-		title<<"KCenter Cluster Memberships";
+				
+	fileName.str("");fileName.clear();
+	title.str(""); title.clear();
+	fileName<<"KCenterClusterMemberships_"<<numCenters<<"_Centers";
+	title<<"KCenter Cluster Memberships";
+	if(dimension==2)
+	{
+	char* color="'k*'";
+	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+	color="'b+'";
+	LatexInsert2DScatterPlot(clusterCenters.getColumn(0),clusterCenters.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+	}
+	if(dimension==3)
+	{
 		char* color="'k*'";
-		LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
+		LatexInsert3DPlot(X.getClusterCenters(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
 		color="'b+'";
-		LatexInsert2DScatterPlot(clusterCenters.getColumn(0),clusterCenters.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
+		LatexInsert3DPlot(clusterCenters,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
 	}
 	
 	double MaxClusterRadius =KCC.MaxClusterRadius;
