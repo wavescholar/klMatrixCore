@@ -185,6 +185,7 @@ public:
 		// eigenvectors of the covariance matrix. 
 		klMatrix<TYPE> lociOfContantProbability(double dx)
 		{
+			//bbctodo
 			return klMatrix(0,0);
 		}
 		

@@ -5,7 +5,7 @@
 #include "kl_latex_helper_fns.h"
 #include <ostream>
 #include <sstream>
-extern const char* basefilename;
+extern char* basefilename;
 
 void testAddVSL(ofstream &_tex,__int64 &n);
 void testAdd(ofstream &_tex,__int64 &n);

@@ -11,7 +11,7 @@
 #include <ostream>
 #include <sstream>
 #include "kl_algorithm_paramters.h"
-extern const char* basefilename;
+extern char* basefilename;
 
 void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 {
@@ -26,13 +26,16 @@ void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	klAlgorithmParameter numCentersP=klfgp->getParameter("NumberOfCenters");
 	klAlgorithmParameter dimensionP=klfgp->getParameter("Dimension");
 
+	klAlgorithmParameter scaleP=klfgp->getParameter("Scale");
+	
 	unsigned int numPoints = numPointsP.getIntValue();
 	unsigned int numSources= numSourcesP.getIntValue();
 	unsigned int numCenters =numCentersP.getIntValue();
 	int dimension =dimensionP.getIntValue();
+	double scale =scaleP.getDoubleValue();
 	 
 	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
-	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,1.0f /1250.0f);
+	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,scale);
 
 	stringstream fileName;stringstream title;
 	

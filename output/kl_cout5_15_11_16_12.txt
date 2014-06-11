@@ -1,5 +1,0 @@
-klUnitTestWrapper:: MemoryPostCheck() detected memory state difference.Floating Point Error Status : 
- X86 = |  inexact (precision)|  underflow | denormal status bit 
- fp err = 
- SSE status = 
- 

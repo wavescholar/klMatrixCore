@@ -342,18 +342,14 @@ public:
 		unsigned int numSources=numPoints;
 		unsigned int numCenters = 25;
 		int dimension =2;
+		double scale =1.0f /1250.0f;
 
-		klAlgorithmParameter numPointsP("NumberOfPoints",(__int64)numPoints);
-		parameterMap["NumberOfPoints"] = numPointsP;
+		addIntParameter("NumberOfPoints",(__int64)numPoints);		
+		addIntParameter("NumberOfSources",(__int64)numPoints);
+		addIntParameter("NumberOfCenters",(__int64)numCenters);
+    	addIntParameter("Dimension",(__int64)dimension);
 
-		klAlgorithmParameter numSourcesP("NumberOfSources",(__int64)numPoints);
-		parameterMap["NumberOfSources"]=numSourcesP;
-
-		klAlgorithmParameter numCentersP("NumberOfCenters",(__int64)25);
-		parameterMap["NumberOfCenters"]=numCentersP;
-			
-    	klAlgorithmParameter dimensionP("Dimension",(__int64)2);		
-		parameterMap["Dimension"]=dimensionP;
+		addDoubleParameter("Scale",scale);
 		
 		describeAlgorithmParameters(std::cout);
 
@@ -363,12 +359,14 @@ public:
 		str<<"klFastGaussAlgorithm"<<endl;
 	}
 
-	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension)
+	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension,double scale)
 	{
 		addIntParameter("NumberOfPoints",(__int64)numPoints);		
 		addIntParameter("NumberOfSources",(__int64)numPoints);
-		addIntParameter("numberOfCenters",(__int64)numCenters);
+		addIntParameter("NumberOfCenters",(__int64)numCenters);
     	addIntParameter("Dimension",(__int64)dimension);
+
+		addDoubleParameter("Scale",scale);
 	}
 };
 
