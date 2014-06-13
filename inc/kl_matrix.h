@@ -466,13 +466,20 @@ public:
 	klMatrix<TYPE> getSubBlock(__int64 i,__int64 j,__int64 k,__int64 l)
 	{
 		//First Verify the indices are in range
-		if(i<0|| j<0|| k-i<=0 || l-j<=0 || k>_row || l>_col)
-			throw "klMatrix<TYPE> klMatrix<TYPE>::getSubBlock ERROR index out of bounds.";
+		if(i<0|| j<0|| k-i<0 || l-j<0 || k>_row || l>_col)
+		{
+			std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );
+			ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
+			std::string err ="klMatrix<TYPE> klMatrix<TYPE>::getSubBlock ERROR index out of bounds." + ANSI_INFO_ss.str();		
+			throw klError(err);			
+		}
 		klMatrix<TYPE> ret(k-i+1,l-j+1);
 		__int64 n,m;
 		for(n=i;n<=k;n++)
 			for(m=j;m<=l;m++)
-				ret[n-i][m-j]=(_vectors+m)->operator[](n);
+			{
+				ret[n-i][m-j]=(_vectors+n)->operator[](m);
+			}
 
 		return ret;
 	}

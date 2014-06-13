@@ -126,6 +126,25 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	goo[0][0]=1; goo[0][1]=0;
 	goo[1][0]=0;goo[1][1]=1;
 
+	
+	cout<<b<<endl;
+	cout<<endl<<b.getSubBlock(0,0,2,0)<<endl;
+	cout<<endl<<b.getSubBlock(1,0,2,0)<<endl;
+	cout<<endl<<b.getSubBlock(2,0,2,0)<<endl;
+
+	cout<<endl<<b.getSubBlock(0,0,0,2)<<endl;
+	cout<<endl<<b.getSubBlock(0,1,0,2)<<endl;
+	cout<<endl<<b.getSubBlock(0,2,0,2)<<endl;
+
+	cout<<endl<<b.getSubBlock(0,0,2,0)<<endl;
+	cout<<endl<<b.getSubBlock(0,0,2,2)<<endl;
+	cout<<endl<<b.getSubBlock(1,1,2,2)<<endl;
+	cout<<endl<<b.getSubBlock(0,0,2,2)<<endl;
+	cout<<endl<<b.getSubBlock(1,0,2,0)<<endl;
+	cout<<endl<<b.getSubBlock(0,1,0,2)<<endl;
+	cout<<endl<<b.getSubBlock(0,2,0,2)<<endl;
+	
+
 	klMatrix<float> gsb(2,2);
 	gsb=b.getSubBlock(1,1,2,2);
 	cout<<gsb<<endl;

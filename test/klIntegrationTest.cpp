@@ -58,6 +58,7 @@ void GenerateTraceyWidomSample(ofstream &_tex,__int64  &n);
 void Utility(ofstream &_tex,__int64  &n);
 void MatrixMultiplicationCheck(ofstream &_tex,__int64  &n );
 void LinearRegression(ofstream &_tex,__int64  &n);
+void LinearRegressionAtanSet(ofstream &_tex,__int64  &n);
 void MatrixExponential(ofstream &_tex,__int64  &n);
 void MutithreadedWorkflow(void);
 void VerifyWingerLaw(ofstream &_tex, __int64& n);
@@ -65,13 +66,12 @@ void GenerativeGramConsistencyCheck(ofstream &_tex,__int64  &n);
 void MatrixEigenSolver(ofstream &_tex,__int64  &n);
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
-void testKlBinaryOI(ofstream &_tex,__int64 &n);
-void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
-void testMatrixNorms(ofstream &_tex,__int64 &n);
-#include "kl_point_cloud_generator.h"
+void BinaryIO(ofstream &_tex,__int64 &n);
+void PointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
+void RandomMatrixNorms(ofstream &_tex,__int64 &n);
 
 class klFastGaussAlgorithmParameters;
-void klFGTTest(ofstream &_tex, klAlgorithmParameterContainer& klapc );
+void FastGaussTransform(ofstream &_tex, klAlgorithmParameterContainer& klapc );
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -82,30 +82,54 @@ void VSLFunctions(ofstream &_tex,__int64 &n);
 
 #include <errno.h> 
 
-void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize )
+void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 {
 	basefilename = new char[2048];
 	if(useIntelMemMgr)
 	{
-		if (klTestSize==klTestType::SMALL)
+		if (klItegrationTestSize==klTestType::SMALL)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\small_data_IntelMemmgr\\");
-		if (klTestSize==klTestType::MEDIUM)
+			klTestSize= klTestType::SMALL;
+		}
+		if (klItegrationTestSize==klTestType::MEDIUM)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\medium_data_IntelMemmgr\\");
-		if (klTestSize==klTestType::LARGE)
+			klTestSize= klTestType::MEDIUM;
+		}
+		if (klItegrationTestSize==klTestType::LARGE)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\large_data_IntelMemmgr\\");
-		if (klTestSize==klTestType::VERYLARGE)
+			klTestSize= klTestType::LARGE;
+		}
+		if (klItegrationTestSize==klTestType::VERYLARGE)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\verylarge_data_IntelMemmgr\\");
+			klTestSize= klTestType::VERYLARGE;
+		}
 	}
 	else
 	{
-		if (klTestSize==klTestType::SMALL)
+		if (klItegrationTestSize==klTestType::SMALL)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\small_data_NoIntelMemmgr\\");
-		if (klTestSize==klTestType::MEDIUM)
+			klTestSize= klTestType::SMALL;
+		}
+		if (klItegrationTestSize==klTestType::MEDIUM)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\medium_data_NoIntelMemmgr\\");
-		if (klTestSize==klTestType::LARGE)
+			klTestSize= klTestType::MEDIUM;
+		}
+		if (klItegrationTestSize==klTestType::LARGE)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\large_data_NoIntelMemmgr\\");
-		if (klTestSize==klTestType::VERYLARGE)
+			klTestSize= klTestType::LARGE;
+		}
+		if (klItegrationTestSize==klTestType::VERYLARGE)
+		{
 			sprintf(basefilename,"D:\\klMatrixCore\\output\\verylarge_data_NoIntelMemmgr\\");
+			klTestSize= klTestType::VERYLARGE;
+		}
 	}
 		
 	klTimer klt;
@@ -185,21 +209,33 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize )
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}	
 	
+	makeLatexSection("Multiclass Support Vector Machine ",_tex);
+	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
+
+	/*	makeLatexSection("Matrix Quick Check <float>",_tex);
+	klutw.runTest(MatrixOpsQuickCheck<float>);*/	
+	
 	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
+
+	makeLatexSection("Linear Regression atan data 3x1",_tex);
+	klutw.runTest(LinearRegressionAtanSet);	
+
+	makeLatexSection("Linear Regression 3x1",_tex);
+	klutw.runTest(LinearRegression);
 
 	makeLatexSection("Fast Gauss Transform",_tex);
 	klFastGaussAlgorithmParameters klfgp;
 	klfgp.serialize(baseFileNameString +"klFastGaussAlgorithmParameters_2D.klap");
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(klFGTTest);
+	klutw.runTest(FastGaussTransform);
 	
 	klfgp.setParameter(klAlgorithmParameter("Scale",1.0f /(8*1250.0f)));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 24));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 9984)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 9984)) ;;
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(klFGTTest);
+	klutw.runTest(FastGaussTransform);
 	
 
 	klfgp.setParameter(klAlgorithmParameter("Scale",1.0f /(16*1250.0f)));
@@ -207,9 +243,8 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize )
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 4*400)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 4*400)) ;;
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(klFGTTest);
+	klutw.runTest(FastGaussTransform);
 
-	
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 10000)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 10000)) ;;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 20)) ;;
@@ -218,50 +253,8 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize )
 	klfgp.serialize(baseFileNameString +"klFastGaussAlgorithmParameters_3D.klap");
 
 	klutw.setAlgorithmParameters(klfgp);
-
-	klutw.runTest(klFGTTest);
-
-	klutw.runTest(testMatrixNorms);
-
-	klutw.runTest(IteratedExponentialFiltering);
-
-	klutw.runTest( testKlBinaryOI);
-	
-	klutw.runTest( testPointCloudAndLatexPlots);
-
-
-
-	makeLatexSection("Matrix Quick Check <float>",_tex);
-	klutw.runTest(MatrixOpsQuickCheck<float>);
-
-	klTestSize= klTestType::SMALL;
-			
-	klutw.runTest(VSLFunctions);
-
-	klutw.runTest(GenerativeGramConsistencyCheck);
-	
-	klutw.runTest(MatrixEigenSolver);
 		
-	klutw.runTest(GenerateTraceyWidomSample);
-	
-	klutw.runTest(VerifyWingerLaw);
-	
-	klmtm.insert(thisThread,matlabEngine);
-	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-	
-	makeLatexSection("Matrix Exponential ",_tex);
-	klutw.runTest(MatrixExponential);
-				
-	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
-	
-	makeLatexSection("Multiclass Support Vector Machine ",_tex);
-	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
-
-	makeLatexSection("Semidefinite Programming SDPA",_tex);
-	klutw.runTest(SemidefiniteProgrammingCheck);
-
-	makeLatexSection("Linear Regression 3x1",_tex);
-	klutw.runTest(LinearRegression);
+	klutw.runTest(FastGaussTransform);
 
 	makeLatexSection("Matrix Norms",_tex);
 	klutw.runTest(MatrixNorm);
@@ -280,6 +273,36 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize )
 
 	makeLatexSection("Time Series ",_tex);
 	klutw.runTest(testKLTimeSeries2<double>);
+
+	klutw.runTest(RandomMatrixNorms);
+
+	klutw.runTest(IteratedExponentialFiltering);
+
+	klutw.runTest( BinaryIO);
+	
+	klutw.runTest( PointCloudAndLatexPlots);
+
+	klutw.runTest(VSLFunctions);
+
+	klutw.runTest(GenerativeGramConsistencyCheck);
+	
+	klutw.runTest(MatrixEigenSolver);
+		
+	klutw.runTest(GenerateTraceyWidomSample);
+	
+	klutw.runTest(VerifyWingerLaw);
+	
+	klmtm.insert(thisThread,matlabEngine);
+	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
+	
+	makeLatexSection("Matrix Exponential ",_tex);
+	klutw.runTest(MatrixExponential);
+				
+	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
+	
+	makeLatexSection("Semidefinite Programming SDPA",_tex);
+	klutw.runTest(SemidefiniteProgrammingCheck);
+
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	// HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
@@ -1370,7 +1393,7 @@ void MatrixMultiplicationCheck(ofstream &_tex,__int64  &n  )
 }
 
 void LinearRegression(ofstream &_tex,__int64 &n)
-{
+{	
 	time_t time_of_day;
 	struct tm *tm_buf;
 	time_of_day = time( NULL );
@@ -1404,10 +1427,8 @@ void LinearRegression(ofstream &_tex,__int64 &n)
 	klMatrix<double> Sigma = klGenerateRandomSymmetricPositiveDefiniteMatrix<double> (numFeatures);
 	LatexPrintMatrix(Sigma, "\\sigma",_tex);
 	klNormalMultiVariate<double> features(zero,Sigma);
-
-	//We could add niose to the features Y = \beta \dot \(X+\epsilon}
-	//But for now we add noise to the response [check usage of term] 
-	// Y = \beta \dot X + \epsion.
+		
+	// Y = \beta \dot X
 	for(j=0;j<sampleSize;j++)
 	{
 		klVector<double> sample =features();
@@ -1415,8 +1436,21 @@ void LinearRegression(ofstream &_tex,__int64 &n)
 		klVector<double > rowj =X[j];
 		X.setRow(j, sample);
 		double response = X[j].dot(beta);
-		Y[j] =  response;  //This works because Y is 1 dimensional, otherwise use setRow
+		Y[j][0] =  response; 
 	}
+
+	LatexInsert1DPlot( Y.getColumn(0), _tex, basefilename,"regression_response_no_noise","Regression Response No Noise");
+
+	//Add niose to the features ; Y = (\beta \dot \ X )  +\epsilon
+	for(j=0;j<sampleSize;j++)
+	{
+		double response = Y[j][0];
+		response+= N_0_eps() ;
+		Y[j][0] =  response;  //This works because Y is 1 dimensional, otherwise use setRow
+	}
+	LatexInsert1DPlot( Y.getColumn(0), _tex, basefilename,"regression_response_with_noise","Regression Response With Noise");
+
+
 	//bbcrevisit expand model to multiple linear regression and [standardize notation ]
 	//Model Y=BX + \epsilon where \epsilon =_d N(\mathbf{0},mathbf{\Sigma})
 	//Usually E[Y_i]=\mu_i=x_i^T \beta where Y_i =_d N(\mu_i,\sigma);
@@ -1430,7 +1464,7 @@ void LinearRegression(ofstream &_tex,__int64 &n)
 	_tex<<Y;
 	klLinearRegression<double> R(X,Y);
 	klMatrix<double> betahat=R();
-
+	klout(betahat);
 	klMatrix<double> betaEst=betahat.getSubBlock(0,0,2,0);
 	_tex<<"Estimate for Beta"<<endl;
 	_tex<<betaEst;
@@ -1444,6 +1478,78 @@ void LinearRegression(ofstream &_tex,__int64 &n)
 		error[j] = b1-b2;
 	}
 	_tex<<error<<endl<<endl;
+	_tex.flush();
+}
+
+void LinearRegressionAtanSet(ofstream &_tex,__int64 &n)
+{
+	unsigned int sampleSize=4000;
+	klMatrix<double> dataSet(sampleSize,3);
+	klVector<int> classLabels(sampleSize);
+	generateSicknessManifoldDataSet(  dataSet , classLabels);
+	LatexInsert3DPlot(dataSet, _tex, basefilename,"AtanDataSet","Mixture of four 2d gussians, reponse is atan of x coord");
+	
+	time_t time_of_day;
+	struct tm *tm_buf;
+	time_of_day = time( NULL );
+	tm_buf=localtime(&time_of_day);
+	makeLatexSection("3 x 1 Linear Regression",_tex);
+		
+	_tex<<"Sample size = "<<sampleSize<<endl<<endl;
+	unsigned int numFeatures=3;
+	_tex<<"Number of features = "<<numFeatures<<endl<<endl;
+
+	klMatrix<double> X(dataSet); ///bbc check shallow copy
+	klMatrix<double> Y(sampleSize,1);
+
+	klNormalInverseApproxRV<double> N_0_eps(0,0.05,false,42);
+	unsigned int i;
+	unsigned int j;
+
+	klVector<double> beta(numFeatures);
+			
+	// Y = dataSet[*][2] + \epsilon
+	for(j=0;j<sampleSize;j++)
+	{
+		double response = X[j][2];
+		Y[j][0] =  response; 
+	}
+
+	LatexInsert1DPlot( Y.getColumn(0), _tex, basefilename,"AtanDataSet_regression_response_no_noise","Regression Response No Noise");
+
+	//Add niose to the features ; Y =  dataSet[*][2]  +\epsilon
+	for(j=0;j<sampleSize;j++)
+	{
+		double response = Y[j][0];
+		response+= N_0_eps() ;
+		Y[j][0] =  response;  //This works because Y is 1 dimensional, otherwise use setRow
+	}
+	LatexInsert1DPlot( Y.getColumn(0), _tex, basefilename,"AtanDataSet_regression_response_with_noise","Regression Response With Noise");
+	
+	//bbcrevisit expand model to multiple linear regression and [standardize notation ]
+	//Model Y=BX + \epsilon where \epsilon =_d N(\mathbf{0},mathbf{\Sigma})
+	//Usually E[Y_i]=\mu_i=x_i^T \beta where Y_i =_d N(\mu_i,\sigma);
+
+	LatexInsert3DPlot(X, _tex, basefilename,"regression_features","Features");
+
+	_tex<<"Response"<<endl;
+	_tex<<Y;
+	klLinearRegression<double> R(X,Y);
+	klMatrix<double> betahat=R();
+	klout(betahat);
+	klMatrix<double> betaEst=betahat.getSubBlock(0,0,2,0);
+	_tex<<"Estimate for Beta"<<endl;
+	_tex<<betaEst;
+
+	//_tex<<"Error:"<<endl;
+	//klVector<double> error(numFeatures);
+	//for(int j =0 ; j<numFeatures;j++)
+	//{
+	//	double b1=betahat[j][0];
+	//	double b2 =beta[j];
+	//	error[j] = b1-b2;
+	//}
+	//_tex<<error<<endl<<endl;
 	_tex.flush();
 }
 
@@ -1830,7 +1936,7 @@ void VSLFunctions(ofstream &_tex,__int64 &n)
 	}
 }
 
-void testKlBinaryOI(ofstream &_tex,__int64 &n)
+void BinaryIO(ofstream &_tex,__int64 &n)
 {
 	makeLatexSection("Testing binary writer",_tex);
 	double pi= 3.141592653589793238462643383279502;
@@ -1929,7 +2035,7 @@ void testKlBinaryOI(ofstream &_tex,__int64 &n)
 	}
 }
 
-void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n)
+void PointCloudAndLatexPlots(ofstream &_tex,__int64 &n)
 {
 	makeLatexSection("Testing Gaussian Mixture Point Cloud and Latex Plotting Capabilities.",_tex);
 
@@ -1982,9 +2088,8 @@ void testPointCloudAndLatexPlots(ofstream &_tex,__int64 &n)
 	}
 }
 
-void testMatrixNorms(ofstream &_tex,__int64 &n)
-{
-	
+void RandomMatrixNorms(ofstream &_tex,__int64 &n)
+{	
 	{
 		klMatrix<double> G(4,3);
 
@@ -2001,7 +2106,6 @@ void testMatrixNorms(ofstream &_tex,__int64 &n)
 
 	double c2 = G.ConditionNumber(true);
 	}
-
 	
 	
 	{
@@ -2027,11 +2131,9 @@ void testMatrixNorms(ofstream &_tex,__int64 &n)
 
 	double c2 = G.ConditionNumber(true);
 	}
-
-
 }
 
-void klFGTTest(ofstream &_tex,klAlgorithmParameterContainer& klapc )
+void FastGaussTransform(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 {
 	//This test will produce plots with either 2 or three dimensional data
 

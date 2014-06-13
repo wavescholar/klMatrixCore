@@ -3,13 +3,17 @@
  * Bruce B Campbell 03 26 2014  *
  ********************************/
 #include "kl_util.h"
-void klIntegrationTest(bool useIntelMemMgr,klTestType klTestSize);
+void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize);
 void klPerformanceTesting();
 #include <iostream>
 int main(int argc, char* argv[])
 {
-	//klPerformanceTesting();
+	//klPerformanceTesting();	
 	
+	klIntegrationTest(false,klTestType::VERYLARGE);
+
+	klIntegrationTest(true,klTestType::VERYLARGE);
+		
 	klIntegrationTest(false,klTestType::SMALL);
 
 	klIntegrationTest(true,klTestType::SMALL);
@@ -21,10 +25,9 @@ int main(int argc, char* argv[])
 	klIntegrationTest(false,klTestType::LARGE);
 
 	klIntegrationTest(true,klTestType::LARGE);
+	 
 
-	klIntegrationTest(false,klTestType::VERYLARGE);
 
-	klIntegrationTest(true,klTestType::VERYLARGE);
 	
 	return 0;
 }

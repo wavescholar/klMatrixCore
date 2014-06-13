@@ -1,6 +1,6 @@
 #include "kl_matrix.h"
 
-void testKlBinaryOI()
+void BinaryIO()
 {
 	{
 		__int64 GBWorthOfDoubles = __int64(1073741824LL/sizeof(double));
