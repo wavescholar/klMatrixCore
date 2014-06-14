@@ -241,7 +241,6 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n
 			testPoints[i][j] -= trainingPoints.mean(j);
 
 			testPoints[i][j] /= std::sqrt(trainingPoints.variance(j) );
-
 		}
 	}
 

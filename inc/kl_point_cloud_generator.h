@@ -244,4 +244,33 @@ inline void generateSicknessManifoldDataSet( klMatrix<double>& dataSet, klVector
 	}
 }
 
+
+
+//Makes a hexagonal lattice in [0,1]^2 with spaceing L
+inline klMatrix<double> generate2DHexagonalLattice(double L)
+{
+	int kMax = floor(1/L);
+	int jMax= floor( 2 / ( std::sqrt(3.0f) *L));
+	klMatrix<double> lattice(kMax*jMax,2);
+	int point=0;
+	for(int j=0;j<jMax;j++)
+	{
+		for(int k=0;k<kMax;k++)
+		{
+				double x0 = ((double)j + 2.0* (double) k )*    L / 2.0;
+				double y0 = ( std::sqrt(3.0f)* (double) j ) *  L / 2.0 ;
+
+				if(x0>1) 
+				{	x0=x0-1;
+					if(x0>1)
+						continue;
+				}
+				lattice[point][0]=x0;
+				lattice[point][1]=y0;
+				point+=1;
+		}
+	}
+	return lattice;
+
+}
 #endif

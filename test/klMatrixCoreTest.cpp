@@ -10,9 +10,6 @@ int main(int argc, char* argv[])
 {
 	//klPerformanceTesting();	
 	
-	klIntegrationTest(false,klTestType::VERYLARGE);
-
-	klIntegrationTest(true,klTestType::VERYLARGE);
 		
 	klIntegrationTest(false,klTestType::SMALL);
 
@@ -26,6 +23,9 @@ int main(int argc, char* argv[])
 
 	klIntegrationTest(true,klTestType::LARGE);
 	 
+	klIntegrationTest(false,klTestType::VERYLARGE);
+
+	klIntegrationTest(true,klTestType::VERYLARGE);
 
 
 	

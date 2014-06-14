@@ -209,6 +209,15 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}	
 	
+	klMatrix<double> lattice = generate2DHexagonalLattice(1.0f/10);
+	stringstream fileName;stringstream title;
+	fileName.str("");fileName.clear();
+	title.str(""); title.clear();
+	fileName<<"2DHexagonalLattice";
+	title<<"2D Hexagonal Lattice";
+	char* color="'c.'";
+	LatexInsert2DScatterPlot(lattice.getColumn(0),lattice.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
+	
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
