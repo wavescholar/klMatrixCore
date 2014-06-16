@@ -333,43 +333,6 @@ protected:
 
 };
 
-class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
-{
-public:
-	klFastGaussAlgorithmParameters()
-	{
-		unsigned int numPoints =10000;
-		unsigned int numSources=numPoints;
-		unsigned int numCenters = 25;
-		int dimension =2;
-		double scale =1.0f /1250.0f;
-
-		addIntParameter("NumberOfPoints",(__int64)numPoints);		
-		addIntParameter("NumberOfSources",(__int64)numPoints);
-		addIntParameter("NumberOfCenters",(__int64)numCenters);
-    	addIntParameter("Dimension",(__int64)dimension);
-
-		addDoubleParameter("Scale",scale);
-		
-		describeAlgorithmParameters(std::cout);
-
-	}
-	virtual void describeAlgorithm(ostream& str)
-	{
-		str<<"klFastGaussAlgorithm"<<endl;
-	}
-
-	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension,double scale)
-	{
-		addIntParameter("NumberOfPoints",(__int64)numPoints);		
-		addIntParameter("NumberOfSources",(__int64)numPoints);
-		addIntParameter("NumberOfCenters",(__int64)numCenters);
-    	addIntParameter("Dimension",(__int64)dimension);
-
-		addDoubleParameter("Scale",scale);
-	}
-};
-
 #endif //__kl_alorithm_paramters__
 
 

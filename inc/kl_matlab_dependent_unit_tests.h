@@ -6,6 +6,44 @@
 #define __kl_matlab_dependent_unit_tests__
 #include "kl_multiclass_svm.h"
 #include "kl_principal_components.h"
+#include "kl_algorithm_paramters.h"
+
+class klMulticlassSVMAlgorithmParameters : public klAlgorithmParameterContainer
+{
+public:
+	klMulticlassSVMAlgorithmParameters()
+	{
+		unsigned int numPoints =10000;
+		unsigned int numSources=numPoints;
+		unsigned int numCenters = 25;
+		int dimension =2;
+		double scale =1.0f /1250.0f;
+
+		addIntParameter("NumberOfPoints",(__int64)numPoints);		
+		addIntParameter("NumberOfSources",(__int64)numPoints);
+		addIntParameter("NumberOfCenters",(__int64)numCenters);
+    	addIntParameter("Dimension",(__int64)dimension);
+
+		addDoubleParameter("Scale",scale);
+		
+		describeAlgorithmParameters(std::cout);
+
+	}
+	virtual void describeAlgorithm(ostream& str)
+	{
+		str<<"klFastGaussAlgorithm"<<endl;
+	}
+
+	klMulticlassSVMAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension,double scale)
+	{
+		addIntParameter("NumberOfPoints",(__int64)numPoints);		
+		addIntParameter("NumberOfSources",(__int64)numPoints);
+		addIntParameter("NumberOfCenters",(__int64)numCenters);
+    	addIntParameter("Dimension",(__int64)dimension);
+
+		addDoubleParameter("Scale",scale);
+	}
+};
 
 template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n)
 {
