@@ -1,0 +1,11 @@
+<map id="LatexInsert1DPlot" name="LatexInsert1DPlot">
+<area shape="rect" id="node2" href="$kl_integration_test_8cpp.html#a2a01e556385b152bb42459c2d9b2237a" title="LinearRegression" alt="" coords="207,5,329,32"/>
+<area shape="rect" id="node5" href="$kl_integration_test_8cpp.html#a5523144ea5e586e726dd7584f7fbe692" title="LinearRegressionAtanSet" alt="" coords="183,56,353,83"/>
+<area shape="rect" id="node6" href="$kl_integration_test_8cpp.html#ac0a06874e4a1794e999f87af83c0bd75" title="IteratedExponentialFiltering" alt="" coords="179,107,357,133"/>
+<area shape="rect" id="node7" href="$kl_integration_test_8cpp.html#a60017954768665ce8bb4178d387b4510" title="VSLFunctions" alt="" coords="216,157,320,184"/>
+<area shape="rect" id="node8" href="$kl_integration_test_8cpp.html#a31a8dc36a3edd3ddfeeb0878edeb2bec" title="PointCloudAndLatexPlots" alt="" coords="183,208,353,235"/>
+<area shape="rect" id="node9" href="$kl_integration_test_8cpp.html#a52926f937d559c1f99915984378b6f19" title="FastGaussTransform" alt="" coords="197,259,339,285"/>
+<area shape="rect" id="node10" href="$kl_integration_test_8cpp.html#aac6e4d48aed2a5c9ed451eec34261b4c" title="ARPACK_VS_SYEVX" alt="" coords="193,309,343,336"/>
+<area shape="rect" id="node3" href="$kl_matrix_core_test_8cpp.html#a286331511601fc35b7d569dee0c65cc4" title="klIntegrationTest" alt="" coords="405,157,523,184"/>
+<area shape="rect" id="node4" href="$kl_matrix_core_test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="571,157,621,184"/>
+</map>

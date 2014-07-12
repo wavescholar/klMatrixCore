@@ -1,0 +1,20 @@
+﻿Build started 7/8/2014 2:25:48 PM.
+     1>Project "D:\klMatrixCore\klMatrixCoreBoostUnitTest.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "x64\Release\klMatrixCoreBoostUnitTest.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       MessageBuildingWithCompiler:
+         Building with Intel(R) C++ Compiler XE 12.1
+       ClCompile:
+         ***** ClCompile (X64 - Intel C++)
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+         klMatrixCoreBoostUnitTest.vcxproj -> D:\x64\Release\klMatrixCoreBoostUnitTest.exe
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\klMatrixCoreBoostUnitTest.unsuccessfulbuild".
+         Touching "x64\Release\klMatrixCoreBoostUnitTest.lastbuildstate".
+     1>Done Building Project "D:\klMatrixCore\klMatrixCoreBoostUnitTest.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.11

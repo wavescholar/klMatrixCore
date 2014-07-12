@@ -1,0 +1,1178 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.9)  11 JUN 2014 19:30
+entering extended mode
+**D:/klMatrixCore/output/verylarge_data_IntelMemmgr/kl_Regression6_12_18_22_35.
+tex
+
+(D:/klMatrixCore/output/verylarge_data_IntelMemmgr/kl_Regression6_12_18_22_35.t
+ex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count101
+\Gm@cntv=\count102
+\c@Gm@tempcnt=\count103
+\Gm@bindingoffset=\dimen115
+\Gm@wd@mp=\dimen116
+\Gm@odd@mp=\dimen117
+\Gm@even@mp=\dimen118
+\Gm@layoutwidth=\dimen119
+\Gm@layoutheight=\dimen120
+\Gm@layouthoffset=\dimen121
+\Gm@layoutvoffset=\dimen122
+\Gm@dimlist=\toks26
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 44.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 44.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 44.
+\c@thm=\count104
+\c@defn=\count105
+\c@rem=\count106
+
+
+LaTeX Warning: Unused global option(s):
+    [9pt].
+
+No file kl_Regression6_12_18_22_35.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen123
+\scratchbox=\box28
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen124
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks28
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.45377pt, 585.38747pt, 14.45377pt)
+* v-part:(T,H,B)=(14.45377pt, 766.06245pt, 14.45377pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.38747pt
+* \textheight=766.06245pt
+* \oddsidemargin=-57.81622pt
+* \evensidemargin=-57.81622pt
+* \topmargin=-94.81622pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<AtanDataSet.pdf, id=1, 499.8675pt x 391.4625pt>
+File: AtanDataSet.pdf Graphic file (type pdf)
+ <use AtanDataSet.pdf>
+Package pdftex.def Info: AtanDataSet.pdf used on input line 74.
+(pdftex.def)             Requested size: 284.53844pt x 284.54073pt.
+
+<AtanDataSet_regression_response_no_noise.pdf, id=2, 485.815pt x 388.45125pt>
+File: AtanDataSet_regression_response_no_noise.pdf Graphic file (type pdf)
+
+<use AtanDataSet_regression_response_no_noise.pdf>
+Package pdftex.def Info: AtanDataSet_regression_response_no_noise.pdf used on i
+nput line 81.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+<AtanDataSet_regression_response_with_noise.pdf, id=3, 485.815pt x 388.45125pt>
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/klMatrixCore/output/ve
+rylarge_data_IntelMemmgr/AtanDataSet.pdf>]
+File: AtanDataSet_regression_response_with_noise.pdf Graphic file (type pdf)
+
+<use AtanDataSet_regression_response_with_noise.pdf>
+Package pdftex.def Info: AtanDataSet_regression_response_with_noise.pdf used on
+ input line 83.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+<regression_features.pdf, id=16, 486.81876pt x 391.4625pt>
+File: regression_features.pdf Graphic file (type pdf)
+
+<use regression_features.pdf>
+Package pdftex.def Info: regression_features.pdf used on input line 85.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+ [2 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/AtanDataSet_regression_r
+esponse_no_noise.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/AtanDa
+taSet_regression_response_with_noise.pdf>]
+[3 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/regression_features.pdf>]
+[4] [5] [6]
+File: AtanDataSet.pdf Graphic file (type pdf)
+ <use AtanDataSet.pdf>
+Package pdftex.def Info: AtanDataSet.pdf used on input line 4094.
+(pdftex.def)             Requested size: 284.53844pt x 284.54073pt.
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 4101--4109
+
+ []
+
+<regression_response_no_noise.pdf, id=48, 471.7625pt x 388.45125pt>
+File: regression_response_no_noise.pdf Graphic file (type pdf)
+
+<use regression_response_no_noise.pdf>
+Package pdftex.def Info: regression_response_no_noise.pdf used on input line 41
+10.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<regression_response_with_noise.pdf, id=49, 471.7625pt x 388.45125pt>
+File: regression_response_with_noise.pdf Graphic file (type pdf)
+
+<use regression_response_with_noise.pdf>
+Package pdftex.def Info: regression_response_with_noise.pdf used on input line 
+4112.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+File: regression_features.pdf Graphic file (type pdf)
+ <use regression_features.pdf>
+Package pdftex.def Info: regression_features.pdf used on input line 4114.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+ [8 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/regression_response_no_n
+oise.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/regression_respons
+e_with_noise.pdf>]
+<GaussianMixture_ClusterCenters25_Centers.pdf, id=64, 481.8pt x 388.45125pt>
+File: GaussianMixture_ClusterCenters25_Centers.pdf Graphic file (type pdf)
+
+<use GaussianMixture_ClusterCenters25_Centers.pdf>
+Package pdftex.def Info: GaussianMixture_ClusterCenters25_Centers.pdf used on i
+nput line 4194.
+(pdftex.def)             Requested size: 284.53154pt x 284.53319pt.
+
+<KCenterClusterMemberships_25_Centers.pdf, id=65, 475.7775pt x 388.45125pt>
+File: KCenterClusterMemberships_25_Centers.pdf Graphic file (type pdf)
+
+<use KCenterClusterMemberships_25_Centers.pdf>
+Package pdftex.def Info: KCenterClusterMemberships_25_Centers.pdf used on input
+ line 4196.
+(pdftex.def)             Requested size: 284.53944pt x 284.53319pt.
+
+<FGT25_Centers.pdf, id=66, 491.8375pt x 388.45125pt> [9 <D:/klMatrixCore/output
+/verylarge_data_IntelMemmgr/GaussianMixture_ClusterCenters25_Centers.pdf>]
+File: FGT25_Centers.pdf Graphic file (type pdf)
+
+<use FGT25_Centers.pdf>
+Package pdftex.def Info: FGT25_Centers.pdf used on input line 4198.
+(pdftex.def)             Requested size: 284.53798pt x 284.53319pt.
+
+<GaussianMixture_ClusterCenters24_Centers.pdf, id=74, 477.785pt x 388.45125pt>
+File: GaussianMixture_ClusterCenters24_Centers.pdf Graphic file (type pdf)
+
+<use GaussianMixture_ClusterCenters24_Centers.pdf>
+Package pdftex.def Info: GaussianMixture_ClusterCenters24_Centers.pdf used on i
+nput line 4201.
+(pdftex.def)             Requested size: 284.52254pt x 284.53319pt.
+
+<KCenterClusterMemberships_24_Centers.pdf, id=75, 471.7625pt x 388.45125pt>
+[10 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/KCenterClusterMembership
+s_25_Centers.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/FGT25_Cent
+ers.pdf>]
+File: KCenterClusterMemberships_24_Centers.pdf Graphic file (type pdf)
+ <use KCenterClusterMemberships_24_Centers.pdf>
+Package pdftex.def Info: KCenterClusterMemberships_24_Centers.pdf used on input
+ line 4203.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<FGT24_Centers.pdf, id=86, 491.8375pt x 388.45125pt>
+File: FGT24_Centers.pdf Graphic file (type pdf)
+ <use FGT24_Centers.pdf>
+Package pdftex.def Info: FGT24_Centers.pdf used on input line 4205.
+(pdftex.def)             Requested size: 284.53798pt x 284.53319pt.
+
+[11 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/GaussianMixture_ClusterC
+enters24_Centers.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/KCente
+rClusterMemberships_24_Centers.pdf>]
+<GaussianMixture_ClusterCenters4_Centers.pdf, id=97, 471.7625pt x 388.45125pt>
+File: GaussianMixture_ClusterCenters4_Centers.pdf Graphic file (type pdf)
+
+<use GaussianMixture_ClusterCenters4_Centers.pdf>
+Package pdftex.def Info: GaussianMixture_ClusterCenters4_Centers.pdf used on in
+put line 4208.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<KCenterClusterMemberships_4_Centers.pdf, id=98, 471.7625pt x 388.45125pt>
+File: KCenterClusterMemberships_4_Centers.pdf Graphic file (type pdf)
+
+<use KCenterClusterMemberships_4_Centers.pdf>
+Package pdftex.def Info: KCenterClusterMemberships_4_Centers.pdf used on input 
+line 4210.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<FGT4_Centers.pdf, id=99, 482.80376pt x 388.45125pt> [12 <D:/klMatrixCore/outpu
+t/verylarge_data_IntelMemmgr/FGT24_Centers.pdf> <D:/klMatrixCore/output/verylar
+ge_data_IntelMemmgr/GaussianMixture_ClusterCenters4_Centers.pdf>]
+File: FGT4_Centers.pdf Graphic file (type pdf)
+
+<use FGT4_Centers.pdf>
+Package pdftex.def Info: FGT4_Centers.pdf used on input line 4212.
+(pdftex.def)             Requested size: 284.53497pt x 284.53319pt.
+
+<GaussianMixture_ClusterCenters20_Centers.pdf, id=109, 497.86pt x 391.4625pt>
+File: GaussianMixture_ClusterCenters20_Centers.pdf Graphic file (type pdf)
+
+<use GaussianMixture_ClusterCenters20_Centers.pdf>
+Package pdftex.def Info: GaussianMixture_ClusterCenters20_Centers.pdf used on i
+nput line 4215.
+(pdftex.def)             Requested size: 284.53522pt x 284.54073pt.
+
+<KCenterClusterMemberships_20_Centers.pdf, id=110, 488.82625pt x 391.4625pt>
+[13 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/KCenterClusterMembership
+s_4_Centers.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/FGT4_Center
+s.pdf>]
+File: KCenterClusterMemberships_20_Centers.pdf Graphic file (type pdf)
+ <use KCenterClusterMemberships_20_Centers.pdf>
+Package pdftex.def Info: KCenterClusterMemberships_20_Centers.pdf used on input
+ line 4217.
+(pdftex.def)             Requested size: 284.53381pt x 284.54073pt.
+
+<FGT20_Centers.pdf, id=121, 485.815pt x 388.45125pt>
+File: FGT20_Centers.pdf Graphic file (type pdf)
+ <use FGT20_Centers.pdf>
+Package pdftex.def Info: FGT20_Centers.pdf used on input line 4219.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+[14 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/GaussianMixture_ClusterC
+enters20_Centers.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/KCente
+rClusterMemberships_20_Centers.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 4227--4244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4247--4264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4265--4282
+
+ []
+
+[15 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/FGT20_Centers.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 4283--4300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4319--4336
+
+ []
+
+
+Overfull \hbox (2.28075pt too wide) in paragraph at lines 4341--4342
+[]\OT1/cmr/m/n/10 (+0.642,+0.767), (+0.642,-0.767), (-0.287,+0.958), (-0.287,-0
+.958), (-1.000,+0.000), (-0.707,+0.707), (-0.707,-0.707), (-0.876,+0.482),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4350--4367
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 4370--4387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4390--4407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4410--4427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4428--4445
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 4446--4463
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4464--4481
+
+ []
+
+<PCAPoints.pdf, id=150, 486.81876pt x 391.4625pt>
+File: PCAPoints.pdf Graphic file (type pdf)
+ <use PCAPoints.pdf>
+Package pdftex.def Info: PCAPoints.pdf used on input line 4493.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+ [18]
+Overfull \hbox (2.54196pt too wide) in paragraph at lines 4505--4513
+\OT1/cmr/m/n/10 Sample from $\OML/cmm/m/it/10 N\OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 ; \OT1/cmr/m/n/10 )$ mean= -0.002, vari-ance=+1.004, skew-ness=+0.006, kur-
+to-sis=+3.003 mean= -0.001, vari-ance=+1.017, skewness=-
+ []
+
+<R_3_Normal.pdf, id=154, 486.81876pt x 391.4625pt>
+File: R_3_Normal.pdf Graphic file (type pdf)
+ <use R_3_Normal.pdf>
+Package pdftex.def Info: R_3_Normal.pdf used on input line 4514.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+
+<R_3_Normal_Mixture.pdf, id=155, 494.84875pt x 391.4625pt>
+File: R_3_Normal_Mixture.pdf Graphic file (type pdf)
+
+<use R_3_Normal_Mixture.pdf>
+Package pdftex.def Info: R_3_Normal_Mixture.pdf used on input line 4517.
+(pdftex.def)             Requested size: 284.52827pt x 284.54073pt.
+ [19 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/PCAPoints.pdf> <D:/klMa
+trixCore/output/verylarge_data_IntelMemmgr/R_3_Normal.pdf>] <EMA_signal.pdf, id
+=168, 485.815pt x 388.45125pt>
+File: EMA_signal.pdf Graphic file (type pdf)
+
+<use EMA_signal.pdf>
+Package pdftex.def Info: EMA_signal.pdf used on input line 4550.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+ <MA.pdf, id=169, 485.815pt x 388.45125pt> [20 <D:/klMatrixCore/output/verylarg
+e_data_IntelMemmgr/R_3_Normal_Mixture.pdf>]
+File: MA.pdf Graphic file (type pdf)
+ <use MA.pdf>
+Package pdftex.def Info: MA.pdf used on input line 4552.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+<IEMA.pdf, id=177, 485.815pt x 388.45125pt>
+File: IEMA.pdf Graphic file (type pdf)
+ <use IEMA.pdf>
+Package pdftex.def Info: IEMA.pdf used on input line 4554.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+<EMA.pdf, id=178, 485.815pt x 388.45125pt> [21 <D:/klMatrixCore/output/verylarg
+e_data_IntelMemmgr/EMA_signal.pdf> <D:/klMatrixCore/output/verylarge_data_Intel
+Memmgr/MA.pdf>]
+File: EMA.pdf Graphic file (type pdf)
+ <use EMA.pdf>
+Package pdftex.def Info: EMA.pdf used on input line 4556.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+ <DIFF.pdf, id=190, 485.815pt x 388.45125pt>
+File: DIFF.pdf Graphic file (type pdf)
+
+<use DIFF.pdf>
+Package pdftex.def Info: DIFF.pdf used on input line 4558.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+
+<IteratedExponentailOperators.pdf, id=191, 485.815pt x 388.45125pt> [22 <D:/klM
+atrixCore/output/verylarge_data_IntelMemmgr/IEMA.pdf> <D:/klMatrixCore/output/v
+erylarge_data_IntelMemmgr/EMA.pdf>]
+File: IteratedExponentailOperators.pdf Graphic file (type pdf)
+ <use IteratedExponentailOperators.pdf>
+Package pdftex.def Info: IteratedExponentailOperators.pdf used on input line 45
+60.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+File: IteratedExponentailOperators.pdf Graphic file (type pdf)
+
+<use IteratedExponentailOperators.pdf>
+Package pdftex.def Info: IteratedExponentailOperators.pdf used on input line 45
+62.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+ [23 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/DIFF.pdf> <D:/klMatrixC
+ore/output/verylarge_data_IntelMemmgr/IteratedExponentailOperators.pdf>]
+<GaussianMixture_Dim_3_Centers2.pdf, id=214, 497.86pt x 396.48125pt>
+File: GaussianMixture_Dim_3_Centers2.pdf Graphic file (type pdf)
+
+<use GaussianMixture_Dim_3_Centers2.pdf>
+Package pdftex.def Info: GaussianMixture_Dim_3_Centers2.pdf used on input line 
+4576.
+(pdftex.def)             Requested size: 284.53522pt x 284.5346pt.
+
+<GaussianMixture_Dim_1_Centers2.pdf, id=215, 482.80376pt x 393.47pt>
+File: GaussianMixture_Dim_1_Centers2.pdf Graphic file (type pdf)
+
+<use GaussianMixture_Dim_1_Centers2.pdf>
+Package pdftex.def Info: GaussianMixture_Dim_1_Centers2.pdf used on input line 
+4578.
+(pdftex.def)             Requested size: 284.53497pt x 284.52296pt.
+ [24 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/GaussianMixture_Dim_3_C
+enters2.pdf>]
+<klVSLInv.pdf, id=223, 474.77374pt x 388.45125pt>
+File: klVSLInv.pdf Graphic file (type pdf)
+ <use klVSLInv.pdf>
+Package pdftex.def Info: klVSLInv.pdf used on input line 4582.
+(pdftex.def)             Requested size: 284.54044pt x 284.53319pt.
+
+<klVSLSqrt.pdf, id=224, 471.7625pt x 388.45125pt>
+File: klVSLSqrt.pdf Graphic file (type pdf)
+ <use klVSLSqrt.pdf>
+Package pdftex.def Info: klVSLSqrt.pdf used on input line 4584.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLExp.pdf, id=225, 471.7625pt x 388.45125pt> [25 <D:/klMatrixCore/output/ve
+rylarge_data_IntelMemmgr/GaussianMixture_Dim_1_Centers2.pdf> <D:/klMatrixCore/o
+utput/verylarge_data_IntelMemmgr/klVSLInv.pdf>]
+File: klVSLExp.pdf Graphic file (type pdf)
+ <use klVSLExp.pdf>
+Package pdftex.def Info: klVSLExp.pdf used on input line 4586.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLExpm1.pdf, id=237, 471.7625pt x 388.45125pt>
+File: klVSLExpm1.pdf Graphic file (type pdf)
+ <use klVSLExpm1.pdf>
+Package pdftex.def Info: klVSLExpm1.pdf used on input line 4588.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLLn.pdf, id=238, 477.785pt x 388.45125pt> [26 <D:/klMatrixCore/output/very
+large_data_IntelMemmgr/klVSLSqrt.pdf> <D:/klMatrixCore/output/verylarge_data_In
+telMemmgr/klVSLExp.pdf>]
+File: klVSLLn.pdf Graphic file (type pdf)
+ <use klVSLLn.pdf>
+Package pdftex.def Info: klVSLLn.pdf used on input line 4590.
+(pdftex.def)             Requested size: 284.52254pt x 284.53319pt.
+
+<klVSLLog10.pdf, id=248, 477.785pt x 388.45125pt>
+File: klVSLLog10.pdf Graphic file (type pdf)
+ <use klVSLLog10.pdf>
+Package pdftex.def Info: klVSLLog10.pdf used on input line 4592.
+(pdftex.def)             Requested size: 284.52254pt x 284.53319pt.
+
+<klVSLCos.pdf, id=249, 477.785pt x 388.45125pt> [27 <D:/klMatrixCore/output/ver
+ylarge_data_IntelMemmgr/klVSLExpm1.pdf> <D:/klMatrixCore/output/verylarge_data_
+IntelMemmgr/klVSLLn.pdf>]
+File: klVSLCos.pdf Graphic file (type pdf)
+ <use klVSLCos.pdf>
+Package pdftex.def Info: klVSLCos.pdf used on input line 4594.
+(pdftex.def)             Requested size: 284.52254pt x 284.53319pt.
+
+<klVSLSin.pdf, id=260, 471.7625pt x 388.45125pt>
+File: klVSLSin.pdf Graphic file (type pdf)
+ <use klVSLSin.pdf>
+Package pdftex.def Info: klVSLSin.pdf used on input line 4596.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLTan.pdf, id=261, 471.7625pt x 388.45125pt> [28 <D:/klMatrixCore/output/ve
+rylarge_data_IntelMemmgr/klVSLLog10.pdf> <D:/klMatrixCore/output/verylarge_data
+_IntelMemmgr/klVSLCos.pdf>]
+File: klVSLTan.pdf Graphic file (type pdf)
+ <use klVSLTan.pdf>
+Package pdftex.def Info: klVSLTan.pdf used on input line 4598.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLErf.pdf, id=272, 471.7625pt x 388.45125pt>
+File: klVSLErf.pdf Graphic file (type pdf)
+ <use klVSLErf.pdf>
+Package pdftex.def Info: klVSLErf.pdf used on input line 4600.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLErfc.pdf, id=273, 471.7625pt x 388.45125pt> [29 <D:/klMatrixCore/output/v
+erylarge_data_IntelMemmgr/klVSLSin.pdf> <D:/klMatrixCore/output/verylarge_data_
+IntelMemmgr/klVSLTan.pdf>]
+File: klVSLErfc.pdf Graphic file (type pdf)
+ <use klVSLErfc.pdf>
+Package pdftex.def Info: klVSLErfc.pdf used on input line 4602.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLCdfNorm.pdf, id=283, 477.785pt x 388.45125pt>
+File: klVSLCdfNorm.pdf Graphic file (type pdf)
+ <use klVSLCdfNorm.pdf>
+Package pdftex.def Info: klVSLCdfNorm.pdf used on input line 4604.
+(pdftex.def)             Requested size: 284.52254pt x 284.53319pt.
+
+<klVSLErfInv.pdf, id=284, 471.7625pt x 388.45125pt> [30 <D:/klMatrixCore/output
+/verylarge_data_IntelMemmgr/klVSLErf.pdf> <D:/klMatrixCore/output/verylarge_dat
+a_IntelMemmgr/klVSLErfc.pdf>]
+File: klVSLErfInv.pdf Graphic file (type pdf)
+ <use klVSLErfInv.pdf>
+Package pdftex.def Info: klVSLErfInv.pdf used on input line 4606.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLLGamma.pdf, id=294, 471.7625pt x 388.45125pt>
+File: klVSLLGamma.pdf Graphic file (type pdf)
+ <use klVSLLGamma.pdf>
+Package pdftex.def Info: klVSLLGamma.pdf used on input line 4608.
+(pdftex.def)             Requested size: 284.52817pt x 284.53319pt.
+
+<klVSLTGamma.pdf, id=295, 474.77374pt x 388.45125pt> [31 <D:/klMatrixCore/outpu
+t/verylarge_data_IntelMemmgr/klVSLCdfNorm.pdf> <D:/klMatrixCore/output/verylarg
+e_data_IntelMemmgr/klVSLErfInv.pdf>]
+File: klVSLTGamma.pdf Graphic file (type pdf)
+ <use klVSLTGamma.pdf>
+Package pdftex.def Info: klVSLTGamma.pdf used on input line 4610.
+(pdftex.def)             Requested size: 284.54044pt x 284.53319pt.
+
+! Display math should end with $$.
+<to be read again> 
+                    
+l.4617 $$Sigma$ 
+                = \left(
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4617 $$Sigma$ = \left
+                       (
+? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 4617--4625
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4626--4634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4635--4641
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4642--4650
+
+ []
+
+[32 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/klVSLLGamma.pdf> <D:/klM
+atrixCore/output/verylarge_data_IntelMemmgr/klVSLTGamma.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 4651--4657
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4658--4664
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4665--4673
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4674--4682
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4683--4691
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4692--4700
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4701--4709
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4710--4718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4725--4738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4741--4754
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4755--4768
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4769--4782
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 4801--4814
+
+ []
+
+
+Overfull \hbox (12.83638pt too wide) in paragraph at lines 4819--4820
+[]\OT1/cmr/m/n/10 (+0.625,+0.780), (+0.625,-0.780), (+0.232,+0.973), (+0.232,-0
+.973), (-0.844,+0.537), (-0.844,-0.537), (-1.000,+0.000), (+1.000,+0.000) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4828--4841
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4844--4857
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4860--4873
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4876--4889
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 4890--4903
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4904--4917
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4918--4931
+
+ []
+
+<Re_TraceyWidom.pdf, id=321, 468.75125pt x 394.47375pt>
+File: Re_TraceyWidom.pdf Graphic file (type pdf)
+
+<use Re_TraceyWidom.pdf>
+Package pdftex.def Info: Re_TraceyWidom.pdf used on input line 4952.
+(pdftex.def)             Requested size: 284.52162pt x 284.52649pt.
+
+<Im_TraceyWidom.pdf, id=322, 466.74374pt x 394.47375pt> [35]
+File: Im_TraceyWidom.pdf Graphic file (type pdf)
+
+<use Im_TraceyWidom.pdf>
+Package pdftex.def Info: Im_TraceyWidom.pdf used on input line 4954.
+(pdftex.def)             Requested size: 284.53522pt x 284.52649pt.
+ <Re_Winger.pdf, id=326, 477.785pt x 394.47375pt>
+File: Re_Winger.pdf Graphic file (type pdf)
+
+<use Re_Winger.pdf>
+Package pdftex.def Info: Re_Winger.pdf used on input line 4956.
+(pdftex.def)             Requested size: 284.52254pt x 284.52649pt.
+ <Im_Winger.pdf, id=327, 466.74374pt x 394.47375pt> [36 <D:/klMatrixCore/output
+/verylarge_data_IntelMemmgr/Re_TraceyWidom.pdf> <D:/klMatrixCore/output/verylar
+ge_data_IntelMemmgr/Im_TraceyWidom.pdf>]
+File: Im_Winger.pdf Graphic file (type pdf)
+
+<use Im_Winger.pdf>
+Package pdftex.def Info: Im_Winger.pdf used on input line 4958.
+(pdftex.def)             Requested size: 284.53522pt x 284.52649pt.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4963 ...= X_{j,i}$, 		  and $X_{i,j}$ are iid $
+                                                  orall i < j,$ and $Xjj$ ar...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4963 ...$ and $Xjj$ are iid $orall j  :  ; E[X^
+                                                  2_{ij} ] = 1, & E[X_{ij}] ...
+
+? 
+! Misplaced alignment tab character &.
+l.4963 ... iid $orall j  :  ; E[X^2_{ij} ] = 1, &
+                                                   E[X_{ij}] = 0$ 		  and th...
+
+? 
+<Re_lambda_n.pdf, id=342, 471.7625pt x 394.47375pt>
+File: Re_lambda_n.pdf Graphic file (type pdf)
+ <use Re_lambda_n.pdf>
+Package pdftex.def Info: Re_lambda_n.pdf used on input line 4966.
+(pdftex.def)             Requested size: 284.52817pt x 284.52649pt.
+
+<Im_lambda_n.pdf, id=343, 476.78125pt x 394.47375pt> [37 <D:/klMatrixCore/outpu
+t/verylarge_data_IntelMemmgr/Re_Winger.pdf> <D:/klMatrixCore/output/verylarge_d
+ata_IntelMemmgr/Im_Winger.pdf>]
+File: Im_lambda_n.pdf Graphic file (type pdf)
+ <use Im_lambda_n.pdf>
+Package pdftex.def Info: Im_lambda_n.pdf used on input line 4968.
+(pdftex.def)             Requested size: 284.54318pt x 284.52649pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4972--4985
+
+ []
+
+
+Overfull \hbox (328.07477pt too wide) in paragraph at lines 4986--4992
+[]$\OML/cmm/m/it/10 SPDEigs \OT1/cmr/m/n/10 = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4986--4992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4993--5006
+
+ []
+
+[38 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/Re_lambda_n.pdf> <D:/klM
+atrixCore/output/verylarge_data_IntelMemmgr/Im_lambda_n.pdf>]
+Overfull \hbox (447.95361pt too wide) in paragraph at lines 5007--5013
+[]$\OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SPD\OT1/cmr/m/n/10 )\O
+ML/cmm/m/it/10 eigs \OT1/cmr/m/n/10 = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5007--5013
+
+ []
+
+
+Overfull \hbox (368.88737pt too wide) in paragraph at lines 5014--5020
+[]$\OML/cmm/m/it/10 log\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 SPD\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 eigs\OT1/cmr/m/n/10 ) = []$
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5014--5020
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5021--5034
+
+ []
+
+
+Overfull \hbox (330.2644pt too wide) in paragraph at lines 5035--5041
+[]$\OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Id\OT1/cmr/m/n/10 )\OM
+L/cmm/m/it/10 eigs \OT1/cmr/m/n/10 = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5035--5041
+
+ []
+
+
+Overfull \hbox (351.19847pt too wide) in paragraph at lines 5042--5048
+[]$\OML/cmm/m/it/10 log\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\O
+ML/cmm/m/it/10 Id\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 eigs\OT1/cmr/m/n/10 ) = []$ 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5042--5048
+
+ []
+
+
+Overfull \hbox (11221.6275pt too wide) in paragraph at lines 5051--5057
+[]$\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SPD\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 n\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 Eigs \OMS/cmsy/m/n/10   \OML/cm
+m/m/it/10 log\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 exp\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 SPD\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 e
+igs\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j[] \OT1/cmr/m/n/10 = []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5051--5057
+
+ []
+
+[39] <uniform.pdf, id=379, 492.84125pt x 404.51125pt>
+File: uniform.pdf Graphic file (type pdf)
+ <use uniform.pdf>
+Package pdftex.def Info: uniform.pdf used on input line 5066.
+(pdftex.def)             Requested size: 142.26604pt x 142.26617pt.
+
+<cauchy.pdf, id=380, 487.8225pt x 404.51125pt>
+File: cauchy.pdf Graphic file (type pdf)
+ <use cauchy.pdf>
+Package pdftex.def Info: cauchy.pdf used on input line 5072.
+(pdftex.def)             Requested size: 142.26135pt x 142.26617pt.
+
+<exponential.pdf, id=381, 484.81125pt x 404.51125pt>
+File: exponential.pdf Graphic file (type pdf)
+ <use exponential.pdf>
+Package pdftex.def Info: exponential.pdf used on input line 5078.
+(pdftex.def)             Requested size: 142.26352pt x 142.26617pt.
+
+[40 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/uniform.pdf> <D:/klMatri
+xCore/output/verylarge_data_IntelMemmgr/cauchy.pdf> <D:/klMatrixCore/output/ver
+ylarge_data_IntelMemmgr/exponential.pdf>]
+<gamma.pdf, id=394, 478.78876pt x 404.51125pt>
+File: gamma.pdf Graphic file (type pdf)
+ <use gamma.pdf>
+Package pdftex.def Info: gamma.pdf used on input line 5085.
+(pdftex.def)             Requested size: 142.26425pt x 142.26617pt.
+
+<GIG.pdf, id=395, 495.8525pt x 404.51125pt>
+File: GIG.pdf Graphic file (type pdf)
+ <use GIG.pdf>
+Package pdftex.def Info: GIG.pdf used on input line 5091.
+(pdftex.def)             Requested size: 142.26518pt x 142.26617pt.
+
+<normal-box-muller.pdf, id=396, 486.81876pt x 404.51125pt>
+File: normal-box-muller.pdf Graphic file (type pdf)
+
+<use normal-box-muller.pdf>
+Package pdftex.def Info: normal-box-muller.pdf used on input line 5097.
+(pdftex.def)             Requested size: 142.25835pt x 142.26617pt.
+ [41 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/gamma.pdf> <D:/klMatrix
+Core/output/verylarge_data_IntelMemmgr/GIG.pdf> <D:/klMatrixCore/output/verylar
+ge_data_IntelMemmgr/normal-box-muller.pdf>]
+<normal-inverse-approximation.pdf, id=410, 486.81876pt x 404.51125pt>
+File: normal-inverse-approximation.pdf Graphic file (type pdf)
+
+<use normal-inverse-approximation.pdf>
+Package pdftex.def Info: normal-inverse-approximation.pdf used on input line 51
+04.
+(pdftex.def)             Requested size: 142.25835pt x 142.26617pt.
+
+<pareto.pdf, id=411, 489.83pt x 405.515pt>
+File: pareto.pdf Graphic file (type pdf)
+ <use pareto.pdf>
+Package pdftex.def Info: pareto.pdf used on input line 5110.
+(pdftex.def)             Requested size: 142.26381pt x 142.2665pt.
+
+<poisson.pdf, id=412, 489.83pt x 404.51125pt>
+File: poisson.pdf Graphic file (type pdf)
+ <use poisson.pdf>
+Package pdftex.def Info: poisson.pdf used on input line 5116.
+(pdftex.def)             Requested size: 142.26381pt x 142.26617pt.
+ [42 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/normal-inverse-approxim
+ation.pdf> <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/pareto.pdf> <D:/k
+lMatrixCore/output/verylarge_data_IntelMemmgr/poisson.pdf>]
+<beta.pdf, id=426, 484.81125pt x 404.51125pt>
+File: beta.pdf Graphic file (type pdf)
+ <use beta.pdf>
+Package pdftex.def Info: beta.pdf used on input line 5123.
+(pdftex.def)             Requested size: 142.26352pt x 142.26617pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 5128
+.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 5128.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5134--5140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5141--5147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5148--5154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5155--5156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5157--5165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5166--5174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5175--5183
+
+ []
+
+<rv1_corr.pdf, id=427, 475.7775pt x 388.45125pt>
+File: rv1_corr.pdf Graphic file (type pdf)
+ <use rv1_corr.pdf>
+Package pdftex.def Info: rv1_corr.pdf used on input line 5192.
+(pdftex.def)             Requested size: 284.53944pt x 284.53319pt.
+
+<rv2_corr.pdf, id=428, 475.7775pt x 388.45125pt> [43 <D:/klMatrixCore/output/ve
+rylarge_data_IntelMemmgr/beta.pdf>]
+File: rv2_corr.pdf Graphic file (type pdf)
+ <use rv2_corr.pdf>
+Package pdftex.def Info: rv2_corr.pdf used on input line 5194.
+(pdftex.def)             Requested size: 284.53944pt x 284.53319pt.
+
+<rv3_corr.pdf, id=436, 475.7775pt x 388.45125pt>
+File: rv3_corr.pdf Graphic file (type pdf)
+ <use rv3_corr.pdf>
+Package pdftex.def Info: rv3_corr.pdf used on input line 5196.
+(pdftex.def)             Requested size: 284.53944pt x 284.53319pt.
+
+<trainingPoints.pdf, id=437, 486.81876pt x 391.4625pt> [44 <D:/klMatrixCore/out
+put/verylarge_data_IntelMemmgr/rv1_corr.pdf> <D:/klMatrixCore/output/verylarge_
+data_IntelMemmgr/rv2_corr.pdf>]
+File: trainingPoints.pdf Graphic file (type pdf)
+ <use trainingPoints.pdf>
+Package pdftex.def Info: trainingPoints.pdf used on input line 5198.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+
+<testPoints.pdf, id=447, 486.81876pt x 391.4625pt>
+File: testPoints.pdf Graphic file (type pdf)
+ <use testPoints.pdf>
+Package pdftex.def Info: testPoints.pdf used on input line 5206.
+(pdftex.def)             Requested size: 284.52412pt x 284.54073pt.
+
+[45 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/rv3_corr.pdf> <D:/klMatr
+ixCore/output/verylarge_data_IntelMemmgr/trainingPoints.pdf>]
+<classDiffs.pdf, id=458, 485.815pt x 388.45125pt>
+File: classDiffs.pdf Graphic file (type pdf)
+ <use classDiffs.pdf>
+Package pdftex.def Info: classDiffs.pdf used on input line 5229.
+(pdftex.def)             Requested size: 284.52309pt x 284.53319pt.
+ [46 <D:/klMatrixCore/output/verylarge_data_IntelMemmgr/testPoints.pdf> <D:/klM
+atrixCore/output/verylarge_data_IntelMemmgr/classDiffs.pdf>]
+(D:\klMatrixCore\output\verylarge_data_IntelMemmgr\kl_Regression6_12_18_22_35.a
+ux) ) 
+Here is how much of TeX's memory you used:
+ 3100 strings out of 493921
+ 43601 string characters out of 3144862
+ 156942 words of memory out of 3000000
+ 6304 multiletter control sequences out of 15000+200000
+ 11635 words of font info for 45 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,8n,32p,2551b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on kl_Regression6_12_18_22_35.pdf (46 pages, 8191254 bytes).
+PDF statistics:
+ 516 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 331 words of extra memory for PDF output out of 10000 (max. 10000000)
+
