@@ -134,6 +134,18 @@
     <Library Include="..\x64\Release\FGT.lib">
       <Filter>Libs\ReleaselPackages</Filter>
     </Library>
+    <Library Include="..\x64\Debug\RBCNN.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Debug\gsl.lib">
+      <Filter>Libs\DebugklPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\RBCNN.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
+    <Library Include="..\x64\Release\gsl.lib">
+      <Filter>Libs\ReleaselPackages</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test\klIntegrationTest.cpp">
@@ -143,6 +155,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="test\klPerformanceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Packages\RandomBallCover\TestRandomBallCover\TestRandomBallCover.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

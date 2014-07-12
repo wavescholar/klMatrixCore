@@ -1,6 +1,6 @@
  /*******************************
  * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
- * Bruce B Campbell 03 26 2014  *
+ * Bruce B Campbell 07 08 2014  *
  ********************************/
 #ifndef __kl_unit_tests__
 #define __kl_unit_tests__
@@ -75,6 +75,8 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	b[1][0]=21;b[1][1]=22;b[1][2]=23;
 	b[2][0]=31;b[2][1]=32;b[2][2]=33;
 
+	klVector<float> L =klMatrixToLower(b);
+	klout(L);
 
 	klVector<float> col2=b.getColumn(2);
 
@@ -287,6 +289,14 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	c[0][0]=1;c[1][1]=1;c[2][2]=1;
 	cout<<c.det()<<endl;
 
+
+	klMatrix<double> id = IdentityMatrix<double>(6);
+	klArpackFunctor klaf;
+	klout(id);
+	id[0][0]=2;id[1][1]=3;id[2][2]=4;id[3][3]=5;id[4][4]=6;
+	klout(id);
+	klVector<complex<double> > eigsAP = klaf.run( id,4);
+
 	delete memory;
 	delete pi;
 	delete pi2;
@@ -436,13 +446,10 @@ template<class TYPE> void testSamplePopulation2(ofstream &_tex)//const char* fil
 
 #include "kl_multiclass_svm.h"
 #include "kl_principal_components.h"
-template<class TYPE> void klMulticlassSVMHarness2(ofstream &_tex)//const char* fileName)
+template<class TYPE> void klMulticlassSVMHarness2(ofstream &_tex)
 {
 	char* arg=new char[256];
 	char* ofilename=new char[256];
-
-	//ios_base::openmode wMode = ios_base::app;
-	//ofstream _tex(fileName, wMode);	
 
 	unsigned int i;
 	unsigned int j;
@@ -866,10 +873,9 @@ template<class TYPE> void klMulticlassSVMHarness2(ofstream &_tex)//const char* f
 	delete ofilename;
 }
 
-
 #include "kl_multivariate_random_variable.h"
 #include "kl_sample_population.h"
-template<class TYPE> void testKLMultiVariateRandomNumberGenerator2(ofstream &_tex)//const char* fileName)
+template<class TYPE> void testKLMultiVariateRandomNumberGenerator2(ofstream &_tex,__int64  &n)//const char* fileName)
 {
 
 	//ios_base::openmode wMode = ios_base::app;
@@ -1368,7 +1374,6 @@ template<class TYPE> void klRVUnitTestHarnessLaTex2(klRV<TYPE> ** RV,unsigned in
 
 }
 
-
 #include "kl_memory.h"
 inline void  MemoryManagement(ofstream &_tex,__int64  &n)
 {
@@ -1462,7 +1467,6 @@ inline void  MemoryManagement(ofstream &_tex,__int64  &n)
 	_tex.flush();
 	//_tex.close();
 }
-
 
 #include "kl_random_number_generator.h"
 template<class TYPE>  void __cdecl testKLRandomNumberGeneratorL(const char* fileName)

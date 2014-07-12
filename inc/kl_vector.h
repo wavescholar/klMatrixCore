@@ -1,6 +1,6 @@
  /*******************************
  * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
- * Bruce B Campbell 03 26 2014  *
+ * Bruce B Campbell 07 08 2014  *
  ********************************/
 
 #ifndef __kl_vector__
@@ -44,7 +44,7 @@ using namespace std;
 
 
 
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 extern __int64 globalKlVectorCopyConstructorCallCount;
 extern __int64 globalKlVectorMoveConstructorCallCount;
 
@@ -168,7 +168,7 @@ public:
 		  y0=src.y0;
 		  y1=src.y1;
 		  desc=src.desc;
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 		  __int64 byteCount = _size * sizeof(TYPE);
 		  globalKlVectorCopyConstructorBytesCount +=byteCount;
 		  cerr<<"klVector(klVector<TYPE>& src) call count = "<<globalKlVectorCopyConstructorCallCount++<<" Bytes Count "<<globalKlVectorCopyConstructorBytesCount<<endl; 
@@ -180,7 +180,7 @@ public:
 		 : _mMemory(src._mMemory), _own(src._own), _size(src._size),  _mgr(src._mgr),  x0(src.x0),
 		  x1(src.x1),  y0(src.y0), y1(src.y1), desc(src.desc)
 	  {
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 		  __int64 byteCount = _size * sizeof(TYPE);
 		  globalKlVectorMoveConstructorBytesCount +=byteCount;
 		  cerr<<"klVector(klVector<TYPE>&& src) call count = "<<globalKlVectorMoveConstructorCallCount++<<" Bytes Count "<<globalKlVectorCopyConstructorBytesCount<<endl; 

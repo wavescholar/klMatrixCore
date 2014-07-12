@@ -101,6 +101,9 @@
     <Library Include="..\x64\Debug\FGT.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
+    <Library Include="..\x64\Debug\gsl.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
     <Library Include="..\x64\Debug\klMatrixCoreLib.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
@@ -110,6 +113,9 @@
     </Library>
     <Library Include="..\x64\Debug\Matlib.lib">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Debug\RBCNN.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </Library>
     <Library Include="..\x64\Debug\SuperLU_MT_VC.lib">
@@ -130,6 +136,9 @@
     <Library Include="..\x64\Release\FGT.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
+    <Library Include="..\x64\Release\gsl.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
     <Library Include="..\x64\Release\klMatrixCoreLib.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
@@ -139,6 +148,9 @@
     </Library>
     <Library Include="..\x64\Release\Matlib.lib">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\x64\Release\RBCNN.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </Library>
     <Library Include="..\x64\Release\SuperLU_MT_VC.lib">
@@ -171,6 +183,7 @@
     <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Packages\RandomBallCover\TestRandomBallCover\TestRandomBallCover.cpp" />
     <ClCompile Include="test\klIntegrationTest.cpp" />
     <ClCompile Include="test\klMatrixCoreTest.cpp" />
     <ClCompile Include="test\klPerformanceTest.cpp" />

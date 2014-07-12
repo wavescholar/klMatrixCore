@@ -69,7 +69,7 @@ void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
 void BinaryIO(ofstream &_tex,__int64 &n);
 void PointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
 void RandomMatrixNorms(ofstream &_tex,__int64 &n);
-
+void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n);
 class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
 {
 public:
@@ -245,6 +245,23 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}	
 	
+	makeLatexSection("Matrix Quick Check <double>",_tex),
+	klutw.runTest(MatrixOpsQuickCheck<double>);
+
+	
+	unsigned int di=0;
+	ARPACK_VS_SYEVX(_tex,di);
+		
+	klTestSize= klTestType::GROW;
+	__int64 dimension;
+	for(dimension =58624;dimension<131072;dimension=dimension+2048)
+		IterativeKrylovCheck(_tex,dimension);
+
+		/*	makeLatexSection("Matrix Quick Check <float>",_tex);
+	klutw.runTest(MatrixOpsQuickCheck<float>);*/	
+	
+
+	
 	klMatrix<double> lattice = generate2DHexagonalLattice(1.0f/10);
 	stringstream fileName;stringstream title;
 	fileName.str("");fileName.clear();
@@ -256,12 +273,6 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
-
-	/*	makeLatexSection("Matrix Quick Check <float>",_tex);
-	klutw.runTest(MatrixOpsQuickCheck<float>);*/	
-	
-	makeLatexSection("Matrix Quick Check <double>",_tex),
-	klutw.runTest(MatrixOpsQuickCheck<double>);
 
 	makeLatexSection("Linear Regression atan data 3x1",_tex);
 	klutw.runTest(LinearRegressionAtanSet);	
@@ -593,7 +604,7 @@ void IterativeKrylovCheck(ofstream &_tex,__int64 &n,const char* fileName)
 
 	QueryPerformanceCounter(prefCountStart);
 	{
-		klSYEVX<double> SYEVX(A_GOE,3);
+		klSYEVX<double> SYEVX(A_GOE);
 
 		klDoubleVectorPtr ans = SYEVX();
 
@@ -698,7 +709,7 @@ void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64  &n,const char* fileName)
 
 	QueryPerformanceCounter(prefCountStart);
 	
-	klSYEVX<double> SYEVX(A_GOE,3);
+	klSYEVX<double> SYEVX(A_GOE);
 
 	klDoubleVectorPtr ans = SYEVX();
 
@@ -812,7 +823,7 @@ void FEATSEigensolver(ofstream &_tex,unsigned int  &n,const char* fileName)
 	{
 		QueryPerformanceCounter(prefCountStart);
 
-		klSYEVX<double> SYEVX(A_GOE,3);
+		klSYEVX<double> SYEVX(A_GOE);
 
 		klDoubleVectorPtr ans = SYEVX();
 
@@ -1132,7 +1143,7 @@ void MatrixEigenSolver(ofstream &_tex,__int64  &n)
 		
 		cout<<F;
 		
-		klSYEVX<double> SYEVX(F,3);
+		klSYEVX<double> SYEVX(F);
 
 		klDoubleVectorPtr ans = SYEVX();
 
@@ -2330,4 +2341,133 @@ void FastGaussTransform(ofstream &_tex,klAlgorithmParameterContainer& klapc )
 	color= "'b.'";
 	LatexInsert1DPlot(gaussTransform,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
 
+}
+
+void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
+{
+	char* fileName = new char[1024];
+	char* arg = new char[1024];
+
+	makeLatexSection("ARPACK versus Lapack SYEVX",_tex);
+
+	_tex<<"Running Arnoldi Krylov algorithm on affinity matrix and comparing to Lapack SYEVX (via Intel MKL)."<<endl;
+
+	klVector<unsigned int> filedims(105);
+	sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\FileDims.txt");
+	fstream _fileistream(fileName);
+	_fileistream>>filedims;
+
+	klVector<double> tictocARPACK(105);
+	klVector<double> tictocSYEVX(105);
+
+	//Set to zero.  Should call operator
+	tictocSYEVX= 0.0;
+	tictocARPACK=0.0;
+
+
+	// bbc revisit full test later for(unsigned int dimi =1;dimi<105;dimi++)
+	for(unsigned int dimi =2;dimi<15;dimi++)
+	{
+		unsigned int dim =filedims[dimi];
+		n=dim;
+		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",dim);
+		klArpackFunctor klaf;
+
+		LARGE_INTEGER* freq;
+		_LARGE_INTEGER* prefCountStart;
+		_LARGE_INTEGER* prefCountEnd;
+		freq=new _LARGE_INTEGER;
+		prefCountStart=new _LARGE_INTEGER;
+		prefCountEnd=new _LARGE_INTEGER;
+		QueryPerformanceFrequency(freq);
+
+		klMatrix<double> A;
+
+		fstream _fileistream;
+		QueryPerformanceCounter(prefCountStart);
+		_fileistream.open(fileName);
+		A.setup(n,n);
+		_fileistream>>A;
+
+		QueryPerformanceCounter(prefCountEnd);
+
+		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+		_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+
+		unsigned int numEigenvalues= 8;
+
+		QueryPerformanceCounter(prefCountStart);
+
+		klVector<complex<double> > eigsAP = klaf.run( A.transpose(),numEigenvalues);
+
+		//Write the eigenvectors
+		
+		for(int j=0;j<5;j++)
+		{		
+			sprintf(arg,"ARPACK_Dim%d_EigenVector_%d",dim,j);	
+			LatexInsert1DPlot(RE(klaf.EigenVectors[j]),_tex,basefilename,arg,arg);
+
+			sprintf(arg,"%sARPACK_Dim_%dEigenVector%d.txt",basefilename,dim,j);	
+
+			ofstream _fileostream(arg);
+			_fileostream<<RE(klaf.EigenVectors[j])<<endl;
+			_fileostream.close();
+		}
+
+		QueryPerformanceCounter(prefCountEnd);
+		tictocARPACK[dimi]=double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);
+		
+		cout<<"TicToc ARPACK  =  "<<tictocARPACK[dimi]<<endl;   
+		_tex<<"Iterative Krylov dim="<<n<<" dt="<<tictocARPACK[dimi]<<endl;
+
+		QueryPerformanceCounter(prefCountStart);
+
+		klSYEVX<double> SYEVX(A);
+
+		klDoubleVectorPtr ans = SYEVX();
+
+		QueryPerformanceCounter(prefCountEnd);
+		tictocSYEVX[dimi]=double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart);
+		cout<<"TicToc SYEVX  =  "<<tictocSYEVX[dimi]<<endl;   
+
+		klVector<double> spectrum = *(ans.ptr());
+
+		//klDoubleMatrixPtr E = SYEVX.Eigenvectors();
+
+		klMatrix<double> E = *(SYEVX.Eigenvectors().ptr());
+
+		klMatrix<double> Etr= E.transpose();
+
+		//Write the eigenvectors and make plots.We include 5
+		for(int j=1;j<5;j++)
+		{
+			sprintf(arg,"SYEVX_Dim%d_EigenVector_%d",dim,j);	
+			LatexInsert1DPlot(Etr[j],_tex,basefilename,arg,arg);
+			
+			sprintf(arg,"%sSYEVX_Dim_%d_EigenVector%d.txt",basefilename,j);	
+
+			ofstream _fileostream(arg);
+			_fileostream<<Etr[j]<<endl;
+			_fileostream.close();
+			
+		}
+
+		//Write out the timing data at each run.
+		{
+			sprintf(arg,"%stictocSYEVX_at_iter_%d.txt",basefilename,dimi);	
+			ofstream _fileostream(arg);
+			_fileostream<<tictocSYEVX<<endl;
+			_fileostream.close();
+		}
+
+		{
+			sprintf(arg,"%stictocARPACK_at_iter_%d.txt",basefilename,dimi);	
+			ofstream _fileostream(arg);
+			_fileostream<<tictocARPACK<<endl;
+			_fileostream.close();
+		}
+		
+	}
+	delete arg;
+	delete fileName;
 }

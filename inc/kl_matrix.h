@@ -1,6 +1,6 @@
  /*******************************
  * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
- * Bruce B Campbell 03 26 2014  *
+ * Bruce B Campbell 07 08 2014  *
  ********************************/
 
 #ifndef __kl_matrix__
@@ -18,7 +18,7 @@
 #include <complex>
 using namespace std;
 
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 extern __int64 globalKlMatrixCopyConstructorCallCount;
 extern __int64 globalKlMatrixMoveConstructorCallCount;
 
@@ -107,7 +107,7 @@ public:
 				(_vectors+i)->operator[](j)=src[i][j];
 			}
 		}
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 		  __int64 byteCount = _row*_col * sizeof(TYPE);
 		  globalKlMatrixCopyConstructorBytesCount +=byteCount;
 		  cerr<<"klMatrix(klMatrix<TYPE>& src) call count = "<<globalKlMatrixCopyConstructorCallCount++<<" Bytes Count "<<globalKlMatrixCopyConstructorBytesCount<<endl; 
@@ -120,7 +120,7 @@ public:
 		_mgr(src._mgr),	_filename(src._filename)
 	{
 
-#ifdef _DEBUG
+#ifdef _DEBUGKL
 		  __int64 byteCount = _row*_col * sizeof(TYPE);
 		  globalKlMatrixMoveConstructorBytesCount +=byteCount;
 		  cerr<<"klMatrix(klMatrix<TYPE>&& src) call count = "<<globalKlMatrixMoveConstructorCallCount++<<" Bytes Count "<<globalKlMatrixMoveConstructorBytesCount<<endl; 
@@ -367,8 +367,26 @@ public:
 		return *this;
 
 	}
+	
+	bool operator==(const klMatrix<TYPE> &m) const
+	{ 
+		if(this->_row != m.getRows() ||this->_col!=m.getColumns())
+			throw "Bad dimensions in klMatrix<TYPE> operator==(const klMatrix<TYPE> &m)";
 
-	//Elementwise revisit whether this should be invert and multiply.
+		__int64 i;
+		__int64 j;
+		for(i=0;i<m.getRows();i++)
+		{
+			for(j=0;j<m.getColumns();j++)
+			{
+				if( (_vectors+i)->operator [](j) != m[i][j])
+					return false;
+			}
+		}
+		return true;
+	}
+
+	//Elementwise 
 	klMatrix<TYPE>& operator/=(const klMatrix<TYPE> &c)
 	{
 
@@ -1120,7 +1138,9 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(TYPE c1, const klMatr
 	return r;
 
 }
-//bbcrevisit this is not implemented correctly.
+
+
+//bbcrevisit TEST!
 template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> &c)
 {
 	if(this._row != c.getRows() ||this._col!=c.getColumns())
@@ -1132,7 +1152,7 @@ template<class TYPE> inline	const klMatrix<TYPE> operator-(const klMatrix<TYPE> 
 	{
 		for(j=0;j<c.getColumns();j++)
 		{
-			r[i][j]=c[i][j];
+			r[i][j]=(_vectors+i)->operator [](j) - c[i][j];
 		}
 
 	}
@@ -1228,6 +1248,33 @@ template<class TYPE> inline const klMatrix<TYPE> operator*(TYPE c2, const klMatr
 
 	}
 	return r;
+}
+
+
+template<class TYPE> inline	const klVector<TYPE> klMatrixToLower(const klMatrix<TYPE> &c)
+{
+	if(c.getRows() != c.getColumns())
+		throw "Bad dimensions in klVector<TYPE> klMatrixToLower(const klMatrix<TYPE> &c)";
+	__int64 i;
+	__int64 j;
+	__int64 lowerSize = 0;
+	for(i=1;i<=c.getRows();i++)
+		lowerSize +=i;
+
+	klVector<TYPE> L(lowerSize) ;
+	L=(TYPE)0.0;
+	__int64 index=0;
+	for(int i=0;i<c.getRows();i++)
+	{	
+		for(int j =0;j<c.getColumns();j++)
+		{
+			if(i<j)
+				continue;
+			else
+				L[index++] = c[i][j];
+		}
+	}
+	return L;
 }
 
 /*
