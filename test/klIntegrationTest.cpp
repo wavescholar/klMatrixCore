@@ -263,8 +263,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		/*	makeLatexSection("Matrix Quick Check <float>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<float>);*/	
 	
-
-	
+		
 	klMatrix<double> lattice = generate2DHexagonalLattice(1.0f/10);
 	stringstream fileName;stringstream title;
 	fileName.str("");fileName.clear();
@@ -2491,7 +2490,7 @@ void ConvertCSVMatrixFilesToBinFormat()
 	tictocSYEVX= 0.0;
 	tictocARPACK=0.0;
 	__int64 n=0;
-	for(unsigned int dimi =1;dimi<105;dimi++)
+	for(unsigned int dimi =42;dimi<105;dimi++)
 	{
 		n =filedims[dimi];
 		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",n);
