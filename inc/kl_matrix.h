@@ -1736,6 +1736,58 @@ public:
 			throw err;
 		}
 	}
+		
+	//bbctodo - get move constructor figured out
+	/*static inline klMatrix<double>& MatReadWinx64(string fileName)  
+	{
+		__int64 rows,cols;
+		klBinaryIO::QueryWinx64(fileName,rows,cols);
+
+		klMatrix<double> klmd(rows,cols);
+		
+		if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd") 
+		{
+			FILE* fd=NULL;
+			try
+			{
+				fd = fopen( fileName.c_str(), "rb" );
+				if (fd==NULL)
+					throw "Bad file handle in klBinaryIO::MatReadWinx64(string fileName, klMatrix<double>& klmd )";
+				__int64 ebuf[2]={0,0};
+
+				fread(ebuf, sizeof(__int64),2,fd);
+
+				if(ebuf[0]>0 && ebuf[1]>0)
+				{
+					if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
+						throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
+					void* readP = klmd.getMemory();
+					fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+				}
+				fclose(fd);
+			}
+			catch(...)
+			{
+				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error reading or allocating");
+				if(fd)
+				{
+					try
+					{
+						fclose(fd);
+					}
+					catch(...)
+					{
+					}
+				}
+				throw err;
+			}
+		} 
+		else 
+		{
+			klError err(" klMatrix<double> MatReadWinx64(string fileName) called with bad file extension");
+			throw err;
+		}
+	}*/
 
 	static inline void QueryWinx64(string fileName, __int64& rows, __int64&  cols)
 	{ 

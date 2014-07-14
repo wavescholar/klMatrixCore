@@ -12,7 +12,7 @@
 #include "kl_regression.h"
 #include "kl_multiclass_svm.h"
 #include "kl_wavelet.h"
-#include "kl_ML_helper_fns.h"
+#include "kl_matrix_helper_fns.h"
 #include "kl_divergence_functions.h"
 #include "kl_util.h"
 #include "kl_unit_tests.h"
@@ -70,6 +70,8 @@ void BinaryIO(ofstream &_tex,__int64 &n);
 void PointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
 void RandomMatrixNorms(ofstream &_tex,__int64 &n);
 void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n);
+void ConvertCSVMatrixFilesToBinFormat();
+
 class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
 {
 public:
@@ -248,6 +250,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
 
+	ConvertCSVMatrixFilesToBinFormat();
 	
 	unsigned int di=0;
 	ARPACK_VS_SYEVX(_tex,di);
@@ -2470,4 +2473,61 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 	}
 	delete arg;
 	delete fileName;
+}
+
+void ConvertCSVMatrixFilesToBinFormat()
+{
+	char* fileName = new char[1024];
+	char* arg = new char[1024];
+	klVector<unsigned int> filedims(105);
+	sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\FileDims.txt");
+	fstream _fileistream(fileName);
+	_fileistream>>filedims;
+
+	klVector<double> tictocARPACK(105);
+	klVector<double> tictocSYEVX(105);
+
+	//Set to zero.  Should call operator
+	tictocSYEVX= 0.0;
+	tictocARPACK=0.0;
+	__int64 n=0;
+	for(unsigned int dimi =1;dimi<105;dimi++)
+	{
+		n =filedims[dimi];
+		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",n);
+		klArpackFunctor klaf;
+
+		LARGE_INTEGER* freq;
+		_LARGE_INTEGER* prefCountStart;
+		_LARGE_INTEGER* prefCountEnd;
+		freq=new _LARGE_INTEGER;
+		prefCountStart=new _LARGE_INTEGER;
+		prefCountEnd=new _LARGE_INTEGER;
+		QueryPerformanceFrequency(freq);
+
+		klMatrix<double> A;
+
+		fstream _fileistream;
+		QueryPerformanceCounter(prefCountStart);
+		_fileistream.open(fileName);
+		A.setup(n,n);
+		_fileistream>>A;
+
+		QueryPerformanceCounter(prefCountEnd);
+
+		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+		
+		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture_BinFormat\\L_%d.klmd",n);
+		klBinaryIO::WriteWinx64(A,fileName);
+
+		//{
+		//	__int64 rows,cols;
+		//	klBinaryIO::QueryWinx64(fileName,rows,cols);
+		//	klMatrix<double> klmdMat(rows,cols);
+		//	klBinaryIO::MatReadWinx64(fileName,klmdMat);			
+		//	klout(klmdMat);
+		//}
+		
+	}
+	
 }

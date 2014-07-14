@@ -12,7 +12,7 @@
 #include "kl_regression.h"
 #include "kl_multiclass_svm.h"
 #include "kl_wavelet.h"
-#include "kl_ML_helper_fns.h"
+#include "kl_matrix_helper_fns.h"
 #include "kl_divergence_functions.h"
 #include "kl_util.h"
 #include "kl_unit_tests.h"

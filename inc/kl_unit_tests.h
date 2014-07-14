@@ -294,8 +294,7 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	klArpackFunctor klaf;
 	klout(id);
 	id[0][0]=2;id[1][1]=3;id[2][2]=4;id[3][3]=5;id[4][4]=6;
-	klout(id);
-	klVector<complex<double> > eigsAP = klaf.run( id,4);
+	klout(id);	klVector<complex<double> > eigsAP = klaf.run( id,4);
 
 	delete memory;
 	delete pi;

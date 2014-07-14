@@ -3,7 +3,7 @@
  * Bruce B Campbell 07 08 2014  *
  ********************************/
 
-#include "kl_ML_helper_fns.h"
+#include "kl_matrix_helper_fns.h"
 #include "kl_divergence_functions.h"
 #include "kl_arpack.h"
 

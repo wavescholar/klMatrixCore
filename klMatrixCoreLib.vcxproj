@@ -42,7 +42,7 @@
     <ClInclude Include="inc\kl_matrix.h" />
     <ClInclude Include="inc\kl_matrix_facorizations.h" />
     <ClInclude Include="inc\kl_memory.h" />
-    <ClInclude Include="inc\kl_ML_helper_fns.h" />
+    <ClInclude Include="inc\kl_matrix_helper_fns.h" />
     <ClInclude Include="inc\kl_multiclass_svm.h" />
     <ClInclude Include="inc\kl_multivariate_random_variable.h" />
     <ClInclude Include="inc\kl_point_cloud_generator.h" />

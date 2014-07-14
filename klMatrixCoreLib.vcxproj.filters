@@ -92,9 +92,6 @@
     <ClInclude Include="inc\kl_memory.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="inc\kl_ML_helper_fns.h">
-      <Filter>inc</Filter>
-    </ClInclude>
     <ClInclude Include="inc\kl_multiclass_svm.h">
       <Filter>inc</Filter>
     </ClInclude>
@@ -153,6 +150,9 @@
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="inc\kl_algorithm_paramters.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\kl_matrix_helper_fns.h">
       <Filter>inc</Filter>
     </ClInclude>
   </ItemGroup>

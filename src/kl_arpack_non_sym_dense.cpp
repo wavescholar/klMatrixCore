@@ -238,9 +238,7 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 	cout << "Number of iterations taken         : " << Prob.GetIter() << endl;
 	cout << endl;
 
-	//OK
 	//Solution(A, Prob);
-
 	//--------------------------------Solution Code
 	{
 
@@ -271,8 +269,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 
 		if (Prob.EigenvaluesFound()) 
 		{
-			// Printing eigenvalues.
-
 			cout << "Eigenvalues:" << endl;
 			for (i=0; i<nconv; i++) 
 			{
@@ -302,7 +298,7 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 		{
 			// Printing the residual norm || A*x - lambda*x ||
 			// for the nconv accurately computed eigenvectors.
-
+			
 			Ax      = new double[n];
 			ResNorm = new double[nconv+1];
 
@@ -311,7 +307,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 
 				if (Prob.EigenvalueImag(i)==0.0) 
 				{ 
-					// Eigenvalue is real
 					A.MultMv(Prob.RawEigenvector(i), Ax);
 					axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i), 1, Ax, 1);
 					ResNorm[i] = nrm2(n, Ax, 1)/fabs(Prob.EigenvalueReal(i));
@@ -327,8 +322,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 				}
 				else 
 				{
-					//-----------------
-					//Eigenvalue is complex.
 					double* evR = Prob.RawEigenvector(i);
 					double* evI = Prob.RawEigenvector(i+1);
 				
@@ -340,7 +333,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 						(*(evP + j)).imag( *(evI + j));
 					}
 
-					// Eigenvalue is complex
 					A.MultMv(Prob.RawEigenvector(i), Ax);
 					axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i), 1, Ax, 1);
 					axpy(n, Prob.EigenvalueImag(i), Prob.RawEigenvector(i+1), 1, Ax, 1);
@@ -352,9 +344,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 						lapy2(Prob.EigenvalueReal(i), Prob.EigenvalueImag(i));
 					ResNorm[i+1] = ResNorm[i];
 					i++;
-
-					
-
 				}
 			}
 			for (i=0; i<nconv; i++) 
@@ -368,8 +357,7 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 		}
 	} // Solution
 
-
-
+	
 
 	//BBCREVISIT - BUSTED
 	//if (Prob.EigenvaluesFound())

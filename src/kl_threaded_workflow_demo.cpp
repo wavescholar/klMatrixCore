@@ -17,7 +17,7 @@
 #include "kl_wavelet.h"
 #include "kl_util.h"
 #include "kl_thread_workflow.h"
-#include "kl_ML_helper_fns.h"
+#include "kl_matrix_helper_fns.h"
 extern DWORD gdwTlsIndex;
 //Globals for thread functionality
 klMutex klThreadMap::lock;
