@@ -246,12 +246,14 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klMemMgr*  mgr = NULL;
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}	
-	
-	makeLatexSection("Matrix Quick Check <double>",_tex),
-	klutw.runTest(MatrixOpsQuickCheck<double>);
+
+	klutw.runTest( BinaryIO);
 
 	ConvertCSVMatrixFilesToBinFormat();
-	
+
+	makeLatexSection("Matrix Quick Check <double>",_tex),
+	klutw.runTest(MatrixOpsQuickCheck<double>);
+		
 	unsigned int di=0;
 	ARPACK_VS_SYEVX(_tex,di);
 		
@@ -335,9 +337,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	klutw.runTest(RandomMatrixNorms);
 
 	klutw.runTest(IteratedExponentialFiltering);
-
-	klutw.runTest( BinaryIO);
-	
+		
 	klutw.runTest( PointCloudAndLatexPlots);
 
 	klutw.runTest(VSLFunctions);
@@ -2490,7 +2490,8 @@ void ConvertCSVMatrixFilesToBinFormat()
 	tictocSYEVX= 0.0;
 	tictocARPACK=0.0;
 	__int64 n=0;
-	for(unsigned int dimi =42;dimi<105;dimi++)
+	//for(unsigned int dimi =42;dimi<105;dimi++)
+	for(unsigned int dimi =1;dimi<105;dimi++)
 	{
 		n =filedims[dimi];
 		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",n);
@@ -2519,13 +2520,13 @@ void ConvertCSVMatrixFilesToBinFormat()
 		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture_BinFormat\\L_%d.klmd",n);
 		klBinaryIO::WriteWinx64(A,fileName);
 
-		//{
-		//	__int64 rows,cols;
-		//	klBinaryIO::QueryWinx64(fileName,rows,cols);
-		//	klMatrix<double> klmdMat(rows,cols);
-		//	klBinaryIO::MatReadWinx64(fileName,klmdMat);			
-		//	klout(klmdMat);
-		//}
+		{
+			__int64 rows,cols;
+			klBinaryIO::QueryWinx64(fileName,rows,cols);
+			klMatrix<double> klmdMat(rows,cols);
+			klBinaryIO::MatReadWinx64(fileName,klmdMat);			
+			klout(klmdMat);
+		}
 		
 	}
 	

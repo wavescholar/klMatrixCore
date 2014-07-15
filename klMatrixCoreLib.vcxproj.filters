@@ -48,9 +48,6 @@
     <ClCompile Include="src\kl_stack_walker.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\stub.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\kl_arpack_non_sym_dense.cpp">
       <Filter>src</Filter>
     </ClCompile>

@@ -26,7 +26,6 @@
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\kl_util.cpp" />
     <ClCompile Include="src\kl_vector.cpp" />
-    <ClCompile Include="src\stub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\kl_algorithm_paramters.h" />

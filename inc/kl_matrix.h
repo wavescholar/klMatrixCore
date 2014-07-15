@@ -1609,6 +1609,14 @@ template <class TYPE> static inline istream& operator>>(istream& c, klMatrix<TYP
 class klBinaryIO
 {
 public:
+	
+	const static __int64 _chunkThresh=512LL;
+
+	const static __int64 _chunkSize = 512-24;
+
+	//const static __int64 _chunkThresh=4294967296LL;
+
+	//const static __int64 _chunkSize = 1073741824LL;
 
 	static inline void WriteWinx64( klMatrix<double>& out, string fileName)
 	{
@@ -1620,13 +1628,49 @@ public:
 				fd = fopen( fileName.c_str(), "wb+" );
 				if(fd==NULL)
 					throw "Bad file handle in klBinaryIO::WriteWinx64( klMatrix<double>& out, string fileName)"; 
+				
 				__int64 ebuf[2]={0,0};
 				ebuf[0]=out.getRows();
 				ebuf[1]=out.getColumns();
+
 				fwrite(ebuf, sizeof(__int64),2,fd);
-				void* writeP = out.getMemory();
-				fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
-				fclose(fd);
+
+				__int64 writeSize = sizeof(double)*ebuf[0]*ebuf[1];
+
+				if(writeSize < _chunkThresh)
+				{					
+					void* writeP = out.getMemory();
+					fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
+					fclose(fd);
+				}
+				else
+				{
+					__int64 chunkSize = _chunkSize;//In bytes, so divide by 8 in the write call
+					__int64 numWrites=0;
+					__int64 bytesRemaining = writeSize;
+					while(bytesRemaining>0)
+					{
+						void* writeP = out.getMemory();
+						double* writeDP= (double*)writeP;
+						writeDP  +=(chunkSize /sizeof(double)) *numWrites;
+
+						if (bytesRemaining>=chunkSize)
+						{
+							fwrite(writeDP,sizeof(double),chunkSize /sizeof(double) ,fd);
+							bytesRemaining -=chunkSize;
+							numWrites++;
+							continue;
+						}
+						else
+						{
+							//Last Write
+							fwrite(writeDP,sizeof(double),bytesRemaining ,fd);
+							bytesRemaining -=bytesRemaining;
+						}
+					}
+
+					fclose(fd);
+				}
 			}
 			catch(...)
 			{
@@ -1663,10 +1707,46 @@ public:
 					throw "Bad file handle in klBinaryIO::WriteWinx64(klVector<double>& out, string fileName)";
 				__int64 ebuf[1]={0};
 				ebuf[0]=out.getColumns();
+				
 				fwrite(ebuf, sizeof(__int64),1,fd);
-				void* writeP = out.getMemory();
-				fwrite(writeP,sizeof(double),ebuf[0],fd);
-				fclose(fd);
+
+				__int64 writeSize = sizeof(double)*ebuf[0];
+
+				if(writeSize < _chunkThresh)
+				{					
+					void* writeP = out.getMemory();
+					fwrite(writeP,sizeof(double),ebuf[0],fd);
+					fclose(fd);
+				}
+				else
+				{
+					__int64 chunkSize = _chunkSize;//In bytes, so divide by 8 in the write call
+					__int64 numWrites=0;
+					__int64 bytesRemaining = writeSize;
+					while(bytesRemaining>0)
+					{
+						void* writeP = out.getMemory();
+						double* writeDP= (double*)writeP;
+						writeDP  +=(chunkSize /sizeof(double)) *numWrites;
+
+						if (bytesRemaining>=chunkSize)
+						{
+							fwrite(writeDP,sizeof(double),chunkSize /sizeof(double) ,fd);
+							bytesRemaining -=chunkSize;
+							numWrites++;
+							continue;
+						}
+						else
+						{
+							//Last Write
+							fwrite(writeDP,sizeof(double),bytesRemaining ,fd);
+							bytesRemaining -=bytesRemaining;
+						}
+					}
+
+					fclose(fd);
+				}
+
 			}
 			catch(...)
 			{
@@ -1709,8 +1789,41 @@ public:
 				{
 					if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
 						throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
+					
 					void* readP = klmd.getMemory();
-					fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+					__int64 readSize = sizeof(double)*ebuf[0]*ebuf[1];
+
+					if(readSize < _chunkThresh)
+					{
+						fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+					}
+					else
+					{
+						__int64 chunkSize = _chunkSize;//In bytes, so divide by 8 in the write call
+						__int64 numReads=0;
+						__int64 bytesRemaining = readSize;
+						while(bytesRemaining>0)
+						{
+							readP = klmd.getMemory();
+							double* readDP= (double*)readP;
+							readDP  +=(chunkSize /sizeof(double))*numReads;
+
+							if (bytesRemaining>=chunkSize)
+							{
+								fread(readDP,sizeof(double),chunkSize /sizeof(double),fd);
+								bytesRemaining -=chunkSize;
+								numReads++;
+								continue;
+							}
+							else
+							{
+								//Last Read
+								fread(readDP,sizeof(double),bytesRemaining,fd);
+								bytesRemaining -=bytesRemaining;
+							}
+						}
+					}
+
 				}
 				fclose(fd);
 			}
@@ -1736,57 +1849,57 @@ public:
 			throw err;
 		}
 	}
-		
+
 	//bbctodo - get move constructor figured out
 	/*static inline klMatrix<double>& MatReadWinx64(string fileName)  
 	{
-		__int64 rows,cols;
-		klBinaryIO::QueryWinx64(fileName,rows,cols);
+	__int64 rows,cols;
+	klBinaryIO::QueryWinx64(fileName,rows,cols);
 
-		klMatrix<double> klmd(rows,cols);
-		
-		if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd") 
-		{
-			FILE* fd=NULL;
-			try
-			{
-				fd = fopen( fileName.c_str(), "rb" );
-				if (fd==NULL)
-					throw "Bad file handle in klBinaryIO::MatReadWinx64(string fileName, klMatrix<double>& klmd )";
-				__int64 ebuf[2]={0,0};
+	klMatrix<double> klmd(rows,cols);
 
-				fread(ebuf, sizeof(__int64),2,fd);
+	if(fileName.substr(fileName.find_last_of(".") + 1) == "klmd") 
+	{
+	FILE* fd=NULL;
+	try
+	{
+	fd = fopen( fileName.c_str(), "rb" );
+	if (fd==NULL)
+	throw "Bad file handle in klBinaryIO::MatReadWinx64(string fileName, klMatrix<double>& klmd )";
+	__int64 ebuf[2]={0,0};
 
-				if(ebuf[0]>0 && ebuf[1]>0)
-				{
-					if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
-						throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
-					void* readP = klmd.getMemory();
-					fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
-				}
-				fclose(fd);
-			}
-			catch(...)
-			{
-				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error reading or allocating");
-				if(fd)
-				{
-					try
-					{
-						fclose(fd);
-					}
-					catch(...)
-					{
-					}
-				}
-				throw err;
-			}
-		} 
-		else 
-		{
-			klError err(" klMatrix<double> MatReadWinx64(string fileName) called with bad file extension");
-			throw err;
-		}
+	fread(ebuf, sizeof(__int64),2,fd);
+
+	if(ebuf[0]>0 && ebuf[1]>0)
+	{
+	if( klmd.getRows() !=ebuf[0] || klmd.getColumns() !=ebuf[1])
+	throw "In MatReadWinx64(string fileName, klMatrix<double>& klmd ) (klmd.getRows() !==ebuf[0] || klmd.getColumns() !=ebuf[1]) is false"; 
+	void* readP = klmd.getMemory();
+	fread(readP,sizeof(double),ebuf[0]*ebuf[1],fd);
+	}
+	fclose(fd);
+	}
+	catch(...)
+	{
+	klError err(" klMatrix<double> klFastReadWinx64(string fileName) error reading or allocating");
+	if(fd)
+	{
+	try
+	{
+	fclose(fd);
+	}
+	catch(...)
+	{
+	}
+	}
+	throw err;
+	}
+	} 
+	else 
+	{
+	klError err(" klMatrix<double> MatReadWinx64(string fileName) called with bad file extension");
+	throw err;
+	}
 	}*/
 
 	static inline void QueryWinx64(string fileName, __int64& rows, __int64&  cols)
@@ -1835,9 +1948,39 @@ public:
 				{
 					if( klvd.getColumns() !=ebuf[0])
 						throw "In static inline void VecReadWinx64(string fileName,klVector<double>& klvd) (klvd.getColumns() !=ebuf[0]) is false"; 
-				
+								
 					void* readP = klvd.getMemory();
-					fread(readP,sizeof(double),ebuf[0],fd);
+					__int64 readSize = sizeof(double)*ebuf[0];
+
+					if(readSize < _chunkThresh)
+					{
+						fread(readP,sizeof(double),ebuf[0],fd);
+					}
+					else
+					{
+						__int64 chunkSize = _chunkSize;//In bytes, so divide by 8 in the write call
+						__int64 numReads=0;
+						__int64 bytesRemaining = readSize;
+						while(bytesRemaining>0)
+						{
+							readP = klvd.getMemory();
+							double* readDP= (double*)readP;
+							readDP  +=(chunkSize /sizeof(double))*numReads;
+
+							if (bytesRemaining>=chunkSize)
+							{fread(readDP,sizeof(double),chunkSize /sizeof(double),fd);
+							bytesRemaining -=chunkSize;
+							numReads++;
+							continue;
+							}
+							else
+							{
+								//Last Read
+								fread(readDP,sizeof(double),bytesRemaining,fd);
+								bytesRemaining -=bytesRemaining;
+							}
+						}
+					}
 				}
 				fclose(fd);
 			}
@@ -1864,67 +2007,67 @@ public:
 			throw err;
 		}
 	}
-	
-	//Same methods but they write to an open file handle.
-	static inline void WriteWinx64( klMatrix<double>& out, FILE* fd)
-	{
-		try
-		{
-			if(fd==NULL)
-				throw "Bad file handle in klBinaryIO::WriteWinx64( klMatrix<double>& out, string fileName)"; 
-			__int64 ebuf[2]={0,0};
-			ebuf[0]=out.getRows();
-			ebuf[1]=out.getColumns();
-			fwrite(ebuf, sizeof(__int64),2,fd);
-			void* writeP = out.getMemory();
-			fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
-			fclose(fd);
-		}
-		catch(...)
-		{
-			klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
-			if(fd)
-			{
-				try
-				{
-					fclose(fd);
-				}
-				catch(...)
-				{
-				}
-			}
-			throw err;
-		}	
-	}
 
-	static inline void WriteWinx64(klVector<double>& out, FILE* fd)
-	{
-		try
-		{
-			if (fd ==NULL)
-				throw "Bad file handle in klBinaryIO::WriteWinx64(klVector<double>& out, string fileName)";
-			__int64 ebuf[1]={0};
-			ebuf[0]=out.getColumns();
-			fwrite(ebuf, sizeof(__int64),1,fd);
-			void* writeP = out.getMemory();
-			fwrite(writeP,sizeof(double),ebuf[0],fd);
-			fclose(fd);
-		}
-		catch(...)
-		{
-			klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
-			if(fd)
-			{
-				try
-				{
-					fclose(fd);
-				}
-				catch(...)
-				{
-				}
-			}
-			throw err;
-		}	}
+	////Same methods but they write to an open file handle.
+	//static inline void WriteWinx64( klMatrix<double>& out, FILE* fd)
+	//{
+	//	try
+	//	{
+	//		if(fd==NULL)
+	//			throw "Bad file handle in klBinaryIO::WriteWinx64( klMatrix<double>& out, string fileName)"; 
+	//		__int64 ebuf[2]={0,0};
+	//		ebuf[0]=out.getRows();
+	//		ebuf[1]=out.getColumns();
+	//		fwrite(ebuf, sizeof(__int64),2,fd);
+	//		void* writeP = out.getMemory();
+	//		fwrite(writeP,sizeof(double),ebuf[0]*ebuf[1],fd);
+	//		fclose(fd);
+	//	}
+	//	catch(...)
+	//	{
+	//		klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+	//		if(fd)
+	//		{
+	//			try
+	//			{
+	//				fclose(fd);
+	//			}
+	//			catch(...)
+	//			{
+	//			}
+	//		}
+	//		throw err;
+	//	}	
+	//}
+
+	//static inline void WriteWinx64(klVector<double>& out, FILE* fd)
+	//{
+	//	try
+	//	{
+	//		if (fd ==NULL)
+	//			throw "Bad file handle in klBinaryIO::WriteWinx64(klVector<double>& out, string fileName)";
+	//		__int64 ebuf[1]={0};
+	//		ebuf[0]=out.getColumns();
+	//		fwrite(ebuf, sizeof(__int64),1,fd);
+	//		void* writeP = out.getMemory();
+	//		fwrite(writeP,sizeof(double),ebuf[0],fd);
+	//		fclose(fd);
+	//	}
+	//	catch(...)
+	//	{
+	//		klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+	//		if(fd)
+	//		{
+	//			try
+	//			{
+	//				fclose(fd);
+	//			}
+	//			catch(...)
+	//			{
+	//			}
+	//		}
+	//		throw err;
+	//	}	}
 
 	static inline void MatReadWinx64(FILE* fd, klMatrix<double>& klmd )
 	{
