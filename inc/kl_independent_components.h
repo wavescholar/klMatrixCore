@@ -180,16 +180,5 @@ template<> klMatrix<double> klIndependentComponents<double>::klICACore(unsigned 
 
 }
 
-template<class TYPE> void testklIndependentComponents()
-{
-	
-//  this is unit tested in kl_multivariate_random_variable
-
-}
-
-
-
-
-
 #endif //__kl_independent_components__
 

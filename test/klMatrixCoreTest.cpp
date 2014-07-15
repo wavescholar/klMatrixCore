@@ -6,15 +6,12 @@
 void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize);
 void klPerformanceTesting();
 
-int mainTRBC(int argc, char**argv);
 #include <iostream>
 int main(int argc, char* argv[])
 {
 	//klPerformanceTesting();	
 	klIntegrationTest(false,klTestType::MEDIUM);
 	
-	mainTRBC( argc, argv);
-
 	klIntegrationTest(false,klTestType::SMALL);
 
 	klIntegrationTest(true,klTestType::SMALL);

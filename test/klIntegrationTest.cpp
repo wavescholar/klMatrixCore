@@ -48,11 +48,20 @@ void __cdecl klNewHandler( )
 	throw bad_alloc( );
 	return;
 }
-void MatrixOpsQuickCheck(ofstream &_tex,__int64  &n);
-void MatrixNorm(ofstream &_tex,__int64  &n);
+
+
+void RandomBallCoverTest(ofstream &_tex, klAlgorithmParameterContainer& klapc);
+void FastGaussTransformTest(ofstream &_tex, klAlgorithmParameterContainer& klapc );
+void MatrixNormTest(ofstream &_tex,__int64  &n);
+void MatrixEigenSolverTest(ofstream &_tex,__int64  &n);
+void MatrixOpsQuickCheck(ofstream &_tex,__int64  &n);//In unit test header
+void SemidefiniteProgrammingTest(ofstream &_tex,__int64  &n);
+void PrincipalComponentsTest(ofstream &_tex,__int64  &n);
+ 
+
 void MemoryManagement(ofstream &_tex,__int64  &n);
-void SemidefiniteProgrammingCheck(ofstream &_tex,__int64  &n);
-void PrincipalComponentsDemo(ofstream &_tex,__int64  &n);
+
+
 void IterativeKrylovCheck(ofstream &_tex,__int64  &n,const char* fileName=NULL);
 void GenerateTraceyWidomSample(ofstream &_tex,__int64  &n);
 void Utility(ofstream &_tex,__int64  &n);
@@ -63,7 +72,7 @@ void MatrixExponential(ofstream &_tex,__int64  &n);
 void MutithreadedWorkflow(void);
 void VerifyWingerLaw(ofstream &_tex, __int64& n);
 void GenerativeGramConsistencyCheck(ofstream &_tex,__int64  &n);
-void MatrixEigenSolver(ofstream &_tex,__int64  &n);
+
 void Arpack_MKLsyevxSmokeTest(ofstream &_tex,__int64 &n,const char* fileName);
 void FEATSEigensolver(ofstream &_tex,__int64 &n,const char* fileName);
 void BinaryIO(ofstream &_tex,__int64 &n);
@@ -71,45 +80,6 @@ void PointCloudAndLatexPlots(ofstream &_tex,__int64 &n);
 void RandomMatrixNorms(ofstream &_tex,__int64 &n);
 void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n);
 void ConvertCSVMatrixFilesToBinFormat();
-
-class klFastGaussAlgorithmParameters : public klAlgorithmParameterContainer
-{
-public:
-	klFastGaussAlgorithmParameters()
-	{
-		unsigned int numPoints =10000;
-		unsigned int numSources=numPoints;
-		unsigned int numCenters = 25;
-		int dimension =2;
-		double scale =1.0f /1250.0f;
-
-		addIntParameter("NumberOfPoints",(__int64)numPoints);		
-		addIntParameter("NumberOfSources",(__int64)numPoints);
-		addIntParameter("NumberOfCenters",(__int64)numCenters);
-    	addIntParameter("Dimension",(__int64)dimension);
-
-		addDoubleParameter("Scale",scale);
-		
-		describeAlgorithmParameters(std::cout);
-
-	}
-	virtual void describeAlgorithm(ostream& str)
-	{
-		str<<"klFastGaussAlgorithm"<<endl;
-	}
-
-	klFastGaussAlgorithmParameters(unsigned int numPoints, unsigned int numSources, unsigned int numCenters ,int dimension,double scale)
-	{
-		addIntParameter("NumberOfPoints",(__int64)numPoints);		
-		addIntParameter("NumberOfSources",(__int64)numPoints);
-		addIntParameter("NumberOfCenters",(__int64)numCenters);
-    	addIntParameter("Dimension",(__int64)dimension);
-
-		addDoubleParameter("Scale",scale);
-	}
-};
-
-void FastGaussTransform(ofstream &_tex, klAlgorithmParameterContainer& klapc );
 
 #include "kl_time_series.h"
 #include "kl_random_number_generator.h"
@@ -246,8 +216,11 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klMemMgr*  mgr = NULL;
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
+	
+	makeLatexSection("Random Ball Cover ",_tex),
+	klutw.runTest(RandomBallCoverTest);
 
-	ConvertCSVMatrixFilesToBinFormat();	
+	//ConvertCSVMatrixFilesToBinFormat();	
 
 	klutw.runTest( BinaryIO);
 
@@ -288,14 +261,14 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	klFastGaussAlgorithmParameters klfgp;
 	klfgp.serialize(baseFileNameString +"klFastGaussAlgorithmParameters_2D.klap");
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(FastGaussTransform);
+	klutw.runTest(FastGaussTransformTest);
 	
 	klfgp.setParameter(klAlgorithmParameter("Scale",1.0f /(8*1250.0f)));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 24));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 9984)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 9984)) ;;
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(FastGaussTransform);
+	klutw.runTest(FastGaussTransformTest);
 	
 
 	klfgp.setParameter(klAlgorithmParameter("Scale",1.0f /(16*1250.0f)));
@@ -303,7 +276,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 4*400)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 4*400)) ;;
 	klutw.setAlgorithmParameters(klfgp);
-	klutw.runTest(FastGaussTransform);
+	klutw.runTest(FastGaussTransformTest);
 
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 10000)) ;
 	klfgp.setParameter(klAlgorithmParameter("NumberOfSources",(__int64) 10000)) ;;
@@ -314,13 +287,13 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 
 	klutw.setAlgorithmParameters(klfgp);
 		
-	klutw.runTest(FastGaussTransform);
+	klutw.runTest(FastGaussTransformTest);
 
 	makeLatexSection("Matrix Norms",_tex);
-	klutw.runTest(MatrixNorm);
+	klutw.runTest(MatrixNormTest);
 
 	makeLatexSection("Principal Components Matlab ",_tex);
-	klutw.runTest(testklPrincipalComponentsMatlab<double>);
+	klutw.runTest(PrincipalComponentsTest);
 
 	makeLatexSection("Multi Variate Random Number Generator ",_tex);
 	klutw.runTest(testKLMultiVariateRandomNumberGeneratorMatlab<double>);
@@ -344,7 +317,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 
 	klutw.runTest(GenerativeGramConsistencyCheck);
 	
-	klutw.runTest(MatrixEigenSolver);
+	klutw.runTest(MatrixEigenSolverTest);
 		
 	klutw.runTest(GenerateTraceyWidomSample);
 	
@@ -359,7 +332,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	klutw.runTest(testKLRandomNumberGeneratorMatlab<double>);
 	
 	makeLatexSection("Semidefinite Programming SDPA",_tex);
-	klutw.runTest(SemidefiniteProgrammingCheck);
+	klutw.runTest(SemidefiniteProgrammingTest);
 
 
 	//makeLatexSection"Test Wavelet <double>",_tex);
@@ -985,305 +958,6 @@ void GenerateTraceyWidomSample(ofstream &_tex,__int64 &n)
 
 
 
-}
-
-#include "testmatgenunit.h"
-bool testmatgen(bool silent);
-klMatrix<double> real_2d_array_to_klMatrix(ap::real_2d_array a);
-void MatrixNorm(ofstream &_tex,__int64  &n)
-{	
-	n= 12;
-
-	makeLatexSection("Haar Distributed Random Orthogonal Matrix $A \\in O(n)$",_tex);
-	_tex<<" Testing Operator Norm"<<endl<<"Number of Dimensions: "<<n<<endl<<endl; 
-
-	testmatgen(false);
-	ap::real_2d_array a;
-	rmatrixrndorthogonal(n, a);
-	klMatrix<double> Op = real_2d_array_to_klMatrix(a);
-	klLU<double> LU(Op);
-	klMatrix<double> u =LU();
-	klMatrix<double> l =LU.L();
-
-	klMatrix<double> lu = l*u;
-
-	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$Det(A) :   A \\in O(n)$ = "<<Op.det()<<endl<<endl;
-	LatexPrintMatrix(l, "L",_tex);
-	LatexPrintMatrix(u, "U",_tex);
-	LatexPrintMatrix(lu, "L * U ",_tex);
-	_tex<<"$Det(L) :    = "<<l.det()<<"    "<<" Det(U) :    = "<<u.det()<<"    "<<" Det(LU) :    = "<<lu.det()<<"$"<<endl<<endl;
-	_tex<<"$||A||_{L_1}$  = "<<Op.norm()<<endl<<endl;
-
-	_tex<<"$||A||_{L_{\\infty}}$ = "<<Op.norm(true)<<endl<<endl;
-
-	_tex<<"$||A^{-1}||_{L_1}$  = "<<Op.inverse().norm()<<endl<<endl;
-
-	_tex<<"$||A^{-1}||_{L_{\\infty}}$ = "<<Op.inverse().norm(true)<<endl<<endl;
-
-	_tex<<"$||A||_{L_{\\infty}} * ||A^{-1}||_{L_{\\infty}} = "<<Op.norm(true) * Op.inverse().norm(true)<<"$"<<endl<<endl;
-
-	_tex<<"$||A||_{L_1} * ||A^{-1}||_{L_1} = "<< Op.norm() * Op.inverse().norm()<<"$"<<endl<<endl;
-
-	double A_f =0;
-	for(int i=0;i<n;i++)
-	{
-		A_f+=Op[i].pow_alpha(2).sum();		
-	}
-	A_f = sqrt(A_f);
-	_tex<<"Frobenious Norm  $||A||_{\\textit{F}}$ via $\\sum\\limits_{i,j =0}^{n} \\|A_{i,j}|$   of  $A \\in O(n)$  "<<A_f<<endl<<endl;
-
-	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber(1)<<endl<<endl;
-	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber()<<endl<<endl;
-
-	klVector<complex<double> > eigen =Op.eigenvalues();
-	_tex<<"Eigenvalues of $A \\in O(n)$"<<endl<<endl;
-	_tex<<eigen<<endl;
-
-	klVector<double> argEigenvalues(n);
-	for(int i=0;i<n;i++)
-	{
-		argEigenvalues[i] = std::abs(eigen[i]);
-	}
-	_tex<<" $|\\lambda | : \\lambda \\in \\sigma(A) , A \\in O(n)$"<<endl<<endl;
-	_tex<<argEigenvalues<<endl<<endl;
-
-
-	_tex<<"Calculating $A^{\\dag} A,$  we expect $A^{\\dag} A \\approx I$"<<endl<<endl;
-	klMatrix<double> ortho(n,n);
-	int i=0;
-	int j=0;
-	for(i=0;i<n;i++)
-	{
-		for(j=0;j<n;j++)
-		{
-			ortho[i][j] = Op.getColumn(i).dotBLAS(Op.getColumn(j));
-		}
-	}
-	LatexPrintMatrix(ortho,"A^{\\dag} A",_tex);
-
-	//test \alpha A x + \beta y
-	//klMatrix<float> mvpBLAS(float alpha,  klMatrix<float> a,klVector<float> x, float beta,klVector<float> yi);
-	klVector<double> Axbpy = mvpBLAS(1.0,  ortho,ortho[0], 2.0,ortho[1]);
-	//_tex<<ortho[0]<<endl;
-	//_tex<<ortho[1]<<endl;
-	//_tex<<Axbpy<<endl;
-
-	ortho = Op;
-
-	_tex<<"Calculating $A^{-1} ,  A \\in O(n)$."<<endl<<endl;
-	klMatrix<double> invOrtho= Op.inverse();
-	LatexPrintMatrix(invOrtho,"A^{-1}",_tex);
-
-	_tex<<"Calculating $A^{-1} *A  ,  A \\in O(n)$.   We expect $A^{-1} *A  \\approx I$. "<<endl<<endl;
-	LatexPrintMatrix(invOrtho*Op,"A^{-1} *A",_tex);
-
-	_tex<<"Calculating SVD of  $A \\in O(n)$"<<endl<<endl;
-
-	{
-		klSVD<double> SVD(Op);
-		klDoubleVectorPtr Sigma = SVD();
-		klMatrix<double> S = diag(*Sigma);
-		klDoubleMatrixPtr U = SVD.U();
-		klDoubleMatrixPtr V = SVD.V();
-
-		LatexPrintMatrix(*U,"U",_tex);
-		LatexPrintMatrix(S,"S",_tex);
-		LatexPrintMatrix(*V,"V",_tex);
-
-		LatexPrintMatrix( *(U) * (S) * *(V),"U S V",_tex);
-	}
-
-	makeLatexSection("Wishart Matrix $A \\in W(n)$",_tex);
-
-	klMatrix<double> AW=     SampleWishart(n);
-	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.ConditionNumber(true)<<endl;
-	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.ConditionNumber()<<endl;
-
-	makeLatexSection("Gaussian Orthogonal Ensemble $A \\in GOE(n)$",_tex);
-
-	klMatrix<double> A_GOE = SampleGOE(n);
-	klMatrix<double> Ainv=A_GOE.inverse();
-	klMatrix<double> Id_goe=Ainv * A_GOE;
-	Id_goe.threshold(0.001f,+0.0f);
-	Id_goe = Id_goe + 0.0;
-	klVector<double> x=Id_goe[0]; 
-	klVector<double> y=Id_goe[2];
-
-	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
-
-	makeLatexSection("The Identity Matrix $I \\in M(n)$",_tex);
-
-	klMatrix<double> Id(n,n);
-	Id= IdentityMatrix<double>(n);
-	_tex<<"$L_1$ condition number of $I$ = "<<Id.ConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.ConditionNumber()<<endl;
-
-	_tex.flush();
-	
-}
-
-void MatrixEigenSolver(ofstream &_tex,__int64  &n)
-{	
-	makeLatexSection("Eigen Solver Checks",_tex);
-	
-	n= 8;
-
-	makeLatexSection("Haar Distributed Random Orthogonal Matrix $A \\in O(n)$",_tex);
-	_tex<<" Testing Operator Norm"<<endl<<"Number of Dimensions: "<<n<<endl<<endl; 
-
-	testmatgen(false);
-	ap::real_2d_array a;
-	rmatrixrndorthogonal(n, a);
-	klMatrix<double> Op = real_2d_array_to_klMatrix(a);
-	{
-		//Exercise symmetric EV solver
-
-		klMatrix<double> F = Op*Op.transpose();
-		
-		cout<<F;
-		
-		klSYEVX<double> SYEVX(F);
-
-		klDoubleVectorPtr ans = SYEVX();
-
-		klVector<double> spectrum = *(ans.ptr());
-
-		cout<<spectrum;
-
-		klDoubleMatrixPtr E = SYEVX.Eigenvectors();
-
-		cout<<*(E.ptr());
-
-	}
-
-	klLU<double> LU(Op);
-	klMatrix<double> u =LU();
-	klMatrix<double> l =LU.L();
-
-	klMatrix<double> lu = l*u;
-
-	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$Det(A) :   A \\in O(n)$ = "<<Op.det()<<endl<<endl;
-	LatexPrintMatrix(l, "L",_tex);
-	LatexPrintMatrix(u, "U",_tex);
-	LatexPrintMatrix(lu, "L * U ",_tex);
-	_tex<<"$Det(L) :    = "<<l.det()<<"    "<<" Det(U) :    = "<<u.det()<<"    "<<" Det(LU) :    = "<<lu.det()<<"$"<<endl<<endl;
-	_tex<<"$||A||_{L_1}$  = "<<Op.norm()<<endl<<endl;
-
-	_tex<<"$||A||_{L_{\\infty}}$ = "<<Op.norm(true)<<endl<<endl;
-
-	_tex<<"$||A^{-1}||_{L_1}$  = "<<Op.inverse().norm()<<endl<<endl;
-
-	_tex<<"$||A^{-1}||_{L_{\\infty}}$ = "<<Op.inverse().norm(true)<<endl<<endl;
-
-	_tex<<"$||A||_{L_{\\infty}} * ||A^{-1}||_{L_{\\infty}} = "<<Op.norm(true) * Op.inverse().norm(true)<<"$"<<endl<<endl;
-
-	_tex<<"$||A||_{L_1} * ||A^{-1}||_{L_1} = "<< Op.norm() * Op.inverse().norm()<<"$"<<endl<<endl;
-
-	double A_f =0;
-	for(int i=0;i<n;i++)
-	{
-		A_f+=Op[i].pow_alpha(2).sum();		
-	}
-	A_f = sqrt(A_f);
-	_tex<<"Frobenious Norm  $||A||_{\\textit{F}}$ via $\\sum\\limits_{i,j =0}^{n} \\|A_{i,j}|$   of  $A \\in O(n)$  "<<A_f<<endl<<endl;
-
-	_tex<<"$L_1$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber(1)<<endl<<endl;
-	LatexPrintMatrix(Op, "A",_tex);
-	_tex<<"$L_{\\infty}$ condition number of Haar Distributed Random Orthogonal Matrix $A \\in O(n)$ "<<Op.ConditionNumber()<<endl<<endl;
-
-	klVector<complex<double> > eigen =Op.eigenvalues();
-	_tex<<"Eigenvalues of $A \\in O(n)$"<<endl<<endl;
-	_tex<<eigen<<endl;
-
-	klVector<double> argEigenvalues(n);
-	for(int i=0;i<n;i++)
-	{
-		argEigenvalues[i] = std::abs(eigen[i]);
-	}
-	_tex<<" $|\\lambda | : \\lambda \\in \\sigma(A) , A \\in O(n)$"<<endl<<endl;
-	_tex<<argEigenvalues<<endl<<endl;
-
-
-	_tex<<"Calculating $A^{\\dag} A,$  we expect $A^{\\dag} A \\approx I$"<<endl<<endl;
-	klMatrix<double> ortho(n,n);
-	int i=0;
-	int j=0;
-	for(i=0;i<n;i++)
-	{
-		for(j=0;j<n;j++)
-		{
-			ortho[i][j] = Op.getColumn(i).dotBLAS(Op.getColumn(j));
-		}
-	}
-	LatexPrintMatrix(ortho,"A^{\\dag} A",_tex);
-
-	//test \alpha A x + \beta y
-	//klMatrix<float> mvpBLAS(float alpha,  klMatrix<float> a,klVector<float> x, float beta,klVector<float> yi);
-	klVector<double> Axbpy = mvpBLAS(1.0,  ortho,ortho[0], 2.0,ortho[1]);
-	//_tex<<ortho[0]<<endl;
-	//_tex<<ortho[1]<<endl;
-	//_tex<<Axbpy<<endl;
-
-	ortho = Op;
-
-	_tex<<"Calculating $A^{-1} ,  A \\in O(n)$."<<endl<<endl;
-	klMatrix<double> invOrtho= Op.inverse();
-	LatexPrintMatrix(invOrtho,"A^{-1}",_tex);
-
-	_tex<<"Calculating $A^{-1} *A  ,  A \\in O(n)$.   We expect $A^{-1} *A  \\approx I$. "<<endl<<endl;
-	LatexPrintMatrix(invOrtho*Op,"A^{-1} *A",_tex);
-
-	_tex<<"Calculating SVD of  $A \\in O(n)$"<<endl<<endl;
-
-	{
-		klSVD<double> SVD(Op);
-		klDoubleVectorPtr Sigma = SVD();
-		klMatrix<double> S = diag(*Sigma);
-		klDoubleMatrixPtr U = SVD.U();
-		klDoubleMatrixPtr V = SVD.V();
-
-		LatexPrintMatrix(*U,"U",_tex);
-		LatexPrintMatrix(S,"S",_tex);
-		LatexPrintMatrix(*V,"V",_tex);
-
-		LatexPrintMatrix( *(U) * (S) * *(V),"U S V",_tex);
-	}
-
-
-	_tex<<"Calculating first few eigenvectors of $A \\in O(n)$ using LAPACK syevx"<<endl<<endl;
-
-	makeLatexSection("Wishart Matrix $A \\in W(n)$",_tex);
-
-	klMatrix<double> AW=     SampleWishart(n);
-	_tex<<"$L_1$ condition number of Wishart Matrix "<<AW.ConditionNumber(true)<<endl;
-	_tex<<"$L_\infty$ condition number of Wishart Matrix "<<AW.ConditionNumber()<<endl;
-
-	makeLatexSection("Gaussian Orthogonal Ensemble $A \\in GOE(n)$",_tex);
-
-	klMatrix<double> A_GOE = SampleGOE(n);
-	klMatrix<double> Ainv=A_GOE.inverse();
-	klMatrix<double> Id_goe=Ainv * A_GOE;
-	Id_goe.threshold(0.001f,+0.0f);
-	Id_goe = Id_goe + 0.0;
-	klVector<double> x=Id_goe[0]; 
-	klVector<double> y=Id_goe[2];
-
-	_tex<<"$L_1$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of GOE Matrix "<<A_GOE.ConditionNumber(true)<<endl;
-
-	makeLatexSection("The Identity Matrix $I \\in M(n)$",_tex);
-
-	klMatrix<double> Id(n,n);
-	Id= IdentityMatrix<double>(n);
-	_tex<<"$L_1$ condition number of $I$ = "<<Id.ConditionNumber(true)<<endl;
-	_tex<<"$L_\\infty$ condition number of $I$ = "<<Id.ConditionNumber()<<endl;
-
-	_tex.flush();
-	
 }
 
 void Utility(ofstream &_tex,__int64  &n )
@@ -2003,46 +1677,6 @@ void BinaryIO(ofstream &_tex,__int64 &n)
 		__int64 GBWorthOfDoubles = __int64(1073741824LL/sizeof(double));
 		__int64 rzG = __int64 (std::sqrt ((double)GBWorthOfDoubles)) ;
 
-	//	{	//klMatrix<double> klmd (rzG,rzG);
-	//	klMatrix<double> klmd (128,128);
-	//	klmd =pi;
-	//	stringstream ss;
-	//	klt.tic();
-	//	ss.str("");ss.clear();
-	//	ss<<basefilename<<"//WriterTestMatrix.klmd";
-	//	klBinaryIO::WriteWinx64( klmd, ss.str() );
-	//	double bwtoc=klt.toc();
-
-	//	ss.str("");ss.clear();
-	//	ss<<basefilename<<"//WriterTestMatrix.txt";
-	//	ofstream fileostreamobj(ss.str() );
-	//	klt.tic();
- //       fileostreamobj<<klmd<<endl;
- //       fileostreamobj.close();
-	//	double swtoc = klt.toc();
-
-	//	_tex<<"Binary writer Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
-
-	//	__int64 rows,cols;
-
-	//	ss.str("");ss.clear();
-	//	ss<<basefilename<<"//WriterTestMatrix.klmd";	
-	//	klBinaryIO::QueryWinx64(ss.str(),rows,cols);
-
-	//	klMatrix<double> klmdMat(rows,cols);
-	//	klt.tic();
-	//	klBinaryIO::MatReadWinx64(ss.str(),klmdMat);
-	//	bwtoc =klt.toc();
-
-	//	ss.str("");ss.clear();
-	//	ss<<basefilename<<"//WriterTestMatrix.txt";
-	//	ifstream fileistreamobj(ss.str() );
-	//	klt.tic();
- //       fileistreamobj>>klmdMat;
- //       fileistreamobj.close();
-	//	swtoc = klt.toc();
-	//	_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
-	//}
 
 
 	{	//klMatrix<double> klmd (rzG,rzG);
@@ -2232,160 +1866,6 @@ void RandomMatrixNorms(ofstream &_tex,__int64 &n)
 
 	double c2 = G.ConditionNumber(true);
 	}
-}
-
-void FastGaussTransform(ofstream &_tex,klAlgorithmParameterContainer& klapc )
-{
-	//This test will produce plots with either 2 or three dimensional data
-
-	klFastGaussAlgorithmParameters* klfgp=static_cast<klFastGaussAlgorithmParameters*>(&klapc);
-
-	klfgp->describeAlgorithmParameters(std::cout);
-	
-	klAlgorithmParameter numPointsP=klfgp->getParameter("NumberOfPoints");
-	klAlgorithmParameter numSourcesP=klfgp->getParameter("NumberOfSources");
-	klAlgorithmParameter numCentersP=klfgp->getParameter("NumberOfCenters");
-	klAlgorithmParameter dimensionP=klfgp->getParameter("Dimension");
-
-	klAlgorithmParameter scaleP=klfgp->getParameter("Scale");
-	
-	unsigned int numPoints = numPointsP.getIntValue();
-	unsigned int numSources= numSourcesP.getIntValue();
-	unsigned int numCenters =numCentersP.getIntValue();
-	int dimension =dimensionP.getIntValue();
-	double scale =scaleP.getDoubleValue();
-	 
-	//__int64 numPointsPerCenter, __int64 numCenters,__int64 dimension ,double scale
-	klGaussianMixture X(numPoints/numCenters,numCenters,dimension,scale);
-
-	stringstream fileName;stringstream title;
-	
-	fileName.str("");fileName.clear();
-	title.str(""); title.clear();
-	fileName<<"GaussianMixture_"<<numCenters<<"_Centers";
-	title<<"Gaussian Mixture";
-	char* color="'c.'";
-	if(dimension==2)
-		LatexInsert2DScatterPlot(X.getData().getColumn(0),X.getData().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-	if(dimension==3)
-		LatexInsert3DPlot(X.getData(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-	fileName.str("");fileName.clear();
-	title.str(""); title.clear();
-	fileName<<"GaussianMixture_ClusterCenters"<<numCenters<<"_Centers";
-	title<<"Gaussian Mixture Cluster Centers";
-	color="'k*'";
-	if(dimension==2)	
-		LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	if(dimension==3)
-		LatexInsert3DPlot(X.getClusterCenters(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-
-	//Add these to the algorithm parameters.
-	//Source Weights
-	klVector<double> q(numPoints);
-	klUniformRV<double> uniform(0,1);
-	
-	for(int i=0;i<numPoints;i++)
-		q[i]=uniform();
-
-	double h=std::sqrt((double)dimension)*0.2*std::sqrt((double)dimension);
-
-	double epsilon=1e-3f;
-
-	double Klimit=round(0.2*sqrt((double)dimension)*100/h);
-
-	ImprovedFastGaussTransformChooseParameters IFGTP(dimension,h,epsilon,Klimit);
-
-	klMatrix<double>  X_shifted_scaled= X.getData();
-		
-	klVector<double> minValsColumnWise(dimension);
-	minV(X_shifted_scaled, minValsColumnWise ,0);
-	for(__int64 i=0;i<numPoints;i++)
-	{
-		for(__int64 j=0;j<dimension;j++)
-		{
-			X_shifted_scaled[i][j] = X_shifted_scaled[i][j] -minValsColumnWise[j];
-		}
-	}
-	klVector<double> maxValsColumnWise(dimension);
-	maxV(X_shifted_scaled, maxValsColumnWise ,0);
-
-	//Check For Zeros Before We divide
-	bool isOK = (maxValsColumnWise > 0.0).sum();  
-	for(__int64 i=0;i<numPoints;i++)
-	{
-		for(__int64 j=0;j<dimension;j++)
-		{
-			X_shifted_scaled[i][j] = X_shifted_scaled[i][j]* (1.0f / maxValsColumnWise[j]);
-		}
-	}
-	
-	//Target Points
-	klUniformHyperCube Y(numPoints, dimension );
-
-	klVector<int> kCenterClusterLabels(numPoints);
-
-	KCenterClustering KCC(dimension,numPoints,  X_shifted_scaled.getMemory(),X.getClusterMembership().getMemory(),numCenters);
-	KCC.Cluster();
-		
-	klVector<double> clusterRadii(numCenters);
-
-	klMatrix<double> clusterCenters(numCenters,dimension);
-
-	KCC.ComputeClusterCenters(numCenters,clusterCenters.getMemory(),kCenterClusterLabels.getMemory(),clusterRadii.getMemory() ) ;
-				
-	fileName.str("");fileName.clear();
-	title.str(""); title.clear();
-	fileName<<"KCenterClusterMemberships_"<<numCenters<<"_Centers";
-	title<<"KCenter Cluster Memberships";
-	if(dimension==2)
-	{
-	char* color="'k*'";
-	LatexInsert2DScatterPlot(X.getClusterCenters().getColumn(0),X.getClusterCenters().getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-	color="'b+'";
-	LatexInsert2DScatterPlot(clusterCenters.getColumn(0),clusterCenters.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	}
-	if(dimension==3)
-	{
-		char* color="'k*'";
-		LatexInsert3DPlot(X.getClusterCenters(),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::FirstPlot, color);
-		color="'b+'";
-		LatexInsert3DPlot(clusterCenters,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::LastPlot, color);
-	}
-	
-	double MaxClusterRadius =KCC.MaxClusterRadius;
-	
-	ImprovedFastGaussTransformChooseTruncationNumber IFGTCTN(dimension,h,epsilon, MaxClusterRadius);	
-	
-	int TruncationNumber= IFGTCTN.p_max;
-
-	klVector<double> gaussTransform(numPoints);
-
-	ImprovedFastGaussTransform IFGT(dimension,
-		numPoints,
-		numSources,
-		X_shifted_scaled.getMemory(),
-		h,
-		q.getMemory(),
-		X_shifted_scaled.getMemory(),
-		TruncationNumber,
-		numCenters,
-		X.getClusterMembership().getMemory(), 
-		clusterCenters.getMemory(),
-		clusterRadii.getMemory(),
-		MaxClusterRadius,
-		epsilon,
-		gaussTransform.getMemory()	);	
-	
-	IFGT.Evaluate();
-
-	fileName.str("");fileName.clear();
-	title.str(""); title.clear();
-	fileName<<"FGT"<<numCenters<<"_Centers";
-	title<<"Fast Gauss Transform";
-	color="'k*'";
-	color= "'b.'";
-	LatexInsert1DPlot(gaussTransform,_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
-
 }
 
 void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)

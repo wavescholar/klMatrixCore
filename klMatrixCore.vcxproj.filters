@@ -25,6 +25,9 @@
     <Filter Include="Libs\ReleaselPackages">
       <UniqueIdentifier>{015ba433-8d92-4ae7-ac2f-674fb9b4e68b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TestCases">
+      <UniqueIdentifier>{e5f57235-5246-4c76-9064-ce6845aa5e5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -157,8 +160,23 @@
     <ClCompile Include="test\klPerformanceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Packages\RandomBallCover\TestRandomBallCover\TestRandomBallCover.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="test\FastGaussTransformTest.cpp">
+      <Filter>TestCases</Filter>
+    </ClCompile>
+    <ClCompile Include="test\RandomBallCoverTest.cpp">
+      <Filter>TestCases</Filter>
+    </ClCompile>
+    <ClCompile Include="test\MatrixEigensolverTest.cpp">
+      <Filter>TestCases</Filter>
+    </ClCompile>
+    <ClCompile Include="test\MatrixNormTest.cpp">
+      <Filter>TestCases</Filter>
+    </ClCompile>
+    <ClCompile Include="test\SemidefiniteProgrammingTest.cpp">
+      <Filter>TestCases</Filter>
+    </ClCompile>
+    <ClCompile Include="test\PrincipalComponentsTest.cpp">
+      <Filter>TestCases</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

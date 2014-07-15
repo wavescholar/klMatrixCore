@@ -24,16 +24,10 @@
     <ClCompile Include="src\kl_memory.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\kl_ML_helper_fns.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\kl_multivariate_random_variable.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_random_number_generator.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\kl_sdpa.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp">
@@ -52,6 +46,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\kl_arpack_sym_dense.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_matrix_helper_fns.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

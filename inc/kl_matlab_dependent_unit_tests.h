@@ -475,56 +475,6 @@ template<class TYPE> void testKLMultiVariateRandomNumberGeneratorMatlab(ofstream
 }
 
 
-#include "kl_principal_components.h"
-#include "kl_multivariate_random_variable.h"
-template<class TYPE> void testklPrincipalComponentsMatlab(ofstream &_tex,__int64 &n)
-{
-
-	klMatlabEngineThreadMap klmtm;
-	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
-
-	char* evalString=new char[2048];
-	char* arg=new char[2048];
-
-	klMatrix<TYPE> covarianceMatrix(3,3);
-
-	covarianceMatrix[0][0]=1; covarianceMatrix[0][1]=.2;covarianceMatrix[0][2]=.1;
-	covarianceMatrix[1][0]=.2; covarianceMatrix[1][1]=2;covarianceMatrix[1][2]=.1;
-	covarianceMatrix[2][0]=.1; covarianceMatrix[2][1]=.1;covarianceMatrix[2][2]=3;
-	klVector<TYPE> meanVector(3);
-	meanVector[0]=0;meanVector[1]=0;meanVector[2]=0;
-
-	klNormalMultiVariate<TYPE> X(meanVector, covarianceMatrix);
-
-	unsigned int numTestPoints=1024;
-
-	klSamplePopulation<TYPE> sample(numTestPoints,3);
-	unsigned int j;
-	for(j=0;j<numTestPoints;j++)
-	{
-		klVector<TYPE> rv=X();
-		sample[j][0]=rv[0]; sample[j][1]=rv[1];sample[j][2]=rv[2];
-	}
-
-	LatexInsert3DPlot(sample, _tex, basefilename,"PCAPoints","PCA Points");
-
-	klPrincipalComponents<TYPE> pca=sample;
-
-	klMatrix<TYPE> V=pca();
-
-	_tex<<"The eigenvectors:"<<endl;
-	_tex<<V<<endl;
-
-	klVector<complex<double> > e=covarianceMatrix.eigenvalues();
-
-	_tex<<"All of the eigenvalues of the covariance matrix:"<<endl;
-	_tex<<e<<endl;
-
-	klMatrix<double> dist=sample.calcDistributionTests();
-
-}
-
-
 template<class TYPE>  void __cdecl testKLRandomNumberGeneratorMatlab(ofstream &_tex,__int64 &n)
 {
 

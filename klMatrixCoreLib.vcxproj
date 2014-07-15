@@ -18,10 +18,9 @@
     <ClCompile Include="src\kl_latex_helper_fns.cpp" />
     <ClCompile Include="src\kl_matrix_exponential.cpp" />
     <ClCompile Include="src\kl_memory.cpp" />
-    <ClCompile Include="src\kl_ML_helper_fns.cpp" />
+    <ClCompile Include="src\kl_matrix_helper_fns.cpp" />
     <ClCompile Include="src\kl_multivariate_random_variable.cpp" />
     <ClCompile Include="src\kl_random_number_generator.cpp" />
-    <ClCompile Include="src\kl_sdpa.cpp" />
     <ClCompile Include="src\kl_stack_walker.cpp" />
     <ClCompile Include="src\kl_threaded_workflow_demo.cpp" />
     <ClCompile Include="src\kl_util.cpp" />

@@ -196,8 +196,8 @@ std::string klStackWalkFn(void);
 
 /*
 With SEH, you can ensure that resources such as memory blocks and files are correctly if execution unexpectedly terminates. 
-You can also handle specific problems—for example, insufficient memory—by using concise structured code that does not rely o
-n goto statements or elaborate testing of return codes.
+You can also handle specific problems—for example, insufficient memory—by using concise structured code that does not rely on 
+goto statements or elaborate testing of return codes.
 The try-except and try-finally statements referred to in this article are Microsoft extensions to the C language. 
 They support SEH by enabling applications to gain control of a program after events that would otherwise terminate execution. 
 Although SEH works with C++ source files, it's not specifically designed for C++. If you use SEH in a C++ program that you 
@@ -212,10 +212,17 @@ Termination handlers, which are called when an exception causes termination in a
 try-finally-statement:
 __try  compound-statement
 __finally  compound-statement
-The try-finally statement is a Microsoft extension to the C and C++ languages that enables target applications to guarantee execution of cleanup code when execution of a block of code is interrupted. Cleanup consists of such tasks as deallocating memory, closing files, and releasing file handles. The try-finally statement is especially useful for routines that have several places where a check is made for an error that could cause premature return from the routine.
-For related information and a code sample, see try-except Statement. For more information on structured exception handling in general, see Structured Exception Handling. For more information on handling exceptions in managed applications, see Exception Handling under /clr.
+The try-finally statement is a Microsoft extension to the C and C++ languages that enables target applications to guarantee execution of cleanup code when 
+execution of a block of code is interrupted. Cleanup consists of such tasks as deallocating memory, closing files, and releasing file handles. 
+The try-finally statement is especially useful for routines that have several places where a check is made for an error that could cause
+premature return from the routine.
+For related information and a code sample, see try-except Statement. For more information on structured exception handling in general,
+see Structured Exception Handling. For more information on handling exceptions in managed applications, see Exception Handling under /clr.
 Note Note
-Structured exception handling works with Win32 for both C and C++ source files. However, it is not specifically designed for C++. You can ensure that your code is more portable by using C++ exception handling. Also, C++ exception handling is more flexible, in that it can handle exceptions of any type. For C++ programs, it is recommended that you use the C++ exception-handling mechanism (try, catch, and throw statements).
+Structured exception handling works with Win32 for both C and C++ source files. However, it is not specifically designed for C++. 
+You can ensure that your code is more portable by using C++ exception handling. Also, C++ exception handling is more flexible, 
+in that it can handle exceptions of any type. For C++ programs, it is recommended that you use the C++ exception-handling mechanism
+(try, catch, and throw statements).
 */
 
 

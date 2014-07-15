@@ -183,10 +183,15 @@
     <Library Include="C:\Program Files\MATLAB\R2012b\extern\lib\win64\microsoft\mclmcrrt.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Packages\RandomBallCover\TestRandomBallCover\TestRandomBallCover.cpp" />
+    <ClCompile Include="test\FastGaussTransformTest.cpp" />
     <ClCompile Include="test\klIntegrationTest.cpp" />
     <ClCompile Include="test\klMatrixCoreTest.cpp" />
     <ClCompile Include="test\klPerformanceTest.cpp" />
+    <ClCompile Include="test\MatrixEigensolverTest.cpp" />
+    <ClCompile Include="test\MatrixNormTest.cpp" />
+    <ClCompile Include="test\PrincipalComponentsTest.cpp" />
+    <ClCompile Include="test\RandomBallCoverTest.cpp" />
+    <ClCompile Include="test\SemidefiniteProgrammingTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
