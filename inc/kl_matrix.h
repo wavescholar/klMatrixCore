@@ -1610,13 +1610,9 @@ class klBinaryIO
 {
 public:
 	
-	const static __int64 _chunkThresh=512LL;
+    const static __int64 _chunkThresh=4294967296LL;
 
-	const static __int64 _chunkSize = 512-24;
-
-	//const static __int64 _chunkThresh=4294967296LL;
-
-	//const static __int64 _chunkSize = 1073741824LL;
+	const static __int64 _chunkSize = 1073741824LL;
 
 	static inline void WriteWinx64( klMatrix<double>& out, string fileName)
 	{
@@ -1664,7 +1660,7 @@ public:
 						else
 						{
 							//Last Write
-							fwrite(writeDP,sizeof(double),bytesRemaining ,fd);
+							fwrite(writeDP,sizeof(double),bytesRemaining /sizeof(double),fd);
 							bytesRemaining -=bytesRemaining;
 						}
 					}
@@ -1674,7 +1670,7 @@ public:
 			}
 			catch(...)
 			{
-				klError err(" klMatrix<double> klFastReadWinx64(string fileName) error writing ");
+				klError err(" klMatrix<double> klFastWriteWinx64(string fileName) error writing ");
 				if(fd)
 				{
 					try
@@ -1739,7 +1735,7 @@ public:
 						else
 						{
 							//Last Write
-							fwrite(writeDP,sizeof(double),bytesRemaining ,fd);
+							fwrite(writeDP,sizeof(double),bytesRemaining /sizeof(double) ,fd);
 							bytesRemaining -=bytesRemaining;
 						}
 					}
@@ -1818,7 +1814,7 @@ public:
 							else
 							{
 								//Last Read
-								fread(readDP,sizeof(double),bytesRemaining,fd);
+								fread(readDP,sizeof(double),bytesRemaining /sizeof(double),fd);
 								bytesRemaining -=bytesRemaining;
 							}
 						}
@@ -1976,7 +1972,7 @@ public:
 							else
 							{
 								//Last Read
-								fread(readDP,sizeof(double),bytesRemaining,fd);
+								fread(readDP,sizeof(double),bytesRemaining /sizeof(double),fd);
 								bytesRemaining -=bytesRemaining;
 							}
 						}

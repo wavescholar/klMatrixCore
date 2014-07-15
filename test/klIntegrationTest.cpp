@@ -245,11 +245,11 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	{
 		klMemMgr*  mgr = NULL;
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
-	}	
+	}
+
+	ConvertCSVMatrixFilesToBinFormat();	
 
 	klutw.runTest( BinaryIO);
-
-	ConvertCSVMatrixFilesToBinFormat();
 
 	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
@@ -2003,7 +2003,49 @@ void BinaryIO(ofstream &_tex,__int64 &n)
 		__int64 GBWorthOfDoubles = __int64(1073741824LL/sizeof(double));
 		__int64 rzG = __int64 (std::sqrt ((double)GBWorthOfDoubles)) ;
 
-		//klMatrix<double> klmd (rzG,rzG);
+	//	{	//klMatrix<double> klmd (rzG,rzG);
+	//	klMatrix<double> klmd (128,128);
+	//	klmd =pi;
+	//	stringstream ss;
+	//	klt.tic();
+	//	ss.str("");ss.clear();
+	//	ss<<basefilename<<"//WriterTestMatrix.klmd";
+	//	klBinaryIO::WriteWinx64( klmd, ss.str() );
+	//	double bwtoc=klt.toc();
+
+	//	ss.str("");ss.clear();
+	//	ss<<basefilename<<"//WriterTestMatrix.txt";
+	//	ofstream fileostreamobj(ss.str() );
+	//	klt.tic();
+ //       fileostreamobj<<klmd<<endl;
+ //       fileostreamobj.close();
+	//	double swtoc = klt.toc();
+
+	//	_tex<<"Binary writer Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
+
+	//	__int64 rows,cols;
+
+	//	ss.str("");ss.clear();
+	//	ss<<basefilename<<"//WriterTestMatrix.klmd";	
+	//	klBinaryIO::QueryWinx64(ss.str(),rows,cols);
+
+	//	klMatrix<double> klmdMat(rows,cols);
+	//	klt.tic();
+	//	klBinaryIO::MatReadWinx64(ss.str(),klmdMat);
+	//	bwtoc =klt.toc();
+
+	//	ss.str("");ss.clear();
+	//	ss<<basefilename<<"//WriterTestMatrix.txt";
+	//	ifstream fileistreamobj(ss.str() );
+	//	klt.tic();
+ //       fileistreamobj>>klmdMat;
+ //       fileistreamobj.close();
+	//	swtoc = klt.toc();
+	//	_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
+	//}
+
+
+	{	//klMatrix<double> klmd (rzG,rzG);
 		klMatrix<double> klmd (362,362);
 		klmd =pi;
 		stringstream ss;
@@ -2042,6 +2084,7 @@ void BinaryIO(ofstream &_tex,__int64 &n)
         fileistreamobj.close();
 		swtoc = klt.toc();
 		_tex<<"Binary reader Speedup 1GB Double Matrix "<< swtoc/bwtoc<<endl<<endl;
+	}
 
 		
 	}
@@ -2518,14 +2561,20 @@ void ConvertCSVMatrixFilesToBinFormat()
 		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		
 		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture_BinFormat\\L_%d.klmd",n);
+		
+		QueryPerformanceCounter(prefCountStart);
 		klBinaryIO::WriteWinx64(A,fileName);
-
+		QueryPerformanceCounter(prefCountEnd);
+		cerr<<"tic toc Binary Write dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
+		
 		{
 			__int64 rows,cols;
 			klBinaryIO::QueryWinx64(fileName,rows,cols);
 			klMatrix<double> klmdMat(rows,cols);
-			klBinaryIO::MatReadWinx64(fileName,klmdMat);			
-			klout(klmdMat);
+			QueryPerformanceCounter(prefCountStart);
+			klBinaryIO::MatReadWinx64(fileName,klmdMat);
+			QueryPerformanceCounter(prefCountEnd);
+		    cerr<<"tic toc Binary Read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		}
 		
 	}
