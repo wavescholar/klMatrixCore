@@ -1,0 +1,44 @@
+<map id="klMatrix::getMemory" name="klMatrix::getMemory">
+<area shape="rect" id="node2" href="$classkl_arpack_functor.html#ab6fc721f25073e6d5f174f22f3e3a95d" title="klArpackFunctor::run" alt="" coords="510,212,653,239"/>
+<area shape="rect" id="node10" href="$classkl_fast_gauss_transform.html#a58ed7ec8c3109e48965ed5b144c1827c" title="klFastGaussTransform\l::operator()" alt="" coords="239,694,393,736"/>
+<area shape="rect" id="node11" href="$classkl_independent_components.html#a37b6a648dcf740827d2aadac433f3e74" title="klIndependentComponents\l::klICACore" alt="" coords="228,760,404,801"/>
+<area shape="rect" id="node12" href="$kl__matlab__iface_8h.html#affea0b4a80d0d2726a5b4aa2d1d2c64a" title="klHeatMapPlot" alt="" coords="263,826,369,852"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#a426de331b31907155ec2348a1579c59e" title="klMatrix\&lt; complex\&lt;\l double \&gt; \&gt;::inverse" alt="" coords="247,877,385,918"/>
+<area shape="rect" id="node14" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix\&lt; complex\&lt;\l double \&gt; \&gt;::eigenvalues" alt="" coords="233,942,399,984"/>
+<area shape="rect" id="node15" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix\&lt; complex\&lt;\l double \&gt; \&gt;::columnToRowMajor" alt="" coords="211,1008,421,1049"/>
+<area shape="rect" id="node16" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="277,440,355,467"/>
+<area shape="rect" id="node24" href="$kl__matrix_8h.html#a4326b0a09ffd791a19fa03455c2c9e91" title="mvpBLAS" alt="" coords="541,390,622,416"/>
+<area shape="rect" id="node25" href="$classkl_matrix.html#a1fc8abf0e9899b484e14fb30b22e712f" title="klMatrix::ConditionNumber" alt="" coords="229,1074,403,1100"/>
+<area shape="rect" id="node26" href="$kl__matrix_8h.html#af2f5fd91d4ea7220bbcdf6dc3bb63803" title="minV" alt="" coords="290,592,342,619"/>
+<area shape="rect" id="node27" href="$kl__unit__tests_8h.html#ae1819e41a57c0bdd12d8734e47115460" title="MatrixOpsQuickCheck" alt="" coords="505,592,658,619"/>
+<area shape="rect" id="node28" href="$kl_integration_test_8cpp.html#a52926f937d559c1f99915984378b6f19" title="FastGaussTransform" alt="" coords="509,643,654,670"/>
+<area shape="rect" id="node29" href="$kl__matrix_8h.html#a5a4adab85e8d60c649a349b88df2ba92" title="maxV" alt="" coords="288,542,344,568"/>
+<area shape="rect" id="node30" href="$classkl_binary_i_o.html#ae80fdafe5c9ecf2a4f8e847bb8a27858" title="klBinaryIO::WriteWinx64" alt="" coords="234,86,398,112"/>
+<area shape="rect" id="node33" href="$classkl_binary_i_o.html#a13f6614ff0c2fe68e98e172d9c714118" title="klBinaryIO::MatReadWinx64" alt="" coords="223,31,409,58"/>
+<area shape="rect" id="node34" href="$classkl_s_v_d.html#a027b4160b71f2a7cb1d67fc565eef914" title="klSVD::operator()" alt="" coords="255,1124,377,1151"/>
+<area shape="rect" id="node35" href="$classkl_l_u.html#a9340905a44278a0ae8028c0c0556cb1b" title="klLU::operator()" alt="" coords="261,1175,371,1202"/>
+<area shape="rect" id="node36" href="$kl__matrix__helper__fns_8h.html#ace0d8ed27a3d42dcde1e98127e4d754c" title="SampleSymmetricStandardNormalRM" alt="" coords="195,339,437,366"/>
+<area shape="rect" id="node38" href="$classkl_multiclass_s_v_m_train.html#a64ff63871319c8831cf698ae090e5101" title="klMulticlassSVMTrain\l::operator()" alt="" coords="241,1226,391,1268"/>
+<area shape="rect" id="node39" href="$classkl_multiclass_s_v_m_classify.html#aa3c26377d315571c0c9c7797d6f75a5d" title="klMulticlassSVMClassify\l::operator()" alt="" coords="233,1292,399,1333"/>
+<area shape="rect" id="node40" href="$classkl_normal_multi_variate.html#a33d51dc1b11364c3dfd604ff3e316ab6" title="klNormalMultiVariate\l::setupSpec" alt="" coords="245,1357,387,1398"/>
+<area shape="rect" id="node41" href="$classkl_principal_components.html#af75ba236c18bb3d0c1adc6633e32c2ae" title="klPrincipalComponents\l::klPCACore" alt="" coords="239,1422,393,1464"/>
+<area shape="rect" id="node42" href="$classkl_linear_regression.html#a7b7110fd16efe9c97db5834f18e8181d" title="klLinearRegression\l::klLinearRegressionCore" alt="" coords="233,1488,399,1529"/>
+<area shape="rect" id="node43" href="$classkl_d_w_t.html#a8275b2f28e8347817e81d9cc63a49871" title="klDWT::operator()" alt="" coords="254,1554,378,1580"/>
+<area shape="rect" id="node3" href="$kl_integration_test_8cpp.html#a5573bee77331b4193e9e85ee59aa1580" title="TestMerssenePeriodIssue" alt="" coords="737,187,912,214"/>
+<area shape="rect" id="node4" href="$kl_integration_test_8cpp.html#afe7455a9a328a3eaa11ebe433377f92c" title="IterativeKrylovCheck" alt="" coords="753,238,896,264"/>
+<area shape="rect" id="node7" href="$kl_integration_test_8cpp.html#ad54bdb11aaa64555987ba60b0d19c004" title="Arpack_MKLsyevxSmokeTest" alt="" coords="725,86,924,112"/>
+<area shape="rect" id="node8" href="$kl_integration_test_8cpp.html#a56842e196c4f36f10bd62acf27362976" title="FEATSEigensolver" alt="" coords="758,136,891,163"/>
+<area shape="rect" id="node9" href="$kl_integration_test_8cpp.html#aac6e4d48aed2a5c9ed451eec34261b4c" title="ARPACK_VS_SYEVX" alt="" coords="748,288,901,315"/>
+<area shape="rect" id="node5" href="$kl_matrix_core_test_8cpp.html#a286331511601fc35b7d569dee0c65cc4" title="klIntegrationTest" alt="" coords="972,390,1091,416"/>
+<area shape="rect" id="node6" href="$kl_matrix_core_test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1139,390,1189,416"/>
+<area shape="rect" id="node17" href="$classkl_matrix.html#a0646e4aea7fb21be0831746fe7313b80" title="klMatrix::operator*" alt="" coords="517,440,645,467"/>
+<area shape="rect" id="node18" href="$kl__matrix__helper__fns_8h.html#a48cacc6a97b4675a5dd346e9ea57b81e" title="SampleWishart" alt="" coords="526,491,637,518"/>
+<area shape="rect" id="node23" href="$kl_integration_test_8cpp.html#a01a1beb332f0673f1c82b3003c7d3834" title="MatrixMultiplicationCheck" alt="" coords="739,608,910,635"/>
+<area shape="rect" id="node19" href="$kl_integration_test_8cpp.html#a9ec2b11431a9504b632bb721dae83d82" title="GenerateTraceyWidomSample" alt="" coords="725,491,924,518"/>
+<area shape="rect" id="node20" href="$kl_integration_test_8cpp.html#ac7540f6b435a6f040af46f640684acd4" title="MatrixNorm" alt="" coords="780,390,869,416"/>
+<area shape="rect" id="node21" href="$kl_integration_test_8cpp.html#ae1959e9286eb92ac9d5636f870c7bea3" title="MatrixEigenSolver" alt="" coords="761,440,889,467"/>
+<area shape="rect" id="node22" href="$kl_integration_test_8cpp.html#a1e01dbb5807c6c898a56781035142437" title="GenerativeGramConsistency\lCheck" alt="" coords="730,542,919,584"/>
+<area shape="rect" id="node31" href="$kl_integration_test_8cpp.html#a0f69b3941b13ea0b8e67d335c236fa5c" title="BinaryIO" alt="" coords="545,27,618,54"/>
+<area shape="rect" id="node32" href="$kl_integration_test_8cpp.html#a306c6e609ad46912e1e81e03e1850534" title="ConvertCSVMatrixFilesToBin\lFormat" alt="" coords="485,78,677,120"/>
+<area shape="rect" id="node37" href="$kl_integration_test_8cpp.html#aea8b27cb4dcba57f2d5115ca9a42bb5f" title="VerifyWingerLaw" alt="" coords="522,339,641,366"/>
+</map>

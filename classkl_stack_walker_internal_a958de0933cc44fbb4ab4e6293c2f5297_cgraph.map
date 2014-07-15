@@ -1,6 +1,9 @@
 <map id="klStackWalkerInternal::GetModuleListPSAPI" name="klStackWalkerInternal::GetModuleListPSAPI">
-<area shape="rect" id="node2" href="$classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="207,5,356,47"/>
-<area shape="rect" id="node3" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="404,64,553,105"/>
-<area shape="rect" id="node4" href="$classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="207,123,356,164"/>
-<area shape="rect" id="node5" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="404,129,553,171"/>
+<area shape="rect" id="node2" href="$classkl_stack_walker_internal.html#af8982df3d7650ae4a716b28bf952d2ea" title="klStackWalkerInternal\l::BOOL" alt="" coords="241,5,391,47"/>
+<area shape="rect" id="node3" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="507,57,657,99"/>
+<area shape="rect" id="node4" href="$classkl_stack_walker_internal.html#a10201485d24349dc769d79cb31b0230a" title="klStackWalkerInternal\l::LoadModule" alt="" coords="241,123,391,164"/>
+<area shape="rect" id="node8" href="$classkl_stack_walk_base.html#a7b7ccbef5329a2ea3b127ac840ca6f1e" title="klStackWalkBase::OnDbgHelpErr" alt="" coords="208,214,424,241"/>
+<area shape="rect" id="node5" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="507,123,657,164"/>
+<area shape="rect" id="node6" href="$classkl_stack_walk_base.html#a6dc14be7fc020b5206eb944e2823a2ef" title="klStackWalkBase::OnLoadModule" alt="" coords="472,189,692,215"/>
+<area shape="rect" id="node7" href="$classkl_stack_walk_base.html#abed776564b640f12ba68d6b4c6a8e5d9" title="klStackWalkBase::OnOutput" alt="" coords="740,214,929,241"/>
 </map>

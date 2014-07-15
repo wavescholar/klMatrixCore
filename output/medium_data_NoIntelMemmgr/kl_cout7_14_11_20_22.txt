@@ -1,0 +1,747 @@
+Floating Point Error Status : 
+ X86 = |  inexact (precision)|  underflow | denormal status bit 
+ fp err = 
+ SSE status = 
+ 
+7, 0.0135399, 0.0146681
+0.0236925, 0.0248203, 0.0259481
+0.0349686, 0.0360958, 0.037223
+0.420167, -0.84622, 0.999912
+
+0.145867, 0.255023, 0.359279
+11, 12, 13
+21, 22, 23
+31, 32, 33
+
+
+11
+21
+31
+
+
+21
+31
+
+
+31
+
+
+11, 12, 13
+
+
+12, 13
+
+
+13
+
+
+11
+21
+31
+
+
+11, 12, 13
+21, 22, 23
+31, 32, 33
+
+
+22, 23
+32, 33
+
+
+11, 12, 13
+21, 22, 23
+31, 32, 33
+
+
+21
+31
+
+
+12, 13
+
+
+13
+
+22, 23
+32, 33
+
+11, 12, 13
+21, 1, 0
+31, 0, 1
+
+11, 12, 13
+21, 22, 32
+31, 23, 33
+
+1, 1
+11(1,0), (1,0)
+(-0.546116,3.60305), (-0.546116,-3.60305), (67.0922,0)
+11, 12, 13
+21, 22, 32
+31, 23, 3.14
+776, 695, 567.82
+1685, 1472, 1077.48
+1847, 1637, 1242.62
+1046, 2213, 2579
+31, 23, 33
+11, 12, 13
+21, 22, 32
+31, 23, 33
+12, 22, 23
+11, 12, 13
+21, 22, 32
+31, 23, 33
+10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+06, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+-3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3, -3
+3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
+27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27
+81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81, 81
+27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27, 27
+9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+14.1, 15.1, 16.1
+24.1, 25.1, 35.1
+34.1, 26.1, 25.1
+
+11, 12, 13
+21, 22, 32
+31, 23, 22
+
+14.1, 15.1, 16.1
+24.1, 25.1, 35.1
+34.1, 26.1, 25.1
+
+b= 11, 12, 13
+21, 22, 32
+31, 23, 22
+
+0, 0, 0
+0, 0, 0
+0, 0, 0
+
+b= 11, 12, 13
+21, 22, 32
+31, 23, 22
+
+22, 24, 26
+42, 44, 64
+62, 46, 44
+
+b= 11, 12, 13
+21, 22, 32
+31, 23, 22
+
+10, 11, 12
+20, 21, 31
+30, 22, 21
+
+b= 11, 12, 13
+21, 22, 32
+31, 23, 22
+
+776, 695, 813
+1685, 1472, 1681
+1506, 1384, 1623
+
+b= 11, 12, 13
+21, 22, 32
+31, 23, 22
+
+b= 1, 1, 1
+1, 1, 1
+1, 1, 1
+
+0.5, 0.5, 0.5
+0.5, 0.5, 0.5
+0.5, 0.5, 0.5
+
+b= 1, 1, 1
+1, 1, 1
+1, 1, 1
+
+4, 4, 4
+4, 4, 4
+4, 4, 4
+
+b= 1, 1, 1
+1, 1, 1
+1, 1, 1
+
+(1,0)
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6
+Number of 'requested' eigenvalues  : 4
+Number of 'converged' eigenvalues  : 4
+Number of Arnoldi vectors generated: 6
+Number of iterations taken         : 1
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6
+Number of 'requested' eigenvalues  : 4
+Number of 'converged' eigenvalues  : 4
+Number of Arnoldi vectors generated: 6
+Number of iterations taken         : 1
+
+Eigenvalues:
+  lambda[1]: 1 + 0 I
+  lambda[2]: 5 + 0 I
+  lambda[3]: 4 + 0 I
+  lambda[4]: 3 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 2.25641e-015
+||A*x(2) - lambda(2)*x(2)||: 1.15104e-015
+||A*x(3) - lambda(3)*x(3)||: 6.30409e-016
+||A*x(4) - lambda(4)*x(4)||: 1.48031e-016
+
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 1024
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 211
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 1024
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 211
+
+Eigenvalues:
+  lambda[1]: 7.63495e-016 + 0 I
+  lambda[2]: 0.00142543 + 0 I
+  lambda[3]: 0.00609334 + 0 I
+  lambda[4]: 0.0219347 + 0 I
+  lambda[5]: 0.0474735 + 0 I
+  lambda[6]: 0.0630728 + 0 I
+  lambda[7]: 0.0750121 + 0 I
+  lambda[8]: 0.0864117 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 17.7872
+||A*x(2) - lambda(2)*x(2)||: 9.17092e-012
+||A*x(3) - lambda(3)*x(3)||: 2.07899e-012
+||A*x(4) - lambda(4)*x(4)||: 5.62626e-013
+||A*x(5) - lambda(5)*x(5)||: 2.79345e-013
+||A*x(6) - lambda(6)*x(6)||: 1.98758e-013
+||A*x(7) - lambda(7)*x(7)||: 1.78476e-013
+||A*x(8) - lambda(8)*x(8)||: 1.92489e-013
+
+TicToc ARPACK  =  8.6281
+TicToc SYEVX  =  0.56576
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 2048
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 402
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 2048
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 402
+
+Eigenvalues:
+  lambda[1]: -6.20272e-016 + 0 I
+  lambda[2]: 0.000640945 + 0 I
+  lambda[3]: 0.00351281 + 0 I
+  lambda[4]: 0.00935081 + 0 I
+  lambda[5]: 0.0272521 + 0 I
+  lambda[6]: 0.0330439 + 0 I
+  lambda[7]: 0.0359811 + 0 I
+  lambda[8]: 0.0450212 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 29.7313
+||A*x(2) - lambda(2)*x(2)||: 3.38512e-011
+||A*x(3) - lambda(3)*x(3)||: 6.09543e-012
+||A*x(4) - lambda(4)*x(4)||: 1.79128e-012
+||A*x(5) - lambda(5)*x(5)||: 6.83775e-013
+||A*x(6) - lambda(6)*x(6)||: 6.14654e-013
+||A*x(7) - lambda(7)*x(7)||: 5.39226e-013
+||A*x(8) - lambda(8)*x(8)||: 4.46972e-013
+
+TicToc ARPACK  =  9.98805
+TicToc SYEVX  =  2.18177
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 4096
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1686
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 4096
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1686
+
+Eigenvalues:
+  lambda[1]: 0.000181758 + 0 I
+  lambda[2]: 0.0029366 + 0 I
+  lambda[3]: 1.53846e-015 + 7.94481e-017 I
+  lambda[4]: 1.53846e-015 - 7.94481e-017 I
+  lambda[5]: 6.56177e-016 + 0 I
+  lambda[6]: 4.35684e-017 + 2.54692e-016 I
+  lambda[7]: 4.35684e-017 - 2.54692e-016 I
+  lambda[8]: 1.22875e-016 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 1.63126e-010
+||A*x(2) - lambda(2)*x(2)||: 1.04135e-011
+||A*x(3) - lambda(3)*x(3)||: 15.1031
+||A*x(4) - lambda(4)*x(4)||: 15.1031
+||A*x(5) - lambda(5)*x(5)||: 34.9476
+||A*x(6) - lambda(6)*x(6)||: 71.0472
+||A*x(7) - lambda(7)*x(7)||: 71.0472
+||A*x(8) - lambda(8)*x(8)||: 146.508
+
+TicToc ARPACK  =  86.1991
+TicToc SYEVX  =  14.1878
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 4608
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 459
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 4608
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 459
+
+Eigenvalues:
+  lambda[1]: 4.7217e-016 + 0 I
+  lambda[2]: 0.000515826 + 0 I
+  lambda[3]: 0.00235841 + 0 I
+  lambda[4]: 0.00506459 + 0 I
+  lambda[5]: 0.0117608 + 0 I
+  lambda[6]: 0.0138551 + 0 I
+  lambda[7]: 0.0162923 + 0 I
+  lambda[8]: 0.0198816 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 38.9297
+||A*x(2) - lambda(2)*x(2)||: 3.22811e-011
+||A*x(3) - lambda(3)*x(3)||: 8.04266e-012
+||A*x(4) - lambda(4)*x(4)||: 3.47157e-012
+||A*x(5) - lambda(5)*x(5)||: 1.75529e-012
+||A*x(6) - lambda(6)*x(6)||: 1.85882e-012
+||A*x(7) - lambda(7)*x(7)||: 1.34964e-012
+||A*x(8) - lambda(8)*x(8)||: 1.11617e-012
+
+TicToc ARPACK  =  41.2853
+TicToc SYEVX  =  17.6422
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 5120
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1371
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 5120
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1371
+
+Eigenvalues:
+  lambda[1]: 6.76542e-017 + 0 I
+  lambda[2]: 0.000257707 + 0 I
+  lambda[3]: 0.0015569 + 0 I
+  lambda[4]: 0.00389252 + 0 I
+  lambda[5]: 0.0104033 + 0 I
+  lambda[6]: 0.0130809 + 0 I
+  lambda[7]: 0.0137429 + 0 I
+  lambda[8]: 0.0185367 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 439.522
+||A*x(2) - lambda(2)*x(2)||: 1.13432e-010
+||A*x(3) - lambda(3)*x(3)||: 1.77188e-011
+||A*x(4) - lambda(4)*x(4)||: 6.18638e-012
+||A*x(5) - lambda(5)*x(5)||: 3.06769e-012
+||A*x(6) - lambda(6)*x(6)||: 2.24874e-012
+||A*x(7) - lambda(7)*x(7)||: 2.10449e-012
+||A*x(8) - lambda(8)*x(8)||: 1.7633e-012
+
+TicToc ARPACK  =  94.4277
+TicToc SYEVX  =  26.0841
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 5632
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 719
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 5632
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 719
+
+Eigenvalues:
+  lambda[1]: 22.1181 + 0 I
+  lambda[2]: 18.2422 + 0 I
+  lambda[3]: -1.56613e-016 + 0 I
+  lambda[4]: 0.000250489 + 0 I
+  lambda[5]: 0.00192592 + 0 I
+  lambda[6]: 0.00346003 + 0 I
+  lambda[7]: 0.00968117 + 0 I
+  lambda[8]: 0.0120684 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 0.066214
+||A*x(2) - lambda(2)*x(2)||: 0.197585
+||A*x(3) - lambda(3)*x(3)||: 130.729
+||A*x(4) - lambda(4)*x(4)||: 1.33499e-010
+||A*x(5) - lambda(5)*x(5)||: 1.32266e-011
+||A*x(6) - lambda(6)*x(6)||: 6.16951e-012
+||A*x(7) - lambda(7)*x(7)||: 2.70237e-012
+||A*x(8) - lambda(8)*x(8)||: 2.23708e-012
+
+TicToc ARPACK  =  71.2712
+TicToc SYEVX  =  32.2095
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6144
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1132
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6144
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1132
+
+Eigenvalues:
+  lambda[1]: 20.7835 + 0 I
+  lambda[2]: 17.3659 + 0 I
+  lambda[3]: 0.000224606 + 0 I
+  lambda[4]: -1.3496e-015 + 0 I
+  lambda[5]: 0.00144451 + 0 I
+  lambda[6]: 0.00331945 + 0 I
+  lambda[7]: 0.00881092 + 0 I
+  lambda[8]: 0.00996641 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 0.108318
+||A*x(2) - lambda(2)*x(2)||: 0.220189
+||A*x(3) - lambda(3)*x(3)||: 1.21698e-010
+||A*x(4) - lambda(4)*x(4)||: 21.3148
+||A*x(5) - lambda(5)*x(5)||: 2.12877e-011
+||A*x(6) - lambda(6)*x(6)||: 8.02183e-012
+||A*x(7) - lambda(7)*x(7)||: 3.67951e-012
+||A*x(8) - lambda(8)*x(8)||: 2.87687e-012
+
+TicToc ARPACK  =  111.719
+TicToc SYEVX  =  39.5538
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6656
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 675
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 6656
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 675
+
+Eigenvalues:
+  lambda[1]: 0.000340629 + 0 I
+  lambda[2]: 9.66491e-016 + 0 I
+  lambda[3]: 0.00168809 + 0 I
+  lambda[4]: 0.00386165 + 0 I
+  lambda[5]: 0.00746064 + 0 I
+  lambda[6]: 0.00975013 + 0 I
+  lambda[7]: 0.0111334 + 0 I
+  lambda[8]: 0.0138235 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 6.23251e-011
+||A*x(2) - lambda(2)*x(2)||: 27.7482
+||A*x(3) - lambda(3)*x(3)||: 1.40177e-011
+||A*x(4) - lambda(4)*x(4)||: 5.63972e-012
+||A*x(5) - lambda(5)*x(5)||: 2.96786e-012
+||A*x(6) - lambda(6)*x(6)||: 2.4204e-012
+||A*x(7) - lambda(7)*x(7)||: 2.29632e-012
+||A*x(8) - lambda(8)*x(8)||: 1.81893e-012
+
+TicToc ARPACK  =  91.5235
+TicToc SYEVX  =  51.8661
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 7168
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1678
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 7168
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1678
+
+Eigenvalues:
+  lambda[1]: -1.12649e-016 + 0 I
+  lambda[2]: 0.000269537 + 0 I
+  lambda[3]: 0.00146967 + 0 I
+  lambda[4]: 0.00302192 + 0 I
+  lambda[5]: 0.00713822 + 0 I
+  lambda[6]: 0.00908277 + 0 I
+  lambda[7]: 0.0100929 + 0 I
+  lambda[8]: 0.0135496 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 239.854
+||A*x(2) - lambda(2)*x(2)||: 1.10548e-010
+||A*x(3) - lambda(3)*x(3)||: 2.19219e-011
+||A*x(4) - lambda(4)*x(4)||: 1.00084e-011
+||A*x(5) - lambda(5)*x(5)||: 4.5174e-012
+||A*x(6) - lambda(6)*x(6)||: 3.67705e-012
+||A*x(7) - lambda(7)*x(7)||: 3.39456e-012
+||A*x(8) - lambda(8)*x(8)||: 1.9494e-012
+
+TicToc ARPACK  =  209.199
+TicToc SYEVX  =  72.5753
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 7680
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1718
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 7680
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1718
+
+Eigenvalues:
+  lambda[1]: -1.54417e-016 + 0 I
+  lambda[2]: 0.00025568 + 0 I
+  lambda[3]: 0.00118883 + 0 I
+  lambda[4]: 0.00313969 + 0 I
+  lambda[5]: 0.00721446 + 0 I
+  lambda[6]: 0.00896183 + 0 I
+  lambda[7]: 0.00986922 + 0 I
+  lambda[8]: 0.0131575 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 235.785
+||A*x(2) - lambda(2)*x(2)||: 1.31272e-010
+||A*x(3) - lambda(3)*x(3)||: 2.77277e-011
+||A*x(4) - lambda(4)*x(4)||: 1.01409e-011
+||A*x(5) - lambda(5)*x(5)||: 4.59534e-012
+||A*x(6) - lambda(6)*x(6)||: 3.85966e-012
+||A*x(7) - lambda(7)*x(7)||: 3.47348e-012
+||A*x(8) - lambda(8)*x(8)||: 2.8077e-012
+
+TicToc ARPACK  =  256.921
+TicToc SYEVX  =  110.398
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 8192
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1751
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 8192
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1751
+
+Eigenvalues:
+  lambda[1]: 0.000149437 + 0 I
+  lambda[2]: -1.32381e-016 + 0 I
+  lambda[3]: 0.00113338 + 0 I
+  lambda[4]: 0.00256787 + 0 I
+  lambda[5]: 0.00598385 + 0 I
+  lambda[6]: 0.00780223 + 0 I
+  lambda[7]: 0.00844685 + 0 I
+  lambda[8]: 0.0120019 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 2.01331e-010
+||A*x(2) - lambda(2)*x(2)||: 234.217
+||A*x(3) - lambda(3)*x(3)||: 2.77722e-011
+||A*x(4) - lambda(4)*x(4)||: 1.23859e-011
+||A*x(5) - lambda(5)*x(5)||: 5.70256e-012
+||A*x(6) - lambda(6)*x(6)||: 4.0179e-012
+||A*x(7) - lambda(7)*x(7)||: 3.69229e-012
+||A*x(8) - lambda(8)*x(8)||: 2.40203e-012
+
+TicToc ARPACK  =  282.398
+TicToc SYEVX  =  119.884
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 8704
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1358
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 8704
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 8
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 1358
+
+Eigenvalues:
+  lambda[1]: 2.58257e-016 + 0 I
+  lambda[2]: 0.000203672 + 0 I
+  lambda[3]: 0.00121106 + 0 I
+  lambda[4]: 0.00268634 + 0 I
+  lambda[5]: 0.00687656 + 0 I
+  lambda[6]: 0.00755052 + 0 I
+  lambda[7]: 0.00847499 + 0 I
+  lambda[8]: 0.010867 + 0 I
+
+||A*x(1) - lambda(1)*x(1)||: 107.899
+||A*x(2) - lambda(2)*x(2)||: 1.48141e-010
+||A*x(3) - lambda(3)*x(3)||: 2.28561e-011
+||A*x(4) - lambda(4)*x(4)||: 1.13048e-011
+||A*x(5) - lambda(5)*x(5)||: 4.56446e-012
+||A*x(6) - lambda(6)*x(6)||: 4.21629e-012
+||A*x(7) - lambda(7)*x(7)||: 3.53121e-012
+||A*x(8) - lambda(8)*x(8)||: 2.78726e-012
+
+TicToc ARPACK  =  271.522
+TicToc SYEVX  =  118.887
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+
+Dimension of the system            : 9216
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 0
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 2049
+
+
+
+Testing ARPACK++ class ARluNonSymStdEig 
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Shift and invert mode
+
+Dimension of the system            : 9216
+Number of 'requested' eigenvalues  : 8
+Number of 'converged' eigenvalues  : 0
+Number of Arnoldi vectors generated: 17
+Number of iterations taken         : 2049
+
+Eigenvalues:
+
+
+TicToc ARPACK  =  1299.03
+TicToc SYEVX  =  136.504
+Real nonsymmetric eigenvalue problem: A*x - lambda*x
+Regular mode
+

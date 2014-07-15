@@ -1,0 +1,7 @@
+<map id="klMatrix::norm" name="klMatrix::norm">
+<area shape="rect" id="node2" href="$kl_integration_test_8cpp.html#ac7540f6b435a6f040af46f640684acd4" title="MatrixNorm" alt="" coords="186,5,275,32"/>
+<area shape="rect" id="node5" href="$kl_integration_test_8cpp.html#ae1959e9286eb92ac9d5636f870c7bea3" title="MatrixEigenSolver" alt="" coords="167,56,295,83"/>
+<area shape="rect" id="node6" href="$kl_integration_test_8cpp.html#ab16e32c46895a5e225e3f4b00009d170" title="RandomMatrixNorms" alt="" coords="159,107,303,133"/>
+<area shape="rect" id="node3" href="$kl_matrix_core_test_8cpp.html#a286331511601fc35b7d569dee0c65cc4" title="klIntegrationTest" alt="" coords="351,56,469,83"/>
+<area shape="rect" id="node4" href="$kl_matrix_core_test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="517,56,568,83"/>
+</map>

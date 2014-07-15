@@ -1,0 +1,13 @@
+<map id="testKLTimeSeries2" name="testKLTimeSeries2">
+<area shape="rect" id="node2" href="$classkl_time_series.html#a2d5fd6969c50ba9333d57ff10ad240d0" title="klTimeSeries::mean" alt="" coords="199,5,338,32"/>
+<area shape="rect" id="node3" href="$classkl_time_series.html#a9a92e62b16b50d34a75588d76c92dc8b" title="klTimeSeries::variance" alt="" coords="191,56,346,83"/>
+<area shape="rect" id="node4" href="$classkl_time_series.html#a85cf8408e1d23a418621a625539b6da3" title="klTimeSeries::skewness" alt="" coords="187,107,351,133"/>
+<area shape="rect" id="node5" href="$classkl_time_series.html#a29d41c90b03dc91e0367f7d3629db10d" title="klTimeSeries::kurtosis" alt="" coords="193,157,345,184"/>
+<area shape="rect" id="node6" href="$classkl_time_series.html#a2ba1a0928afd2181438c218e162216d0" title="klTimeSeries::EMA" alt="" coords="201,208,336,235"/>
+<area shape="rect" id="node7" href="$classkl_time_series.html#a64e47ca7658f39729b9fa0bee7f086ce" title="klTimeSeries::IEMA" alt="" coords="199,259,338,285"/>
+<area shape="rect" id="node8" href="$classkl_time_series.html#a111337862e7a823d7bcad9605fcd4221" title="klTimeSeries::MA" alt="" coords="205,309,332,336"/>
+<area shape="rect" id="node10" href="$kl__prob_8h.html#a2f3e9a61044b979320d8a08a5aeaa102" title="gamma" alt="" coords="236,360,301,387"/>
+<area shape="rect" id="node11" href="$kl__jbukhardt__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="245,411,292,437"/>
+<area shape="rect" id="node12" href="$classkl_time_series.html#a1a6e8edbbd56dfa97e2a8b74027df248" title="klTimeSeries::DIFF" alt="" coords="201,461,336,488"/>
+<area shape="rect" id="node9" href="$classkl_vector.html#ac40868e727fdf403cc3e92cc5278826b" title="klVector::setup" alt="" coords="399,309,509,336"/>
+</map>

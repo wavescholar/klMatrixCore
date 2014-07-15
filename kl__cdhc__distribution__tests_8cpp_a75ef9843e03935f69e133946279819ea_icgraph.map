@@ -1,4 +1,9 @@
 <map id="dmax_exp" name="dmax_exp">
-<area shape="rect" id="node2" href="$kl__cdhc__distribution__tests_8cpp.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="136,5,303,32"/>
-<area shape="rect" id="node3" href="$kl__cdhc__distribution__tests_8cpp.html#a6b6b1d4386ce8b890afb9840e34f68f2" title="kuipers_v_exp" alt="" coords="167,56,271,83"/>
+<area shape="rect" id="node2" href="$kl__sample__population_8h.html#a6828d2739131114874573786fe3df595" title="kolmogorov_smirnov_exp" alt="" coords="136,107,307,134"/>
+<area shape="rect" id="node8" href="$kl__sample__population_8h.html#a6b6b1d4386ce8b890afb9840e34f68f2" title="kuipers_v_exp" alt="" coords="168,158,275,185"/>
+<area shape="rect" id="node3" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="355,100,507,141"/>
+<area shape="rect" id="node4" href="$kl__matlab__dependent__unit__tests_8h.html#ac4db6d9dee6b0808be261f64b73ceb50" title="testklPrincipalComponents\lMatlab" alt="" coords="561,5,739,47"/>
+<area shape="rect" id="node5" href="$kl__unit__tests_8h.html#a77b0b49d07c18cc9ab03cb387ccf3ddf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="561,71,739,112"/>
+<area shape="rect" id="node6" href="$kl__unit__tests_8h.html#a78636f93d1deea1be6c40e3f91e76d04" title="PrincipalComponentsDemo" alt="" coords="561,137,739,163"/>
+<area shape="rect" id="node7" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="555,187,745,214"/>
 </map>

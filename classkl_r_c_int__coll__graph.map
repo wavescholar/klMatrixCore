@@ -1,0 +1,5 @@
+<map id="klRCInt" name="klRCInt">
+<area shape="rect" id="node2" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="111,373,267,539"/>
+<area shape="rect" id="node3" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="31,167,127,289"/>
+<area shape="rect" id="node6" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="298,145,497,311"/>
+</map>

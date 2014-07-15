@@ -1,0 +1,23 @@
+<map id="MemoryManagement" name="MemoryManagement">
+<area shape="rect" id="node2" href="$classkl_v_mem_mgr.html#abdc8f086d1a4ed092087e529a9f4c114" title="klVMemMgr::allocate" alt="" coords="234,5,379,32"/>
+<area shape="rect" id="node5" href="$classkl_v_mem_mgr.html#aa60ba22428c4459058d4d038dc3d2f75" title="klVMemMgr::committed" alt="" coords="226,56,387,83"/>
+<area shape="rect" id="node6" href="$classkl_v_mem_mgr.html#ad923fac91994bb2ae22d498c0fa6391b" title="klVMemMgr::available" alt="" coords="231,107,382,133"/>
+<area shape="rect" id="node7" href="$classkl_v_mem_mgr.html#a4edbd6e8c29025be256987d033e74a67" title="klVMemMgr::free" alt="" coords="245,157,368,184"/>
+<area shape="rect" id="node9" href="$classkl_heap_mgr.html#aef313b946037d01e52854f217a8bd087" title="klHeapMgr::klHeapInit" alt="" coords="231,208,382,235"/>
+<area shape="rect" id="node10" href="$classkl_heap_mgr.html#a581485c931c961eeb91216d837561739" title="klHeapMgr::allocate" alt="" coords="238,259,375,285"/>
+<area shape="rect" id="node12" href="$classkl_heap_mgr.html#ad404ce64ccc318c6c31bb266e4a39e91" title="klHeapMgr::free" alt="" coords="249,309,364,336"/>
+<area shape="rect" id="node14" href="$classkl_heap_mgr.html#a8a0dc5a9ea2f62ce705e5f3ca0f79706" title="klHeapMgr::klHeapCompact" alt="" coords="215,360,399,387"/>
+<area shape="rect" id="node15" href="$classkl_heap_mgr.html#ab169bae868754c483760788229bdc462" title="klHeapMgr::klHeapCheck" alt="" coords="222,411,391,437"/>
+<area shape="rect" id="node16" href="$classkl_heap_mgr.html#a783a7bc4a5dc017647ec5ae3d6faaa9f" title="klHeapMgr::klHeapDump" alt="" coords="223,461,390,488"/>
+<area shape="rect" id="node17" href="$classkl_red_zone_heap_mgr.html#a2f9d6b128ef5b8fe31447fd7a73049dd" title="klRedZoneHeapMgr::allocate" alt="" coords="212,512,401,539"/>
+<area shape="rect" id="node19" href="$classkl_red_zone_heap_mgr.html#af4b53bc7a0c1816e6d15980d139a620f" title="klRedZoneHeapMgr::free" alt="" coords="223,563,390,589"/>
+<area shape="rect" id="node21" href="$classkl_red_zone_heap_mgr.html#a3bf1d18e9f496281644cd28e592be324" title="klRedZoneHeapMgr::klHeapDump" alt="" coords="197,613,416,640"/>
+<area shape="rect" id="node3" href="$classkl_v_mem_block.html#a8c5f47051a6f05016bf5100627f84c1a" title="klVMemBlock::sizeUsed" alt="" coords="480,81,645,108"/>
+<area shape="rect" id="node4" href="$classkl_v_mem_block.html#af4558619ac0de87acc58aba04167e9b1" title="klVMemBlock::memory" alt="" coords="483,5,642,32"/>
+<area shape="rect" id="node8" href="$classkl_v_mem_block.html#add3e79aa80bab798f52cd8158fbec5ee" title="klVMemBlock::sizeRequested" alt="" coords="464,157,661,184"/>
+<area shape="rect" id="node11" href="$kl__memory_8h.html#abcc0d7a6b6c54b54cd21539e87c27781" title="klHeapAlloc" alt="" coords="517,259,608,285"/>
+<area shape="rect" id="node13" href="$kl__memory_8h.html#ab4df59964461091b436a7140880f31f3" title="klHeapFree" alt="" coords="519,309,607,336"/>
+<area shape="rect" id="node18" href="$kl__memory_8h.html#aa8f57e7b7384e11785676416acc0b35f" title="klRedZoneHeapAlloc" alt="" coords="491,512,634,539"/>
+<area shape="rect" id="node20" href="$kl__memory_8h.html#a797113200c728ed96fb79e67f22531b3" title="klRedZoneHeapFree" alt="" coords="493,563,633,589"/>
+<area shape="rect" id="node22" href="$kl__memory_8h.html#ac0a0ab7145fbf4032946fba98dc77afb" title="ConvertToHex" alt="" coords="510,613,615,640"/>
+</map>

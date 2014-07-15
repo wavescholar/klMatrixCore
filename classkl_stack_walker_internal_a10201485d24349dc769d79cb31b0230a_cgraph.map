@@ -1,4 +1,6 @@
 <map id="klStackWalkerInternal::LoadModule" name="klStackWalkerInternal::LoadModule">
-<area shape="rect" id="node2" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="203,5,352,47"/>
-<area shape="rect" id="node3" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="203,71,352,112"/>
+<area shape="rect" id="node2" href="$classkl_stack_walker_internal.html#a885c83e8f648c08058368c57be41470b" title="klStackWalkerInternal\l::DWORD" alt="" coords="238,5,387,47"/>
+<area shape="rect" id="node3" href="$classkl_stack_walker_internal.html#a523f86c75a4d3e7743a41a80772fe337" title="klStackWalkerInternal\l::GetModuleInfo" alt="" coords="238,71,387,112"/>
+<area shape="rect" id="node4" href="$classkl_stack_walk_base.html#a6dc14be7fc020b5206eb944e2823a2ef" title="klStackWalkBase::OnLoadModule" alt="" coords="203,137,423,163"/>
+<area shape="rect" id="node5" href="$classkl_stack_walk_base.html#abed776564b640f12ba68d6b4c6a8e5d9" title="klStackWalkBase::OnOutput" alt="" coords="471,137,660,163"/>
 </map>

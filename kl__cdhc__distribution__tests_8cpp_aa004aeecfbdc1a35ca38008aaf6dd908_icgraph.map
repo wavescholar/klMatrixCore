@@ -1,5 +1,10 @@
 <map id="xinormal" name="xinormal">
-<area shape="rect" id="node2" href="$kl__cdhc__distribution__tests_8cpp.html#a0d2da9b5c3bca9ca3954d1a4b0612211" title="chi_square" alt="" coords="146,5,231,32"/>
-<area shape="rect" id="node3" href="$kl__cdhc__distribution__tests_8cpp.html#a12aeb59709f3d44b1480d6af2db87eab" title="shapiro_francia" alt="" coords="134,56,243,83"/>
-<area shape="rect" id="node4" href="$kl__cdhc__distribution__tests_8cpp.html#a5a2e9d753f8aaa4b4aa7bd6bd2c14924" title="weisberg_bingham" alt="" coords="124,107,253,133"/>
+<area shape="rect" id="node2" href="$kl__sample__population_8h.html#a0d2da9b5c3bca9ca3954d1a4b0612211" title="chi_square" alt="" coords="146,107,231,134"/>
+<area shape="rect" id="node8" href="$kl__sample__population_8h.html#a12aeb59709f3d44b1480d6af2db87eab" title="shapiro_francia" alt="" coords="133,158,244,185"/>
+<area shape="rect" id="node9" href="$kl__sample__population_8h.html#a5a2e9d753f8aaa4b4aa7bd6bd2c14924" title="weisberg_bingham" alt="" coords="124,209,253,235"/>
+<area shape="rect" id="node3" href="$classkl_sample_population.html#a7978d918c0255a5a8ed07696ed800af3" title="klSamplePopulation\l::calcDistributionTests" alt="" coords="301,100,453,141"/>
+<area shape="rect" id="node4" href="$kl__matlab__dependent__unit__tests_8h.html#ac4db6d9dee6b0808be261f64b73ceb50" title="testklPrincipalComponents\lMatlab" alt="" coords="508,5,685,47"/>
+<area shape="rect" id="node5" href="$kl__unit__tests_8h.html#a77b0b49d07c18cc9ab03cb387ccf3ddf" title="testKLMultiVariateRandom\lNumberGenerator2" alt="" coords="508,71,685,112"/>
+<area shape="rect" id="node6" href="$kl__unit__tests_8h.html#a78636f93d1deea1be6c40e3f91e76d04" title="PrincipalComponentsDemo" alt="" coords="507,137,686,163"/>
+<area shape="rect" id="node7" href="$kl__unit__tests_8h.html#a7932f9b8a8b238e4b005edee321d81ba" title="klRVUnitTestHarnessLaTex2" alt="" coords="501,187,692,214"/>
 </map>

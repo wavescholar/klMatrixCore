@@ -1,0 +1,1371 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.3.9)  14 JUL 2014 06:53
+entering extended mode
+**D:/klMatrixCore/output/medium_data_NoIntelMemmgr/kl_Regression7_14_11_20_22.t
+ex
+
+(D:/klMatrixCore/output/medium_data_NoIntelMemmgr/kl_Regression7_14_11_20_22.te
+x
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count101
+\Gm@cntv=\count102
+\c@Gm@tempcnt=\count103
+\Gm@bindingoffset=\dimen115
+\Gm@wd@mp=\dimen116
+\Gm@odd@mp=\dimen117
+\Gm@even@mp=\dimen118
+\Gm@layoutwidth=\dimen119
+\Gm@layoutheight=\dimen120
+\Gm@layouthoffset=\dimen121
+\Gm@layoutvoffset=\dimen122
+\Gm@dimlist=\toks26
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 44.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 44.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 44.
+\c@thm=\count104
+\c@defn=\count105
+\c@rem=\count106
+
+
+LaTeX Warning: Unused global option(s):
+    [9pt].
+
+No file kl_Regression7_14_11_20_22.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen123
+\scratchbox=\box28
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen124
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks28
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.45377pt, 585.38747pt, 14.45377pt)
+* v-part:(T,H,B)=(14.45377pt, 766.06245pt, 14.45377pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.38747pt
+* \textheight=766.06245pt
+* \oddsidemargin=-57.81622pt
+* \evensidemargin=-57.81622pt
+* \topmargin=-94.81622pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<ARPACK_Dim1024_EigenVector_0.pdf, id=1, 502.87875pt x 393.47pt>
+File: ARPACK_Dim1024_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim1024_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim1024_EigenVector_0.pdf used on input line 76
+.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim1024_EigenVector_1.pdf, id=2, 491.8375pt x 393.47pt>
+File: ARPACK_Dim1024_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim1024_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim1024_EigenVector_1.pdf used on input line 78
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim1024_EigenVector_2.pdf, id=3, 491.8375pt x 393.47pt> [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/klMatrixCore/output/me
+dium_data_NoIntelMemmgr/ARPACK_Dim1024_EigenVector_0.pdf>]
+File: ARPACK_Dim1024_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim1024_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim1024_EigenVector_2.pdf used on input line 80
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim1024_EigenVector_3.pdf, id=16, 491.8375pt x 393.47pt>
+File: ARPACK_Dim1024_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim1024_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim1024_EigenVector_3.pdf used on input line 82
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim1024_EigenVector_4.pdf, id=17, 491.8375pt x 393.47pt> [2 <D:/klMatri
+xCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim1024_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim1024_EigenVector_2.pdf>]
+File: ARPACK_Dim1024_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim1024_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim1024_EigenVector_4.pdf used on input line 84
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim1024_EigenVector_1.pdf, id=29, 491.8375pt x 393.47pt>
+File: SYEVX_Dim1024_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim1024_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim1024_EigenVector_1.pdf used on input line 87.
+
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim1024_EigenVector_2.pdf, id=30, 491.8375pt x 393.47pt> [3 <D:/klMatrix
+Core/output/medium_data_NoIntelMemmgr/ARPACK_Dim1024_EigenVector_3.pdf> <D:/klM
+atrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim1024_EigenVector_4.pdf>]
+File: SYEVX_Dim1024_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim1024_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim1024_EigenVector_2.pdf used on input line 89.
+
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim1024_EigenVector_3.pdf, id=42, 491.8375pt x 393.47pt>
+File: SYEVX_Dim1024_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim1024_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim1024_EigenVector_3.pdf used on input line 91.
+
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim1024_EigenVector_4.pdf, id=43, 491.8375pt x 393.47pt> [4 <D:/klMatrix
+Core/output/medium_data_NoIntelMemmgr/SYEVX_Dim1024_EigenVector_1.pdf> <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim1024_EigenVector_2.pdf>]
+File: SYEVX_Dim1024_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim1024_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim1024_EigenVector_4.pdf used on input line 93.
+
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim2048_EigenVector_0.pdf, id=55, 502.87875pt x 393.47pt>
+File: ARPACK_Dim2048_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim2048_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim2048_EigenVector_0.pdf used on input line 96
+.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim2048_EigenVector_1.pdf, id=56, 491.8375pt x 393.47pt> [5 <D:/klMatri
+xCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim1024_EigenVector_3.pdf> <D:/klM
+atrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim1024_EigenVector_4.pdf>]
+File: ARPACK_Dim2048_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim2048_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim2048_EigenVector_1.pdf used on input line 98
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim2048_EigenVector_2.pdf, id=68, 491.8375pt x 393.47pt>
+File: ARPACK_Dim2048_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim2048_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim2048_EigenVector_2.pdf used on input line 10
+0.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim2048_EigenVector_3.pdf, id=69, 491.8375pt x 393.47pt> [6 <D:/klMatri
+xCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim2048_EigenVector_0.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim2048_EigenVector_1.pdf>]
+File: ARPACK_Dim2048_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim2048_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim2048_EigenVector_3.pdf used on input line 10
+2.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim2048_EigenVector_4.pdf, id=81, 491.8375pt x 393.47pt>
+File: ARPACK_Dim2048_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim2048_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim2048_EigenVector_4.pdf used on input line 10
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [7 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim2048_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim2048_Eigen
+Vector_3.pdf>]
+<SYEVX_Dim2048_EigenVector_1.pdf, id=94, 491.8375pt x 393.47pt>
+File: SYEVX_Dim2048_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim2048_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim2048_EigenVector_1.pdf used on input line 107
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim2048_EigenVector_2.pdf, id=95, 491.8375pt x 393.47pt>
+File: SYEVX_Dim2048_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim2048_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim2048_EigenVector_2.pdf used on input line 109
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim2048_EigenVector_3.pdf, id=96, 491.8375pt x 393.47pt> [8 <D:/klMatrix
+Core/output/medium_data_NoIntelMemmgr/ARPACK_Dim2048_EigenVector_4.pdf> <D:/klM
+atrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim2048_EigenVector_1.pdf>]
+File: SYEVX_Dim2048_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim2048_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim2048_EigenVector_3.pdf used on input line 111
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim2048_EigenVector_4.pdf, id=108, 491.8375pt x 393.47pt>
+File: SYEVX_Dim2048_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim2048_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim2048_EigenVector_4.pdf used on input line 113
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [9 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim2048_EigenVector
+_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim2048_EigenVe
+ctor_3.pdf>]
+<ARPACK_Dim4096_EigenVector_0.pdf, id=120, 496.85625pt x 393.47pt>
+File: ARPACK_Dim4096_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4096_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim4096_EigenVector_0.pdf used on input line 11
+6.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim4096_EigenVector_1.pdf, id=121, 491.8375pt x 393.47pt>
+File: ARPACK_Dim4096_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4096_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim4096_EigenVector_1.pdf used on input line 11
+8.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim4096_EigenVector_2.pdf, id=122, 477.785pt x 393.47pt> [10 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim2048_EigenVector_4.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4096_EigenVector_0.pdf>]
+File: ARPACK_Dim4096_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4096_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim4096_EigenVector_2.pdf used on input line 12
+0.
+(pdftex.def)             Requested size: 284.52254pt x 284.52296pt.
+
+<ARPACK_Dim4096_EigenVector_3.pdf, id=134, 485.815pt x 393.47pt>
+File: ARPACK_Dim4096_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4096_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim4096_EigenVector_3.pdf used on input line 12
+2.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim4096_EigenVector_4.pdf, id=135, 485.815pt x 393.47pt> [11 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4096_EigenVector_1.pdf> <D:/k
+lMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4096_EigenVector_2.pdf>]
+File: ARPACK_Dim4096_EigenVector_4.pdf Graphic file (type pdf)
+<use ARPACK_Dim4096_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim4096_EigenVector_4.pdf used on input line 12
+4.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<SYEVX_Dim4096_EigenVector_1.pdf, id=147, 485.815pt x 393.47pt>
+File: SYEVX_Dim4096_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4096_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim4096_EigenVector_1.pdf used on input line 127
+.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<SYEVX_Dim4096_EigenVector_2.pdf, id=148, 491.8375pt x 393.47pt> [12 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4096_EigenVector_3.pdf> <D:/k
+lMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4096_EigenVector_4.pdf>]
+File: SYEVX_Dim4096_EigenVector_2.pdf Graphic file (type pdf)
+<use SYEVX_Dim4096_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim4096_EigenVector_2.pdf used on input line 129
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim4096_EigenVector_3.pdf, id=160, 491.8375pt x 393.47pt>
+File: SYEVX_Dim4096_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4096_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim4096_EigenVector_3.pdf used on input line 131
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim4096_EigenVector_4.pdf, id=161, 485.815pt x 393.47pt> [13 <D:/klMatri
+xCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4096_EigenVector_1.pdf> <D:/klM
+atrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4096_EigenVector_2.pdf>]
+File: SYEVX_Dim4096_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4096_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim4096_EigenVector_4.pdf used on input line 133
+.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim4608_EigenVector_0.pdf, id=174, 502.87875pt x 393.47pt>
+File: ARPACK_Dim4608_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4608_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim4608_EigenVector_0.pdf used on input line 13
+6.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim4608_EigenVector_1.pdf, id=175, 496.85625pt x 393.47pt> [14 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4096_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4096_EigenVector_4.pdf>]
+File: ARPACK_Dim4608_EigenVector_1.pdf Graphic file (type pdf)
+<use ARPACK_Dim4608_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim4608_EigenVector_1.pdf used on input line 13
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim4608_EigenVector_2.pdf, id=187, 496.85625pt x 393.47pt>
+File: ARPACK_Dim4608_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4608_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim4608_EigenVector_2.pdf used on input line 14
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim4608_EigenVector_3.pdf, id=188, 491.8375pt x 393.47pt> [15 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4608_EigenVector_0.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4608_EigenVector_1.pdf>
+]
+File: ARPACK_Dim4608_EigenVector_3.pdf Graphic file (type pdf)
+ <use ARPACK_Dim4608_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim4608_EigenVector_3.pdf used on input line 14
+2.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim4608_EigenVector_4.pdf, id=200, 491.8375pt x 393.47pt>
+File: ARPACK_Dim4608_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim4608_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim4608_EigenVector_4.pdf used on input line 14
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [16 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4608_EigenVect
+or_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4608_Eige
+nVector_3.pdf>]
+<SYEVX_Dim4608_EigenVector_1.pdf, id=212, 496.85625pt x 393.47pt>
+File: SYEVX_Dim4608_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4608_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim4608_EigenVector_1.pdf used on input line 147
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim4608_EigenVector_2.pdf, id=213, 496.85625pt x 393.47pt>
+File: SYEVX_Dim4608_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4608_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim4608_EigenVector_2.pdf used on input line 149
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim4608_EigenVector_3.pdf, id=214, 491.8375pt x 393.47pt> [17 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim4608_EigenVector_4.pdf> <D:/k
+lMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4608_EigenVector_1.pdf>]
+File: SYEVX_Dim4608_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4608_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim4608_EigenVector_3.pdf used on input line 151
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim4608_EigenVector_4.pdf, id=226, 491.8375pt x 393.47pt>
+File: SYEVX_Dim4608_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim4608_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim4608_EigenVector_4.pdf used on input line 153
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [18 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4608_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4608_EigenV
+ector_3.pdf>]
+<ARPACK_Dim5120_EigenVector_0.pdf, id=238, 491.8375pt x 393.47pt>
+File: ARPACK_Dim5120_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5120_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim5120_EigenVector_0.pdf used on input line 15
+6.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim5120_EigenVector_1.pdf, id=239, 496.85625pt x 393.47pt>
+File: ARPACK_Dim5120_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5120_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim5120_EigenVector_1.pdf used on input line 15
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim5120_EigenVector_2.pdf, id=240, 496.85625pt x 393.47pt> [19 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim4608_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5120_EigenVector_0.pdf>
+]
+File: ARPACK_Dim5120_EigenVector_2.pdf Graphic file (type pdf)
+ <use ARPACK_Dim5120_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim5120_EigenVector_2.pdf used on input line 16
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim5120_EigenVector_3.pdf, id=252, 491.8375pt x 393.47pt>
+File: ARPACK_Dim5120_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5120_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim5120_EigenVector_3.pdf used on input line 16
+2.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim5120_EigenVector_4.pdf, id=253, 491.8375pt x 393.47pt> [20 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5120_EigenVector_1.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5120_EigenVector_2.pdf>
+]
+File: ARPACK_Dim5120_EigenVector_4.pdf Graphic file (type pdf)
+ <use ARPACK_Dim5120_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim5120_EigenVector_4.pdf used on input line 16
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim5120_EigenVector_1.pdf, id=265, 496.85625pt x 393.47pt>
+File: SYEVX_Dim5120_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5120_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim5120_EigenVector_1.pdf used on input line 167
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim5120_EigenVector_2.pdf, id=266, 496.85625pt x 393.47pt> [21 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5120_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5120_EigenVector_4.pdf>
+]
+File: SYEVX_Dim5120_EigenVector_2.pdf Graphic file (type pdf)
+ <use SYEVX_Dim5120_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim5120_EigenVector_2.pdf used on input line 169
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim5120_EigenVector_3.pdf, id=278, 491.8375pt x 393.47pt>
+File: SYEVX_Dim5120_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5120_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim5120_EigenVector_3.pdf used on input line 171
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim5120_EigenVector_4.pdf, id=279, 491.8375pt x 393.47pt> [22 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5120_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5120_EigenVector_2.pdf>]
+File: SYEVX_Dim5120_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5120_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim5120_EigenVector_4.pdf used on input line 173
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim5632_EigenVector_0.pdf, id=291, 485.815pt x 393.47pt>
+File: ARPACK_Dim5632_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5632_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim5632_EigenVector_0.pdf used on input line 17
+6.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim5632_EigenVector_1.pdf, id=292, 485.815pt x 393.47pt> [23 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5120_EigenVector_3.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5120_EigenVector_4.pdf>]
+File: ARPACK_Dim5632_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5632_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim5632_EigenVector_1.pdf used on input line 17
+8.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim5632_EigenVector_2.pdf, id=304, 502.87875pt x 393.47pt>
+File: ARPACK_Dim5632_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5632_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim5632_EigenVector_2.pdf used on input line 18
+0.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim5632_EigenVector_3.pdf, id=305, 496.85625pt x 393.47pt> [24 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5632_EigenVector_0.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5632_EigenVector_1.pdf
+>]
+File: ARPACK_Dim5632_EigenVector_3.pdf Graphic file (type pdf)
+ <use ARPACK_Dim5632_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim5632_EigenVector_3.pdf used on input line 18
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim5632_EigenVector_4.pdf, id=317, 496.85625pt x 393.47pt>
+File: ARPACK_Dim5632_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim5632_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim5632_EigenVector_4.pdf used on input line 18
+4.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+ [25 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5632_EigenVect
+or_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5632_Eige
+nVector_3.pdf>]
+<SYEVX_Dim5632_EigenVector_1.pdf, id=330, 496.85625pt x 393.47pt>
+File: SYEVX_Dim5632_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5632_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim5632_EigenVector_1.pdf used on input line 187
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim5632_EigenVector_2.pdf, id=331, 496.85625pt x 393.47pt>
+File: SYEVX_Dim5632_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5632_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim5632_EigenVector_2.pdf used on input line 189
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim5632_EigenVector_3.pdf, id=332, 491.8375pt x 393.47pt> [26 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim5632_EigenVector_4.pdf> <D:/k
+lMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5632_EigenVector_1.pdf>]
+File: SYEVX_Dim5632_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5632_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim5632_EigenVector_3.pdf used on input line 191
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim5632_EigenVector_4.pdf, id=344, 491.8375pt x 393.47pt>
+File: SYEVX_Dim5632_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim5632_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim5632_EigenVector_4.pdf used on input line 193
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [27 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5632_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5632_EigenV
+ector_3.pdf>]
+<ARPACK_Dim6144_EigenVector_0.pdf, id=356, 485.815pt x 393.47pt>
+File: ARPACK_Dim6144_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6144_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim6144_EigenVector_0.pdf used on input line 19
+6.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim6144_EigenVector_1.pdf, id=357, 485.815pt x 393.47pt>
+File: ARPACK_Dim6144_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6144_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim6144_EigenVector_1.pdf used on input line 19
+8.
+(pdftex.def)             Requested size: 284.52309pt x 284.52296pt.
+
+<ARPACK_Dim6144_EigenVector_2.pdf, id=358, 496.85625pt x 393.47pt> [28 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim5632_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6144_EigenVector_0.pdf>
+]
+File: ARPACK_Dim6144_EigenVector_2.pdf Graphic file (type pdf)
+ <use ARPACK_Dim6144_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim6144_EigenVector_2.pdf used on input line 20
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6144_EigenVector_3.pdf, id=370, 496.85625pt x 393.47pt>
+File: ARPACK_Dim6144_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6144_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim6144_EigenVector_3.pdf used on input line 20
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6144_EigenVector_4.pdf, id=371, 496.85625pt x 393.47pt> [29 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6144_EigenVector_1.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6144_EigenVector_2.pdf
+>]
+File: ARPACK_Dim6144_EigenVector_4.pdf Graphic file (type pdf)
+ <use ARPACK_Dim6144_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim6144_EigenVector_4.pdf used on input line 20
+4.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6144_EigenVector_1.pdf, id=383, 496.85625pt x 393.47pt>
+File: SYEVX_Dim6144_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6144_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim6144_EigenVector_1.pdf used on input line 207
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6144_EigenVector_2.pdf, id=384, 496.85625pt x 393.47pt> [30 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6144_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6144_EigenVector_4.pdf>
+]
+File: SYEVX_Dim6144_EigenVector_2.pdf Graphic file (type pdf)
+ <use SYEVX_Dim6144_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim6144_EigenVector_2.pdf used on input line 209
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6144_EigenVector_3.pdf, id=395, 491.8375pt x 393.47pt>
+File: SYEVX_Dim6144_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6144_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim6144_EigenVector_3.pdf used on input line 211
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim6144_EigenVector_4.pdf, id=396, 491.8375pt x 393.47pt> [31 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6144_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6144_EigenVector_2.pdf>]
+File: SYEVX_Dim6144_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6144_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim6144_EigenVector_4.pdf used on input line 213
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim6656_EigenVector_0.pdf, id=409, 496.85625pt x 393.47pt>
+File: ARPACK_Dim6656_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6656_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim6656_EigenVector_0.pdf used on input line 21
+6.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6656_EigenVector_1.pdf, id=410, 496.85625pt x 393.47pt> [32 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6144_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6144_EigenVector_4.pdf>]
+File: ARPACK_Dim6656_EigenVector_1.pdf Graphic file (type pdf)
+<use ARPACK_Dim6656_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim6656_EigenVector_1.pdf used on input line 21
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6656_EigenVector_2.pdf, id=422, 496.85625pt x 393.47pt>
+File: ARPACK_Dim6656_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6656_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim6656_EigenVector_2.pdf used on input line 22
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6656_EigenVector_3.pdf, id=423, 496.85625pt x 393.47pt> [33 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6656_EigenVector_0.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6656_EigenVector_1.pdf
+>]
+File: ARPACK_Dim6656_EigenVector_3.pdf Graphic file (type pdf)
+ <use ARPACK_Dim6656_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim6656_EigenVector_3.pdf used on input line 22
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim6656_EigenVector_4.pdf, id=434, 491.8375pt x 393.47pt>
+File: ARPACK_Dim6656_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim6656_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim6656_EigenVector_4.pdf used on input line 22
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [34 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6656_EigenVect
+or_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6656_Eige
+nVector_3.pdf>]
+<SYEVX_Dim6656_EigenVector_1.pdf, id=446, 496.85625pt x 393.47pt>
+File: SYEVX_Dim6656_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6656_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim6656_EigenVector_1.pdf used on input line 227
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6656_EigenVector_2.pdf, id=447, 496.85625pt x 393.47pt>
+File: SYEVX_Dim6656_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6656_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim6656_EigenVector_2.pdf used on input line 229
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6656_EigenVector_3.pdf, id=448, 496.85625pt x 393.47pt> [35 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim6656_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6656_EigenVector_1.pdf>]
+File: SYEVX_Dim6656_EigenVector_3.pdf Graphic file (type pdf)
+<use SYEVX_Dim6656_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim6656_EigenVector_3.pdf used on input line 231
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim6656_EigenVector_4.pdf, id=460, 491.8375pt x 393.47pt>
+File: SYEVX_Dim6656_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim6656_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim6656_EigenVector_4.pdf used on input line 233
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [36 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6656_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6656_EigenV
+ector_3.pdf>]
+<ARPACK_Dim7168_EigenVector_0.pdf, id=472, 496.85625pt x 393.47pt>
+File: ARPACK_Dim7168_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7168_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim7168_EigenVector_0.pdf used on input line 23
+6.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7168_EigenVector_1.pdf, id=473, 496.85625pt x 393.47pt>
+File: ARPACK_Dim7168_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7168_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim7168_EigenVector_1.pdf used on input line 23
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7168_EigenVector_2.pdf, id=474, 496.85625pt x 393.47pt> [37 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim6656_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7168_EigenVector_0.pdf>
+]
+File: ARPACK_Dim7168_EigenVector_2.pdf Graphic file (type pdf)
+ <use ARPACK_Dim7168_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim7168_EigenVector_2.pdf used on input line 24
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7168_EigenVector_3.pdf, id=486, 496.85625pt x 393.47pt>
+File: ARPACK_Dim7168_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7168_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim7168_EigenVector_3.pdf used on input line 24
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7168_EigenVector_4.pdf, id=487, 491.8375pt x 393.47pt> [38 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7168_EigenVector_1.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7168_EigenVector_2.pdf>
+]
+File: ARPACK_Dim7168_EigenVector_4.pdf Graphic file (type pdf)
+ <use ARPACK_Dim7168_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim7168_EigenVector_4.pdf used on input line 24
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim7168_EigenVector_1.pdf, id=499, 496.85625pt x 393.47pt>
+File: SYEVX_Dim7168_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7168_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim7168_EigenVector_1.pdf used on input line 247
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7168_EigenVector_2.pdf, id=500, 496.85625pt x 393.47pt> [39 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7168_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7168_EigenVector_4.pdf>
+]
+File: SYEVX_Dim7168_EigenVector_2.pdf Graphic file (type pdf)
+ <use SYEVX_Dim7168_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim7168_EigenVector_2.pdf used on input line 249
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7168_EigenVector_3.pdf, id=512, 496.85625pt x 393.47pt>
+File: SYEVX_Dim7168_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7168_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim7168_EigenVector_3.pdf used on input line 251
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7168_EigenVector_4.pdf, id=513, 491.8375pt x 393.47pt> [40 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7168_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7168_EigenVector_2.pdf>]
+File: SYEVX_Dim7168_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7168_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim7168_EigenVector_4.pdf used on input line 253
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim7680_EigenVector_0.pdf, id=525, 502.87875pt x 393.47pt>
+File: ARPACK_Dim7680_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7680_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim7680_EigenVector_0.pdf used on input line 25
+6.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim7680_EigenVector_1.pdf, id=526, 496.85625pt x 393.47pt> [41 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7168_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7168_EigenVector_4.pdf>]
+File: ARPACK_Dim7680_EigenVector_1.pdf Graphic file (type pdf)
+<use ARPACK_Dim7680_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim7680_EigenVector_1.pdf used on input line 25
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7680_EigenVector_2.pdf, id=538, 496.85625pt x 393.47pt>
+File: ARPACK_Dim7680_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7680_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim7680_EigenVector_2.pdf used on input line 26
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7680_EigenVector_3.pdf, id=539, 496.85625pt x 393.47pt> [42 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7680_EigenVector_0.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7680_EigenVector_1.pdf
+>]
+File: ARPACK_Dim7680_EigenVector_3.pdf Graphic file (type pdf)
+ <use ARPACK_Dim7680_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim7680_EigenVector_3.pdf used on input line 26
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim7680_EigenVector_4.pdf, id=551, 491.8375pt x 393.47pt>
+File: ARPACK_Dim7680_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim7680_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim7680_EigenVector_4.pdf used on input line 26
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [43 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7680_EigenVect
+or_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7680_Eige
+nVector_3.pdf>]
+<SYEVX_Dim7680_EigenVector_1.pdf, id=564, 496.85625pt x 393.47pt>
+File: SYEVX_Dim7680_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7680_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim7680_EigenVector_1.pdf used on input line 267
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7680_EigenVector_2.pdf, id=565, 496.85625pt x 393.47pt>
+File: SYEVX_Dim7680_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7680_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim7680_EigenVector_2.pdf used on input line 269
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7680_EigenVector_3.pdf, id=566, 496.85625pt x 393.47pt> [44 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim7680_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7680_EigenVector_1.pdf>]
+File: SYEVX_Dim7680_EigenVector_3.pdf Graphic file (type pdf)
+<use SYEVX_Dim7680_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim7680_EigenVector_3.pdf used on input line 271
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim7680_EigenVector_4.pdf, id=578, 491.8375pt x 393.47pt>
+File: SYEVX_Dim7680_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim7680_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim7680_EigenVector_4.pdf used on input line 273
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [45 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7680_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7680_EigenV
+ector_3.pdf>]
+<ARPACK_Dim8192_EigenVector_0.pdf, id=590, 496.85625pt x 393.47pt>
+File: ARPACK_Dim8192_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8192_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim8192_EigenVector_0.pdf used on input line 27
+6.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8192_EigenVector_1.pdf, id=591, 496.85625pt x 393.47pt>
+File: ARPACK_Dim8192_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8192_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim8192_EigenVector_1.pdf used on input line 27
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8192_EigenVector_2.pdf, id=592, 496.85625pt x 393.47pt> [46 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim7680_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8192_EigenVector_0.pdf>
+]
+File: ARPACK_Dim8192_EigenVector_2.pdf Graphic file (type pdf)
+ <use ARPACK_Dim8192_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim8192_EigenVector_2.pdf used on input line 28
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8192_EigenVector_3.pdf, id=604, 496.85625pt x 393.47pt>
+File: ARPACK_Dim8192_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8192_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim8192_EigenVector_3.pdf used on input line 28
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8192_EigenVector_4.pdf, id=605, 491.8375pt x 393.47pt> [47 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8192_EigenVector_1.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8192_EigenVector_2.pdf>
+]
+File: ARPACK_Dim8192_EigenVector_4.pdf Graphic file (type pdf)
+ <use ARPACK_Dim8192_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim8192_EigenVector_4.pdf used on input line 28
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<SYEVX_Dim8192_EigenVector_1.pdf, id=617, 496.85625pt x 393.47pt>
+File: SYEVX_Dim8192_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8192_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim8192_EigenVector_1.pdf used on input line 287
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8192_EigenVector_2.pdf, id=618, 496.85625pt x 393.47pt> [48 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8192_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8192_EigenVector_4.pdf>
+]
+File: SYEVX_Dim8192_EigenVector_2.pdf Graphic file (type pdf)
+ <use SYEVX_Dim8192_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim8192_EigenVector_2.pdf used on input line 289
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8192_EigenVector_3.pdf, id=630, 496.85625pt x 393.47pt>
+File: SYEVX_Dim8192_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8192_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim8192_EigenVector_3.pdf used on input line 291
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8192_EigenVector_4.pdf, id=631, 491.8375pt x 393.47pt> [49 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8192_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8192_EigenVector_2.pdf>]
+File: SYEVX_Dim8192_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8192_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim8192_EigenVector_4.pdf used on input line 293
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+
+<ARPACK_Dim8704_EigenVector_0.pdf, id=644, 502.87875pt x 393.47pt>
+File: ARPACK_Dim8704_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8704_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim8704_EigenVector_0.pdf used on input line 29
+6.
+(pdftex.def)             Requested size: 284.52603pt x 284.52296pt.
+
+<ARPACK_Dim8704_EigenVector_1.pdf, id=645, 496.85625pt x 393.47pt> [50 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8192_EigenVector_3.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8192_EigenVector_4.pdf>]
+File: ARPACK_Dim8704_EigenVector_1.pdf Graphic file (type pdf)
+<use ARPACK_Dim8704_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim8704_EigenVector_1.pdf used on input line 29
+8.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8704_EigenVector_2.pdf, id=657, 496.85625pt x 393.47pt>
+File: ARPACK_Dim8704_EigenVector_2.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8704_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim8704_EigenVector_2.pdf used on input line 30
+0.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8704_EigenVector_3.pdf, id=658, 496.85625pt x 393.47pt> [51 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8704_EigenVector_0.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8704_EigenVector_1.pdf
+>]
+File: ARPACK_Dim8704_EigenVector_3.pdf Graphic file (type pdf)
+ <use ARPACK_Dim8704_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim8704_EigenVector_3.pdf used on input line 30
+2.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<ARPACK_Dim8704_EigenVector_4.pdf, id=670, 491.8375pt x 393.47pt>
+File: ARPACK_Dim8704_EigenVector_4.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim8704_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim8704_EigenVector_4.pdf used on input line 30
+4.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [52 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8704_EigenVect
+or_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8704_Eige
+nVector_3.pdf>]
+<SYEVX_Dim8704_EigenVector_1.pdf, id=682, 496.85625pt x 393.47pt>
+File: SYEVX_Dim8704_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8704_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim8704_EigenVector_1.pdf used on input line 307
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8704_EigenVector_2.pdf, id=683, 496.85625pt x 393.47pt>
+File: SYEVX_Dim8704_EigenVector_2.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8704_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim8704_EigenVector_2.pdf used on input line 309
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8704_EigenVector_3.pdf, id=684, 496.85625pt x 393.47pt> [53 <D:/klMat
+rixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim8704_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8704_EigenVector_1.pdf>]
+File: SYEVX_Dim8704_EigenVector_3.pdf Graphic file (type pdf)
+<use SYEVX_Dim8704_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim8704_EigenVector_3.pdf used on input line 311
+.
+(pdftex.def)             Requested size: 284.53017pt x 284.52296pt.
+
+<SYEVX_Dim8704_EigenVector_4.pdf, id=696, 491.8375pt x 393.47pt>
+File: SYEVX_Dim8704_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim8704_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim8704_EigenVector_4.pdf used on input line 313
+.
+(pdftex.def)             Requested size: 284.53798pt x 284.52296pt.
+ [54 <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8704_EigenVecto
+r_2.pdf> <D:/klMatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8704_EigenV
+ector_3.pdf>]
+<ARPACK_Dim9216_EigenVector_0.pdf, id=708, 488.82625pt x 393.47pt>
+File: ARPACK_Dim9216_EigenVector_0.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim9216_EigenVector_0.pdf>
+Package pdftex.def Info: ARPACK_Dim9216_EigenVector_0.pdf used on input line 31
+6.
+(pdftex.def)             Requested size: 284.53381pt x 284.52296pt.
+
+<ARPACK_Dim9216_EigenVector_1.pdf, id=709, 488.82625pt x 393.47pt>
+File: ARPACK_Dim9216_EigenVector_1.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim9216_EigenVector_1.pdf>
+Package pdftex.def Info: ARPACK_Dim9216_EigenVector_1.pdf used on input line 31
+8.
+(pdftex.def)             Requested size: 284.53381pt x 284.52296pt.
+
+<ARPACK_Dim9216_EigenVector_2.pdf, id=710, 488.82625pt x 393.47pt> [55 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim8704_EigenVector_4.pdf> <D:/
+klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim9216_EigenVector_0.pdf>
+]
+File: ARPACK_Dim9216_EigenVector_2.pdf Graphic file (type pdf)
+ <use ARPACK_Dim9216_EigenVector_2.pdf>
+Package pdftex.def Info: ARPACK_Dim9216_EigenVector_2.pdf used on input line 32
+0.
+(pdftex.def)             Requested size: 284.53381pt x 284.52296pt.
+
+<ARPACK_Dim9216_EigenVector_3.pdf, id=723, 488.82625pt x 393.47pt>
+File: ARPACK_Dim9216_EigenVector_3.pdf Graphic file (type pdf)
+
+<use ARPACK_Dim9216_EigenVector_3.pdf>
+Package pdftex.def Info: ARPACK_Dim9216_EigenVector_3.pdf used on input line 32
+2.
+(pdftex.def)             Requested size: 284.53381pt x 284.52296pt.
+
+<ARPACK_Dim9216_EigenVector_4.pdf, id=724, 488.82625pt x 393.47pt> [56 <D:/klMa
+trixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim9216_EigenVector_1.pdf> <D:
+/klMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim9216_EigenVector_2.pdf
+>]
+File: ARPACK_Dim9216_EigenVector_4.pdf Graphic file (type pdf)
+ <use ARPACK_Dim9216_EigenVector_4.pdf>
+Package pdftex.def Info: ARPACK_Dim9216_EigenVector_4.pdf used on input line 32
+4.
+(pdftex.def)             Requested size: 284.53381pt x 284.52296pt.
+
+<SYEVX_Dim9216_EigenVector_1.pdf, id=736, 499.8675pt x 393.47pt>
+File: SYEVX_Dim9216_EigenVector_1.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim9216_EigenVector_1.pdf>
+Package pdftex.def Info: SYEVX_Dim9216_EigenVector_1.pdf used on input line 327
+.
+(pdftex.def)             Requested size: 284.53844pt x 284.52296pt.
+
+<SYEVX_Dim9216_EigenVector_2.pdf, id=737, 499.8675pt x 393.47pt> [57 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim9216_EigenVector_3.pdf> <D:/k
+lMatrixCore/output/medium_data_NoIntelMemmgr/ARPACK_Dim9216_EigenVector_4.pdf>]
+File: SYEVX_Dim9216_EigenVector_2.pdf Graphic file (type pdf)
+<use SYEVX_Dim9216_EigenVector_2.pdf>
+Package pdftex.def Info: SYEVX_Dim9216_EigenVector_2.pdf used on input line 329
+.
+(pdftex.def)             Requested size: 284.53844pt x 284.52296pt.
+
+<SYEVX_Dim9216_EigenVector_3.pdf, id=749, 499.8675pt x 393.47pt>
+File: SYEVX_Dim9216_EigenVector_3.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim9216_EigenVector_3.pdf>
+Package pdftex.def Info: SYEVX_Dim9216_EigenVector_3.pdf used on input line 331
+.
+(pdftex.def)             Requested size: 284.53844pt x 284.52296pt.
+
+<SYEVX_Dim9216_EigenVector_4.pdf, id=750, 499.8675pt x 393.47pt> [58 <D:/klMatr
+ixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim9216_EigenVector_1.pdf> <D:/kl
+MatrixCore/output/medium_data_NoIntelMemmgr/SYEVX_Dim9216_EigenVector_2.pdf>]
+File: SYEVX_Dim9216_EigenVector_4.pdf Graphic file (type pdf)
+
+<use SYEVX_Dim9216_EigenVector_4.pdf>
+Package pdftex.def Info: SYEVX_Dim9216_EigenVector_4.pdf used on input line 333
+.
+(pdftex.def)             Requested size: 284.53844pt x 284.52296pt.
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+
+*
+Runaway argument?
+! Paragraph ended before \end was complete.
+<to be read again> 
+                   \par 
+<*> 
+    
+? 
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+
+*
+Runaway argument?
+! Paragraph ended before \end was complete.
+<to be read again> 
+                   \par 
+<*> 
+    
+? 
+(Please type a command or say `\end')
+*
+! Emergency stop.
+<*> 
+    
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 3330 strings out of 493921
+ 56039 string characters out of 3144862
+ 98646 words of memory out of 3000000
+ 6488 multiletter control sequences out of 15000+200000
+ 10591 words of font info for 42 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,6n,32p,322b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -1,6 +1,18 @@
 <map id="IteratedExponentialFiltering" name="IteratedExponentialFiltering">
-<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="232,5,363,32"/>
-<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="235,56,360,83"/>
-<area shape="rect" id="node4" href="$kl__latex__helper__fns_8cpp.html#ab07c4b43ea5ed4b9be1dc842e9b0f9a8" title="LatexInsertLegend" alt="" coords="233,107,361,133"/>
-<area shape="rect" id="node5" href="$kl__latex__helper__fns_8cpp.html#a7f0abaae9eb2ce9cf36ab4b2dc9d260f" title="WritePlot" alt="" coords="259,157,335,184"/>
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="250,5,381,32"/>
+<area shape="rect" id="node3" href="$classkl_time_series.html#a2d5fd6969c50ba9333d57ff10ad240d0" title="klTimeSeries::mean" alt="" coords="246,56,385,83"/>
+<area shape="rect" id="node4" href="$classkl_time_series.html#a9a92e62b16b50d34a75588d76c92dc8b" title="klTimeSeries::variance" alt="" coords="238,107,393,133"/>
+<area shape="rect" id="node5" href="$classkl_time_series.html#a85cf8408e1d23a418621a625539b6da3" title="klTimeSeries::skewness" alt="" coords="233,157,397,184"/>
+<area shape="rect" id="node6" href="$classkl_time_series.html#a29d41c90b03dc91e0367f7d3629db10d" title="klTimeSeries::kurtosis" alt="" coords="239,208,391,235"/>
+<area shape="rect" id="node7" href="$classkl_time_series.html#a2ba1a0928afd2181438c218e162216d0" title="klTimeSeries::EMA" alt="" coords="248,259,383,285"/>
+<area shape="rect" id="node8" href="$classkl_time_series.html#a64e47ca7658f39729b9fa0bee7f086ce" title="klTimeSeries::IEMA" alt="" coords="246,309,385,336"/>
+<area shape="rect" id="node9" href="$classkl_time_series.html#a111337862e7a823d7bcad9605fcd4221" title="klTimeSeries::MA" alt="" coords="252,360,379,387"/>
+<area shape="rect" id="node11" href="$kl__prob_8h.html#a2f3e9a61044b979320d8a08a5aeaa102" title="gamma" alt="" coords="283,411,348,437"/>
+<area shape="rect" id="node12" href="$kl__jbukhardt__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="292,461,339,488"/>
+<area shape="rect" id="node13" href="$classkl_time_series.html#a1a6e8edbbd56dfa97e2a8b74027df248" title="klTimeSeries::DIFF" alt="" coords="248,512,383,539"/>
+<area shape="rect" id="node14" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="252,563,379,589"/>
+<area shape="rect" id="node16" href="$kl__latex__helper__fns_8cpp.html#ab07c4b43ea5ed4b9be1dc842e9b0f9a8" title="LatexInsertLegend" alt="" coords="251,613,380,640"/>
+<area shape="rect" id="node17" href="$kl__latex__helper__fns_8cpp.html#a7f0abaae9eb2ce9cf36ab4b2dc9d260f" title="WritePlot" alt="" coords="278,664,353,691"/>
+<area shape="rect" id="node10" href="$classkl_vector.html#ac40868e727fdf403cc3e92cc5278826b" title="klVector::setup" alt="" coords="478,360,589,387"/>
+<area shape="rect" id="node15" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="445,606,621,647"/>
 </map>

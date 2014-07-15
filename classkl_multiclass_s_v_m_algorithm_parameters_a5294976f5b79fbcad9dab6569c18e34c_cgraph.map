@@ -1,0 +1,7 @@
+<map id="klMulticlassSVMAlgorithmParameters::klMulticlassSVMAlgorithmParameters" name="klMulticlassSVMAlgorithmParameters::klMulticlassSVMAlgorithmParameters">
+<area shape="rect" id="node2" href="$classkl_algorithm_parameter_container.html#a94512e3cac1fd44b10c227132aaf34f3" title="klAlgorithmParameterContainer\l::addIntParameter" alt="" coords="304,5,507,47"/>
+<area shape="rect" id="node3" href="$classkl_algorithm_parameter_container.html#ae09b70a85cb63ba919fdf8c6c5680f9a" title="klAlgorithmParameterContainer\l::addDoubleParameter" alt="" coords="304,71,507,112"/>
+<area shape="rect" id="node4" href="$classkl_algorithm_parameter_container.html#a1e24f5d41ea8db9cb7487d578e4022a9" title="klAlgorithmParameterContainer\l::describeAlgorithmParameters" alt="" coords="304,136,507,177"/>
+<area shape="rect" id="node5" href="$classkl_algorithm_parameter.html#ab8bfc043d9d7a3785999d1c4095c8b30" title="klAlgorithmParameter\l::getType" alt="" coords="555,103,701,144"/>
+<area shape="rect" id="node6" href="$classkl_algorithm_parameter.html#aa5c9a41618a0b13c56df159e7de938e0" title="klAlgorithmParameter\l::getDescription" alt="" coords="555,168,701,209"/>
+</map>

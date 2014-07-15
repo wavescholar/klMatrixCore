@@ -1,5 +1,12 @@
 <map id="PointCloudAndLatexPlots" name="PointCloudAndLatexPlots">
-<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="224,5,355,32"/>
-<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a8e75ba20a20c3d4376aed351cdcc0b8a" title="LatexInsert3DPlot" alt="" coords="227,56,352,83"/>
-<area shape="rect" id="node4" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="227,107,352,133"/>
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="228,32,359,59"/>
+<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a8e75ba20a20c3d4376aed351cdcc0b8a" title="LatexInsert3DPlot" alt="" coords="230,83,357,109"/>
+<area shape="rect" id="node9" href="$classkl_gaussian_mixture.html#a4e21c91fde4744213d95fd6be45335df" title="klGaussianMixture::\lgetData" alt="" coords="224,134,363,175"/>
+<area shape="rect" id="node10" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="411,189,537,216"/>
+<area shape="rect" id="node11" href="$classkl_matrix.html#ad99740768c2b635dfdaa50797dd36c28" title="klMatrix::getColumn" alt="" coords="224,251,363,277"/>
+<area shape="rect" id="node4" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="585,158,761,199"/>
+<area shape="rect" id="node5" href="$kl__matlab__iface_8h.html#a7915e40f217978dd539095a817fa6ab6" title="klScatterPlot3D" alt="" coords="417,83,531,109"/>
+<area shape="rect" id="node6" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="601,56,746,83"/>
+<area shape="rect" id="node7" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="610,107,737,133"/>
+<area shape="rect" id="node8" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="607,5,740,32"/>
 </map>

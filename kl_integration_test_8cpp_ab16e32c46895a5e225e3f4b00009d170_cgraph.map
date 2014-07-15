@@ -1,3 +1,7 @@
 <map id="RandomMatrixNorms" name="RandomMatrixNorms">
-<area shape="rect" id="node2" href="$kl___m_l__helper__fns_8cpp.html#a0fb78c5d5b8cbf1d03b08d782c6c2ca5" title="SampleGOE" alt="" coords="197,5,292,32"/>
+<area shape="rect" id="node2" href="$classkl_matrix.html#a98c5dc49c938620ea36488160b43117f" title="klMatrix::norm" alt="" coords="232,5,337,32"/>
+<area shape="rect" id="node3" href="$classkl_matrix.html#a360dbb0920d997dc68f4927af9e944af" title="klMatrix::ConditionNumber" alt="" coords="197,56,372,83"/>
+<area shape="rect" id="node4" href="$kl___m_l__helper__fns_8cpp.html#a0fb78c5d5b8cbf1d03b08d782c6c2ca5" title="SampleGOE" alt="" coords="237,107,332,133"/>
+<area shape="rect" id="node6" href="$kl__matrix__helper__fns_8h.html#af892ca5b43e3f66823160cd6eaf3ba99" title="HilbertMatrix" alt="" coords="237,157,332,184"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="420,107,553,133"/>
 </map>

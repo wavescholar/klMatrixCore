@@ -1,0 +1,7 @@
+<map id="klGeneralizedInverseGaussianRV&lt; TYPE &gt;" name="klGeneralizedInverseGaussianRV&lt; TYPE &gt;">
+<area shape="rect" id="node2" href="$classkl_mersenne_twister.html" title="{klMersenneTwister\n||+ klMersenneTwister()\l+ ~klMersenneTwister()\l+ reset()\l+ nextValue()\l+ nextNormalizedValue()\l&#45; reloadMT()\l}" alt="" coords="224,189,389,340"/>
+<area shape="rect" id="node6" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; double \&gt;\n||+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="339,733,496,884"/>
+<area shape="rect" id="node8" href="$classkl_uniform_r_v.html" title="{klUniformRV\&lt; TYPE \&gt;\n||+ klUniformRV()\l+ klUniformRV()\l+ operator()()\l+ setRange()\l+ setMinimum()\l+ setMaximum()\l}" alt="" coords="397,417,552,568"/>
+<area shape="rect" id="node4" href="$classkl_r_v.html" title="{klRV\&lt; TYPE \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="91,211,200,318"/>
+<area shape="rect" id="node7" href="$classkl_r_v.html" title="{klRV\&lt; double \&gt;\n||+ operator()()\l+ CDF()\l+ PDF()\l}" alt="" coords="157,439,269,546"/>
+</map>

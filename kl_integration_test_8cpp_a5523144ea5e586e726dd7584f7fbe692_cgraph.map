@@ -1,5 +1,15 @@
 <map id="LinearRegressionAtanSet" name="LinearRegressionAtanSet">
-<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a8e75ba20a20c3d4376aed351cdcc0b8a" title="LatexInsert3DPlot" alt="" coords="225,5,351,32"/>
-<area shape="rect" id="node3" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="223,56,353,83"/>
-<area shape="rect" id="node4" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="225,107,351,133"/>
+<area shape="rect" id="node2" href="$kl__point__cloud__generator_8h.html#a8db1f954373657f8a34add100f2d7c3d" title="generateSicknessManifold\lDataSet" alt="" coords="421,49,596,90"/>
+<area shape="rect" id="node6" href="$kl__latex__helper__fns_8cpp.html#a8e75ba20a20c3d4376aed351cdcc0b8a" title="LatexInsert3DPlot" alt="" coords="235,140,361,167"/>
+<area shape="rect" id="node10" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="233,241,363,268"/>
+<area shape="rect" id="node11" href="$kl__jbukhardt__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="275,292,321,319"/>
+<area shape="rect" id="node12" href="$kl__latex__helper__fns_8cpp.html#a50eb125c67457e66cd4235c3bd241783" title="LatexInsert1DPlot" alt="" coords="445,216,572,243"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#ad99740768c2b635dfdaa50797dd36c28" title="klMatrix::getColumn" alt="" coords="229,343,367,369"/>
+<area shape="rect" id="node14" href="$classkl_matrix.html#a898cd271cff5f1ffe7afb855ecf704c9" title="klMatrix::getSubBlock" alt="" coords="223,393,373,420"/>
+<area shape="rect" id="node3" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="659,107,805,133"/>
+<area shape="rect" id="node4" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="669,56,795,83"/>
+<area shape="rect" id="node5" href="$classkl_vector.html#a24a190d6f58256793ebdb48e1526b38c" title="klVector::getRows" alt="" coords="668,5,796,32"/>
+<area shape="rect" id="node7" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="644,209,820,250"/>
+<area shape="rect" id="node8" href="$kl__matlab__iface_8h.html#a7915e40f217978dd539095a817fa6ab6" title="klScatterPlot3D" alt="" coords="452,115,565,141"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="665,157,799,184"/>
 </map>

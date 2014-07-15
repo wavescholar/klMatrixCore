@@ -1,0 +1,11 @@
+<map id="BinaryIO" name="BinaryIO">
+<area shape="rect" id="node2" href="$classkl_binary_i_o.html#ae80fdafe5c9ecf2a4f8e847bb8a27858" title="klBinaryIO::WriteWinx64" alt="" coords="138,31,302,57"/>
+<area shape="rect" id="node6" href="$classkl_binary_i_o.html#a716600d549c6fca9a28a97c671721ee2" title="klBinaryIO::QueryWinx64" alt="" coords="135,132,305,159"/>
+<area shape="rect" id="node7" href="$classkl_binary_i_o.html#a13f6614ff0c2fe68e98e172d9c714118" title="klBinaryIO::MatReadWinx64" alt="" coords="127,81,313,108"/>
+<area shape="rect" id="node8" href="$classkl_binary_i_o.html#ac8bc45756e4d75bd5cfd6856079a5068" title="klBinaryIO::VecReadWinx64" alt="" coords="127,183,313,209"/>
+<area shape="rect" id="node3" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="371,5,498,32"/>
+<area shape="rect" id="node4" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="362,56,507,83"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="364,107,505,133"/>
+<area shape="rect" id="node9" href="$classkl_vector.html#a682d327b45d480a092175aea24051b88" title="klVector::getColumns" alt="" coords="361,220,508,247"/>
+<area shape="rect" id="node10" href="$classkl_vector.html#a7f0735170b1769d2931eecc10739839c" title="klVector::getMemory" alt="" coords="363,169,506,196"/>
+</map>

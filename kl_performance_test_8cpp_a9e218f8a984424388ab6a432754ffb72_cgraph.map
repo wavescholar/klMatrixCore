@@ -1,0 +1,5 @@
+<map id="testMKLMemoryManager" name="testMKLMemoryManager">
+<area shape="rect" id="node2" href="$classkl_global_memory_manager.html#a4848fb4a2a48aab8017b8857daf92472" title="klGlobalMemoryManager\l::setklVectorGlobalMemoryManager" alt="" coords="221,5,452,47"/>
+<area shape="rect" id="node3" href="$classkl_m_k_l_mem_mgr.html#a51821708da6014c7ecaf4632746ce69b" title="klMKLMemMgr::allocate" alt="" coords="255,71,418,98"/>
+<area shape="rect" id="node4" href="$classkl_m_k_l_mem_mgr.html#a81ab976ece26e84d7549fbf17b54b236" title="klMKLMemMgr::free" alt="" coords="267,122,407,149"/>
+</map>

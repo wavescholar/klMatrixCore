@@ -1,0 +1,9 @@
+<map id="klAlgorithmParameter::getDescription" name="klAlgorithmParameter::getDescription">
+<area shape="rect" id="node2" href="$classkl_algorithm_parameter_container.html#a1e24f5d41ea8db9cb7487d578e4022a9" title="klAlgorithmParameterContainer\l::describeAlgorithmParameters" alt="" coords="200,86,403,127"/>
+<area shape="rect" id="node8" href="$classkl_algorithm_parameter_container.html#a1e1d975a6dcabd446f49fe95e99d6739" title="klAlgorithmParameterContainer\l::serialize" alt="" coords="200,151,403,193"/>
+<area shape="rect" id="node3" href="$classkl_multiclass_s_v_m_algorithm_parameters.html#a5294976f5b79fbcad9dab6569c18e34c" title="klMulticlassSVMAlgorithm\lParameters::klMulticlassSVMAlgorithm\lParameters" alt="" coords="451,5,701,61"/>
+<area shape="rect" id="node4" href="$classkl_fast_gauss_algorithm_parameters.html#a1aa64d40500126b51c31093b7f47f815" title="klFastGaussAlgorithmParameters\l::klFastGaussAlgorithmParameters" alt="" coords="463,86,689,127"/>
+<area shape="rect" id="node5" href="$kl_integration_test_8cpp.html#a52926f937d559c1f99915984378b6f19" title="FastGaussTransform" alt="" coords="503,152,649,179"/>
+<area shape="rect" id="node6" href="$kl_matrix_core_test_8cpp.html#a286331511601fc35b7d569dee0c65cc4" title="klIntegrationTest" alt="" coords="749,152,868,179"/>
+<area shape="rect" id="node7" href="$kl_matrix_core_test_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="916,152,967,179"/>
+</map>

@@ -1,3 +1,6 @@
 <map id="klStackWalkerInternal::GetModuleListTH32" name="klStackWalkerInternal::GetModuleListTH32">
 <area shape="rect" id="node2" href="$classkl_stack_walker_internal.html#ac833a8c676d4e424e63e9478597a8e72" title="klStackWalkerInternal\l::LoadModules" alt="" coords="203,5,352,47"/>
+<area shape="rect" id="node3" href="$classkl_stack_walk_base.html#a61223a9077276094e4a1d02277defbda" title="klStackWalkBase::LoadModules" alt="" coords="400,13,611,39"/>
+<area shape="rect" id="node4" href="$classkl_stack_walk_base.html#a61fe24bc4744e4517369387ba6dfbf7f" title="klStackWalkBase::ShowCallstack" alt="" coords="659,13,877,39"/>
+<area shape="rect" id="node5" href="$kl__stack__walker_8h.html#a4f92691b7a0615ebc92fe0374f0b421c" title="klStackWalkFn" alt="" coords="925,13,1036,39"/>
 </map>

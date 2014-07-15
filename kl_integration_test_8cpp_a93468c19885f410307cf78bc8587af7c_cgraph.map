@@ -1,0 +1,18 @@
+<map id="MatrixOpsQuickCheck" name="MatrixOpsQuickCheck">
+<area shape="rect" id="node2" href="$kl__matrix_8h.html#af2f5fd91d4ea7220bbcdf6dc3bb63803" title="minV" alt="" coords="269,110,321,137"/>
+<area shape="rect" id="node6" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="435,9,576,36"/>
+<area shape="rect" id="node7" href="$kl__matrix_8h.html#a5a4adab85e8d60c649a349b88df2ba92" title="maxV" alt="" coords="267,60,323,86"/>
+<area shape="rect" id="node8" href="$classkl_matrix.html#afd5526bfa748f065fb7b800e9770c461" title="klMatrix::makeNanFriendly" alt="" coords="207,212,384,238"/>
+<area shape="rect" id="node9" href="$kl__matrix_8h.html#a328fef4cd389379518f1605e2fff17cb" title="klMatrixToLower" alt="" coords="237,161,354,188"/>
+<area shape="rect" id="node10" href="$classkl_matrix.html#ad99740768c2b635dfdaa50797dd36c28" title="klMatrix::getColumn" alt="" coords="226,262,365,289"/>
+<area shape="rect" id="node11" href="$classkl_vector.html#a5398409f98e2666a57f588a8f527b9ef" title="klVector::diff" alt="" coords="247,313,343,340"/>
+<area shape="rect" id="node12" href="$kl__random__number__generator_8cpp.html#a1d6fb1bfa25e9126fad55a1f0aeb8103" title="klErrorFunction" alt="" coords="240,364,351,390"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#a898cd271cff5f1ffe7afb855ecf704c9" title="klMatrix::getSubBlock" alt="" coords="220,414,371,441"/>
+<area shape="rect" id="node14" href="$classkl_matrix.html#a4570d856dcfb13cd3b5f21b7d38a590d" title="klMatrix::setSubBlock" alt="" coords="220,465,371,492"/>
+<area shape="rect" id="node15" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="223,516,368,542"/>
+<area shape="rect" id="node16" href="$classkl_vector.html#a6b423a428d4dbc122b22852f1db220a8" title="klVector::dot" alt="" coords="247,566,343,593"/>
+<area shape="rect" id="node17" href="$classkl_matrix.html#aa58abc662ce3fa519bd7a9b863cd175b" title="klMatrix::det" alt="" coords="248,617,343,644"/>
+<area shape="rect" id="node3" href="$classkl_vector.html#a682d327b45d480a092175aea24051b88" title="klVector::getColumns" alt="" coords="432,60,579,86"/>
+<area shape="rect" id="node4" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="442,110,569,137"/>
+<area shape="rect" id="node5" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="433,161,578,188"/>
+</map>

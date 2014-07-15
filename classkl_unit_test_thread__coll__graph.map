@@ -1,0 +1,9 @@
+<map id="klUnitTestThread" name="klUnitTestThread">
+<area shape="rect" id="node2" href="$classkl_thread.html" title="{klThread\&lt; klMutex \&gt;\n||+ klThread()\l+ ~klThread()\l+ getState()\l+ getThreadId()\l+ setPriority()\l+ launch()\l+ run()\l+ getCurrentThreadId()\l+ waitForThread()\l# main()\l}" alt="" coords="505,645,658,855"/>
+<area shape="rect" id="node3" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n||+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="139,395,295,561"/>
+<area shape="rect" id="node4" href="$classkl_mutex.html" title="{klMutex\n||+ klMutex()\l+ ~klMutex()\l+ lock()\l+ unlock()\l}" alt="" coords="31,167,127,289"/>
+<area shape="rect" id="node7" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n||+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="298,145,497,311"/>
+<area shape="rect" id="node11" href="$classkl_thread.html" title="{klThread\&lt; TYPE_MUTEX \&gt;\n||+ klThread()\l+ ~klThread()\l+ getState()\l+ getThreadId()\l+ setPriority()\l+ launch()\l+ run()\l+ getCurrentThreadId()\l+ waitForThread()\l# main()\l}" alt="" coords="349,373,533,583"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="729,711,809,789"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="754,432,881,524"/>
+</map>

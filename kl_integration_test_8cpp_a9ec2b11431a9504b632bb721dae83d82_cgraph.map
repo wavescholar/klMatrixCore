@@ -1,6 +1,17 @@
 <map id="GenerateTraceyWidomSample" name="GenerateTraceyWidomSample">
-<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="259,5,390,32"/>
-<area shape="rect" id="node3" href="$kl___m_l__helper__fns_8cpp.html#ac65d21bcedbfe74309a2c5995bacc4bc" title="SampleWishart" alt="" coords="269,56,380,83"/>
-<area shape="rect" id="node4" href="$kl___m_l__helper__fns_8cpp.html#a0fb78c5d5b8cbf1d03b08d782c6c2ca5" title="SampleGOE" alt="" coords="445,81,540,108"/>
-<area shape="rect" id="node5" href="$kl__latex__helper__fns_8cpp.html#abf6cf102aff9608e60dca196fc40d7a3" title="LatexInsertHistogram" alt="" coords="252,157,397,184"/>
+<area shape="rect" id="node2" href="$kl__latex__helper__fns_8cpp.html#a526de32dc653e2d143e4e0e46871d3fe" title="makeLatexSection" alt="" coords="260,5,391,32"/>
+<area shape="rect" id="node3" href="$classkl_timer.html#ab08e6d0ad7ce4ba0dc9447d85bb7f42b" title="klTimer::tic" alt="" coords="282,56,369,83"/>
+<area shape="rect" id="node4" href="$kl___m_l__helper__fns_8cpp.html#ac65d21bcedbfe74309a2c5995bacc4bc" title="SampleWishart" alt="" coords="270,157,381,184"/>
+<area shape="rect" id="node5" href="$kl___m_l__helper__fns_8cpp.html#a0fb78c5d5b8cbf1d03b08d782c6c2ca5" title="SampleGOE" alt="" coords="487,107,582,133"/>
+<area shape="rect" id="node13" href="$classkl_matrix.html#a0565d2507b31191c89b50576ffbcf14e" title="klMatrix::eigenvalues" alt="" coords="253,208,398,235"/>
+<area shape="rect" id="node14" href="$classkl_timer.html#a4dfbb96b2b9cc27d538c4ee129aa14ea" title="klTimer::toc" alt="" coords="280,259,371,285"/>
+<area shape="rect" id="node15" href="$kl__latex__helper__fns_8cpp.html#abf6cf102aff9608e60dca196fc40d7a3" title="LatexInsertHistogram" alt="" coords="252,309,399,336"/>
+<area shape="rect" id="node6" href="$classkl_matrix.html#a42705955442736e9f704e823c26d50d0" title="klMatrix::transpose" alt="" coords="699,107,833,133"/>
+<area shape="rect" id="node7" href="$kl__matrix_8h.html#ac680e35cc1717b6f4fee8999455b199b" title="mmBLAS" alt="" coords="495,229,574,256"/>
+<area shape="rect" id="node8" href="$classkl_matrix.html#a43e6bfef8c9bfa6e4176381c9085e963" title="klMatrix::getColumns" alt="" coords="693,157,839,184"/>
+<area shape="rect" id="node9" href="$classkl_matrix.html#a9562483b9b4d365cd01de328972f0613" title="klMatrix::getRows" alt="" coords="703,208,829,235"/>
+<area shape="rect" id="node10" href="$classkl_matrix.html#af1d7cac39cb0c51b2a7c2596a022315d" title="klMatrix::getMemory" alt="" coords="695,259,837,285"/>
+<area shape="rect" id="node11" href="$kl__jbukhardt__prob_8h.html#a9bbc75c79b7a8e91ddfc544def2db543" title="beta" alt="" coords="743,309,789,336"/>
+<area shape="rect" id="node12" href="$classkl_matrix.html#a21b796a2164bad87fabd1bc61b850a3c" title="klMatrix::columnToRowMajor" alt="" coords="671,360,861,387"/>
+<area shape="rect" id="node16" href="$classkl_matlab_engine_thread_map.html#a943b11433ec7bc17b8ca1ab7d15b6a39" title="klMatlabEngineThreadMap\l::find" alt="" coords="447,302,623,343"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="klRCDouble" name="klRCDouble">
+<area shape="rect" id="node2" href="$classkl_ref_count.html" title="{klRefCount\&lt; klMutex \&gt;\n|&#45; theUseCount\l&#45; theMutexLock\l|+ klRefCount()\l+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ operator=()\l+ useCount()\l}" alt="" coords="27,248,183,428"/>
+<area shape="rect" id="node3" href="$classkl_ref_count.html" title="{klRefCount\&lt; TYPE_MUTEX \&gt;\n|&#45; theUseCount\l&#45; theMutexLock\l|+ klRefCount()\l+ ~klRefCount()\l+ addRef()\l+ deleteRef()\l+ klRefCount()\l+ operator=()\l+ useCount()\l}" alt="" coords="5,5,204,185"/>
+</map>

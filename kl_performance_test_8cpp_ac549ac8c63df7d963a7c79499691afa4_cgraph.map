@@ -1,3 +1,5 @@
 <map id="vslBenchmark" name="vslBenchmark">
-<area shape="rect" id="node2" href="$kl__vector_8cpp.html#a7b593bda0dbe363a1061f28eb6bf4abe" title="klVSLSin" alt="" coords="156,5,232,32"/>
+<area shape="rect" id="node2" href="$classkl_timer.html#ab08e6d0ad7ce4ba0dc9447d85bb7f42b" title="klTimer::tic" alt="" coords="161,5,247,32"/>
+<area shape="rect" id="node3" href="$kl__vector_8cpp.html#a7b593bda0dbe363a1061f28eb6bf4abe" title="klVSLSin" alt="" coords="166,56,242,83"/>
+<area shape="rect" id="node4" href="$classkl_timer.html#a4dfbb96b2b9cc27d538c4ee129aa14ea" title="klTimer::toc" alt="" coords="159,107,249,133"/>
 </map>
