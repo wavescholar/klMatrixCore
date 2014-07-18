@@ -681,11 +681,9 @@ BOOL klStackWalkBase::LoadModules()
   return bRet;
 }
 
-
 // The following is used to pass the "userData"-Pointer to the user-provided readMemoryFunction
-// This has to be done due to a problem with the "hProcess"-parameter in x64...
-// Because this class is in no case multi-threading-enabled (because of the limitations 
-// of dbghelp.dll) it is "safe" to use a static-variable
+// This has to be done due to a problem with the "hProcess"-parameter in x64.
+// This class is in not reentrant (because of the limitations of dbghelp.dll).
 static klStackWalkBase::PReadProcessMemoryRoutine s_readMemoryFunction = NULL;
 static LPVOID s_readMemoryFunction_UserData = NULL;
 
@@ -853,17 +851,16 @@ BOOL klStackWalkBase::ShowCallstack(HANDLE hThread, const CONTEXT *context, PRea
           csEntry.symTypeString = NULL;
           break;
         }
-
-        // TODO: Mache dies sicher...!
+       
         strcpy_s(csEntry.moduleName, Module.ModuleName);
         csEntry.baseOfImage = Module.BaseOfImage;
         strcpy_s(csEntry.loadedImageName, Module.LoadedImageName);
-      } // got module info OK
+      } 
       else
       {
         this->OnDbgHelpErr("SymGetModuleInfo64", GetLastError(), s.AddrPC.Offset);
       }
-    } // we seem to have a valid PC
+    }
 
     CallstackEntryType et = nextEntry;
     if (frameNum == 0)
@@ -899,9 +896,15 @@ BOOL __stdcall klStackWalkBase::myReadProcMem(
   {
     SIZE_T st;
     BOOL bRet = ReadProcessMemory(hProcess, (LPVOID) qwBaseAddress, lpBuffer, nSize, &st);
+
     *lpNumberOfBytesRead = (DWORD) st;
-    printf("ReadMemory: hProcess: %p, baseAddr: %p, buffer: %p, size: %d, read: %d, result: %d\n", hProcess, (LPVOID) qwBaseAddress, lpBuffer, nSize, (DWORD) st, (DWORD) bRet);
-    return bRet;
+    
+	CHAR buffer[STACKWALK_MAX_NAMELEN];
+
+    _snprintf_s(buffer, STACKWALK_MAX_NAMELEN, "ReadMemory: hProcess: %p, baseAddr: %p, buffer: %p, size: %d, read: %d, result: %d\n", hProcess, (LPVOID) qwBaseAddress, lpBuffer, nSize, (DWORD) st, (DWORD) bRet);
+	std::cout<<buffer<<std::endl;
+	//OnOutput(buffer);
+	return bRet;
   }
   else
   {

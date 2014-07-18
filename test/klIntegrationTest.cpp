@@ -216,24 +216,34 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klMemMgr*  mgr = NULL;
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
+
+	Utility(_systemText,n);
+
+	//ConvertCSVMatrixFilesToBinFormat();	
+	unsigned int di=0;
+	//ARPACK_VS_SYEVX(_tex,di);
+
+	makeLatexSection("Multiclass Support Vector Machine ",_tex);
+	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
+
+	MemoryManagement(_systemText,n);
+	
+	klutw.HardwareConfiguration(_systemText);
+	MutithreadedWorkflow();
 	
 	makeLatexSection("Random Ball Cover ",_tex),
 	klutw.runTest(RandomBallCoverTest);
-
-	//ConvertCSVMatrixFilesToBinFormat();	
-
+	
 	klutw.runTest( BinaryIO);
 
 	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
 		
-	unsigned int di=0;
-	ARPACK_VS_SYEVX(_tex,di);
-		
-	klTestSize= klTestType::GROW;
-	__int64 dimension;
-	for(dimension =58624;dimension<131072;dimension=dimension+2048)
-		IterativeKrylovCheck(_tex,dimension);
+	
+	//klTestSize= klTestType::GROW;
+	//__int64 dimension;
+	//for(dimension =58624;dimension<131072;dimension=dimension+2048)
+	//	IterativeKrylovCheck(_tex,dimension);
 
 		/*	makeLatexSection("Matrix Quick Check <float>",_tex);
 	klutw.runTest(MatrixOpsQuickCheck<float>);*/	
@@ -248,9 +258,6 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	char* color="'c.'";
 	LatexInsert2DScatterPlot(lattice.getColumn(0),lattice.getColumn(1),_tex,basefilename,fileName.str().c_str(),title.str().c_str(),klHoldOnStatus::NoHold, color);
 	
-	makeLatexSection("Multiclass Support Vector Machine ",_tex);
-	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
-
 	makeLatexSection("Linear Regression atan data 3x1",_tex);
 	klutw.runTest(LinearRegressionAtanSet);	
 
@@ -270,7 +277,6 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	klutw.setAlgorithmParameters(klfgp);
 	klutw.runTest(FastGaussTransformTest);
 	
-
 	klfgp.setParameter(klAlgorithmParameter("Scale",1.0f /(16*1250.0f)));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfCenters",(__int64) 4));
 	klfgp.setParameter(klAlgorithmParameter("NumberOfPoints",(__int64) 4*400)) ;
@@ -333,21 +339,11 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	
 	makeLatexSection("Semidefinite Programming SDPA",_tex);
 	klutw.runTest(SemidefiniteProgrammingTest);
-
-
+	
 	//makeLatexSection"Test Wavelet <double>",_tex);
 	// HEAP[TestDll.exe]: Heap block at 0000000005B0A540 modified at 0000000005B0E584 past requested size of 4034
 	//klutw.runTest(testKLWavelet<double>);
-
-	heapstatus = _heapchk();
 	
-	n=0;
-	MemoryManagement(_systemText,n);
-	Utility(_systemText,n);
-	klutw.HardwareConfiguration(_systemText);
-
-	MutithreadedWorkflow();
-		
 	#ifdef _M_IX86
 	bool isInsideVMWare= klIsInsideVMWare();
 	bool isInsideVPC =klIsInsideVPC();
@@ -975,7 +971,27 @@ void Utility(ofstream &_tex,__int64  &n )
 		ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl;
 		std::string err = ANSI_INFO_ss.str();
 		_tex<<err;
+		_tex.flush();
 	}
+
+	try
+	{
+		ANSI_INFO; throw klError(err + "Testing ANSI_INFO macro");
+	}
+	catch(klError e)
+	{
+		cout<<e.what()<<endl;
+		_tex<<e.what()<<endl;
+	}
+	catch(std::exception ex)
+	{
+		cerr<<ex.what()<<endl;
+	}
+	catch(...)
+	{
+		cerr<<"Caught Something"<<endl;
+	}	
+
 	
 	makeLatexSection("Testing kl Floating Point and Memory Utilities",_tex);
 
@@ -1877,7 +1893,7 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 
 	_tex<<"Running Arnoldi Krylov algorithm on affinity matrix and comparing to Lapack SYEVX (via Intel MKL)."<<endl;
 
-	klVector<unsigned int> filedims(105);
+	klVector<unsigned int> filedims(91);
 	sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\FileDims.txt");
 	fstream _fileistream(fileName);
 	_fileistream>>filedims;
@@ -1888,14 +1904,13 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 	//Set to zero.  Should call operator
 	tictocSYEVX= 0.0;
 	tictocARPACK=0.0;
-
-
-	// bbc revisit full test later for(unsigned int dimi =1;dimi<105;dimi++)
-	for(unsigned int dimi =2;dimi<15;dimi++)
+	
+	// bbc revisit full test later for(unsigned int dimi =1;dimi<91;dimi++)
+	for(unsigned int dimi =1;dimi<10;dimi++)
 	{
 		unsigned int dim =filedims[dimi];
 		n=dim;
-		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",dim);
+		//sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",dim);
 		klArpackFunctor klaf;
 
 		LARGE_INTEGER* freq;
@@ -1905,17 +1920,18 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 		prefCountStart=new _LARGE_INTEGER;
 		prefCountEnd=new _LARGE_INTEGER;
 		QueryPerformanceFrequency(freq);
+		
+		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture_BinFormat\\L_%d.klmd",dim);
+		__int64 rows,cols;
+		bool ok =klBinaryIO::QueryWinx64(fileName,rows,cols);
+		if(!ok)
+			throw "ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n) file name is not ok";
 
-		klMatrix<double> A;
-
-		fstream _fileistream;
+		klMatrix<double> A(rows,cols);
 		QueryPerformanceCounter(prefCountStart);
-		_fileistream.open(fileName);
-		A.setup(n,n);
-		_fileistream>>A;
-
+		klBinaryIO::MatReadWinx64(fileName,A);
 		QueryPerformanceCounter(prefCountEnd);
-
+	
 		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
@@ -1925,8 +1941,7 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 
 		klVector<complex<double> > eigsAP = klaf.run( A.transpose(),numEigenvalues);
 
-		//Write the eigenvectors
-		
+		//Write the eigenvectors		
 		for(int j=0;j<5;j++)
 		{		
 			sprintf(arg,"ARPACK_Dim%d_EigenVector_%d",dim,j);	
@@ -2000,6 +2015,18 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 void ConvertCSVMatrixFilesToBinFormat()
 {
 	char* fileName = new char[1024];
+	__int64 n=0;
+
+	{
+		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture_BinFormat\\L_46592.klmd");	
+		__int64 rows,cols;
+		klBinaryIO::QueryWinx64(fileName,rows,cols);
+		klMatrix<double> klmdMat(rows,cols);
+		klBinaryIO::MatReadWinx64(fileName,klmdMat);
+	}
+
+	int numFiles=91;
+
 	char* arg = new char[1024];
 	klVector<unsigned int> filedims(105);
 	sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\FileDims.txt");
@@ -2012,9 +2039,8 @@ void ConvertCSVMatrixFilesToBinFormat()
 	//Set to zero.  Should call operator
 	tictocSYEVX= 0.0;
 	tictocARPACK=0.0;
-	__int64 n=0;
-	//for(unsigned int dimi =42;dimi<105;dimi++)
-	for(unsigned int dimi =1;dimi<105;dimi++)
+	
+	for(unsigned int dimi =1;dimi<numFiles;dimi++)
 	{
 		n =filedims[dimi];
 		sprintf(fileName,"K:\\KL\\TestMatrices\\\GraphLaplacian_GaussianMixture\\L_%d.txt",n);
@@ -2055,8 +2081,7 @@ void ConvertCSVMatrixFilesToBinFormat()
 			klBinaryIO::MatReadWinx64(fileName,klmdMat);
 			QueryPerformanceCounter(prefCountEnd);
 		    cerr<<"tic toc Binary Read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
-		}
-		
+		}		
 	}
 	
 }

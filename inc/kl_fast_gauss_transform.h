@@ -32,7 +32,9 @@ public:
 	klVector<double> operator()(double h)
 	{
 		if(_X.getColumns() !=_Y.getColumns())
-			throw " klFastGaussTransform error , incompatible dimensions";
+		{			
+			ANSI_INFO; throw err + " klFastGaussTransform error , incompatible dimensions";
+		}
 
 		int dim = _X.getColumns();
 		int N = _X.getRows();

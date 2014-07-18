@@ -1898,7 +1898,7 @@ public:
 	}
 	}*/
 
-	static inline void QueryWinx64(string fileName, __int64& rows, __int64&  cols)
+	static inline bool QueryWinx64(string fileName, __int64& rows, __int64&  cols)
 	{ 
 		FILE* fd=NULL;
 		try
@@ -1923,7 +1923,9 @@ public:
 		}
 		catch(...)
 		{
+			return false;
 		}
+		return true;
 	}
 
 	static inline void VecReadWinx64(string fileName,klVector<double>& klvd)

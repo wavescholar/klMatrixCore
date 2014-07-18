@@ -1360,7 +1360,7 @@ inline void  MemoryManagement(ofstream &_tex,__int64  &n)
 		}
 		redheapmgr.klHeapCompact();
 		redheapmgr.klHeapCheck();
-		redheapmgr.klHeapDump("D:\\klMatrixCore\output\\RedZoneHeapDump.txt");
+		redheapmgr.klHeapDump("D:\\klMatrixCore\\output\\RedZoneHeapDump.txt");
 	}
 	catch(...)
 	{

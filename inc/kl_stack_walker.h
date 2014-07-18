@@ -129,7 +129,7 @@ protected:
   int m_options;
 
   static BOOL __stdcall myReadProcMem(HANDLE hProcess, DWORD64 qwBaseAddress, PVOID lpBuffer, DWORD nSize, LPDWORD lpNumberOfBytesRead);
-
+ 
   friend klStackWalkerInternal;
 };
 
@@ -139,7 +139,9 @@ public:
   klStackWalker() : klStackWalkBase() 
   {
   }
+
   klStackWalker(DWORD dwProcessId, HANDLE hProcess) : klStackWalkBase(dwProcessId, hProcess) {}
+
   virtual void OnOutput(LPCSTR szText) 
   { 
 	  klStackWalkBase::OnOutput(szText); 

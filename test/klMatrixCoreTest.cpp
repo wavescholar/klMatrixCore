@@ -10,21 +10,42 @@ void klPerformanceTesting();
 int main(int argc, char* argv[])
 {
 	//klPerformanceTesting();	
+	klTimer klt;
+
+	klt.tic();
 	klIntegrationTest(false,klTestType::MEDIUM);
-	
-	klIntegrationTest(false,klTestType::SMALL);
+	cerr<<"dt klIntegrationTest(false,klTestType::MEDIUM) = "<<klt.toc()<<endl; 
 
-	klIntegrationTest(true,klTestType::SMALL);
-	
-	klIntegrationTest(true,klTestType::MEDIUM);
 
+	klt.tic();	
 	klIntegrationTest(false,klTestType::LARGE);
+	cerr<<"dt klIntegrationTest(false,klTestType::LARGE) = "<<klt.toc()<<endl; 
 
+	klt.tic();
+	klIntegrationTest(true,klTestType::SMALL);
+	cerr<<"dt klIntegrationTest(true,klTestType::SMALL) = "<<klt.toc()<<endl; 
+	
+	klt.tic();
+	klIntegrationTest(false,klTestType::SMALL);
+	cerr<<"dt klIntegrationTest(false,klTestType::SMALL) = "<<klt.toc()<<endl; 
+	
+	klt.tic();
+	klIntegrationTest(true,klTestType::MEDIUM);
+	cerr<<"dt klIntegrationTest(true,klTestType::MEDIUM) = "<<klt.toc()<<endl; 
+	
+	
+
+	klt.tic();
 	klIntegrationTest(true,klTestType::LARGE);
+	cerr<<"dt klIntegrationTest(true,klTestType::LARGE) = "<<klt.toc()<<endl; 
 	 
+	klt.tic();
 	klIntegrationTest(false,klTestType::VERYLARGE);
+	cerr<<"dt klIntegrationTest(false,klTestType::VERYLARGE) = "<<klt.toc()<<endl; 
 
+	klt.tic();
 	klIntegrationTest(true,klTestType::VERYLARGE);
+	cerr<<"dt klIntegrationTest(true,klTestType::VERYLARGE) = "<<klt.toc()<<endl; 
 			
 	return 0;
 }

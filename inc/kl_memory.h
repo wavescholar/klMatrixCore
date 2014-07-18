@@ -979,6 +979,7 @@ inline void* klRedZoneHeapAlloc(size_t inSize,void* theHeap)
 	pHeader->guardBytes=KLMEM_HEAD_GUARD_BYTES;
 	pHeader->bufferLen=inSize;
 	klFooter* pFooter=reinterpret_cast<klFooter*>((int)theMem+sizeof(klHeader)+inSize);
+
 	pFooter->guardBytes=KLMEM_FOOT_GUARD_BYTES;
 	return reinterpret_cast<void*>((int)theMem+sizeof(klHeader));
 }

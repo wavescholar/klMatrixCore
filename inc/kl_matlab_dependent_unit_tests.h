@@ -59,29 +59,30 @@ template<class TYPE> void klMulticlassSVMHarnessMatlab(ofstream &_tex,__int64 &n
 	unsigned int i;
 	unsigned int j;
 
-	unsigned int numTrainingPoints;
-	unsigned int numFeatureDimensions;
-	unsigned int numClasses;
+	unsigned int numTrainingPoints=1024;
+	unsigned int numFeatureDimensions=3;
+	unsigned int numClasses=3;
 
-	if (klTestSize==klTestType::VERYLARGE)
-	{
-		numTrainingPoints=16384;
-		numFeatureDimensions=20;
-		numClasses=10;
-	}
+	//BBCTODO
+	//if (klTestSize==klTestType::VERYLARGE)
+	//{
+	//	numTrainingPoints=16384;
+	//	numFeatureDimensions=20;
+	//	numClasses=10;
+	//}
 
-	if (klTestSize==klTestType::LARGE)
-	{
-		numTrainingPoints=8192;
-		numFeatureDimensions=10;
-		numClasses=5;	}
+	//if (klTestSize==klTestType::LARGE)
+	//{
+	//	numTrainingPoints=8192;
+	//	numFeatureDimensions=10;
+	//	numClasses=5;	}
 
-	if (klTestSize==klTestType::MEDIUM)
-	{
-		numTrainingPoints=2048;
-		numFeatureDimensions=5;
-		numClasses=5;	
-	}
+	//if (klTestSize==klTestType::MEDIUM)
+	//{
+	//	numTrainingPoints=2048;
+	//	numFeatureDimensions=5;
+	//	numClasses=5;	
+	//}
 
 	if (klTestSize==klTestType::SMALL)
 	{ 
