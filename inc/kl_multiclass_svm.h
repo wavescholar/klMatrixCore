@@ -65,7 +65,9 @@ public:
     {
 
         if(getRows() !=_trainingClasses.getRows() )
-            throw "klMulticlassSVMTrain  ERROR: incopmatible training points and training classes.";
+        {
+			ANSI_INFO; throw klError(err + "klMulticlassSVMTrain  ERROR: incopmatible training points and training classes.");
+		}
 
         //Mixing coefficient \in [0,1] is recomended, but the algorithm may work regardless.
         //bbcrevisit making this a requirement.
@@ -97,7 +99,9 @@ public:
                 (_vectors+i)->operator[](j) -=  *(_mean+j);
 
                 if(*(_variance+j)==0)
-                    throw "klMulticlassSVMTrain ERROR throwing exception to avoid divide by zero.  klSamplePopulation had a zero variance for some dimension";
+                {
+					ANSI_INFO; throw klError(err + "klMulticlassSVMTrain ERROR throwing exception to avoid divide by zero.  klSamplePopulation had a zero variance for some dimension");
+				}
 
                 (_vectors+i)->operator[](j) /=  sqrt( *(_variance+j) );
             }
@@ -948,16 +952,24 @@ public:
     klMatrix<TYPE> operator()()
     {
         if(getColumns() != _supportPoints.getColumns() )
-            throw "klMulticlassSVMClassify ERROR: incompatible dimensions in data and supportPoints.";
+        {
+			ANSI_INFO; throw klError(err + "klMulticlassSVMClassify ERROR: incompatible dimensions in data and supportPoints.");
+		}
 
         if(_supportClasses.getRows() != _supportPoints.getRows())
-            throw "klMulticlassSVMClassify ERROR: incompatible dimensions in supportClasses and supportPoints.";
+         {
+			 ANSI_INFO; throw klError(err + "klMulticlassSVMClassify ERROR: incompatible dimensions in supportClasses and supportPoints.");
+		}
 
         if(_lagMults.getRows() != _supportPoints.getRows())
-            throw "klMulticlassSVMClassify ERROR: incompatible dimensions in lagMults and supportPoints.";
+         {
+			 ANSI_INFO; throw klError(err + "klMulticlassSVMClassify ERROR: incompatible dimensions in lagMults and supportPoints.");
+		}
 
         if(_intercepts.getColumns() != _numClasses)
-            throw "klMulticlassSVMClassify ERROR: incompatible dimensions in intercepts.";
+        {
+			ANSI_INFO; throw klError(err + "klMulticlassSVMClassify ERROR: incompatible dimensions in intercepts.");
+		}
 
         //This is the matrix representing the classification results
         klMatrix<TYPE> testClasses(getRows(), _numClasses);  

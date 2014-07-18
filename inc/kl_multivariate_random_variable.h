@@ -94,7 +94,9 @@ public:
 			{
 			}
 			else
-				throw "klNormalMultiVariate ERROR: only float and double template parameters supported at this time.";
+			{
+				ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: only float and double template parameters supported at this time.");
+			}
 
 
 			setupSpec();

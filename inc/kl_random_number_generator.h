@@ -1062,7 +1062,7 @@ private:
 //    void klLevyAlphaStableRVReset(bool bSeedFromClock = true, double c=0,double alpha=0,unsigned int seedValue = 1)
 //    {
 //        if(alpha<0 || alpha>2)
-//            throw "klLevySkewAlphaStableRV::klLevyAlphaStableRVReset (bool bSeedFromClock = true, double c=0,double alpha=0,unsigned int seedValue = 1) ERROR: bad parameters for pdf.";
+//            {ANSI_INFO; throw klError(err + "klLevySkewAlphaStableRV::klLevyAlphaStableRVReset (bool bSeedFromClock = true, double c=0,double alpha=0,unsigned int seedValue = 1) ERROR: bad parameters for pdf.");}
 //
 //        if( bSeedFromClock )
 //        {
@@ -1136,7 +1136,7 @@ private:
 //    void klLevySkewAlphaStableRVReset(double c=0,double alpha=0,double beta=0,bool bSeedFromClock = true, unsigned int seedValue = 1)
 //    {
 //        if(beta<-1 ||beta>1 ||alpha<0||alpha>2)
-//            throw "klLevySkewAlphaStableRVReset(double c=0,double alpha=0,double beta=0,bool bSeedFromClock = true, unsigned int seedValue = 1) ERROR:  bad parameters for pdf.";
+//            {ANSI_INFO; throw klError(err + "klLevySkewAlphaStableRVReset(double c=0,double alpha=0,double beta=0,bool bSeedFromClock = true, unsigned int seedValue = 1) ERROR:  bad parameters for pdf.");}
 //
 //
 //        if( bSeedFromClock )

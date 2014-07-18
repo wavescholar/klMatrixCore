@@ -51,7 +51,9 @@ public:
 		if(! _icaCalculated)
 		{
 			if(_k==0 || _k>getColumns() )
-				throw "klIndependentComponents:  too many components for this data matrix";
+			{
+				ANSI_INFO; throw klError(err + "klIndependentComponents:  too many components for this data matrix");
+			}
 		
 			operator()(_k);
 		}
@@ -145,21 +147,17 @@ template<> klMatrix<double> klIndependentComponents<double>::klICACore(unsigned 
 	//fill up with our data 
 	Fast_ICA fastica(ma_mixed_sig);
 
-	//bbcrevisit if(k>getColumns())
-		// throw "
-
 	fastica.set_nrof_independent_components(ma_mixed_sig.cols());
 	//bbcrevisit set the number to k?
 	
 	fastica.set_nrof_independent_components(3);
 	
 	fastica.set_non_linearity(  FICA_NONLIN_TANH );
+
 	fastica.set_approach( FICA_APPROACH_DEFL );
 	
+	fastica.separate();//run the algoritm
 	
-	fastica.separate();   //run the algoritm
-
-
 	itpp::Mat<double> ICs = fastica.get_independent_components();
 	klMatrix<double> ICklMat(getRows(),getColumns() );
 	unsigned int i,j;
@@ -174,10 +172,6 @@ template<> klMatrix<double> klIndependentComponents<double>::klICACore(unsigned 
 	//bbcrevisit beware the it++ mat will try and delete it's memory.
 	//we should see how much use it++ gets and revisit integrating a kl-it factory
 	//object for cooperative memory management.
-
-	
-	
-
 }
 
 #endif //__kl_independent_components__

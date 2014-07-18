@@ -110,8 +110,11 @@ template<class TYPE> void klPlot1D(klVector<TYPE>&  c,const char* filename,
 	else
 	{
 		if(start>finish || finish>=c.getRowSize())
-			throw "kllot1D: ERROR bad domain for window.";
+		{
+			ANSI_INFO; throw klError(err + "kllot1D: ERROR bad domain for window.");
+		}
 		range=finish-start;
+
 
 		T = mxCreateDoubleMatrix(1, range+1, mxREAL);
 	}
@@ -238,7 +241,9 @@ template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,
 	klMatlabEngineThreadMap klmtm;
 
 	if(x.getRowSize() !=y.getRowSize())
-		throw "x.getRowSize() !=y.getRowSize() in template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,const char* filename...";
+	{
+		ANSI_INFO; throw klError(err + "x.getRowSize() !=y.getRowSize() in template<class TYPE> void klScatterPlot2D(klVector<TYPE>&  x,klVector<TYPE>&  y,const char* filename...");
+	}
 
 	Engine* matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
 
@@ -337,7 +342,9 @@ template<class TYPE> void klScatterPlot3D(klMatrix<TYPE>&  c,const char* filenam
 	mxArray *T = NULL, *a = NULL, *d = NULL;
 
 	if(c.getColumns() !=3)
-		throw " template<class TYPE> void klMatlabPlot3D(klMatrix<TYPE>  - ERROR :  needs 3 dimensional data";
+	{
+		ANSI_INFO; throw klError(err + " template<class TYPE> void klMatlabPlot3D(klMatrix<TYPE>  - ERROR :  needs 3 dimensional data");
+	}
 
 	T = mxCreateDoubleMatrix(c.getRows(),c.getColumns(), mxREAL);
 	klMatrix<TYPE>  ctr=c.transpose();
@@ -570,26 +577,24 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 	pmat = matOpen(file, "r");
 	if (pmat == NULL)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix :Error opening file";
-
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :Error opening file");
 	}
 	dir = (const char **)matGetDir(pmat, &ndir);
 	if (dir == NULL)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix :Error reading directory of file";
-
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :Error reading directory of file");
 	} 
 	mxFree(dir);
 
 	// In order to use matGetNextXXX correctly, reopen file to read in headers. 
 	if (matClose(pmat) != 0) 
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix: Error closing file";
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix: Error closing file");
 	}
 	pmat = matOpen(file, "r");
 	if (pmat == NULL) 
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix :Error reopening file";
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :Error reopening file");
 
 	}
 	for (i=0; i < ndir; i++) 
@@ -597,13 +602,13 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 		pa = matGetNextVariableInfo(pmat, &name);
 		if (pa == NULL) 
 		{
-			throw "klMatrix<TYPE> klMatlabImportMatrix :Error reading in file";
+			ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :Error reading in file");
 		}
 		//Verify all dimensions are 2
 		int sz=mxGetNumberOfDimensions(pa);
 		if (sz!=2)
 		{
-			throw "klMatrix<TYPE> klMatlabImportMatrix :only two dimensional arrays supported";
+			ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :only two dimensional arrays supported");
 		}
 		mxDestroyArray(pa);
 	}
@@ -611,12 +616,12 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 	// Reopen file to read in actual arrays. 
 	if (matClose(pmat) != 0)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix: Error closing file";
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix: Error closing file");
 	}
 	pmat = matOpen(file, "r");
 	if (pmat == NULL)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix: Error opening file";
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix: Error opening file");
 
 	}
 
@@ -626,13 +631,13 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 		pa = matGetNextVariable(pmat, &name);
 		if (pa == NULL)
 		{
-			throw "klMatrix<TYPE> klMatlabImportMatrix :Error reading in file";
+			ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix :Error reading in file");
 		} 
 	}
 
 	if (matClose(pmat) != 0)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix: Error closing file";
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix: Error closing file");
 	}
 
 	unsigned long rows, columns;
@@ -641,8 +646,7 @@ template<class TYPE> klMatrix<TYPE> klMatlabImportMatrix(char* file,TYPE dummy)
 	int bytes =mxGetElementSize(pa);
 	if(bytes==0)
 	{
-		throw "klMatrix<TYPE> klMatlabImportMatrix: unrecognized data type - possible cell array";
-
+		ANSI_INFO; throw klError(err + "klMatrix<TYPE> klMatlabImportMatrix: unrecognized data type - possible cell array");
 	}
 
 	klMatrix<TYPE> data(rows,columns);

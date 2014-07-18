@@ -12,7 +12,9 @@ void klVSLAdd(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLAdd";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLAdd");
+	}
 	const __int64 n = v.getColumns();
 
 	vzAdd( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -23,7 +25,9 @@ void klVSLSub(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLSub";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLSub");
+	}
 	const __int64 n = v.getColumns();
 
 
@@ -35,7 +39,9 @@ void klVSLMul(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLMul";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLMul");
+	}
 	const __int64 n = v.getColumns();
 
 
@@ -47,7 +53,9 @@ void klVSLMulByConj(klVector< complex<double > >& v,klVector< complex<double> >&
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLMulByConj";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLMulByConj");
+	}
 	const __int64 n = v.getColumns();
 
 	vzMulByConj( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -88,7 +96,9 @@ void klVSLDiv(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLDiv";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLDiv");
+	}
 
 	// Elementwise equal to the scalar
 	klVector<bool> checkNonZero =( b==complex<double>(0.0f,0.0f));
@@ -96,7 +106,7 @@ void klVSLDiv(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 	if(checkNonZero.sum()>0)
 	{
 		std::cerr<<"Warning : divide By zero in klVSLDiv check for Inf in result"<<endl;
-		//throw "Divide By Zeroin klSVLDiv"
+		{ANSI_INFO; throw klError(err + "Divide By Zeroin klSVLDiv");}
 	}
 
 	const __int64 n = v.getColumns();
@@ -119,7 +129,9 @@ void klVSLPow(klVector< complex<double > >& v,klVector< complex<double> >& b, kl
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLDiv";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLDiv");
+	}
 
 	const __int64 n = v.getColumns();
 
@@ -294,7 +306,9 @@ void klVSLAdd(klVector<double>& v,klVector<double>& b, klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLAdd";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLAdd");
+	}
 	const __int64 n = v.getColumns();
 
 
@@ -307,7 +321,9 @@ void klVSLSub(klVector<double>& v,klVector<double>& b, klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLSub";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLSub");
+	}
 	const __int64 n = v.getColumns();
 
 	vdSub( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -319,7 +335,9 @@ void klVSLMul(klVector<double>& v,klVector<double>& b, klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLMul";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLMul");
+	}
 	const __int64 n = v.getColumns();
 
 	vdMul( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -331,7 +349,9 @@ void klVSLDiv(klVector<double>& v,klVector<double>& b, klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLSub";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLSub");
+	}
 	const __int64 n = v.getColumns();
 
 	vdDiv( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -343,7 +363,9 @@ void klVSLPow(klVector<double>& v,klVector<double>& b, klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLPow";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLPow");
+	}
 	const __int64 n = v.getColumns();
 
 
@@ -403,7 +425,9 @@ void klVSLHypot(klVector<double>& v,klVector<double  >& b,klVector<double>& ans)
 {
 	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 	if(v.getColumns() != b.getColumns() )
-		throw "Range Argument Exception in klVSLAdd";
+	{
+		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLAdd");
+	}
 	const __int64 n = v.getColumns();
 
 	vdHypot( n,  v.getMemory(),b.getMemory(),ans.getMemory());
@@ -681,7 +705,7 @@ void klVSLRound(klVector<double>& v,klVector<double>& ans)
 //{
 //	vmlSetMode( VML_LA | VML_FTZDAZ_ON | VML_ERRMODE_ERRNO );
 //	if(v->getColumns() != b->getColumns() )
-//		throw "Range Argument Exception in klVSLAdd";
+//		ANSI_INFO; throw klError(err + "Range Argument Exception in klVSLAdd";
 //	const __int64 n = v->getColumns();
 //	
 //	if(!inplace)

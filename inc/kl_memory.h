@@ -40,6 +40,10 @@ FDFDFDFD Used by Microsoft's C++ debugging heap to mark "no man's land" guard by
 FEEEFEEE Used by Microsoft's HeapFree() to mark freed heap memory
 
 */
+#include "kl_exception.h"
+#define ANSI_INFO std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );                            \
+	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl; \
+	std::string err = ANSI_INFO_ss.str();
 
 
 ///////////////////misc process and memory validation code /////////////////////////////
@@ -301,8 +305,9 @@ public:
 			_actualSize=initSize;
 		
 		if(_actualSize!=initSize)//we've run out of room and haven't mapped the full amount of requested memory
-			throw "klAWEMemMgr ran out of physical memory.";
-		
+		{
+			ANSI_INFO; throw klError(err + "klAWEMemMgr ran out of physical memory.");
+		}		
 	}	
 	~klAWEMemBlock()
 	{
@@ -352,8 +357,9 @@ public:
 			return;
 		}
 		
-		if( ! setLockPagesPrivilege( GetCurrentProcess(), true ) ) {
-			throw "klAWEMemMgr needs the lock pages security attribute;Computer Configuration\\Windows Settings\\Security Settings\\Local Policies\\User Rights Assignment\\Lock Pages in Memory";
+		if( ! setLockPagesPrivilege( GetCurrentProcess(), true ) ) 
+		{
+			ANSI_INFO; throw klError(err + "klAWEMemMgr needs the lock pages security attribute;Computer Configuration\\Windows Settings\\Security Settings\\Local Policies\\User Rights Assignment\\Lock Pages in Memory");
 		}
 		
 		NumberOfPagesInitial = NumberOfPages;
@@ -970,8 +976,10 @@ inline void* klRedZoneHeapAlloc(size_t inSize,void* theHeap)
 		long compactResult  = HeapCompact(theHeap,0);
 		//retry
 		theMem= HeapAlloc(theHeap,0,int(inSize)+sizeof(klHeader)+sizeof(klFooter));
-
-		throw "Bad heap alloc in klRedZoneHeapAlloc(size_t inSize,void* theHeap)";
+		if(!theMem)
+		{
+			ANSI_INFO; throw klError(err + "Bad heap alloc in klRedZoneHeapAlloc(size_t inSize,void* theHeap)");
+		}
 		
 	}
 	klHeader* pHeader= (klHeader*)theMem;

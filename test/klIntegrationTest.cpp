@@ -169,7 +169,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 
 #ifndef _DEBUG
 	if((stream = freopen(coutFile, "a", stdout)) == NULL)
-		throw "kl: error redirecting std::cout to a file.";
+		ANSI_INFO; throw klError(err + "kl: error redirecting std::cout to a file.";
 	cout<<"Redirecting std::cout to"<<coutFile<<"file via freopen."<<endl;
 #endif
 
@@ -196,7 +196,9 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 
 	Engine* matlabEngine=NULL;
 	if (!(matlabEngine = engOpen(NULL))) 
-		throw "klWorkflow: no matlab engine available";
+	{
+		ANSI_INFO; throw klError(err + "klWorkflow: no matlab engine available");
+	}
 	
 	engSetVisible(matlabEngine,false);
 #ifdef _DEBUG
@@ -471,7 +473,9 @@ void TestMerssenePeriodIssue()
 
 	Engine* matlabEngine=NULL;
 	if (!(matlabEngine = engOpen(NULL))) 
-		throw "klWorkflow: no matlab engine available";
+	{
+		ANSI_INFO; throw klError(err + "klWorkflow: no matlab engine available");
+	}
 
 	klmtm.insert(thisThread,matlabEngine);
 	matlabEngine=klmtm.find(klThread<klMutex>::getCurrentThreadId() );
@@ -1769,7 +1773,9 @@ void BinaryIO(ofstream &_tex,__int64 &n)
 		klBinaryIO::QueryWinx64(ss.str(),rows,cols);
 
 		if (rows!=0)
-			throw "klBinaryIO::QueryWinx64(fileName ,rows,cols) returned non zero rows for vector"; 
+		{
+			ANSI_INFO; throw klError(err + "klBinaryIO::QueryWinx64(fileName ,rows,cols) returned non zero rows for vector");
+		}
 		klVector<double> readklvd(cols);
 		klt.tic();
 		klBinaryIO::VecReadWinx64(ss.str(),readklvd);
@@ -1925,7 +1931,9 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 		__int64 rows,cols;
 		bool ok =klBinaryIO::QueryWinx64(fileName,rows,cols);
 		if(!ok)
-			throw "ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n) file name is not ok";
+		{
+			ANSI_INFO; throw klError(err + "ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n) file name is not ok");
+		}
 
 		klMatrix<double> A(rows,cols);
 		QueryPerformanceCounter(prefCountStart);

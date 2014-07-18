@@ -11,7 +11,9 @@ template<  > void klNormalMultiVariate<float>::setupSpec()
     unsigned int row=_covarianceMatrix.getRows();
     unsigned int col=_covarianceMatrix.getColumns();
     if(row!=col || row !=_meanVector.getRowSize() )
-        throw "klNormalMultiVariate ERROR: non-square covariance matrix, or inconsistent mean vector size";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: non-square covariance matrix, or inconsistent mean vector size");
+	}
   
     klMatrix<float> temp;
     temp=_covarianceMatrix;
@@ -28,9 +30,13 @@ template<  > void klNormalMultiVariate<float>::setupSpec()
     //decl from mkl_lapack32.h 
     spotrf(&uplo,&n, temp.getMemory(),&n,&info);
     if(info<0)
-        throw "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.");
+	}
     if(info>0)
-        throw "klNormalMultiVariate ERROR: covariance matrix is not positive definite.";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: covariance matrix is not positive definite.");
+	}
 
     _factor=temp.transpose(); 
 
@@ -55,7 +61,9 @@ template<  > void klNormalMultiVariate<double>::setupSpec()
     unsigned int row=_covarianceMatrix.getRows();
     unsigned int col=_covarianceMatrix.getColumns();
     if(row!=col || row!=_meanVector.getRowSize() )
-        throw "klNormalMultiVariate ERROR: non-square covariance matrix, or inconsistent mean vector size";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: non-square covariance matrix, or inconsistent mean vector size");
+	}
     double* mem=new double[row*col];
     memset(mem,0,row+col);
 
@@ -76,9 +84,13 @@ template<  > void klNormalMultiVariate<double>::setupSpec()
     //void dpotrf( char* uplo, MKL_INT* n, double* a, MKL_INT* lda, MKL_INT* info );
     dpotrf(&uplo,&n, temp.getMemory(),&n,&info);
     if(info<0)
-        throw "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: parameter error in MKL call to factor covariance matrix.");
+	}
     if(info>0)
-        throw "klNormalMultiVariate ERROR: covariance matrix is not positive definite.";
+    {
+		ANSI_INFO; throw klError(err + "klNormalMultiVariate ERROR: covariance matrix is not positive definite.");
+	}
 
     _factor=temp.transpose();  
     //Only the lower triangular part of _factor is written to by MKL, 

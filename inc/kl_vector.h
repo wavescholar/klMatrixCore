@@ -1,7 +1,7 @@
- /*******************************
- * Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
- * Bruce B Campbell 07 08 2014  *
- ********************************/
+/*******************************
+* Copyright (c) <2007>, <Bruce Campbell> All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  *  
+* Bruce B Campbell 07 08 2014  *
+********************************/
 
 #ifndef __kl_vector__
 #define __kl_vector__
@@ -42,10 +42,10 @@ using namespace std;
 //A=2.0;
 //klout(A);
 
-//
+
 #define ANSI_INFO std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );                            \
 	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl; \
-		std::string err = ANSI_INFO_ss.str();
+	std::string err = ANSI_INFO_ss.str();
 
 #ifdef _DEBUGKL
 extern __int64 globalKlVectorCopyConstructorCallCount;
@@ -72,8 +72,8 @@ public:
 template<class TYPE> class klVector: public klRefCount<klMutex>, klGlobalMemoryManager
 {
 public:
-	
-	  klVector(klMemMgr* mgr,__int64 size,bool own=false) :
+
+	klVector(klMemMgr* mgr,__int64 size,bool own=false) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
 		  _mgr=mgr;
@@ -84,7 +84,7 @@ public:
 			  _own=0;
 		  _size=size;
 	  }
-	  
+
 	  klVector(TYPE* mem,__int64 size,bool own=false) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -93,7 +93,7 @@ public:
 		  _size=size;
 		  _mgr=0;
 	  }
-	  
+
 	  klVector(__int64 size) :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -107,7 +107,7 @@ public:
 		  else
 		  {
 			  size_t allocationAmount = sizeof(TYPE)*size;
-		
+
 			  _mMemory =(TYPE*) _globalMemoryManager->allocate(allocationAmount);
 			  _own=1;
 			  _size=size;
@@ -119,16 +119,18 @@ public:
 	  x0(xStart),x1(xEnd), y0(0),y1(0),desc("")
 	  {
 		  if(xEnd<=xStart)
-			  throw "Range error constructing klVector :klVector(double xStart, double dx,double xEnd) xEnd<=xStrat";
+		  {
+			  ANSI_INFO; throw klError(err + "Range error constructing klVector :klVector(double xStart, double dx,double xEnd) xEnd<=xStart");
+		  }
 		  __int64 size = ceil( (xEnd-xStart) / dx);
 
 		  bool okToAllocate = klCheckFreeMemory(size);
-		
+
 		  if(!okToAllocate)
 		  {
 			  std::stringstream ss;
 			  ss<<"Max allocation exceeded in constructing klVector("<<xStart<<" "<<dx<<" "<<xEnd<<") consider using smalller dx"<<endl;
-			  
+
 			  std::exception ex(ss.str().c_str()); 
 			  throw ex;
 		  }
@@ -145,7 +147,7 @@ public:
 		  _size=size;
 		  _mgr=0;
 	  }
-	  
+
 	  klVector() :
 	  x0(0),x1(0), y0(0),y1(0),desc("")
 	  {
@@ -180,7 +182,7 @@ public:
 
 
 	  klVector(klVector<TYPE>&& src)
-		 : _mMemory(src._mMemory), _own(src._own), _size(src._size),  _mgr(src._mgr),  x0(src.x0),
+		  : _mMemory(src._mMemory), _own(src._own), _size(src._size),  _mgr(src._mgr),  x0(src.x0),
 		  x1(src.x1),  y0(src.y0), y1(src.y1), desc(src.desc)
 	  {
 #ifdef _DEBUGKL
@@ -204,7 +206,9 @@ public:
 	  {
 		  //this is for integer type
 		  if(b.getRowSize()!=_size)
-			  throw "klVector::pow_gen ERROR: called with wrong dimension on the exponent vector";
+		  {
+			  ANSI_INFO; throw klError(err + "klVector::pow_gen ERROR: called with wrong dimension on the exponent vector");
+		  }
 		  TYPE* ans=new TYPE[_size];
 		  int i;
 		  for(i=0;i<_size;i++)
@@ -233,7 +237,9 @@ public:
 	  klVector<TYPE> histogram(__int64 histogramBins,double a,double b)
 	  {
 		  if(b<=a)
-			  throw "klVector: ERROR : histogram called with incorrect domain";
+		  {
+			  ANSI_INFO; throw klError(err + "klVector: ERROR : histogram called with incorrect domain");
+		  }
 		  double binSize = double(b-a)/histogramBins; 
 		  TYPE* histogram=new TYPE[histogramBins];
 		  for(__int64 i = 0; i < histogramBins; i++)
@@ -345,7 +351,7 @@ public:
 	  {
 		  return _size;
 	  }
-	  
+
 	  __int64 getRows() const
 	  {
 		  return _size;
@@ -371,13 +377,15 @@ public:
 				  _mgr->free(_mMemory);
 		  }
 	  }
-	  
+
 	  //  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 
-      //  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
+	  //  \f$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\f$.
 	  TYPE dot(klVector<TYPE>& rhs) const
 	  {
 		  if(rhs.getRowSize()!=_size)
-			  throw "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension";
+		  {
+			  ANSI_INFO; throw klError(err + "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension");
+		  }
 		  int i;
 		  TYPE ans=0;
 		  for(i=0;i<_size;i++)
@@ -386,11 +394,11 @@ public:
 		  }
 		  return ans;
 	  }
-	  
+
 	  TYPE dotBLAS(klVector<TYPE>& rhs) const
 	  {
 		  if(rhs.getRowSize()!=_size)
-			  throw "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension";
+		  {ANSI_INFO; throw klError(err + "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension");}
 
 		  int i;
 		  TYPE ans=0;
@@ -400,13 +408,13 @@ public:
 
 		  return ans;
 	  }
-	  
+
 	  TYPE& operator[](__int64 subscript) const 
 	  {
 		  if(subscript<_size)
 			  return *(_mMemory+(subscript));
 		  else
-			  throw "klVector ERROR: Memory index out of range.";
+		  {ANSI_INFO; throw klError(err + "klVector ERROR: Memory index out of range.");}
 	  }
 
 	  klVector<TYPE>& operator=(const klVector<TYPE>& src)
@@ -422,7 +430,7 @@ public:
 	  klVector<TYPE> diff(__int64 delta)
 	  {
 		  if(delta>_size-1)
-			  throw "klvector<TYPE> diff(__int64 delta) ERROR: not enough elements to do the diff.";
+		  {ANSI_INFO; throw klError(err + "klvector<TYPE> diff(__int64 delta) ERROR: not enough elements to do the diff.");}
 		  __int64 i;
 		  klVector<TYPE> r(_size-delta);
 		  for(i=0;i<_size-delta;i++)
@@ -453,7 +461,7 @@ public:
 		  }
 		  return rsum;
 	  }
-	  
+
 	  size_t precision() const
 	  {
 		  return sizeof(TYPE);
@@ -475,7 +483,7 @@ public:
 
 		  __int64 i;
 		  if(getColumns()==0)
-			  throw "klvector:setupRange ERROR : no data in vetor.";
+		  {ANSI_INFO; throw klError(err + "klvector:setupRange ERROR : no data in vetor.");}
 
 		  for(i=0;i<getColumns();i++)
 		  {
@@ -510,7 +518,7 @@ public:
 			  ans[i]=(_mMemory[i]==c);
 		  return ans;
 	  }
-	  
+
 	  // Elementwise not-equal to the scalar
 	  klVector<bool> operator!=(const TYPE c) const
 	  {
@@ -521,7 +529,7 @@ public:
 		  return ans;
 
 	  }
-	  
+
 	  // Elementwise less than the scalar
 	  klVector<bool> operator<(const TYPE c) const
 	  {
@@ -532,7 +540,7 @@ public:
 		  return ans;
 
 	  }
-	  
+
 	  // Elementwise less than and equal to the scalar
 	  klVector<bool> operator<=(const TYPE c) const
 	  {
@@ -543,7 +551,7 @@ public:
 		  return ans;
 
 	  }
-	  
+
 	  // Elementwise greater than the scalar
 	  klVector<bool> operator>(const TYPE c) const
 	  {
@@ -598,7 +606,7 @@ public:
 	  }
 
 public:
-	
+
 	//Domain of data
 	double x0,x1;
 
@@ -617,7 +625,7 @@ private:
 template<  > float klVector<float>::dotBLAS(klVector<float>& rhs) const
 {
 	if(rhs.getRowSize()!=_size)
-		throw "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension";
+	{ANSI_INFO; throw klError(err + "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension");}
 	int i;
 	float ans=0;
 
@@ -634,7 +642,7 @@ template<  > float klVector<float>::dotBLAS(klVector<float>& rhs) const
 template<  > double klVector<double>::dotBLAS(klVector<double>& rhs) const
 {
 	if(rhs.getRowSize()!=_size)
-		throw "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension";
+	{ANSI_INFO; throw klError(err + "klVector ERROR: Trying to take the dot product of vectors with incompatible dimension");}
 	int i;
 	double ans=0;
 
@@ -653,7 +661,7 @@ template<  > double klVector<double>::dotBLAS(klVector<double>& rhs) const
 template<  > klVector<float> klVector<float>::pow_gen(klVector<float> b)
 {
 	if(b.getRowSize()!=_size)
-		throw "klVector::pow ERROR :called with wrong dimension on the exponent vector";
+	{ANSI_INFO; throw klError(err + "klVector::pow ERROR :called with wrong dimension on the exponent vector");}
 	//Calls single precision mkl vector math library methods.
 	float* ans=new float[_size];
 	vsPow(_size,_mMemory,b.getMemory(),ans);
@@ -665,7 +673,7 @@ template<  > klVector<float> klVector<float>::pow_gen(klVector<float> b)
 template<  > klVector<double> klVector<double>::pow_gen(klVector<double> b)
 {
 	if(b.getRowSize()!=_size)
-		throw "klVector::pow  ERROR called with wrong dimension on the exponent vector";
+	{ANSI_INFO; throw klError(err + "klVector::pow  ERROR called with wrong dimension on the exponent vector");}
 	//Calls double precision mkl vector math library methods.
 	double* ans=new double[_size];
 	vdPow(_size,_mMemory,b.getMemory(),ans);
@@ -736,7 +744,7 @@ template<class TYPE>  klVector<TYPE> operator+(const klVector<TYPE> &v1, const k
 {
 	__int64 i;
 	if(v1.getColumns() != v2.getColumns() )
-		throw "template<class TYPE> const klVector<TYPE> operator+(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR : bad dimensions";
+	{ANSI_INFO; throw klError(err + "template<class TYPE> const klVector<TYPE> operator+(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR : bad dimensions");}
 
 	klVector<TYPE> c(v1.getColumns() );
 
@@ -779,7 +787,7 @@ template<class TYPE>  klVector<TYPE> operator-(const klVector<TYPE> &v1, const k
 {
 	__int64 i;
 	if(v1.getColumns() != v2.getColumns() )
-		throw "template<class TYPE> const klVector<TYPE> operator+(const klVector<TYPE> &v1, const klVector<TYPE> &v2 ERROR: bad dimensions";
+	{ANSI_INFO; throw klError(err + "template<class TYPE> const klVector<TYPE> operator+(const klVector<TYPE> &v1, const klVector<TYPE> &v2 ERROR: bad dimensions");}
 
 	klVector<TYPE> c(v1.getColumns() );
 
@@ -874,7 +882,7 @@ template<class TYPE>  klVector<TYPE> operator*(const klVector<TYPE> &v1, const k
 {
 	__int64 i;
 	if(v1.getColumns() != v2.getColumns() )
-		throw "template<class TYPE> const klVector<TYPE> operator*(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: bad size";
+	{ANSI_INFO; throw klError(err + "template<class TYPE> const klVector<TYPE> operator*(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: bad size");}
 
 	klVector<TYPE> c(v1.getColumns() );
 
@@ -889,14 +897,16 @@ template<class TYPE>  klVector<TYPE> operator/(const klVector<TYPE> &v1, const k
 {
 	__int64 i;
 	if(v1.getColumns() != v2.getColumns() )
-		throw " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: bad size";
+	{ANSI_INFO; throw klError(err + " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: bad size");}
 
 	klVector<TYPE> c(v1.getColumns() );
 
 	for(i=0;i<c.getColumns();i++)
 	{
 		if(v2[i]==0)
-			throw " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: attempting to divide by zero";
+		{
+			ANSI_INFO; throw klError(err + " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v1, const klVector<TYPE> &v2) ERROR: attempting to divide by zero");
+		}
 
 		c[i]=v1[i]/ v2[i];
 	}
@@ -916,7 +926,7 @@ template<class TYPE>  klVector<TYPE> operator/(const klVector<TYPE> &v, const TY
 	klVector<TYPE> c(v.getColumns() );
 
 	if(t==0)
-		throw " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v, const TYPE t) ERROR: attempting to divide by zero";
+	{ANSI_INFO; throw klError(err + " template<class TYPE> const klVector<TYPE> operator/(const klVector<TYPE> &v, const TYPE t) ERROR: attempting to divide by zero");}
 
 	for(i=0;i<c.getColumns();i++)
 	{
@@ -933,7 +943,7 @@ template<class TYPE>  klVector<TYPE> operator/(const TYPE t, const klVector<TYPE
 	klVector<TYPE> c(v.getColumns() );
 
 	if(t==0)
-		throw "template<class TYPE> const klVector<TYPE> operator/(const TYPE t, const klVector<TYPE> &v) ERROR attempting to divide by zero";
+	{ANSI_INFO; throw klError(err + "template<class TYPE> const klVector<TYPE> operator/(const TYPE t, const klVector<TYPE> &v) ERROR attempting to divide by zero");}
 
 	for(i=0;i<c.getColumns();i++)
 	{
@@ -1010,7 +1020,7 @@ public:
 	{
 		return intV;
 	}
-	
+
 private:
 
 	__int64 intV;	

@@ -43,7 +43,9 @@ void klPerformanceTesting()
 
 	Engine* matlabEngine=NULL;
 	if (!(matlabEngine = engOpen(NULL))) 
-		throw "klWorkflow: no matlab engine available";
+	{
+		ANSI_INFO; throw klError(err + "klWorkflow: no matlab engine available");
+	}
 
 	engSetVisible(matlabEngine,false);
 #ifdef _DEBUG

@@ -18,18 +18,14 @@ template<class TYPE> klLinearEquationSolver
 		_A=A;
 		_b=b;
 		if(A.getRows() != b.getRowSize() )
-			throw "klLinearEquationSolver ERROR: incompatible dimensions in attempt to solve Ax=b";
+		{
+			ANSI_INFO; throw klError(err + "klLinearEquationSolver ERROR: incompatible dimensions in attempt to solve Ax=b");
+		}
 	}
 	klVector<TYPE> minimumNormSolution()
 	{
 
 	}
-
-
-
-
-
-
 }
 
 

@@ -438,7 +438,7 @@ public:
 
 			state = TERMINATED;
 
-			throw "klThread:launch problem launching posix thread .";
+			ANSI_INFO; throw klError(err + "klThread:launch problem launching posix thread .");
 		}
 		else
 		{

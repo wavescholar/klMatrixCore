@@ -156,7 +156,7 @@ public:
             }
         default :
             {
-                throw "klTimeSeries::EMA() ERROR called with invalid klTimeSeriesInterpolation";
+                ANSI_INFO; throw klError(err + "klTimeSeries::EMA() ERROR called with invalid klTimeSeriesInterpolation");
             }
         }//end switch       
         for(i=0;i<k;i++)
@@ -316,7 +316,7 @@ public:
             }
         default :
             {
-                throw "klTimeSeries::EMA() ERROR: called with invalid klTimeSeriesInterpolation";
+                ANSI_INFO; throw klError(err + "klTimeSeries::EMA() ERROR: called with invalid klTimeSeriesInterpolation");
             }
         }//end switch
         TYPE temp =mu*ema_k_minus_1+(upsilon-mu)*this->operator[](k-1)+(1-upsilon)*this->operator[](k);
@@ -360,7 +360,7 @@ public:
                 }
             default :
                 {
-                    throw "klTimeSeries::EMA() ERROR: called with invalid klTimeSeriesInterpolation";
+					ANSI_INFO; throw klError(err + "klTimeSeries::EMA() ERROR: called with invalid klTimeSeriesInterpolation");
                 }
             }//end switch       
             TYPE temp=mu *iema_k_minus_1 + (upsilon-mu)*ret.second + (1-upsilon)*ret.first;

@@ -24,7 +24,9 @@ public:
 	klVector<complex<double> > run(klMatrix<double>& kldmp,unsigned int numEigenvalues,bool calculateEigenvectors=true)
 	{
 		if(kldmp.getColumns()!=kldmp.getRows())
-			throw "klArpackFunctor : run(klMatrix<double>& kldmp,unsigned int numEigenvalues,bool calculateEigenvectors=true) bad dimensions";
+		{
+			ANSI_INFO; throw klError(err + "klArpackFunctor : run(klMatrix<double>& kldmp,unsigned int numEigenvalues,bool calculateEigenvectors=true) bad dimensions)");
+		}
 
 		//double rcondN = kldmp.ConditionNumber(false);
 		//cout<<"rcondN = "<<rcondN<<endl;

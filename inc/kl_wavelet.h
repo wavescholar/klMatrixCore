@@ -165,14 +165,14 @@ public:
 			//capabilities.
 
 			//  ippStatusResult=ippiWTFwdInitAlloc_32f_C1R(&spec,    pTapsLow,  lenLow, anchorLow,  pTapsHigh, lenHigh, anchorHigh);
-			//   if(!spec) throw "klDWT :ipp error";
+			//   if(!spec) {ANSI_INFO; throw klError(err + "klDWT :ipp error)";}
 			//int bufSize;
 			//ippiWTFwdGetBufSize_C1R(spec, &bufSize);
 			//unsigned char* ippworkbuffer = ippsMalloc_8u(bufSize);
 			//if(!ippworkbuffer)
 			//{
 			//	ippiWTFwdFree_32f_C1R(spec);     
-			//	throw "klDWT :ipp memory error";
+			//	{ANSI_INFO; throw klError(err + "klDWT :ipp memory error");}
 			//}
 		}//
 
