@@ -11,8 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\kl_arpack_non_sym_dense.cpp" />
-    <ClCompile Include="src\kl_arpack_sym_dense.cpp" />
+    <ClCompile Include="src\kl_arpack.cpp" />
     <ClCompile Include="src\kl_cdhc_distribution_tests.cpp" />
     <ClCompile Include="src\kl_hardware.cpp" />
     <ClCompile Include="src\kl_latex_helper_fns.cpp" />

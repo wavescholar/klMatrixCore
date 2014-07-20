@@ -8,8 +8,7 @@
 #include "kl_matrix.h"
 
 template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
-{
-	
+{	
 	klMatrix<double> X(4,3);
 	klVector<double> valsRowWise(4);
 	klVector<double> valsColumnWise(3);
@@ -55,8 +54,7 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	maxV(X, valsColumnWise ,0);
 	cerr<<X<<endl;
 	cerr<<valsColumnWise<<endl;
-
-
+	
 	
 	float* memory=new float[9];
 	int il=0;
@@ -75,8 +73,12 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	b[1][0]=21;b[1][1]=22;b[1][2]=23;
 	b[2][0]=31;b[2][1]=32;b[2][2]=33;
 
-	klVector<float> L =klMatrixToLower(b);
+	klVector<float> L =klMatrixToLowerColType(b);
 	klout(L);
+
+	L= klMatrixToLowerRowType(b);
+	klout(b);
+
 
 	klVector<float> col2=b.getColumn(2);
 
@@ -114,7 +116,6 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	double  __cdecl tanh(double);
 	double  __cdecl sqrt(double);
 	*/
-
 
 	klMatrix<double>moo(2,2);
 
@@ -173,12 +174,14 @@ template<class TYPE> void MatrixOpsQuickCheck(ofstream &_tex,__int64& n)
 	klVector<float> mfa=b[2];
 	cout<<b*mfa;
 	cout<<mfa;
-	//-----------------------------
-	string _filename="moo.txt";
-	ofstream _fileostream(_filename.c_str() );
-	_fileostream<<b<<endl;
-	_fileostream.close();
-	//-----------------------------
+	
+	{
+		string filename;
+		filename =  (string)basefilename+"3x3.txt";
+		ofstream fileostream(filename.c_str() );
+		fileostream<<b<<endl;
+		fileostream.close();
+	}
 	
 	cout<<b;
 	cout<<b.getColumn(1);

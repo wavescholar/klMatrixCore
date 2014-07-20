@@ -42,13 +42,10 @@
     <ClCompile Include="src\kl_stack_walker.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\kl_arpack_non_sym_dense.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\kl_arpack_sym_dense.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\kl_matrix_helper_fns.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\kl_arpack.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

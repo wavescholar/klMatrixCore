@@ -197,8 +197,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 
 	//ncv has  default value (2nev+1).
 	int ncv = 2* numEigs +1;
-
-	//ARluNonSymStdEig<double> Prob(numEigs, A, whichp, ncv);
 	
 	ARluNonSymStdEig<double> Prob(numEigs, A, whichp, ncv,0.0,2048);
 
@@ -356,114 +354,6 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 			delete[] ResNorm;
 		}
 	} // Solution
-
-	
-
-	//BBCREVISIT - BUSTED
-	//if (Prob.EigenvaluesFound())
-	//{
-	//	cout << "Eigenvalues:" << endl;
-	//	for (i=0; i<nconv; i++) 
-	//	{
-	//		complex<double> evVal; 
-	//		evVal.real( Prob.EigenvalueReal(i)) ;
-	//		evVal.imag (Prob.EigenvalueImag(i)) ;
-	//		
-	//		(*(eigenValues+i)).real(Prob.EigenvalueReal(i));
-	//		(*(eigenValues+i)).imag( Prob.EigenvalueImag(i));
-
-	//		cout << "  lambda[" << (i+1) << "]: " << Prob.EigenvalueReal(i);
-	//		if (Prob.EigenvalueImag(i)>=0.0) 
-	//		{
-	//			cout << " + " << Prob.EigenvalueImag(i) << " I" << endl;
-	//		}
-	//		else 
-	//		{
-	//			cout << " - " << fabs(Prob.EigenvalueImag(i)) << " I" << endl;
-	//		}
-	//	}
-	//	cout << endl;
-	//}
-	//
-	//if (Prob.EigenvectorsFound()) 
-	//{
-	//	// Calculating the residual norm || A*x - lambda*x ||
-	//	// for the nconv accurately computed eigenvectors.
-	//	Ax      = new double[n];
-	//	ResNorm = new double[nconv+1];
-
-	//	for (i=0; i<nconv; i++) 
-	//	{
-	//		cout<<"nconv = "<<i<<endl;
-	//		if (Prob.EigenvalueImag(i)==0.0) 
-	//		{ // Eigenvalue is real.
-
-	//			A.MultMv(Prob.RawEigenvector(i), Ax);
-	//			axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i), 1, Ax, 1);
-	//			ResNorm[i] = nrm2(n, Ax, 1)/fabs(Prob.EigenvalueReal(i));
-
-	//			double* ev = Prob.RawEigenvector(i);
-	//			
-	//			//Put the eigenvectors in output variable.
-	//			complex<double>* evP = *(eigenVectors+i);
-
-	//			for(int j=0;j<n;j++)
-	//			{
-	//				(*(evP +  j)).real( *(ev + j)) ;
-	//				(*(evP + j)).imag( 0.0f);
-	//			}
-	//			//
-	//			A.MultMv(Prob.RawEigenvector(i), Ax);
-	//			axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i), 1, Ax, 1);
-	//			axpy(n, Prob.EigenvalueImag(i), Prob.RawEigenvector(i+1), 1, Ax, 1);
-	//			ResNorm[i] = nrm2(n, Ax, 1);
-	//			A.MultMv(Prob.RawEigenvector(i+1), Ax);
-	//			axpy(n, -Prob.EigenvalueImag(i), Prob.RawEigenvector(i), 1, Ax, 1);
-	//			axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i+1), 1, Ax, 1);
-	//			ResNorm[i] = lapy2(ResNorm[i], nrm2(n, Ax, 1))/
-	//				lapy2(Prob.EigenvalueReal(i), Prob.EigenvalueImag(i));
-	//			ResNorm[i+1] = ResNorm[i];
-	//			i++;
-	//			//
-	//		}
-	//		else 
-	//		{
-	//			//Eigenvalue is complex.
-	//			double* evR = Prob.RawEigenvector(i);
-	//			double* evI = Prob.RawEigenvector(i+1);
-	//			
-	//			complex<double>* evP = *(eigenVectors+i);
-
-	//			for(int j=0;j<n;j++)
-	//			{
-	//				(*(evP +  j)).real( *(evR + j)) ;
-	//				(*(evP + j)).imag( *(evI + j));
-	//			}
-	//			
-	//			A.MultMv(Prob.RawEigenvector(i), Ax);
-	//			axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i), 1, Ax, 1);
-	//			axpy(n, Prob.EigenvalueImag(i), Prob.RawEigenvector(i+1), 1, Ax, 1);
-	//			ResNorm[i] = nrm2(n, Ax, 1);
-	//			A.MultMv(Prob.RawEigenvector(i+1), Ax);
-	//			axpy(n, -Prob.EigenvalueImag(i), Prob.RawEigenvector(i), 1, Ax, 1);
-	//			axpy(n, -Prob.EigenvalueReal(i), Prob.RawEigenvector(i+1), 1, Ax, 1);
-	//			ResNorm[i] = lapy2(ResNorm[i], nrm2(n, Ax, 1))/
-	//				lapy2(Prob.EigenvalueReal(i), Prob.EigenvalueImag(i));
-	//			ResNorm[i+1] = ResNorm[i];
-	//			i++;
-	//		}
-	//	}
-
-	//	for (i=0; i<nconv; i++)
-	//	{
-	//		cout << "||A*x(" << (i+1) << ") - lambda(" << (i+1);
-	//		cout << ")*x(" << (i+1) << ")||: " << ResNorm[i] << "\n";
-	//	}
-	//	cout << "\n";
-
-	//	delete[] Ax;
-	//	delete[] ResNorm;
-	//}
 } 
 
 //#include "D:\Packages\arpack++\examples\matrices\sym\dsmatrxb.h"
@@ -471,76 +361,116 @@ extern void callAprpackNonSymmetric( int n,double* matrix, unsigned int  numEigs
 //#include "ardsmat.h"
 //#include "ardgsym.h"
 //#include "D:\Packages\arpack++\examples\matrices\sym\lsymsol.h"
+
+//For the basic test.
+//#include "D:\Packages\arpack++\examples\matrices\sym\lsmatrxa.h"
+//#include "arusmat.h"
+//#include "arussym.h"
+//#include "D:\Packages\arpack++\examples\matrices\sym\lsymsol.h"
+//
 //extern void callAprpackSymmetric( int n,double* matrix, unsigned int  numEigs,complex<double>* eigenValues , complex<double> ** eigenVectors,char* whichp = "LM")
 //{
-//	ARdsSymMatrix<double> A(n, matrix);
-//	int ncvp = 0;
-//    double tolp = 0.0; int maxitp = 2000;
-//	ARluSymStdEig<double> Prob(numEigs,A, "SM",ncvp,tolp,maxitp);//Prob(numEigs, A, 0.00001f);
 //
-//	Prob.FindEigenvectors();
-//	Solution(A, Prob);
-//	int   i, nconv, mode;
+//	{//Basic Test
+//		int     nx;
+//		int     n;          // Dimension of the problem.
+//		int     nnz;        // Number of nonzero elements in A.
+//		int*    irow;       // pointer to an array that stores the row
+//		indices of the nonzeros in A.
+//			int*    pcol;       // pointer to an array of pointers to the
+//		beginning of each column of A in vector A.
+//			double* A;          // pointer to an array that stores the
+//		nonzero elements of A.
 //
-//	n     = Prob.GetN();
-//	nconv = Prob.ConvergedEigenvalues();
-//	mode  = Prob.GetMode();
+//			Creating a 100x100 matrix.
 //
-//	cout << "Real nonsymmetric eigenvalue problem: A*x - lambda*x" << endl;
-//	switch (mode) 
-//	{
-//	case 1:
-//		cout << "Regular mode" << endl << endl;
-//		break;
-//	case 3:
-//		cout << "Shift and invert mode" << endl << endl;
+//			nx  = 10;
+//		SymmetricMatrixA(nx, n, nnz, A, irow, pcol);
+//		ARumSymMatrix<double> matrix(n, nnz, A, irow, pcol);
+//
+//		Defining what we need: the four eigenvectors of A with largest magnitude.
+//
+//			ARluSymStdEig<double> dprob(4, matrix, "SM");
+//
+//		Finding eigenvalues and eigenvectors.
+//
+//			dprob.FindEigenvectors();
+//
+//		Printing solution.
+//
+//			Solution(matrix, dprob);
+//
 //	}
 //
-//	if(Prob.GetNev() !=nconv) //Try the shift and invert mode
-//	{
-//		double  sigmap= 0.005;
-//		Prob.SetShiftInvertMode(sigmap);
-//		Prob.FindEigenvectors();
-//		n     = Prob.GetN();
-//		nconv = Prob.ConvergedEigenvalues();
-//	}
 //
-//	cout << "Dimension of the system            : " << n              << endl;
-//	cout << "Number of 'requested' eigenvalues  : " << Prob.GetNev()  << endl;
-//	cout << "Number of 'converged' eigenvalues  : " << nconv          << endl;
-//	cout << "Number of Arnoldi vectors generated: " << Prob.GetNcv()  << endl;
-//	cout << "Number of iterations taken         : " << Prob.GetIter() << endl;
-//	cout << endl;
+//	//ARdsSymMatrix<double> A(n, matrix);
+//	//int ncvp = 0;
+//    //double tolp = 0.0; int maxitp = 2000;
+//	//ARluSymStdEig<double> Prob(numEigs,A, "SM",ncvp,tolp,maxitp);//Prob(numEigs, A, 0.00001f);
 //
-//	if (Prob.EigenvaluesFound())
-//	{
-//		cout << "Eigenvalues:" << endl;
-//		for (i=0; i<nconv; i++) 
-//		{
+//	//Prob.FindEigenvectors();
+//	//Solution(A, Prob);
+//	//int   i, nconv, mode;
 //
-//			cout << "  lambda[" << (i+1) << "]: " << Prob.Eigenvalue(i);
-//			
-//		}
-//		cout << endl;
-//	}
-//	
-//	if (Prob.EigenvectorsFound()) 
-//	{
-//		for (i=0; i<nconv; i++) 
-//		{
-//			cout<<"nconv = "<<i<<endl;
+//	//n     = Prob.GetN();
+//	//nconv = Prob.ConvergedEigenvalues();
+//	//mode  = Prob.GetMode();
 //
-//			double* ev = Prob.RawEigenvector(i);
+//	//cout << "Real nonsymmetric eigenvalue problem: A*x - lambda*x" << endl;
+//	//switch (mode) 
+//	//{
+//	//case 1:
+//	//	cout << "Regular mode" << endl << endl;
+//	//	break;
+//	//case 3:
+//	//	cout << "Shift and invert mode" << endl << endl;
+//	//}
 //
-//			//Put the eigenvectors in output variable.
-//			complex<double>* evP = *(eigenVectors+i);
+//	//if(Prob.GetNev() !=nconv) //Try the shift and invert mode
+//	//{
+//	//	double  sigmap= 0.005;
+//	//	Prob.SetShiftInvertMode(sigmap);
+//	//	Prob.FindEigenvectors();
+//	//	n     = Prob.GetN();
+//	//	nconv = Prob.ConvergedEigenvalues();
+//	//}
 //
-//			for(int j=0;j<n;j++)
-//			{
-//				(*(evP +  j)).real( *(ev + j)) ;
-//				(*(evP + j)).imag( 0.0f);
-//			}
-//		}
-//	}
+//	//cout << "Dimension of the system            : " << n              << endl;
+//	//cout << "Number of 'requested' eigenvalues  : " << Prob.GetNev()  << endl;
+//	//cout << "Number of 'converged' eigenvalues  : " << nconv          << endl;
+//	//cout << "Number of Arnoldi vectors generated: " << Prob.GetNcv()  << endl;
+//	//cout << "Number of iterations taken         : " << Prob.GetIter() << endl;
+//	//cout << endl;
+//
+//	//if (Prob.EigenvaluesFound())
+//	//{
+//	//	cout << "Eigenvalues:" << endl;
+//	//	for (i=0; i<nconv; i++) 
+//	//	{
+//
+//	//		cout << "  lambda[" << (i+1) << "]: " << Prob.Eigenvalue(i);
+//	//		
+//	//	}
+//	//	cout << endl;
+//	//}
+//	//
+//	//if (Prob.EigenvectorsFound()) 
+//	//{
+//	//	for (i=0; i<nconv; i++) 
+//	//	{
+//	//		cout<<"nconv = "<<i<<endl;
+//
+//	//		double* ev = Prob.RawEigenvector(i);
+//
+//	//		//Put the eigenvectors in output variable.
+//	//		complex<double>* evP = *(eigenVectors+i);
+//
+//	//		for(int j=0;j<n;j++)
+//	//		{
+//	//			(*(evP +  j)).real( *(ev + j)) ;
+//	//			(*(evP + j)).imag( 0.0f);
+//	//		}
+//	//	}
+//	//}
 //} 
 

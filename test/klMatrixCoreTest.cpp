@@ -15,9 +15,13 @@ int main(int argc, char* argv[])
 	klt.tic();
 	klIntegrationTest(false,klTestType::MEDIUM);
 	cerr<<"dt klIntegrationTest(false,klTestType::MEDIUM) = "<<klt.toc()<<endl; 
+	
+	klt.tic();
+	klIntegrationTest(true,klTestType::MEDIUM);
+	cerr<<"dt klIntegrationTest(true,klTestType::MEDIUM) = "<<klt.toc()<<endl; 
+	
 
-
-	klt.tic();	
+	/*klt.tic();	
 	klIntegrationTest(false,klTestType::LARGE);
 	cerr<<"dt klIntegrationTest(false,klTestType::LARGE) = "<<klt.toc()<<endl; 
 
@@ -28,11 +32,6 @@ int main(int argc, char* argv[])
 	klt.tic();
 	klIntegrationTest(false,klTestType::SMALL);
 	cerr<<"dt klIntegrationTest(false,klTestType::SMALL) = "<<klt.toc()<<endl; 
-	
-	klt.tic();
-	klIntegrationTest(true,klTestType::MEDIUM);
-	cerr<<"dt klIntegrationTest(true,klTestType::MEDIUM) = "<<klt.toc()<<endl; 
-	
 	
 
 	klt.tic();
@@ -46,6 +45,6 @@ int main(int argc, char* argv[])
 	klt.tic();
 	klIntegrationTest(true,klTestType::VERYLARGE);
 	cerr<<"dt klIntegrationTest(true,klTestType::VERYLARGE) = "<<klt.toc()<<endl; 
-			
+			*/
 	return 0;
 }
