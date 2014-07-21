@@ -53,25 +53,23 @@ public:
 			//cerr<<"------------------------------------------------"<<endl;
 			//cerr<<kldmp.eigenvalues();
 			//cerr<<"------------------------------------------------"<<endl;
-			try
+			//try
 			{
 				//if(kldmp.transpose() == kldmp)
-				//{
-					//klVector<double> L =klMatrixToLowerColType(kldmp);
-
-					//callAprpackSymmetric(kldmp.getColumns(),L.getMemory(), numEigenvalues,eigVals, Evecs,"SM" );
-				//}
+				{
+					//callAprpackSymmetric(kldmp.getColumns(),kldmp.getMemory(), numEigenvalues,eigVals, Evecs,"SM" );
+				}
 				//else
 				{
 					callAprpackNonSymmetric(kldmp.getColumns(),kldmp.getMemory(), numEigenvalues,eigVals, Evecs,"SM" );
 				}
 			}
-			catch(...)
+			/*catch(...)
 			{
 				cerr<<"Problem in Arpack Call"<<endl;
 				double rcondN = kldmp.ConditionNumber(false);
 				cout<<"rcondN = "<<rcondN<<endl;
-			}
+			}*/
 
 			for(int j =0 ; j<numEigenvalues;j++)
 			{

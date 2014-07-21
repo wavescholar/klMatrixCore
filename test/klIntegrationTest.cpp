@@ -169,9 +169,7 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 
 #ifndef _DEBUG
 	if((stream = freopen(coutFile, "a", stdout)) == NULL)
-	{
-		ANSI_INFO; throw klError(err + "kl: error redirecting std::cout to a file.");
-	}
+		ANSI_INFO; throw klError(err + "kl: error redirecting std::cout to a file.";
 	cout<<"Redirecting std::cout to"<<coutFile<<"file via freopen."<<endl;
 #endif
 
@@ -221,17 +219,12 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 		klGlobalMemoryManager::setklVectorGlobalMemoryManager((klMemMgr*)mgr);
 	}
 
-	makeLatexSection("Matrix Quick Check <double>",_tex),
-	klutw.runTest(MatrixOpsQuickCheck<double>);
-
-	unsigned int di=0;
-	ARPACK_VS_SYEVX(_tex,di);
-
-
 	Utility(_systemText,n);
 
 	//ConvertCSVMatrixFilesToBinFormat();	
-	
+	unsigned int di=0;
+	//ARPACK_VS_SYEVX(_tex,di);
+
 	makeLatexSection("Multiclass Support Vector Machine ",_tex);
 	klutw.runTest(klMulticlassSVMHarnessMatlab<double>);
 
@@ -245,6 +238,9 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	
 	klutw.runTest( BinaryIO);
 
+	makeLatexSection("Matrix Quick Check <double>",_tex),
+	klutw.runTest(MatrixOpsQuickCheck<double>);
+		
 	
 	//klTestSize= klTestType::GROW;
 	//__int64 dimension;
@@ -1916,8 +1912,7 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 	tictocARPACK=0.0;
 	
 	// bbc revisit full test later for(unsigned int dimi =1;dimi<91;dimi++)
-	//for(unsigned int dimi =12;dimi<14;dimi++)
-	for(unsigned int dimi =1;dimi<4;dimi++)
+	for(unsigned int dimi =1;dimi<10;dimi++)
 	{
 		unsigned int dim =filedims[dimi];
 		n=dim;
@@ -1948,21 +1943,11 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-		/*
-		{
-			sprintf(fileName,"L_%d_Spy.txt",dim);
-			ofstream _fileostream(fileName );
-			_fileostream<<A<<endl;
-			_fileostream.close();
-			sprintf(fileName,"L_%d_Spy",dim);
-			LatexInsertHeatMap(A,_tex, basefilename,fileName,fileName);
-		}
-		*/
 		unsigned int numEigenvalues= 8;
 
 		QueryPerformanceCounter(prefCountStart);
 
-		klVector<complex<double> > eigsAP = klaf.run( A,numEigenvalues);
+		klVector<complex<double> > eigsAP = klaf.run( A.transpose(),numEigenvalues);
 
 		//Write the eigenvectors		
 		for(int j=0;j<5;j++)

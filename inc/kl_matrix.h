@@ -1313,8 +1313,12 @@ template<class TYPE> inline const klMatrix<TYPE> operator*(TYPE c2, const klMatr
 }
 
 
-template<class TYPE> inline	const klVector<TYPE> klMatrixToLowerRowType(const klMatrix<TYPE> &c)
+template<class TYPE> inline	const klVector<TYPE> klMatrixToLower(const klMatrix<TYPE> &c)
 {
+	if(c.getRows() != c.getColumns())
+	{
+		ANSI_INFO; throw klError(err + "Bad dimensions in klVector<TYPE> klMatrixToLower(const klMatrix<TYPE> &c)");
+	}
 	__int64 i;
 	__int64 j;
 	__int64 lowerSize = 0;
@@ -1336,30 +1340,6 @@ template<class TYPE> inline	const klVector<TYPE> klMatrixToLowerRowType(const kl
 	}
 	return L;
 }
-
-template<class TYPE> inline	const klVector<TYPE> klMatrixToLowerColType(const klMatrix<TYPE> &c)
-{
-	__int64 i;
-	__int64 j;
-	__int64 lowerSize = 0;
-	for(i=1;i<=c.getRows();i++)
-		lowerSize +=i;
-
-	klVector<TYPE> L(lowerSize) ;
-	L=(TYPE)0.0;
-	__int64 index=0;
-	for(int j =0;j<c.getColumns();j++)
-	{	for(int i=0;i<c.getRows();i++)
-		{
-			if(i<j)
-				continue;
-			else
-				L[index++] = c[i][j];
-		}
-	}
-	return L;
-}
-
 
 /*
 template<class TYPE> inline	const klMatrix<TYPE> elem_mult(const klMatrix<TYPE> &m1, const klMatrix<TYPE> &m2)
