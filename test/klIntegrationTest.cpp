@@ -224,10 +224,6 @@ void klIntegrationTest(bool useIntelMemMgr,klTestType klItegrationTestSize )
 	makeLatexSection("Matrix Quick Check <double>",_tex),
 	klutw.runTest(MatrixOpsQuickCheck<double>);
 
-	unsigned int di=0;
-	ARPACK_VS_SYEVX(_tex,di);
-
-
 	Utility(_systemText,n);
 
 	//ConvertCSVMatrixFilesToBinFormat();	
@@ -1462,7 +1458,6 @@ void IteratedExponentialFiltering(ofstream &_tex,__int64 &n)
 		c[i]=normalinv()+ .5* sin(4*pi*(double(i)/popsize)) + 1* sin(7*pi*(double(i)/popsize) );
 	}
 	
-
 	_tex<<"$\\mu_1 =" <<c.mean()<<"$"<<endl;
 	_tex<<"$\\mu_2 =" <<c.variance()<<"$"<<endl;
 	_tex<<"$\\mu_3 =" <<c.skewness()<<"$"<<endl;
@@ -1915,8 +1910,6 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 	tictocSYEVX= 0.0;
 	tictocARPACK=0.0;
 	
-	// bbc revisit full test later for(unsigned int dimi =1;dimi<91;dimi++)
-	//for(unsigned int dimi =12;dimi<14;dimi++)
 	for(unsigned int dimi =1;dimi<4;dimi++)
 	{
 		unsigned int dim =filedims[dimi];
@@ -1948,16 +1941,6 @@ void ARPACK_VS_SYEVX(ofstream &_tex,unsigned int  &n)
 		cerr<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 		_tex<<"tic toc fileistream read dim n="<<n<<" dt="<<double(prefCountEnd->QuadPart-prefCountStart->QuadPart)/double(freq->QuadPart)<<endl;   
 
-		/*
-		{
-			sprintf(fileName,"L_%d_Spy.txt",dim);
-			ofstream _fileostream(fileName );
-			_fileostream<<A<<endl;
-			_fileostream.close();
-			sprintf(fileName,"L_%d_Spy",dim);
-			LatexInsertHeatMap(A,_tex, basefilename,fileName,fileName);
-		}
-		*/
 		unsigned int numEigenvalues= 8;
 
 		QueryPerformanceCounter(prefCountStart);
