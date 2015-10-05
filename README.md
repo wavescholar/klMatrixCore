@@ -13,6 +13,9 @@ klServiceCore
 
 Packages
 
+Note a project is underway to port the non Matlab portions of klMatrixCore to Linux.
+Contact wavescholar@gmail.com for more information.s
+
 
 
 
