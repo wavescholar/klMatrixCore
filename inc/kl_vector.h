@@ -42,10 +42,10 @@ using namespace std;
 //A=2.0;
 //klout(A);
 
-
-#define ANSI_INFO std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );                            \
-	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl; \
-	std::string err = ANSI_INFO_ss.str();
+//Moved to kl_util.h
+//#define ANSI_INFO std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );                            \
+//	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl; \
+//	std::string err = ANSI_INFO_ss.str();
 
 #ifdef _DEBUGKL
 extern __int64 globalKlVectorCopyConstructorCallCount;

@@ -12,6 +12,12 @@
 #include "float.h"
 
 
+
+#define ANSI_INFO std::stringstream ANSI_INFO_ss (std::stringstream::in | std::stringstream::out );                            \
+	ANSI_INFO_ss<<"ANSI COMPILE INFO: " <<__DATE__<<"     "<<__TIME__<<"   "<<__FILE__<<"   "<<__LINE__<<"       "<<std::endl; \
+	std::string err = ANSI_INFO_ss.str();
+
+
 #define GetBit(var, bit) ((var & (1 << bit)) != 0) // Returns true / false if bit is set 
 #define SetBit(var, bit) (var |= (1 << bit)) 
 #define FlipBit(var, bit) (var ^= (1 << bit)) 
